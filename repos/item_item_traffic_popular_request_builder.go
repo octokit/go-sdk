@@ -1,0 +1,31 @@
+package repos
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// ItemItemTrafficPopularRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\traffic\popular
+type ItemItemTrafficPopularRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewItemItemTrafficPopularRequestBuilderInternal instantiates a new PopularRequestBuilder and sets the default values.
+func NewItemItemTrafficPopularRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTrafficPopularRequestBuilder) {
+    m := &ItemItemTrafficPopularRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/traffic/popular", pathParameters),
+    }
+    return m
+}
+// NewItemItemTrafficPopularRequestBuilder instantiates a new PopularRequestBuilder and sets the default values.
+func NewItemItemTrafficPopularRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTrafficPopularRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewItemItemTrafficPopularRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Paths the paths property
+func (m *ItemItemTrafficPopularRequestBuilder) Paths()(*ItemItemTrafficPopularPathsRequestBuilder) {
+    return NewItemItemTrafficPopularPathsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Referrers the referrers property
+func (m *ItemItemTrafficPopularRequestBuilder) Referrers()(*ItemItemTrafficPopularReferrersRequestBuilder) {
+    return NewItemItemTrafficPopularReferrersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
