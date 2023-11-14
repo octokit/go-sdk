@@ -1,4 +1,4 @@
-package octokit
+package gosdk
 
 import (
     "context"
