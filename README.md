@@ -10,7 +10,9 @@ For now, see instructions in [this gist](https://gist.github.com/kfcampbell/0214
 
 ## Why a generated SDK?
 
-We want to a) provide 100% coverage of the API in our SDK, and b) use this as a building block for future SDK tooling.
+We want to...
+1.  provide 100% coverage of the API in our SDK
+2.  use this as a building block for future SDK tooling.
 
 ## Why Go?
 
