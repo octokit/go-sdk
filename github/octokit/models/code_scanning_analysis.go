@@ -25,7 +25,7 @@ type CodeScanningAnalysis struct {
     error *string
     // Unique identifier for this analysis.
     id *int32
-    // The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+    // The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
     ref *string
     // The total number of results in the analysis.
     results_count *int32
@@ -242,7 +242,7 @@ func (m *CodeScanningAnalysis) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *CodeScanningAnalysis) GetId()(*int32) {
     return m.id
 }
-// GetRef gets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// GetRef gets the ref property value. The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
 func (m *CodeScanningAnalysis) GetRef()(*string) {
     return m.ref
 }
@@ -394,7 +394,7 @@ func (m *CodeScanningAnalysis) SetError(value *string)() {
 func (m *CodeScanningAnalysis) SetId(value *int32)() {
     m.id = value
 }
-// SetRef sets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// SetRef sets the ref property value. The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
 func (m *CodeScanningAnalysis) SetRef(value *string)() {
     m.ref = value
 }
