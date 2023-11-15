@@ -1,6 +1,6 @@
 # github.com/octokit/go-sdk
 
-An "alpha" version of a generated Go SDK from [GitHub's OpenAPI spec](https://github.com/github/rest-api-description).
+An "alpha" version of a generated Go SDK from [GitHub's OpenAPI spec](https://github.com/github/rest-api-description), built on [Kiota](https://github.com/microsoft/kiota).
 
 ## How do I use it?
 
