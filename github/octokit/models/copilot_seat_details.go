@@ -5,7 +5,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CopilotSeatDetails information about a Copilot for Business seat assignment for a user, team, or organization.
+// CopilotSeatDetails information about a Copilot Business seat assignment for a user, team, or organization.
 type CopilotSeatDetails struct {
     // The assignee that has been granted access to GitHub Copilot.
     assignee CopilotSeatDetails_CopilotSeatDetails_assigneeable

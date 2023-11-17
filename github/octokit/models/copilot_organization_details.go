@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CopilotOrganizationDetails information about the seat breakdown and policies set for an organization with a Copilot for Business subscription.
+// CopilotOrganizationDetails information about the seat breakdown and policies set for an organization with a Copilot Business subscription.
 type CopilotOrganizationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -12,7 +12,7 @@ type CopilotOrganizationDetails struct {
     copilot_chat *CopilotOrganizationDetails_copilot_chat
     // The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
     public_code_suggestions *CopilotOrganizationDetails_public_code_suggestions
-    // The breakdown of Copilot for Business seats for the organization.
+    // The breakdown of Copilot Business seats for the organization.
     seat_breakdown CopilotSeatBreakdownable
     // The mode of assigning new seats.
     seat_management_setting *CopilotOrganizationDetails_seat_management_setting
@@ -85,7 +85,7 @@ func (m *CopilotOrganizationDetails) GetFieldDeserializers()(map[string]func(i87
 func (m *CopilotOrganizationDetails) GetPublicCodeSuggestions()(*CopilotOrganizationDetails_public_code_suggestions) {
     return m.public_code_suggestions
 }
-// GetSeatBreakdown gets the seat_breakdown property value. The breakdown of Copilot for Business seats for the organization.
+// GetSeatBreakdown gets the seat_breakdown property value. The breakdown of Copilot Business seats for the organization.
 func (m *CopilotOrganizationDetails) GetSeatBreakdown()(CopilotSeatBreakdownable) {
     return m.seat_breakdown
 }
@@ -142,7 +142,7 @@ func (m *CopilotOrganizationDetails) SetCopilotChat(value *CopilotOrganizationDe
 func (m *CopilotOrganizationDetails) SetPublicCodeSuggestions(value *CopilotOrganizationDetails_public_code_suggestions)() {
     m.public_code_suggestions = value
 }
-// SetSeatBreakdown sets the seat_breakdown property value. The breakdown of Copilot for Business seats for the organization.
+// SetSeatBreakdown sets the seat_breakdown property value. The breakdown of Copilot Business seats for the organization.
 func (m *CopilotOrganizationDetails) SetSeatBreakdown(value CopilotSeatBreakdownable)() {
     m.seat_breakdown = value
 }

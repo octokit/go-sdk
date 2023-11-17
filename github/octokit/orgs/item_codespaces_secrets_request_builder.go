@@ -9,7 +9,7 @@ import (
 type ItemCodespacesSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCodespacesSecretsRequestBuilderGetQueryParameters lists all Codespaces secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ItemCodespacesSecretsRequestBuilderGetQueryParameters lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 type ItemCodespacesSecretsRequestBuilderGetQueryParameters struct {
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
@@ -49,7 +49,7 @@ func NewItemCodespacesSecretsRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemCodespacesSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all Codespaces secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// Get lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 // Deprecated: This method is obsolete. Use GetAsSecretsGetResponse instead.
 // [API method documentation]
 // 
@@ -68,7 +68,7 @@ func (m *ItemCodespacesSecretsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ItemCodespacesSecretsResponseable), nil
 }
-// GetAsSecretsGetResponse lists all Codespaces secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// GetAsSecretsGetResponse lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#list-organization-secrets
@@ -90,7 +90,7 @@ func (m *ItemCodespacesSecretsRequestBuilder) GetAsSecretsGetResponse(ctx contex
 func (m *ItemCodespacesSecretsRequestBuilder) PublicKey()(*ItemCodespacesSecretsPublicKeyRequestBuilder) {
     return NewItemCodespacesSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists all Codespaces secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ToGetRequestInformation lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

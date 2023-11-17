@@ -11,7 +11,7 @@ import (
 type PublicRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PublicRequestBuilderGetQueryParameters list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
+// PublicRequestBuilderGetQueryParameters list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 type PublicRequestBuilderGetQueryParameters struct {
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
@@ -42,7 +42,7 @@ func NewPublicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewPublicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
+// Get list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gists/gists#list-public-gists
@@ -67,7 +67,7 @@ func (m *PublicRequestBuilder) Get(ctx context.Context, requestConfiguration *Pu
     }
     return val, nil
 }
-// ToGetRequestInformation list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/overview/resources-in-the-rest-api#pagination), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
+// ToGetRequestInformation list public gists sorted by most recently updated to least recently updated.Note: With [pagination](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api), you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.
 func (m *PublicRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PublicRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
