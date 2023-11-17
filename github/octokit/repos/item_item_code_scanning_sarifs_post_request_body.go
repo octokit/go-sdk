@@ -7,8 +7,6 @@ import (
 
 // ItemItemCodeScanningSarifsPostRequestBody 
 type ItemItemCodeScanningSarifsPostRequestBody struct {
-    // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-    additionalData map[string]any
     // The base directory used in the analysis, as it appears in the SARIF file.This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
     checkout_uri *string
     // The SHA of the commit to which the analysis you are uploading relates.
@@ -28,16 +26,11 @@ type ItemItemCodeScanningSarifsPostRequestBody struct {
 func NewItemItemCodeScanningSarifsPostRequestBody()(*ItemItemCodeScanningSarifsPostRequestBody) {
     m := &ItemItemCodeScanningSarifsPostRequestBody{
     }
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateItemItemCodeScanningSarifsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 func CreateItemItemCodeScanningSarifsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemCodeScanningSarifsPostRequestBody(), nil
-}
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemCodeScanningSarifsPostRequestBody) GetAdditionalData()(map[string]any) {
-    return m.additionalData
 }
 // GetCheckoutUri gets the checkout_uri property value. The base directory used in the analysis, as it appears in the SARIF file.This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
 func (m *ItemItemCodeScanningSarifsPostRequestBody) GetCheckoutUri()(*string) {
@@ -186,17 +179,7 @@ func (m *ItemItemCodeScanningSarifsPostRequestBody) Serialize(writer i878a80d233
             return err
         }
     }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemCodeScanningSarifsPostRequestBody) SetAdditionalData(value map[string]any)() {
-    m.additionalData = value
 }
 // SetCheckoutUri sets the checkout_uri property value. The base directory used in the analysis, as it appears in the SARIF file.This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
 func (m *ItemItemCodeScanningSarifsPostRequestBody) SetCheckoutUri(value *string)() {
@@ -228,7 +211,6 @@ func (m *ItemItemCodeScanningSarifsPostRequestBody) SetValidate(value *bool)() {
 }
 // ItemItemCodeScanningSarifsPostRequestBodyable 
 type ItemItemCodeScanningSarifsPostRequestBodyable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCheckoutUri()(*string)
     GetCommitSha()(*string)

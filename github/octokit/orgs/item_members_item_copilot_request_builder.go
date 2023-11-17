@@ -30,10 +30,10 @@ func NewItemMembersItemCopilotRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersItemCopilotRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot for Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
+// Get **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-assignment-details-for-a-user
+// [API method documentation]: https://docs.github.com/rest/copilot/copilot-business#get-copilot-business-seat-assignment-details-for-a-user
 func (m *ItemMembersItemCopilotRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersItemCopilotRequestBuilderGetRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +54,7 @@ func (m *ItemMembersItemCopilotRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable), nil
 }
-// ToGetRequestInformation **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot for Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
+// ToGetRequestInformation **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners and members with admin permissions can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
 func (m *ItemMembersItemCopilotRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersItemCopilotRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

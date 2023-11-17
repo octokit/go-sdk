@@ -273,6 +273,14 @@ func (m *WithOrgItemRequestBuilder) Memberships()(*ItemMembershipsRequestBuilder
 func (m *WithOrgItemRequestBuilder) Migrations()(*ItemMigrationsRequestBuilder) {
     return NewItemMigrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OrganizationFineGrainedPermissions the organizationFineGrainedPermissions property
+func (m *WithOrgItemRequestBuilder) OrganizationFineGrainedPermissions()(*ItemOrganizationFineGrainedPermissionsRequestBuilder) {
+    return NewItemOrganizationFineGrainedPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OrganizationRoles the organizationRoles property
+func (m *WithOrgItemRequestBuilder) OrganizationRoles()(*ItemOrganizationRolesRequestBuilder) {
+    return NewItemOrganizationRolesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Outside_collaborators the outside_collaborators property
 func (m *WithOrgItemRequestBuilder) Outside_collaborators()(*ItemOutside_collaboratorsRequestBuilder) {
     return NewItemOutside_collaboratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

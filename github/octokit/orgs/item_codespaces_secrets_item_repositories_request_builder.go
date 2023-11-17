@@ -111,7 +111,7 @@ func (m *ItemCodespacesSecretsItemRepositoriesRequestBuilder) GetAsRepositoriesG
     }
     return res.(ItemCodespacesSecretsItemRepositoriesGetResponseable), nil
 }
-// Put replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// Put replaces all repositories for an organization development environment secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#set-selected-repositories-for-an-organization-secret
@@ -145,7 +145,7 @@ func (m *ItemCodespacesSecretsItemRepositoriesRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
     return requestInfo, nil
 }
-// ToPutRequestInformation replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ToPutRequestInformation replaces all repositories for an organization development environment secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsItemRepositoriesRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemCodespacesSecretsItemRepositoriesPutRequestBodyable, requestConfiguration *ItemCodespacesSecretsItemRepositoriesRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

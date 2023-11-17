@@ -24,7 +24,7 @@ type CodeScanningAlertInstance struct {
     location CodeScanningAlertLocationable
     // The message property
     message CodeScanningAlertInstance_messageable
-    // The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+    // The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
     ref *string
     // State of a code scanning alert.
     state *CodeScanningAlertState
@@ -187,7 +187,7 @@ func (m *CodeScanningAlertInstance) GetLocation()(CodeScanningAlertLocationable)
 func (m *CodeScanningAlertInstance) GetMessage()(CodeScanningAlertInstance_messageable) {
     return m.message
 }
-// GetRef gets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// GetRef gets the ref property value. The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
 func (m *CodeScanningAlertInstance) GetRef()(*string) {
     return m.ref
 }
@@ -302,7 +302,7 @@ func (m *CodeScanningAlertInstance) SetLocation(value CodeScanningAlertLocationa
 func (m *CodeScanningAlertInstance) SetMessage(value CodeScanningAlertInstance_messageable)() {
     m.message = value
 }
-// SetRef sets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// SetRef sets the ref property value. The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
 func (m *CodeScanningAlertInstance) SetRef(value *string)() {
     m.ref = value
 }

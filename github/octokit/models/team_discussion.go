@@ -33,7 +33,7 @@ type TeamDiscussion struct {
     number *int32
     // Whether or not this discussion should be pinned for easy retrieval.
     pinned *bool
-    // Whether or not this discussion should be restricted to team members and organization administrators.
+    // Whether or not this discussion should be restricted to team members and organization owners.
     private *bool
     // The reactions property
     reactions ReactionRollupable
@@ -294,7 +294,7 @@ func (m *TeamDiscussion) GetNumber()(*int32) {
 func (m *TeamDiscussion) GetPinned()(*bool) {
     return m.pinned
 }
-// GetPrivate gets the private property value. Whether or not this discussion should be restricted to team members and organization administrators.
+// GetPrivate gets the private property value. Whether or not this discussion should be restricted to team members and organization owners.
 func (m *TeamDiscussion) GetPrivate()(*bool) {
     return m.private
 }
@@ -488,7 +488,7 @@ func (m *TeamDiscussion) SetNumber(value *int32)() {
 func (m *TeamDiscussion) SetPinned(value *bool)() {
     m.pinned = value
 }
-// SetPrivate sets the private property value. Whether or not this discussion should be restricted to team members and organization administrators.
+// SetPrivate sets the private property value. Whether or not this discussion should be restricted to team members and organization owners.
 func (m *TeamDiscussion) SetPrivate(value *bool)() {
     m.private = value
 }

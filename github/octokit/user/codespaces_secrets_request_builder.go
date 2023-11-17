@@ -9,7 +9,7 @@ import (
 type CodespacesSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CodespacesSecretsRequestBuilderGetQueryParameters lists all secrets available for a user's Codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+// CodespacesSecretsRequestBuilderGetQueryParameters lists all development environment secrets available for a user's codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
 type CodespacesSecretsRequestBuilderGetQueryParameters struct {
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
@@ -49,7 +49,7 @@ func NewCodespacesSecretsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewCodespacesSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all secrets available for a user's Codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+// Get lists all development environment secrets available for a user's codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
 // Deprecated: This method is obsolete. Use GetAsSecretsGetResponse instead.
 // [API method documentation]
 // 
@@ -68,7 +68,7 @@ func (m *CodespacesSecretsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(CodespacesSecretsResponseable), nil
 }
-// GetAsSecretsGetResponse lists all secrets available for a user's Codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+// GetAsSecretsGetResponse lists all development environment secrets available for a user's codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/secrets#list-secrets-for-the-authenticated-user
@@ -90,7 +90,7 @@ func (m *CodespacesSecretsRequestBuilder) GetAsSecretsGetResponse(ctx context.Co
 func (m *CodespacesSecretsRequestBuilder) PublicKey()(*CodespacesSecretsPublicKeyRequestBuilder) {
     return NewCodespacesSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists all secrets available for a user's Codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+// ToGetRequestInformation lists all development environment secrets available for a user's codespaces without revealing theirencrypted values.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
 func (m *CodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CodespacesSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {

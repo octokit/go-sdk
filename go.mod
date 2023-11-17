@@ -1,6 +1,6 @@
 module github.com/octokit/go-sdk
 
-go 1.21.0
+go 1.21.4
 
 require (
 	github.com/microsoft/kiota-abstractions-go v1.4.0
