@@ -105,7 +105,7 @@ func (m *ItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.Only organization owners (or users with the proper permissions granted by them) can update these properties
@@ -118,7 +118,7 @@ func (m *ItemPropertiesValuesRequestBuilder) ToPatchRequestInformation(ctx conte
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json, application/json")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

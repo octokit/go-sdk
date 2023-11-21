@@ -140,7 +140,7 @@ func (m *ItemItemSecurityAdvisoriesRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a new repository security advisory.You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.In order to create a draft repository security advisory, you must be a security manager or administrator of that repository.
@@ -153,7 +153,7 @@ func (m *ItemItemSecurityAdvisoriesRequestBuilder) ToPostRequestInformation(ctx 
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
