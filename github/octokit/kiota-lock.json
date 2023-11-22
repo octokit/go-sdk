@@ -2,7 +2,7 @@
   "descriptionHash": "E685E9EDE7DA3604D00809BFEB3E1F25E7647029BCA527A50F7E21438E7AC1B2CF702369E7112041512476291B7B5389DC2F0F975A507ECDB0BC3C43DFDDFA8A",
   "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.8.1",
+  "kiotaVersion": "1.8.2",
   "clientClassName": "ApiClient",
   "clientNamespaceName": "octokit",
   "language": "Go",
@@ -21,7 +21,7 @@
     "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
   ],
   "structuredMimeTypes": [
-    "application/json;q=1",
+    "application/json",
     "text/plain;q=0.9",
     "application/x-www-form-urlencoded;q=0.2",
     "multipart/form-data;q=0.1"

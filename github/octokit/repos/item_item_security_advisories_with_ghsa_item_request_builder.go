@@ -96,7 +96,7 @@ func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToGetRequestInfo
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.In order to update any security advisory, you must be a security manager or administrator of that repository,or a collaborator on the repository security advisory.
@@ -109,7 +109,7 @@ func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToPatchRequestIn
     requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
     requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
     requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
-    requestInfo.Headers.TryAdd("Accept", "application/json;q=1")
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err
