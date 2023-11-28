@@ -9,7 +9,7 @@ import (
 
 // TODO(kfcampbell): should these constants be centralized somewhere?
 const AuthorizationKey = "Authorization"
-const AuthType = "token"
+const AuthType = "bearer"
 const UserAgentKey = "User-Agent"
 
 // TODO(kfcampbell): get the version and binary name from build settings rather than hard-coding
