@@ -43,15 +43,17 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	}
 }
 
-func TestDoesItReallyWork(t *testing.T) {
+// TODO(kfcampbell): make a more permanent decision about how to structure
+// and separately run unit vs. integration tests
+func TestHappyPathIntegration(t *testing.T) {
 	token := os.Getenv("GITHUB_TOKEN")
 	if token == "" {
-		t.Errorf("GITHUB_TOKEN must exist")
+		t.Skip("in order to run integration tests, ensure a valid GITHUB_TOKEN exists in the environment")
 	}
 
 	provider, err := authentication.NewTokenProvider(token)
 	if err != nil {
-		t.Error("blah blah blah")
+		t.Error("instantiating TokenProvider should not error")
 	}
 
 	adapter, err := http.NewNetHttpRequestAdapter(provider)
