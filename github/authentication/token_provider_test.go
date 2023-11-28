@@ -15,9 +15,6 @@ import (
 	"github.com/octokit/go-sdk/github/octokit/user"
 )
 
-// TODO(kfcampbell): additional test cases
-// - error on instantiation when an empty token is given
-
 func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	token := "help i'm trapped in a Go binary"
 	provider, err := authentication.NewTokenProvider(token)
@@ -39,6 +36,13 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	receivedToken := reqInfo.Headers.Get(authentication.HeaderKey)[0]
 	if !strings.Contains(receivedToken, token) {
 		t.Errorf("received token doesn't match up with given token")
+	}
+}
+
+func TestNewTokenProviderErrorsWithBlankToken(t *testing.T) {
+	_, err := authentication.NewTokenProvider("")
+	if err == nil {
+		t.Errorf("NewTokenProvider should error when a blank token is not given")
 	}
 }
 
