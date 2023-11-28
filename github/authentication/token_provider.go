@@ -8,11 +8,18 @@ import (
 )
 
 // TODO(kfcampbell): should these constants be centralized somewhere?
-const HeaderKey = "Authorization"
+const AuthorizationKey = "Authorization"
 const AuthType = "token"
+const UserAgentKey = "User-Agent"
 
-// TODO(kfcampbell): implement user-agent string setting, API versioning
-// TODO(kfcampbell): do we want to implement some sort of request handler functionality here?
+// TODO(kfcampbell): get the version and binary name from build settings rather than hard-coding
+const UserAgentValue = "go-sdk@v0.0.0"
+
+const APIVersionKey = "X-GitHub-Api-Version"
+
+// TODO(kfcampbell): get the version from the generated code somehow
+const APIVersionValue = "2022-11-28"
+
 type TokenProvider struct {
 	token string
 }
@@ -35,8 +42,18 @@ func (t *TokenProvider) AuthenticateRequest(context context.Context, request *ab
 		request.Headers = abs.NewRequestHeaders()
 	}
 
-	if !request.Headers.ContainsKey(HeaderKey) {
-		request.Headers.Add(HeaderKey, fmt.Sprintf("%v %v", AuthType, t.token))
+	// TODO(kfcampbell): do we want to implement some sort of request handler functionality here?
+	// perhaps a functional pattern would be better than this chained if approach
+	if !request.Headers.ContainsKey(AuthorizationKey) {
+		request.Headers.Add(AuthorizationKey, fmt.Sprintf("%v %v", AuthType, t.token))
+	}
+
+	if !request.Headers.ContainsKey(UserAgentKey) {
+		request.Headers.Add(UserAgentKey, UserAgentValue)
+	}
+
+	if !request.Headers.ContainsKey(APIVersionKey) {
+		request.Headers.Add(APIVersionKey, APIVersionValue)
 	}
 
 	return nil

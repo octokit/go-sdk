@@ -33,7 +33,7 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	if len(reqInfo.Headers.Get("Authorization")) != 1 {
 		t.Errorf("exactly one authorization header should be set")
 	}
-	receivedToken := reqInfo.Headers.Get(authentication.HeaderKey)[0]
+	receivedToken := reqInfo.Headers.Get(authentication.AuthorizationKey)[0]
 	if !strings.Contains(receivedToken, token) {
 		t.Errorf("received token doesn't match up with given token")
 	}
@@ -65,7 +65,7 @@ func TestTokenSetInRequestIsNotOverwritten(t *testing.T) {
 	if err != nil {
 		t.Errorf("AuthenticateRequest should not error")
 	}
-	reqInfoToken := reqInfo.Headers.Get(authentication.HeaderKey)[0]
+	reqInfoToken := reqInfo.Headers.Get(authentication.AuthorizationKey)[0]
 
 	if !strings.Contains(reqInfoToken, providerToken) {
 		t.Errorf("received token doesn't match up with given token")
