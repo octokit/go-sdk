@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 	"testing"
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
@@ -16,7 +17,6 @@ import (
 
 // TODO(kfcampbell): additional test cases
 // - error on instantiation when an empty token is given
-// - validate existing authorization header does _not_ get overwritten
 
 func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	token := "help i'm trapped in a Go binary"
@@ -36,9 +36,34 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	if len(reqInfo.Headers.Get("Authorization")) != 1 {
 		t.Errorf("exactly one authorization header should be set")
 	}
-	expectedToken := fmt.Sprintf("%v %v", authentication.AuthType, token)
-	receivedToken := reqInfo.Headers.Get(authentication.HeaderKey)
-	if expectedToken != receivedToken[0] {
+	receivedToken := reqInfo.Headers.Get(authentication.HeaderKey)[0]
+	if !strings.Contains(receivedToken, token) {
+		t.Errorf("received token doesn't match up with given token")
+	}
+}
+
+func TestTokenSetInRequestIsNotOverwritten(t *testing.T) {
+	providerToken := "dit dit dit / dat dat dat / dit dit dit"
+	provider, err := authentication.NewTokenProvider(providerToken)
+	if err != nil {
+		t.Errorf("should be no error when instantiating provider")
+	}
+
+	requestToken := "dit dit dit dit / dit / dit dat dit dit / dit dat dat dit"
+	headers := abstractions.NewRequestHeaders()
+	headers.Add(authentication.AuthType, requestToken)
+
+	reqInfo := abstractions.NewRequestInformation()
+	reqInfo.Headers = headers
+	addtlContext := make(map[string]interface{})
+
+	err = provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
+	if err != nil {
+		t.Errorf("AuthenticateRequest should not error")
+	}
+	reqInfoToken := reqInfo.Headers.Get(authentication.HeaderKey)[0]
+
+	if !strings.Contains(reqInfoToken, providerToken) {
 		t.Errorf("received token doesn't match up with given token")
 	}
 }

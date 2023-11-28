@@ -32,10 +32,10 @@ func NewTokenProvider(apiToken string) (*TokenProvider, error) {
 
 func (t *TokenProvider) AuthenticateRequest(context context.Context, request *abs.RequestInformation, additionalAuthenticationContext map[string]interface{}) error {
 	if request.Headers == nil {
-		request.Headers = &abs.RequestHeaders{}
+		request.Headers = abs.NewRequestHeaders()
 	}
 
-	if len(request.Headers.Get(HeaderKey)) == 0 {
+	if !request.Headers.ContainsKey(HeaderKey) {
 		request.Headers.Add(HeaderKey, fmt.Sprintf("%v %v", AuthType, t.token))
 	}
 
