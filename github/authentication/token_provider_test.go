@@ -36,7 +36,7 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	if len(reqInfo.Headers.Get("Authorization")) != 1 {
 		t.Errorf("exactly one authorization header should be set")
 	}
-	expectedToken := fmt.Sprintf("token %v", token)
+	expectedToken := fmt.Sprintf("%v %v", authentication.AuthType, token)
 	receivedToken := reqInfo.Headers.Get(authentication.HeaderKey)
 	if expectedToken != receivedToken[0] {
 		t.Errorf("received token doesn't match up with given token")

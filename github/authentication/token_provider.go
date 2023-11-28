@@ -9,6 +9,7 @@ import (
 
 // TODO(kfcampbell): should these constants be centralized somewhere?
 const HeaderKey = "Authorization"
+const AuthType = "token"
 
 // TODO(kfcampbell): implement user-agent string setting, API versioning
 // TODO(kfcampbell): do we want to implement some sort of request handler functionality here?
@@ -35,7 +36,7 @@ func (t *TokenProvider) AuthenticateRequest(context context.Context, request *ab
 	}
 
 	if len(request.Headers.Get(HeaderKey)) == 0 {
-		request.Headers.Add(HeaderKey, fmt.Sprintf("token %v", t.token))
+		request.Headers.Add(HeaderKey, fmt.Sprintf("%v %v", AuthType, t.token))
 	}
 
 	return nil
