@@ -2,7 +2,6 @@ package authentication
 
 import abs "github.com/microsoft/kiota-abstractions-go"
 
-// TODO(kfcampbell): should these constants be centralized somewhere?
 const AuthorizationKey = "Authorization"
 const AuthType = "bearer"
 const UserAgentKey = "User-Agent"
@@ -20,7 +19,7 @@ type Request struct {
 	*abs.RequestInformation
 }
 
-// withUserAgent allows the caller to set the User-Agent string for each request
+// WithUserAgent allows the caller to set the User-Agent string for each request
 func (r *Request) WithUserAgent(userAgent string) {
 	if r.Headers.ContainsKey(UserAgentKey) {
 		r.Headers.Remove(UserAgentKey)
@@ -28,7 +27,7 @@ func (r *Request) WithUserAgent(userAgent string) {
 	r.Headers.Add(UserAgentKey, userAgent)
 }
 
-// withDefaultUserAgent sets the default User-Agent string for each request
+// WithDefaultUserAgent sets the default User-Agent string for each request
 func (r *Request) WithDefaultUserAgent() {
 	r.WithUserAgent(UserAgentValue)
 }

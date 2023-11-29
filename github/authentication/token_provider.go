@@ -51,8 +51,8 @@ func (t *TokenProvider) AuthenticateRequest(context context.Context, request *ab
 		request.Headers = abs.NewRequestHeaders()
 	}
 
-	// TODO(kfcampbell): do we want to implement some sort of request handler functionality here?
-	// perhaps a functional pattern would be better than this chained if approach
+	// TODO(kfcampbell): cut this if chain over to new TokenProviderOption pattern
+	// will need to implement functionality in request.go and here for the below options
 	if !request.Headers.ContainsKey(AuthorizationKey) {
 		request.Headers.Add(AuthorizationKey, fmt.Sprintf("%v %v", AuthType, t.token))
 	}
