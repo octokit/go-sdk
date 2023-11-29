@@ -31,3 +31,17 @@ func (r *Request) WithUserAgent(userAgent string) {
 func (r *Request) WithDefaultUserAgent() {
 	r.WithUserAgent(UserAgentValue)
 }
+
+// WithAPIVersion sets the API version header for each request
+func (r *Request) WithAPIVersion(version string) {
+	if r.Headers.ContainsKey(APIVersionKey) {
+		r.Headers.Remove(APIVersionKey)
+	}
+	r.Headers.Add(APIVersionKey, version)
+}
+
+// WithDefaultAPIVersion sets the API version header to the default (the version used
+// to generate the code) for each request
+func (r *Request) WithDefaultAPIVersion() {
+	r.WithAPIVersion(APIVersionValue)
+}
