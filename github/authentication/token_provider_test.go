@@ -17,12 +17,12 @@ import (
 
 func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	token := "help i'm trapped in a Go binary"
-	provider, err := authentication.NewTokenProvider(token)
+	provider, err := authentication.NewTokenProvider(authentication.WithAuthorizationToken(token))
 	if err != nil {
 		t.Errorf("should be no error when instantiating provider")
 	}
 
-	reqInfo := &abstractions.RequestInformation{}
+	reqInfo := abstractions.NewRequestInformation()
 	addtlContext := make(map[string]interface{})
 
 	err = provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
@@ -30,25 +30,114 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 		t.Errorf("there should be no error when calling AuthenticateRequest")
 	}
 
-	if len(reqInfo.Headers.Get("Authorization")) != 1 {
-		t.Errorf("exactly one authorization header should be set")
+	if len(reqInfo.Headers.Get(authentication.AuthorizationKey)) != 1 {
+		t.Errorf("there should be exactly one authorization key")
 	}
+
 	receivedToken := reqInfo.Headers.Get(authentication.AuthorizationKey)[0]
 	if !strings.Contains(receivedToken, token) {
 		t.Errorf("received token doesn't match up with given token")
 	}
 }
 
-func TestNewTokenProviderErrorsWithBlankToken(t *testing.T) {
-	_, err := authentication.NewTokenProvider("")
-	if err == nil {
-		t.Errorf("NewTokenProvider should error when a blank token is not given")
+// TODO(kfcampbell): this code could be refactored to use table-based tests
+func TestDefaultRequestOptions(t *testing.T) {
+	token := "this is not the token you're looking for"
+	provider, err := authentication.NewTokenProvider(authentication.WithAuthorizationToken(token))
+	if err != nil {
+		t.Errorf("should be no error when instantiating provider")
+	}
+	reqInfo := abstractions.NewRequestInformation()
+	addtlContext := make(map[string]interface{})
+
+	err = provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
+	if err != nil {
+		t.Errorf("there should be no error when calling AuthenticateRequest")
+	}
+
+	apiVersions := reqInfo.Headers.Get(authentication.APIVersionKey)
+	if len(apiVersions) != 1 {
+		t.Errorf("exactly one API version should be present in the request")
+	}
+
+	if apiVersions[0] != authentication.APIVersionValue {
+		t.Errorf("default API version is set incorrectly")
+	}
+
+	userAgents := reqInfo.Headers.Get(authentication.UserAgentKey)
+	if len(userAgents) != 1 {
+		t.Errorf("exactly one user agent string should be present in the request")
+	}
+
+	if userAgents[0] != authentication.UserAgentValue {
+		t.Errorf("default user agent string is set incorrectly")
+	}
+}
+
+func TestOverwritingDefaultRequestOptions(t *testing.T) {
+	token := "i'm totally a real token"
+	apiVersion := "i'm totally a real API version"
+	userAgent := "i'm totally a real user agent"
+	provider, err := authentication.NewTokenProvider(
+		authentication.WithAuthorizationToken(token),
+		authentication.WithAPIVersion(apiVersion),
+		authentication.WithUserAgent(userAgent))
+	if err != nil {
+		t.Errorf("should be no error when instantiating provider")
+	}
+
+	reqInfo := abstractions.NewRequestInformation()
+	addtlContext := make(map[string]interface{})
+
+	err = provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
+	if err != nil {
+		t.Errorf("should be no error when calling authenticated request")
+	}
+
+	apiVersions := reqInfo.Headers.Get(authentication.APIVersionKey)
+	if len(apiVersions) != 1 {
+		t.Errorf("exactly one API version should be present in the request")
+	}
+
+	if apiVersions[0] != apiVersion {
+		t.Errorf("default API version is set incorrectly")
+	}
+
+	userAgents := reqInfo.Headers.Get(authentication.UserAgentKey)
+	if len(userAgents) != 1 {
+		t.Errorf("exactly one user agent string should be present in the request")
+	}
+
+	if userAgents[0] != userAgent {
+		t.Errorf("default user agent string is set incorrectly")
+	}
+
+}
+
+func TestAnonymousAuthIsAllowed(t *testing.T) {
+	provider, err := authentication.NewTokenProvider()
+	if err != nil {
+		t.Errorf("NewTokenProvider should not error when a blank token is not given")
+	}
+	reqInfo := abstractions.NewRequestInformation()
+	addtlContext := make(map[string]interface{})
+
+	err = provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
+	if err != nil {
+		t.Errorf("should be no error when calling authenticated request")
+	}
+
+	authorizations := reqInfo.Headers.Get(authentication.AuthorizationKey)
+	if len(authorizations) != 0 {
+		t.Errorf("no authorization header should be present in the request")
 	}
 }
 
 func TestTokenSetInRequestIsNotOverwritten(t *testing.T) {
 	providerToken := "dit dit dit / dat dat dat / dit dit dit"
-	provider, err := authentication.NewTokenProvider(providerToken)
+	provider, err := authentication.NewTokenProvider(
+		authentication.WithAuthorizationToken(providerToken),
+	)
 	if err != nil {
 		t.Errorf("should be no error when instantiating provider")
 	}
@@ -80,7 +169,9 @@ func TestHappyPathIntegration(t *testing.T) {
 		t.Skip("in order to run integration tests, ensure a valid GITHUB_TOKEN exists in the environment")
 	}
 
-	provider, err := authentication.NewTokenProvider(token)
+	provider, err := authentication.NewTokenProvider(
+		authentication.WithAuthorizationToken(token),
+	)
 	if err != nil {
 		t.Error("instantiating TokenProvider should not error")
 	}

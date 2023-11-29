@@ -1,6 +1,10 @@
 package authentication
 
-import abs "github.com/microsoft/kiota-abstractions-go"
+import (
+	"fmt"
+
+	abs "github.com/microsoft/kiota-abstractions-go"
+)
 
 const AuthorizationKey = "Authorization"
 const AuthType = "bearer"
@@ -17,6 +21,15 @@ const APIVersionValue = "2022-11-28"
 // Request provides a wrapper around Kiota's abs.RequestInformation type
 type Request struct {
 	*abs.RequestInformation
+}
+
+// WithAuthorization sets the Authorization header to the given token,
+// prepended by the AuthType
+func (r *Request) WithAuthorization(token string) {
+	if r.Headers.ContainsKey(AuthorizationKey) {
+		r.Headers.Remove(AuthorizationKey)
+	}
+	r.Headers.Add(AuthorizationKey, fmt.Sprintf("%v %v", AuthType, token))
 }
 
 // WithUserAgent allows the caller to set the User-Agent string for each request

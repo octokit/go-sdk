@@ -2,17 +2,22 @@ package authentication
 
 import (
 	"context"
-	"fmt"
 
 	abs "github.com/microsoft/kiota-abstractions-go"
 )
 
 type TokenProvider struct {
-	token   string
 	options []TokenProviderOption
 }
 
 type TokenProviderOption func(*TokenProvider, *Request)
+
+// WithAuthorizationToken sets the AuthorizationToken for each request to the given token.
+func WithAuthorizationToken(token string) TokenProviderOption {
+	return func(t *TokenProvider, r *Request) {
+		r.WithAuthorization(token)
+	}
+}
 
 // WithDefaultUserAgent sets the User-Agent string sent for requests to the default
 // for this SDK.
@@ -46,14 +51,8 @@ func WithAPIVersion(version string) TokenProviderOption {
 // TODO(kfcampbell): implement new constructor with allowedHosts
 
 // NewTokenProvider creates an instance of TokenProvider with the specified token and options.
-// An error is returned when the token present is an empty string.
-func NewTokenProvider(apiToken string, options ...TokenProviderOption) (*TokenProvider, error) {
-	if apiToken == "" {
-		return nil, fmt.Errorf("API token must not be an empty string")
-	}
-
+func NewTokenProvider(options ...TokenProviderOption) (*TokenProvider, error) {
 	provider := &TokenProvider{
-		token:   apiToken,
 		options: options,
 	}
 
