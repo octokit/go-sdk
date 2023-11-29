@@ -7,37 +7,46 @@ import (
 	abs "github.com/microsoft/kiota-abstractions-go"
 )
 
-// TODO(kfcampbell): should these constants be centralized somewhere?
-const AuthorizationKey = "Authorization"
-const AuthType = "bearer"
-const UserAgentKey = "User-Agent"
-
-// TODO(kfcampbell): get the version and binary name from build settings rather than hard-coding
-const UserAgentValue = "go-sdk@v0.0.0"
-
-const APIVersionKey = "X-GitHub-Api-Version"
-
-// TODO(kfcampbell): get the version from the generated code somehow
-const APIVersionValue = "2022-11-28"
-
 type TokenProvider struct {
-	token string
+	token   string
+	options []TokenProviderOption
+}
+
+type TokenProviderOption func(*TokenProvider, *Request)
+
+func WithDefaultUserAgent() TokenProviderOption {
+	return func(t *TokenProvider, r *Request) {
+		r.WithDefaultUserAgent()
+	}
+}
+
+func WithUserAgent(userAgent string) TokenProviderOption {
+	return func(t *TokenProvider, r *Request) {
+		r.WithUserAgent(userAgent)
+	}
 }
 
 // TODO(kfcampbell): implement new constructor with allowedHosts
-func NewTokenProvider(apiToken string) (*TokenProvider, error) {
+func NewTokenProvider(apiToken string, options ...TokenProviderOption) (*TokenProvider, error) {
 	if apiToken == "" {
 		return nil, fmt.Errorf("API token must not be an empty string")
 	}
 
 	provider := &TokenProvider{
-		token: apiToken,
+		token:   apiToken,
+		options: options,
 	}
 
 	return provider, nil
 }
 
 func (t *TokenProvider) AuthenticateRequest(context context.Context, request *abs.RequestInformation, additionalAuthenticationContext map[string]interface{}) error {
+	reqWrapper := &Request{RequestInformation: request}
+
+	for _, option := range t.options {
+		option(t, reqWrapper)
+	}
+
 	if request.Headers == nil {
 		request.Headers = abs.NewRequestHeaders()
 	}
