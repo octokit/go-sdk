@@ -43,12 +43,8 @@ func NewTokenProvider(apiToken string, options ...TokenProviderOption) (*TokenPr
 func (t *TokenProvider) AuthenticateRequest(context context.Context, request *abs.RequestInformation, additionalAuthenticationContext map[string]interface{}) error {
 	reqWrapper := &Request{RequestInformation: request}
 
-	for _, option := range t.options {
-		option(t, reqWrapper)
-	}
-
-	if request.Headers == nil {
-		request.Headers = abs.NewRequestHeaders()
+	if reqWrapper.Headers == nil {
+		reqWrapper.Headers = abs.NewRequestHeaders()
 	}
 
 	// TODO(kfcampbell): cut this if chain over to new TokenProviderOption pattern
@@ -63,6 +59,11 @@ func (t *TokenProvider) AuthenticateRequest(context context.Context, request *ab
 
 	if !request.Headers.ContainsKey(APIVersionKey) {
 		request.Headers.Add(APIVersionKey, APIVersionValue)
+	}
+
+	// apply user options after defaults
+	for _, option := range t.options {
+		option(t, reqWrapper)
 	}
 
 	return nil
