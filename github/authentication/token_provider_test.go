@@ -11,6 +11,7 @@ import (
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	http "github.com/microsoft/kiota-http-go"
 	"github.com/octokit/go-sdk/github/authentication"
+	"github.com/octokit/go-sdk/github/headers"
 	"github.com/octokit/go-sdk/github/octokit"
 	"github.com/octokit/go-sdk/github/octokit/user"
 )
@@ -27,11 +28,11 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 		t.Errorf("there should be no error when calling AuthenticateRequest")
 	}
 
-	if len(reqInfo.Headers.Get(authentication.AuthorizationKey)) != 1 {
+	if len(reqInfo.Headers.Get(headers.AuthorizationKey)) != 1 {
 		t.Errorf("there should be exactly one authorization key")
 	}
 
-	receivedToken := reqInfo.Headers.Get(authentication.AuthorizationKey)[0]
+	receivedToken := reqInfo.Headers.Get(headers.AuthorizationKey)[0]
 	if !strings.Contains(receivedToken, token) {
 		t.Errorf("received token doesn't match up with given token")
 	}
@@ -49,21 +50,21 @@ func TestDefaultRequestOptions(t *testing.T) {
 		t.Errorf("there should be no error when calling AuthenticateRequest")
 	}
 
-	apiVersions := reqInfo.Headers.Get(authentication.APIVersionKey)
+	apiVersions := reqInfo.Headers.Get(headers.APIVersionKey)
 	if len(apiVersions) != 1 {
 		t.Errorf("exactly one API version should be present in the request")
 	}
 
-	if apiVersions[0] != authentication.APIVersionValue {
+	if apiVersions[0] != headers.APIVersionValue {
 		t.Errorf("default API version is set incorrectly")
 	}
 
-	userAgents := reqInfo.Headers.Get(authentication.UserAgentKey)
+	userAgents := reqInfo.Headers.Get(headers.UserAgentKey)
 	if len(userAgents) != 1 {
 		t.Errorf("exactly one user agent string should be present in the request")
 	}
 
-	if userAgents[0] != authentication.UserAgentValue {
+	if userAgents[0] != headers.UserAgentValue {
 		t.Errorf("default user agent string is set incorrectly")
 	}
 }
@@ -85,7 +86,7 @@ func TestOverwritingDefaultRequestOptions(t *testing.T) {
 		t.Errorf("should be no error when calling authenticated request")
 	}
 
-	apiVersions := reqInfo.Headers.Get(authentication.APIVersionKey)
+	apiVersions := reqInfo.Headers.Get(headers.APIVersionKey)
 	if len(apiVersions) != 1 {
 		t.Errorf("exactly one API version should be present in the request")
 	}
@@ -94,7 +95,7 @@ func TestOverwritingDefaultRequestOptions(t *testing.T) {
 		t.Errorf("default API version is set incorrectly")
 	}
 
-	userAgents := reqInfo.Headers.Get(authentication.UserAgentKey)
+	userAgents := reqInfo.Headers.Get(headers.UserAgentKey)
 	if len(userAgents) != 1 {
 		t.Errorf("exactly one user agent string should be present in the request")
 	}
@@ -115,7 +116,7 @@ func TestAnonymousAuthIsAllowed(t *testing.T) {
 		t.Errorf("should be no error when calling authenticated request")
 	}
 
-	authorizations := reqInfo.Headers.Get(authentication.AuthorizationKey)
+	authorizations := reqInfo.Headers.Get(headers.AuthorizationKey)
 	if len(authorizations) != 0 {
 		t.Errorf("no authorization header should be present in the request")
 	}
@@ -128,18 +129,18 @@ func TestTokenSetInRequestIsNotOverwritten(t *testing.T) {
 	)
 
 	requestToken := "dit dit dit dit / dit / dit dat dit dit / dit dat dat dit"
-	headers := abstractions.NewRequestHeaders()
-	headers.Add(authentication.AuthType, requestToken)
+	requestHeaders := abstractions.NewRequestHeaders()
+	requestHeaders.Add(headers.AuthType, requestToken)
 
 	reqInfo := abstractions.NewRequestInformation()
-	reqInfo.Headers = headers
+	reqInfo.Headers = requestHeaders
 	addtlContext := make(map[string]interface{})
 
 	err := provider.AuthenticateRequest(context.Background(), reqInfo, addtlContext)
 	if err != nil {
 		t.Errorf("AuthenticateRequest should not error")
 	}
-	reqInfoToken := reqInfo.Headers.Get(authentication.AuthorizationKey)[0]
+	reqInfoToken := reqInfo.Headers.Get(headers.AuthorizationKey)[0]
 
 	if !strings.Contains(reqInfoToken, providerToken) {
 		t.Errorf("received token doesn't match up with given token")
