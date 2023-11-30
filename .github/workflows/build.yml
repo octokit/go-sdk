@@ -23,3 +23,6 @@ jobs:
 
       - name: Build the SDK
         run: go build ./...
+
+      - name: Run unit tests
+        run: go test ./...
