@@ -51,12 +51,12 @@ func WithAPIVersion(version string) TokenProviderOption {
 // TODO(kfcampbell): implement new constructor with allowedHosts
 
 // NewTokenProvider creates an instance of TokenProvider with the specified token and options.
-func NewTokenProvider(options ...TokenProviderOption) (*TokenProvider, error) {
+func NewTokenProvider(options ...TokenProviderOption) *TokenProvider {
 	provider := &TokenProvider{
 		options: options,
 	}
 
-	return provider, nil
+	return provider
 }
 
 var defaultHandlers = []TokenProviderOption{WithDefaultUserAgent(), WithDefaultAPIVersion()}
