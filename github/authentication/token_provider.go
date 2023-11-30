@@ -59,10 +59,12 @@ func NewTokenProvider(options ...TokenProviderOption) *TokenProvider {
 	return provider
 }
 
+// defaultHandlers contains our "sensible defaults" for TokenProvider initialization
 var defaultHandlers = []TokenProviderOption{WithDefaultUserAgent(), WithDefaultAPIVersion()}
 
 // AuthenticateRequest applies the default options for each request, then the user's options
-// if present in the TokenProvider.
+// (if present in the TokenProvider). User options are guaranteed to be run in the order they
+// were input.
 func (t *TokenProvider) AuthenticateRequest(context context.Context, request *abs.RequestInformation, additionalAuthenticationContext map[string]interface{}) error {
 	reqWrapper := &Request{RequestInformation: request}
 
