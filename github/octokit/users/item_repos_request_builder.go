@@ -11,7 +11,7 @@ import (
 type ItemReposRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemReposRequestBuilderGetQueryParameters lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.
+// ItemReposRequestBuilderGetQueryParameters lists public repositories for the specified user.
 type ItemReposRequestBuilderGetQueryParameters struct {
     // The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
@@ -55,7 +55,7 @@ func NewItemReposRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     urlParams["request-raw-url"] = rawUrl
     return NewItemReposRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.
+// Get lists public repositories for the specified user.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/repos#list-repositories-for-a-user
@@ -76,7 +76,7 @@ func (m *ItemReposRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return val, nil
 }
-// ToGetRequestInformation lists public repositories for the specified user. Note: For GitHub AE, this endpoint will list internal repositories for the specified user.
+// ToGetRequestInformation lists public repositories for the specified user.
 func (m *ItemReposRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemReposRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
     if requestConfiguration != nil {
