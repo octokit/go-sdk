@@ -163,7 +163,7 @@ type FullRepository struct {
     releases_url *string
     // The security_and_analysis property
     security_and_analysis SecurityAndAnalysisable
-    // The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+    // The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
     size *int32
     // A repository on GitHub.
     source Repositoryable
@@ -1568,7 +1568,7 @@ func (m *FullRepository) GetReleasesUrl()(*string) {
 func (m *FullRepository) GetSecurityAndAnalysis()(SecurityAndAnalysisable) {
     return m.security_and_analysis
 }
-// GetSize gets the size property value. The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+// GetSize gets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
 func (m *FullRepository) GetSize()(*int32) {
     return m.size
 }
@@ -2606,7 +2606,7 @@ func (m *FullRepository) SetReleasesUrl(value *string)() {
 func (m *FullRepository) SetSecurityAndAnalysis(value SecurityAndAnalysisable)() {
     m.security_and_analysis = value
 }
-// SetSize sets the size property value. The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+// SetSize sets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
 func (m *FullRepository) SetSize(value *int32)() {
     m.size = value
 }

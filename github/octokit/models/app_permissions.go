@@ -30,9 +30,13 @@ type AppPermissions struct {
     organization_administration *AppPermissions_organization_administration
     // The level of permission to grant the access token to view and manage announcement banners for an organization.
     organization_announcement_banners *AppPermissions_organization_announcement_banners
+    // The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+    organization_copilot_seat_management *AppPermissions_organization_copilot_seat_management
+    // The level of permission to grant the access token for custom organization roles management.
+    organization_custom_org_roles *AppPermissions_organization_custom_org_roles
     // The level of permission to grant the access token for custom property management.
     organization_custom_properties *AppPermissions_organization_custom_properties
-    // The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+    // The level of permission to grant the access token for custom repository roles management.
     organization_custom_roles *AppPermissions_organization_custom_roles
     // The level of permission to grant the access token to manage the post-receive hooks for an organization.
     organization_hooks *AppPermissions_organization_hooks
@@ -58,6 +62,8 @@ type AppPermissions struct {
     pages *AppPermissions_pages
     // The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
     pull_requests *AppPermissions_pull_requests
+    // The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+    repository_custom_properties *AppPermissions_repository_custom_properties
     // The level of permission to grant the access token to manage the post-receive hooks for a repository.
     repository_hooks *AppPermissions_repository_hooks
     // The level of permission to grant the access token to manage repository projects, columns, and cards.
@@ -231,6 +237,26 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["organization_copilot_seat_management"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_organization_copilot_seat_management)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizationCopilotSeatManagement(val.(*AppPermissions_organization_copilot_seat_management))
+        }
+        return nil
+    }
+    res["organization_custom_org_roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_organization_custom_org_roles)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizationCustomOrgRoles(val.(*AppPermissions_organization_custom_org_roles))
+        }
+        return nil
+    }
     res["organization_custom_properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_organization_custom_properties)
         if err != nil {
@@ -371,6 +397,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["repository_custom_properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_repository_custom_properties)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRepositoryCustomProperties(val.(*AppPermissions_repository_custom_properties))
+        }
+        return nil
+    }
     res["repository_hooks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_repository_hooks)
         if err != nil {
@@ -493,11 +529,19 @@ func (m *AppPermissions) GetOrganizationAdministration()(*AppPermissions_organiz
 func (m *AppPermissions) GetOrganizationAnnouncementBanners()(*AppPermissions_organization_announcement_banners) {
     return m.organization_announcement_banners
 }
+// GetOrganizationCopilotSeatManagement gets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+func (m *AppPermissions) GetOrganizationCopilotSeatManagement()(*AppPermissions_organization_copilot_seat_management) {
+    return m.organization_copilot_seat_management
+}
+// GetOrganizationCustomOrgRoles gets the organization_custom_org_roles property value. The level of permission to grant the access token for custom organization roles management.
+func (m *AppPermissions) GetOrganizationCustomOrgRoles()(*AppPermissions_organization_custom_org_roles) {
+    return m.organization_custom_org_roles
+}
 // GetOrganizationCustomProperties gets the organization_custom_properties property value. The level of permission to grant the access token for custom property management.
 func (m *AppPermissions) GetOrganizationCustomProperties()(*AppPermissions_organization_custom_properties) {
     return m.organization_custom_properties
 }
-// GetOrganizationCustomRoles gets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+// GetOrganizationCustomRoles gets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management.
 func (m *AppPermissions) GetOrganizationCustomRoles()(*AppPermissions_organization_custom_roles) {
     return m.organization_custom_roles
 }
@@ -548,6 +592,10 @@ func (m *AppPermissions) GetPages()(*AppPermissions_pages) {
 // GetPullRequests gets the pull_requests property value. The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 func (m *AppPermissions) GetPullRequests()(*AppPermissions_pull_requests) {
     return m.pull_requests
+}
+// GetRepositoryCustomProperties gets the repository_custom_properties property value. The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+func (m *AppPermissions) GetRepositoryCustomProperties()(*AppPermissions_repository_custom_properties) {
+    return m.repository_custom_properties
 }
 // GetRepositoryHooks gets the repository_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for a repository.
 func (m *AppPermissions) GetRepositoryHooks()(*AppPermissions_repository_hooks) {
@@ -668,6 +716,20 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetOrganizationCopilotSeatManagement() != nil {
+        cast := (*m.GetOrganizationCopilotSeatManagement()).String()
+        err := writer.WriteStringValue("organization_copilot_seat_management", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOrganizationCustomOrgRoles() != nil {
+        cast := (*m.GetOrganizationCustomOrgRoles()).String()
+        err := writer.WriteStringValue("organization_custom_org_roles", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOrganizationCustomProperties() != nil {
         cast := (*m.GetOrganizationCustomProperties()).String()
         err := writer.WriteStringValue("organization_custom_properties", &cast)
@@ -762,6 +824,13 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetPullRequests() != nil {
         cast := (*m.GetPullRequests()).String()
         err := writer.WriteStringValue("pull_requests", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRepositoryCustomProperties() != nil {
+        cast := (*m.GetRepositoryCustomProperties()).String()
+        err := writer.WriteStringValue("repository_custom_properties", &cast)
         if err != nil {
             return err
         }
@@ -892,11 +961,19 @@ func (m *AppPermissions) SetOrganizationAdministration(value *AppPermissions_org
 func (m *AppPermissions) SetOrganizationAnnouncementBanners(value *AppPermissions_organization_announcement_banners)() {
     m.organization_announcement_banners = value
 }
+// SetOrganizationCopilotSeatManagement sets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+func (m *AppPermissions) SetOrganizationCopilotSeatManagement(value *AppPermissions_organization_copilot_seat_management)() {
+    m.organization_copilot_seat_management = value
+}
+// SetOrganizationCustomOrgRoles sets the organization_custom_org_roles property value. The level of permission to grant the access token for custom organization roles management.
+func (m *AppPermissions) SetOrganizationCustomOrgRoles(value *AppPermissions_organization_custom_org_roles)() {
+    m.organization_custom_org_roles = value
+}
 // SetOrganizationCustomProperties sets the organization_custom_properties property value. The level of permission to grant the access token for custom property management.
 func (m *AppPermissions) SetOrganizationCustomProperties(value *AppPermissions_organization_custom_properties)() {
     m.organization_custom_properties = value
 }
-// SetOrganizationCustomRoles sets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+// SetOrganizationCustomRoles sets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management.
 func (m *AppPermissions) SetOrganizationCustomRoles(value *AppPermissions_organization_custom_roles)() {
     m.organization_custom_roles = value
 }
@@ -947,6 +1024,10 @@ func (m *AppPermissions) SetPages(value *AppPermissions_pages)() {
 // SetPullRequests sets the pull_requests property value. The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 func (m *AppPermissions) SetPullRequests(value *AppPermissions_pull_requests)() {
     m.pull_requests = value
+}
+// SetRepositoryCustomProperties sets the repository_custom_properties property value. The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+func (m *AppPermissions) SetRepositoryCustomProperties(value *AppPermissions_repository_custom_properties)() {
+    m.repository_custom_properties = value
 }
 // SetRepositoryHooks sets the repository_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for a repository.
 func (m *AppPermissions) SetRepositoryHooks(value *AppPermissions_repository_hooks)() {
@@ -1003,6 +1084,8 @@ type AppPermissionsable interface {
     GetMetadata()(*AppPermissions_metadata)
     GetOrganizationAdministration()(*AppPermissions_organization_administration)
     GetOrganizationAnnouncementBanners()(*AppPermissions_organization_announcement_banners)
+    GetOrganizationCopilotSeatManagement()(*AppPermissions_organization_copilot_seat_management)
+    GetOrganizationCustomOrgRoles()(*AppPermissions_organization_custom_org_roles)
     GetOrganizationCustomProperties()(*AppPermissions_organization_custom_properties)
     GetOrganizationCustomRoles()(*AppPermissions_organization_custom_roles)
     GetOrganizationHooks()(*AppPermissions_organization_hooks)
@@ -1017,6 +1100,7 @@ type AppPermissionsable interface {
     GetPackages()(*AppPermissions_packages)
     GetPages()(*AppPermissions_pages)
     GetPullRequests()(*AppPermissions_pull_requests)
+    GetRepositoryCustomProperties()(*AppPermissions_repository_custom_properties)
     GetRepositoryHooks()(*AppPermissions_repository_hooks)
     GetRepositoryProjects()(*AppPermissions_repository_projects)
     GetSecrets()(*AppPermissions_secrets)
@@ -1038,6 +1122,8 @@ type AppPermissionsable interface {
     SetMetadata(value *AppPermissions_metadata)()
     SetOrganizationAdministration(value *AppPermissions_organization_administration)()
     SetOrganizationAnnouncementBanners(value *AppPermissions_organization_announcement_banners)()
+    SetOrganizationCopilotSeatManagement(value *AppPermissions_organization_copilot_seat_management)()
+    SetOrganizationCustomOrgRoles(value *AppPermissions_organization_custom_org_roles)()
     SetOrganizationCustomProperties(value *AppPermissions_organization_custom_properties)()
     SetOrganizationCustomRoles(value *AppPermissions_organization_custom_roles)()
     SetOrganizationHooks(value *AppPermissions_organization_hooks)()
@@ -1052,6 +1138,7 @@ type AppPermissionsable interface {
     SetPackages(value *AppPermissions_packages)()
     SetPages(value *AppPermissions_pages)()
     SetPullRequests(value *AppPermissions_pull_requests)()
+    SetRepositoryCustomProperties(value *AppPermissions_repository_custom_properties)()
     SetRepositoryHooks(value *AppPermissions_repository_hooks)()
     SetRepositoryProjects(value *AppPermissions_repository_projects)()
     SetSecrets(value *AppPermissions_secrets)()

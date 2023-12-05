@@ -18,6 +18,8 @@ type RepositoryAdvisoryCreate struct {
     description *string
     // The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
     severity *RepositoryAdvisoryCreate_severity
+    // Whether to create a temporary private fork of the repository to collaborate on a fix.
+    start_private_fork *bool
     // A short summary of the advisory.
     summary *string
     // A product affected by the vulnerability detailed in a repository security advisory.
@@ -128,6 +130,16 @@ func (m *RepositoryAdvisoryCreate) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["start_private_fork"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStartPrivateFork(val)
+        }
+        return nil
+    }
     res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -159,6 +171,10 @@ func (m *RepositoryAdvisoryCreate) GetFieldDeserializers()(map[string]func(i878a
 // GetSeverity gets the severity property value. The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 func (m *RepositoryAdvisoryCreate) GetSeverity()(*RepositoryAdvisoryCreate_severity) {
     return m.severity
+}
+// GetStartPrivateFork gets the start_private_fork property value. Whether to create a temporary private fork of the repository to collaborate on a fix.
+func (m *RepositoryAdvisoryCreate) GetStartPrivateFork()(*bool) {
+    return m.start_private_fork
 }
 // GetSummary gets the summary property value. A short summary of the advisory.
 func (m *RepositoryAdvisoryCreate) GetSummary()(*string) {
@@ -214,6 +230,12 @@ func (m *RepositoryAdvisoryCreate) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err := writer.WriteBoolValue("start_private_fork", m.GetStartPrivateFork())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("summary", m.GetSummary())
         if err != nil {
             return err
@@ -257,6 +279,10 @@ func (m *RepositoryAdvisoryCreate) SetDescription(value *string)() {
 func (m *RepositoryAdvisoryCreate) SetSeverity(value *RepositoryAdvisoryCreate_severity)() {
     m.severity = value
 }
+// SetStartPrivateFork sets the start_private_fork property value. Whether to create a temporary private fork of the repository to collaborate on a fix.
+func (m *RepositoryAdvisoryCreate) SetStartPrivateFork(value *bool)() {
+    m.start_private_fork = value
+}
 // SetSummary sets the summary property value. A short summary of the advisory.
 func (m *RepositoryAdvisoryCreate) SetSummary(value *string)() {
     m.summary = value
@@ -274,6 +300,7 @@ type RepositoryAdvisoryCreateable interface {
     GetCweIds()([]string)
     GetDescription()(*string)
     GetSeverity()(*RepositoryAdvisoryCreate_severity)
+    GetStartPrivateFork()(*bool)
     GetSummary()(*string)
     GetVulnerabilities()([]RepositoryAdvisoryCreate_vulnerabilitiesable)
     SetCredits(value []RepositoryAdvisoryCreate_creditsable)()
@@ -282,6 +309,7 @@ type RepositoryAdvisoryCreateable interface {
     SetCweIds(value []string)()
     SetDescription(value *string)()
     SetSeverity(value *RepositoryAdvisoryCreate_severity)()
+    SetStartPrivateFork(value *bool)()
     SetSummary(value *string)()
     SetVulnerabilities(value []RepositoryAdvisoryCreate_vulnerabilitiesable)()
 }

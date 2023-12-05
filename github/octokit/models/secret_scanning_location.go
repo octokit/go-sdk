@@ -10,19 +10,35 @@ type SecretScanningLocation struct {
     additionalData map[string]any
     // The details property
     details SecretScanningLocation_SecretScanningLocation_detailsable
-    // The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.
+    // The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
     typeEscaped *SecretScanningLocation_type
 }
-// SecretScanningLocation_SecretScanningLocation_details composed type wrapper for classes secretScanningLocationCommit, secretScanningLocationIssueBody, secretScanningLocationIssueComment, secretScanningLocationIssueTitle
+// SecretScanningLocation_SecretScanningLocation_details composed type wrapper for classes secretScanningLocationCommit, secretScanningLocationDiscussionBody, secretScanningLocationDiscussionComment, secretScanningLocationDiscussionTitle, secretScanningLocationIssueBody, secretScanningLocationIssueComment, secretScanningLocationIssueTitle, secretScanningLocationPullRequestBody, secretScanningLocationPullRequestComment, secretScanningLocationPullRequestReview, secretScanningLocationPullRequestReviewComment, secretScanningLocationPullRequestTitle
 type SecretScanningLocation_SecretScanningLocation_details struct {
     // Composed type representation for type secretScanningLocationCommit
     secretScanningLocationCommit SecretScanningLocationCommitable
+    // Composed type representation for type secretScanningLocationDiscussionBody
+    secretScanningLocationDiscussionBody SecretScanningLocationDiscussionBodyable
+    // Composed type representation for type secretScanningLocationDiscussionComment
+    secretScanningLocationDiscussionComment SecretScanningLocationDiscussionCommentable
+    // Composed type representation for type secretScanningLocationDiscussionTitle
+    secretScanningLocationDiscussionTitle SecretScanningLocationDiscussionTitleable
     // Composed type representation for type secretScanningLocationIssueBody
     secretScanningLocationIssueBody SecretScanningLocationIssueBodyable
     // Composed type representation for type secretScanningLocationIssueComment
     secretScanningLocationIssueComment SecretScanningLocationIssueCommentable
     // Composed type representation for type secretScanningLocationIssueTitle
     secretScanningLocationIssueTitle SecretScanningLocationIssueTitleable
+    // Composed type representation for type secretScanningLocationPullRequestBody
+    secretScanningLocationPullRequestBody SecretScanningLocationPullRequestBodyable
+    // Composed type representation for type secretScanningLocationPullRequestComment
+    secretScanningLocationPullRequestComment SecretScanningLocationPullRequestCommentable
+    // Composed type representation for type secretScanningLocationPullRequestReview
+    secretScanningLocationPullRequestReview SecretScanningLocationPullRequestReviewable
+    // Composed type representation for type secretScanningLocationPullRequestReviewComment
+    secretScanningLocationPullRequestReviewComment SecretScanningLocationPullRequestReviewCommentable
+    // Composed type representation for type secretScanningLocationPullRequestTitle
+    secretScanningLocationPullRequestTitle SecretScanningLocationPullRequestTitleable
 }
 // NewSecretScanningLocation_SecretScanningLocation_details instantiates a new secretScanningLocation_details and sets the default values.
 func NewSecretScanningLocation_SecretScanningLocation_details()(*SecretScanningLocation_SecretScanningLocation_details) {
@@ -61,6 +77,18 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) GetIsComposedTyp
 func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationCommit()(SecretScanningLocationCommitable) {
     return m.secretScanningLocationCommit
 }
+// GetSecretScanningLocationDiscussionBody gets the secretScanningLocationDiscussionBody property value. Composed type representation for type secretScanningLocationDiscussionBody
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationDiscussionBody()(SecretScanningLocationDiscussionBodyable) {
+    return m.secretScanningLocationDiscussionBody
+}
+// GetSecretScanningLocationDiscussionComment gets the secretScanningLocationDiscussionComment property value. Composed type representation for type secretScanningLocationDiscussionComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationDiscussionComment()(SecretScanningLocationDiscussionCommentable) {
+    return m.secretScanningLocationDiscussionComment
+}
+// GetSecretScanningLocationDiscussionTitle gets the secretScanningLocationDiscussionTitle property value. Composed type representation for type secretScanningLocationDiscussionTitle
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationDiscussionTitle()(SecretScanningLocationDiscussionTitleable) {
+    return m.secretScanningLocationDiscussionTitle
+}
 // GetSecretScanningLocationIssueBody gets the secretScanningLocationIssueBody property value. Composed type representation for type secretScanningLocationIssueBody
 func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationIssueBody()(SecretScanningLocationIssueBodyable) {
     return m.secretScanningLocationIssueBody
@@ -73,10 +101,45 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScannin
 func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationIssueTitle()(SecretScanningLocationIssueTitleable) {
     return m.secretScanningLocationIssueTitle
 }
+// GetSecretScanningLocationPullRequestBody gets the secretScanningLocationPullRequestBody property value. Composed type representation for type secretScanningLocationPullRequestBody
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestBody()(SecretScanningLocationPullRequestBodyable) {
+    return m.secretScanningLocationPullRequestBody
+}
+// GetSecretScanningLocationPullRequestComment gets the secretScanningLocationPullRequestComment property value. Composed type representation for type secretScanningLocationPullRequestComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestComment()(SecretScanningLocationPullRequestCommentable) {
+    return m.secretScanningLocationPullRequestComment
+}
+// GetSecretScanningLocationPullRequestReview gets the secretScanningLocationPullRequestReview property value. Composed type representation for type secretScanningLocationPullRequestReview
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestReview()(SecretScanningLocationPullRequestReviewable) {
+    return m.secretScanningLocationPullRequestReview
+}
+// GetSecretScanningLocationPullRequestReviewComment gets the secretScanningLocationPullRequestReviewComment property value. Composed type representation for type secretScanningLocationPullRequestReviewComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestReviewComment()(SecretScanningLocationPullRequestReviewCommentable) {
+    return m.secretScanningLocationPullRequestReviewComment
+}
+// GetSecretScanningLocationPullRequestTitle gets the secretScanningLocationPullRequestTitle property value. Composed type representation for type secretScanningLocationPullRequestTitle
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestTitle()(SecretScanningLocationPullRequestTitleable) {
+    return m.secretScanningLocationPullRequestTitle
+}
 // Serialize serializes information the current object
 func (m *SecretScanningLocation_SecretScanningLocation_details) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetSecretScanningLocationCommit() != nil {
         err := writer.WriteObjectValue("", m.GetSecretScanningLocationCommit())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationDiscussionBody() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationDiscussionBody())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationDiscussionComment() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationDiscussionComment())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationDiscussionTitle() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationDiscussionTitle())
         if err != nil {
             return err
         }
@@ -95,12 +158,49 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) Serialize(writer
         if err != nil {
             return err
         }
+    } else if m.GetSecretScanningLocationPullRequestBody() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationPullRequestBody())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationPullRequestComment() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationPullRequestComment())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationPullRequestReview() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationPullRequestReview())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationPullRequestReviewComment() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationPullRequestReviewComment())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSecretScanningLocationPullRequestTitle() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationPullRequestTitle())
+        if err != nil {
+            return err
+        }
     }
     return nil
 }
 // SetSecretScanningLocationCommit sets the secretScanningLocationCommit property value. Composed type representation for type secretScanningLocationCommit
 func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationCommit(value SecretScanningLocationCommitable)() {
     m.secretScanningLocationCommit = value
+}
+// SetSecretScanningLocationDiscussionBody sets the secretScanningLocationDiscussionBody property value. Composed type representation for type secretScanningLocationDiscussionBody
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationDiscussionBody(value SecretScanningLocationDiscussionBodyable)() {
+    m.secretScanningLocationDiscussionBody = value
+}
+// SetSecretScanningLocationDiscussionComment sets the secretScanningLocationDiscussionComment property value. Composed type representation for type secretScanningLocationDiscussionComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationDiscussionComment(value SecretScanningLocationDiscussionCommentable)() {
+    m.secretScanningLocationDiscussionComment = value
+}
+// SetSecretScanningLocationDiscussionTitle sets the secretScanningLocationDiscussionTitle property value. Composed type representation for type secretScanningLocationDiscussionTitle
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationDiscussionTitle(value SecretScanningLocationDiscussionTitleable)() {
+    m.secretScanningLocationDiscussionTitle = value
 }
 // SetSecretScanningLocationIssueBody sets the secretScanningLocationIssueBody property value. Composed type representation for type secretScanningLocationIssueBody
 func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationIssueBody(value SecretScanningLocationIssueBodyable)() {
@@ -114,17 +214,53 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScannin
 func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationIssueTitle(value SecretScanningLocationIssueTitleable)() {
     m.secretScanningLocationIssueTitle = value
 }
+// SetSecretScanningLocationPullRequestBody sets the secretScanningLocationPullRequestBody property value. Composed type representation for type secretScanningLocationPullRequestBody
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestBody(value SecretScanningLocationPullRequestBodyable)() {
+    m.secretScanningLocationPullRequestBody = value
+}
+// SetSecretScanningLocationPullRequestComment sets the secretScanningLocationPullRequestComment property value. Composed type representation for type secretScanningLocationPullRequestComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestComment(value SecretScanningLocationPullRequestCommentable)() {
+    m.secretScanningLocationPullRequestComment = value
+}
+// SetSecretScanningLocationPullRequestReview sets the secretScanningLocationPullRequestReview property value. Composed type representation for type secretScanningLocationPullRequestReview
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestReview(value SecretScanningLocationPullRequestReviewable)() {
+    m.secretScanningLocationPullRequestReview = value
+}
+// SetSecretScanningLocationPullRequestReviewComment sets the secretScanningLocationPullRequestReviewComment property value. Composed type representation for type secretScanningLocationPullRequestReviewComment
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestReviewComment(value SecretScanningLocationPullRequestReviewCommentable)() {
+    m.secretScanningLocationPullRequestReviewComment = value
+}
+// SetSecretScanningLocationPullRequestTitle sets the secretScanningLocationPullRequestTitle property value. Composed type representation for type secretScanningLocationPullRequestTitle
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestTitle(value SecretScanningLocationPullRequestTitleable)() {
+    m.secretScanningLocationPullRequestTitle = value
+}
 // SecretScanningLocation_SecretScanningLocation_detailsable 
 type SecretScanningLocation_SecretScanningLocation_detailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetSecretScanningLocationCommit()(SecretScanningLocationCommitable)
+    GetSecretScanningLocationDiscussionBody()(SecretScanningLocationDiscussionBodyable)
+    GetSecretScanningLocationDiscussionComment()(SecretScanningLocationDiscussionCommentable)
+    GetSecretScanningLocationDiscussionTitle()(SecretScanningLocationDiscussionTitleable)
     GetSecretScanningLocationIssueBody()(SecretScanningLocationIssueBodyable)
     GetSecretScanningLocationIssueComment()(SecretScanningLocationIssueCommentable)
     GetSecretScanningLocationIssueTitle()(SecretScanningLocationIssueTitleable)
+    GetSecretScanningLocationPullRequestBody()(SecretScanningLocationPullRequestBodyable)
+    GetSecretScanningLocationPullRequestComment()(SecretScanningLocationPullRequestCommentable)
+    GetSecretScanningLocationPullRequestReview()(SecretScanningLocationPullRequestReviewable)
+    GetSecretScanningLocationPullRequestReviewComment()(SecretScanningLocationPullRequestReviewCommentable)
+    GetSecretScanningLocationPullRequestTitle()(SecretScanningLocationPullRequestTitleable)
     SetSecretScanningLocationCommit(value SecretScanningLocationCommitable)()
+    SetSecretScanningLocationDiscussionBody(value SecretScanningLocationDiscussionBodyable)()
+    SetSecretScanningLocationDiscussionComment(value SecretScanningLocationDiscussionCommentable)()
+    SetSecretScanningLocationDiscussionTitle(value SecretScanningLocationDiscussionTitleable)()
     SetSecretScanningLocationIssueBody(value SecretScanningLocationIssueBodyable)()
     SetSecretScanningLocationIssueComment(value SecretScanningLocationIssueCommentable)()
     SetSecretScanningLocationIssueTitle(value SecretScanningLocationIssueTitleable)()
+    SetSecretScanningLocationPullRequestBody(value SecretScanningLocationPullRequestBodyable)()
+    SetSecretScanningLocationPullRequestComment(value SecretScanningLocationPullRequestCommentable)()
+    SetSecretScanningLocationPullRequestReview(value SecretScanningLocationPullRequestReviewable)()
+    SetSecretScanningLocationPullRequestReviewComment(value SecretScanningLocationPullRequestReviewCommentable)()
+    SetSecretScanningLocationPullRequestTitle(value SecretScanningLocationPullRequestTitleable)()
 }
 // NewSecretScanningLocation instantiates a new secretScanningLocation and sets the default values.
 func NewSecretScanningLocation()(*SecretScanningLocation) {
@@ -170,7 +306,7 @@ func (m *SecretScanningLocation) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetTypeEscaped gets the type property value. The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.
+// GetTypeEscaped gets the type property value. The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 func (m *SecretScanningLocation) GetTypeEscaped()(*SecretScanningLocation_type) {
     return m.typeEscaped
 }
@@ -205,7 +341,7 @@ func (m *SecretScanningLocation) SetAdditionalData(value map[string]any)() {
 func (m *SecretScanningLocation) SetDetails(value SecretScanningLocation_SecretScanningLocation_detailsable)() {
     m.details = value
 }
-// SetTypeEscaped sets the type property value. The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.
+// SetTypeEscaped sets the type property value. The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 func (m *SecretScanningLocation) SetTypeEscaped(value *SecretScanningLocation_type)() {
     m.typeEscaped = value
 }

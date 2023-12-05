@@ -41,6 +41,10 @@ func NewItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder(rawUrl string, req
 func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Cve()(*ItemItemSecurityAdvisoriesItemCveRequestBuilder) {
     return NewItemItemSecurityAdvisoriesItemCveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Forks the forks property
+func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Forks()(*ItemItemSecurityAdvisoriesItemForksRequestBuilder) {
+    return NewItemItemSecurityAdvisoriesItemForksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.You can access any published security advisory on a public repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get a published security advisory in a private repository, or any unpublished security advisory that you have access to.You can access an unpublished security advisory from a repository if you are a security manager or administrator of that repository, or if you are acollaborator on the security advisory.
 // [API method documentation]
 // 

@@ -6,6 +6,8 @@ import (
 
 // ApiOverview_domains 
 type ApiOverview_domains struct {
+    // The actions property
+    actions []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The codespaces property
@@ -28,6 +30,10 @@ func NewApiOverview_domains()(*ApiOverview_domains) {
 func CreateApiOverview_domainsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApiOverview_domains(), nil
 }
+// GetActions gets the actions property value. The actions property
+func (m *ApiOverview_domains) GetActions()([]string) {
+    return m.actions
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiOverview_domains) GetAdditionalData()(map[string]any) {
     return m.additionalData
@@ -43,6 +49,22 @@ func (m *ApiOverview_domains) GetCopilot()([]string) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ApiOverview_domains) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetActions(res)
+        }
+        return nil
+    }
     res["codespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -119,6 +141,12 @@ func (m *ApiOverview_domains) GetWebsite()([]string) {
 }
 // Serialize serializes information the current object
 func (m *ApiOverview_domains) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetActions() != nil {
+        err := writer.WriteCollectionOfStringValues("actions", m.GetActions())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCodespaces() != nil {
         err := writer.WriteCollectionOfStringValues("codespaces", m.GetCodespaces())
         if err != nil {
@@ -151,6 +179,10 @@ func (m *ApiOverview_domains) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// SetActions sets the actions property value. The actions property
+func (m *ApiOverview_domains) SetActions(value []string)() {
+    m.actions = value
+}
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiOverview_domains) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
@@ -175,10 +207,12 @@ func (m *ApiOverview_domains) SetWebsite(value []string)() {
 type ApiOverview_domainsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActions()([]string)
     GetCodespaces()([]string)
     GetCopilot()([]string)
     GetPackages()([]string)
     GetWebsite()([]string)
+    SetActions(value []string)()
     SetCodespaces(value []string)()
     SetCopilot(value []string)()
     SetPackages(value []string)()

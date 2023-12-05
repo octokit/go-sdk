@@ -158,7 +158,7 @@ type Repository struct {
     pushed_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The releases_url property
     releases_url *string
-    // The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+    // The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
     size *int32
     // The default value for a squash merge commit message:- `PR_BODY` - default to the pull request's body.- `COMMIT_MESSAGES` - default to the branch's commit messages.- `BLANK` - default to a blank commit message.
     squash_merge_commit_message *Repository_squash_merge_commit_message
@@ -1525,7 +1525,7 @@ func (m *Repository) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a163
 func (m *Repository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
-// GetSize gets the size property value. The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+// GetSize gets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
 func (m *Repository) GetSize()(*int32) {
     return m.size
 }
@@ -2535,7 +2535,7 @@ func (m *Repository) SetPushedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *Repository) SetReleasesUrl(value *string)() {
     m.releases_url = value
 }
-// SetSize sets the size property value. The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+// SetSize sets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
 func (m *Repository) SetSize(value *int32)() {
     m.size = value
 }
