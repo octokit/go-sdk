@@ -8,7 +8,7 @@ import (
 type ApplicationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByClient_id gets an item from the octokit.applications.item collection
+// ByClient_id gets an item from the github.com/octokit/go-sdk/github/octokit/.applications.item collection
 func (m *ApplicationsRequestBuilder) ByClient_id(client_id string)(*WithClient_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

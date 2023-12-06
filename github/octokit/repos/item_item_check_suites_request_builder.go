@@ -3,11 +3,11 @@ package repos
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
-// ItemItemCheckSuitesRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\check-suites
+// ItemItemCheckSuitesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\check-suites
 type ItemItemCheckSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -18,7 +18,7 @@ type ItemItemCheckSuitesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByCheck_suite_id gets an item from the octokit.repos.item.item.checkSuites.item collection
+// ByCheck_suite_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.checkSuites.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemCheckSuitesRequestBuilder) ByCheck_suite_id(check_suite_id string)(*ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -30,7 +30,7 @@ func (m *ItemItemCheckSuitesRequestBuilder) ByCheck_suite_id(check_suite_id stri
     }
     return NewItemItemCheckSuitesWithCheck_suite_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCheck_suite_idInteger gets an item from the octokit.repos.item.item.checkSuites.item collection
+// ByCheck_suite_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.checkSuites.item collection
 func (m *ItemItemCheckSuitesRequestBuilder) ByCheck_suite_idInteger(check_suite_id int32)(*ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -42,7 +42,7 @@ func (m *ItemItemCheckSuitesRequestBuilder) ByCheck_suite_idInteger(check_suite_
 // NewItemItemCheckSuitesRequestBuilderInternal instantiates a new CheckSuitesRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesRequestBuilder) {
     m := &ItemItemCheckSuitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/check-suites", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites", pathParameters),
     }
     return m
 }
@@ -56,19 +56,19 @@ func NewItemItemCheckSuitesRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/checks/suites#create-a-check-suite
-func (m *ItemItemCheckSuitesRequestBuilder) Post(ctx context.Context, body ItemItemCheckSuitesPostRequestBodyable, requestConfiguration *ItemItemCheckSuitesRequestBuilderPostRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable, error) {
+func (m *ItemItemCheckSuitesRequestBuilder) Post(ctx context.Context, body ItemItemCheckSuitesPostRequestBodyable, requestConfiguration *ItemItemCheckSuitesRequestBuilderPostRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCheckSuiteFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCheckSuiteFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable), nil
 }
 // Preferences the preferences property
 func (m *ItemItemCheckSuitesRequestBuilder) Preferences()(*ItemItemCheckSuitesPreferencesRequestBuilder) {
@@ -76,14 +76,11 @@ func (m *ItemItemCheckSuitesRequestBuilder) Preferences()(*ItemItemCheckSuitesPr
 }
 // ToPostRequestInformation **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.By default, check suites are automatically created when you create a [check run](https://docs.github.com/rest/checks/runs). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Update repository preferences for check suites](https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites)". Your GitHub App must have the `checks:write` permission to create check suites.
 func (m *ItemItemCheckSuitesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemCheckSuitesPostRequestBodyable, requestConfiguration *ItemItemCheckSuitesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

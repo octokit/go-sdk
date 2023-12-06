@@ -5,11 +5,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsJobsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\jobs
+// ItemItemActionsJobsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\jobs
 type ItemItemActionsJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByJob_id gets an item from the octokit.repos.item.item.actions.jobs.item collection
+// ByJob_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.jobs.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id string)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id string)(*ItemItemAct
     }
     return NewItemItemActionsJobsWithJob_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByJob_idInteger gets an item from the octokit.repos.item.item.actions.jobs.item collection
+// ByJob_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.jobs.item collection
 func (m *ItemItemActionsJobsRequestBuilder) ByJob_idInteger(job_id int32)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -33,7 +33,7 @@ func (m *ItemItemActionsJobsRequestBuilder) ByJob_idInteger(job_id int32)(*ItemI
 // NewItemItemActionsJobsRequestBuilderInternal instantiates a new JobsRequestBuilder and sets the default values.
 func NewItemItemActionsJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsJobsRequestBuilder) {
     m := &ItemItemActionsJobsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/jobs", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs", pathParameters),
     }
     return m
 }

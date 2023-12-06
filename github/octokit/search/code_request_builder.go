@@ -2,9 +2,9 @@ package search
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
-    i1bef724f797c89ad6ff4f0a89112ecc77d31b2d9af1aab660b3214586e80da87 "github.com/octokit/go-sdk/github/octokit/search/code"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i08b3bd1d9b9a442ff6aaa5110b243ff814c84a49f2e3ba90d038f5aae7eafa0e "github.com/octokit/go-sdk/github/octokit/search/code"
 )
 
 // CodeRequestBuilder builds and executes requests for operations under \search\code
@@ -18,7 +18,7 @@ type CodeRequestBuilderGetQueryParameters struct {
     Order *string `uriparametername:"order"`
     // **This field is deprecated.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`. 
     // Deprecated: 
-    OrderAsGetOrderQueryParameterType *i1bef724f797c89ad6ff4f0a89112ecc77d31b2d9af1aab660b3214586e80da87.GetOrderQueryParameterType `uriparametername:"order"`
+    OrderAsGetOrderQueryParameterType *i08b3bd1d9b9a442ff6aaa5110b243ff814c84a49f2e3ba90d038f5aae7eafa0e.GetOrderQueryParameterType `uriparametername:"order"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -30,7 +30,7 @@ type CodeRequestBuilderGetQueryParameters struct {
     Sort *string `uriparametername:"sort"`
     // **This field is deprecated.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
     // Deprecated: 
-    SortAsGetSortQueryParameterType *i1bef724f797c89ad6ff4f0a89112ecc77d31b2d9af1aab660b3214586e80da87.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i08b3bd1d9b9a442ff6aaa5110b243ff814c84a49f2e3ba90d038f5aae7eafa0e.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // CodeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CodeRequestBuilderGetRequestConfiguration struct {
@@ -65,9 +65,9 @@ func (m *CodeRequestBuilder) Get(ctx context.Context, requestConfiguration *Code
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCode503ErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCode503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateCodeResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -88,9 +88,9 @@ func (m *CodeRequestBuilder) GetAsCodeGetResponse(ctx context.Context, requestCo
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCode503ErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCode503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateCodeGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -103,7 +103,7 @@ func (m *CodeRequestBuilder) GetAsCodeGetResponse(ctx context.Context, requestCo
 }
 // ToGetRequestInformation searches for query terms inside of a file. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for code, you can get text match metadata for the file **content** and file **path** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to find the definition of the `addClass` function inside [jQuery](https://github.com/jquery/jquery) repository, your query would look something like this:`q=addClass+in:file+language:js+repo:jquery/jquery`This query searches for the keyword `addClass` within a file's contents. The query limits the search to files where the language is JavaScript in the `jquery/jquery` repository.Considerations for code search:Due to the complexity of searching code, there are a few restrictions on how searches are performed:*   Only the _default branch_ is considered. In most cases, this will be the `master` branch.*   Only files smaller than 384 KB are searchable.*   You must always include at least one search term when searching source code. For example, searching for [`language:go`](https://github.com/search?utf8=%E2%9C%93&q=language%3Ago&type=Code) is not valid, while [`amazinglanguage:go`](https://github.com/search?utf8=%E2%9C%93&q=amazing+language%3Ago&type=Code) is.This endpoint requires you to authenticate and limits you to 10 requests per minute.
 func (m *CodeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CodeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -111,9 +111,6 @@ func (m *CodeRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

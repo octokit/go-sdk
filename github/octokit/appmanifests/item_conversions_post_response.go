@@ -1,18 +1,18 @@
 package appmanifests
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemConversionsPostResponse 
 type ItemConversionsPostResponse struct {
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Integration
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Integration
 }
 // NewItemConversionsPostResponse instantiates a new ItemConversionsPostResponse and sets the default values.
 func NewItemConversionsPostResponse()(*ItemConversionsPostResponse) {
     m := &ItemConversionsPostResponse{
-        Integration: *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.NewIntegration(),
+        Integration: *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.NewIntegration(),
     }
     return m
 }
@@ -35,6 +35,6 @@ func (m *ItemConversionsPostResponse) Serialize(writer i878a80d2330e89d26896388a
 }
 // ItemConversionsPostResponseable 
 type ItemConversionsPostResponseable interface {
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Integrationable
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Integrationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

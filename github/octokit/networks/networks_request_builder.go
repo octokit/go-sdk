@@ -8,7 +8,7 @@ import (
 type NetworksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByOwner gets an item from the octokit.networks.item collection
+// ByOwner gets an item from the github.com/octokit/go-sdk/github/octokit/.networks.item collection
 func (m *NetworksRequestBuilder) ByOwner(owner string)(*WithOwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

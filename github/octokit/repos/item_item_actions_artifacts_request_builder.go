@@ -6,7 +6,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsArtifactsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\artifacts
+// ItemItemActionsArtifactsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\artifacts
 type ItemItemActionsArtifactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -28,7 +28,7 @@ type ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemActionsArtifactsRequestBuilderGetQueryParameters
 }
-// ByArtifact_id gets an item from the octokit.repos.item.item.actions.artifacts.item collection
+// ByArtifact_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.artifacts.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_id(artifact_id string)(*ItemItemActionsArtifactsWithArtifact_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -40,7 +40,7 @@ func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_id(artifact_id strin
     }
     return NewItemItemActionsArtifactsWithArtifact_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByArtifact_idInteger gets an item from the octokit.repos.item.item.actions.artifacts.item collection
+// ByArtifact_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.artifacts.item collection
 func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_idInteger(artifact_id int32)(*ItemItemActionsArtifactsWithArtifact_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -52,7 +52,7 @@ func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_idInteger(artifact_i
 // NewItemItemActionsArtifactsRequestBuilderInternal instantiates a new ArtifactsRequestBuilder and sets the default values.
 func NewItemItemActionsArtifactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsArtifactsRequestBuilder) {
     m := &ItemItemActionsArtifactsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/artifacts{?per_page*,page*,name*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/artifacts{?per_page*,page*,name*}", pathParameters),
     }
     return m
 }
@@ -101,7 +101,7 @@ func (m *ItemItemActionsArtifactsRequestBuilder) GetAsArtifactsGetResponse(ctx c
 }
 // ToGetRequestInformation lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemActionsArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -109,9 +109,6 @@ func (m *ItemItemActionsArtifactsRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

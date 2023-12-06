@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemActionsPermissionsRepositoriesGetResponse 
@@ -10,7 +10,7 @@ type ItemActionsPermissionsRepositoriesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The repositories property
-    repositories []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable
+    repositories []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable
     // The total_count property
     total_count *float64
 }
@@ -33,15 +33,15 @@ func (m *ItemActionsPermissionsRepositoriesGetResponse) GetAdditionalData()(map[
 func (m *ItemActionsPermissionsRepositoriesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRepositoryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRepositoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable)
                 }
             }
             m.SetRepositories(res)
@@ -61,7 +61,7 @@ func (m *ItemActionsPermissionsRepositoriesGetResponse) GetFieldDeserializers()(
     return res
 }
 // GetRepositories gets the repositories property value. The repositories property
-func (m *ItemActionsPermissionsRepositoriesGetResponse) GetRepositories()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable) {
+func (m *ItemActionsPermissionsRepositoriesGetResponse) GetRepositories()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable) {
     return m.repositories
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemActionsPermissionsRepositoriesGetResponse) SetAdditionalData(value 
     m.additionalData = value
 }
 // SetRepositories sets the repositories property value. The repositories property
-func (m *ItemActionsPermissionsRepositoriesGetResponse) SetRepositories(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable)() {
+func (m *ItemActionsPermissionsRepositoriesGetResponse) SetRepositories(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable)() {
     m.repositories = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemActionsPermissionsRepositoriesGetResponse) SetTotalCount(value *flo
 type ItemActionsPermissionsRepositoriesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetRepositories()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable)
+    GetRepositories()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable)
     GetTotalCount()(*float64)
-    SetRepositories(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Repositoryable)()
+    SetRepositories(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Repositoryable)()
     SetTotalCount(value *float64)()
 }

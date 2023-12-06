@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody 
@@ -12,9 +12,9 @@ type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody struct {
     // The dismissal comment associated with the dismissal of the alert.
     dismissed_comment *string
     // **Required when the state is dismissed.** The reason for dismissing or closing the alert.
-    dismissed_reason *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason
+    dismissed_reason *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason
     // Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
-    state *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState
+    state *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState
 }
 // NewItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody instantiates a new ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody and sets the default values.
 func NewItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody()(*ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) {
@@ -36,7 +36,7 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDism
     return m.dismissed_comment
 }
 // GetDismissedReason gets the dismissed_reason property value. **Required when the state is dismissed.** The reason for dismissing or closing the alert.
-func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDismissedReason()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason) {
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDismissedReason()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason) {
     return m.dismissed_reason
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -53,29 +53,29 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetFiel
         return nil
     }
     res["dismissed_reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseCodeScanningAlertDismissedReason)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseCodeScanningAlertDismissedReason)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDismissedReason(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason))
+            m.SetDismissedReason(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason))
         }
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseCodeScanningAlertSetState)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseCodeScanningAlertSetState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState))
+            m.SetState(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState))
         }
         return nil
     }
     return res
 }
 // GetState gets the state property value. Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
-func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetState()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState) {
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetState()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState) {
     return m.state
 }
 // Serialize serializes information the current object
@@ -117,11 +117,11 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetDism
     m.dismissed_comment = value
 }
 // SetDismissedReason sets the dismissed_reason property value. **Required when the state is dismissed.** The reason for dismissing or closing the alert.
-func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetDismissedReason(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason)() {
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetDismissedReason(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason)() {
     m.dismissed_reason = value
 }
 // SetState sets the state property value. Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
-func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetState(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState)() {
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetState(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState)() {
     m.state = value
 }
 // ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyable 
@@ -129,9 +129,9 @@ type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyable interfac
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDismissedComment()(*string)
-    GetDismissedReason()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason)
-    GetState()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState)
+    GetDismissedReason()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason)
+    GetState()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState)
     SetDismissedComment(value *string)()
-    SetDismissedReason(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertDismissedReason)()
-    SetState(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSetState)()
+    SetDismissedReason(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertDismissedReason)()
+    SetState(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSetState)()
 }

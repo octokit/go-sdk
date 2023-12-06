@@ -1,8 +1,8 @@
 package user
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // CodespacesSecretsGetResponse 
@@ -10,7 +10,7 @@ type CodespacesSecretsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The secrets property
-    secrets []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable
+    secrets []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *CodespacesSecretsGetResponse) GetAdditionalData()(map[string]any) {
 func (m *CodespacesSecretsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCodespacesSecretFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCodespacesSecretFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable)
                 }
             }
             m.SetSecrets(res)
@@ -61,7 +61,7 @@ func (m *CodespacesSecretsGetResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetSecrets gets the secrets property value. The secrets property
-func (m *CodespacesSecretsGetResponse) GetSecrets()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable) {
+func (m *CodespacesSecretsGetResponse) GetSecrets()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable) {
     return m.secrets
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *CodespacesSecretsGetResponse) SetAdditionalData(value map[string]any)()
     m.additionalData = value
 }
 // SetSecrets sets the secrets property value. The secrets property
-func (m *CodespacesSecretsGetResponse) SetSecrets(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable)() {
+func (m *CodespacesSecretsGetResponse) SetSecrets(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable)() {
     m.secrets = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *CodespacesSecretsGetResponse) SetTotalCount(value *int32)() {
 type CodespacesSecretsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetSecrets()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable)
+    GetSecrets()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable)
     GetTotalCount()(*int32)
-    SetSecrets(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespacesSecretable)()
+    SetSecrets(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespacesSecretable)()
     SetTotalCount(value *int32)()
 }

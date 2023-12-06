@@ -5,7 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemEnvironmentsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\environments
+// ItemItemEnvironmentsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments
 type ItemItemEnvironmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -25,7 +25,7 @@ type ItemItemEnvironmentsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemEnvironmentsRequestBuilderGetQueryParameters
 }
-// ByEnvironment_name gets an item from the octokit.repos.item.item.environments.item collection
+// ByEnvironment_name gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.environments.item collection
 func (m *ItemItemEnvironmentsRequestBuilder) ByEnvironment_name(environment_name string)(*ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -39,7 +39,7 @@ func (m *ItemItemEnvironmentsRequestBuilder) ByEnvironment_name(environment_name
 // NewItemItemEnvironmentsRequestBuilderInternal instantiates a new EnvironmentsRequestBuilder and sets the default values.
 func NewItemItemEnvironmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEnvironmentsRequestBuilder) {
     m := &ItemItemEnvironmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments{?per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -88,7 +88,7 @@ func (m *ItemItemEnvironmentsRequestBuilder) GetAsEnvironmentsGetResponse(ctx co
 }
 // ToGetRequestInformation lists the environments for a repository.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemEnvironmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemEnvironmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -96,9 +96,6 @@ func (m *ItemItemEnvironmentsRequestBuilder) ToGetRequestInformation(ctx context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

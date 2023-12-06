@@ -1,8 +1,8 @@
 package search
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // RepositoriesGetResponse 
@@ -12,7 +12,7 @@ type RepositoriesGetResponse struct {
     // The incomplete_results property
     incomplete_results *bool
     // The items property
-    items []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable
+    items []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable
     // The total_count property
     total_count *int32
 }
@@ -45,15 +45,15 @@ func (m *RepositoriesGetResponse) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRepoSearchResultItemFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRepoSearchResultItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable)
                 }
             }
             m.SetItems(res)
@@ -77,7 +77,7 @@ func (m *RepositoriesGetResponse) GetIncompleteResults()(*bool) {
     return m.incomplete_results
 }
 // GetItems gets the items property value. The items property
-func (m *RepositoriesGetResponse) GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable) {
+func (m *RepositoriesGetResponse) GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable) {
     return m.items
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -127,7 +127,7 @@ func (m *RepositoriesGetResponse) SetIncompleteResults(value *bool)() {
     m.incomplete_results = value
 }
 // SetItems sets the items property value. The items property
-func (m *RepositoriesGetResponse) SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable)() {
+func (m *RepositoriesGetResponse) SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable)() {
     m.items = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -139,9 +139,9 @@ type RepositoriesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIncompleteResults()(*bool)
-    GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable)
+    GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable)
     GetTotalCount()(*int32)
     SetIncompleteResults(value *bool)()
-    SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepoSearchResultItemable)()
+    SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepoSearchResultItemable)()
     SetTotalCount(value *int32)()
 }

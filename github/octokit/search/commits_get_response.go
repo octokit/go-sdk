@@ -1,8 +1,8 @@
 package search
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // CommitsGetResponse 
@@ -12,7 +12,7 @@ type CommitsGetResponse struct {
     // The incomplete_results property
     incomplete_results *bool
     // The items property
-    items []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable
+    items []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable
     // The total_count property
     total_count *int32
 }
@@ -45,15 +45,15 @@ func (m *CommitsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCommitSearchResultItemFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCommitSearchResultItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable)
                 }
             }
             m.SetItems(res)
@@ -77,7 +77,7 @@ func (m *CommitsGetResponse) GetIncompleteResults()(*bool) {
     return m.incomplete_results
 }
 // GetItems gets the items property value. The items property
-func (m *CommitsGetResponse) GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable) {
+func (m *CommitsGetResponse) GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable) {
     return m.items
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -127,7 +127,7 @@ func (m *CommitsGetResponse) SetIncompleteResults(value *bool)() {
     m.incomplete_results = value
 }
 // SetItems sets the items property value. The items property
-func (m *CommitsGetResponse) SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable)() {
+func (m *CommitsGetResponse) SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable)() {
     m.items = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -139,9 +139,9 @@ type CommitsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIncompleteResults()(*bool)
-    GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable)
+    GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable)
     GetTotalCount()(*int32)
     SetIncompleteResults(value *bool)()
-    SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CommitSearchResultItemable)()
+    SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CommitSearchResultItemable)()
     SetTotalCount(value *int32)()
 }

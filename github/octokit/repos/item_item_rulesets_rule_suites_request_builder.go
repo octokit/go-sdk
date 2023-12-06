@@ -3,12 +3,12 @@ package repos
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i3a66b790debf1aca2769c525294c5545f3da3b110fdfe110f074313a9f3d983c "github.com/octokit/go-sdk/github/octokit/repos/item/item/rulesets/rulesuites"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i0894ec6f5227c4122ea9ca7c9678524c58e3f05ad172dcdc345d63a9b8cae438 "github.com/octokit/go-sdk/github/octokit/repos/item/item/rulesets/rulesuites"
 )
 
-// ItemItemRulesetsRuleSuitesRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\rulesets\rule-suites
+// ItemItemRulesetsRuleSuitesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rulesets\rule-suites
 type ItemItemRulesetsRuleSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -26,12 +26,12 @@ type ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use rule_suite_resultAsGetRule_suite_resultQueryParameterType instead
     Rule_suite_result *string `uriparametername:"rule_suite_result"`
     // The rule results to filter on. When specified, only suites with this result will be returned.
-    Rule_suite_resultAsGetRule_suite_resultQueryParameterType *i3a66b790debf1aca2769c525294c5545f3da3b110fdfe110f074313a9f3d983c.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
+    Rule_suite_resultAsGetRule_suite_resultQueryParameterType *i0894ec6f5227c4122ea9ca7c9678524c58e3f05ad172dcdc345d63a9b8cae438.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
     // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
     // Deprecated: This property is deprecated, use time_periodAsGetTime_periodQueryParameterType instead
     Time_period *string `uriparametername:"time_period"`
     // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
-    Time_periodAsGetTime_periodQueryParameterType *i3a66b790debf1aca2769c525294c5545f3da3b110fdfe110f074313a9f3d983c.GetTime_periodQueryParameterType `uriparametername:"time_period"`
+    Time_periodAsGetTime_periodQueryParameterType *i0894ec6f5227c4122ea9ca7c9678524c58e3f05ad172dcdc345d63a9b8cae438.GetTime_periodQueryParameterType `uriparametername:"time_period"`
 }
 // ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration struct {
@@ -42,7 +42,7 @@ type ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters
 }
-// ByRule_suite_id gets an item from the octokit.repos.item.item.rulesets.ruleSuites.item collection
+// ByRule_suite_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.rulesets.ruleSuites.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id string)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -54,7 +54,7 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id
     }
     return NewItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByRule_suite_idInteger gets an item from the octokit.repos.item.item.rulesets.ruleSuites.item collection
+// ByRule_suite_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.rulesets.ruleSuites.item collection
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_idInteger(rule_suite_id int32)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -66,7 +66,7 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_idInteger(rule_s
 // NewItemItemRulesetsRuleSuitesRequestBuilderInternal instantiates a new RuleSuitesRequestBuilder and sets the default values.
 func NewItemItemRulesetsRuleSuitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsRuleSuitesRequestBuilder) {
     m := &ItemItemRulesetsRuleSuitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/rulesets/rule-suites{?ref*,time_period*,actor_name*,rule_suite_result*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?ref*,time_period*,actor_name*,rule_suite_result*,per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -80,30 +80,30 @@ func NewItemItemRulesetsRuleSuitesRequestBuilder(rawUrl string, requestAdapter i
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites
-func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RuleSuitesable, error) {
+func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RuleSuitesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "500": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "500": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRuleSuitesFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRuleSuitesFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RuleSuitesable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RuleSuitesable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RuleSuitesable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RuleSuitesable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists suites of rule evaluations at the repository level.For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -111,9 +111,6 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

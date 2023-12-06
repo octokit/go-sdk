@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemCodespacesNewGetResponse 
@@ -10,7 +10,7 @@ type ItemItemCodespacesNewGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // A GitHub user.
-    billable_owner i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable
+    billable_owner i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable
     // The defaults property
     defaults ItemItemCodespacesNewGetResponse_defaultsable
 }
@@ -30,7 +30,7 @@ func (m *ItemItemCodespacesNewGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillableOwner gets the billable_owner property value. A GitHub user.
-func (m *ItemItemCodespacesNewGetResponse) GetBillableOwner()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable) {
+func (m *ItemItemCodespacesNewGetResponse) GetBillableOwner()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable) {
     return m.billable_owner
 }
 // GetDefaults gets the defaults property value. The defaults property
@@ -41,12 +41,12 @@ func (m *ItemItemCodespacesNewGetResponse) GetDefaults()(ItemItemCodespacesNewGe
 func (m *ItemItemCodespacesNewGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billable_owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateSimpleUserFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateSimpleUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBillableOwner(val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable))
+            m.SetBillableOwner(val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable))
         }
         return nil
     }
@@ -89,7 +89,7 @@ func (m *ItemItemCodespacesNewGetResponse) SetAdditionalData(value map[string]an
     m.additionalData = value
 }
 // SetBillableOwner sets the billable_owner property value. A GitHub user.
-func (m *ItemItemCodespacesNewGetResponse) SetBillableOwner(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable)() {
+func (m *ItemItemCodespacesNewGetResponse) SetBillableOwner(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable)() {
     m.billable_owner = value
 }
 // SetDefaults sets the defaults property value. The defaults property
@@ -100,8 +100,8 @@ func (m *ItemItemCodespacesNewGetResponse) SetDefaults(value ItemItemCodespacesN
 type ItemItemCodespacesNewGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBillableOwner()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable)
+    GetBillableOwner()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable)
     GetDefaults()(ItemItemCodespacesNewGetResponse_defaultsable)
-    SetBillableOwner(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SimpleUserable)()
+    SetBillableOwner(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SimpleUserable)()
     SetDefaults(value ItemItemCodespacesNewGetResponse_defaultsable)()
 }

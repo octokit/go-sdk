@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse 
@@ -10,7 +10,7 @@ type ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The custom_deployment_protection_rules property
-    custom_deployment_protection_rules []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable
+    custom_deployment_protection_rules []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable
     // The number of enabled custom deployment protection rules for this environment
     total_count *int32
 }
@@ -30,22 +30,22 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetAddi
     return m.additionalData
 }
 // GetCustomDeploymentProtectionRules gets the custom_deployment_protection_rules property value. The custom_deployment_protection_rules property
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetCustomDeploymentProtectionRules()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetCustomDeploymentProtectionRules()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable) {
     return m.custom_deployment_protection_rules
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["custom_deployment_protection_rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateDeploymentProtectionRuleFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateDeploymentProtectionRuleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable)
                 }
             }
             m.SetCustomDeploymentProtectionRules(res)
@@ -101,7 +101,7 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetAddi
     m.additionalData = value
 }
 // SetCustomDeploymentProtectionRules sets the custom_deployment_protection_rules property value. The custom_deployment_protection_rules property
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetCustomDeploymentProtectionRules(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable)() {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetCustomDeploymentProtectionRules(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable)() {
     m.custom_deployment_protection_rules = value
 }
 // SetTotalCount sets the total_count property value. The number of enabled custom deployment protection rules for this environment
@@ -112,8 +112,8 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetTota
 type ItemItemEnvironmentsItemDeployment_protection_rulesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCustomDeploymentProtectionRules()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable)
+    GetCustomDeploymentProtectionRules()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable)
     GetTotalCount()(*int32)
-    SetCustomDeploymentProtectionRules(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentProtectionRuleable)()
+    SetCustomDeploymentProtectionRules(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentProtectionRuleable)()
     SetTotalCount(value *int32)()
 }

@@ -8,7 +8,7 @@ import (
 type AppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByApp_slug gets an item from the octokit.apps.item collection
+// ByApp_slug gets an item from the github.com/octokit/go-sdk/github/octokit/.apps.item collection
 func (m *AppsRequestBuilder) ByApp_slug(app_slug string)(*WithApp_slugItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

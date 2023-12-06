@@ -2,9 +2,9 @@ package user
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // InteractionLimitsRequestBuilder builds and executes requests for operations under \user\interaction-limits
@@ -14,7 +14,7 @@ type InteractionLimitsRequestBuilder struct {
 // InteractionLimitsGetResponse composed type wrapper for classes interactionLimitResponse, InteractionLimitsGetResponseMember1
 type InteractionLimitsGetResponse struct {
     // Composed type representation for type interactionLimitResponse
-    interactionLimitResponse i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable
+    interactionLimitResponse i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable
     // Composed type representation for type InteractionLimitsGetResponseMember1
     interactionLimitsGetResponseMember1 InteractionLimitsGetResponseMember1able
 }
@@ -28,11 +28,11 @@ func NewInteractionLimitsGetResponse()(*InteractionLimitsGetResponse) {
 func CreateInteractionLimitsGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewInteractionLimitsGetResponse()
     if parseNode != nil {
-        if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateInteractionLimitResponseFromDiscriminatorValue); val != nil {
+        if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateInteractionLimitResponseFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable); ok {
                 result.SetInteractionLimitResponse(cast)
             }
         } else if val, err := parseNode.GetObjectValue(CreateInteractionLimitsGetResponseMember1FromDiscriminatorValue); val != nil {
@@ -51,7 +51,7 @@ func (m *InteractionLimitsGetResponse) GetFieldDeserializers()(map[string]func(i
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetInteractionLimitResponse gets the interactionLimitResponse property value. Composed type representation for type interactionLimitResponse
-func (m *InteractionLimitsGetResponse) GetInteractionLimitResponse()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable) {
+func (m *InteractionLimitsGetResponse) GetInteractionLimitResponse()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable) {
     return m.interactionLimitResponse
 }
 // GetInteractionLimitsGetResponseMember1 gets the InteractionLimitsGetResponseMember1 property value. Composed type representation for type InteractionLimitsGetResponseMember1
@@ -78,7 +78,7 @@ func (m *InteractionLimitsGetResponse) Serialize(writer i878a80d2330e89d26896388
     return nil
 }
 // SetInteractionLimitResponse sets the interactionLimitResponse property value. Composed type representation for type interactionLimitResponse
-func (m *InteractionLimitsGetResponse) SetInteractionLimitResponse(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)() {
+func (m *InteractionLimitsGetResponse) SetInteractionLimitResponse(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)() {
     m.interactionLimitResponse = value
 }
 // SetInteractionLimitsGetResponseMember1 sets the InteractionLimitsGetResponseMember1 property value. Composed type representation for type InteractionLimitsGetResponseMember1
@@ -109,7 +109,7 @@ type InteractionLimitsRequestBuilderPutRequestConfiguration struct {
 // InteractionLimitsResponse composed type wrapper for classes interactionLimitResponse, InteractionLimitsGetResponseMember1
 type InteractionLimitsResponse struct {
     // Composed type representation for type interactionLimitResponse
-    interactionLimitResponse i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable
+    interactionLimitResponse i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable
     // Composed type representation for type InteractionLimitsGetResponseMember1
     interactionLimitsGetResponseMember1 InteractionLimitsGetResponseMember1able
 }
@@ -123,11 +123,11 @@ func NewInteractionLimitsResponse()(*InteractionLimitsResponse) {
 func CreateInteractionLimitsResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewInteractionLimitsResponse()
     if parseNode != nil {
-        if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateInteractionLimitResponseFromDiscriminatorValue); val != nil {
+        if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateInteractionLimitResponseFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable); ok {
                 result.SetInteractionLimitResponse(cast)
             }
         } else if val, err := parseNode.GetObjectValue(CreateInteractionLimitsGetResponseMember1FromDiscriminatorValue); val != nil {
@@ -146,7 +146,7 @@ func (m *InteractionLimitsResponse) GetFieldDeserializers()(map[string]func(i878
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetInteractionLimitResponse gets the interactionLimitResponse property value. Composed type representation for type interactionLimitResponse
-func (m *InteractionLimitsResponse) GetInteractionLimitResponse()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable) {
+func (m *InteractionLimitsResponse) GetInteractionLimitResponse()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable) {
     return m.interactionLimitResponse
 }
 // GetInteractionLimitsGetResponseMember1 gets the InteractionLimitsGetResponseMember1 property value. Composed type representation for type InteractionLimitsGetResponseMember1
@@ -173,7 +173,7 @@ func (m *InteractionLimitsResponse) Serialize(writer i878a80d2330e89d26896388a3f
     return nil
 }
 // SetInteractionLimitResponse sets the interactionLimitResponse property value. Composed type representation for type interactionLimitResponse
-func (m *InteractionLimitsResponse) SetInteractionLimitResponse(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)() {
+func (m *InteractionLimitsResponse) SetInteractionLimitResponse(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)() {
     m.interactionLimitResponse = value
 }
 // SetInteractionLimitsGetResponseMember1 sets the InteractionLimitsGetResponseMember1 property value. Composed type representation for type InteractionLimitsGetResponseMember1
@@ -183,17 +183,17 @@ func (m *InteractionLimitsResponse) SetInteractionLimitsGetResponseMember1(value
 // InteractionLimitsGetResponseable 
 type InteractionLimitsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetInteractionLimitResponse()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)
+    GetInteractionLimitResponse()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)
     GetInteractionLimitsGetResponseMember1()(InteractionLimitsGetResponseMember1able)
-    SetInteractionLimitResponse(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)()
+    SetInteractionLimitResponse(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)()
     SetInteractionLimitsGetResponseMember1(value InteractionLimitsGetResponseMember1able)()
 }
 // InteractionLimitsResponseable 
 type InteractionLimitsResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetInteractionLimitResponse()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)
+    GetInteractionLimitResponse()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)
     GetInteractionLimitsGetResponseMember1()(InteractionLimitsGetResponseMember1able)
-    SetInteractionLimitResponse(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable)()
+    SetInteractionLimitResponse(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable)()
     SetInteractionLimitsGetResponseMember1(value InteractionLimitsGetResponseMember1able)()
 }
 // NewInteractionLimitsRequestBuilderInternal instantiates a new InteractionLimitsRequestBuilder and sets the default values.
@@ -265,58 +265,49 @@ func (m *InteractionLimitsRequestBuilder) GetAsInteractionLimitsGetResponse(ctx 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/interactions/user#set-interaction-restrictions-for-your-public-repositories
-func (m *InteractionLimitsRequestBuilder) Put(ctx context.Context, body i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitable, requestConfiguration *InteractionLimitsRequestBuilderPutRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable, error) {
+func (m *InteractionLimitsRequestBuilder) Put(ctx context.Context, body i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitable, requestConfiguration *InteractionLimitsRequestBuilderPutRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateInteractionLimitResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateInteractionLimitResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitResponseable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitResponseable), nil
 }
 // ToDeleteRequestInformation removes any interaction restrictions from your public repositories.
 func (m *InteractionLimitsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *InteractionLimitsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     return requestInfo, nil
 }
 // ToGetRequestInformation shows which type of GitHub user can interact with your public repositories and when the restriction expires.
 func (m *InteractionLimitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InteractionLimitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation temporarily restricts which type of GitHub user can interact with your public repositories. Setting the interaction limit at the user level will overwrite any interaction limits that are set for individual repositories owned by the user.
-func (m *InteractionLimitsRequestBuilder) ToPutRequestInformation(ctx context.Context, body i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.InteractionLimitable, requestConfiguration *InteractionLimitsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+func (m *InteractionLimitsRequestBuilder) ToPutRequestInformation(ctx context.Context, body i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.InteractionLimitable, requestConfiguration *InteractionLimitsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

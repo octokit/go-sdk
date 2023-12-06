@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsRunsItemAttemptsItemJobsGetResponse 
@@ -10,7 +10,7 @@ type ItemItemActionsRunsItemAttemptsItemJobsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The jobs property
-    jobs []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable
+    jobs []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) GetAdditionalData()
 func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["jobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateJobFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateJobFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable)
                 }
             }
             m.SetJobs(res)
@@ -61,7 +61,7 @@ func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) GetFieldDeserialize
     return res
 }
 // GetJobs gets the jobs property value. The jobs property
-func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) GetJobs()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable) {
+func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) GetJobs()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable) {
     return m.jobs
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) SetAdditionalData(v
     m.additionalData = value
 }
 // SetJobs sets the jobs property value. The jobs property
-func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) SetJobs(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable)() {
+func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) SetJobs(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable)() {
     m.jobs = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemActionsRunsItemAttemptsItemJobsGetResponse) SetTotalCount(value
 type ItemItemActionsRunsItemAttemptsItemJobsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetJobs()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable)
+    GetJobs()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable)
     GetTotalCount()(*int32)
-    SetJobs(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Jobable)()
+    SetJobs(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Jobable)()
     SetTotalCount(value *int32)()
 }

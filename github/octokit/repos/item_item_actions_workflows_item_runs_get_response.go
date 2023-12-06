@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsWorkflowsItemRunsGetResponse 
@@ -12,7 +12,7 @@ type ItemItemActionsWorkflowsItemRunsGetResponse struct {
     // The total_count property
     total_count *int32
     // The workflow_runs property
-    workflow_runs []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable
+    workflow_runs []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable
 }
 // NewItemItemActionsWorkflowsItemRunsGetResponse instantiates a new ItemItemActionsWorkflowsItemRunsGetResponse and sets the default values.
 func NewItemItemActionsWorkflowsItemRunsGetResponse()(*ItemItemActionsWorkflowsItemRunsGetResponse) {
@@ -43,15 +43,15 @@ func (m *ItemItemActionsWorkflowsItemRunsGetResponse) GetFieldDeserializers()(ma
         return nil
     }
     res["workflow_runs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateWorkflowRunFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateWorkflowRunFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable)
                 }
             }
             m.SetWorkflowRuns(res)
@@ -65,7 +65,7 @@ func (m *ItemItemActionsWorkflowsItemRunsGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
 // GetWorkflowRuns gets the workflow_runs property value. The workflow_runs property
-func (m *ItemItemActionsWorkflowsItemRunsGetResponse) GetWorkflowRuns()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable) {
+func (m *ItemItemActionsWorkflowsItemRunsGetResponse) GetWorkflowRuns()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable) {
     return m.workflow_runs
 }
 // Serialize serializes information the current object
@@ -105,7 +105,7 @@ func (m *ItemItemActionsWorkflowsItemRunsGetResponse) SetTotalCount(value *int32
     m.total_count = value
 }
 // SetWorkflowRuns sets the workflow_runs property value. The workflow_runs property
-func (m *ItemItemActionsWorkflowsItemRunsGetResponse) SetWorkflowRuns(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable)() {
+func (m *ItemItemActionsWorkflowsItemRunsGetResponse) SetWorkflowRuns(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable)() {
     m.workflow_runs = value
 }
 // ItemItemActionsWorkflowsItemRunsGetResponseable 
@@ -113,7 +113,7 @@ type ItemItemActionsWorkflowsItemRunsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetTotalCount()(*int32)
-    GetWorkflowRuns()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable)
+    GetWorkflowRuns()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable)
     SetTotalCount(value *int32)()
-    SetWorkflowRuns(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WorkflowRunable)()
+    SetWorkflowRuns(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WorkflowRunable)()
 }

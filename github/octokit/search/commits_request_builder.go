@@ -3,7 +3,7 @@ package search
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i49caac3b381cfdf2fdee5a4bbd6d6c755d95781ebcce1ee46742ed321c29c061 "github.com/octokit/go-sdk/github/octokit/search/commits"
+    i79d6b7bcec8ffbd89b5d866097a69b9888d20a4d3e09261c3e976961b62207ff "github.com/octokit/go-sdk/github/octokit/search/commits"
 )
 
 // CommitsRequestBuilder builds and executes requests for operations under \search\commits
@@ -16,7 +16,7 @@ type CommitsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use orderAsGetOrderQueryParameterType instead
     Order *string `uriparametername:"order"`
     // Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
-    OrderAsGetOrderQueryParameterType *i49caac3b381cfdf2fdee5a4bbd6d6c755d95781ebcce1ee46742ed321c29c061.GetOrderQueryParameterType `uriparametername:"order"`
+    OrderAsGetOrderQueryParameterType *i79d6b7bcec8ffbd89b5d866097a69b9888d20a4d3e09261c3e976961b62207ff.GetOrderQueryParameterType `uriparametername:"order"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -27,7 +27,7 @@ type CommitsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // Sorts the results of your query by `author-date` or `committer-date`. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-    SortAsGetSortQueryParameterType *i49caac3b381cfdf2fdee5a4bbd6d6c755d95781ebcce1ee46742ed321c29c061.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i79d6b7bcec8ffbd89b5d866097a69b9888d20a4d3e09261c3e976961b62207ff.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // CommitsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommitsRequestBuilderGetRequestConfiguration struct {
@@ -90,7 +90,7 @@ func (m *CommitsRequestBuilder) GetAsCommitsGetResponse(ctx context.Context, req
 }
 // ToGetRequestInformation find commits via various criteria on the default branch (usually `main`). This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for commits, you can get text match metadata for the **message** field when you provide the `text-match` media type. For more details about how to receive highlighted search results, see [Text matchmetadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to find commits related to CSS in the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository. Your query would look something like this:`q=repo:octocat/Spoon-Knife+css`
 func (m *CommitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -98,9 +98,6 @@ func (m *CommitsRequestBuilder) ToGetRequestInformation(ctx context.Context, req
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

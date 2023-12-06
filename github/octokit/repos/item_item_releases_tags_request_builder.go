@@ -4,11 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemReleasesTagsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\releases\tags
+// ItemItemReleasesTagsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\releases\tags
 type ItemItemReleasesTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTag gets an item from the octokit.repos.item.item.releases.tags.item collection
+// ByTag gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.releases.tags.item collection
 func (m *ItemItemReleasesTagsRequestBuilder) ByTag(tag string)(*ItemItemReleasesTagsWithTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -22,7 +22,7 @@ func (m *ItemItemReleasesTagsRequestBuilder) ByTag(tag string)(*ItemItemReleases
 // NewItemItemReleasesTagsRequestBuilderInternal instantiates a new TagsRequestBuilder and sets the default values.
 func NewItemItemReleasesTagsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemReleasesTagsRequestBuilder) {
     m := &ItemItemReleasesTagsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/releases/tags", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/tags", pathParameters),
     }
     return m
 }

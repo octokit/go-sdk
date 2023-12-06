@@ -2,92 +2,92 @@ package octokit
 
 import (
     "context"
-    i00f1fed9ef7cd71bdf3e75aeef327685883fab64913202cd0139764d217aaff2 "github.com/octokit/go-sdk/github/octokit/gitignore"
-    i012e0ce26fed2d41789483a15c5c138e39c09d7138903797fa49ac262560f5df "github.com/octokit/go-sdk/github/octokit/assignments"
-    i02ee8c0c88594751b60d64ed7fcdb000fdaad97def006623cbdb4f69f4b32d94 "github.com/octokit/go-sdk/github/octokit/advisories"
-    i0630a5ec64f53746aa0214e4e80d70b6c40564fdc4c6b1e5638c35922cba31e1 "github.com/octokit/go-sdk/github/octokit/orgs"
-    i082acd51e55dfd68ccfffd788e8960fd8e3bda49ae4cdc128e63d99ce442dee7 "github.com/octokit/go-sdk/github/octokit/networks"
-    i181e64ab2934af4de43a294ded7ef34b081a50c35ba40f4cec6a76a5822989d1 "github.com/octokit/go-sdk/github/octokit/organizations"
-    i1dfd9332d37df20f4bcd14ad579e3b1cffe9663d10ab09245466823b4f3012b2 "github.com/octokit/go-sdk/github/octokit/installation"
-    i262e7bac7d437f187308d33ff0b0896e42bda1aeb406ee592579018ad9438b08 "github.com/octokit/go-sdk/github/octokit/meta"
-    i2c35b84e5dfa49f713209a013e80a7385beaf706e6e556aecf2e399fe207c78e "github.com/octokit/go-sdk/github/octokit/appmanifests"
-    i3058d03d797c773039f833ab56d4ca057161326ee2f7abed09b74ff73b4ae7eb "github.com/octokit/go-sdk/github/octokit/licenses"
-    i38d9bbc7d8ce8ccc6b96b9e050427bbdfb0f0e2c490a5b696de8c1700d5873e4 "github.com/octokit/go-sdk/github/octokit/rate_limit"
-    i44f21d2b6915e282dade6494e0dd5d54c66e851206bc3d6538b7c0409e1b068a "github.com/octokit/go-sdk/github/octokit/enterprises"
-    i5095dd2639d5bc5f4e034eff6e6d0f6c9abd91b7305e13d5f2b03c3952784b2d "github.com/octokit/go-sdk/github/octokit/codes_of_conduct"
-    i5158455fbddcd6c896099ba1b5d12464896ded2373b500b4f608501c9bbf6043 "github.com/octokit/go-sdk/github/octokit/gists"
-    i5a2e1bd682f7fd3d317f2f71dad65e31642f2c3320cddf0b774df79d329e8b15 "github.com/octokit/go-sdk/github/octokit/zen"
-    i627571c2e22f9314da80ae4c23623e706d31b8776afca5e44a7a102a6d472571 "github.com/octokit/go-sdk/github/octokit/octocat"
-    i64a317472850c3e4f5ef3131ab2a9a6f13db1588332a5c1dcd9f1a196a7eb8c7 "github.com/octokit/go-sdk/github/octokit/projects"
-    i6c37bff252b47d15034dd4a14748f8549f8828890fe90f4959308d33347e8517 "github.com/octokit/go-sdk/github/octokit/user"
-    i6e575246fc177c2ef9715eb0616ab13e30864c150a617d034a0ea090847e4cbe "github.com/octokit/go-sdk/github/octokit/emojis"
-    i7efaf73b4de581fad7766e10d6635bf593174afa4b8f1d434b52818d3f587a75 "github.com/octokit/go-sdk/github/octokit/app"
-    i833fa9bc6593661f71796b7d84d648c0d65f8408b784ab7cd6eebab510ae1315 "github.com/octokit/go-sdk/github/octokit/markdown"
-    i85c5abd6c240949d53522ba93d9bd02e9eb0476edc84b6b5594555c4562d37b8 "github.com/octokit/go-sdk/github/octokit/teams"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
-    i8c195517ba5951b8b25203ea359263da58c5106fe9fc3e298b0fd10433c1b73a "github.com/octokit/go-sdk/github/octokit/search"
-    ia5719cf22df54e3f653a789d4bb3cfbf26867f5d852bae050b776a3627a20804 "github.com/octokit/go-sdk/github/octokit/apps"
-    ia9291c1caee63132323a299d49592eaca763c9e77ad428426f40cb6259aa6d96 "github.com/octokit/go-sdk/github/octokit/applications"
-    iaffade5a83b840a1cef15c7bea8f813cbe645cb139c446bfa96d701a293886ea "github.com/octokit/go-sdk/github/octokit/repositories"
-    ibbd3ded5ab35a41a71d583e10c43d0f095f9726b5b82bba8b5a25e9f933474b3 "github.com/octokit/go-sdk/github/octokit/repos"
-    ic78807f3d372c667fba52904ce880ea4a1037de1fbe2df9e1063e9824975c7a0 "github.com/octokit/go-sdk/github/octokit/events"
-    icbe907cd68e180423ba744b18cd54d6f1a4504ebbabbc646c47cd2e53fe3b710 "github.com/octokit/go-sdk/github/octokit/notifications"
-    ice4dff0648d8b9ca210814f95ef4895f05a759326d8f73affda67a6182c86bef "github.com/octokit/go-sdk/github/octokit/classrooms"
-    id4564c761335fadb4fd125944822dfe1b721afd322a3fea1696f698e2c45d082 "github.com/octokit/go-sdk/github/octokit/issues"
-    id849601c7588aabc5e596130497dfee29f50c45e6c5523e22c139610f6c753ca "github.com/octokit/go-sdk/github/octokit/users"
-    idc1a675f538c66fdc49077be1d93fd555148dcf6f7a03f36272f04a40b73ef73 "github.com/octokit/go-sdk/github/octokit/feeds"
-    ie577812b0036060606fad9c9b7baa97e00057feccfa313626b08117c252194d7 "github.com/octokit/go-sdk/github/octokit/versions"
-    if30a1452149cfdf73a767d93b983bc75ceafe8e5c3a2145b5d091ecd0c1e9ded "github.com/octokit/go-sdk/github/octokit/marketplace_listing"
     i25911dc319edd61cbac496af7eab5ef20b6069a42515e22ec6a9bc97bf598488 "github.com/microsoft/kiota-serialization-json-go"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i4bcdc892e61ac17e2afc10b5e2b536b29f4fd6c1ad30f4a5a68df47495db3347 "github.com/microsoft/kiota-serialization-form-go"
     i56887720f41ac882814261620b1c8459c4a992a0207af547c4453dd39fabc426 "github.com/microsoft/kiota-serialization-multipart-go"
     i7294a22093d408fdca300f11b81a887d89c47b764af06c8b803e2323973fdb83 "github.com/microsoft/kiota-serialization-text-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i006ac19b46f7860b7359e6cc742a2213da1a512ec1c7d0aae6cf413f77880e18 "github.com/octokit/go-sdk/github/octokit/orgs"
+    i036f8c76ca722afbbb72ebcdb51244c927aff7bca1cfebb950994aac3db6a206 "github.com/octokit/go-sdk/github/octokit/user"
+    i03a3ace4ab67b9bd12c318876b591a42401445b28fc0d15af81ca9d68f84afef "github.com/octokit/go-sdk/github/octokit/codes_of_conduct"
+    i0a41a67c67557b401d607bec1017ba369edee449be6203262889bd4f6fe8018c "github.com/octokit/go-sdk/github/octokit/zen"
+    i0c0a073bba79314de6b968ee3ac963288d9a717dea40b7ef084afe188ea55d45 "github.com/octokit/go-sdk/github/octokit/versions"
+    i1790f60a6d24b15240ea65ca9183e125346ae1d30cb03d8b67ebb65a5e9af90a "github.com/octokit/go-sdk/github/octokit/issues"
+    i198693a66d8516e0b95f63eba53f5bd9faa4b866b296f65f70a160d20cd00869 "github.com/octokit/go-sdk/github/octokit/assignments"
+    i226c6e0c3eb27f11a036f911a20cd78714540d256a30ef62bb5c07932ebbf1ad "github.com/octokit/go-sdk/github/octokit/applications"
+    i24a6da0dafb64b99af6054f1b79b91fb4c90b5a5223b1117b3329c6a4df15184 "github.com/octokit/go-sdk/github/octokit/enterprises"
+    i32b2c35b91803243459a19797935c406e08a7ac5f2e535b29c5578423b31588f "github.com/octokit/go-sdk/github/octokit/rate_limit"
+    i42234227323bb9085c39a8953a9cb5e6a70dc990771162276a9ca718fbba7d5e "github.com/octokit/go-sdk/github/octokit/markdown"
+    i42ad804983ceb46bd8a65545b25d3ef4fceb8c76cb775ee031e99d72d7501ea1 "github.com/octokit/go-sdk/github/octokit/advisories"
+    i4a11dbf1fac8370be6f5106b2269092133cf4ec314afd089fab27dc7dc1f3241 "github.com/octokit/go-sdk/github/octokit/licenses"
+    i5406244bdf8038feac942b019f5d863c71d17da72a9cee044e224423a517481f "github.com/octokit/go-sdk/github/octokit/projects"
+    i5754c6de91a6e89e2993d008ea667142335a8fa0a5e45a6ee5b29f29c02f34a3 "github.com/octokit/go-sdk/github/octokit/feeds"
+    i57dea5e4bfbe19008da64b99b06c98a9e0e8ed54cf56a5d62df6b10a5b352236 "github.com/octokit/go-sdk/github/octokit/app"
+    i58d6850d1b0c5fc1569fd86453afdff88f2e933fdcb4cd121b1e20d9d527a0b8 "github.com/octokit/go-sdk/github/octokit/users"
+    i5f31d8076704b2a33cf0d9496caffcad199649c2b9693da84305db274106d6c9 "github.com/octokit/go-sdk/github/octokit/networks"
+    i60d210be466537b7cfe7e84a79365b690725bffe8bdaff504696996406b87a8b "github.com/octokit/go-sdk/github/octokit/meta"
+    i71e3d6b9d82a10e0c351b2793a30816189ce7b7e3809438d9637fddf19f2e4de "github.com/octokit/go-sdk/github/octokit/teams"
+    i7238c553ea63f232858d04abc7aa42cf1c6703df7c6b4a89ed97696c881b1b86 "github.com/octokit/go-sdk/github/octokit/octocat"
+    i892fd18bf3f479d508c18121aaa79a47af092fb22bf2c016696f4ef49ac0f2df "github.com/octokit/go-sdk/github/octokit/installation"
+    i8eb05c4a8c40e9a66f7c3bd436ffaf5869db0e78726339a6c29d711921e3c8ca "github.com/octokit/go-sdk/github/octokit/marketplace_listing"
+    i934389078e2d9c63343c6b357201b85c703e6fc5dcfeec1d578a807bea450520 "github.com/octokit/go-sdk/github/octokit/classrooms"
+    i95fc277b98fb5717711ae14a55e97eccdd5277a1df93e57f237ea54e3c23e865 "github.com/octokit/go-sdk/github/octokit/appmanifests"
+    i97d6f896d44068be5b5e21e5d1fa2c5aaa75945ea97ac569a00dd04274a95d25 "github.com/octokit/go-sdk/github/octokit/gists"
+    ia818d425c90b7b6ad2d2240b3a6039727c3a3adb3b856b83297abdb649bf7b5a "github.com/octokit/go-sdk/github/octokit/emojis"
+    ibcd8a3e35b6ab970afb6dc75815c8ca8f5a5873760b244cfb82ad1ada7d36271 "github.com/octokit/go-sdk/github/octokit/search"
+    ic5c472fad8099124bbac547779804efde5daea6ed48cfd69bad1391db8d32eaf "github.com/octokit/go-sdk/github/octokit/repositories"
+    icac773a834232ff9261f69ba5960a9a9c9a9a52a6372d61a99ae834174d581c8 "github.com/octokit/go-sdk/github/octokit/gitignore"
+    id498c92982d2f948ace86e8cde2d5fff55ba6cb718f448e213df19b59968ecd3 "github.com/octokit/go-sdk/github/octokit/organizations"
+    id93ee658913eeb4bcf71cd66de862383ff3cdd07db79c518b345fc9dd4e57406 "github.com/octokit/go-sdk/github/octokit/notifications"
+    iddc31237199800bb0c9999de06596e2979bdd4a3f890a253e6c5893742ea8d64 "github.com/octokit/go-sdk/github/octokit/repos"
+    idf7cb172d723d671741ceccc919f4de4b6893a1576f2bde93e7d1a7f1a5260e1 "github.com/octokit/go-sdk/github/octokit/events"
+    ie7bb3097c3ea6f5b2ba5bdff96293a9912b3e0f1448edbf76d4581f1985766da "github.com/octokit/go-sdk/github/octokit/apps"
 )
 
 // ApiClient the main entry point of the SDK, exposes the configuration and the fluent API.
 type ApiClient struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApiClientApiClientApiClientGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ApiClientApiClientApiClientGetRequestConfiguration struct {
+// ApiClientApiClientGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ApiClientApiClientGetRequestConfiguration struct {
     // Request headers
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // Advisories the advisories property
-func (m *ApiClient) Advisories()(*i02ee8c0c88594751b60d64ed7fcdb000fdaad97def006623cbdb4f69f4b32d94.AdvisoriesRequestBuilder) {
-    return i02ee8c0c88594751b60d64ed7fcdb000fdaad97def006623cbdb4f69f4b32d94.NewAdvisoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Advisories()(*i42ad804983ceb46bd8a65545b25d3ef4fceb8c76cb775ee031e99d72d7501ea1.AdvisoriesRequestBuilder) {
+    return i42ad804983ceb46bd8a65545b25d3ef4fceb8c76cb775ee031e99d72d7501ea1.NewAdvisoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // App the app property
-func (m *ApiClient) App()(*i7efaf73b4de581fad7766e10d6635bf593174afa4b8f1d434b52818d3f587a75.AppRequestBuilder) {
-    return i7efaf73b4de581fad7766e10d6635bf593174afa4b8f1d434b52818d3f587a75.NewAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) App()(*i57dea5e4bfbe19008da64b99b06c98a9e0e8ed54cf56a5d62df6b10a5b352236.AppRequestBuilder) {
+    return i57dea5e4bfbe19008da64b99b06c98a9e0e8ed54cf56a5d62df6b10a5b352236.NewAppRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Applications the applications property
-func (m *ApiClient) Applications()(*ia9291c1caee63132323a299d49592eaca763c9e77ad428426f40cb6259aa6d96.ApplicationsRequestBuilder) {
-    return ia9291c1caee63132323a299d49592eaca763c9e77ad428426f40cb6259aa6d96.NewApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Applications()(*i226c6e0c3eb27f11a036f911a20cd78714540d256a30ef62bb5c07932ebbf1ad.ApplicationsRequestBuilder) {
+    return i226c6e0c3eb27f11a036f911a20cd78714540d256a30ef62bb5c07932ebbf1ad.NewApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppManifests the appManifests property
-func (m *ApiClient) AppManifests()(*i2c35b84e5dfa49f713209a013e80a7385beaf706e6e556aecf2e399fe207c78e.AppManifestsRequestBuilder) {
-    return i2c35b84e5dfa49f713209a013e80a7385beaf706e6e556aecf2e399fe207c78e.NewAppManifestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) AppManifests()(*i95fc277b98fb5717711ae14a55e97eccdd5277a1df93e57f237ea54e3c23e865.AppManifestsRequestBuilder) {
+    return i95fc277b98fb5717711ae14a55e97eccdd5277a1df93e57f237ea54e3c23e865.NewAppManifestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Apps the apps property
-func (m *ApiClient) Apps()(*ia5719cf22df54e3f653a789d4bb3cfbf26867f5d852bae050b776a3627a20804.AppsRequestBuilder) {
-    return ia5719cf22df54e3f653a789d4bb3cfbf26867f5d852bae050b776a3627a20804.NewAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Apps()(*ie7bb3097c3ea6f5b2ba5bdff96293a9912b3e0f1448edbf76d4581f1985766da.AppsRequestBuilder) {
+    return ie7bb3097c3ea6f5b2ba5bdff96293a9912b3e0f1448edbf76d4581f1985766da.NewAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Assignments the assignments property
-func (m *ApiClient) Assignments()(*i012e0ce26fed2d41789483a15c5c138e39c09d7138903797fa49ac262560f5df.AssignmentsRequestBuilder) {
-    return i012e0ce26fed2d41789483a15c5c138e39c09d7138903797fa49ac262560f5df.NewAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Assignments()(*i198693a66d8516e0b95f63eba53f5bd9faa4b866b296f65f70a160d20cd00869.AssignmentsRequestBuilder) {
+    return i198693a66d8516e0b95f63eba53f5bd9faa4b866b296f65f70a160d20cd00869.NewAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Classrooms the classrooms property
-func (m *ApiClient) Classrooms()(*ice4dff0648d8b9ca210814f95ef4895f05a759326d8f73affda67a6182c86bef.ClassroomsRequestBuilder) {
-    return ice4dff0648d8b9ca210814f95ef4895f05a759326d8f73affda67a6182c86bef.NewClassroomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Classrooms()(*i934389078e2d9c63343c6b357201b85c703e6fc5dcfeec1d578a807bea450520.ClassroomsRequestBuilder) {
+    return i934389078e2d9c63343c6b357201b85c703e6fc5dcfeec1d578a807bea450520.NewClassroomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Codes_of_conduct the codes_of_conduct property
-func (m *ApiClient) Codes_of_conduct()(*i5095dd2639d5bc5f4e034eff6e6d0f6c9abd91b7305e13d5f2b03c3952784b2d.Codes_of_conductRequestBuilder) {
-    return i5095dd2639d5bc5f4e034eff6e6d0f6c9abd91b7305e13d5f2b03c3952784b2d.NewCodes_of_conductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Codes_of_conduct()(*i03a3ace4ab67b9bd12c318876b591a42401445b28fc0d15af81ca9d68f84afef.Codes_of_conductRequestBuilder) {
+    return i03a3ace4ab67b9bd12c318876b591a42401445b28fc0d15af81ca9d68f84afef.NewCodes_of_conductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewApiClient instantiates a new ApiClient and sets the default values.
 func NewApiClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApiClient) {
@@ -108,141 +108,138 @@ func NewApiClient(requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa52901
     return m
 }
 // Emojis the emojis property
-func (m *ApiClient) Emojis()(*i6e575246fc177c2ef9715eb0616ab13e30864c150a617d034a0ea090847e4cbe.EmojisRequestBuilder) {
-    return i6e575246fc177c2ef9715eb0616ab13e30864c150a617d034a0ea090847e4cbe.NewEmojisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Emojis()(*ia818d425c90b7b6ad2d2240b3a6039727c3a3adb3b856b83297abdb649bf7b5a.EmojisRequestBuilder) {
+    return ia818d425c90b7b6ad2d2240b3a6039727c3a3adb3b856b83297abdb649bf7b5a.NewEmojisRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Enterprises the enterprises property
-func (m *ApiClient) Enterprises()(*i44f21d2b6915e282dade6494e0dd5d54c66e851206bc3d6538b7c0409e1b068a.EnterprisesRequestBuilder) {
-    return i44f21d2b6915e282dade6494e0dd5d54c66e851206bc3d6538b7c0409e1b068a.NewEnterprisesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Enterprises()(*i24a6da0dafb64b99af6054f1b79b91fb4c90b5a5223b1117b3329c6a4df15184.EnterprisesRequestBuilder) {
+    return i24a6da0dafb64b99af6054f1b79b91fb4c90b5a5223b1117b3329c6a4df15184.NewEnterprisesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Events the events property
-func (m *ApiClient) Events()(*ic78807f3d372c667fba52904ce880ea4a1037de1fbe2df9e1063e9824975c7a0.EventsRequestBuilder) {
-    return ic78807f3d372c667fba52904ce880ea4a1037de1fbe2df9e1063e9824975c7a0.NewEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Events()(*idf7cb172d723d671741ceccc919f4de4b6893a1576f2bde93e7d1a7f1a5260e1.EventsRequestBuilder) {
+    return idf7cb172d723d671741ceccc919f4de4b6893a1576f2bde93e7d1a7f1a5260e1.NewEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Feeds the feeds property
-func (m *ApiClient) Feeds()(*idc1a675f538c66fdc49077be1d93fd555148dcf6f7a03f36272f04a40b73ef73.FeedsRequestBuilder) {
-    return idc1a675f538c66fdc49077be1d93fd555148dcf6f7a03f36272f04a40b73ef73.NewFeedsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Feeds()(*i5754c6de91a6e89e2993d008ea667142335a8fa0a5e45a6ee5b29f29c02f34a3.FeedsRequestBuilder) {
+    return i5754c6de91a6e89e2993d008ea667142335a8fa0a5e45a6ee5b29f29c02f34a3.NewFeedsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get Hypermedia links to resources accessible in GitHub's REST API
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/meta/meta#github-api-root
-func (m *ApiClient) Get(ctx context.Context, requestConfiguration *ApiClientApiClientApiClientGetRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Rootable, error) {
+func (m *ApiClient) Get(ctx context.Context, requestConfiguration *ApiClientApiClientGetRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Rootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRootFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRootFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Rootable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Rootable), nil
 }
 // Gists the gists property
-func (m *ApiClient) Gists()(*i5158455fbddcd6c896099ba1b5d12464896ded2373b500b4f608501c9bbf6043.GistsRequestBuilder) {
-    return i5158455fbddcd6c896099ba1b5d12464896ded2373b500b4f608501c9bbf6043.NewGistsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Gists()(*i97d6f896d44068be5b5e21e5d1fa2c5aaa75945ea97ac569a00dd04274a95d25.GistsRequestBuilder) {
+    return i97d6f896d44068be5b5e21e5d1fa2c5aaa75945ea97ac569a00dd04274a95d25.NewGistsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Gitignore the gitignore property
-func (m *ApiClient) Gitignore()(*i00f1fed9ef7cd71bdf3e75aeef327685883fab64913202cd0139764d217aaff2.GitignoreRequestBuilder) {
-    return i00f1fed9ef7cd71bdf3e75aeef327685883fab64913202cd0139764d217aaff2.NewGitignoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Gitignore()(*icac773a834232ff9261f69ba5960a9a9c9a9a52a6372d61a99ae834174d581c8.GitignoreRequestBuilder) {
+    return icac773a834232ff9261f69ba5960a9a9c9a9a52a6372d61a99ae834174d581c8.NewGitignoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Installation the installation property
-func (m *ApiClient) Installation()(*i1dfd9332d37df20f4bcd14ad579e3b1cffe9663d10ab09245466823b4f3012b2.InstallationRequestBuilder) {
-    return i1dfd9332d37df20f4bcd14ad579e3b1cffe9663d10ab09245466823b4f3012b2.NewInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Installation()(*i892fd18bf3f479d508c18121aaa79a47af092fb22bf2c016696f4ef49ac0f2df.InstallationRequestBuilder) {
+    return i892fd18bf3f479d508c18121aaa79a47af092fb22bf2c016696f4ef49ac0f2df.NewInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Issues the issues property
-func (m *ApiClient) Issues()(*id4564c761335fadb4fd125944822dfe1b721afd322a3fea1696f698e2c45d082.IssuesRequestBuilder) {
-    return id4564c761335fadb4fd125944822dfe1b721afd322a3fea1696f698e2c45d082.NewIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Issues()(*i1790f60a6d24b15240ea65ca9183e125346ae1d30cb03d8b67ebb65a5e9af90a.IssuesRequestBuilder) {
+    return i1790f60a6d24b15240ea65ca9183e125346ae1d30cb03d8b67ebb65a5e9af90a.NewIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Licenses the licenses property
-func (m *ApiClient) Licenses()(*i3058d03d797c773039f833ab56d4ca057161326ee2f7abed09b74ff73b4ae7eb.LicensesRequestBuilder) {
-    return i3058d03d797c773039f833ab56d4ca057161326ee2f7abed09b74ff73b4ae7eb.NewLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Licenses()(*i4a11dbf1fac8370be6f5106b2269092133cf4ec314afd089fab27dc7dc1f3241.LicensesRequestBuilder) {
+    return i4a11dbf1fac8370be6f5106b2269092133cf4ec314afd089fab27dc7dc1f3241.NewLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Markdown the markdown property
-func (m *ApiClient) Markdown()(*i833fa9bc6593661f71796b7d84d648c0d65f8408b784ab7cd6eebab510ae1315.MarkdownRequestBuilder) {
-    return i833fa9bc6593661f71796b7d84d648c0d65f8408b784ab7cd6eebab510ae1315.NewMarkdownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Markdown()(*i42234227323bb9085c39a8953a9cb5e6a70dc990771162276a9ca718fbba7d5e.MarkdownRequestBuilder) {
+    return i42234227323bb9085c39a8953a9cb5e6a70dc990771162276a9ca718fbba7d5e.NewMarkdownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Marketplace_listing the marketplace_listing property
-func (m *ApiClient) Marketplace_listing()(*if30a1452149cfdf73a767d93b983bc75ceafe8e5c3a2145b5d091ecd0c1e9ded.Marketplace_listingRequestBuilder) {
-    return if30a1452149cfdf73a767d93b983bc75ceafe8e5c3a2145b5d091ecd0c1e9ded.NewMarketplace_listingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Marketplace_listing()(*i8eb05c4a8c40e9a66f7c3bd436ffaf5869db0e78726339a6c29d711921e3c8ca.Marketplace_listingRequestBuilder) {
+    return i8eb05c4a8c40e9a66f7c3bd436ffaf5869db0e78726339a6c29d711921e3c8ca.NewMarketplace_listingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Meta the meta property
-func (m *ApiClient) Meta()(*i262e7bac7d437f187308d33ff0b0896e42bda1aeb406ee592579018ad9438b08.MetaRequestBuilder) {
-    return i262e7bac7d437f187308d33ff0b0896e42bda1aeb406ee592579018ad9438b08.NewMetaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Meta()(*i60d210be466537b7cfe7e84a79365b690725bffe8bdaff504696996406b87a8b.MetaRequestBuilder) {
+    return i60d210be466537b7cfe7e84a79365b690725bffe8bdaff504696996406b87a8b.NewMetaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Networks the networks property
-func (m *ApiClient) Networks()(*i082acd51e55dfd68ccfffd788e8960fd8e3bda49ae4cdc128e63d99ce442dee7.NetworksRequestBuilder) {
-    return i082acd51e55dfd68ccfffd788e8960fd8e3bda49ae4cdc128e63d99ce442dee7.NewNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Networks()(*i5f31d8076704b2a33cf0d9496caffcad199649c2b9693da84305db274106d6c9.NetworksRequestBuilder) {
+    return i5f31d8076704b2a33cf0d9496caffcad199649c2b9693da84305db274106d6c9.NewNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Notifications the notifications property
-func (m *ApiClient) Notifications()(*icbe907cd68e180423ba744b18cd54d6f1a4504ebbabbc646c47cd2e53fe3b710.NotificationsRequestBuilder) {
-    return icbe907cd68e180423ba744b18cd54d6f1a4504ebbabbc646c47cd2e53fe3b710.NewNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Notifications()(*id93ee658913eeb4bcf71cd66de862383ff3cdd07db79c518b345fc9dd4e57406.NotificationsRequestBuilder) {
+    return id93ee658913eeb4bcf71cd66de862383ff3cdd07db79c518b345fc9dd4e57406.NewNotificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Octocat the octocat property
-func (m *ApiClient) Octocat()(*i627571c2e22f9314da80ae4c23623e706d31b8776afca5e44a7a102a6d472571.OctocatRequestBuilder) {
-    return i627571c2e22f9314da80ae4c23623e706d31b8776afca5e44a7a102a6d472571.NewOctocatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Octocat()(*i7238c553ea63f232858d04abc7aa42cf1c6703df7c6b4a89ed97696c881b1b86.OctocatRequestBuilder) {
+    return i7238c553ea63f232858d04abc7aa42cf1c6703df7c6b4a89ed97696c881b1b86.NewOctocatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Organizations the organizations property
-func (m *ApiClient) Organizations()(*i181e64ab2934af4de43a294ded7ef34b081a50c35ba40f4cec6a76a5822989d1.OrganizationsRequestBuilder) {
-    return i181e64ab2934af4de43a294ded7ef34b081a50c35ba40f4cec6a76a5822989d1.NewOrganizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Organizations()(*id498c92982d2f948ace86e8cde2d5fff55ba6cb718f448e213df19b59968ecd3.OrganizationsRequestBuilder) {
+    return id498c92982d2f948ace86e8cde2d5fff55ba6cb718f448e213df19b59968ecd3.NewOrganizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Orgs the orgs property
-func (m *ApiClient) Orgs()(*i0630a5ec64f53746aa0214e4e80d70b6c40564fdc4c6b1e5638c35922cba31e1.OrgsRequestBuilder) {
-    return i0630a5ec64f53746aa0214e4e80d70b6c40564fdc4c6b1e5638c35922cba31e1.NewOrgsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Orgs()(*i006ac19b46f7860b7359e6cc742a2213da1a512ec1c7d0aae6cf413f77880e18.OrgsRequestBuilder) {
+    return i006ac19b46f7860b7359e6cc742a2213da1a512ec1c7d0aae6cf413f77880e18.NewOrgsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Projects the projects property
-func (m *ApiClient) Projects()(*i64a317472850c3e4f5ef3131ab2a9a6f13db1588332a5c1dcd9f1a196a7eb8c7.ProjectsRequestBuilder) {
-    return i64a317472850c3e4f5ef3131ab2a9a6f13db1588332a5c1dcd9f1a196a7eb8c7.NewProjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Projects()(*i5406244bdf8038feac942b019f5d863c71d17da72a9cee044e224423a517481f.ProjectsRequestBuilder) {
+    return i5406244bdf8038feac942b019f5d863c71d17da72a9cee044e224423a517481f.NewProjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Rate_limit the rate_limit property
-func (m *ApiClient) Rate_limit()(*i38d9bbc7d8ce8ccc6b96b9e050427bbdfb0f0e2c490a5b696de8c1700d5873e4.Rate_limitRequestBuilder) {
-    return i38d9bbc7d8ce8ccc6b96b9e050427bbdfb0f0e2c490a5b696de8c1700d5873e4.NewRate_limitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Rate_limit()(*i32b2c35b91803243459a19797935c406e08a7ac5f2e535b29c5578423b31588f.Rate_limitRequestBuilder) {
+    return i32b2c35b91803243459a19797935c406e08a7ac5f2e535b29c5578423b31588f.NewRate_limitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Repos the repos property
-func (m *ApiClient) Repos()(*ibbd3ded5ab35a41a71d583e10c43d0f095f9726b5b82bba8b5a25e9f933474b3.ReposRequestBuilder) {
-    return ibbd3ded5ab35a41a71d583e10c43d0f095f9726b5b82bba8b5a25e9f933474b3.NewReposRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Repos()(*iddc31237199800bb0c9999de06596e2979bdd4a3f890a253e6c5893742ea8d64.ReposRequestBuilder) {
+    return iddc31237199800bb0c9999de06596e2979bdd4a3f890a253e6c5893742ea8d64.NewReposRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Repositories the repositories property
-func (m *ApiClient) Repositories()(*iaffade5a83b840a1cef15c7bea8f813cbe645cb139c446bfa96d701a293886ea.RepositoriesRequestBuilder) {
-    return iaffade5a83b840a1cef15c7bea8f813cbe645cb139c446bfa96d701a293886ea.NewRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Repositories()(*ic5c472fad8099124bbac547779804efde5daea6ed48cfd69bad1391db8d32eaf.RepositoriesRequestBuilder) {
+    return ic5c472fad8099124bbac547779804efde5daea6ed48cfd69bad1391db8d32eaf.NewRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Search the search property
-func (m *ApiClient) Search()(*i8c195517ba5951b8b25203ea359263da58c5106fe9fc3e298b0fd10433c1b73a.SearchRequestBuilder) {
-    return i8c195517ba5951b8b25203ea359263da58c5106fe9fc3e298b0fd10433c1b73a.NewSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Search()(*ibcd8a3e35b6ab970afb6dc75815c8ca8f5a5873760b244cfb82ad1ada7d36271.SearchRequestBuilder) {
+    return ibcd8a3e35b6ab970afb6dc75815c8ca8f5a5873760b244cfb82ad1ada7d36271.NewSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Teams the teams property
-func (m *ApiClient) Teams()(*i85c5abd6c240949d53522ba93d9bd02e9eb0476edc84b6b5594555c4562d37b8.TeamsRequestBuilder) {
-    return i85c5abd6c240949d53522ba93d9bd02e9eb0476edc84b6b5594555c4562d37b8.NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Teams()(*i71e3d6b9d82a10e0c351b2793a30816189ce7b7e3809438d9637fddf19f2e4de.TeamsRequestBuilder) {
+    return i71e3d6b9d82a10e0c351b2793a30816189ce7b7e3809438d9637fddf19f2e4de.NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get Hypermedia links to resources accessible in GitHub's REST API
-func (m *ApiClient) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiClientApiClientApiClientGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+func (m *ApiClient) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiClientApiClientGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // User the user property
-func (m *ApiClient) User()(*i6c37bff252b47d15034dd4a14748f8549f8828890fe90f4959308d33347e8517.UserRequestBuilder) {
-    return i6c37bff252b47d15034dd4a14748f8549f8828890fe90f4959308d33347e8517.NewUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) User()(*i036f8c76ca722afbbb72ebcdb51244c927aff7bca1cfebb950994aac3db6a206.UserRequestBuilder) {
+    return i036f8c76ca722afbbb72ebcdb51244c927aff7bca1cfebb950994aac3db6a206.NewUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Users the users property
-func (m *ApiClient) Users()(*id849601c7588aabc5e596130497dfee29f50c45e6c5523e22c139610f6c753ca.UsersRequestBuilder) {
-    return id849601c7588aabc5e596130497dfee29f50c45e6c5523e22c139610f6c753ca.NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Users()(*i58d6850d1b0c5fc1569fd86453afdff88f2e933fdcb4cd121b1e20d9d527a0b8.UsersRequestBuilder) {
+    return i58d6850d1b0c5fc1569fd86453afdff88f2e933fdcb4cd121b1e20d9d527a0b8.NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Versions the versions property
-func (m *ApiClient) Versions()(*ie577812b0036060606fad9c9b7baa97e00057feccfa313626b08117c252194d7.VersionsRequestBuilder) {
-    return ie577812b0036060606fad9c9b7baa97e00057feccfa313626b08117c252194d7.NewVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Versions()(*i0c0a073bba79314de6b968ee3ac963288d9a717dea40b7ef084afe188ea55d45.VersionsRequestBuilder) {
+    return i0c0a073bba79314de6b968ee3ac963288d9a717dea40b7ef084afe188ea55d45.NewVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Zen the zen property
-func (m *ApiClient) Zen()(*i5a2e1bd682f7fd3d317f2f71dad65e31642f2c3320cddf0b774df79d329e8b15.ZenRequestBuilder) {
-    return i5a2e1bd682f7fd3d317f2f71dad65e31642f2c3320cddf0b774df79d329e8b15.NewZenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ApiClient) Zen()(*i0a41a67c67557b401d607bec1017ba369edee449be6203262889bd4f6fe8018c.ZenRequestBuilder) {
+    return i0a41a67c67557b401d607bec1017ba369edee449be6203262889bd4f6fe8018c.NewZenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsArtifactsGetResponse 
@@ -10,7 +10,7 @@ type ItemItemActionsArtifactsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The artifacts property
-    artifacts []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable
+    artifacts []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable
     // The total_count property
     total_count *int32
 }
@@ -30,22 +30,22 @@ func (m *ItemItemActionsArtifactsGetResponse) GetAdditionalData()(map[string]any
     return m.additionalData
 }
 // GetArtifacts gets the artifacts property value. The artifacts property
-func (m *ItemItemActionsArtifactsGetResponse) GetArtifacts()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable) {
+func (m *ItemItemActionsArtifactsGetResponse) GetArtifacts()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable) {
     return m.artifacts
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemActionsArtifactsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["artifacts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateArtifactFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateArtifactFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable)
                 }
             }
             m.SetArtifacts(res)
@@ -101,7 +101,7 @@ func (m *ItemItemActionsArtifactsGetResponse) SetAdditionalData(value map[string
     m.additionalData = value
 }
 // SetArtifacts sets the artifacts property value. The artifacts property
-func (m *ItemItemActionsArtifactsGetResponse) SetArtifacts(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable)() {
+func (m *ItemItemActionsArtifactsGetResponse) SetArtifacts(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable)() {
     m.artifacts = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemActionsArtifactsGetResponse) SetTotalCount(value *int32)() {
 type ItemItemActionsArtifactsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetArtifacts()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable)
+    GetArtifacts()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable)
     GetTotalCount()(*int32)
-    SetArtifacts(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Artifactable)()
+    SetArtifacts(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Artifactable)()
     SetTotalCount(value *int32)()
 }

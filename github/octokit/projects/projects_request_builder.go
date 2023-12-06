@@ -9,7 +9,7 @@ import (
 type ProjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByProject_id gets an item from the octokit.projects.item collection
+// ByProject_id gets an item from the github.com/octokit/go-sdk/github/octokit/.projects.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ProjectsRequestBuilder) ByProject_id(project_id string)(*WithProject_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *ProjectsRequestBuilder) ByProject_id(project_id string)(*WithProject_It
     }
     return NewWithProject_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByProject_idInteger gets an item from the octokit.projects.item collection
+// ByProject_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.projects.item collection
 func (m *ProjectsRequestBuilder) ByProject_idInteger(project_id int32)(*WithProject_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
