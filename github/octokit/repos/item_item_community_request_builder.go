@@ -4,14 +4,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCommunityRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\community
+// ItemItemCommunityRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\community
 type ItemItemCommunityRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemCommunityRequestBuilderInternal instantiates a new CommunityRequestBuilder and sets the default values.
 func NewItemItemCommunityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommunityRequestBuilder) {
     m := &ItemItemCommunityRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/community", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/community", pathParameters),
     }
     return m
 }

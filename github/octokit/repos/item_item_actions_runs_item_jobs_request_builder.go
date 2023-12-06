@@ -3,10 +3,10 @@ package repos
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i1079106d02751164b078dd6269a64cc9064622f44f7372f00504587809c6383f "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/runs/item/jobs"
+    i84bc5a78824a22565d6100ef1ced07919a098b39aaf69b1cd222d5e6281709e3 "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/runs/item/jobs"
 )
 
-// ItemItemActionsRunsItemJobsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\runs\{run_id}\jobs
+// ItemItemActionsRunsItemJobsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs\{run_id}\jobs
 type ItemItemActionsRunsItemJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -16,7 +16,7 @@ type ItemItemActionsRunsItemJobsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use filterAsGetFilterQueryParameterType instead
     Filter *string `uriparametername:"filter"`
     // Filters jobs by their `completed_at` timestamp. `latest` returns jobs from the most recent execution of the workflow run. `all` returns all jobs for a workflow run, including from old executions of the workflow run.
-    FilterAsGetFilterQueryParameterType *i1079106d02751164b078dd6269a64cc9064622f44f7372f00504587809c6383f.GetFilterQueryParameterType `uriparametername:"filter"`
+    FilterAsGetFilterQueryParameterType *i84bc5a78824a22565d6100ef1ced07919a098b39aaf69b1cd222d5e6281709e3.GetFilterQueryParameterType `uriparametername:"filter"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -34,7 +34,7 @@ type ItemItemActionsRunsItemJobsRequestBuilderGetRequestConfiguration struct {
 // NewItemItemActionsRunsItemJobsRequestBuilderInternal instantiates a new JobsRequestBuilder and sets the default values.
 func NewItemItemActionsRunsItemJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsItemJobsRequestBuilder) {
     m := &ItemItemActionsRunsItemJobsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/runs/{run_id}/jobs{?filter*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/jobs{?filter*,per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -83,7 +83,7 @@ func (m *ItemItemActionsRunsItemJobsRequestBuilder) GetAsJobsGetResponse(ctx con
 }
 // ToGetRequestInformation lists jobs for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).
 func (m *ItemItemActionsRunsItemJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsRunsItemJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -91,9 +91,6 @@ func (m *ItemItemActionsRunsItemJobsRequestBuilder) ToGetRequestInformation(ctx 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

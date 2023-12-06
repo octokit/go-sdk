@@ -3,8 +3,8 @@ package teams
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemProjectsRequestBuilder builds and executes requests for operations under \teams\{team_id}\projects
@@ -27,7 +27,7 @@ type ItemProjectsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemProjectsRequestBuilderGetQueryParameters
 }
-// ByProject_id gets an item from the octokit.teams.item.projects.item collection
+// ByProject_id gets an item from the github.com/octokit/go-sdk/github/octokit/.teams.item.projects.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemProjectsRequestBuilder) ByProject_id(project_id string)(*ItemProjectsWithProject_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -39,7 +39,7 @@ func (m *ItemProjectsRequestBuilder) ByProject_id(project_id string)(*ItemProjec
     }
     return NewItemProjectsWithProject_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByProject_idInteger gets an item from the octokit.teams.item.projects.item collection
+// ByProject_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.teams.item.projects.item collection
 // Deprecated: 
 func (m *ItemProjectsRequestBuilder) ByProject_idInteger(project_id int32)(*ItemProjectsWithProject_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -67,22 +67,22 @@ func NewItemProjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/teams/teams#list-team-projects-legacy
-func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.TeamProjectable, error) {
+func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.TeamProjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateTeamProjectFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateTeamProjectFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.TeamProjectable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.TeamProjectable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.TeamProjectable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.TeamProjectable)
         }
     }
     return val, nil
@@ -90,7 +90,7 @@ func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfigurati
 // ToGetRequestInformation **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team projects`](https://docs.github.com/rest/teams/teams#list-team-projects) endpoint.Lists the organization projects for a team.
 // Deprecated: 
 func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -98,9 +98,6 @@ func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

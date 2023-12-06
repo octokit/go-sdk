@@ -9,7 +9,7 @@ import (
 type ThreadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByThread_id gets an item from the octokit.notifications.threads.item collection
+// ByThread_id gets an item from the github.com/octokit/go-sdk/github/octokit/.notifications.threads.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ThreadsRequestBuilder) ByThread_id(thread_id string)(*ThreadsWithThread_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *ThreadsRequestBuilder) ByThread_id(thread_id string)(*ThreadsWithThread
     }
     return NewThreadsWithThread_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByThread_idInteger gets an item from the octokit.notifications.threads.item collection
+// ByThread_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.notifications.threads.item collection
 func (m *ThreadsRequestBuilder) ByThread_idInteger(thread_id int32)(*ThreadsWithThread_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

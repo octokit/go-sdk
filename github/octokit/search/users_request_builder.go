@@ -2,9 +2,9 @@ package search
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i81e8f7cd1d72ba7de098da3be5a11819265405b665d5b0ca3eb907e0f5b92a90 "github.com/octokit/go-sdk/github/octokit/search/users"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    if9c884de0a04b40a357af17fe3edcd9e80661c6450c0d1055f42e2c0af4b89b7 "github.com/octokit/go-sdk/github/octokit/search/users"
 )
 
 // UsersRequestBuilder builds and executes requests for operations under \search\users
@@ -17,7 +17,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use orderAsGetOrderQueryParameterType instead
     Order *string `uriparametername:"order"`
     // Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
-    OrderAsGetOrderQueryParameterType *i81e8f7cd1d72ba7de098da3be5a11819265405b665d5b0ca3eb907e0f5b92a90.GetOrderQueryParameterType `uriparametername:"order"`
+    OrderAsGetOrderQueryParameterType *if9c884de0a04b40a357af17fe3edcd9e80661c6450c0d1055f42e2c0af4b89b7.GetOrderQueryParameterType `uriparametername:"order"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -28,7 +28,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // Sorts the results of your query by number of `followers` or `repositories`, or when the person `joined` GitHub. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-    SortAsGetSortQueryParameterType *i81e8f7cd1d72ba7de098da3be5a11819265405b665d5b0ca3eb907e0f5b92a90.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *if9c884de0a04b40a357af17fe3edcd9e80661c6450c0d1055f42e2c0af4b89b7.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // UsersRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UsersRequestBuilderGetRequestConfiguration struct {
@@ -63,8 +63,8 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateUsers503ErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateUsers503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUsersResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,8 +85,8 @@ func (m *UsersRequestBuilder) GetAsUsersGetResponse(ctx context.Context, request
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateUsers503ErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateUsers503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateUsersGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -99,7 +99,7 @@ func (m *UsersRequestBuilder) GetAsUsersGetResponse(ctx context.Context, request
 }
 // ToGetRequestInformation find users via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for users, you can get text match metadata for the issue **login**, public **email**, and **name** fields when you pass the `text-match` media type. For more details about highlighting search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata). For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you're looking for a list of popular users, you might try this query:`q=tom+repos:%3E42+followers:%3E1000`This query searches for users with the name `tom`. The results are restricted to users with more than 42 repositories and over 1,000 followers.This endpoint does not accept authentication and will only include publicly visible users. As an alternative, you can use the GraphQL API. The GraphQL API requires authentication and will return private users, including Enterprise Managed Users (EMUs), that you are authorized to view. For more information, see "[GraphQL Queries](https://docs.github.com/graphql/reference/queries#search)."
 func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -107,9 +107,6 @@ func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

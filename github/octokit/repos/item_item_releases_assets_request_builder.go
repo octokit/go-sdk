@@ -5,11 +5,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemReleasesAssetsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\releases\assets
+// ItemItemReleasesAssetsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\releases\assets
 type ItemItemReleasesAssetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAsset_id gets an item from the octokit.repos.item.item.releases.assets.item collection
+// ByAsset_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.releases.assets.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_id(asset_id string)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_id(asset_id string)(*Item
     }
     return NewItemItemReleasesAssetsWithAsset_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByAsset_idInteger gets an item from the octokit.repos.item.item.releases.assets.item collection
+// ByAsset_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.releases.assets.item collection
 func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_idInteger(asset_id int32)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -33,7 +33,7 @@ func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_idInteger(asset_id int32)
 // NewItemItemReleasesAssetsRequestBuilderInternal instantiates a new AssetsRequestBuilder and sets the default values.
 func NewItemItemReleasesAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemReleasesAssetsRequestBuilder) {
     m := &ItemItemReleasesAssetsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/releases/assets", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/assets", pathParameters),
     }
     return m
 }

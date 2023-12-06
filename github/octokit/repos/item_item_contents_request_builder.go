@@ -4,11 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemContentsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\contents
+// ItemItemContentsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\contents
 type ItemItemContentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByPath gets an item from the octokit.repos.item.item.contents.item collection
+// ByPath gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.contents.item collection
 func (m *ItemItemContentsRequestBuilder) ByPath(path string)(*ItemItemContentsWithPathItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -22,7 +22,7 @@ func (m *ItemItemContentsRequestBuilder) ByPath(path string)(*ItemItemContentsWi
 // NewItemItemContentsRequestBuilderInternal instantiates a new ContentsRequestBuilder and sets the default values.
 func NewItemItemContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemContentsRequestBuilder) {
     m := &ItemItemContentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/contents", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents", pathParameters),
     }
     return m
 }

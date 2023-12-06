@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemCopilotBillingSeatsGetResponse 
@@ -10,7 +10,7 @@ type ItemCopilotBillingSeatsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The seats property
-    seats []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable
+    seats []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable
     // Total number of Copilot For Business seats for the organization currently being billed.
     total_seats *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemCopilotBillingSeatsGetResponse) GetAdditionalData()(map[string]any)
 func (m *ItemCopilotBillingSeatsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["seats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCopilotSeatDetailsFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCopilotSeatDetailsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable)
                 }
             }
             m.SetSeats(res)
@@ -61,7 +61,7 @@ func (m *ItemCopilotBillingSeatsGetResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetSeats gets the seats property value. The seats property
-func (m *ItemCopilotBillingSeatsGetResponse) GetSeats()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable) {
+func (m *ItemCopilotBillingSeatsGetResponse) GetSeats()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable) {
     return m.seats
 }
 // GetTotalSeats gets the total_seats property value. Total number of Copilot For Business seats for the organization currently being billed.
@@ -101,7 +101,7 @@ func (m *ItemCopilotBillingSeatsGetResponse) SetAdditionalData(value map[string]
     m.additionalData = value
 }
 // SetSeats sets the seats property value. The seats property
-func (m *ItemCopilotBillingSeatsGetResponse) SetSeats(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable)() {
+func (m *ItemCopilotBillingSeatsGetResponse) SetSeats(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable)() {
     m.seats = value
 }
 // SetTotalSeats sets the total_seats property value. Total number of Copilot For Business seats for the organization currently being billed.
@@ -112,8 +112,8 @@ func (m *ItemCopilotBillingSeatsGetResponse) SetTotalSeats(value *int32)() {
 type ItemCopilotBillingSeatsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetSeats()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable)
+    GetSeats()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable)
     GetTotalSeats()(*int32)
-    SetSeats(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CopilotSeatDetailsable)()
+    SetSeats(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CopilotSeatDetailsable)()
     SetTotalSeats(value *int32)()
 }

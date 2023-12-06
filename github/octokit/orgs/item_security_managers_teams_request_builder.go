@@ -8,7 +8,7 @@ import (
 type ItemSecurityManagersTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTeam_slug gets an item from the octokit.orgs.item.securityManagers.teams.item collection
+// ByTeam_slug gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.securityManagers.teams.item collection
 func (m *ItemSecurityManagersTeamsRequestBuilder) ByTeam_slug(team_slug string)(*ItemSecurityManagersTeamsWithTeam_slugItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

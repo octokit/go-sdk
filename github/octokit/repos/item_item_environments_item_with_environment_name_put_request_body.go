@@ -1,14 +1,14 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody struct {
     // The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-    deployment_branch_policy i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable
+    deployment_branch_policy i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable
     // Whether or not a user who created the job is prevented from approving their own job.
     prevent_self_review *bool
     // The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
@@ -27,19 +27,19 @@ func CreateItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyFromDiscrim
     return NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody(), nil
 }
 // GetDeploymentBranchPolicy gets the deployment_branch_policy property value. The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetDeploymentBranchPolicy()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable) {
+func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetDeploymentBranchPolicy()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable) {
     return m.deployment_branch_policy
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deployment_branch_policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateDeploymentBranchPolicySettingsFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateDeploymentBranchPolicySettingsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeploymentBranchPolicy(val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable))
+            m.SetDeploymentBranchPolicy(val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable))
         }
         return nil
     }
@@ -128,7 +128,7 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) Serialize(w
     return nil
 }
 // SetDeploymentBranchPolicy sets the deployment_branch_policy property value. The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
-func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) SetDeploymentBranchPolicy(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable)() {
+func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) SetDeploymentBranchPolicy(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable)() {
     m.deployment_branch_policy = value
 }
 // SetPreventSelfReview sets the prevent_self_review property value. Whether or not a user who created the job is prevented from approving their own job.
@@ -146,11 +146,11 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) SetWaitTime
 // ItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyable 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeploymentBranchPolicy()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable)
+    GetDeploymentBranchPolicy()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable)
     GetPreventSelfReview()(*bool)
     GetReviewers()([]ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable)
     GetWaitTimer()(*int32)
-    SetDeploymentBranchPolicy(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicySettingsable)()
+    SetDeploymentBranchPolicy(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicySettingsable)()
     SetPreventSelfReview(value *bool)()
     SetReviewers(value []ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable)()
     SetWaitTimer(value *int32)()

@@ -3,12 +3,12 @@ package repos
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ib9b85e8b6fc335d534455584e6c960195e07c1a8ac8ba2b04321dd3402c1f98a "github.com/octokit/go-sdk/github/octokit/repos/item/item/secretscanning/alerts"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    iab1fb9cc30e151b01a45656b48f1820157ddbd01c8137dc459e030f92675f18f "github.com/octokit/go-sdk/github/octokit/repos/item/item/secretscanning/alerts"
 )
 
-// ItemItemSecretScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\secret-scanning\alerts
+// ItemItemSecretScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\secret-scanning\alerts
 type ItemItemSecretScanningAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -22,7 +22,7 @@ type ItemItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *ib9b85e8b6fc335d534455584e6c960195e07c1a8ac8ba2b04321dd3402c1f98a.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *iab1fb9cc30e151b01a45656b48f1820157ddbd01c8137dc459e030f92675f18f.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -35,12 +35,12 @@ type ItemItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // The property to sort the results by. `created` means when the alert was created. `updated` means when the alert was updated or resolved.
-    SortAsGetSortQueryParameterType *ib9b85e8b6fc335d534455584e6c960195e07c1a8ac8ba2b04321dd3402c1f98a.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *iab1fb9cc30e151b01a45656b48f1820157ddbd01c8137dc459e030f92675f18f.GetSortQueryParameterType `uriparametername:"sort"`
     // Set to `open` or `resolved` to only list secret scanning alerts in a specific state.
     // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
     State *string `uriparametername:"state"`
     // Set to `open` or `resolved` to only list secret scanning alerts in a specific state.
-    StateAsGetStateQueryParameterType *ib9b85e8b6fc335d534455584e6c960195e07c1a8ac8ba2b04321dd3402c1f98a.GetStateQueryParameterType `uriparametername:"state"`
+    StateAsGetStateQueryParameterType *iab1fb9cc30e151b01a45656b48f1820157ddbd01c8137dc459e030f92675f18f.GetStateQueryParameterType `uriparametername:"state"`
     // A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`.
     Validity *string `uriparametername:"validity"`
 }
@@ -53,7 +53,7 @@ type ItemItemSecretScanningAlertsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemSecretScanningAlertsRequestBuilderGetQueryParameters
 }
-// ByAlert_number gets an item from the octokit.repos.item.item.secretScanning.alerts.item collection
+// ByAlert_number gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.secretScanning.alerts.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemSecretScanningAlertsRequestBuilder) ByAlert_number(alert_number string)(*ItemItemSecretScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -65,7 +65,7 @@ func (m *ItemItemSecretScanningAlertsRequestBuilder) ByAlert_number(alert_number
     }
     return NewItemItemSecretScanningAlertsWithAlert_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByAlert_numberInteger gets an item from the octokit.repos.item.item.secretScanning.alerts.item collection
+// ByAlert_numberInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.secretScanning.alerts.item collection
 func (m *ItemItemSecretScanningAlertsRequestBuilder) ByAlert_numberInteger(alert_number int32)(*ItemItemSecretScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -77,7 +77,7 @@ func (m *ItemItemSecretScanningAlertsRequestBuilder) ByAlert_numberInteger(alert
 // NewItemItemSecretScanningAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewItemItemSecretScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemSecretScanningAlertsRequestBuilder) {
     m := &ItemItemSecretScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/secret-scanning/alerts{?state*,secret_type*,resolution*,sort*,direction*,page*,per_page*,before*,after*,validity*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/secret-scanning/alerts{?state*,secret_type*,resolution*,sort*,direction*,page*,per_page*,before*,after*,validity*}", pathParameters),
     }
     return m
 }
@@ -91,29 +91,29 @@ func NewItemItemSecretScanningAlertsRequestBuilder(rawUrl string, requestAdapter
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-a-repository
-func (m *ItemItemSecretScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemSecretScanningAlertsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertable, error) {
+func (m *ItemItemSecretScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemSecretScanningAlertsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateAlerts503ErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateAlerts503ErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateSecretScanningAlertFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateSecretScanningAlertFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists secret scanning alerts for an eligible repository, from newest to oldest.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 func (m *ItemItemSecretScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemSecretScanningAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -121,9 +121,6 @@ func (m *ItemItemSecretScanningAlertsRequestBuilder) ToGetRequestInformation(ctx
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

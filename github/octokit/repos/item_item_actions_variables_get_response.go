@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsVariablesGetResponse 
@@ -12,7 +12,7 @@ type ItemItemActionsVariablesGetResponse struct {
     // The total_count property
     total_count *int32
     // The variables property
-    variables []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable
+    variables []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable
 }
 // NewItemItemActionsVariablesGetResponse instantiates a new ItemItemActionsVariablesGetResponse and sets the default values.
 func NewItemItemActionsVariablesGetResponse()(*ItemItemActionsVariablesGetResponse) {
@@ -43,15 +43,15 @@ func (m *ItemItemActionsVariablesGetResponse) GetFieldDeserializers()(map[string
         return nil
     }
     res["variables"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateActionsVariableFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateActionsVariableFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable)
                 }
             }
             m.SetVariables(res)
@@ -65,7 +65,7 @@ func (m *ItemItemActionsVariablesGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
 // GetVariables gets the variables property value. The variables property
-func (m *ItemItemActionsVariablesGetResponse) GetVariables()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable) {
+func (m *ItemItemActionsVariablesGetResponse) GetVariables()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable) {
     return m.variables
 }
 // Serialize serializes information the current object
@@ -105,7 +105,7 @@ func (m *ItemItemActionsVariablesGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
 // SetVariables sets the variables property value. The variables property
-func (m *ItemItemActionsVariablesGetResponse) SetVariables(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable)() {
+func (m *ItemItemActionsVariablesGetResponse) SetVariables(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable)() {
     m.variables = value
 }
 // ItemItemActionsVariablesGetResponseable 
@@ -113,7 +113,7 @@ type ItemItemActionsVariablesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetTotalCount()(*int32)
-    GetVariables()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable)
+    GetVariables()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable)
     SetTotalCount(value *int32)()
-    SetVariables(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsVariableable)()
+    SetVariables(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsVariableable)()
 }

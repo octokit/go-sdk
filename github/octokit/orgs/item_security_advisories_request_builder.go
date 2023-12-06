@@ -2,9 +2,9 @@ package orgs
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i454bd23a2254244e65fd35a89a323cae7fd0f33726052491e050d493989dd7c6 "github.com/octokit/go-sdk/github/octokit/orgs/item/securityadvisories"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i35b43dd9348c259983f365a43ef7f1783d8bbda0b03127086a7ea35bce44586b "github.com/octokit/go-sdk/github/octokit/orgs/item/securityadvisories"
 )
 
 // ItemSecurityAdvisoriesRequestBuilder builds and executes requests for operations under \orgs\{org}\security-advisories
@@ -21,19 +21,19 @@ type ItemSecurityAdvisoriesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i454bd23a2254244e65fd35a89a323cae7fd0f33726052491e050d493989dd7c6.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *i35b43dd9348c259983f365a43ef7f1783d8bbda0b03127086a7ea35bce44586b.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The number of advisories to return per page.
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // The property to sort the results by.
-    SortAsGetSortQueryParameterType *i454bd23a2254244e65fd35a89a323cae7fd0f33726052491e050d493989dd7c6.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i35b43dd9348c259983f365a43ef7f1783d8bbda0b03127086a7ea35bce44586b.GetSortQueryParameterType `uriparametername:"sort"`
     // Filter by the state of the repository advisories. Only advisories of this state will be returned.
     // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
     State *string `uriparametername:"state"`
     // Filter by the state of the repository advisories. Only advisories of this state will be returned.
-    StateAsGetStateQueryParameterType *i454bd23a2254244e65fd35a89a323cae7fd0f33726052491e050d493989dd7c6.GetStateQueryParameterType `uriparametername:"state"`
+    StateAsGetStateQueryParameterType *i35b43dd9348c259983f365a43ef7f1783d8bbda0b03127086a7ea35bce44586b.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ItemSecurityAdvisoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSecurityAdvisoriesRequestBuilderGetRequestConfiguration struct {
@@ -61,30 +61,30 @@ func NewItemSecurityAdvisoriesRequestBuilder(rawUrl string, requestAdapter i2ae4
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/security-advisories/repository-advisories#list-repository-security-advisories-for-an-organization
-func (m *ItemSecurityAdvisoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSecurityAdvisoriesRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepositoryAdvisoryable, error) {
+func (m *ItemSecurityAdvisoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSecurityAdvisoriesRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepositoryAdvisoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "400": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "400": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRepositoryAdvisoryFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRepositoryAdvisoryFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepositoryAdvisoryable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepositoryAdvisoryable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RepositoryAdvisoryable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RepositoryAdvisoryable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists repository security advisories for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `repository_advisories:write` permission.
 func (m *ItemSecurityAdvisoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityAdvisoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -92,9 +92,6 @@ func (m *ItemSecurityAdvisoriesRequestBuilder) ToGetRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

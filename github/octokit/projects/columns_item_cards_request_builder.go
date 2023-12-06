@@ -2,10 +2,10 @@ package projects
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    id34ad19071c4401276be58ddfcf31ab64ada4bb6069acb7835854cce34f9d366 "github.com/octokit/go-sdk/github/octokit/projects/columns/item/cards"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i83db18ab1bbeccc694b33e0d34f7c9accf59c22df4d848335710ca39b31de24a "github.com/octokit/go-sdk/github/octokit/projects/columns/item/cards"
 )
 
 // ColumnsItemCardsRequestBuilder builds and executes requests for operations under \projects\columns\{column_id}\cards
@@ -119,7 +119,7 @@ type ColumnsItemCardsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use archived_stateAsGetArchived_stateQueryParameterType instead
     Archived_state *string `uriparametername:"archived_state"`
     // Filters the project cards that are returned by the card's state.
-    Archived_stateAsGetArchived_stateQueryParameterType *id34ad19071c4401276be58ddfcf31ab64ada4bb6069acb7835854cce34f9d366.GetArchived_stateQueryParameterType `uriparametername:"archived_state"`
+    Archived_stateAsGetArchived_stateQueryParameterType *i83db18ab1bbeccc694b33e0d34f7c9accf59c22df4d848335710ca39b31de24a.GetArchived_stateQueryParameterType `uriparametername:"archived_state"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -144,9 +144,9 @@ type ColumnsItemCardsRequestBuilderPostRequestConfiguration struct {
 // ProjectCard422Error composed type wrapper for classes validationError, validationErrorSimple
 type ProjectCard422Error struct {
     // Composed type representation for type validationError
-    validationError i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable
+    validationError i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable
     // Composed type representation for type validationErrorSimple
-    validationErrorSimple i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable
+    validationErrorSimple i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable
 }
 // NewProjectCard422Error instantiates a new projectCard422Error and sets the default values.
 func NewProjectCard422Error()(*ProjectCard422Error) {
@@ -182,11 +182,11 @@ func (m *ProjectCard422Error) GetIsComposedType()(bool) {
     return true
 }
 // GetValidationError gets the validationError property value. Composed type representation for type validationError
-func (m *ProjectCard422Error) GetValidationError()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable) {
+func (m *ProjectCard422Error) GetValidationError()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable) {
     return m.validationError
 }
 // GetValidationErrorSimple gets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *ProjectCard422Error) GetValidationErrorSimple()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable) {
+func (m *ProjectCard422Error) GetValidationErrorSimple()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable) {
     return m.validationErrorSimple
 }
 // Serialize serializes information the current object
@@ -205,11 +205,11 @@ func (m *ProjectCard422Error) Serialize(writer i878a80d2330e89d26896388a3f487eef
     return nil
 }
 // SetValidationError sets the validationError property value. Composed type representation for type validationError
-func (m *ProjectCard422Error) SetValidationError(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)() {
+func (m *ProjectCard422Error) SetValidationError(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)() {
     m.validationError = value
 }
 // SetValidationErrorSimple sets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *ProjectCard422Error) SetValidationErrorSimple(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)() {
+func (m *ProjectCard422Error) SetValidationErrorSimple(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)() {
     m.validationErrorSimple = value
 }
 // CardsPostRequestBodyable 
@@ -227,10 +227,10 @@ type CardsPostRequestBodyable interface {
 // ProjectCard422Errorable 
 type ProjectCard422Errorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValidationError()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)
-    GetValidationErrorSimple()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)
-    SetValidationError(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)()
-    SetValidationErrorSimple(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)()
+    GetValidationError()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)
+    GetValidationErrorSimple()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)
+    SetValidationError(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)()
+    SetValidationErrorSimple(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)()
 }
 // NewColumnsItemCardsRequestBuilderInternal instantiates a new CardsRequestBuilder and sets the default values.
 func NewColumnsItemCardsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ColumnsItemCardsRequestBuilder) {
@@ -249,23 +249,23 @@ func NewColumnsItemCardsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/cards#list-project-cards
-func (m *ColumnsItemCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *ColumnsItemCardsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ProjectCardable, error) {
+func (m *ColumnsItemCardsRequestBuilder) Get(ctx context.Context, requestConfiguration *ColumnsItemCardsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ProjectCardable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "401": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "401": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateProjectCardFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateProjectCardFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ProjectCardable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ProjectCardable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ProjectCardable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ProjectCardable)
         }
     }
     return val, nil
@@ -274,29 +274,29 @@ func (m *ColumnsItemCardsRequestBuilder) Get(ctx context.Context, requestConfigu
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/cards#create-a-project-card
-func (m *ColumnsItemCardsRequestBuilder) Post(ctx context.Context, body CardsPostRequestBodyable, requestConfiguration *ColumnsItemCardsRequestBuilderPostRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ProjectCardable, error) {
+func (m *ColumnsItemCardsRequestBuilder) Post(ctx context.Context, body CardsPostRequestBodyable, requestConfiguration *ColumnsItemCardsRequestBuilderPostRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ProjectCardable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "401": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "401": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
         "422": CreateProjectCard422ErrorFromDiscriminatorValue,
         "503": CreateColumnsItemCardsProjectCard503ErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateProjectCardFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateProjectCardFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ProjectCardable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ProjectCardable), nil
 }
 // ToGetRequestInformation lists the project cards in a project.
 func (m *ColumnsItemCardsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ColumnsItemCardsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -304,21 +304,15 @@ func (m *ColumnsItemCardsRequestBuilder) ToGetRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 func (m *ColumnsItemCardsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CardsPostRequestBodyable, requestConfiguration *ColumnsItemCardsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsRunnersGetResponse 
@@ -10,7 +10,7 @@ type ItemItemActionsRunnersGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The runners property
-    runners []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable
+    runners []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemItemActionsRunnersGetResponse) GetAdditionalData()(map[string]any) 
 func (m *ItemItemActionsRunnersGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["runners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRunnerFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRunnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)
                 }
             }
             m.SetRunners(res)
@@ -61,7 +61,7 @@ func (m *ItemItemActionsRunnersGetResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetRunners gets the runners property value. The runners property
-func (m *ItemItemActionsRunnersGetResponse) GetRunners()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable) {
+func (m *ItemItemActionsRunnersGetResponse) GetRunners()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable) {
     return m.runners
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemItemActionsRunnersGetResponse) SetAdditionalData(value map[string]a
     m.additionalData = value
 }
 // SetRunners sets the runners property value. The runners property
-func (m *ItemItemActionsRunnersGetResponse) SetRunners(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)() {
+func (m *ItemItemActionsRunnersGetResponse) SetRunners(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)() {
     m.runners = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemActionsRunnersGetResponse) SetTotalCount(value *int32)() {
 type ItemItemActionsRunnersGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetRunners()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)
+    GetRunners()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)
     GetTotalCount()(*int32)
-    SetRunners(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)()
+    SetRunners(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)()
     SetTotalCount(value *int32)()
 }

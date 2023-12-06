@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemActionsCacheUsageByRepositoryGetResponse 
@@ -10,7 +10,7 @@ type ItemActionsCacheUsageByRepositoryGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The repository_cache_usages property
-    repository_cache_usages []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable
+    repository_cache_usages []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemActionsCacheUsageByRepositoryGetResponse) GetAdditionalData()(map[s
 func (m *ItemActionsCacheUsageByRepositoryGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["repository_cache_usages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateActionsCacheUsageByRepositoryFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateActionsCacheUsageByRepositoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable)
                 }
             }
             m.SetRepositoryCacheUsages(res)
@@ -61,7 +61,7 @@ func (m *ItemActionsCacheUsageByRepositoryGetResponse) GetFieldDeserializers()(m
     return res
 }
 // GetRepositoryCacheUsages gets the repository_cache_usages property value. The repository_cache_usages property
-func (m *ItemActionsCacheUsageByRepositoryGetResponse) GetRepositoryCacheUsages()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable) {
+func (m *ItemActionsCacheUsageByRepositoryGetResponse) GetRepositoryCacheUsages()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable) {
     return m.repository_cache_usages
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemActionsCacheUsageByRepositoryGetResponse) SetAdditionalData(value m
     m.additionalData = value
 }
 // SetRepositoryCacheUsages sets the repository_cache_usages property value. The repository_cache_usages property
-func (m *ItemActionsCacheUsageByRepositoryGetResponse) SetRepositoryCacheUsages(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable)() {
+func (m *ItemActionsCacheUsageByRepositoryGetResponse) SetRepositoryCacheUsages(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable)() {
     m.repository_cache_usages = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemActionsCacheUsageByRepositoryGetResponse) SetTotalCount(value *int3
 type ItemActionsCacheUsageByRepositoryGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetRepositoryCacheUsages()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable)
+    GetRepositoryCacheUsages()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable)
     GetTotalCount()(*int32)
-    SetRepositoryCacheUsages(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheUsageByRepositoryable)()
+    SetRepositoryCacheUsages(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheUsageByRepositoryable)()
     SetTotalCount(value *int32)()
 }

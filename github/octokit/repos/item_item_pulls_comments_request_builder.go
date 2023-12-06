@@ -4,12 +4,12 @@ import (
     "context"
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    idebe7880df40ec16823f14ee325804cbf75205b53f25102fecc906d91efe63ad "github.com/octokit/go-sdk/github/octokit/repos/item/item/pulls/comments"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    iaf4de204c9e2f65392a4413ba07b248b1c6f38443f26fbd4f05e3660f929a2c7 "github.com/octokit/go-sdk/github/octokit/repos/item/item/pulls/comments"
 )
 
-// ItemItemPullsCommentsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\pulls\comments
+// ItemItemPullsCommentsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pulls\comments
 type ItemItemPullsCommentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -19,7 +19,7 @@ type ItemItemPullsCommentsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort results. Ignored without `sort` parameter.
-    DirectionAsGetDirectionQueryParameterType *idebe7880df40ec16823f14ee325804cbf75205b53f25102fecc906d91efe63ad.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *iaf4de204c9e2f65392a4413ba07b248b1c6f38443f26fbd4f05e3660f929a2c7.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -30,7 +30,7 @@ type ItemItemPullsCommentsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // 
-    SortAsGetSortQueryParameterType *idebe7880df40ec16823f14ee325804cbf75205b53f25102fecc906d91efe63ad.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *iaf4de204c9e2f65392a4413ba07b248b1c6f38443f26fbd4f05e3660f929a2c7.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ItemItemPullsCommentsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemPullsCommentsRequestBuilderGetRequestConfiguration struct {
@@ -41,7 +41,7 @@ type ItemItemPullsCommentsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemPullsCommentsRequestBuilderGetQueryParameters
 }
-// ByComment_id gets an item from the octokit.repos.item.item.pulls.comments.item collection
+// ByComment_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.pulls.comments.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemPullsCommentsRequestBuilder) ByComment_id(comment_id string)(*ItemItemPullsCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -53,7 +53,7 @@ func (m *ItemItemPullsCommentsRequestBuilder) ByComment_id(comment_id string)(*I
     }
     return NewItemItemPullsCommentsWithComment_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByComment_idInteger gets an item from the octokit.repos.item.item.pulls.comments.item collection
+// ByComment_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.pulls.comments.item collection
 func (m *ItemItemPullsCommentsRequestBuilder) ByComment_idInteger(comment_id int32)(*ItemItemPullsCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -65,7 +65,7 @@ func (m *ItemItemPullsCommentsRequestBuilder) ByComment_idInteger(comment_id int
 // NewItemItemPullsCommentsRequestBuilderInternal instantiates a new CommentsRequestBuilder and sets the default values.
 func NewItemItemPullsCommentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsCommentsRequestBuilder) {
     m := &ItemItemPullsCommentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/pulls/comments{?sort*,direction*,since*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/comments{?sort*,direction*,since*,per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -79,26 +79,26 @@ func NewItemItemPullsCommentsRequestBuilder(rawUrl string, requestAdapter i2ae41
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pulls/comments#list-review-comments-in-a-repository
-func (m *ItemItemPullsCommentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemPullsCommentsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PullRequestReviewCommentable, error) {
+func (m *ItemItemPullsCommentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemPullsCommentsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PullRequestReviewCommentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreatePullRequestReviewCommentFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreatePullRequestReviewCommentFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PullRequestReviewCommentable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PullRequestReviewCommentable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PullRequestReviewCommentable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PullRequestReviewCommentable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists review comments for all pull requests in a repository. By default, review comments are in ascending order by ID.
 func (m *ItemItemPullsCommentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemPullsCommentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -106,9 +106,6 @@ func (m *ItemItemPullsCommentsRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

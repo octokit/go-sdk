@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemCodespacesGetResponse 
@@ -10,7 +10,7 @@ type ItemItemCodespacesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The codespaces property
-    codespaces []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable
+    codespaces []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable
     // The total_count property
     total_count *int32
 }
@@ -30,22 +30,22 @@ func (m *ItemItemCodespacesGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCodespaces gets the codespaces property value. The codespaces property
-func (m *ItemItemCodespacesGetResponse) GetCodespaces()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable) {
+func (m *ItemItemCodespacesGetResponse) GetCodespaces()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable) {
     return m.codespaces
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemCodespacesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["codespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCodespaceFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCodespaceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable)
                 }
             }
             m.SetCodespaces(res)
@@ -101,7 +101,7 @@ func (m *ItemItemCodespacesGetResponse) SetAdditionalData(value map[string]any)(
     m.additionalData = value
 }
 // SetCodespaces sets the codespaces property value. The codespaces property
-func (m *ItemItemCodespacesGetResponse) SetCodespaces(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable)() {
+func (m *ItemItemCodespacesGetResponse) SetCodespaces(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable)() {
     m.codespaces = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemCodespacesGetResponse) SetTotalCount(value *int32)() {
 type ItemItemCodespacesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCodespaces()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable)
+    GetCodespaces()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable)
     GetTotalCount()(*int32)
-    SetCodespaces(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Codespaceable)()
+    SetCodespaces(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Codespaceable)()
     SetTotalCount(value *int32)()
 }

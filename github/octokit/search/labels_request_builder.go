@@ -2,9 +2,9 @@ package search
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i3526c9886ec403c7c13560f362248d313c72742e5b98634120bd888637148bb6 "github.com/octokit/go-sdk/github/octokit/search/labels"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    ifce8ed6b3f455f31d1f1e747891355c67dd156380d727384d56f0c0fbdd9277d "github.com/octokit/go-sdk/github/octokit/search/labels"
 )
 
 // LabelsRequestBuilder builds and executes requests for operations under \search\labels
@@ -17,7 +17,7 @@ type LabelsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use orderAsGetOrderQueryParameterType instead
     Order *string `uriparametername:"order"`
     // Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
-    OrderAsGetOrderQueryParameterType *i3526c9886ec403c7c13560f362248d313c72742e5b98634120bd888637148bb6.GetOrderQueryParameterType `uriparametername:"order"`
+    OrderAsGetOrderQueryParameterType *ifce8ed6b3f455f31d1f1e747891355c67dd156380d727384d56f0c0fbdd9277d.GetOrderQueryParameterType `uriparametername:"order"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -30,7 +30,7 @@ type LabelsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // Sorts the results of your query by when the label was `created` or `updated`. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-    SortAsGetSortQueryParameterType *i3526c9886ec403c7c13560f362248d313c72742e5b98634120bd888637148bb6.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *ifce8ed6b3f455f31d1f1e747891355c67dd156380d727384d56f0c0fbdd9277d.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // LabelsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LabelsRequestBuilderGetRequestConfiguration struct {
@@ -65,9 +65,9 @@ func (m *LabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *La
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateLabelsResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -88,9 +88,9 @@ func (m *LabelsRequestBuilder) GetAsLabelsGetResponse(ctx context.Context, reque
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateLabelsGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -103,7 +103,7 @@ func (m *LabelsRequestBuilder) GetAsLabelsGetResponse(ctx context.Context, reque
 }
 // ToGetRequestInformation find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for labels, you can get text match metadata for the label **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to find labels in the `linguist` repository that match `bug`, `defect`, or `enhancement`. Your query might look like this:`q=bug+defect+enhancement&repository_id=64778136`The labels that best match the query appear first in the search results.
 func (m *LabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -111,9 +111,6 @@ func (m *LabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

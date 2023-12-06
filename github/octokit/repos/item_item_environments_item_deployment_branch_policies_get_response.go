@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse 
@@ -10,7 +10,7 @@ type ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The branch_policies property
-    branch_policies []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable
+    branch_policies []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable
     // The number of deployment branch policies for the environment.
     total_count *int32
 }
@@ -30,22 +30,22 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) GetAdditio
     return m.additionalData
 }
 // GetBranchPolicies gets the branch_policies property value. The branch_policies property
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) GetBranchPolicies()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) GetBranchPolicies()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable) {
     return m.branch_policies
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["branch_policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateDeploymentBranchPolicyFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateDeploymentBranchPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable)
                 }
             }
             m.SetBranchPolicies(res)
@@ -101,7 +101,7 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) SetAdditio
     m.additionalData = value
 }
 // SetBranchPolicies sets the branch_policies property value. The branch_policies property
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) SetBranchPolicies(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable)() {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) SetBranchPolicies(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable)() {
     m.branch_policies = value
 }
 // SetTotalCount sets the total_count property value. The number of deployment branch policies for the environment.
@@ -112,8 +112,8 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponse) SetTotalCo
 type ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBranchPolicies()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable)
+    GetBranchPolicies()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable)
     GetTotalCount()(*int32)
-    SetBranchPolicies(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentBranchPolicyable)()
+    SetBranchPolicies(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentBranchPolicyable)()
     SetTotalCount(value *int32)()
 }

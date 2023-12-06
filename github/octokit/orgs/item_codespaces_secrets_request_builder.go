@@ -25,7 +25,7 @@ type ItemCodespacesSecretsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemCodespacesSecretsRequestBuilderGetQueryParameters
 }
-// BySecret_name gets an item from the octokit.orgs.item.codespaces.secrets.item collection
+// BySecret_name gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.codespaces.secrets.item collection
 func (m *ItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -92,7 +92,7 @@ func (m *ItemCodespacesSecretsRequestBuilder) PublicKey()(*ItemCodespacesSecrets
 }
 // ToGetRequestInformation lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -100,9 +100,6 @@ func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -1,8 +1,8 @@
 package search
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // CodeGetResponse 
@@ -12,7 +12,7 @@ type CodeGetResponse struct {
     // The incomplete_results property
     incomplete_results *bool
     // The items property
-    items []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable
+    items []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable
     // The total_count property
     total_count *int32
 }
@@ -45,15 +45,15 @@ func (m *CodeGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCodeSearchResultItemFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCodeSearchResultItemFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable)
                 }
             }
             m.SetItems(res)
@@ -77,7 +77,7 @@ func (m *CodeGetResponse) GetIncompleteResults()(*bool) {
     return m.incomplete_results
 }
 // GetItems gets the items property value. The items property
-func (m *CodeGetResponse) GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable) {
+func (m *CodeGetResponse) GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable) {
     return m.items
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -127,7 +127,7 @@ func (m *CodeGetResponse) SetIncompleteResults(value *bool)() {
     m.incomplete_results = value
 }
 // SetItems sets the items property value. The items property
-func (m *CodeGetResponse) SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable)() {
+func (m *CodeGetResponse) SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable)() {
     m.items = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -139,9 +139,9 @@ type CodeGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetIncompleteResults()(*bool)
-    GetItems()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable)
+    GetItems()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable)
     GetTotalCount()(*int32)
     SetIncompleteResults(value *bool)()
-    SetItems(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeSearchResultItemable)()
+    SetItems(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeSearchResultItemable)()
     SetTotalCount(value *int32)()
 }

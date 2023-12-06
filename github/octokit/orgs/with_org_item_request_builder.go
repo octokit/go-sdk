@@ -2,9 +2,9 @@ package orgs
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // WithOrgItemRequestBuilder builds and executes requests for operations under \orgs\{org}
@@ -14,9 +14,9 @@ type WithOrgItemRequestBuilder struct {
 // OrganizationFull422Error composed type wrapper for classes validationError, validationErrorSimple
 type OrganizationFull422Error struct {
     // Composed type representation for type validationError
-    validationError i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable
+    validationError i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable
     // Composed type representation for type validationErrorSimple
-    validationErrorSimple i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable
+    validationErrorSimple i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable
 }
 // NewOrganizationFull422Error instantiates a new organizationFull422Error and sets the default values.
 func NewOrganizationFull422Error()(*OrganizationFull422Error) {
@@ -52,11 +52,11 @@ func (m *OrganizationFull422Error) GetIsComposedType()(bool) {
     return true
 }
 // GetValidationError gets the validationError property value. Composed type representation for type validationError
-func (m *OrganizationFull422Error) GetValidationError()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable) {
+func (m *OrganizationFull422Error) GetValidationError()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable) {
     return m.validationError
 }
 // GetValidationErrorSimple gets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *OrganizationFull422Error) GetValidationErrorSimple()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable) {
+func (m *OrganizationFull422Error) GetValidationErrorSimple()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable) {
     return m.validationErrorSimple
 }
 // Serialize serializes information the current object
@@ -75,11 +75,11 @@ func (m *OrganizationFull422Error) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetValidationError sets the validationError property value. Composed type representation for type validationError
-func (m *OrganizationFull422Error) SetValidationError(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)() {
+func (m *OrganizationFull422Error) SetValidationError(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)() {
     m.validationError = value
 }
 // SetValidationErrorSimple sets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *OrganizationFull422Error) SetValidationErrorSimple(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)() {
+func (m *OrganizationFull422Error) SetValidationErrorSimple(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)() {
     m.validationErrorSimple = value
 }
 // WithOrgItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
@@ -106,10 +106,10 @@ type WithOrgItemRequestBuilderPatchRequestConfiguration struct {
 // OrganizationFull422Errorable 
 type OrganizationFull422Errorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValidationError()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)
-    GetValidationErrorSimple()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)
-    SetValidationError(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorable)()
-    SetValidationErrorSimple(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ValidationErrorSimpleable)()
+    GetValidationError()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)
+    GetValidationErrorSimple()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)
+    SetValidationError(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorable)()
+    SetValidationErrorSimple(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ValidationErrorSimpleable)()
 }
 // Actions the actions property
 func (m *WithOrgItemRequestBuilder) Actions()(*ItemActionsRequestBuilder) {
@@ -119,7 +119,7 @@ func (m *WithOrgItemRequestBuilder) Actions()(*ItemActionsRequestBuilder) {
 func (m *WithOrgItemRequestBuilder) Blocks()(*ItemBlocksRequestBuilder) {
     return NewItemBlocksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BySecurity_product gets an item from the octokit.orgs.item.item collection
+// BySecurity_product gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.item collection
 func (m *WithOrgItemRequestBuilder) BySecurity_product(security_product string)(*ItemWithSecurity_productItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -166,8 +166,8 @@ func (m *WithOrgItemRequestBuilder) Delete(ctx context.Context, requestConfigura
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemWithOrgResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -188,8 +188,8 @@ func (m *WithOrgItemRequestBuilder) DeleteAsWithOrgDeleteResponse(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemWithOrgDeleteResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -220,22 +220,22 @@ func (m *WithOrgItemRequestBuilder) Failed_invitations()(*ItemFailed_invitations
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/orgs#get-an-organization
-func (m *WithOrgItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WithOrgItemRequestBuilderGetRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationFullable, error) {
+func (m *WithOrgItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WithOrgItemRequestBuilderGetRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationFullable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateOrganizationFullFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateOrganizationFullFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationFullable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationFullable), nil
 }
 // Hooks the hooks property
 func (m *WithOrgItemRequestBuilder) Hooks()(*ItemHooksRequestBuilder) {
@@ -293,23 +293,23 @@ func (m *WithOrgItemRequestBuilder) Packages()(*ItemPackagesRequestBuilder) {
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/orgs#update-an-organization
-func (m *WithOrgItemRequestBuilder) Patch(ctx context.Context, body ItemWithOrgPatchRequestBodyable, requestConfiguration *WithOrgItemRequestBuilderPatchRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationFullable, error) {
+func (m *WithOrgItemRequestBuilder) Patch(ctx context.Context, body ItemWithOrgPatchRequestBodyable, requestConfiguration *WithOrgItemRequestBuilderPatchRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationFullable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "409": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "409": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
         "422": CreateOrganizationFull422ErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateOrganizationFullFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateOrganizationFullFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationFullable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationFullable), nil
 }
 // PersonalAccessTokenRequests the personalAccessTokenRequests property
 func (m *WithOrgItemRequestBuilder) PersonalAccessTokenRequests()(*ItemPersonalAccessTokenRequestsRequestBuilder) {
@@ -361,40 +361,31 @@ func (m *WithOrgItemRequestBuilder) Teams()(*ItemTeamsRequestBuilder) {
 }
 // ToDeleteRequestInformation deletes an organization and all its repositories.The organization login will be unavailable for 90 days after deletion.Please review the Terms of Service regarding account deletion before using this endpoint:https://docs.github.com/site-policy/github-terms/github-terms-of-service
 func (m *WithOrgItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WithOrgItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation to see many of the organization response values, you need to be an authenticated organization owner with the `admin:org` scope. When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).GitHub Apps with the `Organization plan` permission can use this endpoint to retrieve information about an organization's GitHub plan. See "[Authenticating with GitHub Apps](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/)" for details. For an example response, see 'Response with GitHub plan information' below."
 func (m *WithOrgItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WithOrgItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).Enables an authenticated organization owner with the `admin:org` scope or the `repo` scope to update the organization's profile and member privileges.
 func (m *WithOrgItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemWithOrgPatchRequestBodyable, requestConfiguration *WithOrgItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

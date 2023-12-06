@@ -3,12 +3,12 @@ package repos
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie40a666bc38cc2385b5c2416d6a9e9040cae8c8833f3dd0af96d42494a9bb9e0 "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/caches"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i20351d8ce76d767391f283195a53f5d5e889e266388dee389666fb6ee2ad0399 "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/caches"
 )
 
-// ItemItemActionsCachesRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\caches
+// ItemItemActionsCachesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\caches
 type ItemItemActionsCachesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -34,7 +34,7 @@ type ItemItemActionsCachesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *ie40a666bc38cc2385b5c2416d6a9e9040cae8c8833f3dd0af96d42494a9bb9e0.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *i20351d8ce76d767391f283195a53f5d5e889e266388dee389666fb6ee2ad0399.GetDirectionQueryParameterType `uriparametername:"direction"`
     // An explicit key or prefix for identifying the cache
     Key *string `uriparametername:"key"`
     // Page number of the results to fetch.
@@ -47,7 +47,7 @@ type ItemItemActionsCachesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes.
-    SortAsGetSortQueryParameterType *ie40a666bc38cc2385b5c2416d6a9e9040cae8c8833f3dd0af96d42494a9bb9e0.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i20351d8ce76d767391f283195a53f5d5e889e266388dee389666fb6ee2ad0399.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ItemItemActionsCachesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemActionsCachesRequestBuilderGetRequestConfiguration struct {
@@ -58,7 +58,7 @@ type ItemItemActionsCachesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemActionsCachesRequestBuilderGetQueryParameters
 }
-// ByCache_id gets an item from the octokit.repos.item.item.actions.caches.item collection
+// ByCache_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.caches.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemActionsCachesRequestBuilder) ByCache_id(cache_id string)(*ItemItemActionsCachesWithCache_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,7 +70,7 @@ func (m *ItemItemActionsCachesRequestBuilder) ByCache_id(cache_id string)(*ItemI
     }
     return NewItemItemActionsCachesWithCache_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCache_idInteger gets an item from the octokit.repos.item.item.actions.caches.item collection
+// ByCache_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.caches.item collection
 func (m *ItemItemActionsCachesRequestBuilder) ByCache_idInteger(cache_id int32)(*ItemItemActionsCachesWithCache_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -82,7 +82,7 @@ func (m *ItemItemActionsCachesRequestBuilder) ByCache_idInteger(cache_id int32)(
 // NewItemItemActionsCachesRequestBuilderInternal instantiates a new CachesRequestBuilder and sets the default values.
 func NewItemItemActionsCachesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsCachesRequestBuilder) {
     m := &ItemItemActionsCachesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/caches{?per_page*,page*,ref*,key*,sort*,direction*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches{?per_page*,page*,ref*,key*,sort*,direction*}", pathParameters),
     }
     return m
 }
@@ -96,41 +96,41 @@ func NewItemItemActionsCachesRequestBuilder(rawUrl string, requestAdapter i2ae41
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key
-func (m *ItemItemActionsCachesRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderDeleteRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheListable, error) {
+func (m *ItemItemActionsCachesRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderDeleteRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheListable, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateActionsCacheListFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateActionsCacheListFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheListable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheListable), nil
 }
 // Get lists the GitHub Actions caches for a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:read` permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository
-func (m *ItemItemActionsCachesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderGetRequestConfiguration)(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheListable, error) {
+func (m *ItemItemActionsCachesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderGetRequestConfiguration)(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateActionsCacheListFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateActionsCacheListFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ActionsCacheListable), nil
+    return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ActionsCacheListable), nil
 }
 // ToDeleteRequestInformation deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:write` permission to use this endpoint.
 func (m *ItemItemActionsCachesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -138,15 +138,12 @@ func (m *ItemItemActionsCachesRequestBuilder) ToDeleteRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation lists the GitHub Actions caches for a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemActionsCachesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsCachesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -154,9 +151,6 @@ func (m *ItemItemActionsCachesRequestBuilder) ToGetRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

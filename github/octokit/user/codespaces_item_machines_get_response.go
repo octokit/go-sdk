@@ -1,8 +1,8 @@
 package user
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // CodespacesItemMachinesGetResponse 
@@ -10,7 +10,7 @@ type CodespacesItemMachinesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The machines property
-    machines []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable
+    machines []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *CodespacesItemMachinesGetResponse) GetAdditionalData()(map[string]any) 
 func (m *CodespacesItemMachinesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["machines"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCodespaceMachineFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCodespaceMachineFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable)
                 }
             }
             m.SetMachines(res)
@@ -61,7 +61,7 @@ func (m *CodespacesItemMachinesGetResponse) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetMachines gets the machines property value. The machines property
-func (m *CodespacesItemMachinesGetResponse) GetMachines()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable) {
+func (m *CodespacesItemMachinesGetResponse) GetMachines()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable) {
     return m.machines
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *CodespacesItemMachinesGetResponse) SetAdditionalData(value map[string]a
     m.additionalData = value
 }
 // SetMachines sets the machines property value. The machines property
-func (m *CodespacesItemMachinesGetResponse) SetMachines(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable)() {
+func (m *CodespacesItemMachinesGetResponse) SetMachines(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable)() {
     m.machines = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *CodespacesItemMachinesGetResponse) SetTotalCount(value *int32)() {
 type CodespacesItemMachinesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetMachines()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable)
+    GetMachines()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable)
     GetTotalCount()(*int32)
-    SetMachines(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodespaceMachineable)()
+    SetMachines(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodespaceMachineable)()
     SetTotalCount(value *int32)()
 }

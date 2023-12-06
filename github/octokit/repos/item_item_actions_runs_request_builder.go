@@ -5,10 +5,10 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i17ccdfacda8f39a2fa28659406e5b323faf24d63968eb743de22f63e1262fb26 "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/runs"
+    ie1c6ee8184c8a0498f517f5358d5b5276a5f94b8d80136352d0b23c8a035838c "github.com/octokit/go-sdk/github/octokit/repos/item/item/actions/runs"
 )
 
-// ItemItemActionsRunsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\runs
+// ItemItemActionsRunsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs
 type ItemItemActionsRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -36,7 +36,7 @@ type ItemItemActionsRunsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead
     Status *string `uriparametername:"status"`
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
-    StatusAsGetStatusQueryParameterType *i17ccdfacda8f39a2fa28659406e5b323faf24d63968eb743de22f63e1262fb26.GetStatusQueryParameterType `uriparametername:"status"`
+    StatusAsGetStatusQueryParameterType *ie1c6ee8184c8a0498f517f5358d5b5276a5f94b8d80136352d0b23c8a035838c.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // ItemItemActionsRunsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemActionsRunsRequestBuilderGetRequestConfiguration struct {
@@ -47,7 +47,7 @@ type ItemItemActionsRunsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemActionsRunsRequestBuilderGetQueryParameters
 }
-// ByRun_id gets an item from the octokit.repos.item.item.actions.runs.item collection
+// ByRun_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.runs.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id string)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -59,7 +59,7 @@ func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id string)(*ItemItemAct
     }
     return NewItemItemActionsRunsWithRun_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByRun_idInteger gets an item from the octokit.repos.item.item.actions.runs.item collection
+// ByRun_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.runs.item collection
 func (m *ItemItemActionsRunsRequestBuilder) ByRun_idInteger(run_id int32)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -71,7 +71,7 @@ func (m *ItemItemActionsRunsRequestBuilder) ByRun_idInteger(run_id int32)(*ItemI
 // NewItemItemActionsRunsRequestBuilderInternal instantiates a new RunsRequestBuilder and sets the default values.
 func NewItemItemActionsRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsRequestBuilder) {
     m := &ItemItemActionsRunsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/runs{?actor*,branch*,event*,status*,per_page*,page*,created*,exclude_pull_requests*,check_suite_id*,head_sha*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs{?actor*,branch*,event*,status*,per_page*,page*,created*,exclude_pull_requests*,check_suite_id*,head_sha*}", pathParameters),
     }
     return m
 }
@@ -120,7 +120,7 @@ func (m *ItemItemActionsRunsRequestBuilder) GetAsRunsGetResponse(ctx context.Con
 }
 // ToGetRequestInformation lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/overview/resources-in-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemActionsRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -128,9 +128,6 @@ func (m *ItemItemActionsRunsRequestBuilder) ToGetRequestInformation(ctx context.
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

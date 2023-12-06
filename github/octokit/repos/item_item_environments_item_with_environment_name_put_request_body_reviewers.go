@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers 
@@ -12,7 +12,7 @@ type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers struct
     // The id of the user or team who can review the deployment
     id *int32
     // The type of reviewer.
-    typeEscaped *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType
+    typeEscaped *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType
 }
 // NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers instantiates a new ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers and sets the default values.
 func NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers()(*ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) {
@@ -43,12 +43,12 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) G
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseDeploymentReviewerType)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseDeploymentReviewerType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType))
+            m.SetTypeEscaped(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType))
         }
         return nil
     }
@@ -59,7 +59,7 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) G
     return m.id
 }
 // GetTypeEscaped gets the type property value. The type of reviewer.
-func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetTypeEscaped()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType) {
+func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetTypeEscaped()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType) {
     return m.typeEscaped
 }
 // Serialize serializes information the current object
@@ -94,7 +94,7 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) S
     m.id = value
 }
 // SetTypeEscaped sets the type property value. The type of reviewer.
-func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) SetTypeEscaped(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType)() {
+func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) SetTypeEscaped(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType)() {
     m.typeEscaped = value
 }
 // ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable 
@@ -102,7 +102,7 @@ type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable in
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetId()(*int32)
-    GetTypeEscaped()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType)
+    GetTypeEscaped()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType)
     SetId(value *int32)()
-    SetTypeEscaped(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.DeploymentReviewerType)()
+    SetTypeEscaped(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.DeploymentReviewerType)()
 }

@@ -2,9 +2,9 @@ package users
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    if65aa0af116516496f04b8d6a93a1fbb1b89abea6fa9e600f4faac7af0568c06 "github.com/octokit/go-sdk/github/octokit/users/item/projects"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i3678e84466d0f8afd2e4b29a1b411ffe45f29dcb4bbb5c814e0da8fb0e7163b7 "github.com/octokit/go-sdk/github/octokit/users/item/projects"
 )
 
 // ItemProjectsRequestBuilder builds and executes requests for operations under \users\{username}\projects
@@ -21,7 +21,7 @@ type ItemProjectsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
     State *string `uriparametername:"state"`
     // Indicates the state of the projects to return.
-    StateAsGetStateQueryParameterType *if65aa0af116516496f04b8d6a93a1fbb1b89abea6fa9e600f4faac7af0568c06.GetStateQueryParameterType `uriparametername:"state"`
+    StateAsGetStateQueryParameterType *i3678e84466d0f8afd2e4b29a1b411ffe45f29dcb4bbb5c814e0da8fb0e7163b7.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ItemProjectsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemProjectsRequestBuilderGetRequestConfiguration struct {
@@ -49,29 +49,29 @@ func NewItemProjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/projects#list-user-projects
-func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Projectable, error) {
+func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Projectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateProjectFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateProjectFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Projectable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Projectable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Projectable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Projectable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists projects for a user.
 func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -79,9 +79,6 @@ func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

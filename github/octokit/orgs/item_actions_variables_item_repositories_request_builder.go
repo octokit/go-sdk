@@ -33,7 +33,7 @@ type ItemActionsVariablesItemRepositoriesRequestBuilderPutRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRepository_id gets an item from the octokit.orgs.item.actions.variables.item.repositories.item collection
+// ByRepository_id gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.actions.variables.item.repositories.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ByRepository_id(repository_id string)(*ItemActionsVariablesItemRepositoriesWithRepository_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -45,7 +45,7 @@ func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ByRepository_id(rep
     }
     return NewItemActionsVariablesItemRepositoriesWithRepository_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByRepository_idInteger gets an item from the octokit.orgs.item.actions.variables.item.repositories.item collection
+// ByRepository_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.actions.variables.item.repositories.item collection
 func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ByRepository_idInteger(repository_id int32)(*ItemActionsVariablesItemRepositoriesWithRepository_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -121,7 +121,7 @@ func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) Put(ctx context.Con
 }
 // ToGetRequestInformation lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActionsVariablesItemRepositoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -129,22 +129,16 @@ func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ToGetRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation replaces all repositories for an organization variable that is availableto selected repositories. Organization variables that are available to selectedrepositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use thisendpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemActionsVariablesItemRepositoriesPutRequestBodyable, requestConfiguration *ItemActionsVariablesItemRepositoriesRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

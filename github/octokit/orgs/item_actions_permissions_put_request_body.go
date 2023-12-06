@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemActionsPermissionsPutRequestBody 
@@ -10,9 +10,9 @@ type ItemActionsPermissionsPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The permissions policy that controls the actions and reusable workflows that are allowed to run.
-    allowed_actions *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions
+    allowed_actions *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions
     // The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-    enabled_repositories *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories
+    enabled_repositories *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories
 }
 // NewItemActionsPermissionsPutRequestBody instantiates a new ItemActionsPermissionsPutRequestBody and sets the default values.
 func NewItemActionsPermissionsPutRequestBody()(*ItemActionsPermissionsPutRequestBody) {
@@ -30,33 +30,33 @@ func (m *ItemActionsPermissionsPutRequestBody) GetAdditionalData()(map[string]an
     return m.additionalData
 }
 // GetAllowedActions gets the allowed_actions property value. The permissions policy that controls the actions and reusable workflows that are allowed to run.
-func (m *ItemActionsPermissionsPutRequestBody) GetAllowedActions()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions) {
+func (m *ItemActionsPermissionsPutRequestBody) GetAllowedActions()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions) {
     return m.allowed_actions
 }
 // GetEnabledRepositories gets the enabled_repositories property value. The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-func (m *ItemActionsPermissionsPutRequestBody) GetEnabledRepositories()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories) {
+func (m *ItemActionsPermissionsPutRequestBody) GetEnabledRepositories()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories) {
     return m.enabled_repositories
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemActionsPermissionsPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowed_actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseAllowedActions)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseAllowedActions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedActions(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions))
+            m.SetAllowedActions(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions))
         }
         return nil
     }
     res["enabled_repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseEnabledRepositories)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseEnabledRepositories)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetEnabledRepositories(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories))
+            m.SetEnabledRepositories(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories))
         }
         return nil
     }
@@ -91,19 +91,19 @@ func (m *ItemActionsPermissionsPutRequestBody) SetAdditionalData(value map[strin
     m.additionalData = value
 }
 // SetAllowedActions sets the allowed_actions property value. The permissions policy that controls the actions and reusable workflows that are allowed to run.
-func (m *ItemActionsPermissionsPutRequestBody) SetAllowedActions(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions)() {
+func (m *ItemActionsPermissionsPutRequestBody) SetAllowedActions(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions)() {
     m.allowed_actions = value
 }
 // SetEnabledRepositories sets the enabled_repositories property value. The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
-func (m *ItemActionsPermissionsPutRequestBody) SetEnabledRepositories(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories)() {
+func (m *ItemActionsPermissionsPutRequestBody) SetEnabledRepositories(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories)() {
     m.enabled_repositories = value
 }
 // ItemActionsPermissionsPutRequestBodyable 
 type ItemActionsPermissionsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedActions()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions)
-    GetEnabledRepositories()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories)
-    SetAllowedActions(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AllowedActions)()
-    SetEnabledRepositories(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.EnabledRepositories)()
+    GetAllowedActions()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions)
+    GetEnabledRepositories()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories)
+    SetAllowedActions(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AllowedActions)()
+    SetEnabledRepositories(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EnabledRepositories)()
 }

@@ -2,9 +2,9 @@ package search
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i7e3cd1bc7cc7a1f514f5de5aa8f5139f3c2dd715fe4530f0f309c0c502d22e48 "github.com/octokit/go-sdk/github/octokit/search/repositories"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    ieee0cfa1d036b4f28d55268a074a4c18105601f0fc0bd0cdda00cd7aafe5ef7e "github.com/octokit/go-sdk/github/octokit/search/repositories"
 )
 
 // RepositoriesRequestBuilder builds and executes requests for operations under \search\repositories
@@ -17,7 +17,7 @@ type RepositoriesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use orderAsGetOrderQueryParameterType instead
     Order *string `uriparametername:"order"`
     // Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`.
-    OrderAsGetOrderQueryParameterType *i7e3cd1bc7cc7a1f514f5de5aa8f5139f3c2dd715fe4530f0f309c0c502d22e48.GetOrderQueryParameterType `uriparametername:"order"`
+    OrderAsGetOrderQueryParameterType *ieee0cfa1d036b4f28d55268a074a4c18105601f0fc0bd0cdda00cd7aafe5ef7e.GetOrderQueryParameterType `uriparametername:"order"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -28,7 +28,7 @@ type RepositoriesRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // Sorts the results of your query by number of `stars`, `forks`, or `help-wanted-issues` or how recently the items were `updated`. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)
-    SortAsGetSortQueryParameterType *i7e3cd1bc7cc7a1f514f5de5aa8f5139f3c2dd715fe4530f0f309c0c502d22e48.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *ieee0cfa1d036b4f28d55268a074a4c18105601f0fc0bd0cdda00cd7aafe5ef7e.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // RepositoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RepositoriesRequestBuilderGetRequestConfiguration struct {
@@ -63,8 +63,8 @@ func (m *RepositoriesRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRepositories503ErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRepositories503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRepositoriesResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -85,8 +85,8 @@ func (m *RepositoriesRequestBuilder) GetAsRepositoriesGetResponse(ctx context.Co
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRepositories503ErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRepositories503ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateRepositoriesGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -99,7 +99,7 @@ func (m *RepositoriesRequestBuilder) GetAsRepositoriesGetResponse(ctx context.Co
 }
 // ToGetRequestInformation find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for repositories, you can get text match metadata for the **name** and **description** fields when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to search for popular Tetris repositories written in assembly code, your query might look like this:`q=tetris+language:assembly&sort=stars&order=desc`This query searches for repositories with the word `tetris` in the name, the description, or the README. The results are limited to repositories where the primary language is assembly. The results are sorted by stars in descending order, so that the most popular repositories appear first in the search results.
 func (m *RepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RepositoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -107,9 +107,6 @@ func (m *RepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

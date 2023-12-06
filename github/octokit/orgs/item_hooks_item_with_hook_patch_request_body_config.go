@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemHooksItemWithHook_PatchRequestBody_config key/value pairs to provide settings for this webhook.
@@ -12,7 +12,7 @@ type ItemHooksItemWithHook_PatchRequestBody_config struct {
     // The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
     content_type *string
     // The insecure_ssl property
-    insecure_ssl i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable
+    insecure_ssl i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable
     // If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
     secret *string
     // The URL to which the payloads will be delivered.
@@ -51,12 +51,12 @@ func (m *ItemHooksItemWithHook_PatchRequestBody_config) GetFieldDeserializers()(
         return nil
     }
     res["insecure_ssl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateWebhookConfigInsecureSslFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateWebhookConfigInsecureSslFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetInsecureSsl(val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable))
+            m.SetInsecureSsl(val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable))
         }
         return nil
     }
@@ -83,7 +83,7 @@ func (m *ItemHooksItemWithHook_PatchRequestBody_config) GetFieldDeserializers()(
     return res
 }
 // GetInsecureSsl gets the insecure_ssl property value. The insecure_ssl property
-func (m *ItemHooksItemWithHook_PatchRequestBody_config) GetInsecureSsl()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable) {
+func (m *ItemHooksItemWithHook_PatchRequestBody_config) GetInsecureSsl()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable) {
     return m.insecure_ssl
 }
 // GetSecret gets the secret property value. If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
@@ -137,7 +137,7 @@ func (m *ItemHooksItemWithHook_PatchRequestBody_config) SetContentType(value *st
     m.content_type = value
 }
 // SetInsecureSsl sets the insecure_ssl property value. The insecure_ssl property
-func (m *ItemHooksItemWithHook_PatchRequestBody_config) SetInsecureSsl(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable)() {
+func (m *ItemHooksItemWithHook_PatchRequestBody_config) SetInsecureSsl(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable)() {
     m.insecure_ssl = value
 }
 // SetSecret sets the secret property value. If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
@@ -153,11 +153,11 @@ type ItemHooksItemWithHook_PatchRequestBody_configable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
-    GetInsecureSsl()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable)
+    GetInsecureSsl()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable)
     GetSecret()(*string)
     GetUrl()(*string)
     SetContentType(value *string)()
-    SetInsecureSsl(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.WebhookConfigInsecureSslable)()
+    SetInsecureSsl(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.WebhookConfigInsecureSslable)()
     SetSecret(value *string)()
     SetUrl(value *string)()
 }

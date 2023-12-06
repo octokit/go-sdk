@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemCommitsItemCheckSuitesGetResponse 
@@ -10,7 +10,7 @@ type ItemItemCommitsItemCheckSuitesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The check_suites property
-    check_suites []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable
+    check_suites []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable
     // The total_count property
     total_count *int32
 }
@@ -30,22 +30,22 @@ func (m *ItemItemCommitsItemCheckSuitesGetResponse) GetAdditionalData()(map[stri
     return m.additionalData
 }
 // GetCheckSuites gets the check_suites property value. The check_suites property
-func (m *ItemItemCommitsItemCheckSuitesGetResponse) GetCheckSuites()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable) {
+func (m *ItemItemCommitsItemCheckSuitesGetResponse) GetCheckSuites()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable) {
     return m.check_suites
 }
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemCommitsItemCheckSuitesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["check_suites"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCheckSuiteFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCheckSuiteFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable)
                 }
             }
             m.SetCheckSuites(res)
@@ -101,7 +101,7 @@ func (m *ItemItemCommitsItemCheckSuitesGetResponse) SetAdditionalData(value map[
     m.additionalData = value
 }
 // SetCheckSuites sets the check_suites property value. The check_suites property
-func (m *ItemItemCommitsItemCheckSuitesGetResponse) SetCheckSuites(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable)() {
+func (m *ItemItemCommitsItemCheckSuitesGetResponse) SetCheckSuites(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable)() {
     m.check_suites = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemCommitsItemCheckSuitesGetResponse) SetTotalCount(value *int32)(
 type ItemItemCommitsItemCheckSuitesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCheckSuites()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable)
+    GetCheckSuites()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable)
     GetTotalCount()(*int32)
-    SetCheckSuites(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CheckSuiteable)()
+    SetCheckSuites(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CheckSuiteable)()
     SetTotalCount(value *int32)()
 }

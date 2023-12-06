@@ -25,7 +25,7 @@ type ItemActionsSecretsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemActionsSecretsRequestBuilderGetQueryParameters
 }
-// BySecret_name gets an item from the octokit.orgs.item.actions.secrets.item collection
+// BySecret_name gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.actions.secrets.item collection
 func (m *ItemActionsSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemActionsSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -92,7 +92,7 @@ func (m *ItemActionsSecretsRequestBuilder) PublicKey()(*ItemActionsSecretsPublic
 }
 // ToGetRequestInformation lists all secrets available in an organization without revealing theirencrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 func (m *ItemActionsSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActionsSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -100,9 +100,6 @@ func (m *ItemActionsSecretsRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

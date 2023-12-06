@@ -2,25 +2,25 @@ package repos
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
-// ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\runs\{run_id}\deployment_protection_rule
+// ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs\{run_id}\deployment_protection_rule
 type ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Deployment_protection_rulePostRequestBody composed type wrapper for classes reviewCustomGatesCommentRequired, reviewCustomGatesStateRequired
 type Deployment_protection_rulePostRequestBody struct {
     // Composed type representation for type reviewCustomGatesCommentRequired
-    deployment_protection_rulePostRequestBodyReviewCustomGatesCommentRequired i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable
+    deployment_protection_rulePostRequestBodyReviewCustomGatesCommentRequired i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable
     // Composed type representation for type reviewCustomGatesStateRequired
-    deployment_protection_rulePostRequestBodyReviewCustomGatesStateRequired i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable
+    deployment_protection_rulePostRequestBodyReviewCustomGatesStateRequired i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable
     // Composed type representation for type reviewCustomGatesCommentRequired
-    reviewCustomGatesCommentRequired i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable
+    reviewCustomGatesCommentRequired i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable
     // Composed type representation for type reviewCustomGatesStateRequired
-    reviewCustomGatesStateRequired i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable
+    reviewCustomGatesStateRequired i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable
 }
 // NewDeployment_protection_rulePostRequestBody instantiates a new deployment_protection_rulePostRequestBody and sets the default values.
 func NewDeployment_protection_rulePostRequestBody()(*Deployment_protection_rulePostRequestBody) {
@@ -32,32 +32,32 @@ func NewDeployment_protection_rulePostRequestBody()(*Deployment_protection_ruleP
 func CreateDeployment_protection_rulePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewDeployment_protection_rulePostRequestBody()
     if parseNode != nil {
-        if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateReviewCustomGatesCommentRequiredFromDiscriminatorValue); val != nil {
+        if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateReviewCustomGatesCommentRequiredFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable); ok {
                 result.SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired(cast)
             }
-        } else if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateReviewCustomGatesStateRequiredFromDiscriminatorValue); val != nil {
+        } else if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateReviewCustomGatesStateRequiredFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable); ok {
                 result.SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired(cast)
             }
-        } else if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateReviewCustomGatesCommentRequiredFromDiscriminatorValue); val != nil {
+        } else if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateReviewCustomGatesCommentRequiredFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable); ok {
                 result.SetReviewCustomGatesCommentRequired(cast)
             }
-        } else if val, err := parseNode.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateReviewCustomGatesStateRequiredFromDiscriminatorValue); val != nil {
+        } else if val, err := parseNode.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateReviewCustomGatesStateRequiredFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable); ok {
+            if cast, ok := val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable); ok {
                 result.SetReviewCustomGatesStateRequired(cast)
             }
         }
@@ -65,11 +65,11 @@ func CreateDeployment_protection_rulePostRequestBodyFromDiscriminatorValue(parse
     return result, nil
 }
 // GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired gets the reviewCustomGatesCommentRequired property value. Composed type representation for type reviewCustomGatesCommentRequired
-func (m *Deployment_protection_rulePostRequestBody) GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable) {
+func (m *Deployment_protection_rulePostRequestBody) GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable) {
     return m.deployment_protection_rulePostRequestBodyReviewCustomGatesCommentRequired
 }
 // GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired gets the reviewCustomGatesStateRequired property value. Composed type representation for type reviewCustomGatesStateRequired
-func (m *Deployment_protection_rulePostRequestBody) GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable) {
+func (m *Deployment_protection_rulePostRequestBody) GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable) {
     return m.deployment_protection_rulePostRequestBodyReviewCustomGatesStateRequired
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -81,11 +81,11 @@ func (m *Deployment_protection_rulePostRequestBody) GetIsComposedType()(bool) {
     return true
 }
 // GetReviewCustomGatesCommentRequired gets the reviewCustomGatesCommentRequired property value. Composed type representation for type reviewCustomGatesCommentRequired
-func (m *Deployment_protection_rulePostRequestBody) GetReviewCustomGatesCommentRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable) {
+func (m *Deployment_protection_rulePostRequestBody) GetReviewCustomGatesCommentRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable) {
     return m.reviewCustomGatesCommentRequired
 }
 // GetReviewCustomGatesStateRequired gets the reviewCustomGatesStateRequired property value. Composed type representation for type reviewCustomGatesStateRequired
-func (m *Deployment_protection_rulePostRequestBody) GetReviewCustomGatesStateRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable) {
+func (m *Deployment_protection_rulePostRequestBody) GetReviewCustomGatesStateRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable) {
     return m.reviewCustomGatesStateRequired
 }
 // Serialize serializes information the current object
@@ -114,19 +114,19 @@ func (m *Deployment_protection_rulePostRequestBody) Serialize(writer i878a80d233
     return nil
 }
 // SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired sets the reviewCustomGatesCommentRequired property value. Composed type representation for type reviewCustomGatesCommentRequired
-func (m *Deployment_protection_rulePostRequestBody) SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)() {
+func (m *Deployment_protection_rulePostRequestBody) SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)() {
     m.deployment_protection_rulePostRequestBodyReviewCustomGatesCommentRequired = value
 }
 // SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired sets the reviewCustomGatesStateRequired property value. Composed type representation for type reviewCustomGatesStateRequired
-func (m *Deployment_protection_rulePostRequestBody) SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)() {
+func (m *Deployment_protection_rulePostRequestBody) SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)() {
     m.deployment_protection_rulePostRequestBodyReviewCustomGatesStateRequired = value
 }
 // SetReviewCustomGatesCommentRequired sets the reviewCustomGatesCommentRequired property value. Composed type representation for type reviewCustomGatesCommentRequired
-func (m *Deployment_protection_rulePostRequestBody) SetReviewCustomGatesCommentRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)() {
+func (m *Deployment_protection_rulePostRequestBody) SetReviewCustomGatesCommentRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)() {
     m.reviewCustomGatesCommentRequired = value
 }
 // SetReviewCustomGatesStateRequired sets the reviewCustomGatesStateRequired property value. Composed type representation for type reviewCustomGatesStateRequired
-func (m *Deployment_protection_rulePostRequestBody) SetReviewCustomGatesStateRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)() {
+func (m *Deployment_protection_rulePostRequestBody) SetReviewCustomGatesStateRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)() {
     m.reviewCustomGatesStateRequired = value
 }
 // ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
@@ -139,19 +139,19 @@ type ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilderPostRequestC
 // Deployment_protection_rulePostRequestBodyable 
 type Deployment_protection_rulePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)
-    GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)
-    GetReviewCustomGatesCommentRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)
-    GetReviewCustomGatesStateRequired()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)
-    SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)()
-    SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)()
-    SetReviewCustomGatesCommentRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesCommentRequiredable)()
-    SetReviewCustomGatesStateRequired(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ReviewCustomGatesStateRequiredable)()
+    GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)
+    GetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)
+    GetReviewCustomGatesCommentRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)
+    GetReviewCustomGatesStateRequired()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)
+    SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)()
+    SetDeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)()
+    SetReviewCustomGatesCommentRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesCommentRequiredable)()
+    SetReviewCustomGatesStateRequired(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ReviewCustomGatesStateRequiredable)()
 }
 // NewItemItemActionsRunsItemDeployment_protection_ruleRequestBuilderInternal instantiates a new Deployment_protection_ruleRequestBuilder and sets the default values.
 func NewItemItemActionsRunsItemDeployment_protection_ruleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder) {
     m := &ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/deployment_protection_rule", pathParameters),
     }
     return m
 }
@@ -178,14 +178,11 @@ func (m *ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder) Post(c
 }
 // ToPostRequestInformation approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."**Note:** GitHub Apps can only review their own custom deployment protection rules.To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have read and write permission for **Deployments** to use this endpoint.
 func (m *ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilder) ToPostRequestInformation(ctx context.Context, body Deployment_protection_rulePostRequestBodyable, requestConfiguration *ItemItemActionsRunsItemDeployment_protection_ruleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

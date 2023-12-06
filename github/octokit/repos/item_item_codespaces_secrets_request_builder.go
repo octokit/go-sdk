@@ -5,7 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCodespacesSecretsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\codespaces\secrets
+// ItemItemCodespacesSecretsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\codespaces\secrets
 type ItemItemCodespacesSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -25,7 +25,7 @@ type ItemItemCodespacesSecretsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemCodespacesSecretsRequestBuilderGetQueryParameters
 }
-// BySecret_name gets an item from the octokit.repos.item.item.codespaces.secrets.item collection
+// BySecret_name gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.codespaces.secrets.item collection
 func (m *ItemItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemItemCodespacesSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -39,7 +39,7 @@ func (m *ItemItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name stri
 // NewItemItemCodespacesSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
 func NewItemItemCodespacesSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodespacesSecretsRequestBuilder) {
     m := &ItemItemCodespacesSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/codespaces/secrets{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/secrets{?per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -92,7 +92,7 @@ func (m *ItemItemCodespacesSecretsRequestBuilder) PublicKey()(*ItemItemCodespace
 }
 // ToGetRequestInformation lists all development environment secrets available in a repository without revealing their encrypted values. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
 func (m *ItemItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -100,9 +100,6 @@ func (m *ItemItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx co
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

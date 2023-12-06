@@ -8,7 +8,7 @@ import (
 type ItemEnvironmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByEnvironment_name gets an item from the octokit.repositories.item.environments.item collection
+// ByEnvironment_name gets an item from the github.com/octokit/go-sdk/github/octokit/.repositories.item.environments.item collection
 func (m *ItemEnvironmentsRequestBuilder) ByEnvironment_name(environment_name string)(*ItemEnvironmentsWithEnvironment_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

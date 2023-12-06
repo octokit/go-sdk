@@ -8,7 +8,7 @@ import (
 type AppManifestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCode gets an item from the octokit.appManifests.item collection
+// ByCode gets an item from the github.com/octokit/go-sdk/github/octokit/.appManifests.item collection
 func (m *AppManifestsRequestBuilder) ByCode(code string)(*WithCodeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

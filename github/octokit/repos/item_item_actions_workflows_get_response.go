@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsWorkflowsGetResponse 
@@ -12,7 +12,7 @@ type ItemItemActionsWorkflowsGetResponse struct {
     // The total_count property
     total_count *int32
     // The workflows property
-    workflows []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable
+    workflows []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable
 }
 // NewItemItemActionsWorkflowsGetResponse instantiates a new ItemItemActionsWorkflowsGetResponse and sets the default values.
 func NewItemItemActionsWorkflowsGetResponse()(*ItemItemActionsWorkflowsGetResponse) {
@@ -43,15 +43,15 @@ func (m *ItemItemActionsWorkflowsGetResponse) GetFieldDeserializers()(map[string
         return nil
     }
     res["workflows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateWorkflowFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateWorkflowFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable)
                 }
             }
             m.SetWorkflows(res)
@@ -65,7 +65,7 @@ func (m *ItemItemActionsWorkflowsGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
 // GetWorkflows gets the workflows property value. The workflows property
-func (m *ItemItemActionsWorkflowsGetResponse) GetWorkflows()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable) {
+func (m *ItemItemActionsWorkflowsGetResponse) GetWorkflows()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable) {
     return m.workflows
 }
 // Serialize serializes information the current object
@@ -105,7 +105,7 @@ func (m *ItemItemActionsWorkflowsGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
 // SetWorkflows sets the workflows property value. The workflows property
-func (m *ItemItemActionsWorkflowsGetResponse) SetWorkflows(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable)() {
+func (m *ItemItemActionsWorkflowsGetResponse) SetWorkflows(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable)() {
     m.workflows = value
 }
 // ItemItemActionsWorkflowsGetResponseable 
@@ -113,7 +113,7 @@ type ItemItemActionsWorkflowsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetTotalCount()(*int32)
-    GetWorkflows()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable)
+    GetWorkflows()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable)
     SetTotalCount(value *int32)()
-    SetWorkflows(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Workflowable)()
+    SetWorkflows(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Workflowable)()
 }

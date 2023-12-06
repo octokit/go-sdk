@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsRunnersItemLabelsPutResponse 
@@ -10,7 +10,7 @@ type ItemItemActionsRunnersItemLabelsPutResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The labels property
-    labels []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable
+    labels []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemItemActionsRunnersItemLabelsPutResponse) GetAdditionalData()(map[st
 func (m *ItemItemActionsRunnersItemLabelsPutResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRunnerLabelFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRunnerLabelFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable)
                 }
             }
             m.SetLabels(res)
@@ -61,7 +61,7 @@ func (m *ItemItemActionsRunnersItemLabelsPutResponse) GetFieldDeserializers()(ma
     return res
 }
 // GetLabels gets the labels property value. The labels property
-func (m *ItemItemActionsRunnersItemLabelsPutResponse) GetLabels()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable) {
+func (m *ItemItemActionsRunnersItemLabelsPutResponse) GetLabels()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable) {
     return m.labels
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemItemActionsRunnersItemLabelsPutResponse) SetAdditionalData(value ma
     m.additionalData = value
 }
 // SetLabels sets the labels property value. The labels property
-func (m *ItemItemActionsRunnersItemLabelsPutResponse) SetLabels(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable)() {
+func (m *ItemItemActionsRunnersItemLabelsPutResponse) SetLabels(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable)() {
     m.labels = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemItemActionsRunnersItemLabelsPutResponse) SetTotalCount(value *int32
 type ItemItemActionsRunnersItemLabelsPutResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetLabels()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable)
+    GetLabels()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable)
     GetTotalCount()(*int32)
-    SetLabels(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.RunnerLabelable)()
+    SetLabels(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.RunnerLabelable)()
     SetTotalCount(value *int32)()
 }

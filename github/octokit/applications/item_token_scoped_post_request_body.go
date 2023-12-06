@@ -1,8 +1,8 @@
 package applications
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemTokenScopedPostRequestBody 
@@ -12,7 +12,7 @@ type ItemTokenScopedPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The permissions granted to the user access token.
-    permissions i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable
+    permissions i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable
     // The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
     repositories []string
     // The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.
@@ -55,12 +55,12 @@ func (m *ItemTokenScopedPostRequestBody) GetFieldDeserializers()(map[string]func
         return nil
     }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateAppPermissionsFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateAppPermissionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPermissions(val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable))
+            m.SetPermissions(val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable))
         }
         return nil
     }
@@ -119,7 +119,7 @@ func (m *ItemTokenScopedPostRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetPermissions gets the permissions property value. The permissions granted to the user access token.
-func (m *ItemTokenScopedPostRequestBody) GetPermissions()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable) {
+func (m *ItemTokenScopedPostRequestBody) GetPermissions()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable) {
     return m.permissions
 }
 // GetRepositories gets the repositories property value. The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
@@ -193,7 +193,7 @@ func (m *ItemTokenScopedPostRequestBody) SetAdditionalData(value map[string]any)
     m.additionalData = value
 }
 // SetPermissions sets the permissions property value. The permissions granted to the user access token.
-func (m *ItemTokenScopedPostRequestBody) SetPermissions(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable)() {
+func (m *ItemTokenScopedPostRequestBody) SetPermissions(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable)() {
     m.permissions = value
 }
 // SetRepositories sets the repositories property value. The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
@@ -217,13 +217,13 @@ type ItemTokenScopedPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessToken()(*string)
-    GetPermissions()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable)
+    GetPermissions()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable)
     GetRepositories()([]string)
     GetRepositoryIds()([]int32)
     GetTarget()(*string)
     GetTargetId()(*int32)
     SetAccessToken(value *string)()
-    SetPermissions(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.AppPermissionsable)()
+    SetPermissions(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.AppPermissionsable)()
     SetRepositories(value []string)()
     SetRepositoryIds(value []int32)()
     SetTarget(value *string)()
