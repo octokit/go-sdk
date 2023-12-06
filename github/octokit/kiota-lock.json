@@ -1,10 +1,10 @@
 {
-  "descriptionHash": "29017D664EE04E643751B17C52A1C5F046ABEDC94E4381BA0842CD27900EED33AB6951C411F9E0A9BDF48632A3A483155884C7AF337B6A823CC1BA10304DD7A5",
+  "descriptionHash": "EF90E2AF1AEAF00399680241ED082065E7D5A88EDEC05E560F61DD8478992AFDDE768CE0056CC6C70C08041E324CC5835271A8B430B49E549DE6BFBBCEE29E42",
   "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.8.2",
+  "kiotaVersion": "1.9.0-preview.202311300001",
   "clientClassName": "ApiClient",
-  "clientNamespaceName": "octokit",
+  "clientNamespaceName": "github.com/octokit/go-sdk/github/octokit/",
   "language": "Go",
   "usesBackingStore": false,
   "excludeBackwardCompatible": false,

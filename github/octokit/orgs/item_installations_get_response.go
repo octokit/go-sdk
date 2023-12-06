@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemInstallationsGetResponse 
@@ -10,7 +10,7 @@ type ItemInstallationsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The installations property
-    installations []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable
+    installations []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable
     // The total_count property
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemInstallationsGetResponse) GetAdditionalData()(map[string]any) {
 func (m *ItemInstallationsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["installations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateInstallationFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateInstallationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable)
                 }
             }
             m.SetInstallations(res)
@@ -61,7 +61,7 @@ func (m *ItemInstallationsGetResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInstallations gets the installations property value. The installations property
-func (m *ItemInstallationsGetResponse) GetInstallations()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable) {
+func (m *ItemInstallationsGetResponse) GetInstallations()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable) {
     return m.installations
 }
 // GetTotalCount gets the total_count property value. The total_count property
@@ -101,7 +101,7 @@ func (m *ItemInstallationsGetResponse) SetAdditionalData(value map[string]any)()
     m.additionalData = value
 }
 // SetInstallations sets the installations property value. The installations property
-func (m *ItemInstallationsGetResponse) SetInstallations(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable)() {
+func (m *ItemInstallationsGetResponse) SetInstallations(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable)() {
     m.installations = value
 }
 // SetTotalCount sets the total_count property value. The total_count property
@@ -112,8 +112,8 @@ func (m *ItemInstallationsGetResponse) SetTotalCount(value *int32)() {
 type ItemInstallationsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetInstallations()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable)
+    GetInstallations()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable)
     GetTotalCount()(*int32)
-    SetInstallations(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Installationable)()
+    SetInstallations(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Installationable)()
     SetTotalCount(value *int32)()
 }

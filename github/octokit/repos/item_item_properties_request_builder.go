@@ -4,14 +4,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemPropertiesRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\properties
+// ItemItemPropertiesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\properties
 type ItemItemPropertiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemPropertiesRequestBuilderInternal instantiates a new PropertiesRequestBuilder and sets the default values.
 func NewItemItemPropertiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPropertiesRequestBuilder) {
     m := &ItemItemPropertiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/properties", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/properties", pathParameters),
     }
     return m
 }

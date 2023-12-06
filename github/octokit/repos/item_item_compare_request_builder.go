@@ -4,11 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCompareRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\compare
+// ItemItemCompareRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\compare
 type ItemItemCompareRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByBasehead gets an item from the octokit.repos.item.item.compare.item collection
+// ByBasehead gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.compare.item collection
 func (m *ItemItemCompareRequestBuilder) ByBasehead(basehead string)(*ItemItemCompareWithBaseheadItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -22,7 +22,7 @@ func (m *ItemItemCompareRequestBuilder) ByBasehead(basehead string)(*ItemItemCom
 // NewItemItemCompareRequestBuilderInternal instantiates a new CompareRequestBuilder and sets the default values.
 func NewItemItemCompareRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCompareRequestBuilder) {
     m := &ItemItemCompareRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/compare", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/compare", pathParameters),
     }
     return m
 }

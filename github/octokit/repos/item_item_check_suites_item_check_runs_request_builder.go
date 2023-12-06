@@ -3,10 +3,10 @@ package repos
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ic412e7eef8f28635532af2e2d57592e8f211f6a68a1203cad7cc3dd23d9744db "github.com/octokit/go-sdk/github/octokit/repos/item/item/checksuites/item/checkruns"
+    i4c25dfffd1064f3dabd06253017b550b04c454a7c2bab6691a422d0d2623ec22 "github.com/octokit/go-sdk/github/octokit/repos/item/item/checksuites/item/checkruns"
 )
 
-// ItemItemCheckSuitesItemCheckRunsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\check-suites\{check_suite_id}\check-runs
+// ItemItemCheckSuitesItemCheckRunsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\check-suites\{check_suite_id}\check-runs
 type ItemItemCheckSuitesItemCheckRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -18,7 +18,7 @@ type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use filterAsGetFilterQueryParameterType instead
     Filter *string `uriparametername:"filter"`
     // Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
-    FilterAsGetFilterQueryParameterType *ic412e7eef8f28635532af2e2d57592e8f211f6a68a1203cad7cc3dd23d9744db.GetFilterQueryParameterType `uriparametername:"filter"`
+    FilterAsGetFilterQueryParameterType *i4c25dfffd1064f3dabd06253017b550b04c454a7c2bab6691a422d0d2623ec22.GetFilterQueryParameterType `uriparametername:"filter"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -27,7 +27,7 @@ type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead
     Status *string `uriparametername:"status"`
     // Returns check runs with the specified `status`.
-    StatusAsGetStatusQueryParameterType *ic412e7eef8f28635532af2e2d57592e8f211f6a68a1203cad7cc3dd23d9744db.GetStatusQueryParameterType `uriparametername:"status"`
+    StatusAsGetStatusQueryParameterType *i4c25dfffd1064f3dabd06253017b550b04c454a7c2bab6691a422d0d2623ec22.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration struct {
@@ -41,7 +41,7 @@ type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration struc
 // NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal instantiates a new CheckRunsRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesItemCheckRunsRequestBuilder) {
     m := &ItemItemCheckSuitesItemCheckRunsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs{?check_name*,status*,filter*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites/{check_suite_id}/check-runs{?check_name*,status*,filter*,per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -90,7 +90,7 @@ func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) GetAsCheckRunsGetRespon
 }
 // ToGetRequestInformation lists check runs for a check suite using its `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -98,9 +98,6 @@ func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) ToGetRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemActionsRunnersGenerateJitconfigPostResponse 
@@ -12,7 +12,7 @@ type ItemItemActionsRunnersGenerateJitconfigPostResponse struct {
     // The base64 encoded runner configuration.
     encoded_jit_config *string
     // A self hosted runner
-    runner i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable
+    runner i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable
 }
 // NewItemItemActionsRunnersGenerateJitconfigPostResponse instantiates a new ItemItemActionsRunnersGenerateJitconfigPostResponse and sets the default values.
 func NewItemItemActionsRunnersGenerateJitconfigPostResponse()(*ItemItemActionsRunnersGenerateJitconfigPostResponse) {
@@ -47,19 +47,19 @@ func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) GetFieldDeserializ
         return nil
     }
     res["runner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateRunnerFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateRunnerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRunner(val.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable))
+            m.SetRunner(val.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable))
         }
         return nil
     }
     return res
 }
 // GetRunner gets the runner property value. A self hosted runner
-func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) GetRunner()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable) {
+func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) GetRunner()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable) {
     return m.runner
 }
 // Serialize serializes information the current object
@@ -93,7 +93,7 @@ func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) SetEncodedJitConfi
     m.encoded_jit_config = value
 }
 // SetRunner sets the runner property value. A self hosted runner
-func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) SetRunner(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)() {
+func (m *ItemItemActionsRunnersGenerateJitconfigPostResponse) SetRunner(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)() {
     m.runner = value
 }
 // ItemItemActionsRunnersGenerateJitconfigPostResponseable 
@@ -101,7 +101,7 @@ type ItemItemActionsRunnersGenerateJitconfigPostResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEncodedJitConfig()(*string)
-    GetRunner()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)
+    GetRunner()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)
     SetEncodedJitConfig(value *string)()
-    SetRunner(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Runnerable)()
+    SetRunner(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Runnerable)()
 }

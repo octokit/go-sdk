@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemPropertiesValuesPatchRequestBody 
@@ -10,7 +10,7 @@ type ItemPropertiesValuesPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // List of custom property names and associated values to apply to the repositories.
-    properties []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable
+    properties []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable
     // The names of repositories that the custom property values will be applied to.
     repository_names []string
 }
@@ -33,15 +33,15 @@ func (m *ItemPropertiesValuesPatchRequestBody) GetAdditionalData()(map[string]an
 func (m *ItemPropertiesValuesPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCustomPropertyValueFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCustomPropertyValueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable)
                 }
             }
             m.SetProperties(res)
@@ -67,7 +67,7 @@ func (m *ItemPropertiesValuesPatchRequestBody) GetFieldDeserializers()(map[strin
     return res
 }
 // GetProperties gets the properties property value. List of custom property names and associated values to apply to the repositories.
-func (m *ItemPropertiesValuesPatchRequestBody) GetProperties()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable) {
+func (m *ItemPropertiesValuesPatchRequestBody) GetProperties()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable) {
     return m.properties
 }
 // GetRepositoryNames gets the repository_names property value. The names of repositories that the custom property values will be applied to.
@@ -107,7 +107,7 @@ func (m *ItemPropertiesValuesPatchRequestBody) SetAdditionalData(value map[strin
     m.additionalData = value
 }
 // SetProperties sets the properties property value. List of custom property names and associated values to apply to the repositories.
-func (m *ItemPropertiesValuesPatchRequestBody) SetProperties(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable)() {
+func (m *ItemPropertiesValuesPatchRequestBody) SetProperties(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable)() {
     m.properties = value
 }
 // SetRepositoryNames sets the repository_names property value. The names of repositories that the custom property values will be applied to.
@@ -118,8 +118,8 @@ func (m *ItemPropertiesValuesPatchRequestBody) SetRepositoryNames(value []string
 type ItemPropertiesValuesPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetProperties()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable)
+    GetProperties()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable)
     GetRepositoryNames()([]string)
-    SetProperties(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CustomPropertyValueable)()
+    SetProperties(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CustomPropertyValueable)()
     SetRepositoryNames(value []string)()
 }

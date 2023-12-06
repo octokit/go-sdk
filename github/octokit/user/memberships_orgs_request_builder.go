@@ -2,9 +2,9 @@ package user
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i207822521438a1e7a1a9b64c244338bd7ea01606845e2a7fc3d33817ceb64784 "github.com/octokit/go-sdk/github/octokit/user/memberships/orgs"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i9dcb99d2aedd65ff545fe8f6ef7a27b02f4015b03b7ce2e35fc0fc8aeead9e16 "github.com/octokit/go-sdk/github/octokit/user/memberships/orgs"
 )
 
 // MembershipsOrgsRequestBuilder builds and executes requests for operations under \user\memberships\orgs
@@ -21,7 +21,7 @@ type MembershipsOrgsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
     State *string `uriparametername:"state"`
     // Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.
-    StateAsGetStateQueryParameterType *i207822521438a1e7a1a9b64c244338bd7ea01606845e2a7fc3d33817ceb64784.GetStateQueryParameterType `uriparametername:"state"`
+    StateAsGetStateQueryParameterType *i9dcb99d2aedd65ff545fe8f6ef7a27b02f4015b03b7ce2e35fc0fc8aeead9e16.GetStateQueryParameterType `uriparametername:"state"`
 }
 // MembershipsOrgsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MembershipsOrgsRequestBuilderGetRequestConfiguration struct {
@@ -32,7 +32,7 @@ type MembershipsOrgsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *MembershipsOrgsRequestBuilderGetQueryParameters
 }
-// ByOrg gets an item from the octokit.user.memberships.orgs.item collection
+// ByOrg gets an item from the github.com/octokit/go-sdk/github/octokit/.user.memberships.orgs.item collection
 func (m *MembershipsOrgsRequestBuilder) ByOrg(org string)(*MembershipsOrgsWithOrgItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -60,31 +60,31 @@ func NewMembershipsOrgsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/members#list-organization-memberships-for-the-authenticated-user
-func (m *MembershipsOrgsRequestBuilder) Get(ctx context.Context, requestConfiguration *MembershipsOrgsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrgMembershipable, error) {
+func (m *MembershipsOrgsRequestBuilder) Get(ctx context.Context, requestConfiguration *MembershipsOrgsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrgMembershipable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "401": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "401": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateOrgMembershipFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateOrgMembershipFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrgMembershipable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrgMembershipable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrgMembershipable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrgMembershipable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists all of the authenticated user's organization memberships.
 func (m *MembershipsOrgsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MembershipsOrgsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -92,9 +92,6 @@ func (m *MembershipsOrgsRequestBuilder) ToGetRequestInformation(ctx context.Cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

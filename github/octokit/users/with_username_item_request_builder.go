@@ -2,9 +2,9 @@ package users
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // WithUsernameItemRequestBuilder builds and executes requests for operations under \users\{username}
@@ -14,9 +14,9 @@ type WithUsernameItemRequestBuilder struct {
 // WithUsernameGetResponse composed type wrapper for classes privateUser, publicUser
 type WithUsernameGetResponse struct {
     // Composed type representation for type privateUser
-    privateUser i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable
+    privateUser i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable
     // Composed type representation for type publicUser
-    publicUser i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable
+    publicUser i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable
 }
 // NewWithUsernameGetResponse instantiates a new WithUsernameGetResponse and sets the default values.
 func NewWithUsernameGetResponse()(*WithUsernameGetResponse) {
@@ -52,11 +52,11 @@ func (m *WithUsernameGetResponse) GetIsComposedType()(bool) {
     return true
 }
 // GetPrivateUser gets the privateUser property value. Composed type representation for type privateUser
-func (m *WithUsernameGetResponse) GetPrivateUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable) {
+func (m *WithUsernameGetResponse) GetPrivateUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable) {
     return m.privateUser
 }
 // GetPublicUser gets the publicUser property value. Composed type representation for type publicUser
-func (m *WithUsernameGetResponse) GetPublicUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable) {
+func (m *WithUsernameGetResponse) GetPublicUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable) {
     return m.publicUser
 }
 // Serialize serializes information the current object
@@ -75,11 +75,11 @@ func (m *WithUsernameGetResponse) Serialize(writer i878a80d2330e89d26896388a3f48
     return nil
 }
 // SetPrivateUser sets the privateUser property value. Composed type representation for type privateUser
-func (m *WithUsernameGetResponse) SetPrivateUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)() {
+func (m *WithUsernameGetResponse) SetPrivateUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)() {
     m.privateUser = value
 }
 // SetPublicUser sets the publicUser property value. Composed type representation for type publicUser
-func (m *WithUsernameGetResponse) SetPublicUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)() {
+func (m *WithUsernameGetResponse) SetPublicUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)() {
     m.publicUser = value
 }
 // WithUsernameItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
@@ -92,9 +92,9 @@ type WithUsernameItemRequestBuilderGetRequestConfiguration struct {
 // WithUsernameResponse composed type wrapper for classes privateUser, publicUser
 type WithUsernameResponse struct {
     // Composed type representation for type privateUser
-    privateUser i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable
+    privateUser i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable
     // Composed type representation for type publicUser
-    publicUser i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable
+    publicUser i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable
 }
 // NewWithUsernameResponse instantiates a new WithUsernameResponse and sets the default values.
 func NewWithUsernameResponse()(*WithUsernameResponse) {
@@ -130,11 +130,11 @@ func (m *WithUsernameResponse) GetIsComposedType()(bool) {
     return true
 }
 // GetPrivateUser gets the privateUser property value. Composed type representation for type privateUser
-func (m *WithUsernameResponse) GetPrivateUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable) {
+func (m *WithUsernameResponse) GetPrivateUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable) {
     return m.privateUser
 }
 // GetPublicUser gets the publicUser property value. Composed type representation for type publicUser
-func (m *WithUsernameResponse) GetPublicUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable) {
+func (m *WithUsernameResponse) GetPublicUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable) {
     return m.publicUser
 }
 // Serialize serializes information the current object
@@ -153,28 +153,28 @@ func (m *WithUsernameResponse) Serialize(writer i878a80d2330e89d26896388a3f487ee
     return nil
 }
 // SetPrivateUser sets the privateUser property value. Composed type representation for type privateUser
-func (m *WithUsernameResponse) SetPrivateUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)() {
+func (m *WithUsernameResponse) SetPrivateUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)() {
     m.privateUser = value
 }
 // SetPublicUser sets the publicUser property value. Composed type representation for type publicUser
-func (m *WithUsernameResponse) SetPublicUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)() {
+func (m *WithUsernameResponse) SetPublicUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)() {
     m.publicUser = value
 }
 // WithUsernameGetResponseable 
 type WithUsernameGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetPrivateUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)
-    GetPublicUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)
-    SetPrivateUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)()
-    SetPublicUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)()
+    GetPrivateUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)
+    GetPublicUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)
+    SetPrivateUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)()
+    SetPublicUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)()
 }
 // WithUsernameResponseable 
 type WithUsernameResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetPrivateUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)
-    GetPublicUser()(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)
-    SetPrivateUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PrivateUserable)()
-    SetPublicUser(value i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.PublicUserable)()
+    GetPrivateUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)
+    GetPublicUser()(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)
+    SetPrivateUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PrivateUserable)()
+    SetPublicUser(value i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.PublicUserable)()
 }
 // NewWithUsernameItemRequestBuilderInternal instantiates a new WithUsernameItemRequestBuilder and sets the default values.
 func NewWithUsernameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WithUsernameItemRequestBuilder) {
@@ -216,7 +216,7 @@ func (m *WithUsernameItemRequestBuilder) Get(ctx context.Context, requestConfigu
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateWithUsernameResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -237,7 +237,7 @@ func (m *WithUsernameItemRequestBuilder) GetAsWithUsernameGetResponse(ctx contex
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateWithUsernameGetResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
@@ -310,14 +310,11 @@ func (m *WithUsernameItemRequestBuilder) Subscriptions()(*ItemSubscriptionsReque
 }
 // ToGetRequestInformation provides publicly available information about someone with a GitHub account.GitHub Apps with the `Plan` user permission can use this endpoint to retrieve information about a user's GitHub plan. The GitHub App must be authenticated as a user. See "[Identifying and authorizing users for GitHub Apps](https://docs.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/)" for details about authentication. For an example response, see 'Response with GitHub plan information' below"The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/overview/resources-in-the-rest-api#authentication).The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see "[Emails API](https://docs.github.com/rest/users/emails)".
 func (m *WithUsernameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WithUsernameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -2,12 +2,12 @@ package repos
 
 import (
     "context"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
-// ItemItemIssuesItemLabelsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\issues\{issue_number}\labels
+// ItemItemIssuesItemLabelsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\labels
 type ItemItemIssuesItemLabelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -55,13 +55,13 @@ type LabelsPostRequestBody struct {
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember2
     itemItemIssuesItemLabelsPostRequestBodyMember2 ItemItemIssuesItemLabelsPostRequestBodyMember2able
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-    itemItemIssuesItemLabelsPostRequestBodyMember3 ItemItemIssuesItemLabelsPostRequestBodyMember3able
+    itemItemIssuesItemLabelsPostRequestBodyMember3 []ItemItemIssuesItemLabelsPostRequestBodyMember3able
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember1
     labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1 ItemItemIssuesItemLabelsPostRequestBodyMember1able
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember2
     labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2 ItemItemIssuesItemLabelsPostRequestBodyMember2able
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-    labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 ItemItemIssuesItemLabelsPostRequestBodyMember3able
+    labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 []ItemItemIssuesItemLabelsPostRequestBodyMember3able
     // Composed type representation for type string
     labelsPostRequestBodyString *string
     // Composed type representation for type string
@@ -100,6 +100,28 @@ func CreateLabelsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
             return nil, err
         }
         result.SetString(val)
+    } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPostRequestBodyMember3FromDiscriminatorValue); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]ItemItemIssuesItemLabelsPostRequestBodyMember3able, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = v.(ItemItemIssuesItemLabelsPostRequestBodyMember3able)
+            }
+        }
+        result.SetItemItemIssuesItemLabelsPostRequestBodyMember3(cast)
+    } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPostRequestBodyMember3FromDiscriminatorValue); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]ItemItemIssuesItemLabelsPostRequestBodyMember3able, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = v.(ItemItemIssuesItemLabelsPostRequestBodyMember3able)
+            }
+        }
+        result.SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(cast)
     }
     return result, nil
 }
@@ -120,7 +142,7 @@ func (m *LabelsPostRequestBody) GetItemItemIssuesItemLabelsPostRequestBodyMember
     return m.itemItemIssuesItemLabelsPostRequestBodyMember2
 }
 // GetItemItemIssuesItemLabelsPostRequestBodyMember3 gets the ItemItemIssuesItemLabelsPostRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-func (m *LabelsPostRequestBody) GetItemItemIssuesItemLabelsPostRequestBodyMember3()(ItemItemIssuesItemLabelsPostRequestBodyMember3able) {
+func (m *LabelsPostRequestBody) GetItemItemIssuesItemLabelsPostRequestBodyMember3()([]ItemItemIssuesItemLabelsPostRequestBodyMember3able) {
     return m.itemItemIssuesItemLabelsPostRequestBodyMember3
 }
 // GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1 gets the ItemItemIssuesItemLabelsPostRequestBodyMember1 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember1
@@ -132,7 +154,7 @@ func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyItemItemIssuesItemLabels
     return m.labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2
 }
 // GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 gets the ItemItemIssuesItemLabelsPostRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()(ItemItemIssuesItemLabelsPostRequestBodyMember3able) {
+func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()([]ItemItemIssuesItemLabelsPostRequestBodyMember3able) {
     return m.labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3
 }
 // GetLabelsPostRequestBodyString gets the string property value. Composed type representation for type string
@@ -155,11 +177,6 @@ func (m *LabelsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
         if err != nil {
             return err
         }
-    } else if m.GetItemItemIssuesItemLabelsPostRequestBodyMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetItemItemIssuesItemLabelsPostRequestBodyMember3())
-        if err != nil {
-            return err
-        }
     } else if m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1() != nil {
         err := writer.WriteObjectValue("", m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1())
         if err != nil {
@@ -170,11 +187,6 @@ func (m *LabelsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
         if err != nil {
             return err
         }
-    } else if m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3())
-        if err != nil {
-            return err
-        }
     } else if m.GetLabelsPostRequestBodyString() != nil {
         err := writer.WriteStringValue("", m.GetLabelsPostRequestBodyString())
         if err != nil {
@@ -182,6 +194,28 @@ func (m *LabelsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     } else if m.GetString() != nil {
         err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    } else if m.GetItemItemIssuesItemLabelsPostRequestBodyMember3() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemItemIssuesItemLabelsPostRequestBodyMember3()))
+        for i, v := range m.GetItemItemIssuesItemLabelsPostRequestBodyMember3() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()))
+        for i, v := range m.GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
@@ -197,7 +231,7 @@ func (m *LabelsPostRequestBody) SetItemItemIssuesItemLabelsPostRequestBodyMember
     m.itemItemIssuesItemLabelsPostRequestBodyMember2 = value
 }
 // SetItemItemIssuesItemLabelsPostRequestBodyMember3 sets the ItemItemIssuesItemLabelsPostRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-func (m *LabelsPostRequestBody) SetItemItemIssuesItemLabelsPostRequestBodyMember3(value ItemItemIssuesItemLabelsPostRequestBodyMember3able)() {
+func (m *LabelsPostRequestBody) SetItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)() {
     m.itemItemIssuesItemLabelsPostRequestBodyMember3 = value
 }
 // SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1 sets the ItemItemIssuesItemLabelsPostRequestBodyMember1 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember1
@@ -209,7 +243,7 @@ func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyItemItemIssuesItemLabels
     m.labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2 = value
 }
 // SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 sets the ItemItemIssuesItemLabelsPostRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember3
-func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(value ItemItemIssuesItemLabelsPostRequestBodyMember3able)() {
+func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)() {
     m.labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 = value
 }
 // SetLabelsPostRequestBodyString sets the string property value. Composed type representation for type string
@@ -227,13 +261,13 @@ type LabelsPutRequestBody struct {
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember2
     itemItemIssuesItemLabelsPutRequestBodyMember2 ItemItemIssuesItemLabelsPutRequestBodyMember2able
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-    itemItemIssuesItemLabelsPutRequestBodyMember3 ItemItemIssuesItemLabelsPutRequestBodyMember3able
+    itemItemIssuesItemLabelsPutRequestBodyMember3 []ItemItemIssuesItemLabelsPutRequestBodyMember3able
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember1
     labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1 ItemItemIssuesItemLabelsPutRequestBodyMember1able
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember2
     labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2 ItemItemIssuesItemLabelsPutRequestBodyMember2able
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-    labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 ItemItemIssuesItemLabelsPutRequestBodyMember3able
+    labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 []ItemItemIssuesItemLabelsPutRequestBodyMember3able
     // Composed type representation for type string
     labelsPutRequestBodyString *string
     // Composed type representation for type string
@@ -272,6 +306,28 @@ func CreateLabelsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
             return nil, err
         }
         result.SetString(val)
+    } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPutRequestBodyMember3FromDiscriminatorValue); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]ItemItemIssuesItemLabelsPutRequestBodyMember3able, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = v.(ItemItemIssuesItemLabelsPutRequestBodyMember3able)
+            }
+        }
+        result.SetItemItemIssuesItemLabelsPutRequestBodyMember3(cast)
+    } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPutRequestBodyMember3FromDiscriminatorValue); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]ItemItemIssuesItemLabelsPutRequestBodyMember3able, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = v.(ItemItemIssuesItemLabelsPutRequestBodyMember3able)
+            }
+        }
+        result.SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(cast)
     }
     return result, nil
 }
@@ -292,7 +348,7 @@ func (m *LabelsPutRequestBody) GetItemItemIssuesItemLabelsPutRequestBodyMember2(
     return m.itemItemIssuesItemLabelsPutRequestBodyMember2
 }
 // GetItemItemIssuesItemLabelsPutRequestBodyMember3 gets the ItemItemIssuesItemLabelsPutRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-func (m *LabelsPutRequestBody) GetItemItemIssuesItemLabelsPutRequestBodyMember3()(ItemItemIssuesItemLabelsPutRequestBodyMember3able) {
+func (m *LabelsPutRequestBody) GetItemItemIssuesItemLabelsPutRequestBodyMember3()([]ItemItemIssuesItemLabelsPutRequestBodyMember3able) {
     return m.itemItemIssuesItemLabelsPutRequestBodyMember3
 }
 // GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1 gets the ItemItemIssuesItemLabelsPutRequestBodyMember1 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember1
@@ -304,7 +360,7 @@ func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyItemItemIssuesItemLabelsPu
     return m.labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2
 }
 // GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 gets the ItemItemIssuesItemLabelsPutRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()(ItemItemIssuesItemLabelsPutRequestBodyMember3able) {
+func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()([]ItemItemIssuesItemLabelsPutRequestBodyMember3able) {
     return m.labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3
 }
 // GetLabelsPutRequestBodyString gets the string property value. Composed type representation for type string
@@ -327,11 +383,6 @@ func (m *LabelsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
         if err != nil {
             return err
         }
-    } else if m.GetItemItemIssuesItemLabelsPutRequestBodyMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetItemItemIssuesItemLabelsPutRequestBodyMember3())
-        if err != nil {
-            return err
-        }
     } else if m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1() != nil {
         err := writer.WriteObjectValue("", m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1())
         if err != nil {
@@ -342,11 +393,6 @@ func (m *LabelsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
         if err != nil {
             return err
         }
-    } else if m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3())
-        if err != nil {
-            return err
-        }
     } else if m.GetLabelsPutRequestBodyString() != nil {
         err := writer.WriteStringValue("", m.GetLabelsPutRequestBodyString())
         if err != nil {
@@ -354,6 +400,28 @@ func (m *LabelsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     } else if m.GetString() != nil {
         err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    } else if m.GetItemItemIssuesItemLabelsPutRequestBodyMember3() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemItemIssuesItemLabelsPutRequestBodyMember3()))
+        for i, v := range m.GetItemItemIssuesItemLabelsPutRequestBodyMember3() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()))
+        for i, v := range m.GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
@@ -369,7 +437,7 @@ func (m *LabelsPutRequestBody) SetItemItemIssuesItemLabelsPutRequestBodyMember2(
     m.itemItemIssuesItemLabelsPutRequestBodyMember2 = value
 }
 // SetItemItemIssuesItemLabelsPutRequestBodyMember3 sets the ItemItemIssuesItemLabelsPutRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-func (m *LabelsPutRequestBody) SetItemItemIssuesItemLabelsPutRequestBodyMember3(value ItemItemIssuesItemLabelsPutRequestBodyMember3able)() {
+func (m *LabelsPutRequestBody) SetItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)() {
     m.itemItemIssuesItemLabelsPutRequestBodyMember3 = value
 }
 // SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1 sets the ItemItemIssuesItemLabelsPutRequestBodyMember1 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember1
@@ -381,7 +449,7 @@ func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyItemItemIssuesItemLabelsPu
     m.labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2 = value
 }
 // SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 sets the ItemItemIssuesItemLabelsPutRequestBodyMember3 property value. Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember3
-func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(value ItemItemIssuesItemLabelsPutRequestBodyMember3able)() {
+func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)() {
     m.labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 = value
 }
 // SetLabelsPutRequestBodyString sets the string property value. Composed type representation for type string
@@ -397,18 +465,18 @@ type LabelsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemIssuesItemLabelsPostRequestBodyMember1()(ItemItemIssuesItemLabelsPostRequestBodyMember1able)
     GetItemItemIssuesItemLabelsPostRequestBodyMember2()(ItemItemIssuesItemLabelsPostRequestBodyMember2able)
-    GetItemItemIssuesItemLabelsPostRequestBodyMember3()(ItemItemIssuesItemLabelsPostRequestBodyMember3able)
+    GetItemItemIssuesItemLabelsPostRequestBodyMember3()([]ItemItemIssuesItemLabelsPostRequestBodyMember3able)
     GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1()(ItemItemIssuesItemLabelsPostRequestBodyMember1able)
     GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2()(ItemItemIssuesItemLabelsPostRequestBodyMember2able)
-    GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()(ItemItemIssuesItemLabelsPostRequestBodyMember3able)
+    GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()([]ItemItemIssuesItemLabelsPostRequestBodyMember3able)
     GetLabelsPostRequestBodyString()(*string)
     GetString()(*string)
     SetItemItemIssuesItemLabelsPostRequestBodyMember1(value ItemItemIssuesItemLabelsPostRequestBodyMember1able)()
     SetItemItemIssuesItemLabelsPostRequestBodyMember2(value ItemItemIssuesItemLabelsPostRequestBodyMember2able)()
-    SetItemItemIssuesItemLabelsPostRequestBodyMember3(value ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
+    SetItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
     SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember1(value ItemItemIssuesItemLabelsPostRequestBodyMember1able)()
     SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2(value ItemItemIssuesItemLabelsPostRequestBodyMember2able)()
-    SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(value ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
+    SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
     SetLabelsPostRequestBodyString(value *string)()
     SetString(value *string)()
 }
@@ -417,22 +485,22 @@ type LabelsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemIssuesItemLabelsPutRequestBodyMember1()(ItemItemIssuesItemLabelsPutRequestBodyMember1able)
     GetItemItemIssuesItemLabelsPutRequestBodyMember2()(ItemItemIssuesItemLabelsPutRequestBodyMember2able)
-    GetItemItemIssuesItemLabelsPutRequestBodyMember3()(ItemItemIssuesItemLabelsPutRequestBodyMember3able)
+    GetItemItemIssuesItemLabelsPutRequestBodyMember3()([]ItemItemIssuesItemLabelsPutRequestBodyMember3able)
     GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1()(ItemItemIssuesItemLabelsPutRequestBodyMember1able)
     GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2()(ItemItemIssuesItemLabelsPutRequestBodyMember2able)
-    GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()(ItemItemIssuesItemLabelsPutRequestBodyMember3able)
+    GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()([]ItemItemIssuesItemLabelsPutRequestBodyMember3able)
     GetLabelsPutRequestBodyString()(*string)
     GetString()(*string)
     SetItemItemIssuesItemLabelsPutRequestBodyMember1(value ItemItemIssuesItemLabelsPutRequestBodyMember1able)()
     SetItemItemIssuesItemLabelsPutRequestBodyMember2(value ItemItemIssuesItemLabelsPutRequestBodyMember2able)()
-    SetItemItemIssuesItemLabelsPutRequestBodyMember3(value ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
+    SetItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
     SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember1(value ItemItemIssuesItemLabelsPutRequestBodyMember1able)()
     SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2(value ItemItemIssuesItemLabelsPutRequestBodyMember2able)()
-    SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(value ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
+    SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
     SetLabelsPutRequestBodyString(value *string)()
     SetString(value *string)()
 }
-// ByName gets an item from the octokit.repos.item.item.issues.item.labels.item collection
+// ByName gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.issues.item.labels.item collection
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ByName(name string)(*ItemItemIssuesItemLabelsWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -446,7 +514,7 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) ByName(name string)(*ItemItemIs
 // NewItemItemIssuesItemLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
 func NewItemItemIssuesItemLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemLabelsRequestBuilder) {
     m := &ItemItemIssuesItemLabelsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/labels{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels{?per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -466,8 +534,8 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) Delete(ctx context.Context, req
         return err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "410": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "410": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -479,23 +547,23 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) Delete(ctx context.Context, req
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/labels#list-labels-for-an-issue
-func (m *ItemItemIssuesItemLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, error) {
+func (m *ItemItemIssuesItemLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "410": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "410": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateLabelFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable)
         }
     }
     return val, nil
@@ -504,24 +572,24 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) Get(ctx context.Context, reques
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/labels#add-labels-to-an-issue
-func (m *ItemItemIssuesItemLabelsRequestBuilder) Post(ctx context.Context, body LabelsPostRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPostRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, error) {
+func (m *ItemItemIssuesItemLabelsRequestBuilder) Post(ctx context.Context, body LabelsPostRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPostRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "410": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "410": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateLabelFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable)
         }
     }
     return val, nil
@@ -530,44 +598,41 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) Post(ctx context.Context, body 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/labels#set-labels-for-an-issue
-func (m *ItemItemIssuesItemLabelsRequestBuilder) Put(ctx context.Context, body LabelsPutRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPutRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, error) {
+func (m *ItemItemIssuesItemLabelsRequestBuilder) Put(ctx context.Context, body LabelsPutRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPutRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "410": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "422": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateValidationErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "410": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "422": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateValidationErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateLabelFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateLabelFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.Labelable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.Labelable)
         }
     }
     return val, nil
 }
 // ToDeleteRequestInformation removes all labels from an issue.
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation lists all labels for an issue.
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -575,22 +640,16 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue. 
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body LabelsPostRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
@@ -600,14 +659,11 @@ func (m *ItemItemIssuesItemLabelsRequestBuilder) ToPostRequestInformation(ctx co
 }
 // ToPutRequestInformation removes any previous labels and sets the new labels for an issue.
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ToPutRequestInformation(ctx context.Context, body LabelsPutRequestBodyable, requestConfiguration *ItemItemIssuesItemLabelsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

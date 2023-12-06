@@ -4,11 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemDependencyGraphCompareRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\dependency-graph\compare
+// ItemItemDependencyGraphCompareRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependency-graph\compare
 type ItemItemDependencyGraphCompareRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByBasehead gets an item from the octokit.repos.item.item.dependencyGraph.compare.item collection
+// ByBasehead gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.dependencyGraph.compare.item collection
 func (m *ItemItemDependencyGraphCompareRequestBuilder) ByBasehead(basehead string)(*ItemItemDependencyGraphCompareWithBaseheadItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -22,7 +22,7 @@ func (m *ItemItemDependencyGraphCompareRequestBuilder) ByBasehead(basehead strin
 // NewItemItemDependencyGraphCompareRequestBuilderInternal instantiates a new CompareRequestBuilder and sets the default values.
 func NewItemItemDependencyGraphCompareRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependencyGraphCompareRequestBuilder) {
     m := &ItemItemDependencyGraphCompareRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/dependency-graph/compare", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/compare", pathParameters),
     }
     return m
 }

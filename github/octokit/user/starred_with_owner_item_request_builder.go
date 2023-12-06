@@ -8,7 +8,7 @@ import (
 type StarredWithOwnerItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRepo gets an item from the octokit.user.starred.item.item collection
+// ByRepo gets an item from the github.com/octokit/go-sdk/github/octokit/.user.starred.item.item collection
 func (m *StarredWithOwnerItemRequestBuilder) ByRepo(repo string)(*StarredItemWithRepoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

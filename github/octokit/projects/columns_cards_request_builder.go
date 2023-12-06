@@ -9,7 +9,7 @@ import (
 type ColumnsCardsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCard_id gets an item from the octokit.projects.columns.cards.item collection
+// ByCard_id gets an item from the github.com/octokit/go-sdk/github/octokit/.projects.columns.cards.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ColumnsCardsRequestBuilder) ByCard_id(card_id string)(*ColumnsCardsWithCard_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *ColumnsCardsRequestBuilder) ByCard_id(card_id string)(*ColumnsCardsWith
     }
     return NewColumnsCardsWithCard_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByCard_idInteger gets an item from the octokit.projects.columns.cards.item collection
+// ByCard_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.projects.columns.cards.item collection
 func (m *ColumnsCardsRequestBuilder) ByCard_idInteger(card_id int32)(*ColumnsCardsWithCard_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

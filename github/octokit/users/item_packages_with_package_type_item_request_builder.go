@@ -8,7 +8,7 @@ import (
 type ItemPackagesWithPackage_typeItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByPackage_name gets an item from the octokit.users.item.packages.item.item collection
+// ByPackage_name gets an item from the github.com/octokit/go-sdk/github/octokit/.users.item.packages.item.item collection
 func (m *ItemPackagesWithPackage_typeItemRequestBuilder) ByPackage_name(package_name string)(*ItemPackagesItemWithPackage_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

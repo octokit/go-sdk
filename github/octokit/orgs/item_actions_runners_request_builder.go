@@ -28,7 +28,7 @@ type ItemActionsRunnersRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemActionsRunnersRequestBuilderGetQueryParameters
 }
-// ByRunner_id gets an item from the octokit.orgs.item.actions.runners.item collection
+// ByRunner_id gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.actions.runners.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemActionsRunnersRequestBuilder) ByRunner_id(runner_id string)(*ItemActionsRunnersWithRunner_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -40,7 +40,7 @@ func (m *ItemActionsRunnersRequestBuilder) ByRunner_id(runner_id string)(*ItemAc
     }
     return NewItemActionsRunnersWithRunner_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByRunner_idInteger gets an item from the octokit.orgs.item.actions.runners.item collection
+// ByRunner_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.actions.runners.item collection
 func (m *ItemActionsRunnersRequestBuilder) ByRunner_idInteger(runner_id int32)(*ItemActionsRunnersWithRunner_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -117,7 +117,7 @@ func (m *ItemActionsRunnersRequestBuilder) RemoveToken()(*ItemActionsRunnersRemo
 }
 // ToGetRequestInformation lists all self-hosted runners configured in an organization.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
 func (m *ItemActionsRunnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActionsRunnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -125,9 +125,6 @@ func (m *ItemActionsRunnersRequestBuilder) ToGetRequestInformation(ctx context.C
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

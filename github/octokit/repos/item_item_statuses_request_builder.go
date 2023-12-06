@@ -4,11 +4,11 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemStatusesRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\statuses
+// ItemItemStatusesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\statuses
 type ItemItemStatusesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BySha gets an item from the octokit.repos.item.item.statuses.item collection
+// BySha gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.statuses.item collection
 func (m *ItemItemStatusesRequestBuilder) BySha(sha string)(*ItemItemStatusesWithShaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -22,7 +22,7 @@ func (m *ItemItemStatusesRequestBuilder) BySha(sha string)(*ItemItemStatusesWith
 // NewItemItemStatusesRequestBuilderInternal instantiates a new StatusesRequestBuilder and sets the default values.
 func NewItemItemStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemStatusesRequestBuilder) {
     m := &ItemItemStatusesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/statuses", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/statuses", pathParameters),
     }
     return m
 }

@@ -3,12 +3,12 @@ package repos
 import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i310c7fa33fa1c48c1b3e7a6088c5751691d82691dc25386b504b94581d877993 "github.com/octokit/go-sdk/github/octokit/repos/item/item/codescanning/alerts"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
+    i30c8d5b6345c279249dd615e6fde339a22343e5836ec229f9cd691be93476dcd "github.com/octokit/go-sdk/github/octokit/repos/item/item/codescanning/alerts"
 )
 
-// ItemItemCodeScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\code-scanning\alerts
+// ItemItemCodeScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\code-scanning\alerts
 type ItemItemCodeScanningAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -18,7 +18,7 @@ type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i310c7fa33fa1c48c1b3e7a6088c5751691d82691dc25386b504b94581d877993.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *i30c8d5b6345c279249dd615e6fde339a22343e5836ec229f9cd691be93476dcd.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -29,17 +29,17 @@ type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use severityAsCodeScanningAlertSeverity instead
     Severity *string `uriparametername:"severity"`
     // If specified, only code scanning alerts with this severity will be returned.
-    SeverityAsCodeScanningAlertSeverity *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertSeverity `uriparametername:"severity"`
+    SeverityAsCodeScanningAlertSeverity *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertSeverity `uriparametername:"severity"`
     // The property by which to sort the results.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // The property by which to sort the results.
-    SortAsGetSortQueryParameterType *i310c7fa33fa1c48c1b3e7a6088c5751691d82691dc25386b504b94581d877993.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i30c8d5b6345c279249dd615e6fde339a22343e5836ec229f9cd691be93476dcd.GetSortQueryParameterType `uriparametername:"sort"`
     // If specified, only code scanning alerts with this state will be returned.
     // Deprecated: This property is deprecated, use stateAsCodeScanningAlertStateQuery instead
     State *string `uriparametername:"state"`
     // If specified, only code scanning alerts with this state will be returned.
-    StateAsCodeScanningAlertStateQuery *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertStateQuery `uriparametername:"state"`
+    StateAsCodeScanningAlertStateQuery *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertStateQuery `uriparametername:"state"`
     // The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.
     Tool_guid *string `uriparametername:"tool_guid"`
     // The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.
@@ -54,7 +54,7 @@ type ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters
 }
-// ByAlert_number gets an item from the octokit.repos.item.item.codeScanning.alerts.item collection
+// ByAlert_number gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.codeScanning.alerts.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number string)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -66,7 +66,7 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number s
     }
     return NewItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByAlert_numberInteger gets an item from the octokit.repos.item.item.codeScanning.alerts.item collection
+// ByAlert_numberInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.codeScanning.alerts.item collection
 func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_numberInteger(alert_number int32)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -78,7 +78,7 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_numberInteger(alert_n
 // NewItemItemCodeScanningAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAlertsRequestBuilder) {
     m := &ItemItemCodeScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/code-scanning/alerts{?tool_name*,tool_guid*,page*,per_page*,ref*,direction*,sort*,state*,severity*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?tool_name*,tool_guid*,page*,per_page*,ref*,direction*,sort*,state*,severity*}", pathParameters),
     }
     return m
 }
@@ -92,31 +92,31 @@ func NewItemItemCodeScanningAlertsRequestBuilder(rawUrl string, requestAdapter i
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-a-repository
-func (m *ItemItemCodeScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration)([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertItemsable, error) {
+func (m *ItemItemCodeScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration)([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertItemsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "404": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateBasicErrorFromDiscriminatorValue,
-        "503": i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateAlerts503ErrorFromDiscriminatorValue,
+        "403": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "404": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateBasicErrorFromDiscriminatorValue,
+        "503": i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateAlerts503ErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateCodeScanningAlertItemsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateCodeScanningAlertItemsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertItemsable, len(res))
+    val := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertItemsable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CodeScanningAlertItemsable)
+            val[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningAlertItemsable)
         }
     }
     return val, nil
 }
 // ToGetRequestInformation lists code scanning alerts.To use this endpoint, you must use an access token with the `security_events` scope or, for alerts from public repositories only, an access token with the `public_repo` scope.The response includes a `most_recent_instance` object.This provides details of the most recent instance of this alertfor the default branch (or for the specified Git reference if you used `ref` in the request).
 func (m *ItemItemCodeScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -124,9 +124,6 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ToGetRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -8,7 +8,7 @@ import (
 type ItemWithSecurity_productItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByEnablement gets an item from the octokit.orgs.item.item.item collection
+// ByEnablement gets an item from the github.com/octokit/go-sdk/github/octokit/.orgs.item.item.item collection
 func (m *ItemWithSecurity_productItemRequestBuilder) ByEnablement(enablement string)(*ItemItemWithEnablementItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

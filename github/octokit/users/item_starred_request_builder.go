@@ -3,8 +3,8 @@ package users
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i03660976dad22eb5f098f714ff0bdd38b0e4878cc32cbf822b0cdef9d987ca7a "github.com/octokit/go-sdk/github/octokit/users/item/starred"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i7e137ed6a3b8980ea3a79ef74bec32e08f2b653153045b51cb89c597f4418e5b "github.com/octokit/go-sdk/github/octokit/users/item/starred"
 )
 
 // ItemStarredRequestBuilder builds and executes requests for operations under \users\{username}\starred
@@ -17,7 +17,7 @@ type ItemStarredRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i03660976dad22eb5f098f714ff0bdd38b0e4878cc32cbf822b0cdef9d987ca7a.GetDirectionQueryParameterType `uriparametername:"direction"`
+    DirectionAsGetDirectionQueryParameterType *i7e137ed6a3b8980ea3a79ef74bec32e08f2b653153045b51cb89c597f4418e5b.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100).
@@ -26,7 +26,7 @@ type ItemStarredRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
     Sort *string `uriparametername:"sort"`
     // The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
-    SortAsGetSortQueryParameterType *i03660976dad22eb5f098f714ff0bdd38b0e4878cc32cbf822b0cdef9d987ca7a.GetSortQueryParameterType `uriparametername:"sort"`
+    SortAsGetSortQueryParameterType *i7e137ed6a3b8980ea3a79ef74bec32e08f2b653153045b51cb89c597f4418e5b.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ItemStarredRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemStarredRequestBuilderGetRequestConfiguration struct {
@@ -40,9 +40,9 @@ type ItemStarredRequestBuilderGetRequestConfiguration struct {
 // StarredGetResponse composed type wrapper for classes ItemStarredRepository, ItemStarredRepository
 type StarredGetResponse struct {
     // Composed type representation for type ItemStarredRepository
-    itemStarredRepository ItemStarredRepositoryable
+    itemStarredRepository []ItemStarredRepositoryable
     // Composed type representation for type ItemStarredRepository
-    starredGetResponseItemStarredRepository ItemStarredRepositoryable
+    starredGetResponseItemStarredRepository []ItemStarredRepositoryable
 }
 // NewStarredGetResponse instantiates a new starredGetResponse and sets the default values.
 func NewStarredGetResponse()(*StarredGetResponse) {
@@ -54,20 +54,28 @@ func NewStarredGetResponse()(*StarredGetResponse) {
 func CreateStarredGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewStarredGetResponse()
     if parseNode != nil {
-        if val, err := parseNode.GetObjectValue(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
+        if val, err := parseNode.GetCollectionOfObjectValues(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(ItemStarredRepositoryable); ok {
-                result.SetItemStarredRepository(cast)
+            cast := make([]ItemStarredRepositoryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    cast[i] = v.(ItemStarredRepositoryable)
+                }
             }
-        } else if val, err := parseNode.GetObjectValue(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
+            result.SetItemStarredRepository(cast)
+        } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(ItemStarredRepositoryable); ok {
-                result.SetStarredGetResponseItemStarredRepository(cast)
+            cast := make([]ItemStarredRepositoryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    cast[i] = v.(ItemStarredRepositoryable)
+                }
             }
+            result.SetStarredGetResponseItemStarredRepository(cast)
         }
     }
     return result, nil
@@ -81,22 +89,34 @@ func (m *StarredGetResponse) GetIsComposedType()(bool) {
     return true
 }
 // GetItemStarredRepository gets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredGetResponse) GetItemStarredRepository()(ItemStarredRepositoryable) {
+func (m *StarredGetResponse) GetItemStarredRepository()([]ItemStarredRepositoryable) {
     return m.itemStarredRepository
 }
 // GetStarredGetResponseItemStarredRepository gets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredGetResponse) GetStarredGetResponseItemStarredRepository()(ItemStarredRepositoryable) {
+func (m *StarredGetResponse) GetStarredGetResponseItemStarredRepository()([]ItemStarredRepositoryable) {
     return m.starredGetResponseItemStarredRepository
 }
 // Serialize serializes information the current object
 func (m *StarredGetResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetItemStarredRepository() != nil {
-        err := writer.WriteObjectValue("", m.GetItemStarredRepository())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemStarredRepository()))
+        for i, v := range m.GetItemStarredRepository() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
     } else if m.GetStarredGetResponseItemStarredRepository() != nil {
-        err := writer.WriteObjectValue("", m.GetStarredGetResponseItemStarredRepository())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStarredGetResponseItemStarredRepository()))
+        for i, v := range m.GetStarredGetResponseItemStarredRepository() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
@@ -104,19 +124,19 @@ func (m *StarredGetResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetItemStarredRepository sets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredGetResponse) SetItemStarredRepository(value ItemStarredRepositoryable)() {
+func (m *StarredGetResponse) SetItemStarredRepository(value []ItemStarredRepositoryable)() {
     m.itemStarredRepository = value
 }
 // SetStarredGetResponseItemStarredRepository sets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredGetResponse) SetStarredGetResponseItemStarredRepository(value ItemStarredRepositoryable)() {
+func (m *StarredGetResponse) SetStarredGetResponseItemStarredRepository(value []ItemStarredRepositoryable)() {
     m.starredGetResponseItemStarredRepository = value
 }
 // StarredResponse composed type wrapper for classes ItemStarredRepository, ItemStarredRepository
 type StarredResponse struct {
     // Composed type representation for type ItemStarredRepository
-    itemStarredRepository ItemStarredRepositoryable
+    itemStarredRepository []ItemStarredRepositoryable
     // Composed type representation for type ItemStarredRepository
-    starredResponseItemStarredRepository ItemStarredRepositoryable
+    starredResponseItemStarredRepository []ItemStarredRepositoryable
 }
 // NewStarredResponse instantiates a new starredResponse and sets the default values.
 func NewStarredResponse()(*StarredResponse) {
@@ -128,20 +148,28 @@ func NewStarredResponse()(*StarredResponse) {
 func CreateStarredResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewStarredResponse()
     if parseNode != nil {
-        if val, err := parseNode.GetObjectValue(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
+        if val, err := parseNode.GetCollectionOfObjectValues(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(ItemStarredRepositoryable); ok {
-                result.SetItemStarredRepository(cast)
+            cast := make([]ItemStarredRepositoryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    cast[i] = v.(ItemStarredRepositoryable)
+                }
             }
-        } else if val, err := parseNode.GetObjectValue(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
+            result.SetItemStarredRepository(cast)
+        } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemStarredRepositoryFromDiscriminatorValue); val != nil {
             if err != nil {
                 return nil, err
             }
-            if cast, ok := val.(ItemStarredRepositoryable); ok {
-                result.SetStarredResponseItemStarredRepository(cast)
+            cast := make([]ItemStarredRepositoryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    cast[i] = v.(ItemStarredRepositoryable)
+                }
             }
+            result.SetStarredResponseItemStarredRepository(cast)
         }
     }
     return result, nil
@@ -155,22 +183,34 @@ func (m *StarredResponse) GetIsComposedType()(bool) {
     return true
 }
 // GetItemStarredRepository gets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredResponse) GetItemStarredRepository()(ItemStarredRepositoryable) {
+func (m *StarredResponse) GetItemStarredRepository()([]ItemStarredRepositoryable) {
     return m.itemStarredRepository
 }
 // GetStarredResponseItemStarredRepository gets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredResponse) GetStarredResponseItemStarredRepository()(ItemStarredRepositoryable) {
+func (m *StarredResponse) GetStarredResponseItemStarredRepository()([]ItemStarredRepositoryable) {
     return m.starredResponseItemStarredRepository
 }
 // Serialize serializes information the current object
 func (m *StarredResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetItemStarredRepository() != nil {
-        err := writer.WriteObjectValue("", m.GetItemStarredRepository())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemStarredRepository()))
+        for i, v := range m.GetItemStarredRepository() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
     } else if m.GetStarredResponseItemStarredRepository() != nil {
-        err := writer.WriteObjectValue("", m.GetStarredResponseItemStarredRepository())
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStarredResponseItemStarredRepository()))
+        for i, v := range m.GetStarredResponseItemStarredRepository() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("", cast)
         if err != nil {
             return err
         }
@@ -178,28 +218,28 @@ func (m *StarredResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetItemStarredRepository sets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredResponse) SetItemStarredRepository(value ItemStarredRepositoryable)() {
+func (m *StarredResponse) SetItemStarredRepository(value []ItemStarredRepositoryable)() {
     m.itemStarredRepository = value
 }
 // SetStarredResponseItemStarredRepository sets the ItemStarredRepository property value. Composed type representation for type ItemStarredRepository
-func (m *StarredResponse) SetStarredResponseItemStarredRepository(value ItemStarredRepositoryable)() {
+func (m *StarredResponse) SetStarredResponseItemStarredRepository(value []ItemStarredRepositoryable)() {
     m.starredResponseItemStarredRepository = value
 }
 // StarredGetResponseable 
 type StarredGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetItemStarredRepository()(ItemStarredRepositoryable)
-    GetStarredGetResponseItemStarredRepository()(ItemStarredRepositoryable)
-    SetItemStarredRepository(value ItemStarredRepositoryable)()
-    SetStarredGetResponseItemStarredRepository(value ItemStarredRepositoryable)()
+    GetItemStarredRepository()([]ItemStarredRepositoryable)
+    GetStarredGetResponseItemStarredRepository()([]ItemStarredRepositoryable)
+    SetItemStarredRepository(value []ItemStarredRepositoryable)()
+    SetStarredGetResponseItemStarredRepository(value []ItemStarredRepositoryable)()
 }
 // StarredResponseable 
 type StarredResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetItemStarredRepository()(ItemStarredRepositoryable)
-    GetStarredResponseItemStarredRepository()(ItemStarredRepositoryable)
-    SetItemStarredRepository(value ItemStarredRepositoryable)()
-    SetStarredResponseItemStarredRepository(value ItemStarredRepositoryable)()
+    GetItemStarredRepository()([]ItemStarredRepositoryable)
+    GetStarredResponseItemStarredRepository()([]ItemStarredRepositoryable)
+    SetItemStarredRepository(value []ItemStarredRepositoryable)()
+    SetStarredResponseItemStarredRepository(value []ItemStarredRepositoryable)()
 }
 // NewItemStarredRequestBuilderInternal instantiates a new StarredRequestBuilder and sets the default values.
 func NewItemStarredRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemStarredRequestBuilder) {
@@ -253,7 +293,7 @@ func (m *ItemStarredRequestBuilder) GetAsStarredGetResponse(ctx context.Context,
 }
 // ToGetRequestInformation lists repositories a user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
 func (m *ItemStarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemStarredRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -261,9 +301,6 @@ func (m *ItemStarredRequestBuilder) ToGetRequestInformation(ctx context.Context,
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

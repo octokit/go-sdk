@@ -1,8 +1,8 @@
 package orgs
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemOrganizationRolesGetResponse 
@@ -10,7 +10,7 @@ type ItemOrganizationRolesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The list of organization roles available to the organization.
-    roles []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable
+    roles []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable
     // The total number of organization roles available to the organization.
     total_count *int32
 }
@@ -33,15 +33,15 @@ func (m *ItemOrganizationRolesGetResponse) GetAdditionalData()(map[string]any) {
 func (m *ItemOrganizationRolesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.CreateOrganizationRoleFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CreateOrganizationRoleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable, len(val))
+            res := make([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable)
+                    res[i] = v.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable)
                 }
             }
             m.SetRoles(res)
@@ -61,7 +61,7 @@ func (m *ItemOrganizationRolesGetResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetRoles gets the roles property value. The list of organization roles available to the organization.
-func (m *ItemOrganizationRolesGetResponse) GetRoles()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable) {
+func (m *ItemOrganizationRolesGetResponse) GetRoles()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable) {
     return m.roles
 }
 // GetTotalCount gets the total_count property value. The total number of organization roles available to the organization.
@@ -101,7 +101,7 @@ func (m *ItemOrganizationRolesGetResponse) SetAdditionalData(value map[string]an
     m.additionalData = value
 }
 // SetRoles sets the roles property value. The list of organization roles available to the organization.
-func (m *ItemOrganizationRolesGetResponse) SetRoles(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable)() {
+func (m *ItemOrganizationRolesGetResponse) SetRoles(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable)() {
     m.roles = value
 }
 // SetTotalCount sets the total_count property value. The total number of organization roles available to the organization.
@@ -112,8 +112,8 @@ func (m *ItemOrganizationRolesGetResponse) SetTotalCount(value *int32)() {
 type ItemOrganizationRolesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetRoles()([]i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable)
+    GetRoles()([]i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable)
     GetTotalCount()(*int32)
-    SetRoles(value []i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.OrganizationRoleable)()
+    SetRoles(value []i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.OrganizationRoleable)()
     SetTotalCount(value *int32)()
 }

@@ -8,7 +8,7 @@ import (
 type EnterprisesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByEnterprise gets an item from the octokit.enterprises.item collection
+// ByEnterprise gets an item from the github.com/octokit/go-sdk/github/octokit/.enterprises.item collection
 func (m *EnterprisesRequestBuilder) ByEnterprise(enterprise string)(*WithEnterpriseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

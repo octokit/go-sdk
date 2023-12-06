@@ -6,7 +6,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsWorkflowsRequestBuilder builds and executes requests for operations under \repos\{owner}\{repo}\actions\workflows
+// ItemItemActionsWorkflowsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\workflows
 type ItemItemActionsWorkflowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -26,7 +26,7 @@ type ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemActionsWorkflowsRequestBuilderGetQueryParameters
 }
-// ByWorkflow_id gets an item from the octokit.repos.item.item.actions.workflows.item collection
+// ByWorkflow_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.workflows.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_id(workflow_id string)(*ItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -38,7 +38,7 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_id(workflow_id strin
     }
     return NewItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByWorkflow_idInteger gets an item from the octokit.repos.item.item.actions.workflows.item collection
+// ByWorkflow_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.actions.workflows.item collection
 func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_idInteger(workflow_id int32)(*ItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -50,7 +50,7 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_idInteger(workflow_i
 // NewItemItemActionsWorkflowsRequestBuilderInternal instantiates a new WorkflowsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsRequestBuilder) {
     m := &ItemItemActionsWorkflowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/workflows{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows{?per_page*,page*}", pathParameters),
     }
     return m
 }
@@ -99,7 +99,7 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) GetAsWorkflowsGetResponse(ctx c
 }
 // ToGetRequestInformation lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemActionsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformation()
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -107,9 +107,6 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) ToGetRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.UrlTemplate = m.BaseRequestBuilder.UrlTemplate
-    requestInfo.PathParameters = m.BaseRequestBuilder.PathParameters
-    requestInfo.Method = i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -1,8 +1,8 @@
 package repos
 
 import (
-    i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e "github.com/octokit/go-sdk/github/octokit/models"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
 )
 
 // ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody 
@@ -10,11 +10,11 @@ type ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // **Required when the `state` is `resolved`.** The reason for resolving the alert.
-    resolution *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution
+    resolution *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution
     // An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
     resolution_comment *string
     // Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
-    state *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState
+    state *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState
 }
 // NewItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody instantiates a new ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody and sets the default values.
 func NewItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody()(*ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) {
@@ -35,12 +35,12 @@ func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetAd
 func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["resolution"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseSecretScanningAlertResolution)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseSecretScanningAlertResolution)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResolution(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution))
+            m.SetResolution(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution))
         }
         return nil
     }
@@ -55,19 +55,19 @@ func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetFi
         return nil
     }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.ParseSecretScanningAlertState)
+        val, err := n.GetEnumValue(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.ParseSecretScanningAlertState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetState(val.(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState))
+            m.SetState(val.(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState))
         }
         return nil
     }
     return res
 }
 // GetResolution gets the resolution property value. **Required when the `state` is `resolved`.** The reason for resolving the alert.
-func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetResolution()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution) {
+func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetResolution()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution) {
     return m.resolution
 }
 // GetResolutionComment gets the resolution_comment property value. An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
@@ -75,7 +75,7 @@ func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetRe
     return m.resolution_comment
 }
 // GetState gets the state property value. Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
-func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetState()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState) {
+func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) GetState()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState) {
     return m.state
 }
 // Serialize serializes information the current object
@@ -113,7 +113,7 @@ func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetAd
     m.additionalData = value
 }
 // SetResolution sets the resolution property value. **Required when the `state` is `resolved`.** The reason for resolving the alert.
-func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetResolution(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution)() {
+func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetResolution(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution)() {
     m.resolution = value
 }
 // SetResolutionComment sets the resolution_comment property value. An optional comment when closing an alert. Cannot be updated or deleted. Must be `null` when changing `state` to `open`.
@@ -121,17 +121,17 @@ func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetRe
     m.resolution_comment = value
 }
 // SetState sets the state property value. Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
-func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetState(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState)() {
+func (m *ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBody) SetState(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState)() {
     m.state = value
 }
 // ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBodyable 
 type ItemItemSecretScanningAlertsItemWithAlert_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetResolution()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution)
+    GetResolution()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution)
     GetResolutionComment()(*string)
-    GetState()(*i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState)
-    SetResolution(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertResolution)()
+    GetState()(*i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState)
+    SetResolution(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertResolution)()
     SetResolutionComment(value *string)()
-    SetState(value *i8bb20811a612dd15efa26f086111481a68f72cd9ac5da7a939a417131078d77e.SecretScanningAlertState)()
+    SetState(value *i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.SecretScanningAlertState)()
 }

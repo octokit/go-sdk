@@ -9,7 +9,7 @@ import (
 type AssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAssignment_id gets an item from the octokit.assignments.item collection
+// ByAssignment_id gets an item from the github.com/octokit/go-sdk/github/octokit/.assignments.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *AssignmentsRequestBuilder) ByAssignment_id(assignment_id string)(*WithAssignment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -21,7 +21,7 @@ func (m *AssignmentsRequestBuilder) ByAssignment_id(assignment_id string)(*WithA
     }
     return NewWithAssignment_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByAssignment_idInteger gets an item from the octokit.assignments.item collection
+// ByAssignment_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.assignments.item collection
 func (m *AssignmentsRequestBuilder) ByAssignment_idInteger(assignment_id int32)(*WithAssignment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
