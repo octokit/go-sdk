@@ -37,7 +37,7 @@ func NewItemItemCodeScanningDefaultSetupRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCodeScanningDefaultSetupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+// Get gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#get-a-code-scanning-default-setup-configuration
@@ -60,7 +60,7 @@ func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) Get(ctx context.Context
     }
     return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningDefaultSetupable), nil
 }
-// Patch updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+// Patch updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-default-setup-configuration
@@ -84,7 +84,7 @@ func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) Patch(ctx context.Conte
     }
     return res.(i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.EmptyObjectable), nil
 }
-// ToGetRequestInformation gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+// ToGetRequestInformation gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
 func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCodeScanningDefaultSetupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -94,7 +94,7 @@ func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+// ToPatchRequestInformation updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
 func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035.CodeScanningDefaultSetupUpdateable, requestConfiguration *ItemItemCodeScanningDefaultSetupRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

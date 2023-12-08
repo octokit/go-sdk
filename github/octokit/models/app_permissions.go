@@ -14,12 +14,26 @@ type AppPermissions struct {
     administration *AppPermissions_administration
     // The level of permission to grant the access token for checks on code.
     checks *AppPermissions_checks
+    // The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+    codespaces *AppPermissions_codespaces
     // The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
     contents *AppPermissions_contents
+    // The leve of permission to grant the access token to manage Dependabot secrets.
+    dependabot_secrets *AppPermissions_dependabot_secrets
     // The level of permission to grant the access token for deployments and deployment statuses.
     deployments *AppPermissions_deployments
+    // The level of permission to grant the access token to manage the email addresses belonging to a user.
+    email_addresses *AppPermissions_email_addresses
     // The level of permission to grant the access token for managing repository environments.
     environments *AppPermissions_environments
+    // The level of permission to grant the access token to manage the followers belonging to a user.
+    followers *AppPermissions_followers
+    // The level of permission to grant the access token to manage git SSH keys.
+    git_ssh_keys *AppPermissions_git_ssh_keys
+    // The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+    gpg_keys *AppPermissions_gpg_keys
+    // The level of permission to grant the access token to view and manage interaction limits on a repository.
+    interaction_limits *AppPermissions_interaction_limits
     // The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
     issues *AppPermissions_issues
     // The level of permission to grant the access token for organization teams and members.
@@ -38,6 +52,8 @@ type AppPermissions struct {
     organization_custom_properties *AppPermissions_organization_custom_properties
     // The level of permission to grant the access token for custom repository roles management.
     organization_custom_roles *AppPermissions_organization_custom_roles
+    // The level of permission to grant the access token to view events triggered by an activity in an organization.
+    organization_events *AppPermissions_organization_events
     // The level of permission to grant the access token to manage the post-receive hooks for an organization.
     organization_hooks *AppPermissions_organization_hooks
     // The level of permission to grant the access token for organization packages published to GitHub Packages.
@@ -60,6 +76,8 @@ type AppPermissions struct {
     packages *AppPermissions_packages
     // The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
     pages *AppPermissions_pages
+    // The level of permission to grant the access token to manage the profile settings belonging to a user.
+    profile *AppPermissions_profile
     // The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
     pull_requests *AppPermissions_pull_requests
     // The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
@@ -76,6 +94,8 @@ type AppPermissions struct {
     security_events *AppPermissions_security_events
     // The level of permission to grant the access token to manage just a single file.
     single_file *AppPermissions_single_file
+    // The level of permission to grant the access token to list and manage repositories a user is starring.
+    starring *AppPermissions_starring
     // The level of permission to grant the access token for commit statuses.
     statuses *AppPermissions_statuses
     // The level of permission to grant the access token to manage team discussions and related comments.
@@ -112,13 +132,25 @@ func (m *AppPermissions) GetAdministration()(*AppPermissions_administration) {
 func (m *AppPermissions) GetChecks()(*AppPermissions_checks) {
     return m.checks
 }
+// GetCodespaces gets the codespaces property value. The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+func (m *AppPermissions) GetCodespaces()(*AppPermissions_codespaces) {
+    return m.codespaces
+}
 // GetContents gets the contents property value. The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
 func (m *AppPermissions) GetContents()(*AppPermissions_contents) {
     return m.contents
 }
+// GetDependabotSecrets gets the dependabot_secrets property value. The leve of permission to grant the access token to manage Dependabot secrets.
+func (m *AppPermissions) GetDependabotSecrets()(*AppPermissions_dependabot_secrets) {
+    return m.dependabot_secrets
+}
 // GetDeployments gets the deployments property value. The level of permission to grant the access token for deployments and deployment statuses.
 func (m *AppPermissions) GetDeployments()(*AppPermissions_deployments) {
     return m.deployments
+}
+// GetEmailAddresses gets the email_addresses property value. The level of permission to grant the access token to manage the email addresses belonging to a user.
+func (m *AppPermissions) GetEmailAddresses()(*AppPermissions_email_addresses) {
+    return m.email_addresses
 }
 // GetEnvironments gets the environments property value. The level of permission to grant the access token for managing repository environments.
 func (m *AppPermissions) GetEnvironments()(*AppPermissions_environments) {
@@ -157,6 +189,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["codespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_codespaces)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodespaces(val.(*AppPermissions_codespaces))
+        }
+        return nil
+    }
     res["contents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_contents)
         if err != nil {
@@ -164,6 +206,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetContents(val.(*AppPermissions_contents))
+        }
+        return nil
+    }
+    res["dependabot_secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_dependabot_secrets)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDependabotSecrets(val.(*AppPermissions_dependabot_secrets))
         }
         return nil
     }
@@ -177,6 +229,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["email_addresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_email_addresses)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmailAddresses(val.(*AppPermissions_email_addresses))
+        }
+        return nil
+    }
     res["environments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_environments)
         if err != nil {
@@ -184,6 +246,46 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetEnvironments(val.(*AppPermissions_environments))
+        }
+        return nil
+    }
+    res["followers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_followers)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFollowers(val.(*AppPermissions_followers))
+        }
+        return nil
+    }
+    res["git_ssh_keys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_git_ssh_keys)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGitSshKeys(val.(*AppPermissions_git_ssh_keys))
+        }
+        return nil
+    }
+    res["gpg_keys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_gpg_keys)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGpgKeys(val.(*AppPermissions_gpg_keys))
+        }
+        return nil
+    }
+    res["interaction_limits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_interaction_limits)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInteractionLimits(val.(*AppPermissions_interaction_limits))
         }
         return nil
     }
@@ -274,6 +376,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetOrganizationCustomRoles(val.(*AppPermissions_organization_custom_roles))
+        }
+        return nil
+    }
+    res["organization_events"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_organization_events)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOrganizationEvents(val.(*AppPermissions_organization_events))
         }
         return nil
     }
@@ -387,6 +499,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["profile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_profile)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProfile(val.(*AppPermissions_profile))
+        }
+        return nil
+    }
     res["pull_requests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_pull_requests)
         if err != nil {
@@ -467,6 +589,16 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["starring"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppPermissions_starring)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStarring(val.(*AppPermissions_starring))
+        }
+        return nil
+    }
     res["statuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAppPermissions_statuses)
         if err != nil {
@@ -509,6 +641,22 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetFollowers gets the followers property value. The level of permission to grant the access token to manage the followers belonging to a user.
+func (m *AppPermissions) GetFollowers()(*AppPermissions_followers) {
+    return m.followers
+}
+// GetGitSshKeys gets the git_ssh_keys property value. The level of permission to grant the access token to manage git SSH keys.
+func (m *AppPermissions) GetGitSshKeys()(*AppPermissions_git_ssh_keys) {
+    return m.git_ssh_keys
+}
+// GetGpgKeys gets the gpg_keys property value. The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+func (m *AppPermissions) GetGpgKeys()(*AppPermissions_gpg_keys) {
+    return m.gpg_keys
+}
+// GetInteractionLimits gets the interaction_limits property value. The level of permission to grant the access token to view and manage interaction limits on a repository.
+func (m *AppPermissions) GetInteractionLimits()(*AppPermissions_interaction_limits) {
+    return m.interaction_limits
+}
 // GetIssues gets the issues property value. The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 func (m *AppPermissions) GetIssues()(*AppPermissions_issues) {
     return m.issues
@@ -544,6 +692,10 @@ func (m *AppPermissions) GetOrganizationCustomProperties()(*AppPermissions_organ
 // GetOrganizationCustomRoles gets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management.
 func (m *AppPermissions) GetOrganizationCustomRoles()(*AppPermissions_organization_custom_roles) {
     return m.organization_custom_roles
+}
+// GetOrganizationEvents gets the organization_events property value. The level of permission to grant the access token to view events triggered by an activity in an organization.
+func (m *AppPermissions) GetOrganizationEvents()(*AppPermissions_organization_events) {
+    return m.organization_events
 }
 // GetOrganizationHooks gets the organization_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for an organization.
 func (m *AppPermissions) GetOrganizationHooks()(*AppPermissions_organization_hooks) {
@@ -589,6 +741,10 @@ func (m *AppPermissions) GetPackages()(*AppPermissions_packages) {
 func (m *AppPermissions) GetPages()(*AppPermissions_pages) {
     return m.pages
 }
+// GetProfile gets the profile property value. The level of permission to grant the access token to manage the profile settings belonging to a user.
+func (m *AppPermissions) GetProfile()(*AppPermissions_profile) {
+    return m.profile
+}
 // GetPullRequests gets the pull_requests property value. The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 func (m *AppPermissions) GetPullRequests()(*AppPermissions_pull_requests) {
     return m.pull_requests
@@ -620,6 +776,10 @@ func (m *AppPermissions) GetSecurityEvents()(*AppPermissions_security_events) {
 // GetSingleFile gets the single_file property value. The level of permission to grant the access token to manage just a single file.
 func (m *AppPermissions) GetSingleFile()(*AppPermissions_single_file) {
     return m.single_file
+}
+// GetStarring gets the starring property value. The level of permission to grant the access token to list and manage repositories a user is starring.
+func (m *AppPermissions) GetStarring()(*AppPermissions_starring) {
+    return m.starring
 }
 // GetStatuses gets the statuses property value. The level of permission to grant the access token for commit statuses.
 func (m *AppPermissions) GetStatuses()(*AppPermissions_statuses) {
@@ -660,9 +820,23 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetCodespaces() != nil {
+        cast := (*m.GetCodespaces()).String()
+        err := writer.WriteStringValue("codespaces", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetContents() != nil {
         cast := (*m.GetContents()).String()
         err := writer.WriteStringValue("contents", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDependabotSecrets() != nil {
+        cast := (*m.GetDependabotSecrets()).String()
+        err := writer.WriteStringValue("dependabot_secrets", &cast)
         if err != nil {
             return err
         }
@@ -674,9 +848,44 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetEmailAddresses() != nil {
+        cast := (*m.GetEmailAddresses()).String()
+        err := writer.WriteStringValue("email_addresses", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetEnvironments() != nil {
         cast := (*m.GetEnvironments()).String()
         err := writer.WriteStringValue("environments", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetFollowers() != nil {
+        cast := (*m.GetFollowers()).String()
+        err := writer.WriteStringValue("followers", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGitSshKeys() != nil {
+        cast := (*m.GetGitSshKeys()).String()
+        err := writer.WriteStringValue("git_ssh_keys", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGpgKeys() != nil {
+        cast := (*m.GetGpgKeys()).String()
+        err := writer.WriteStringValue("gpg_keys", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInteractionLimits() != nil {
+        cast := (*m.GetInteractionLimits()).String()
+        err := writer.WriteStringValue("interaction_limits", &cast)
         if err != nil {
             return err
         }
@@ -740,6 +949,13 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetOrganizationCustomRoles() != nil {
         cast := (*m.GetOrganizationCustomRoles()).String()
         err := writer.WriteStringValue("organization_custom_roles", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOrganizationEvents() != nil {
+        cast := (*m.GetOrganizationEvents()).String()
+        err := writer.WriteStringValue("organization_events", &cast)
         if err != nil {
             return err
         }
@@ -821,6 +1037,13 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetProfile() != nil {
+        cast := (*m.GetProfile()).String()
+        err := writer.WriteStringValue("profile", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPullRequests() != nil {
         cast := (*m.GetPullRequests()).String()
         err := writer.WriteStringValue("pull_requests", &cast)
@@ -877,6 +1100,13 @@ func (m *AppPermissions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetStarring() != nil {
+        cast := (*m.GetStarring()).String()
+        err := writer.WriteStringValue("starring", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatuses() != nil {
         cast := (*m.GetStatuses()).String()
         err := writer.WriteStringValue("statuses", &cast)
@@ -929,17 +1159,45 @@ func (m *AppPermissions) SetAdministration(value *AppPermissions_administration)
 func (m *AppPermissions) SetChecks(value *AppPermissions_checks)() {
     m.checks = value
 }
+// SetCodespaces sets the codespaces property value. The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+func (m *AppPermissions) SetCodespaces(value *AppPermissions_codespaces)() {
+    m.codespaces = value
+}
 // SetContents sets the contents property value. The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
 func (m *AppPermissions) SetContents(value *AppPermissions_contents)() {
     m.contents = value
+}
+// SetDependabotSecrets sets the dependabot_secrets property value. The leve of permission to grant the access token to manage Dependabot secrets.
+func (m *AppPermissions) SetDependabotSecrets(value *AppPermissions_dependabot_secrets)() {
+    m.dependabot_secrets = value
 }
 // SetDeployments sets the deployments property value. The level of permission to grant the access token for deployments and deployment statuses.
 func (m *AppPermissions) SetDeployments(value *AppPermissions_deployments)() {
     m.deployments = value
 }
+// SetEmailAddresses sets the email_addresses property value. The level of permission to grant the access token to manage the email addresses belonging to a user.
+func (m *AppPermissions) SetEmailAddresses(value *AppPermissions_email_addresses)() {
+    m.email_addresses = value
+}
 // SetEnvironments sets the environments property value. The level of permission to grant the access token for managing repository environments.
 func (m *AppPermissions) SetEnvironments(value *AppPermissions_environments)() {
     m.environments = value
+}
+// SetFollowers sets the followers property value. The level of permission to grant the access token to manage the followers belonging to a user.
+func (m *AppPermissions) SetFollowers(value *AppPermissions_followers)() {
+    m.followers = value
+}
+// SetGitSshKeys sets the git_ssh_keys property value. The level of permission to grant the access token to manage git SSH keys.
+func (m *AppPermissions) SetGitSshKeys(value *AppPermissions_git_ssh_keys)() {
+    m.git_ssh_keys = value
+}
+// SetGpgKeys sets the gpg_keys property value. The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+func (m *AppPermissions) SetGpgKeys(value *AppPermissions_gpg_keys)() {
+    m.gpg_keys = value
+}
+// SetInteractionLimits sets the interaction_limits property value. The level of permission to grant the access token to view and manage interaction limits on a repository.
+func (m *AppPermissions) SetInteractionLimits(value *AppPermissions_interaction_limits)() {
+    m.interaction_limits = value
 }
 // SetIssues sets the issues property value. The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 func (m *AppPermissions) SetIssues(value *AppPermissions_issues)() {
@@ -976,6 +1234,10 @@ func (m *AppPermissions) SetOrganizationCustomProperties(value *AppPermissions_o
 // SetOrganizationCustomRoles sets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management.
 func (m *AppPermissions) SetOrganizationCustomRoles(value *AppPermissions_organization_custom_roles)() {
     m.organization_custom_roles = value
+}
+// SetOrganizationEvents sets the organization_events property value. The level of permission to grant the access token to view events triggered by an activity in an organization.
+func (m *AppPermissions) SetOrganizationEvents(value *AppPermissions_organization_events)() {
+    m.organization_events = value
 }
 // SetOrganizationHooks sets the organization_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for an organization.
 func (m *AppPermissions) SetOrganizationHooks(value *AppPermissions_organization_hooks)() {
@@ -1021,6 +1283,10 @@ func (m *AppPermissions) SetPackages(value *AppPermissions_packages)() {
 func (m *AppPermissions) SetPages(value *AppPermissions_pages)() {
     m.pages = value
 }
+// SetProfile sets the profile property value. The level of permission to grant the access token to manage the profile settings belonging to a user.
+func (m *AppPermissions) SetProfile(value *AppPermissions_profile)() {
+    m.profile = value
+}
 // SetPullRequests sets the pull_requests property value. The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
 func (m *AppPermissions) SetPullRequests(value *AppPermissions_pull_requests)() {
     m.pull_requests = value
@@ -1053,6 +1319,10 @@ func (m *AppPermissions) SetSecurityEvents(value *AppPermissions_security_events
 func (m *AppPermissions) SetSingleFile(value *AppPermissions_single_file)() {
     m.single_file = value
 }
+// SetStarring sets the starring property value. The level of permission to grant the access token to list and manage repositories a user is starring.
+func (m *AppPermissions) SetStarring(value *AppPermissions_starring)() {
+    m.starring = value
+}
 // SetStatuses sets the statuses property value. The level of permission to grant the access token for commit statuses.
 func (m *AppPermissions) SetStatuses(value *AppPermissions_statuses)() {
     m.statuses = value
@@ -1076,9 +1346,16 @@ type AppPermissionsable interface {
     GetActions()(*AppPermissions_actions)
     GetAdministration()(*AppPermissions_administration)
     GetChecks()(*AppPermissions_checks)
+    GetCodespaces()(*AppPermissions_codespaces)
     GetContents()(*AppPermissions_contents)
+    GetDependabotSecrets()(*AppPermissions_dependabot_secrets)
     GetDeployments()(*AppPermissions_deployments)
+    GetEmailAddresses()(*AppPermissions_email_addresses)
     GetEnvironments()(*AppPermissions_environments)
+    GetFollowers()(*AppPermissions_followers)
+    GetGitSshKeys()(*AppPermissions_git_ssh_keys)
+    GetGpgKeys()(*AppPermissions_gpg_keys)
+    GetInteractionLimits()(*AppPermissions_interaction_limits)
     GetIssues()(*AppPermissions_issues)
     GetMembers()(*AppPermissions_members)
     GetMetadata()(*AppPermissions_metadata)
@@ -1088,6 +1365,7 @@ type AppPermissionsable interface {
     GetOrganizationCustomOrgRoles()(*AppPermissions_organization_custom_org_roles)
     GetOrganizationCustomProperties()(*AppPermissions_organization_custom_properties)
     GetOrganizationCustomRoles()(*AppPermissions_organization_custom_roles)
+    GetOrganizationEvents()(*AppPermissions_organization_events)
     GetOrganizationHooks()(*AppPermissions_organization_hooks)
     GetOrganizationPackages()(*AppPermissions_organization_packages)
     GetOrganizationPersonalAccessTokenRequests()(*AppPermissions_organization_personal_access_token_requests)
@@ -1099,6 +1377,7 @@ type AppPermissionsable interface {
     GetOrganizationUserBlocking()(*AppPermissions_organization_user_blocking)
     GetPackages()(*AppPermissions_packages)
     GetPages()(*AppPermissions_pages)
+    GetProfile()(*AppPermissions_profile)
     GetPullRequests()(*AppPermissions_pull_requests)
     GetRepositoryCustomProperties()(*AppPermissions_repository_custom_properties)
     GetRepositoryHooks()(*AppPermissions_repository_hooks)
@@ -1107,6 +1386,7 @@ type AppPermissionsable interface {
     GetSecretScanningAlerts()(*AppPermissions_secret_scanning_alerts)
     GetSecurityEvents()(*AppPermissions_security_events)
     GetSingleFile()(*AppPermissions_single_file)
+    GetStarring()(*AppPermissions_starring)
     GetStatuses()(*AppPermissions_statuses)
     GetTeamDiscussions()(*AppPermissions_team_discussions)
     GetVulnerabilityAlerts()(*AppPermissions_vulnerability_alerts)
@@ -1114,9 +1394,16 @@ type AppPermissionsable interface {
     SetActions(value *AppPermissions_actions)()
     SetAdministration(value *AppPermissions_administration)()
     SetChecks(value *AppPermissions_checks)()
+    SetCodespaces(value *AppPermissions_codespaces)()
     SetContents(value *AppPermissions_contents)()
+    SetDependabotSecrets(value *AppPermissions_dependabot_secrets)()
     SetDeployments(value *AppPermissions_deployments)()
+    SetEmailAddresses(value *AppPermissions_email_addresses)()
     SetEnvironments(value *AppPermissions_environments)()
+    SetFollowers(value *AppPermissions_followers)()
+    SetGitSshKeys(value *AppPermissions_git_ssh_keys)()
+    SetGpgKeys(value *AppPermissions_gpg_keys)()
+    SetInteractionLimits(value *AppPermissions_interaction_limits)()
     SetIssues(value *AppPermissions_issues)()
     SetMembers(value *AppPermissions_members)()
     SetMetadata(value *AppPermissions_metadata)()
@@ -1126,6 +1413,7 @@ type AppPermissionsable interface {
     SetOrganizationCustomOrgRoles(value *AppPermissions_organization_custom_org_roles)()
     SetOrganizationCustomProperties(value *AppPermissions_organization_custom_properties)()
     SetOrganizationCustomRoles(value *AppPermissions_organization_custom_roles)()
+    SetOrganizationEvents(value *AppPermissions_organization_events)()
     SetOrganizationHooks(value *AppPermissions_organization_hooks)()
     SetOrganizationPackages(value *AppPermissions_organization_packages)()
     SetOrganizationPersonalAccessTokenRequests(value *AppPermissions_organization_personal_access_token_requests)()
@@ -1137,6 +1425,7 @@ type AppPermissionsable interface {
     SetOrganizationUserBlocking(value *AppPermissions_organization_user_blocking)()
     SetPackages(value *AppPermissions_packages)()
     SetPages(value *AppPermissions_pages)()
+    SetProfile(value *AppPermissions_profile)()
     SetPullRequests(value *AppPermissions_pull_requests)()
     SetRepositoryCustomProperties(value *AppPermissions_repository_custom_properties)()
     SetRepositoryHooks(value *AppPermissions_repository_hooks)()
@@ -1145,6 +1434,7 @@ type AppPermissionsable interface {
     SetSecretScanningAlerts(value *AppPermissions_secret_scanning_alerts)()
     SetSecurityEvents(value *AppPermissions_security_events)()
     SetSingleFile(value *AppPermissions_single_file)()
+    SetStarring(value *AppPermissions_starring)()
     SetStatuses(value *AppPermissions_statuses)()
     SetTeamDiscussions(value *AppPermissions_team_discussions)()
     SetVulnerabilityAlerts(value *AppPermissions_vulnerability_alerts)()

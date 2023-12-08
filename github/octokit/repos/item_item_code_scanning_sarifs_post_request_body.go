@@ -11,7 +11,7 @@ type ItemItemCodeScanningSarifsPostRequestBody struct {
     checkout_uri *string
     // The SHA of the commit to which the analysis you are uploading relates.
     commit_sha *string
-    // The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+    // The full Git reference, formatted as `refs/heads/<branch name>`,`refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
     ref *string
     // A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
     sarif *string
@@ -115,7 +115,7 @@ func (m *ItemItemCodeScanningSarifsPostRequestBody) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetRef gets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// GetRef gets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 func (m *ItemItemCodeScanningSarifsPostRequestBody) GetRef()(*string) {
     return m.ref
 }
@@ -189,7 +189,7 @@ func (m *ItemItemCodeScanningSarifsPostRequestBody) SetCheckoutUri(value *string
 func (m *ItemItemCodeScanningSarifsPostRequestBody) SetCommitSha(value *string)() {
     m.commit_sha = value
 }
-// SetRef sets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+// SetRef sets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`,`refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
 func (m *ItemItemCodeScanningSarifsPostRequestBody) SetRef(value *string)() {
     m.ref = value
 }

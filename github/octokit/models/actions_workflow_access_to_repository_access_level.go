@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.
+// Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 type ActionsWorkflowAccessToRepository_access_level int
 
 const (

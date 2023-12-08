@@ -3,6 +3,7 @@ package repos
 import (
     "context"
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i000736ae6dd74f01081193e4f903216bc2bd2954ed818433b986f45d581ed035 "github.com/octokit/go-sdk/github/octokit/models"
     if33f06ff8bc9d7ad829492ffe99fe3138335d0a21d448761d0d6a50b686ac4da "github.com/octokit/go-sdk/github/octokit/repos/item/item/pulls/item/comments"
@@ -48,6 +49,7 @@ type ItemItemPullsItemCommentsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByComment_id gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.pulls.item.comments.item collection
+// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 func (m *ItemItemPullsItemCommentsRequestBuilder) ByComment_id(comment_id string)(*ItemItemPullsItemCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -56,6 +58,15 @@ func (m *ItemItemPullsItemCommentsRequestBuilder) ByComment_id(comment_id string
     if comment_id != "" {
         urlTplParams["comment_id"] = comment_id
     }
+    return NewItemItemPullsItemCommentsWithComment_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// ByComment_idInteger gets an item from the github.com/octokit/go-sdk/github/octokit/.repos.item.item.pulls.item.comments.item collection
+func (m *ItemItemPullsItemCommentsRequestBuilder) ByComment_idInteger(comment_id int32)(*ItemItemPullsItemCommentsWithComment_ItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    urlTplParams["comment_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(comment_id), 10)
     return NewItemItemPullsItemCommentsWithComment_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemPullsItemCommentsRequestBuilderInternal instantiates a new CommentsRequestBuilder and sets the default values.
