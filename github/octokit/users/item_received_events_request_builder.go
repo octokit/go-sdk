@@ -10,7 +10,7 @@ import (
 type ItemReceived_eventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemReceived_eventsRequestBuilderGetQueryParameters these are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
+// ItemReceived_eventsRequestBuilderGetQueryParameters these are events that you've received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
 type ItemReceived_eventsRequestBuilderGetQueryParameters struct {
     // Page number of the results to fetch.
     Page *int32 `uriparametername:"page"`
@@ -39,7 +39,7 @@ func NewItemReceived_eventsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemReceived_eventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get these are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
+// Get these are events that you've received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/events#list-events-received-by-the-authenticated-user
@@ -64,7 +64,7 @@ func (m *ItemReceived_eventsRequestBuilder) Get(ctx context.Context, requestConf
 func (m *ItemReceived_eventsRequestBuilder) Public()(*ItemReceived_eventsPublicRequestBuilder) {
     return NewItemReceived_eventsPublicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation these are events that you've received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
+// ToGetRequestInformation these are events that you've received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you'll only see public events.
 func (m *ItemReceived_eventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemReceived_eventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

@@ -6,7 +6,7 @@ import (
 
 // ActionsWorkflowAccessToRepository 
 type ActionsWorkflowAccessToRepository struct {
-    // Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.
+    // Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
     access_level *ActionsWorkflowAccessToRepository_access_level
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,7 +22,7 @@ func NewActionsWorkflowAccessToRepository()(*ActionsWorkflowAccessToRepository) 
 func CreateActionsWorkflowAccessToRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsWorkflowAccessToRepository(), nil
 }
-// GetAccessLevel gets the access_level property value. Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.
+// GetAccessLevel gets the access_level property value. Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 func (m *ActionsWorkflowAccessToRepository) GetAccessLevel()(*ActionsWorkflowAccessToRepository_access_level) {
     return m.access_level
 }
@@ -62,7 +62,7 @@ func (m *ActionsWorkflowAccessToRepository) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetAccessLevel sets the access_level property value. Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.
+// SetAccessLevel sets the access_level property value. Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 func (m *ActionsWorkflowAccessToRepository) SetAccessLevel(value *ActionsWorkflowAccessToRepository_access_level)() {
     m.access_level = value
 }
