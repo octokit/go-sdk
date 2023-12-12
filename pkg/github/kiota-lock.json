@@ -1,0 +1,32 @@
+{
+  "descriptionHash": "2679598123F08632A2FFC114750AED6269533BD439F3CA2487A054C8703177A95EE1ACCA7514CF91EB0672BDF9DF2275CCBDED4DAB6C8BE2F024F037132DF4AA",
+  "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "1.9.0",
+  "clientClassName": "ApiClient",
+  "clientNamespaceName": "github.com/octokit/go-sdk/pkg/github/",
+  "language": "Go",
+  "usesBackingStore": false,
+  "excludeBackwardCompatible": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain;q=0.9",
+    "application/x-www-form-urlencoded;q=0.2",
+    "multipart/form-data;q=0.1"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
