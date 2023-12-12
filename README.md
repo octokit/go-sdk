@@ -4,7 +4,7 @@ An "alpha" version of a generated Go SDK from [GitHub's OpenAPI spec](https://gi
 
 ## How do I use it?
 
-For now, see instructions in [this gist](https://gist.github.com/kfcampbell/0214851ce0ee9844f957cdbfb06910d4).
+See example client instantiations and requests in [example_test.go](pkg/authentication/example_test.go).
 
 ⚠️ **Note**: This SDK is not yet stable. Breaking changes may occur at any time.
 
