@@ -39,16 +39,16 @@ type ItemItemCommitsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemItemCommitsRequestBuilderGetQueryParameters
 }
-// ByCommit_sha gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.commits.item collection
-func (m *ItemItemCommitsRequestBuilder) ByCommit_sha(commit_sha string)(*ItemItemCommitsWithCommit_shaItemRequestBuilder) {
+// ByCommitsId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.commits.item collection
+func (m *ItemItemCommitsRequestBuilder) ByCommitsId(commitsId string)(*ItemItemCommitsCommitsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if commit_sha != "" {
-        urlTplParams["commit_sha"] = commit_sha
+    if commitsId != "" {
+        urlTplParams["commits%2Did"] = commitsId
     }
-    return NewItemItemCommitsWithCommit_shaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewItemItemCommitsCommitsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemCommitsRequestBuilderInternal instantiates a new CommitsRequestBuilder and sets the default values.
 func NewItemItemCommitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommitsRequestBuilder) {
