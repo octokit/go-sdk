@@ -32,7 +32,7 @@ type CodeScanningOrganizationAlertItems struct {
     // A GitHub repository.
     repository SimpleRepositoryable
     // The rule property
-    rule CodeScanningAlertRuleable
+    rule CodeScanningAlertRuleSummaryable
     // State of a code scanning alert.
     state *CodeScanningAlertState
     // The tool property
@@ -191,12 +191,12 @@ func (m *CodeScanningOrganizationAlertItems) GetFieldDeserializers()(map[string]
         return nil
     }
     res["rule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCodeScanningAlertRuleFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCodeScanningAlertRuleSummaryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRule(val.(CodeScanningAlertRuleable))
+            m.SetRule(val.(CodeScanningAlertRuleSummaryable))
         }
         return nil
     }
@@ -267,7 +267,7 @@ func (m *CodeScanningOrganizationAlertItems) GetRepository()(SimpleRepositoryabl
     return m.repository
 }
 // GetRule gets the rule property value. The rule property
-func (m *CodeScanningOrganizationAlertItems) GetRule()(CodeScanningAlertRuleable) {
+func (m *CodeScanningOrganizationAlertItems) GetRule()(CodeScanningAlertRuleSummaryable) {
     return m.rule
 }
 // GetState gets the state property value. State of a code scanning alert.
@@ -395,7 +395,7 @@ func (m *CodeScanningOrganizationAlertItems) SetRepository(value SimpleRepositor
     m.repository = value
 }
 // SetRule sets the rule property value. The rule property
-func (m *CodeScanningOrganizationAlertItems) SetRule(value CodeScanningAlertRuleable)() {
+func (m *CodeScanningOrganizationAlertItems) SetRule(value CodeScanningAlertRuleSummaryable)() {
     m.rule = value
 }
 // SetState sets the state property value. State of a code scanning alert.
@@ -429,7 +429,7 @@ type CodeScanningOrganizationAlertItemsable interface {
     GetMostRecentInstance()(CodeScanningAlertInstanceable)
     GetNumber()(*int32)
     GetRepository()(SimpleRepositoryable)
-    GetRule()(CodeScanningAlertRuleable)
+    GetRule()(CodeScanningAlertRuleSummaryable)
     GetState()(*CodeScanningAlertState)
     GetTool()(CodeScanningAnalysisToolable)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -445,7 +445,7 @@ type CodeScanningOrganizationAlertItemsable interface {
     SetMostRecentInstance(value CodeScanningAlertInstanceable)()
     SetNumber(value *int32)()
     SetRepository(value SimpleRepositoryable)()
-    SetRule(value CodeScanningAlertRuleable)()
+    SetRule(value CodeScanningAlertRuleSummaryable)()
     SetState(value *CodeScanningAlertState)()
     SetTool(value CodeScanningAnalysisToolable)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

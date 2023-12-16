@@ -84,7 +84,7 @@ func (m *FollowingWithUsernameItemRequestBuilder) Get(ctx context.Context, reque
     }
     return nil
 }
-// Put note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+// Put note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/followers#follow-a-user
@@ -123,7 +123,7 @@ func (m *FollowingWithUsernameItemRequestBuilder) ToGetRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+// ToPutRequestInformation note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
 func (m *FollowingWithUsernameItemRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *FollowingWithUsernameItemRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
