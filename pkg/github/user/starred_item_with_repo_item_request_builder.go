@@ -84,7 +84,7 @@ func (m *StarredItemWithRepoItemRequestBuilder) Get(ctx context.Context, request
     }
     return nil
 }
-// Put note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
+// Put note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/starring#star-a-repository-for-the-authenticated-user
@@ -124,7 +124,7 @@ func (m *StarredItemWithRepoItemRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs)."
+// ToPutRequestInformation note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
 func (m *StarredItemWithRepoItemRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *StarredItemWithRepoItemRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

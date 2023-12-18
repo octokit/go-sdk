@@ -14,6 +14,8 @@ type CodeScanningAlertRuleSummary struct {
     id *string
     // The name of the rule used to detect the alert.
     name *string
+    // The security severity of the alert.
+    security_severity_level *CodeScanningAlertRuleSummary_security_severity_level
     // The severity of the alert.
     severity *CodeScanningAlertRuleSummary_severity
     // A set of tags applicable for the rule.
@@ -71,6 +73,16 @@ func (m *CodeScanningAlertRuleSummary) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["security_severity_level"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeScanningAlertRuleSummary_security_severity_level)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecuritySeverityLevel(val.(*CodeScanningAlertRuleSummary_security_severity_level))
+        }
+        return nil
+    }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeScanningAlertRuleSummary_severity)
         if err != nil {
@@ -107,6 +119,10 @@ func (m *CodeScanningAlertRuleSummary) GetId()(*string) {
 func (m *CodeScanningAlertRuleSummary) GetName()(*string) {
     return m.name
 }
+// GetSecuritySeverityLevel gets the security_severity_level property value. The security severity of the alert.
+func (m *CodeScanningAlertRuleSummary) GetSecuritySeverityLevel()(*CodeScanningAlertRuleSummary_security_severity_level) {
+    return m.security_severity_level
+}
 // GetSeverity gets the severity property value. The severity of the alert.
 func (m *CodeScanningAlertRuleSummary) GetSeverity()(*CodeScanningAlertRuleSummary_severity) {
     return m.severity
@@ -131,6 +147,13 @@ func (m *CodeScanningAlertRuleSummary) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSecuritySeverityLevel() != nil {
+        cast := (*m.GetSecuritySeverityLevel()).String()
+        err := writer.WriteStringValue("security_severity_level", &cast)
         if err != nil {
             return err
         }
@@ -172,6 +195,10 @@ func (m *CodeScanningAlertRuleSummary) SetId(value *string)() {
 func (m *CodeScanningAlertRuleSummary) SetName(value *string)() {
     m.name = value
 }
+// SetSecuritySeverityLevel sets the security_severity_level property value. The security severity of the alert.
+func (m *CodeScanningAlertRuleSummary) SetSecuritySeverityLevel(value *CodeScanningAlertRuleSummary_security_severity_level)() {
+    m.security_severity_level = value
+}
 // SetSeverity sets the severity property value. The severity of the alert.
 func (m *CodeScanningAlertRuleSummary) SetSeverity(value *CodeScanningAlertRuleSummary_severity)() {
     m.severity = value
@@ -187,11 +214,13 @@ type CodeScanningAlertRuleSummaryable interface {
     GetDescription()(*string)
     GetId()(*string)
     GetName()(*string)
+    GetSecuritySeverityLevel()(*CodeScanningAlertRuleSummary_security_severity_level)
     GetSeverity()(*CodeScanningAlertRuleSummary_severity)
     GetTags()([]string)
     SetDescription(value *string)()
     SetId(value *string)()
     SetName(value *string)()
+    SetSecuritySeverityLevel(value *CodeScanningAlertRuleSummary_security_severity_level)()
     SetSeverity(value *CodeScanningAlertRuleSummary_severity)()
     SetTags(value []string)()
 }
