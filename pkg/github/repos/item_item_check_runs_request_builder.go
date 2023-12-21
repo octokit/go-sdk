@@ -166,7 +166,7 @@ func NewItemItemCheckRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCheckRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.Creates a new check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to create check runs.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.
+// Post creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/checks/runs#create-a-check-run
@@ -184,7 +184,7 @@ func (m *ItemItemCheckRunsRequestBuilder) Post(ctx context.Context, body CheckRu
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CheckRunable), nil
 }
-// ToPostRequestInformation **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.Creates a new check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to create check runs.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.
+// ToPostRequestInformation creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
 func (m *ItemItemCheckRunsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CheckRunsPostRequestBodyable, requestConfiguration *ItemItemCheckRunsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
