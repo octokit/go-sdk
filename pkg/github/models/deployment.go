@@ -24,7 +24,7 @@ type Deployment struct {
     // The original_environment property
     original_environment *string
     // The payload property
-    payload Deployment_Deployment_payloadable
+    payload *string
     // GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
     performed_via_github_app NullableIntegrationable
     // Specifies if the given environment is one that end-users directly interact with. Default: false.
@@ -45,91 +45,6 @@ type Deployment struct {
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The url property
     url *string
-}
-// Deployment_Deployment_payload composed type wrapper for classes deployment_payloadMember1, string
-type Deployment_Deployment_payload struct {
-    // Composed type representation for type deployment_payloadMember1
-    deployment_payloadMember1 Deployment_payloadMember1able
-    // Composed type representation for type string
-    string *string
-}
-// NewDeployment_Deployment_payload instantiates a new deployment_payload and sets the default values.
-func NewDeployment_Deployment_payload()(*Deployment_Deployment_payload) {
-    m := &Deployment_Deployment_payload{
-    }
-    return m
-}
-// CreateDeployment_Deployment_payloadFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateDeployment_Deployment_payloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    result := NewDeployment_Deployment_payload()
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-            }
-        }
-    }
-    if val, err := parseNode.GetStringValue(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetString(val)
-    }
-    return result, nil
-}
-// GetDeploymentPayloadMember1 gets the deployment_payloadMember1 property value. Composed type representation for type deployment_payloadMember1
-func (m *Deployment_Deployment_payload) GetDeploymentPayloadMember1()(Deployment_payloadMember1able) {
-    return m.deployment_payloadMember1
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *Deployment_Deployment_payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-}
-// GetIsComposedType determines if the current object is a wrapper around a composed type
-func (m *Deployment_Deployment_payload) GetIsComposedType()(bool) {
-    return true
-}
-// GetString gets the string property value. Composed type representation for type string
-func (m *Deployment_Deployment_payload) GetString()(*string) {
-    return m.string
-}
-// Serialize serializes information the current object
-func (m *Deployment_Deployment_payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetDeploymentPayloadMember1() != nil {
-        err := writer.WriteObjectValue("", m.GetDeploymentPayloadMember1())
-        if err != nil {
-            return err
-        }
-    } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetDeploymentPayloadMember1 sets the deployment_payloadMember1 property value. Composed type representation for type deployment_payloadMember1
-func (m *Deployment_Deployment_payload) SetDeploymentPayloadMember1(value Deployment_payloadMember1able)() {
-    m.deployment_payloadMember1 = value
-}
-// SetString sets the string property value. Composed type representation for type string
-func (m *Deployment_Deployment_payload) SetString(value *string)() {
-    m.string = value
-}
-// Deployment_Deployment_payloadable 
-type Deployment_Deployment_payloadable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeploymentPayloadMember1()(Deployment_payloadMember1able)
-    GetString()(*string)
-    SetDeploymentPayloadMember1(value Deployment_payloadMember1able)()
-    SetString(value *string)()
 }
 // NewDeployment instantiates a new deployment and sets the default values.
 func NewDeployment()(*Deployment) {
@@ -236,12 +151,12 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeployment_Deployment_payloadFromDiscriminatorValue)
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPayload(val.(Deployment_Deployment_payloadable))
+            m.SetPayload(val)
         }
         return nil
     }
@@ -360,7 +275,7 @@ func (m *Deployment) GetOriginalEnvironment()(*string) {
     return m.original_environment
 }
 // GetPayload gets the payload property value. The payload property
-func (m *Deployment) GetPayload()(Deployment_Deployment_payloadable) {
+func (m *Deployment) GetPayload()(*string) {
     return m.payload
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -448,7 +363,7 @@ func (m *Deployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteObjectValue("payload", m.GetPayload())
+        err := writer.WriteStringValue("payload", m.GetPayload())
         if err != nil {
             return err
         }
@@ -554,7 +469,7 @@ func (m *Deployment) SetOriginalEnvironment(value *string)() {
     m.original_environment = value
 }
 // SetPayload sets the payload property value. The payload property
-func (m *Deployment) SetPayload(value Deployment_Deployment_payloadable)() {
+func (m *Deployment) SetPayload(value *string)() {
     m.payload = value
 }
 // SetPerformedViaGithubApp sets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
@@ -608,7 +523,7 @@ type Deploymentable interface {
     GetId()(*int32)
     GetNodeId()(*string)
     GetOriginalEnvironment()(*string)
-    GetPayload()(Deployment_Deployment_payloadable)
+    GetPayload()(*string)
     GetPerformedViaGithubApp()(NullableIntegrationable)
     GetProductionEnvironment()(*bool)
     GetRef()(*string)
@@ -626,7 +541,7 @@ type Deploymentable interface {
     SetId(value *int32)()
     SetNodeId(value *string)()
     SetOriginalEnvironment(value *string)()
-    SetPayload(value Deployment_Deployment_payloadable)()
+    SetPayload(value *string)()
     SetPerformedViaGithubApp(value NullableIntegrationable)()
     SetProductionEnvironment(value *bool)()
     SetRef(value *string)()
