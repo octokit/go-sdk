@@ -10,6 +10,13 @@ import (
 type ThreadsWithThread_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ThreadsWithThread_ItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ThreadsWithThread_ItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ThreadsWithThread_ItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreadsWithThread_ItemRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -36,6 +43,21 @@ func NewThreadsWithThread_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewThreadsWithThread_ItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
+// [API method documentation]
+// 
+// [API method documentation]: https://docs.github.com/rest/activity/notifications#mark-a-thread-as-done
+func (m *ThreadsWithThread_ItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreadsWithThread_ItemRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, nil)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get gets information about a notification thread.
 // [API method documentation]
@@ -80,6 +102,15 @@ func (m *ThreadsWithThread_ItemRequestBuilder) Patch(ctx context.Context, reques
 // Subscription the subscription property
 func (m *ThreadsWithThread_ItemRequestBuilder) Subscription()(*ThreadsItemSubscriptionRequestBuilder) {
     return NewThreadsItemSubscriptionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
+func (m *ThreadsWithThread_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreadsWithThread_ItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    return requestInfo, nil
 }
 // ToGetRequestInformation gets information about a notification thread.
 func (m *ThreadsWithThread_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreadsWithThread_ItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

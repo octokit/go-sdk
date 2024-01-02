@@ -15,7 +15,7 @@ type ItemItemDeploymentsPostRequestBody struct {
     // Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
     environment *string
     // The payload property
-    payload ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable
+    payload *string
     // Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
     production_environment *bool
     // The ref to deploy. This can be a branch, tag, or SHA.
@@ -26,91 +26,6 @@ type ItemItemDeploymentsPostRequestBody struct {
     task *string
     // Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
     transient_environment *bool
-}
-// ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload composed type wrapper for classes ItemItemDeploymentsPostRequestBody_payloadMember1, string
-type ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload struct {
-    // Composed type representation for type ItemItemDeploymentsPostRequestBody_payloadMember1
-    itemItemDeploymentsPostRequestBody_payloadMember1 ItemItemDeploymentsPostRequestBody_payloadMember1able
-    // Composed type representation for type string
-    string *string
-}
-// NewItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload instantiates a new deploymentsPostRequestBody_payload and sets the default values.
-func NewItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload()(*ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) {
-    m := &ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload{
-    }
-    return m
-}
-// CreateItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    result := NewItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload()
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-            }
-        }
-    }
-    if val, err := parseNode.GetStringValue(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetString(val)
-    }
-    return result, nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-}
-// GetIsComposedType determines if the current object is a wrapper around a composed type
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) GetIsComposedType()(bool) {
-    return true
-}
-// GetItemItemDeploymentsPostRequestBodyPayloadMember1 gets the ItemItemDeploymentsPostRequestBody_payloadMember1 property value. Composed type representation for type ItemItemDeploymentsPostRequestBody_payloadMember1
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) GetItemItemDeploymentsPostRequestBodyPayloadMember1()(ItemItemDeploymentsPostRequestBody_payloadMember1able) {
-    return m.itemItemDeploymentsPostRequestBody_payloadMember1
-}
-// GetString gets the string property value. Composed type representation for type string
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) GetString()(*string) {
-    return m.string
-}
-// Serialize serializes information the current object
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetItemItemDeploymentsPostRequestBodyPayloadMember1() != nil {
-        err := writer.WriteObjectValue("", m.GetItemItemDeploymentsPostRequestBodyPayloadMember1())
-        if err != nil {
-            return err
-        }
-    } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetItemItemDeploymentsPostRequestBodyPayloadMember1 sets the ItemItemDeploymentsPostRequestBody_payloadMember1 property value. Composed type representation for type ItemItemDeploymentsPostRequestBody_payloadMember1
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) SetItemItemDeploymentsPostRequestBodyPayloadMember1(value ItemItemDeploymentsPostRequestBody_payloadMember1able)() {
-    m.itemItemDeploymentsPostRequestBody_payloadMember1 = value
-}
-// SetString sets the string property value. Composed type representation for type string
-func (m *ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payload) SetString(value *string)() {
-    m.string = value
-}
-// ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable 
-type ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetItemItemDeploymentsPostRequestBodyPayloadMember1()(ItemItemDeploymentsPostRequestBody_payloadMember1able)
-    GetString()(*string)
-    SetItemItemDeploymentsPostRequestBodyPayloadMember1(value ItemItemDeploymentsPostRequestBody_payloadMember1able)()
-    SetString(value *string)()
 }
 // NewItemItemDeploymentsPostRequestBody instantiates a new ItemItemDeploymentsPostRequestBody and sets the default values.
 func NewItemItemDeploymentsPostRequestBody()(*ItemItemDeploymentsPostRequestBody) {
@@ -177,12 +92,12 @@ func (m *ItemItemDeploymentsPostRequestBody) GetFieldDeserializers()(map[string]
         return nil
     }
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadFromDiscriminatorValue)
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPayload(val.(ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable))
+            m.SetPayload(val)
         }
         return nil
     }
@@ -245,7 +160,7 @@ func (m *ItemItemDeploymentsPostRequestBody) GetFieldDeserializers()(map[string]
     return res
 }
 // GetPayload gets the payload property value. The payload property
-func (m *ItemItemDeploymentsPostRequestBody) GetPayload()(ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable) {
+func (m *ItemItemDeploymentsPostRequestBody) GetPayload()(*string) {
     return m.payload
 }
 // GetProductionEnvironment gets the production_environment property value. Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
@@ -289,7 +204,7 @@ func (m *ItemItemDeploymentsPostRequestBody) Serialize(writer i878a80d2330e89d26
         }
     }
     {
-        err := writer.WriteObjectValue("payload", m.GetPayload())
+        err := writer.WriteStringValue("payload", m.GetPayload())
         if err != nil {
             return err
         }
@@ -349,7 +264,7 @@ func (m *ItemItemDeploymentsPostRequestBody) SetEnvironment(value *string)() {
     m.environment = value
 }
 // SetPayload sets the payload property value. The payload property
-func (m *ItemItemDeploymentsPostRequestBody) SetPayload(value ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable)() {
+func (m *ItemItemDeploymentsPostRequestBody) SetPayload(value *string)() {
     m.payload = value
 }
 // SetProductionEnvironment sets the production_environment property value. Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
@@ -379,7 +294,7 @@ type ItemItemDeploymentsPostRequestBodyable interface {
     GetAutoMerge()(*bool)
     GetDescription()(*string)
     GetEnvironment()(*string)
-    GetPayload()(ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable)
+    GetPayload()(*string)
     GetProductionEnvironment()(*bool)
     GetRef()(*string)
     GetRequiredContexts()([]string)
@@ -388,7 +303,7 @@ type ItemItemDeploymentsPostRequestBodyable interface {
     SetAutoMerge(value *bool)()
     SetDescription(value *string)()
     SetEnvironment(value *string)()
-    SetPayload(value ItemItemDeploymentsPostRequestBody_DeploymentsPostRequestBody_payloadable)()
+    SetPayload(value *string)()
     SetProductionEnvironment(value *bool)()
     SetRef(value *string)()
     SetRequiredContexts(value []string)()

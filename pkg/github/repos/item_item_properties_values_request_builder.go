@@ -30,7 +30,7 @@ func NewItemItemPropertiesValuesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPropertiesValuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.
+// Get gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository
@@ -55,7 +55,7 @@ func (m *ItemItemPropertiesValuesRequestBuilder) Get(ctx context.Context, reques
     }
     return val, nil
 }
-// ToGetRequestInformation gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.
+// ToGetRequestInformation gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
 func (m *ItemItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemPropertiesValuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

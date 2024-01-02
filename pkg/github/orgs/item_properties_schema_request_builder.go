@@ -48,7 +48,7 @@ func NewItemPropertiesSchemaRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemPropertiesSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets all custom properties defined for an organization.You must be an organization owner to use this endpoint.
+// Get gets all custom properties defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
@@ -73,7 +73,7 @@ func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestCon
     }
     return val, nil
 }
-// Patch creates new or updates existing custom properties defined for an organization in a batch.Only organization owners (or users with the proper permissions granted by them) can update these properties
+// Patch creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
@@ -98,7 +98,7 @@ func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body Ite
     }
     return val, nil
 }
-// ToGetRequestInformation gets all custom properties defined for an organization.You must be an organization owner to use this endpoint.
+// ToGetRequestInformation gets all custom properties defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
 func (m *ItemPropertiesSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPropertiesSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -108,7 +108,7 @@ func (m *ItemPropertiesSchemaRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation creates new or updates existing custom properties defined for an organization in a batch.Only organization owners (or users with the proper permissions granted by them) can update these properties
+// ToPatchRequestInformation creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
 func (m *ItemPropertiesSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *ItemPropertiesSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
