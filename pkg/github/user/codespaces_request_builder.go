@@ -114,9 +114,9 @@ func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyMember2(value Co
 }
 // CodespacesRequestBuilderGetQueryParameters lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
 type CodespacesRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // ID of the Repository to filter on
     Repository_id *int32 `uriparametername:"repository_id"`

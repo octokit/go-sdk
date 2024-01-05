@@ -18,9 +18,9 @@ type ItemReposRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
     DirectionAsGetDirectionQueryParameterType *i5b3d7c73dda6fbaf3ff58c44b2aabc5d033977f32b78e1754114a1419fe1467c.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead

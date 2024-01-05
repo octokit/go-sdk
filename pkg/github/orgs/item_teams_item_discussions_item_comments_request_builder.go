@@ -19,9 +19,9 @@ type ItemTeamsItemDiscussionsItemCommentsRequestBuilderGetQueryParameters struct
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
     DirectionAsGetDirectionQueryParameterType *iae5ab5524c281dee4a3db19e9729c3a76291b14b0954b0f842181a85dd4a965e.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemTeamsItemDiscussionsItemCommentsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

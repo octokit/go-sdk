@@ -37,9 +37,9 @@ type ItemItemActionsCachesRequestBuilderGetQueryParameters struct {
     DirectionAsGetDirectionQueryParameterType *i3a298556069ace403d8f25ad8fc9a71cfb502c817e6b3784c90f44e6250cae51.GetDirectionQueryParameterType `uriparametername:"direction"`
     // An explicit key or prefix for identifying the cache
     Key *string `uriparametername:"key"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The full Git reference for narrowing down the cache. The `ref` for a branch should be formatted as `refs/heads/<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
     Ref *string `uriparametername:"ref"`

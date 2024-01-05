@@ -13,9 +13,9 @@ type ItemDependabotAlertsRequestBuilder struct {
 }
 // ItemDependabotAlertsRequestBuilderGetQueryParameters lists Dependabot alerts for repositories that are owned by the specified enterprise.To use this endpoint, you must be a member of the enterprise, and you must use anaccess token with the `repo` scope or `security_events` scope.Alerts are only returned for organizations in the enterprise for which you are an organization owner or a security manager. For more information about security managers, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
-    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor.
+    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     After *string `uriparametername:"after"`
-    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor.
+    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Before *string `uriparametername:"before"`
     // The direction to sort the results by.
     // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
@@ -30,7 +30,7 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     Last *int32 `uriparametername:"last"`
     // A comma-separated list of package names. If specified, only alerts for these packages will be returned.
     Package *string `uriparametername:"package"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
     // Deprecated: This property is deprecated, use scopeAsGetScopeQueryParameterType instead

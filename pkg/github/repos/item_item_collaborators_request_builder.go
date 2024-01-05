@@ -18,9 +18,9 @@ type ItemItemCollaboratorsRequestBuilderGetQueryParameters struct {
     Affiliation *string `uriparametername:"affiliation"`
     // Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
     AffiliationAsGetAffiliationQueryParameterType *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetAffiliationQueryParameterType `uriparametername:"affiliation"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.
     // Deprecated: This property is deprecated, use permissionAsGetPermissionQueryParameterType instead

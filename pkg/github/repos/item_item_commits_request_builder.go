@@ -17,11 +17,11 @@ type ItemItemCommitsRequestBuilderGetQueryParameters struct {
     Author *string `uriparametername:"author"`
     // GitHub username or email address to use to filter by commit committer.
     Committer *string `uriparametername:"committer"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // Only commits containing this file path will be returned.
     Path *string `uriparametername:"path"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // SHA or branch to start listing commits from. Default: the repository’s default branch (usually `main`).
     Sha *string `uriparametername:"sha"`

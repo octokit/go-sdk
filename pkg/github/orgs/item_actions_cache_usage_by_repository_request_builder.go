@@ -11,9 +11,9 @@ type ItemActionsCacheUsageByRepositoryRequestBuilder struct {
 }
 // ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.
 type ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

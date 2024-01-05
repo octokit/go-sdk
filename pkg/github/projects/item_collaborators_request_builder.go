@@ -18,9 +18,9 @@ type ItemCollaboratorsRequestBuilderGetQueryParameters struct {
     Affiliation *string `uriparametername:"affiliation"`
     // Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
     AffiliationAsGetAffiliationQueryParameterType *i9278c50c134ed2203c081269c8e0d5b023412eaec35c331232e99d24d73fec75.GetAffiliationQueryParameterType `uriparametername:"affiliation"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemCollaboratorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

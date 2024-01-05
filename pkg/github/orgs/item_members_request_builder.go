@@ -18,9 +18,9 @@ type ItemMembersRequestBuilderGetQueryParameters struct {
     Filter *string `uriparametername:"filter"`
     // Filter members returned in the list. `2fa_disabled` means that only members without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned. This options is only available for organization owners.
     FilterAsGetFilterQueryParameterType *id17450d82944fa531d7f154d669a8b6ce833b49a25250377061627d436cc43a6.GetFilterQueryParameterType `uriparametername:"filter"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Filter members returned by their role.
     // Deprecated: This property is deprecated, use roleAsGetRoleQueryParameterType instead

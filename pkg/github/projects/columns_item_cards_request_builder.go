@@ -120,9 +120,9 @@ type ColumnsItemCardsRequestBuilderGetQueryParameters struct {
     Archived_state *string `uriparametername:"archived_state"`
     // Filters the project cards that are returned by the card's state.
     Archived_stateAsGetArchived_stateQueryParameterType *iaecb1d9ce8f039d73681b50025b6b1a10860720b981e5b38dba5e4bcaf58ea7c.GetArchived_stateQueryParameterType `uriparametername:"archived_state"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ColumnsItemCardsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

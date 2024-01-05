@@ -28,9 +28,9 @@ type ItemItemActionsRunsRequestBuilderGetQueryParameters struct {
     Exclude_pull_requests *bool `uriparametername:"exclude_pull_requests"`
     // Only returns workflow runs that are associated with the specified `head_sha`.
     Head_sha *string `uriparametername:"head_sha"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
     // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead

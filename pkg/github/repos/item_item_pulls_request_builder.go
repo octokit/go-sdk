@@ -23,9 +23,9 @@ type ItemItemPullsRequestBuilderGetQueryParameters struct {
     DirectionAsGetDirectionQueryParameterType *i4980f88b83fd6b3743c68ab8eff5072f163dacd27a6e92d0995ffa675b31f76d.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Filter pulls by head user or head organization and branch name in the format of `user:ref-name` or `organization:ref-name`. For example: `github:new-script-format` or `octocat:test-branch`.
     Head *string `uriparametername:"head"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // What to sort results by. `popularity` will sort by the number of comments. `long-running` will sort by date created and will limit the results to pull requests that have been open for more than a month and have had activity within the past month.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead

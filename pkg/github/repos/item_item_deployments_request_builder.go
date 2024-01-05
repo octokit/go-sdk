@@ -15,9 +15,9 @@ type ItemItemDeploymentsRequestBuilder struct {
 type ItemItemDeploymentsRequestBuilderGetQueryParameters struct {
     // The name of the environment that was deployed to (e.g., `staging` or `production`).
     Environment *string `uriparametername:"environment"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The name of the ref. This can be a branch, tag, or SHA.
     Ref *string `uriparametername:"ref"`

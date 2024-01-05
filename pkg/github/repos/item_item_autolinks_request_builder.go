@@ -13,7 +13,7 @@ type ItemItemAutolinksRequestBuilder struct {
 }
 // ItemItemAutolinksRequestBuilderGetQueryParameters this returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
 type ItemItemAutolinksRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
 }
 // ItemItemAutolinksRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

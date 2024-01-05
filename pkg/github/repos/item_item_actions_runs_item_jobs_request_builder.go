@@ -17,9 +17,9 @@ type ItemItemActionsRunsItemJobsRequestBuilderGetQueryParameters struct {
     Filter *string `uriparametername:"filter"`
     // Filters jobs by their `completed_at` timestamp. `latest` returns jobs from the most recent execution of the workflow run. `all` returns all jobs for a workflow run, including from old executions of the workflow run.
     FilterAsGetFilterQueryParameterType *i08b4bf52b4de47221f213f980c03d04a2d7557c63c7158cc63f99ebaac398e57.GetFilterQueryParameterType `uriparametername:"filter"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemItemActionsRunsItemJobsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
