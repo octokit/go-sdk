@@ -12,9 +12,9 @@ type ItemItemActionsVariablesRequestBuilder struct {
 }
 // ItemItemActionsVariablesRequestBuilderGetQueryParameters lists all repository variables.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
 type ItemItemActionsVariablesRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 30).
+    // The number of results per page (max 30). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemItemActionsVariablesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

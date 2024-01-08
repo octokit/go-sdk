@@ -16,9 +16,9 @@ type ItemItemRulesetsRuleSuitesRequestBuilder struct {
 type ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     // The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned.
     Actor_name *string `uriparametername:"actor_name"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The name of the ref. Cannot contain wildcard characters. When specified, only rule evaluations triggered for this ref will be returned.
     Ref *string `uriparametername:"ref"`

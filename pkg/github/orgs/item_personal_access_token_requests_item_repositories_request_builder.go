@@ -12,9 +12,9 @@ type ItemPersonalAccessTokenRequestsItemRepositoriesRequestBuilder struct {
 }
 // ItemPersonalAccessTokenRequestsItemRepositoriesRequestBuilderGetQueryParameters lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
 type ItemPersonalAccessTokenRequestsItemRepositoriesRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemPersonalAccessTokenRequestsItemRepositoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

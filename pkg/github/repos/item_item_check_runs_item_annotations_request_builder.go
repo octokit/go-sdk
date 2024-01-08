@@ -12,9 +12,9 @@ type ItemItemCheckRunsItemAnnotationsRequestBuilder struct {
 }
 // ItemItemCheckRunsItemAnnotationsRequestBuilderGetQueryParameters lists annotations for a check run using the annotation `id`.GitHub Appsmust have the `checks:read` permission on a private repository or pull access toa public repository to get annotations for a check run. OAuth apps and authenticatedusers must have the `repo` scope to get annotations for a check run in a privaterepository.
 type ItemItemCheckRunsItemAnnotationsRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemItemCheckRunsItemAnnotationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

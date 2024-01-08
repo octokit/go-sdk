@@ -21,9 +21,9 @@ type ItemItemCommitsItemCheckRunsRequestBuilderGetQueryParameters struct {
     Filter *string `uriparametername:"filter"`
     // Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
     FilterAsGetFilterQueryParameterType *ifb385791f8cac3dd5aa968a1ebb84b55fed8efbc21a8f661021ab21ba709ef32.GetFilterQueryParameterType `uriparametername:"filter"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Returns check runs with the specified `status`.
     // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead

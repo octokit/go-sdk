@@ -11,9 +11,9 @@ type ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilder struc
 }
 // ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilderGetQueryParameters gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint.For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."For more information about the app that is providing this custom deployment rule, see "[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)".
 type ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

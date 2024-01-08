@@ -12,9 +12,9 @@ type Marketplace_purchasesStubbedRequestBuilder struct {
 }
 // Marketplace_purchasesStubbedRequestBuilderGetQueryParameters lists the active subscriptions for the authenticated user. GitHub Apps must use a [user access token](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app), created for a user who has authorized your GitHub App, to access this endpoint. OAuth apps must authenticate using an [OAuth token](https://docs.github.com/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps).
 type Marketplace_purchasesStubbedRequestBuilderGetQueryParameters struct {
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // Marketplace_purchasesStubbedRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

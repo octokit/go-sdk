@@ -26,9 +26,9 @@ type ItemIssuesRequestBuilderGetQueryParameters struct {
     FilterAsGetFilterQueryParameterType *i5fc0bd3a41c40893d6db047c6304f8cbbf6705145bc486be813627a94bd7e2b3.GetFilterQueryParameterType `uriparametername:"filter"`
     // A list of comma separated label names. Example: `bug,ui,@high`
     Labels *string `uriparametername:"labels"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`

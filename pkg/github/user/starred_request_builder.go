@@ -18,9 +18,9 @@ type StarredRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
     DirectionAsGetDirectionQueryParameterType *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead

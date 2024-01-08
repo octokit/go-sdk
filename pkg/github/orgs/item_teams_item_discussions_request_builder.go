@@ -19,9 +19,9 @@ type ItemTeamsItemDiscussionsRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // The direction to sort the results by.
     DirectionAsGetDirectionQueryParameterType *i32f937b11a61715fd997bf78349df960035ffb33236a68f6136f39076fe893c2.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Pinned discussions only filter
     Pinned *string `uriparametername:"pinned"`

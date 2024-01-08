@@ -19,9 +19,9 @@ type ItemInvitationsRequestBuilderGetQueryParameters struct {
     Invitation_source *string `uriparametername:"invitation_source"`
     // Filter invitations by their invitation source.
     Invitation_sourceAsGetInvitation_sourceQueryParameterType *i2378633937c404127ad778eb05effbea7eb08f994ef028254c5d6c9a80ce3266.GetInvitation_sourceQueryParameterType `uriparametername:"invitation_source"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Filter invitations by their member role.
     // Deprecated: This property is deprecated, use roleAsGetRoleQueryParameterType instead

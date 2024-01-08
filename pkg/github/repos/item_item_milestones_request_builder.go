@@ -19,9 +19,9 @@ type ItemItemMilestonesRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // The direction of the sort. Either `asc` or `desc`.
     DirectionAsGetDirectionQueryParameterType *i1ebd97b17bc9aa912e6d52ba66eb2fba73070ddd43b0bc79944e735e3a7ba7c7.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // What to sort results by. Either `due_on` or `completeness`.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead

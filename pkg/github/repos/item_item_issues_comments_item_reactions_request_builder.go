@@ -19,9 +19,9 @@ type ItemItemIssuesCommentsItemReactionsRequestBuilderGetQueryParameters struct 
     Content *string `uriparametername:"content"`
     // Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to an issue comment.
     ContentAsGetContentQueryParameterType *i4962a446a8e590313347ef7c73ec2d481be83dcd51a243c337358fc09ae22a4e.GetContentQueryParameterType `uriparametername:"content"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemItemIssuesCommentsItemReactionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

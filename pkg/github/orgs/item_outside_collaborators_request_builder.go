@@ -18,9 +18,9 @@ type ItemOutside_collaboratorsRequestBuilderGetQueryParameters struct {
     Filter *string `uriparametername:"filter"`
     // Filter the list of outside collaborators. `2fa_disabled` means that only outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned.
     FilterAsGetFilterQueryParameterType *if595b4d15d1c00ac6fbf03ef6c7dd96d7dbb91167133353a2db35acca910c87d.GetFilterQueryParameterType `uriparametername:"filter"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ItemOutside_collaboratorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.

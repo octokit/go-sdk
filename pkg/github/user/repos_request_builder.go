@@ -23,9 +23,9 @@ type ReposRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.
     DirectionAsGetDirectionQueryParameterType *ic41ef9159df965bc9bcc557811709320ac0b4b0d40eefb8bfc234c584bcd174e.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Only show repositories updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`

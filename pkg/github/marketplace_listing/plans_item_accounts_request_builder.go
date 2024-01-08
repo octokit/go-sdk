@@ -18,9 +18,9 @@ type PlansItemAccountsRequestBuilderGetQueryParameters struct {
     Direction *string `uriparametername:"direction"`
     // To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.
     DirectionAsGetDirectionQueryParameterType *i56b9d03293585ca583bbb85dc6c217737665c7595f6e6dc578f5a52298ca9b7b.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // Page number of the results to fetch.
+    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by.
     // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead

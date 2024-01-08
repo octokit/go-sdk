@@ -12,7 +12,7 @@ type OrganizationsRequestBuilder struct {
 }
 // OrganizationsRequestBuilderGetQueryParameters lists all organizations, in the order that they were created on GitHub.**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
 type OrganizationsRequestBuilderGetQueryParameters struct {
-    // The number of results per page (max 100).
+    // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // An organization ID. Only return organizations with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
