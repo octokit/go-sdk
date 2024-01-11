@@ -112,7 +112,7 @@ func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyMember1(value Co
 func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyMember2(value CodespacesPostRequestBodyMember2able)() {
     m.codespacesPostRequestBodyMember2 = value
 }
-// CodespacesRequestBuilderGetQueryParameters lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// CodespacesRequestBuilderGetQueryParameters lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 type CodespacesRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -173,7 +173,7 @@ func NewCodespacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewCodespacesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// Get lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 // Deprecated: This method is obsolete. Use GetAsCodespacesGetResponse instead.
 // [API method documentation]
 // 
@@ -198,7 +198,7 @@ func (m *CodespacesRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(CodespacesResponseable), nil
 }
-// GetAsCodespacesGetResponse lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// GetAsCodespacesGetResponse lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#list-codespaces-for-the-authenticated-user
@@ -222,7 +222,7 @@ func (m *CodespacesRequestBuilder) GetAsCodespacesGetResponse(ctx context.Contex
     }
     return res.(CodespacesGetResponseable), nil
 }
-// Post creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// Post creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-for-the-authenticated-user
@@ -250,7 +250,7 @@ func (m *CodespacesRequestBuilder) Post(ctx context.Context, body CodespacesPost
 func (m *CodespacesRequestBuilder) Secrets()(*CodespacesSecretsRequestBuilder) {
     return NewCodespacesSecretsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// ToGetRequestInformation lists the authenticated user's codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 func (m *CodespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CodespacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -263,7 +263,7 @@ func (m *CodespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// ToPostRequestInformation creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 func (m *CodespacesRequestBuilder) ToPostRequestInformation(ctx context.Context, body CodespacesPostRequestBodyable, requestConfiguration *CodespacesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

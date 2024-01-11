@@ -44,7 +44,7 @@ func NewCodespacesWithCodespace_nameItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewCodespacesWithCodespace_nameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// Delete deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 // Deprecated: This method is obsolete. Use DeleteAsWithCodespace_nameDeleteResponse instead.
 // [API method documentation]
 // 
@@ -69,7 +69,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) Delete(ctx context.Cont
     }
     return res.(CodespacesItemWithCodespace_nameResponseable), nil
 }
-// DeleteAsWithCodespace_nameDeleteResponse deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// DeleteAsWithCodespace_nameDeleteResponse deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#delete-a-codespace-for-the-authenticated-user
@@ -97,7 +97,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) DeleteAsWithCodespace_n
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) Exports()(*CodespacesItemExportsRequestBuilder) {
     return NewCodespacesItemExportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get gets information about a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// Get gets information about a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#get-a-codespace-for-the-authenticated-user
@@ -125,7 +125,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) Get(ctx context.Context
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) Machines()(*CodespacesItemMachinesRequestBuilder) {
     return NewCodespacesItemMachinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// Patch updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#update-a-codespace-for-the-authenticated-user
@@ -160,7 +160,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) Start()(*CodespacesItem
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) Stop()(*CodespacesItemStopRequestBuilder) {
     return NewCodespacesItemStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// ToDeleteRequestInformation deletes a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CodespacesWithCodespace_nameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -170,7 +170,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation gets information about a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+// ToGetRequestInformation gets information about a user's codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have read access to the `codespaces` repository permission.
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CodespacesWithCodespace_nameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
@@ -180,7 +180,7 @@ func (m *CodespacesWithCodespace_nameItemRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// ToPatchRequestInformation updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 func (m *CodespacesWithCodespace_nameItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body CodespacesItemWithCodespace_namePatchRequestBodyable, requestConfiguration *CodespacesWithCodespace_nameItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {

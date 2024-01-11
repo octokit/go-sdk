@@ -10,7 +10,7 @@ import (
 type ItemItemCodespacesPermissions_checkRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemCodespacesPermissions_checkRequestBuilderGetQueryParameters checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// ItemItemCodespacesPermissions_checkRequestBuilderGetQueryParameters checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 type ItemItemCodespacesPermissions_checkRequestBuilderGetQueryParameters struct {
     // Path to the devcontainer.json configuration to use for the permission check.
     Devcontainer_path *string `uriparametername:"devcontainer_path"`
@@ -39,7 +39,7 @@ func NewItemItemCodespacesPermissions_checkRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCodespacesPermissions_checkRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// Get checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#check-if-permissions-defined-by-a-devcontainer-have-been-accepted-by-the-authenticated-user
@@ -64,7 +64,7 @@ func (m *ItemItemCodespacesPermissions_checkRequestBuilder) Get(ctx context.Cont
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodespacesPermissionsCheckForDevcontainerable), nil
 }
-// ToGetRequestInformation checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+// ToGetRequestInformation checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
 func (m *ItemItemCodespacesPermissions_checkRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCodespacesPermissions_checkRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
