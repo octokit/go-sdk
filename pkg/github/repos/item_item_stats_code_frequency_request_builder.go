@@ -29,7 +29,7 @@ func NewItemItemStatsCode_frequencyRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemStatsCode_frequencyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+// Get returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity
@@ -50,7 +50,7 @@ func (m *ItemItemStatsCode_frequencyRequestBuilder) Get(ctx context.Context, req
     }
     return val, nil
 }
-// ToGetRequestInformation returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+// ToGetRequestInformation returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
 func (m *ItemItemStatsCode_frequencyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemStatsCode_frequencyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
