@@ -22,10 +22,6 @@ type WebhookConfigInsecureSsl struct {
     webhookConfigInsecureSslDouble3 *float64
     // Composed type representation for type double
     webhookConfigInsecureSslDouble4 *float64
-    // Composed type representation for type double
-    webhookConfigInsecureSslDouble5 *float64
-    // Composed type representation for type double
-    webhookConfigInsecureSslDouble6 *float64
     // Composed type representation for type string
     webhookConfigInsecureSslString *string
     // Composed type representation for type string
@@ -38,10 +34,6 @@ type WebhookConfigInsecureSsl struct {
     webhookConfigInsecureSslString3 *string
     // Composed type representation for type string
     webhookConfigInsecureSslString4 *string
-    // Composed type representation for type string
-    webhookConfigInsecureSslString5 *string
-    // Composed type representation for type string
-    webhookConfigInsecureSslString6 *string
 }
 // NewWebhookConfigInsecureSsl instantiates a new webhookConfigInsecureSsl and sets the default values.
 func NewWebhookConfigInsecureSsl()(*WebhookConfigInsecureSsl) {
@@ -106,16 +98,6 @@ func CreateWebhookConfigInsecureSslFromDiscriminatorValue(parseNode i878a80d2330
             return nil, err
         }
         result.SetWebhookConfigInsecureSslDouble4(val)
-    } else if val, err := parseNode.GetFloat64Value(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetWebhookConfigInsecureSslDouble5(val)
-    } else if val, err := parseNode.GetFloat64Value(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetWebhookConfigInsecureSslDouble6(val)
     } else if val, err := parseNode.GetStringValue(); val != nil {
         if err != nil {
             return nil, err
@@ -146,16 +128,6 @@ func CreateWebhookConfigInsecureSslFromDiscriminatorValue(parseNode i878a80d2330
             return nil, err
         }
         result.SetWebhookConfigInsecureSslString4(val)
-    } else if val, err := parseNode.GetStringValue(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetWebhookConfigInsecureSslString5(val)
-    } else if val, err := parseNode.GetStringValue(); val != nil {
-        if err != nil {
-            return nil, err
-        }
-        result.SetWebhookConfigInsecureSslString6(val)
     }
     return result, nil
 }
@@ -199,14 +171,6 @@ func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble3()(*float64
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble4()(*float64) {
     return m.webhookConfigInsecureSslDouble4
 }
-// GetWebhookConfigInsecureSslDouble5 gets the double property value. Composed type representation for type double
-func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble5()(*float64) {
-    return m.webhookConfigInsecureSslDouble5
-}
-// GetWebhookConfigInsecureSslDouble6 gets the double property value. Composed type representation for type double
-func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble6()(*float64) {
-    return m.webhookConfigInsecureSslDouble6
-}
 // GetWebhookConfigInsecureSslString gets the string property value. Composed type representation for type string
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString()(*string) {
     return m.webhookConfigInsecureSslString
@@ -230,14 +194,6 @@ func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString3()(*string)
 // GetWebhookConfigInsecureSslString4 gets the string property value. Composed type representation for type string
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString4()(*string) {
     return m.webhookConfigInsecureSslString4
-}
-// GetWebhookConfigInsecureSslString5 gets the string property value. Composed type representation for type string
-func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString5()(*string) {
-    return m.webhookConfigInsecureSslString5
-}
-// GetWebhookConfigInsecureSslString6 gets the string property value. Composed type representation for type string
-func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString6()(*string) {
-    return m.webhookConfigInsecureSslString6
 }
 // Serialize serializes information the current object
 func (m *WebhookConfigInsecureSsl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -281,16 +237,6 @@ func (m *WebhookConfigInsecureSsl) Serialize(writer i878a80d2330e89d26896388a3f4
         if err != nil {
             return err
         }
-    } else if m.GetWebhookConfigInsecureSslDouble5() != nil {
-        err := writer.WriteFloat64Value("", m.GetWebhookConfigInsecureSslDouble5())
-        if err != nil {
-            return err
-        }
-    } else if m.GetWebhookConfigInsecureSslDouble6() != nil {
-        err := writer.WriteFloat64Value("", m.GetWebhookConfigInsecureSslDouble6())
-        if err != nil {
-            return err
-        }
     } else if m.GetWebhookConfigInsecureSslString() != nil {
         err := writer.WriteStringValue("", m.GetWebhookConfigInsecureSslString())
         if err != nil {
@@ -318,16 +264,6 @@ func (m *WebhookConfigInsecureSsl) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     } else if m.GetWebhookConfigInsecureSslString4() != nil {
         err := writer.WriteStringValue("", m.GetWebhookConfigInsecureSslString4())
-        if err != nil {
-            return err
-        }
-    } else if m.GetWebhookConfigInsecureSslString5() != nil {
-        err := writer.WriteStringValue("", m.GetWebhookConfigInsecureSslString5())
-        if err != nil {
-            return err
-        }
-    } else if m.GetWebhookConfigInsecureSslString6() != nil {
-        err := writer.WriteStringValue("", m.GetWebhookConfigInsecureSslString6())
         if err != nil {
             return err
         }
@@ -366,14 +302,6 @@ func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble3(value *flo
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble4(value *float64)() {
     m.webhookConfigInsecureSslDouble4 = value
 }
-// SetWebhookConfigInsecureSslDouble5 sets the double property value. Composed type representation for type double
-func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble5(value *float64)() {
-    m.webhookConfigInsecureSslDouble5 = value
-}
-// SetWebhookConfigInsecureSslDouble6 sets the double property value. Composed type representation for type double
-func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble6(value *float64)() {
-    m.webhookConfigInsecureSslDouble6 = value
-}
 // SetWebhookConfigInsecureSslString sets the string property value. Composed type representation for type string
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString(value *string)() {
     m.webhookConfigInsecureSslString = value
@@ -398,14 +326,6 @@ func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString3(value *str
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString4(value *string)() {
     m.webhookConfigInsecureSslString4 = value
 }
-// SetWebhookConfigInsecureSslString5 sets the string property value. Composed type representation for type string
-func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString5(value *string)() {
-    m.webhookConfigInsecureSslString5 = value
-}
-// SetWebhookConfigInsecureSslString6 sets the string property value. Composed type representation for type string
-func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString6(value *string)() {
-    m.webhookConfigInsecureSslString6 = value
-}
 // WebhookConfigInsecureSslable 
 type WebhookConfigInsecureSslable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -417,16 +337,12 @@ type WebhookConfigInsecureSslable interface {
     GetWebhookConfigInsecureSslDouble2()(*float64)
     GetWebhookConfigInsecureSslDouble3()(*float64)
     GetWebhookConfigInsecureSslDouble4()(*float64)
-    GetWebhookConfigInsecureSslDouble5()(*float64)
-    GetWebhookConfigInsecureSslDouble6()(*float64)
     GetWebhookConfigInsecureSslString()(*string)
     GetWebhookConfigInsecureSslString0()(*string)
     GetWebhookConfigInsecureSslString1()(*string)
     GetWebhookConfigInsecureSslString2()(*string)
     GetWebhookConfigInsecureSslString3()(*string)
     GetWebhookConfigInsecureSslString4()(*string)
-    GetWebhookConfigInsecureSslString5()(*string)
-    GetWebhookConfigInsecureSslString6()(*string)
     SetDouble(value *float64)()
     SetString(value *string)()
     SetWebhookConfigInsecureSslDouble(value *float64)()
@@ -435,14 +351,10 @@ type WebhookConfigInsecureSslable interface {
     SetWebhookConfigInsecureSslDouble2(value *float64)()
     SetWebhookConfigInsecureSslDouble3(value *float64)()
     SetWebhookConfigInsecureSslDouble4(value *float64)()
-    SetWebhookConfigInsecureSslDouble5(value *float64)()
-    SetWebhookConfigInsecureSslDouble6(value *float64)()
     SetWebhookConfigInsecureSslString(value *string)()
     SetWebhookConfigInsecureSslString0(value *string)()
     SetWebhookConfigInsecureSslString1(value *string)()
     SetWebhookConfigInsecureSslString2(value *string)()
     SetWebhookConfigInsecureSslString3(value *string)()
     SetWebhookConfigInsecureSslString4(value *string)()
-    SetWebhookConfigInsecureSslString5(value *string)()
-    SetWebhookConfigInsecureSslString6(value *string)()
 }
