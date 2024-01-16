@@ -11,8 +11,8 @@ type Hook struct {
     active *bool
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The config property
-    config Hook_configable
+    // Configuration object of the webhook
+    config WebhookConfigable
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The deliveries_url property
@@ -55,8 +55,8 @@ func (m *Hook) GetActive()(*bool) {
 func (m *Hook) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetConfig gets the config property value. The config property
-func (m *Hook) GetConfig()(Hook_configable) {
+// GetConfig gets the config property value. Configuration object of the webhook
+func (m *Hook) GetConfig()(WebhookConfigable) {
     return m.config
 }
 // GetCreatedAt gets the created_at property value. The created_at property
@@ -85,12 +85,12 @@ func (m *Hook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["config"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateHook_configFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateWebhookConfigFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfig(val.(Hook_configable))
+            m.SetConfig(val.(WebhookConfigable))
         }
         return nil
     }
@@ -340,8 +340,8 @@ func (m *Hook) SetActive(value *bool)() {
 func (m *Hook) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetConfig sets the config property value. The config property
-func (m *Hook) SetConfig(value Hook_configable)() {
+// SetConfig sets the config property value. Configuration object of the webhook
+func (m *Hook) SetConfig(value WebhookConfigable)() {
     m.config = value
 }
 // SetCreatedAt sets the created_at property value. The created_at property
@@ -393,7 +393,7 @@ type Hookable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActive()(*bool)
-    GetConfig()(Hook_configable)
+    GetConfig()(WebhookConfigable)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeliveriesUrl()(*string)
     GetEvents()([]string)
@@ -406,7 +406,7 @@ type Hookable interface {
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
     SetActive(value *bool)()
-    SetConfig(value Hook_configable)()
+    SetConfig(value WebhookConfigable)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeliveriesUrl(value *string)()
     SetEvents(value []string)()

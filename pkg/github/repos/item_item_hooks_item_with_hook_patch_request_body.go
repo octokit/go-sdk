@@ -2,6 +2,7 @@ package repos
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
 // ItemItemHooksItemWithHook_PatchRequestBody 
@@ -12,8 +13,8 @@ type ItemItemHooksItemWithHook_PatchRequestBody struct {
     add_events []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Key/value pairs to provide settings for this webhook.
-    config ItemItemHooksItemWithHook_PatchRequestBody_configable
+    // Configuration object of the webhook
+    config i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable
     // Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
     events []string
     // Determines a list of events to be removed from the list of events that the Hook triggers for.
@@ -42,8 +43,8 @@ func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetAddEvents()([]string) {
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetConfig gets the config property value. Key/value pairs to provide settings for this webhook.
-func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetConfig()(ItemItemHooksItemWithHook_PatchRequestBody_configable) {
+// GetConfig gets the config property value. Configuration object of the webhook
+func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetConfig()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable) {
     return m.config
 }
 // GetEvents gets the events property value. Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
@@ -80,12 +81,12 @@ func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetFieldDeserializers()(map
         return nil
     }
     res["config"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateItemItemHooksItemWithHook_PatchRequestBody_configFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateWebhookConfigFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConfig(val.(ItemItemHooksItemWithHook_PatchRequestBody_configable))
+            m.SetConfig(val.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable))
         }
         return nil
     }
@@ -179,8 +180,8 @@ func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetAddEvents(value []string
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetConfig sets the config property value. Key/value pairs to provide settings for this webhook.
-func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetConfig(value ItemItemHooksItemWithHook_PatchRequestBody_configable)() {
+// SetConfig sets the config property value. Configuration object of the webhook
+func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetConfig(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable)() {
     m.config = value
 }
 // SetEvents sets the events property value. Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
@@ -197,12 +198,12 @@ type ItemItemHooksItemWithHook_PatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActive()(*bool)
     GetAddEvents()([]string)
-    GetConfig()(ItemItemHooksItemWithHook_PatchRequestBody_configable)
+    GetConfig()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable)
     GetEvents()([]string)
     GetRemoveEvents()([]string)
     SetActive(value *bool)()
     SetAddEvents(value []string)()
-    SetConfig(value ItemItemHooksItemWithHook_PatchRequestBody_configable)()
+    SetConfig(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable)()
     SetEvents(value []string)()
     SetRemoveEvents(value []string)()
 }

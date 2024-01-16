@@ -11,14 +11,10 @@ type ItemItemHooksPostRequestBody_config struct {
     additionalData map[string]any
     // The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
     content_type *string
-    // The digest property
-    digest *string
     // The insecure_ssl property
     insecure_ssl i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigInsecureSslable
     // If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
     secret *string
-    // The token property
-    token *string
     // The URL to which the payloads will be delivered.
     url *string
 }
@@ -41,10 +37,6 @@ func (m *ItemItemHooksPostRequestBody_config) GetAdditionalData()(map[string]any
 func (m *ItemItemHooksPostRequestBody_config) GetContentType()(*string) {
     return m.content_type
 }
-// GetDigest gets the digest property value. The digest property
-func (m *ItemItemHooksPostRequestBody_config) GetDigest()(*string) {
-    return m.digest
-}
 // GetFieldDeserializers the deserialization information for the current model
 func (m *ItemItemHooksPostRequestBody_config) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
@@ -55,16 +47,6 @@ func (m *ItemItemHooksPostRequestBody_config) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetContentType(val)
-        }
-        return nil
-    }
-    res["digest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDigest(val)
         }
         return nil
     }
@@ -88,16 +70,6 @@ func (m *ItemItemHooksPostRequestBody_config) GetFieldDeserializers()(map[string
         }
         return nil
     }
-    res["token"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetToken(val)
-        }
-        return nil
-    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -118,10 +90,6 @@ func (m *ItemItemHooksPostRequestBody_config) GetInsecureSsl()(i59ea7d99994c6a4b
 func (m *ItemItemHooksPostRequestBody_config) GetSecret()(*string) {
     return m.secret
 }
-// GetToken gets the token property value. The token property
-func (m *ItemItemHooksPostRequestBody_config) GetToken()(*string) {
-    return m.token
-}
 // GetUrl gets the url property value. The URL to which the payloads will be delivered.
 func (m *ItemItemHooksPostRequestBody_config) GetUrl()(*string) {
     return m.url
@@ -135,12 +103,6 @@ func (m *ItemItemHooksPostRequestBody_config) Serialize(writer i878a80d2330e89d2
         }
     }
     {
-        err := writer.WriteStringValue("digest", m.GetDigest())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteObjectValue("insecure_ssl", m.GetInsecureSsl())
         if err != nil {
             return err
@@ -148,12 +110,6 @@ func (m *ItemItemHooksPostRequestBody_config) Serialize(writer i878a80d2330e89d2
     }
     {
         err := writer.WriteStringValue("secret", m.GetSecret())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("token", m.GetToken())
         if err != nil {
             return err
         }
@@ -180,10 +136,6 @@ func (m *ItemItemHooksPostRequestBody_config) SetAdditionalData(value map[string
 func (m *ItemItemHooksPostRequestBody_config) SetContentType(value *string)() {
     m.content_type = value
 }
-// SetDigest sets the digest property value. The digest property
-func (m *ItemItemHooksPostRequestBody_config) SetDigest(value *string)() {
-    m.digest = value
-}
 // SetInsecureSsl sets the insecure_ssl property value. The insecure_ssl property
 func (m *ItemItemHooksPostRequestBody_config) SetInsecureSsl(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigInsecureSslable)() {
     m.insecure_ssl = value
@@ -191,10 +143,6 @@ func (m *ItemItemHooksPostRequestBody_config) SetInsecureSsl(value i59ea7d99994c
 // SetSecret sets the secret property value. If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
 func (m *ItemItemHooksPostRequestBody_config) SetSecret(value *string)() {
     m.secret = value
-}
-// SetToken sets the token property value. The token property
-func (m *ItemItemHooksPostRequestBody_config) SetToken(value *string)() {
-    m.token = value
 }
 // SetUrl sets the url property value. The URL to which the payloads will be delivered.
 func (m *ItemItemHooksPostRequestBody_config) SetUrl(value *string)() {
@@ -205,15 +153,11 @@ type ItemItemHooksPostRequestBody_configable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)
-    GetDigest()(*string)
     GetInsecureSsl()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigInsecureSslable)
     GetSecret()(*string)
-    GetToken()(*string)
     GetUrl()(*string)
     SetContentType(value *string)()
-    SetDigest(value *string)()
     SetInsecureSsl(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigInsecureSslable)()
     SetSecret(value *string)()
-    SetToken(value *string)()
     SetUrl(value *string)()
 }
