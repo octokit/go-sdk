@@ -10,13 +10,6 @@ import (
 type ColumnsItemMovesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ColumnsItemMovesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ColumnsItemMovesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewColumnsItemMovesRequestBuilderInternal instantiates a new MovesRequestBuilder and sets the default values.
 func NewColumnsItemMovesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ColumnsItemMovesRequestBuilder) {
     m := &ColumnsItemMovesRequestBuilder{
@@ -31,34 +24,10 @@ func NewColumnsItemMovesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewColumnsItemMovesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post move a project column
-// Deprecated: This method is obsolete. Use PostAsMovesPostResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/columns#move-a-project-column
-func (m *ColumnsItemMovesRequestBuilder) Post(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *ColumnsItemMovesRequestBuilderPostRequestConfiguration)(ColumnsItemMovesResponseable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "401": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorSimpleFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateColumnsItemMovesResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ColumnsItemMovesResponseable), nil
-}
-// PostAsMovesPostResponse move a project column
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/projects/columns#move-a-project-column
-func (m *ColumnsItemMovesRequestBuilder) PostAsMovesPostResponse(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *ColumnsItemMovesRequestBuilderPostRequestConfiguration)(ColumnsItemMovesPostResponseable, error) {
+func (m *ColumnsItemMovesRequestBuilder) Post(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(ColumnsItemMovesPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -77,12 +46,9 @@ func (m *ColumnsItemMovesRequestBuilder) PostAsMovesPostResponse(ctx context.Con
     }
     return res.(ColumnsItemMovesPostResponseable), nil
 }
-func (m *ColumnsItemMovesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *ColumnsItemMovesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ColumnsItemMovesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

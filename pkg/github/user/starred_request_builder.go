@@ -14,28 +14,13 @@ type StarredRequestBuilder struct {
 // StarredRequestBuilderGetQueryParameters lists repositories the authenticated user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
 type StarredRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
-    SortAsGetSortQueryParameterType *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetSortQueryParameterType `uriparametername:"sort"`
-}
-// StarredRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type StarredRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *StarredRequestBuilderGetQueryParameters
+    Sort *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github/.user.starred.item collection
 func (m *StarredRequestBuilder) ByOwner(owner string)(*StarredWithOwnerItemRequestBuilder) {
@@ -65,7 +50,7 @@ func NewStarredRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/starring#list-repositories-starred-by-the-authenticated-user
-func (m *StarredRequestBuilder) Get(ctx context.Context, requestConfiguration *StarredRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Repositoryable, error) {
+func (m *StarredRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[StarredRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Repositoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,15 +72,9 @@ func (m *StarredRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     return val, nil
 }
 // ToGetRequestInformation lists repositories the authenticated user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
-func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *StarredRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[StarredRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

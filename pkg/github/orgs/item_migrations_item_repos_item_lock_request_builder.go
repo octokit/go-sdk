@@ -10,13 +10,6 @@ import (
 type ItemMigrationsItemReposItemLockRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMigrationsItemReposItemLockRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemMigrationsItemReposItemLockRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemMigrationsItemReposItemLockRequestBuilderInternal instantiates a new LockRequestBuilder and sets the default values.
 func NewItemMigrationsItemReposItemLockRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsItemReposItemLockRequestBuilder) {
     m := &ItemMigrationsItemReposItemLockRequestBuilder{
@@ -34,7 +27,7 @@ func NewItemMigrationsItemReposItemLockRequestBuilder(rawUrl string, requestAdap
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/orgs#unlock-an-organization-repository
-func (m *ItemMigrationsItemReposItemLockRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMigrationsItemReposItemLockRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemMigrationsItemReposItemLockRequestBuilder) Delete(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -49,12 +42,9 @@ func (m *ItemMigrationsItemReposItemLockRequestBuilder) Delete(ctx context.Conte
     return nil
 }
 // ToDeleteRequestInformation unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
-func (m *ItemMigrationsItemReposItemLockRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMigrationsItemReposItemLockRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemMigrationsItemReposItemLockRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

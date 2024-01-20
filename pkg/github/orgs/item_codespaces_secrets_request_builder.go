@@ -16,15 +16,6 @@ type ItemCodespacesSecretsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemCodespacesSecretsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemCodespacesSecretsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemCodespacesSecretsRequestBuilderGetQueryParameters
-}
 // BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.codespaces.secrets.item collection
 func (m *ItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -50,29 +41,10 @@ func NewItemCodespacesSecretsRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemCodespacesSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsSecretsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#list-organization-secrets
-func (m *ItemCodespacesSecretsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(ItemCodespacesSecretsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemCodespacesSecretsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemCodespacesSecretsResponseable), nil
-}
-// GetAsSecretsGetResponse lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#list-organization-secrets
-func (m *ItemCodespacesSecretsRequestBuilder) GetAsSecretsGetResponse(ctx context.Context, requestConfiguration *ItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(ItemCodespacesSecretsGetResponseable, error) {
+func (m *ItemCodespacesSecretsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCodespacesSecretsRequestBuilderGetQueryParameters])(ItemCodespacesSecretsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,15 +63,9 @@ func (m *ItemCodespacesSecretsRequestBuilder) PublicKey()(*ItemCodespacesSecrets
     return NewItemCodespacesSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
-func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCodespacesSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCodespacesSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -10,19 +10,7 @@ type ItemItemActionsJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByJob_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.jobs.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id string)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if job_id != "" {
-        urlTplParams["job_id"] = job_id
-    }
-    return NewItemItemActionsJobsWithJob_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByJob_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.jobs.item collection
-func (m *ItemItemActionsJobsRequestBuilder) ByJob_idInteger(job_id int32)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
+func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id int32)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

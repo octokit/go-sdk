@@ -32,19 +32,7 @@ type ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
-    // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead
-    Status *string `uriparametername:"status"`
-    // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
-    StatusAsGetStatusQueryParameterType *ia77747759b3f91e25296248277ed17f00dd8b68db982a03262ffc61b4720274c.GetStatusQueryParameterType `uriparametername:"status"`
-}
-// ItemItemActionsWorkflowsItemRunsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsWorkflowsItemRunsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters
+    Status *ia77747759b3f91e25296248277ed17f00dd8b68db982a03262ffc61b4720274c.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal instantiates a new RunsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemRunsRequestBuilder) {
@@ -60,29 +48,10 @@ func NewItemItemActionsWorkflowsItemRunsRequestBuilder(rawUrl string, requestAda
     return NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
-// Deprecated: This method is obsolete. Use GetAsRunsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow
-func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(ItemItemActionsWorkflowsItemRunsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsWorkflowsItemRunsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsWorkflowsItemRunsResponseable), nil
-}
-// GetAsRunsGetResponse list all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow
-func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) GetAsRunsGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(ItemItemActionsWorkflowsItemRunsGetResponseable, error) {
+func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters])(ItemItemActionsWorkflowsItemRunsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -97,15 +66,9 @@ func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) GetAsRunsGetResponse(ct
     return res.(ItemItemActionsWorkflowsItemRunsGetResponseable), nil
 }
 // ToGetRequestInformation list all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
-func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsItemRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -33,34 +33,10 @@ type ItemItemActionsRunsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
-    // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead
-    Status *string `uriparametername:"status"`
-    // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
-    StatusAsGetStatusQueryParameterType *ib50fd1a31f59a50cad835d1bac105bcca1f781f781bbe17e66a476cfdf7485c8.GetStatusQueryParameterType `uriparametername:"status"`
-}
-// ItemItemActionsRunsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsRunsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsRunsRequestBuilderGetQueryParameters
+    Status *ib50fd1a31f59a50cad835d1bac105bcca1f781f781bbe17e66a476cfdf7485c8.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // ByRun_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id string)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if run_id != "" {
-        urlTplParams["run_id"] = run_id
-    }
-    return NewItemItemActionsRunsWithRun_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByRun_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item collection
-func (m *ItemItemActionsRunsRequestBuilder) ByRun_idInteger(run_id int32)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
+func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id int32)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -82,29 +58,10 @@ func NewItemItemActionsRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewItemItemActionsRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsRunsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-repository
-func (m *ItemItemActionsRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsRunsRequestBuilderGetRequestConfiguration)(ItemItemActionsRunsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsRunsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsRunsResponseable), nil
-}
-// GetAsRunsGetResponse lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-repository
-func (m *ItemItemActionsRunsRequestBuilder) GetAsRunsGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsRunsRequestBuilderGetRequestConfiguration)(ItemItemActionsRunsGetResponseable, error) {
+func (m *ItemItemActionsRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsRequestBuilderGetQueryParameters])(ItemItemActionsRunsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -119,15 +76,9 @@ func (m *ItemItemActionsRunsRequestBuilder) GetAsRunsGetResponse(ctx context.Con
     return res.(ItemItemActionsRunsGetResponseable), nil
 }
 // ToGetRequestInformation lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemActionsRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

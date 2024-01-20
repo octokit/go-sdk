@@ -10,20 +10,6 @@ import (
 type ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderInternal instantiates a new WithGhsa_ItemRequestBuilder and sets the default values.
 func NewItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) {
     m := &ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder{
@@ -49,7 +35,7 @@ func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Forks()(*ItemIte
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/security-advisories/repository-advisories#get-a-repository-security-advisory
-func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderGetRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryable, error) {
+func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -71,7 +57,7 @@ func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Get(ctx context.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/security-advisories/repository-advisories#update-a-repository-security-advisory
-func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Patch(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryUpdateable, requestConfiguration *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderPatchRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryable, error) {
+func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Patch(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryUpdateable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,22 +77,16 @@ func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) Patch(ctx contex
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryable), nil
 }
 // ToGetRequestInformation get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.You can access any published security advisory on a public repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get a published security advisory in a private repository, or any unpublished security advisory that you have access to.You can access an unpublished security advisory from a repository if you are a security manager or administrator of that repository, or if you are acollaborator on the security advisory.
-func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.In order to update any security advisory, you must be a security manager or administrator of that repository,or a collaborator on the repository security advisory.
-func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryUpdateable, requestConfiguration *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryAdvisoryUpdateable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

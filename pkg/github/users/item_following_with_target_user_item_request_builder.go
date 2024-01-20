@@ -9,13 +9,6 @@ import (
 type ItemFollowingWithTarget_userItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemFollowingWithTarget_userItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemFollowingWithTarget_userItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemFollowingWithTarget_userItemRequestBuilderInternal instantiates a new WithTarget_userItemRequestBuilder and sets the default values.
 func NewItemFollowingWithTarget_userItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowingWithTarget_userItemRequestBuilder) {
     m := &ItemFollowingWithTarget_userItemRequestBuilder{
@@ -33,7 +26,7 @@ func NewItemFollowingWithTarget_userItemRequestBuilder(rawUrl string, requestAda
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/followers#check-if-a-user-follows-another-user
-func (m *ItemFollowingWithTarget_userItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFollowingWithTarget_userItemRequestBuilderGetRequestConfiguration)(error) {
+func (m *ItemFollowingWithTarget_userItemRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -44,12 +37,9 @@ func (m *ItemFollowingWithTarget_userItemRequestBuilder) Get(ctx context.Context
     }
     return nil
 }
-func (m *ItemFollowingWithTarget_userItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFollowingWithTarget_userItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemFollowingWithTarget_userItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

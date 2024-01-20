@@ -10,20 +10,6 @@ import (
 type ItemCodespacesAccessSelected_usersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCodespacesAccessSelected_usersRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemCodespacesAccessSelected_usersRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemCodespacesAccessSelected_usersRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemCodespacesAccessSelected_usersRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemCodespacesAccessSelected_usersRequestBuilderInternal instantiates a new Selected_usersRequestBuilder and sets the default values.
 func NewItemCodespacesAccessSelected_usersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCodespacesAccessSelected_usersRequestBuilder) {
     m := &ItemCodespacesAccessSelected_usersRequestBuilder{
@@ -42,7 +28,7 @@ func NewItemCodespacesAccessSelected_usersRequestBuilder(rawUrl string, requestA
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organizations#remove-users-from-codespaces-access-for-an-organization
-func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Delete(ctx context.Context, body ItemCodespacesAccessSelected_usersDeleteRequestBodyable, requestConfiguration *ItemCodespacesAccessSelected_usersRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Delete(ctx context.Context, body ItemCodespacesAccessSelected_usersDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -63,7 +49,7 @@ func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Delete(ctx context.Co
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organizations#add-users-to-codespaces-access-for-an-organization
-func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Post(ctx context.Context, body ItemCodespacesAccessSelected_usersPostRequestBodyable, requestConfiguration *ItemCodespacesAccessSelected_usersRequestBuilderPostRequestConfiguration)(error) {
+func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Post(ctx context.Context, body ItemCodespacesAccessSelected_usersPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -81,12 +67,9 @@ func (m *ItemCodespacesAccessSelected_usersRequestBuilder) Post(ctx context.Cont
 }
 // ToDeleteRequestInformation codespaces for the specified users will no longer be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see "[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces)."You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
 // Deprecated: 
-func (m *ItemCodespacesAccessSelected_usersRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ItemCodespacesAccessSelected_usersDeleteRequestBodyable, requestConfiguration *ItemCodespacesAccessSelected_usersRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemCodespacesAccessSelected_usersRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ItemCodespacesAccessSelected_usersDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
@@ -96,12 +79,9 @@ func (m *ItemCodespacesAccessSelected_usersRequestBuilder) ToDeleteRequestInform
 }
 // ToPostRequestInformation codespaces for the specified users will be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see "[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces)."You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
 // Deprecated: 
-func (m *ItemCodespacesAccessSelected_usersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCodespacesAccessSelected_usersPostRequestBodyable, requestConfiguration *ItemCodespacesAccessSelected_usersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemCodespacesAccessSelected_usersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCodespacesAccessSelected_usersPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

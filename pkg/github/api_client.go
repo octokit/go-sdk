@@ -50,13 +50,6 @@ import (
 type ApiClient struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ApiClientApiClientGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ApiClientApiClientGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // Advisories the advisories property
 func (m *ApiClient) Advisories()(*i81237a20a3d3d568f85359ecb683b25d592945354af01b3bb96015225d355d0b.AdvisoriesRequestBuilder) {
     return i81237a20a3d3d568f85359ecb683b25d592945354af01b3bb96015225d355d0b.NewAdvisoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -127,7 +120,7 @@ func (m *ApiClient) Feeds()(*i6265cecf37e9b8b6daa13472abde6c43c88081bb9d68ee62d9
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/meta/meta#github-api-root
-func (m *ApiClient) Get(ctx context.Context, requestConfiguration *ApiClientApiClientGetRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Rootable, error) {
+func (m *ApiClient) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Rootable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -218,12 +211,9 @@ func (m *ApiClient) Teams()(*icccce443123713e2f41a15534fb2982842bc02bef783c80ed5
     return icccce443123713e2f41a15534fb2982842bc02bef783c80ed5f0f20406addd52.NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get Hypermedia links to resources accessible in GitHub's REST API
-func (m *ApiClient) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApiClientApiClientGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ApiClient) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

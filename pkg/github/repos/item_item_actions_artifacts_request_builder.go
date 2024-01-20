@@ -19,29 +19,8 @@ type ItemItemActionsArtifactsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsArtifactsRequestBuilderGetQueryParameters
-}
 // ByArtifact_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.artifacts.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_id(artifact_id string)(*ItemItemActionsArtifactsWithArtifact_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if artifact_id != "" {
-        urlTplParams["artifact_id"] = artifact_id
-    }
-    return NewItemItemActionsArtifactsWithArtifact_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByArtifact_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.artifacts.item collection
-func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_idInteger(artifact_id int32)(*ItemItemActionsArtifactsWithArtifact_ItemRequestBuilder) {
+func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_id(artifact_id int32)(*ItemItemActionsArtifactsWithArtifact_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -63,29 +42,10 @@ func NewItemItemActionsArtifactsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemItemActionsArtifactsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsArtifactsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/artifacts#list-artifacts-for-a-repository
-func (m *ItemItemActionsArtifactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration)(ItemItemActionsArtifactsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsArtifactsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsArtifactsResponseable), nil
-}
-// GetAsArtifactsGetResponse lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/artifacts#list-artifacts-for-a-repository
-func (m *ItemItemActionsArtifactsRequestBuilder) GetAsArtifactsGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration)(ItemItemActionsArtifactsGetResponseable, error) {
+func (m *ItemItemActionsArtifactsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsArtifactsRequestBuilderGetQueryParameters])(ItemItemActionsArtifactsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -100,15 +60,9 @@ func (m *ItemItemActionsArtifactsRequestBuilder) GetAsArtifactsGetResponse(ctx c
     return res.(ItemItemActionsArtifactsGetResponseable), nil
 }
 // ToGetRequestInformation lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemActionsArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsArtifactsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

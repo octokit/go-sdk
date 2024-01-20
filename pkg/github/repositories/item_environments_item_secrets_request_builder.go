@@ -16,15 +16,6 @@ type ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemEnvironmentsItemSecretsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemEnvironmentsItemSecretsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters
-}
 // BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item.environments.item.secrets.item collection
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemEnvironmentsItemSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -50,29 +41,10 @@ func NewItemEnvironmentsItemSecretsRequestBuilder(rawUrl string, requestAdapter 
     return NewItemEnvironmentsItemSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
-// Deprecated: This method is obsolete. Use GetAsSecretsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/secrets#list-environment-secrets
-func (m *ItemEnvironmentsItemSecretsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEnvironmentsItemSecretsRequestBuilderGetRequestConfiguration)(ItemEnvironmentsItemSecretsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemEnvironmentsItemSecretsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemEnvironmentsItemSecretsResponseable), nil
-}
-// GetAsSecretsGetResponse lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/secrets#list-environment-secrets
-func (m *ItemEnvironmentsItemSecretsRequestBuilder) GetAsSecretsGetResponse(ctx context.Context, requestConfiguration *ItemEnvironmentsItemSecretsRequestBuilderGetRequestConfiguration)(ItemEnvironmentsItemSecretsGetResponseable, error) {
+func (m *ItemEnvironmentsItemSecretsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters])(ItemEnvironmentsItemSecretsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -91,15 +63,9 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) PublicKey()(*ItemEnvironment
     return NewItemEnvironmentsItemSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
-func (m *ItemEnvironmentsItemSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEnvironmentsItemSecretsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemEnvironmentsItemSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

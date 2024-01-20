@@ -19,34 +19,10 @@ type PackagesItemItemVersionsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The state of the package, either active or deleted.
-    // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
-    State *string `uriparametername:"state"`
-    // The state of the package, either active or deleted.
-    StateAsGetStateQueryParameterType *i74b3087dddecf30253e135889419530355ad6be6bee6d9ec44ce931f8f78bc3f.GetStateQueryParameterType `uriparametername:"state"`
-}
-// PackagesItemItemVersionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type PackagesItemItemVersionsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *PackagesItemItemVersionsRequestBuilderGetQueryParameters
+    State *i74b3087dddecf30253e135889419530355ad6be6bee6d9ec44ce931f8f78bc3f.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item.item.versions.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_version_id string)(*PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if package_version_id != "" {
-        urlTplParams["package_version_id"] = package_version_id
-    }
-    return NewPackagesItemItemVersionsWithPackage_version_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByPackage_version_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item.item.versions.item collection
-func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_idInteger(package_version_id int32)(*PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
+func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_version_id int32)(*PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -71,7 +47,7 @@ func NewPackagesItemItemVersionsRequestBuilder(rawUrl string, requestAdapter i2a
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#list-package-versions-for-a-package-owned-by-the-authenticated-user
-func (m *PackagesItemItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *PackagesItemItemVersionsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PackageVersionable, error) {
+func (m *PackagesItemItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesItemItemVersionsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PackageVersionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -94,15 +70,9 @@ func (m *PackagesItemItemVersionsRequestBuilder) Get(ctx context.Context, reques
     return val, nil
 }
 // ToGetRequestInformation lists package versions for a package owned by the authenticated user.To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
-func (m *PackagesItemItemVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PackagesItemItemVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PackagesItemItemVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesItemItemVersionsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

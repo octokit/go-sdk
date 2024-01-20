@@ -15,10 +15,7 @@ type ItemItemCodeScanningAlertsRequestBuilder struct {
 // ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters lists code scanning alerts.To use this endpoint, you must use an access token with the `security_events` scope or, for alerts from public repositories only, an access token with the `public_repo` scope.The response includes a `most_recent_instance` object.This provides details of the most recent instance of this alertfor the default branch (or for the specified Git reference if you used `ref` in the request).
 type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
@@ -26,48 +23,18 @@ type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     // The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
     Ref *string `uriparametername:"ref"`
     // If specified, only code scanning alerts with this severity will be returned.
-    // Deprecated: This property is deprecated, use severityAsCodeScanningAlertSeverity instead
-    Severity *string `uriparametername:"severity"`
-    // If specified, only code scanning alerts with this severity will be returned.
-    SeverityAsCodeScanningAlertSeverity *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSeverity `uriparametername:"severity"`
+    Severity *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSeverity `uriparametername:"severity"`
     // The property by which to sort the results.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property by which to sort the results.
-    SortAsGetSortQueryParameterType *id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd.GetSortQueryParameterType `uriparametername:"sort"`
+    Sort *id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd.GetSortQueryParameterType `uriparametername:"sort"`
     // If specified, only code scanning alerts with this state will be returned.
-    // Deprecated: This property is deprecated, use stateAsCodeScanningAlertStateQuery instead
-    State *string `uriparametername:"state"`
-    // If specified, only code scanning alerts with this state will be returned.
-    StateAsCodeScanningAlertStateQuery *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertStateQuery `uriparametername:"state"`
+    State *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertStateQuery `uriparametername:"state"`
     // The GUID of a code scanning tool. Only results by this tool will be listed. Note that some code scanning tools may not include a GUID in their analysis data. You can specify the tool by using either `tool_guid` or `tool_name`, but not both.
     Tool_guid *string `uriparametername:"tool_guid"`
     // The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.
     Tool_name *string `uriparametername:"tool_name"`
 }
-// ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters
-}
 // ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.alerts.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number string)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if alert_number != "" {
-        urlTplParams["alert_number"] = alert_number
-    }
-    return NewItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByAlert_numberInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.alerts.item collection
-func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_numberInteger(alert_number int32)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
+func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number int32)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -92,7 +59,7 @@ func NewItemItemCodeScanningAlertsRequestBuilder(rawUrl string, requestAdapter i
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-a-repository
-func (m *ItemItemCodeScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertItemsable, error) {
+func (m *ItemItemCodeScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertItemsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -115,15 +82,9 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) Get(ctx context.Context, requ
     return val, nil
 }
 // ToGetRequestInformation lists code scanning alerts.To use this endpoint, you must use an access token with the `security_events` scope or, for alerts from public repositories only, an access token with the `public_repo` scope.The response includes a `most_recent_instance` object.This provides details of the most recent instance of this alertfor the default branch (or for the specified Git reference if you used `ref` in the request).
-func (m *ItemItemCodeScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCodeScanningAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCodeScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

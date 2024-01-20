@@ -17,29 +17,8 @@ type ItemItemActionsWorkflowsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsWorkflowsRequestBuilderGetQueryParameters
-}
 // ByWorkflow_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.workflows.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_id(workflow_id string)(*ItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if workflow_id != "" {
-        urlTplParams["workflow_id"] = workflow_id
-    }
-    return NewItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByWorkflow_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.workflows.item collection
-func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_idInteger(workflow_id int32)(*ItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilder) {
+func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_id(workflow_id int32)(*ItemItemActionsWorkflowsWithWorkflow_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -61,29 +40,10 @@ func NewItemItemActionsWorkflowsRequestBuilder(rawUrl string, requestAdapter i2a
     return NewItemItemActionsWorkflowsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsWorkflowsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflows#list-repository-workflows
-func (m *ItemItemActionsWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration)(ItemItemActionsWorkflowsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsWorkflowsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsWorkflowsResponseable), nil
-}
-// GetAsWorkflowsGetResponse lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/workflows#list-repository-workflows
-func (m *ItemItemActionsWorkflowsRequestBuilder) GetAsWorkflowsGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration)(ItemItemActionsWorkflowsGetResponseable, error) {
+func (m *ItemItemActionsWorkflowsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsWorkflowsRequestBuilderGetQueryParameters])(ItemItemActionsWorkflowsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -98,15 +58,9 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) GetAsWorkflowsGetResponse(ctx c
     return res.(ItemItemActionsWorkflowsGetResponseable), nil
 }
 // ToGetRequestInformation lists the workflows in a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemActionsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsWorkflowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsWorkflowsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

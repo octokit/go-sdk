@@ -14,28 +14,13 @@ type PackagesRequestBuilder struct {
 // PackagesRequestBuilderGetQueryParameters lists packages owned by the authenticated user within the user's namespace.To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
 type PackagesRequestBuilderGetQueryParameters struct {
     // The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
-    // Deprecated: This property is deprecated, use package_typeAsGetPackage_typeQueryParameterType instead
-    Package_type *string `uriparametername:"package_type"`
-    // The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.
-    Package_typeAsGetPackage_typeQueryParameterType *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetPackage_typeQueryParameterType `uriparametername:"package_type"`
+    Package_type *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetPackage_typeQueryParameterType `uriparametername:"package_type"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The selected visibility of the packages.  This parameter is optional and only filters an existing result set.The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`.For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
-    // Deprecated: This property is deprecated, use visibilityAsGetVisibilityQueryParameterType instead
-    Visibility *string `uriparametername:"visibility"`
-    // The selected visibility of the packages.  This parameter is optional and only filters an existing result set.The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`.For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
-    VisibilityAsGetVisibilityQueryParameterType *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetVisibilityQueryParameterType `uriparametername:"visibility"`
-}
-// PackagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type PackagesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *PackagesRequestBuilderGetQueryParameters
+    Visibility *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetVisibilityQueryParameterType `uriparametername:"visibility"`
 }
 // ByPackage_type gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item collection
 func (m *PackagesRequestBuilder) ByPackage_type(package_type string)(*PackagesWithPackage_typeItemRequestBuilder) {
@@ -65,7 +50,7 @@ func NewPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#list-packages-for-the-authenticated-users-namespace
-func (m *PackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *PackagesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PackageEscapedable, error) {
+func (m *PackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PackageEscapedable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,15 +68,9 @@ func (m *PackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return val, nil
 }
 // ToGetRequestInformation lists packages owned by the authenticated user within the user's namespace.To use this endpoint, you must authenticate using an access token with the `read:packages` scope. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, your token must also include the `repo` scope. For the list of GitHub Packages registries that only support repository-scoped permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
-func (m *PackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PackagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *PackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -10,27 +10,8 @@ import (
 type ItemOrganizationRolesUsersWithUsernameItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOrganizationRolesUsersWithUsernameItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemOrganizationRolesUsersWithUsernameItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByRole_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.organizationRoles.users.item.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ByRole_id(role_id string)(*ItemOrganizationRolesUsersItemWithRole_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if role_id != "" {
-        urlTplParams["role_id"] = role_id
-    }
-    return NewItemOrganizationRolesUsersItemWithRole_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByRole_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.organizationRoles.users.item.item collection
-func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ByRole_idInteger(role_id int32)(*ItemOrganizationRolesUsersItemWithRole_ItemRequestBuilder) {
+func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ByRole_id(role_id int32)(*ItemOrganizationRolesUsersItemWithRole_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -55,7 +36,7 @@ func NewItemOrganizationRolesUsersWithUsernameItemRequestBuilder(rawUrl string, 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-user
-func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOrganizationRolesUsersWithUsernameItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -67,12 +48,9 @@ func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) Delete(ctx co
     return nil
 }
 // ToDeleteRequestInformation revokes all assigned organization roles from a user.To use this endpoint, you must be an administrator for the organization, and you must use an access token with the `admin:org` scope.GitHub Apps must have the `members:write` organization permission to use this endpoint.For more information on organization roles, see "[Managing people's access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles)."
-func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOrganizationRolesUsersWithUsernameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

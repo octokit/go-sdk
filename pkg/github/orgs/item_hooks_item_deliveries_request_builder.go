@@ -20,29 +20,8 @@ type ItemHooksItemDeliveriesRequestBuilderGetQueryParameters struct {
     // 
     Redelivery *bool `uriparametername:"redelivery"`
 }
-// ItemHooksItemDeliveriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemHooksItemDeliveriesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemHooksItemDeliveriesRequestBuilderGetQueryParameters
-}
 // ByDelivery_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.hooks.item.deliveries.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id string)(*ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if delivery_id != "" {
-        urlTplParams["delivery_id"] = delivery_id
-    }
-    return NewItemHooksItemDeliveriesWithDelivery_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByDelivery_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.hooks.item.deliveries.item collection
-func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_idInteger(delivery_id int32)(*ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder) {
+func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)(*ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -67,7 +46,7 @@ func NewItemHooksItemDeliveriesRequestBuilder(rawUrl string, requestAdapter i2ae
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/webhooks#list-deliveries-for-an-organization-webhook
-func (m *ItemHooksItemDeliveriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHooksItemDeliveriesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.HookDeliveryItemable, error) {
+func (m *ItemHooksItemDeliveriesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemHooksItemDeliveriesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.HookDeliveryItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,15 +68,9 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) Get(ctx context.Context, request
     return val, nil
 }
 // ToGetRequestInformation returns a list of webhook deliveries for a webhook configured in an organization.
-func (m *ItemHooksItemDeliveriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHooksItemDeliveriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemHooksItemDeliveriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemHooksItemDeliveriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -15,28 +15,13 @@ type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters struct {
     // Returns check runs with the specified `name`.
     Check_name *string `uriparametername:"check_name"`
     // Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
-    // Deprecated: This property is deprecated, use filterAsGetFilterQueryParameterType instead
-    Filter *string `uriparametername:"filter"`
-    // Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.
-    FilterAsGetFilterQueryParameterType *i81721daf4afe64f77b2b79b27ec44ce9325b9e20e6f9737c000fdcbda4772f33.GetFilterQueryParameterType `uriparametername:"filter"`
+    Filter *i81721daf4afe64f77b2b79b27ec44ce9325b9e20e6f9737c000fdcbda4772f33.GetFilterQueryParameterType `uriparametername:"filter"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Returns check runs with the specified `status`.
-    // Deprecated: This property is deprecated, use statusAsGetStatusQueryParameterType instead
-    Status *string `uriparametername:"status"`
-    // Returns check runs with the specified `status`.
-    StatusAsGetStatusQueryParameterType *i81721daf4afe64f77b2b79b27ec44ce9325b9e20e6f9737c000fdcbda4772f33.GetStatusQueryParameterType `uriparametername:"status"`
-}
-// ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters
+    Status *i81721daf4afe64f77b2b79b27ec44ce9325b9e20e6f9737c000fdcbda4772f33.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal instantiates a new CheckRunsRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesItemCheckRunsRequestBuilder) {
@@ -52,29 +37,10 @@ func NewItemItemCheckSuitesItemCheckRunsRequestBuilder(rawUrl string, requestAda
     return NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists check runs for a check suite using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-// Deprecated: This method is obsolete. Use GetAsCheckRunsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/checks/runs#list-check-runs-in-a-check-suite
-func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration)(ItemItemCheckSuitesItemCheckRunsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemCheckSuitesItemCheckRunsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemCheckSuitesItemCheckRunsResponseable), nil
-}
-// GetAsCheckRunsGetResponse lists check runs for a check suite using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/checks/runs#list-check-runs-in-a-check-suite
-func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) GetAsCheckRunsGetResponse(ctx context.Context, requestConfiguration *ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration)(ItemItemCheckSuitesItemCheckRunsGetResponseable, error) {
+func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters])(ItemItemCheckSuitesItemCheckRunsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,15 +55,9 @@ func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) GetAsCheckRunsGetRespon
     return res.(ItemItemCheckSuitesItemCheckRunsGetResponseable), nil
 }
 // ToGetRequestInformation lists check runs for a check suite using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCheckSuitesItemCheckRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

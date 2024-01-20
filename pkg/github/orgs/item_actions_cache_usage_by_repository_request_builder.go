@@ -16,15 +16,6 @@ type ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters
-}
 // NewItemActionsCacheUsageByRepositoryRequestBuilderInternal instantiates a new UsageByRepositoryRequestBuilder and sets the default values.
 func NewItemActionsCacheUsageByRepositoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsCacheUsageByRepositoryRequestBuilder) {
     m := &ItemActionsCacheUsageByRepositoryRequestBuilder{
@@ -39,29 +30,10 @@ func NewItemActionsCacheUsageByRepositoryRequestBuilder(rawUrl string, requestAd
     return NewItemActionsCacheUsageByRepositoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsUsageByRepositoryGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization
-func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration)(ItemActionsCacheUsageByRepositoryResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemActionsCacheUsageByRepositoryResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemActionsCacheUsageByRepositoryResponseable), nil
-}
-// GetAsUsageByRepositoryGetResponse lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization
-func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) GetAsUsageByRepositoryGetResponse(ctx context.Context, requestConfiguration *ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration)(ItemActionsCacheUsageByRepositoryGetResponseable, error) {
+func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters])(ItemActionsCacheUsageByRepositoryGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -76,15 +48,9 @@ func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) GetAsUsageByRepository
     return res.(ItemActionsCacheUsageByRepositoryGetResponseable), nil
 }
 // ToGetRequestInformation lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.
-func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActionsCacheUsageByRepositoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemActionsCacheUsageByRepositoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemActionsCacheUsageByRepositoryRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -10,13 +10,6 @@ import (
 type ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderInternal instantiates a new WithPat_request_ItemRequestBuilder and sets the default values.
 func NewItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) {
     m := &ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder{
@@ -34,7 +27,7 @@ func NewItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder(rawUrl
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token
-func (m *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) Post(ctx context.Context, body ItemPersonalAccessTokenRequestsItemWithPat_request_PostRequestBodyable, requestConfiguration *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderPostRequestConfiguration)(error) {
+func (m *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) Post(ctx context.Context, body ItemPersonalAccessTokenRequestsItemWithPat_request_PostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -56,12 +49,9 @@ func (m *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) Repo
     return NewItemPersonalAccessTokenRequestsItemRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPostRequestInformation approves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-func (m *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokenRequestsItemWithPat_request_PostRequestBodyable, requestConfiguration *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokenRequestsItemWithPat_request_PostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
