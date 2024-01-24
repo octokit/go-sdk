@@ -23,39 +23,12 @@ type ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     // The name of the ref. Cannot contain wildcard characters. When specified, only rule evaluations triggered for this ref will be returned.
     Ref *string `uriparametername:"ref"`
     // The rule results to filter on. When specified, only suites with this result will be returned.
-    // Deprecated: This property is deprecated, use rule_suite_resultAsGetRule_suite_resultQueryParameterType instead
-    Rule_suite_result *string `uriparametername:"rule_suite_result"`
-    // The rule results to filter on. When specified, only suites with this result will be returned.
-    Rule_suite_resultAsGetRule_suite_resultQueryParameterType *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
+    Rule_suite_result *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
     // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
-    // Deprecated: This property is deprecated, use time_periodAsGetTime_periodQueryParameterType instead
-    Time_period *string `uriparametername:"time_period"`
-    // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
-    Time_periodAsGetTime_periodQueryParameterType *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetTime_periodQueryParameterType `uriparametername:"time_period"`
-}
-// ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters
+    Time_period *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetTime_periodQueryParameterType `uriparametername:"time_period"`
 }
 // ByRule_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.rulesets.ruleSuites.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id string)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if rule_suite_id != "" {
-        urlTplParams["rule_suite_id"] = rule_suite_id
-    }
-    return NewItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByRule_suite_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.rulesets.ruleSuites.item collection
-func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_idInteger(rule_suite_id int32)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
+func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id int32)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -80,7 +53,7 @@ func NewItemItemRulesetsRuleSuitesRequestBuilder(rawUrl string, requestAdapter i
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites
-func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RuleSuitesable, error) {
+func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RuleSuitesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -102,15 +75,9 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requ
     return val, nil
 }
 // ToGetRequestInformation lists suites of rule evaluations at the repository level.For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
-func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemRulesetsRuleSuitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

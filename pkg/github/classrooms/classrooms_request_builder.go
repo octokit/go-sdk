@@ -18,29 +18,8 @@ type ClassroomsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ClassroomsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ClassroomsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ClassroomsRequestBuilderGetQueryParameters
-}
 // ByClassroom_id gets an item from the github.com/octokit/go-sdk/pkg/github/.classrooms.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ClassroomsRequestBuilder) ByClassroom_id(classroom_id string)(*WithClassroom_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if classroom_id != "" {
-        urlTplParams["classroom_id"] = classroom_id
-    }
-    return NewWithClassroom_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByClassroom_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.classrooms.item collection
-func (m *ClassroomsRequestBuilder) ByClassroom_idInteger(classroom_id int32)(*WithClassroom_ItemRequestBuilder) {
+func (m *ClassroomsRequestBuilder) ByClassroom_id(classroom_id int32)(*WithClassroom_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -65,7 +44,7 @@ func NewClassroomsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/classroom/classroom#list-classrooms
-func (m *ClassroomsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassroomsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SimpleClassroomable, error) {
+func (m *ClassroomsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ClassroomsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SimpleClassroomable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,15 +62,9 @@ func (m *ClassroomsRequestBuilder) Get(ctx context.Context, requestConfiguration
     return val, nil
 }
 // ToGetRequestInformation lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
-func (m *ClassroomsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassroomsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ClassroomsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ClassroomsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

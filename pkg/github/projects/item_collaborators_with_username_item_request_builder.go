@@ -10,20 +10,6 @@ import (
 type ItemCollaboratorsWithUsernameItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCollaboratorsWithUsernameItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemCollaboratorsWithUsernameItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemCollaboratorsWithUsernameItemRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemCollaboratorsWithUsernameItemRequestBuilderPutRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemCollaboratorsWithUsernameItemRequestBuilderInternal instantiates a new WithUsernameItemRequestBuilder and sets the default values.
 func NewItemCollaboratorsWithUsernameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     m := &ItemCollaboratorsWithUsernameItemRequestBuilder{
@@ -41,7 +27,7 @@ func NewItemCollaboratorsWithUsernameItemRequestBuilder(rawUrl string, requestAd
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator
-func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCollaboratorsWithUsernameItemRequestBuilderDeleteRequestConfiguration)(error) {
+func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -66,7 +52,7 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Permission()(*ItemColl
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/collaborators#add-project-collaborator
-func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Put(ctx context.Context, body ItemCollaboratorsItemWithUsernamePutRequestBodyable, requestConfiguration *ItemCollaboratorsWithUsernameItemRequestBuilderPutRequestConfiguration)(error) {
+func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Put(ctx context.Context, body ItemCollaboratorsItemWithUsernamePutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -84,22 +70,16 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Put(ctx context.Contex
     return nil
 }
 // ToDeleteRequestInformation removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
-func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCollaboratorsWithUsernameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
-func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemCollaboratorsItemWithUsernamePutRequestBodyable, requestConfiguration *ItemCollaboratorsWithUsernameItemRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemCollaboratorsItemWithUsernamePutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

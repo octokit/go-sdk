@@ -18,36 +18,8 @@ type Gpg_keysRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// Gpg_keysRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type Gpg_keysRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *Gpg_keysRequestBuilderGetQueryParameters
-}
-// Gpg_keysRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type Gpg_keysRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByGpg_key_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.gpg_keys.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *Gpg_keysRequestBuilder) ByGpg_key_id(gpg_key_id string)(*Gpg_keysWithGpg_key_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if gpg_key_id != "" {
-        urlTplParams["gpg_key_id"] = gpg_key_id
-    }
-    return NewGpg_keysWithGpg_key_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByGpg_key_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.user.gpg_keys.item collection
-func (m *Gpg_keysRequestBuilder) ByGpg_key_idInteger(gpg_key_id int32)(*Gpg_keysWithGpg_key_ItemRequestBuilder) {
+func (m *Gpg_keysRequestBuilder) ByGpg_key_id(gpg_key_id int32)(*Gpg_keysWithGpg_key_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -72,7 +44,7 @@ func NewGpg_keysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/gpg-keys#list-gpg-keys-for-the-authenticated-user
-func (m *Gpg_keysRequestBuilder) Get(ctx context.Context, requestConfiguration *Gpg_keysRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GpgKeyable, error) {
+func (m *Gpg_keysRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Gpg_keysRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GpgKeyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -98,7 +70,7 @@ func (m *Gpg_keysRequestBuilder) Get(ctx context.Context, requestConfiguration *
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/gpg-keys#create-a-gpg-key-for-the-authenticated-user
-func (m *Gpg_keysRequestBuilder) Post(ctx context.Context, body Gpg_keysPostRequestBodyable, requestConfiguration *Gpg_keysRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GpgKeyable, error) {
+func (m *Gpg_keysRequestBuilder) Post(ctx context.Context, body Gpg_keysPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GpgKeyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -119,25 +91,16 @@ func (m *Gpg_keysRequestBuilder) Post(ctx context.Context, body Gpg_keysPostRequ
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GpgKeyable), nil
 }
 // ToGetRequestInformation lists the current user's GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-func (m *Gpg_keysRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Gpg_keysRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Gpg_keysRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Gpg_keysRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation adds a GPG key to the authenticated user's GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
-func (m *Gpg_keysRequestBuilder) ToPostRequestInformation(ctx context.Context, body Gpg_keysPostRequestBodyable, requestConfiguration *Gpg_keysRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Gpg_keysRequestBuilder) ToPostRequestInformation(ctx context.Context, body Gpg_keysPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

@@ -16,15 +16,6 @@ type ItemInstallationsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemInstallationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemInstallationsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemInstallationsRequestBuilderGetQueryParameters
-}
 // NewItemInstallationsRequestBuilderInternal instantiates a new InstallationsRequestBuilder and sets the default values.
 func NewItemInstallationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstallationsRequestBuilder) {
     m := &ItemInstallationsRequestBuilder{
@@ -39,29 +30,10 @@ func NewItemInstallationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewItemInstallationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsInstallationsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/orgs#list-app-installations-for-an-organization
-func (m *ItemInstallationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInstallationsRequestBuilderGetRequestConfiguration)(ItemInstallationsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemInstallationsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemInstallationsResponseable), nil
-}
-// GetAsInstallationsGetResponse lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/orgs/orgs#list-app-installations-for-an-organization
-func (m *ItemInstallationsRequestBuilder) GetAsInstallationsGetResponse(ctx context.Context, requestConfiguration *ItemInstallationsRequestBuilderGetRequestConfiguration)(ItemInstallationsGetResponseable, error) {
+func (m *ItemInstallationsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemInstallationsRequestBuilderGetQueryParameters])(ItemInstallationsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -76,15 +48,9 @@ func (m *ItemInstallationsRequestBuilder) GetAsInstallationsGetResponse(ctx cont
     return res.(ItemInstallationsGetResponseable), nil
 }
 // ToGetRequestInformation lists all GitHub Apps in an organization. The installation count includes all GitHub Apps installed on repositories in the organization. You must be an organization owner with `admin:read` scope to use this endpoint.
-func (m *ItemInstallationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstallationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemInstallationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemInstallationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

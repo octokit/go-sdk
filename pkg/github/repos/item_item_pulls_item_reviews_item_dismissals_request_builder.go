@@ -10,13 +10,6 @@ import (
 type ItemItemPullsItemReviewsItemDismissalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemPullsItemReviewsItemDismissalsRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemPullsItemReviewsItemDismissalsRequestBuilderPutRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemPullsItemReviewsItemDismissalsRequestBuilderInternal instantiates a new DismissalsRequestBuilder and sets the default values.
 func NewItemItemPullsItemReviewsItemDismissalsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsItemReviewsItemDismissalsRequestBuilder) {
     m := &ItemItemPullsItemReviewsItemDismissalsRequestBuilder{
@@ -34,7 +27,7 @@ func NewItemItemPullsItemReviewsItemDismissalsRequestBuilder(rawUrl string, requ
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pulls/reviews#dismiss-a-review-for-a-pull-request
-func (m *ItemItemPullsItemReviewsItemDismissalsRequestBuilder) Put(ctx context.Context, body ItemItemPullsItemReviewsItemDismissalsPutRequestBodyable, requestConfiguration *ItemItemPullsItemReviewsItemDismissalsRequestBuilderPutRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PullRequestReviewable, error) {
+func (m *ItemItemPullsItemReviewsItemDismissalsRequestBuilder) Put(ctx context.Context, body ItemItemPullsItemReviewsItemDismissalsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PullRequestReviewable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -53,12 +46,9 @@ func (m *ItemItemPullsItemReviewsItemDismissalsRequestBuilder) Put(ctx context.C
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PullRequestReviewable), nil
 }
 // ToPutRequestInformation **Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.
-func (m *ItemItemPullsItemReviewsItemDismissalsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemPullsItemReviewsItemDismissalsPutRequestBodyable, requestConfiguration *ItemItemPullsItemReviewsItemDismissalsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemPullsItemReviewsItemDismissalsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemPullsItemReviewsItemDismissalsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

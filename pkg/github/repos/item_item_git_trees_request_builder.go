@@ -10,13 +10,6 @@ import (
 type ItemItemGitTreesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemGitTreesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemGitTreesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByTree_sha gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.git.trees.item collection
 func (m *ItemItemGitTreesRequestBuilder) ByTree_sha(tree_sha string)(*ItemItemGitTreesWithTree_shaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -45,7 +38,7 @@ func NewItemItemGitTreesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/git/trees#create-a-tree
-func (m *ItemItemGitTreesRequestBuilder) Post(ctx context.Context, body ItemItemGitTreesPostRequestBodyable, requestConfiguration *ItemItemGitTreesRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GitTreeable, error) {
+func (m *ItemItemGitTreesRequestBuilder) Post(ctx context.Context, body ItemItemGitTreesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GitTreeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -65,12 +58,9 @@ func (m *ItemItemGitTreesRequestBuilder) Post(ctx context.Context, body ItemItem
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GitTreeable), nil
 }
 // ToPostRequestInformation the tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see "[Create a commit](https://docs.github.com/rest/git/commits#create-a-commit)" and "[Update a reference](https://docs.github.com/rest/git/refs#update-a-reference)."Returns an error if you try to delete a file that does not exist.
-func (m *ItemItemGitTreesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemGitTreesPostRequestBodyable, requestConfiguration *ItemItemGitTreesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemGitTreesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemGitTreesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

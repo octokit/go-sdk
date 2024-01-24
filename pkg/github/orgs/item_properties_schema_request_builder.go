@@ -10,20 +10,6 @@ import (
 type ItemPropertiesSchemaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPropertiesSchemaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPropertiesSchemaRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemPropertiesSchemaRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPropertiesSchemaRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByCustom_property_name gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.properties.schema.item collection
 func (m *ItemPropertiesSchemaRequestBuilder) ByCustom_property_name(custom_property_name string)(*ItemPropertiesSchemaWithCustom_property_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -52,7 +38,7 @@ func NewItemPropertiesSchemaRequestBuilder(rawUrl string, requestAdapter i2ae418
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
-func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPropertiesSchemaRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -77,7 +63,7 @@ func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestCon
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
-func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *ItemPropertiesSchemaRequestBuilderPatchRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -99,22 +85,16 @@ func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body Ite
     return val, nil
 }
 // ToGetRequestInformation gets all custom properties defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
-func (m *ItemPropertiesSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPropertiesSchemaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
-func (m *ItemPropertiesSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *ItemPropertiesSchemaRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

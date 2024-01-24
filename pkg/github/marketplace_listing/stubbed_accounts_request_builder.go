@@ -10,19 +10,7 @@ type StubbedAccountsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByAccount_id gets an item from the github.com/octokit/go-sdk/pkg/github/.marketplace_listing.stubbed.accounts.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *StubbedAccountsRequestBuilder) ByAccount_id(account_id string)(*StubbedAccountsWithAccount_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if account_id != "" {
-        urlTplParams["account_id"] = account_id
-    }
-    return NewStubbedAccountsWithAccount_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByAccount_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.marketplace_listing.stubbed.accounts.item collection
-func (m *StubbedAccountsRequestBuilder) ByAccount_idInteger(account_id int32)(*StubbedAccountsWithAccount_ItemRequestBuilder) {
+func (m *StubbedAccountsRequestBuilder) ByAccount_id(account_id int32)(*StubbedAccountsWithAccount_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

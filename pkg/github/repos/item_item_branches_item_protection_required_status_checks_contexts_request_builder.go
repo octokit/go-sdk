@@ -347,34 +347,6 @@ func (m *ContextsPutRequestBody) SetItemItemBranchesItemProtectionRequiredStatus
 func (m *ContextsPutRequestBody) SetString(value *string)() {
     m.string = value
 }
-// ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPutRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ContextsDeleteRequestBodyable 
 type ContextsDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -428,7 +400,7 @@ func NewItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuild
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#remove-status-check-contexts
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Delete(ctx context.Context, body ContextsDeleteRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderDeleteRequestConfiguration)([]string, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Delete(ctx context.Context, body ContextsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]string, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -453,7 +425,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#get-all-status-check-contexts
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderGetRequestConfiguration)([]string, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -477,7 +449,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#add-status-check-contexts
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Post(ctx context.Context, body ContextsPostRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPostRequestConfiguration)([]string, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Post(ctx context.Context, body ContextsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]string, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -503,7 +475,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#set-status-check-contexts
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Put(ctx context.Context, body ContextsPutRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPutRequestConfiguration)([]string, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) Put(ctx context.Context, body ContextsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]string, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -525,12 +497,9 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
     return val, nil
 }
 // ToDeleteRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ContextsDeleteRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ContextsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
@@ -539,22 +508,16 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
     return requestInfo, nil
 }
 // ToGetRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ContextsPostRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ContextsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
@@ -563,12 +526,9 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuil
     return requestInfo, nil
 }
 // ToPutRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
-func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ContextsPutRequestBodyable, requestConfiguration *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemBranchesItemProtectionRequired_status_checksContextsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ContextsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

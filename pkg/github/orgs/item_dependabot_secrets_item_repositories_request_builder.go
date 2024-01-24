@@ -17,36 +17,8 @@ type ItemDependabotSecretsItemRepositoriesRequestBuilderGetQueryParameters struc
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemDependabotSecretsItemRepositoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemDependabotSecretsItemRepositoriesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemDependabotSecretsItemRepositoriesRequestBuilderGetQueryParameters
-}
-// ItemDependabotSecretsItemRepositoriesRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemDependabotSecretsItemRepositoriesRequestBuilderPutRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByRepository_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.dependabot.secrets.item.repositories.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ByRepository_id(repository_id string)(*ItemDependabotSecretsItemRepositoriesWithRepository_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if repository_id != "" {
-        urlTplParams["repository_id"] = repository_id
-    }
-    return NewItemDependabotSecretsItemRepositoriesWithRepository_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByRepository_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.dependabot.secrets.item.repositories.item collection
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ByRepository_idInteger(repository_id int32)(*ItemDependabotSecretsItemRepositoriesWithRepository_ItemRequestBuilder) {
+func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ByRepository_id(repository_id int32)(*ItemDependabotSecretsItemRepositoriesWithRepository_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -68,29 +40,10 @@ func NewItemDependabotSecretsItemRepositoriesRequestBuilder(rawUrl string, reque
     return NewItemDependabotSecretsItemRepositoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsRepositoriesGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDependabotSecretsItemRepositoriesRequestBuilderGetRequestConfiguration)(ItemDependabotSecretsItemRepositoriesResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemDependabotSecretsItemRepositoriesResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemDependabotSecretsItemRepositoriesResponseable), nil
-}
-// GetAsRepositoriesGetResponse lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/dependabot/secrets#list-selected-repositories-for-an-organization-secret
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) GetAsRepositoriesGetResponse(ctx context.Context, requestConfiguration *ItemDependabotSecretsItemRepositoriesRequestBuilderGetRequestConfiguration)(ItemDependabotSecretsItemRepositoriesGetResponseable, error) {
+func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemDependabotSecretsItemRepositoriesRequestBuilderGetQueryParameters])(ItemDependabotSecretsItemRepositoriesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -108,7 +61,7 @@ func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) GetAsRepositoriesG
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/secrets#set-selected-repositories-for-an-organization-secret
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) Put(ctx context.Context, body ItemDependabotSecretsItemRepositoriesPutRequestBodyable, requestConfiguration *ItemDependabotSecretsItemRepositoriesRequestBuilderPutRequestConfiguration)(error) {
+func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) Put(ctx context.Context, body ItemDependabotSecretsItemRepositoriesPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -120,25 +73,16 @@ func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) Put(ctx context.Co
     return nil
 }
 // ToGetRequestInformation lists all repositories that have been selected when the `visibility` for repository access to a secret is set to `selected`. You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDependabotSecretsItemRepositoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemDependabotSecretsItemRepositoriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation replaces all repositories for an organization secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/dependabot/secrets#create-or-update-an-organization-secret). You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `dependabot_secrets` organization permission to use this endpoint.
-func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemDependabotSecretsItemRepositoriesPutRequestBodyable, requestConfiguration *ItemDependabotSecretsItemRepositoriesRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemDependabotSecretsItemRepositoriesRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemDependabotSecretsItemRepositoriesPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

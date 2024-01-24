@@ -11,38 +11,12 @@ import (
 type ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // Apps the apps property
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Apps()(*ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilder) {
     return NewItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByProtection_rule_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item.deployment_protection_rules.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ByProtection_rule_id(protection_rule_id string)(*ItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if protection_rule_id != "" {
-        urlTplParams["protection_rule_id"] = protection_rule_id
-    }
-    return NewItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByProtection_rule_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item.deployment_protection_rules.item collection
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ByProtection_rule_idInteger(protection_rule_id int32)(*ItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilder) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ByProtection_rule_id(protection_rule_id int32)(*ItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -64,29 +38,10 @@ func NewItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder(rawUrl
     return NewItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
-// Deprecated: This method is obsolete. Use GetAsDeployment_protection_rulesGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/protection-rules#get-all-deployment-protection-rules-for-an-environment
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsItemDeployment_protection_rulesResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemEnvironmentsItemDeployment_protection_rulesResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemEnvironmentsItemDeployment_protection_rulesResponseable), nil
-}
-// GetAsDeployment_protection_rulesGetResponse gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/deployments/protection-rules#get-all-deployment-protection-rules-for-an-environment
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) GetAsDeployment_protection_rulesGetResponse(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsItemDeployment_protection_rulesGetResponseable, error) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(ItemItemEnvironmentsItemDeployment_protection_rulesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -104,7 +59,7 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) GetA
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/protection-rules#create-a-custom-deployment-protection-rule-on-an-environment
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Post(ctx context.Context, body ItemItemEnvironmentsItemDeployment_protection_rulesPostRequestBodyable, requestConfiguration *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentProtectionRuleable, error) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Post(ctx context.Context, body ItemItemEnvironmentsItemDeployment_protection_rulesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentProtectionRuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -119,22 +74,16 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Post
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentProtectionRuleable), nil
 }
 // ToGetRequestInformation gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment)."For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation enable a custom deployment protection rule for an environment.You must authenticate using an access token with the `repo` scope to use this endpoint. Enabling a custom protection rule requires admin or owner permissions to the repository. GitHub Apps must have the `actions:write` permission to use this endpoint.For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
-func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemEnvironmentsItemDeployment_protection_rulesPostRequestBodyable, requestConfiguration *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemEnvironmentsItemDeployment_protection_rulesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

@@ -9,13 +9,6 @@ import (
 type TemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type TemplatesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.gitignore.templates.item collection
 func (m *TemplatesRequestBuilder) ByName(name string)(*TemplatesWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -44,7 +37,7 @@ func NewTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gitignore/gitignore#get-all-gitignore-templates
-func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)([]string, error) {
+func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]string, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -62,12 +55,9 @@ func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return val, nil
 }
 // ToGetRequestInformation list all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
-func (m *TemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -10,20 +10,8 @@ type TeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByTeam_id gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *TeamsRequestBuilder) ByTeam_id(team_id string)(*WithTeam_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if team_id != "" {
-        urlTplParams["team_id"] = team_id
-    }
-    return NewWithTeam_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByTeam_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item collection
 // Deprecated: 
-func (m *TeamsRequestBuilder) ByTeam_idInteger(team_id int32)(*WithTeam_ItemRequestBuilder) {
+func (m *TeamsRequestBuilder) ByTeam_id(team_id int32)(*WithTeam_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

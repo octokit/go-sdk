@@ -10,13 +10,6 @@ import (
 type InstallationsItemAccess_tokensRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// InstallationsItemAccess_tokensRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type InstallationsItemAccess_tokensRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewInstallationsItemAccess_tokensRequestBuilderInternal instantiates a new Access_tokensRequestBuilder and sets the default values.
 func NewInstallationsItemAccess_tokensRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InstallationsItemAccess_tokensRequestBuilder) {
     m := &InstallationsItemAccess_tokensRequestBuilder{
@@ -34,7 +27,7 @@ func NewInstallationsItemAccess_tokensRequestBuilder(rawUrl string, requestAdapt
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/apps/apps#create-an-installation-access-token-for-an-app
-func (m *InstallationsItemAccess_tokensRequestBuilder) Post(ctx context.Context, body InstallationsItemAccess_tokensPostRequestBodyable, requestConfiguration *InstallationsItemAccess_tokensRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.InstallationTokenable, error) {
+func (m *InstallationsItemAccess_tokensRequestBuilder) Post(ctx context.Context, body InstallationsItemAccess_tokensPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.InstallationTokenable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -55,12 +48,9 @@ func (m *InstallationsItemAccess_tokensRequestBuilder) Post(ctx context.Context,
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.InstallationTokenable), nil
 }
 // ToPostRequestInformation creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access. To restrict the access to specific repositories, you can provide the `repository_ids` when creating the token. When you omit `repository_ids`, the response does not contain the `repositories` key.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
-func (m *InstallationsItemAccess_tokensRequestBuilder) ToPostRequestInformation(ctx context.Context, body InstallationsItemAccess_tokensPostRequestBodyable, requestConfiguration *InstallationsItemAccess_tokensRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *InstallationsItemAccess_tokensRequestBuilder) ToPostRequestInformation(ctx context.Context, body InstallationsItemAccess_tokensPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

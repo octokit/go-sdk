@@ -16,10 +16,7 @@ type ItemPersonalAccessTokenRequestsRequestBuilder struct {
 // ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
 type ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *if40f6bba016cf7cc8e1dd7375501cb9368628a1bf123e37f5946192c743664a2.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *if40f6bba016cf7cc8e1dd7375501cb9368628a1bf123e37f5946192c743664a2.GetDirectionQueryParameterType `uriparametername:"direction"`
     // Only show fine-grained personal access tokens used after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Last_used_after *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"last_used_after"`
     // Only show fine-grained personal access tokens used before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -35,41 +32,10 @@ type ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters struct {
     // The name of the repository to use to filter the results.
     Repository *string `uriparametername:"repository"`
     // The property by which to sort the results.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property by which to sort the results.
-    SortAsGetSortQueryParameterType *if40f6bba016cf7cc8e1dd7375501cb9368628a1bf123e37f5946192c743664a2.GetSortQueryParameterType `uriparametername:"sort"`
-}
-// ItemPersonalAccessTokenRequestsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPersonalAccessTokenRequestsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters
-}
-// ItemPersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    Sort *if40f6bba016cf7cc8e1dd7375501cb9368628a1bf123e37f5946192c743664a2.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ByPat_request_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.personalAccessTokenRequests.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ByPat_request_id(pat_request_id string)(*ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if pat_request_id != "" {
-        urlTplParams["pat_request_id"] = pat_request_id
-    }
-    return NewItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByPat_request_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.personalAccessTokenRequests.item collection
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ByPat_request_idInteger(pat_request_id int32)(*ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) {
+func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ByPat_request_id(pat_request_id int32)(*ItemPersonalAccessTokenRequestsWithPat_request_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -94,7 +60,7 @@ func NewItemPersonalAccessTokenRequestsRequestBuilder(rawUrl string, requestAdap
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPersonalAccessTokenRequestsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrganizationProgrammaticAccessGrantRequestable, error) {
+func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrganizationProgrammaticAccessGrantRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -118,35 +84,10 @@ func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Get(ctx context.Context,
     return val, nil
 }
 // Post approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-// Deprecated: This method is obsolete. Use PostAsPersonalAccessTokenRequestsPostResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#review-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Post(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *ItemPersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration)(ItemPersonalAccessTokenRequestsResponseable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
-        "500": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemPersonalAccessTokenRequestsResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemPersonalAccessTokenRequestsResponseable), nil
-}
-// PostAsPersonalAccessTokenRequestsPostResponse approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#review-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) PostAsPersonalAccessTokenRequestsPostResponse(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *ItemPersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration)(ItemPersonalAccessTokenRequestsPostResponseable, error) {
+func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Post(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(ItemPersonalAccessTokenRequestsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -167,25 +108,16 @@ func (m *ItemPersonalAccessTokenRequestsRequestBuilder) PostAsPersonalAccessToke
     return res.(ItemPersonalAccessTokenRequestsPostResponseable), nil
 }
 // ToGetRequestInformation lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPersonalAccessTokenRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *ItemPersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

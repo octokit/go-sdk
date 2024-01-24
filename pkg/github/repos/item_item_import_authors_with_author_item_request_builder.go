@@ -10,13 +10,6 @@ import (
 type ItemItemImportAuthorsWithAuthor_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemImportAuthorsWithAuthor_ItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemImportAuthorsWithAuthor_ItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal instantiates a new WithAuthor_ItemRequestBuilder and sets the default values.
 func NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
     m := &ItemItemImportAuthorsWithAuthor_ItemRequestBuilder{
@@ -35,7 +28,7 @@ func NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder(rawUrl string, reques
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/source-imports#map-a-commit-author
-func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) Patch(ctx context.Context, body ItemItemImportAuthorsItemWithAuthor_PatchRequestBodyable, requestConfiguration *ItemItemImportAuthorsWithAuthor_ItemRequestBuilderPatchRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PorterAuthorable, error) {
+func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) Patch(ctx context.Context, body ItemItemImportAuthorsItemWithAuthor_PatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PorterAuthorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -56,12 +49,9 @@ func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) Patch(ctx context.C
 }
 // ToPatchRequestInformation update an author's identity for the import. Your application can continue updating authors any time before you pushnew commits to the repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
-func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemImportAuthorsItemWithAuthor_PatchRequestBodyable, requestConfiguration *ItemItemImportAuthorsWithAuthor_ItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemImportAuthorsItemWithAuthor_PatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

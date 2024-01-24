@@ -16,29 +16,8 @@ type RepositoriesRequestBuilderGetQueryParameters struct {
     // A repository ID. Only return repositories with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
 }
-// RepositoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type RepositoriesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *RepositoriesRequestBuilderGetQueryParameters
-}
 // ByRepository_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *RepositoriesRequestBuilder) ByRepository_id(repository_id string)(*WithRepository_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if repository_id != "" {
-        urlTplParams["repository_id"] = repository_id
-    }
-    return NewWithRepository_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByRepository_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item collection
-func (m *RepositoriesRequestBuilder) ByRepository_idInteger(repository_id int32)(*WithRepository_ItemRequestBuilder) {
+func (m *RepositoriesRequestBuilder) ByRepository_id(repository_id int32)(*WithRepository_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -63,7 +42,7 @@ func NewRepositoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/repos#list-public-repositories
-func (m *RepositoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *RepositoriesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.MinimalRepositoryable, error) {
+func (m *RepositoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[RepositoriesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.MinimalRepositoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -84,15 +63,9 @@ func (m *RepositoriesRequestBuilder) Get(ctx context.Context, requestConfigurati
     return val, nil
 }
 // ToGetRequestInformation lists all public repositories in the order that they were created.Note:- For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
-func (m *RepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RepositoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *RepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[RepositoriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

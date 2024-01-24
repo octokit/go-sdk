@@ -15,45 +15,14 @@ type ItemItemCommentsItemReactionsRequestBuilder struct {
 // ItemItemCommentsItemReactionsRequestBuilderGetQueryParameters list the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
 type ItemItemCommentsItemReactionsRequestBuilderGetQueryParameters struct {
     // Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a commit comment.
-    // Deprecated: This property is deprecated, use contentAsGetContentQueryParameterType instead
-    Content *string `uriparametername:"content"`
-    // Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a commit comment.
-    ContentAsGetContentQueryParameterType *ie55802deee9fe37434e0511ab82c6a68c6bd8afe7d7998398c82c7391430d662.GetContentQueryParameterType `uriparametername:"content"`
+    Content *ie55802deee9fe37434e0511ab82c6a68c6bd8afe7d7998398c82c7391430d662.GetContentQueryParameterType `uriparametername:"content"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemCommentsItemReactionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCommentsItemReactionsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemCommentsItemReactionsRequestBuilderGetQueryParameters
-}
-// ItemItemCommentsItemReactionsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCommentsItemReactionsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByReaction_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.comments.item.reactions.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemCommentsItemReactionsRequestBuilder) ByReaction_id(reaction_id string)(*ItemItemCommentsItemReactionsWithReaction_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if reaction_id != "" {
-        urlTplParams["reaction_id"] = reaction_id
-    }
-    return NewItemItemCommentsItemReactionsWithReaction_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByReaction_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.comments.item.reactions.item collection
-func (m *ItemItemCommentsItemReactionsRequestBuilder) ByReaction_idInteger(reaction_id int32)(*ItemItemCommentsItemReactionsWithReaction_ItemRequestBuilder) {
+func (m *ItemItemCommentsItemReactionsRequestBuilder) ByReaction_id(reaction_id int32)(*ItemItemCommentsItemReactionsWithReaction_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -78,7 +47,7 @@ func NewItemItemCommentsItemReactionsRequestBuilder(rawUrl string, requestAdapte
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-commit-comment
-func (m *ItemItemCommentsItemReactionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCommentsItemReactionsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable, error) {
+func (m *ItemItemCommentsItemReactionsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCommentsItemReactionsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -102,7 +71,7 @@ func (m *ItemItemCommentsItemReactionsRequestBuilder) Get(ctx context.Context, r
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-commit-comment
-func (m *ItemItemCommentsItemReactionsRequestBuilder) Post(ctx context.Context, body ItemItemCommentsItemReactionsPostRequestBodyable, requestConfiguration *ItemItemCommentsItemReactionsRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable, error) {
+func (m *ItemItemCommentsItemReactionsRequestBuilder) Post(ctx context.Context, body ItemItemCommentsItemReactionsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -120,25 +89,16 @@ func (m *ItemItemCommentsItemReactionsRequestBuilder) Post(ctx context.Context, 
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable), nil
 }
 // ToGetRequestInformation list the reactions to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
-func (m *ItemItemCommentsItemReactionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCommentsItemReactionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCommentsItemReactionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCommentsItemReactionsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation create a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment). A response with an HTTP `200` status means that you already added the reaction type to this commit comment.
-func (m *ItemItemCommentsItemReactionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemCommentsItemReactionsPostRequestBodyable, requestConfiguration *ItemItemCommentsItemReactionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCommentsItemReactionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemCommentsItemReactionsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

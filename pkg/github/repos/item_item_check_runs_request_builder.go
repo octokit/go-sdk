@@ -113,13 +113,6 @@ func (m *CheckRunsPostRequestBody) SetItemItemCheckRunsPostRequestBodyMember1(va
 func (m *CheckRunsPostRequestBody) SetItemItemCheckRunsPostRequestBodyMember2(value ItemItemCheckRunsPostRequestBodyMember2able)() {
     m.itemItemCheckRunsPostRequestBodyMember2 = value
 }
-// ItemItemCheckRunsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCheckRunsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // CheckRunsPostRequestBodyable 
 type CheckRunsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -133,19 +126,7 @@ type CheckRunsPostRequestBodyable interface {
     SetItemItemCheckRunsPostRequestBodyMember2(value ItemItemCheckRunsPostRequestBodyMember2able)()
 }
 // ByCheck_run_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.checkRuns.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemCheckRunsRequestBuilder) ByCheck_run_id(check_run_id string)(*ItemItemCheckRunsWithCheck_run_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if check_run_id != "" {
-        urlTplParams["check_run_id"] = check_run_id
-    }
-    return NewItemItemCheckRunsWithCheck_run_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByCheck_run_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.checkRuns.item collection
-func (m *ItemItemCheckRunsRequestBuilder) ByCheck_run_idInteger(check_run_id int32)(*ItemItemCheckRunsWithCheck_run_ItemRequestBuilder) {
+func (m *ItemItemCheckRunsRequestBuilder) ByCheck_run_id(check_run_id int32)(*ItemItemCheckRunsWithCheck_run_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -170,7 +151,7 @@ func NewItemItemCheckRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/checks/runs#create-a-check-run
-func (m *ItemItemCheckRunsRequestBuilder) Post(ctx context.Context, body CheckRunsPostRequestBodyable, requestConfiguration *ItemItemCheckRunsRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CheckRunable, error) {
+func (m *ItemItemCheckRunsRequestBuilder) Post(ctx context.Context, body CheckRunsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CheckRunable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -185,12 +166,9 @@ func (m *ItemItemCheckRunsRequestBuilder) Post(ctx context.Context, body CheckRu
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CheckRunable), nil
 }
 // ToPostRequestInformation creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-func (m *ItemItemCheckRunsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CheckRunsPostRequestBodyable, requestConfiguration *ItemItemCheckRunsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCheckRunsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CheckRunsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

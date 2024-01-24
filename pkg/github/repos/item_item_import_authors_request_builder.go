@@ -16,30 +16,9 @@ type ItemItemImportAuthorsRequestBuilderGetQueryParameters struct {
     // A user ID. Only return users with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
 }
-// ItemItemImportAuthorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemImportAuthorsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemImportAuthorsRequestBuilderGetQueryParameters
-}
 // ByAuthor_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.import.authors.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemImportAuthorsRequestBuilder) ByAuthor_id(author_id string)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if author_id != "" {
-        urlTplParams["author_id"] = author_id
-    }
-    return NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByAuthor_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.import.authors.item collection
 // Deprecated: 
-func (m *ItemItemImportAuthorsRequestBuilder) ByAuthor_idInteger(author_id int32)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
+func (m *ItemItemImportAuthorsRequestBuilder) ByAuthor_id(author_id int32)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -65,7 +44,7 @@ func NewItemItemImportAuthorsRequestBuilder(rawUrl string, requestAdapter i2ae41
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/source-imports#get-commit-authors
-func (m *ItemItemImportAuthorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemImportAuthorsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PorterAuthorable, error) {
+func (m *ItemItemImportAuthorsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemImportAuthorsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PorterAuthorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -88,15 +67,9 @@ func (m *ItemItemImportAuthorsRequestBuilder) Get(ctx context.Context, requestCo
 }
 // ToGetRequestInformation each type of source control system represents authors in a different way. For example, a Git commit author has a display name and an email address, but a Subversion commit author just has a username. The GitHub Importer will make the author information valid, but the author might not be correct. For example, it will change the bare Subversion username `hubot` into something like `hubot <hubot@12341234-abab-fefe-8787-fedcba987654>`.This endpoint and the [Map a commit author](https://docs.github.com/rest/migrations/source-imports#map-a-commit-author) endpoint allow you to provide correct Git author information.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
-func (m *ItemItemImportAuthorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemImportAuthorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemImportAuthorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemImportAuthorsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

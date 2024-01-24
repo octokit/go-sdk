@@ -19,22 +19,6 @@ type ItemPropertiesValuesRequestBuilderGetQueryParameters struct {
     // Finds repositories in the organization with a query containing one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query). See "[Searching for repositories](https://docs.github.com/articles/searching-for-repositories/)" for a detailed list of qualifiers.
     Repository_query *string `uriparametername:"repository_query"`
 }
-// ItemPropertiesValuesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPropertiesValuesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemPropertiesValuesRequestBuilderGetQueryParameters
-}
-// ItemPropertiesValuesRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemPropertiesValuesRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemPropertiesValuesRequestBuilderInternal instantiates a new ValuesRequestBuilder and sets the default values.
 func NewItemPropertiesValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPropertiesValuesRequestBuilder) {
     m := &ItemPropertiesValuesRequestBuilder{
@@ -52,7 +36,7 @@ func NewItemPropertiesValuesRequestBuilder(rawUrl string, requestAdapter i2ae418
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#list-custom-property-values-for-organization-repositories
-func (m *ItemPropertiesValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPropertiesValuesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgRepoCustomPropertyValuesable, error) {
+func (m *ItemPropertiesValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPropertiesValuesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgRepoCustomPropertyValuesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -77,7 +61,7 @@ func (m *ItemPropertiesValuesRequestBuilder) Get(ctx context.Context, requestCon
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories
-func (m *ItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body ItemPropertiesValuesPatchRequestBodyable, requestConfiguration *ItemPropertiesValuesRequestBuilderPatchRequestConfiguration)(error) {
+func (m *ItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body ItemPropertiesValuesPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -93,25 +77,16 @@ func (m *ItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body Ite
     return nil
 }
 // ToGetRequestInformation lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
-func (m *ItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPropertiesValuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPropertiesValuesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPatchRequestInformation create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.GitHub Apps must have the `organization_custom_properties:write` organization permission to use this endpoint.
-func (m *ItemPropertiesValuesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesValuesPatchRequestBodyable, requestConfiguration *ItemPropertiesValuesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemPropertiesValuesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesValuesPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

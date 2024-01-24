@@ -18,36 +18,8 @@ type ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetQueryParam
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetQueryParameters
-}
-// ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByBranch_policy_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item.deploymentBranchPolicies.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ByBranch_policy_id(branch_policy_id string)(*ItemItemEnvironmentsItemDeploymentBranchPoliciesWithBranch_policy_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if branch_policy_id != "" {
-        urlTplParams["branch_policy_id"] = branch_policy_id
-    }
-    return NewItemItemEnvironmentsItemDeploymentBranchPoliciesWithBranch_policy_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByBranch_policy_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item.deploymentBranchPolicies.item collection
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ByBranch_policy_idInteger(branch_policy_id int32)(*ItemItemEnvironmentsItemDeploymentBranchPoliciesWithBranch_policy_ItemRequestBuilder) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ByBranch_policy_id(branch_policy_id int32)(*ItemItemEnvironmentsItemDeploymentBranchPoliciesWithBranch_policy_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -69,29 +41,10 @@ func NewItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder(rawUrl st
     return NewItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the deployment branch policies for an environment.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsDeploymentBranchPoliciesGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/branch-policies#list-deployment-branch-policies
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsItemDeploymentBranchPoliciesResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemEnvironmentsItemDeploymentBranchPoliciesResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemEnvironmentsItemDeploymentBranchPoliciesResponseable), nil
-}
-// GetAsDeploymentBranchPoliciesGetResponse lists the deployment branch policies for an environment.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/deployments/branch-policies#list-deployment-branch-policies
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) GetAsDeploymentBranchPoliciesGetResponse(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponseable, error) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetQueryParameters])(ItemItemEnvironmentsItemDeploymentBranchPoliciesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,7 +62,7 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) GetAsDe
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/branch-policies#create-a-deployment-branch-policy
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) Post(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyNamePatternWithTypeable, requestConfiguration *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyable, error) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) Post(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyNamePatternWithTypeable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -124,25 +77,16 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) Post(ct
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyable), nil
 }
 // ToGetRequestInformation lists the deployment branch policies for an environment.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a deployment branch or tag policy for an environment.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
-func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyNamePatternWithTypeable, requestConfiguration *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicyNamePatternWithTypeable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

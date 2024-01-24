@@ -10,13 +10,6 @@ import (
 type ItemActionsRunnersGenerateJitconfigRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActionsRunnersGenerateJitconfigRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemActionsRunnersGenerateJitconfigRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal instantiates a new GenerateJitconfigRequestBuilder and sets the default values.
 func NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsRunnersGenerateJitconfigRequestBuilder) {
     m := &ItemActionsRunnersGenerateJitconfigRequestBuilder{
@@ -31,33 +24,10 @@ func NewItemActionsRunnersGenerateJitconfigRequestBuilder(rawUrl string, request
     return NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
-// Deprecated: This method is obsolete. Use PostAsGenerateJitconfigPostResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization
-func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) Post(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *ItemActionsRunnersGenerateJitconfigRequestBuilderPostRequestConfiguration)(ItemActionsRunnersGenerateJitconfigResponseable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorSimpleFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemActionsRunnersGenerateJitconfigResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemActionsRunnersGenerateJitconfigResponseable), nil
-}
-// PostAsGenerateJitconfigPostResponse generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization
-func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) PostAsGenerateJitconfigPostResponse(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *ItemActionsRunnersGenerateJitconfigRequestBuilderPostRequestConfiguration)(ItemActionsRunnersGenerateJitconfigPostResponseable, error) {
+func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) Post(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(ItemActionsRunnersGenerateJitconfigPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -76,12 +46,9 @@ func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) PostAsGenerateJitcon
     return res.(ItemActionsRunnersGenerateJitconfigPostResponseable), nil
 }
 // ToPostRequestInformation generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
-func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *ItemActionsRunnersGenerateJitconfigRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

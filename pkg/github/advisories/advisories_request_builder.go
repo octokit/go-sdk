@@ -23,15 +23,9 @@ type AdvisoriesRequestBuilderGetQueryParameters struct {
     // If specified, only advisories with these Common Weakness Enumerations (CWEs) will be returned.Example: `cwes=79,284,22` or `cwes[]=79&cwes[]=284&cwes[]=22`
     Cwes *string `uriparametername:"cwes"`
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *GetDirectionQueryParameterType `uriparametername:"direction"`
     // If specified, only advisories for these ecosystems will be returned.
-    // Deprecated: This property is deprecated, use ecosystemAsGetEcosystemQueryParameterType instead
-    Ecosystem *string `uriparametername:"ecosystem"`
-    // If specified, only advisories for these ecosystems will be returned.
-    EcosystemAsGetEcosystemQueryParameterType *GetEcosystemQueryParameterType `uriparametername:"ecosystem"`
+    Ecosystem *GetEcosystemQueryParameterType `uriparametername:"ecosystem"`
     // If specified, only advisories with this GHSA (GitHub Security Advisory) identifier will be returned.
     Ghsa_id *string `uriparametername:"ghsa_id"`
     // Whether to only return advisories that have been withdrawn.
@@ -43,31 +37,13 @@ type AdvisoriesRequestBuilderGetQueryParameters struct {
     // If specified, only return advisories that were published on a date or date range.For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
     Published *string `uriparametername:"published"`
     // If specified, only advisories with these severities will be returned.
-    // Deprecated: This property is deprecated, use severityAsGetSeverityQueryParameterType instead
-    Severity *string `uriparametername:"severity"`
-    // If specified, only advisories with these severities will be returned.
-    SeverityAsGetSeverityQueryParameterType *GetSeverityQueryParameterType `uriparametername:"severity"`
+    Severity *GetSeverityQueryParameterType `uriparametername:"severity"`
     // The property to sort the results by.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property to sort the results by.
-    SortAsGetSortQueryParameterType *GetSortQueryParameterType `uriparametername:"sort"`
+    Sort *GetSortQueryParameterType `uriparametername:"sort"`
     // If specified, only advisories of this type will be returned. By default, a request with no other parameters defined will only return reviewed advisories that are not malware.
-    // Deprecated: This property is deprecated, use typeAsGetTypeQueryParameterType instead
-    Type *string `uriparametername:"type"`
-    // If specified, only advisories of this type will be returned. By default, a request with no other parameters defined will only return reviewed advisories that are not malware.
-    TypeAsGetTypeQueryParameterType *GetTypeQueryParameterType `uriparametername:"type"`
+    Type *GetTypeQueryParameterType `uriparametername:"type"`
     // If specified, only return advisories that were updated on a date or date range.For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
     Updated *string `uriparametername:"updated"`
-}
-// AdvisoriesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type AdvisoriesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *AdvisoriesRequestBuilderGetQueryParameters
 }
 // ByGhsa_id gets an item from the github.com/octokit/go-sdk/pkg/github/.advisories.item collection
 func (m *AdvisoriesRequestBuilder) ByGhsa_id(ghsa_id string)(*WithGhsa_ItemRequestBuilder) {
@@ -97,7 +73,7 @@ func NewAdvisoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/security-advisories/global-advisories#list-global-security-advisories
-func (m *AdvisoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *AdvisoriesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GlobalAdvisoryable, error) {
+func (m *AdvisoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[AdvisoriesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GlobalAdvisoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -119,15 +95,9 @@ func (m *AdvisoriesRequestBuilder) Get(ctx context.Context, requestConfiguration
     return val, nil
 }
 // ToGetRequestInformation lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see "[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories)."
-func (m *AdvisoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdvisoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *AdvisoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[AdvisoriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

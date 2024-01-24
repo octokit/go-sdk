@@ -9,13 +9,6 @@ import (
 type MarkdownRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MarkdownRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type MarkdownRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewMarkdownRequestBuilderInternal instantiates a new MarkdownRequestBuilder and sets the default values.
 func NewMarkdownRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MarkdownRequestBuilder) {
     m := &MarkdownRequestBuilder{
@@ -33,7 +26,7 @@ func NewMarkdownRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/markdown/markdown#render-a-markdown-document
-func (m *MarkdownRequestBuilder) Post(ctx context.Context, body MarkdownPostRequestBodyable, requestConfiguration *MarkdownRequestBuilderPostRequestConfiguration)([]byte, error) {
+func (m *MarkdownRequestBuilder) Post(ctx context.Context, body MarkdownPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -51,12 +44,9 @@ func (m *MarkdownRequestBuilder) Post(ctx context.Context, body MarkdownPostRequ
 func (m *MarkdownRequestBuilder) Raw()(*RawRequestBuilder) {
     return NewRawRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-func (m *MarkdownRequestBuilder) ToPostRequestInformation(ctx context.Context, body MarkdownPostRequestBodyable, requestConfiguration *MarkdownRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MarkdownRequestBuilder) ToPostRequestInformation(ctx context.Context, body MarkdownPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "text/html")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

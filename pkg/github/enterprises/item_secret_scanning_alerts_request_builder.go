@@ -18,10 +18,7 @@ type ItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Before *string `uriparametername:"before"`
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // A comma-separated list of resolutions. Only secret scanning alerts with one of these resolutions are listed. Valid resolutions are `false_positive`, `wont_fix`, `revoked`, `pattern_edited`, `pattern_deleted` or `used_in_tests`.
@@ -29,26 +26,11 @@ type ItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     // A comma-separated list of secret types to return. By default all secret types are returned.See "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)"for a complete list of secret types.
     Secret_type *string `uriparametername:"secret_type"`
     // The property to sort the results by. `created` means when the alert was created. `updated` means when the alert was updated or resolved.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property to sort the results by. `created` means when the alert was created. `updated` means when the alert was updated or resolved.
-    SortAsGetSortQueryParameterType *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetSortQueryParameterType `uriparametername:"sort"`
+    Sort *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetSortQueryParameterType `uriparametername:"sort"`
     // Set to `open` or `resolved` to only list secret scanning alerts in a specific state.
-    // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
-    State *string `uriparametername:"state"`
-    // Set to `open` or `resolved` to only list secret scanning alerts in a specific state.
-    StateAsGetStateQueryParameterType *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetStateQueryParameterType `uriparametername:"state"`
+    State *i001db24e943d0f84422b7e2ee3ebec420ca587ebd5e378cf50225876c7468a70.GetStateQueryParameterType `uriparametername:"state"`
     // A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`.
     Validity *string `uriparametername:"validity"`
-}
-// ItemSecretScanningAlertsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemSecretScanningAlertsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemSecretScanningAlertsRequestBuilderGetQueryParameters
 }
 // NewItemSecretScanningAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewItemSecretScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSecretScanningAlertsRequestBuilder) {
@@ -67,7 +49,7 @@ func NewItemSecretScanningAlertsRequestBuilder(rawUrl string, requestAdapter i2a
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-enterprise
-func (m *ItemSecretScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSecretScanningAlertsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrganizationSecretScanningAlertable, error) {
+func (m *ItemSecretScanningAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemSecretScanningAlertsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrganizationSecretScanningAlertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -89,15 +71,9 @@ func (m *ItemSecretScanningAlertsRequestBuilder) Get(ctx context.Context, reques
     return val, nil
 }
 // ToGetRequestInformation lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.To use this endpoint, you must be a member of the enterprise, and you must use an access token with the `repo` scope or `security_events` scope. Alerts are only returned for organizations in the enterprise for which you are an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).
-func (m *ItemSecretScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSecretScanningAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemSecretScanningAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemSecretScanningAlertsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -20,10 +20,7 @@ type ItemItemIssuesRequestBuilderGetQueryParameters struct {
     // The user that created the issue.
     Creator *string `uriparametername:"creator"`
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetDirectionQueryParameterType `uriparametername:"direction"`
     // A list of comma separated label names. Example: `bug,ui,@high`
     Labels *string `uriparametername:"labels"`
     // A user that's mentioned in the issue.
@@ -37,46 +34,12 @@ type ItemItemIssuesRequestBuilderGetQueryParameters struct {
     // Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`
     // What to sort results by.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // What to sort results by.
-    SortAsGetSortQueryParameterType *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetSortQueryParameterType `uriparametername:"sort"`
+    Sort *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetSortQueryParameterType `uriparametername:"sort"`
     // Indicates the state of the issues to return.
-    // Deprecated: This property is deprecated, use stateAsGetStateQueryParameterType instead
-    State *string `uriparametername:"state"`
-    // Indicates the state of the issues to return.
-    StateAsGetStateQueryParameterType *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetStateQueryParameterType `uriparametername:"state"`
-}
-// ItemItemIssuesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemIssuesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemIssuesRequestBuilderGetQueryParameters
-}
-// ItemItemIssuesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemIssuesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    State *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ByIssue_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemIssuesRequestBuilder) ByIssue_number(issue_number string)(*ItemItemIssuesWithIssue_numberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if issue_number != "" {
-        urlTplParams["issue_number"] = issue_number
-    }
-    return NewItemItemIssuesWithIssue_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByIssue_numberInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item collection
-func (m *ItemItemIssuesRequestBuilder) ByIssue_numberInteger(issue_number int32)(*ItemItemIssuesWithIssue_numberItemRequestBuilder) {
+func (m *ItemItemIssuesRequestBuilder) ByIssue_number(issue_number int32)(*ItemItemIssuesWithIssue_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -109,7 +72,7 @@ func (m *ItemItemIssuesRequestBuilder) Events()(*ItemItemIssuesEventsRequestBuil
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/issues#list-repository-issues
-func (m *ItemItemIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemIssuesRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
+func (m *ItemItemIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemIssuesRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -134,7 +97,7 @@ func (m *ItemItemIssuesRequestBuilder) Get(ctx context.Context, requestConfigura
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/issues#create-an-issue
-func (m *ItemItemIssuesRequestBuilder) Post(ctx context.Context, body ItemItemIssuesPostRequestBodyable, requestConfiguration *ItemItemIssuesRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
+func (m *ItemItemIssuesRequestBuilder) Post(ctx context.Context, body ItemItemIssuesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -157,25 +120,16 @@ func (m *ItemItemIssuesRequestBuilder) Post(ctx context.Context, body ItemItemIs
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable), nil
 }
 // ToGetRequestInformation list issues in a repository. Only open issues will be listed.**Note**: GitHub's REST API considers every pull request an issue, but not every issue is a pull request. For thisreason, "Issues" endpoints may return both issues and pull requests in the response. You can identify pull requests bythe `pull_request` key. Be aware that the `id` of a pull request returned from "Issues" endpoints will be an _issue id_. To find out the pullrequest id, use the "[List pull requests](https://docs.github.com/rest/pulls/pulls#list-pull-requests)" endpoint.
-func (m *ItemItemIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemIssuesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToPostRequestInformation any user with pull access to a repository can create an issue. If [issues are disabled in the repository](https://docs.github.com/articles/disabling-issues/), the API returns a `410 Gone` status.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see "[Rate limits for the API](https://docs.github.com/rest/overview/rate-limits-for-the-rest-api#about-secondary-rate-limits)"and "[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api)."
-func (m *ItemItemIssuesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemIssuesPostRequestBodyable, requestConfiguration *ItemItemIssuesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemIssuesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemIssuesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

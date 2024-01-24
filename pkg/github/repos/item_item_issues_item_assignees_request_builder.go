@@ -10,20 +10,6 @@ import (
 type ItemItemIssuesItemAssigneesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemIssuesItemAssigneesRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemIssuesItemAssigneesRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ItemItemIssuesItemAssigneesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemIssuesItemAssigneesRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ByAssignee gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item.assignees.item collection
 func (m *ItemItemIssuesItemAssigneesRequestBuilder) ByAssignee(assignee string)(*ItemItemIssuesItemAssigneesWithAssigneeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -52,7 +38,7 @@ func NewItemItemIssuesItemAssigneesRequestBuilder(rawUrl string, requestAdapter 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/assignees#remove-assignees-from-an-issue
-func (m *ItemItemIssuesItemAssigneesRequestBuilder) Delete(ctx context.Context, body ItemItemIssuesItemAssigneesDeleteRequestBodyable, requestConfiguration *ItemItemIssuesItemAssigneesRequestBuilderDeleteRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
+func (m *ItemItemIssuesItemAssigneesRequestBuilder) Delete(ctx context.Context, body ItemItemIssuesItemAssigneesDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -70,7 +56,7 @@ func (m *ItemItemIssuesItemAssigneesRequestBuilder) Delete(ctx context.Context, 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/assignees#add-assignees-to-an-issue
-func (m *ItemItemIssuesItemAssigneesRequestBuilder) Post(ctx context.Context, body ItemItemIssuesItemAssigneesPostRequestBodyable, requestConfiguration *ItemItemIssuesItemAssigneesRequestBuilderPostRequestConfiguration)(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
+func (m *ItemItemIssuesItemAssigneesRequestBuilder) Post(ctx context.Context, body ItemItemIssuesItemAssigneesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -85,12 +71,9 @@ func (m *ItemItemIssuesItemAssigneesRequestBuilder) Post(ctx context.Context, bo
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Issueable), nil
 }
 // ToDeleteRequestInformation removes one or more assignees from an issue.
-func (m *ItemItemIssuesItemAssigneesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ItemItemIssuesItemAssigneesDeleteRequestBodyable, requestConfiguration *ItemItemIssuesItemAssigneesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemIssuesItemAssigneesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ItemItemIssuesItemAssigneesDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
@@ -99,12 +82,9 @@ func (m *ItemItemIssuesItemAssigneesRequestBuilder) ToDeleteRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
-func (m *ItemItemIssuesItemAssigneesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemIssuesItemAssigneesPostRequestBodyable, requestConfiguration *ItemItemIssuesItemAssigneesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemIssuesItemAssigneesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemIssuesItemAssigneesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {

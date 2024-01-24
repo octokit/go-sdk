@@ -9,13 +9,6 @@ import (
 type ItemItemActionsWorkflowsItemEnableRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemActionsWorkflowsItemEnableRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsWorkflowsItemEnableRequestBuilderPutRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemActionsWorkflowsItemEnableRequestBuilderInternal instantiates a new EnableRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemEnableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemEnableRequestBuilder) {
     m := &ItemItemActionsWorkflowsItemEnableRequestBuilder{
@@ -33,7 +26,7 @@ func NewItemItemActionsWorkflowsItemEnableRequestBuilder(rawUrl string, requestA
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflows#enable-a-workflow
-func (m *ItemItemActionsWorkflowsItemEnableRequestBuilder) Put(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsItemEnableRequestBuilderPutRequestConfiguration)(error) {
+func (m *ItemItemActionsWorkflowsItemEnableRequestBuilder) Put(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return err
@@ -45,12 +38,9 @@ func (m *ItemItemActionsWorkflowsItemEnableRequestBuilder) Put(ctx context.Conte
     return nil
 }
 // ToPutRequestInformation enables a workflow and sets the `state` of the workflow to `active`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
-func (m *ItemItemActionsWorkflowsItemEnableRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsWorkflowsItemEnableRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsWorkflowsItemEnableRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

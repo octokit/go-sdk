@@ -18,29 +18,8 @@ type Repository_invitationsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// Repository_invitationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type Repository_invitationsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *Repository_invitationsRequestBuilderGetQueryParameters
-}
 // ByInvitation_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.repository_invitations.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *Repository_invitationsRequestBuilder) ByInvitation_id(invitation_id string)(*Repository_invitationsWithInvitation_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if invitation_id != "" {
-        urlTplParams["invitation_id"] = invitation_id
-    }
-    return NewRepository_invitationsWithInvitation_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByInvitation_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.user.repository_invitations.item collection
-func (m *Repository_invitationsRequestBuilder) ByInvitation_idInteger(invitation_id int32)(*Repository_invitationsWithInvitation_ItemRequestBuilder) {
+func (m *Repository_invitationsRequestBuilder) ByInvitation_id(invitation_id int32)(*Repository_invitationsWithInvitation_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
@@ -65,7 +44,7 @@ func NewRepository_invitationsRequestBuilder(rawUrl string, requestAdapter i2ae4
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/collaborators/invitations#list-repository-invitations-for-the-authenticated-user
-func (m *Repository_invitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *Repository_invitationsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryInvitationable, error) {
+func (m *Repository_invitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Repository_invitationsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryInvitationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -88,15 +67,9 @@ func (m *Repository_invitationsRequestBuilder) Get(ctx context.Context, requestC
     return val, nil
 }
 // ToGetRequestInformation when authenticating as a user, this endpoint will list all currently open repository invitations for that user.
-func (m *Repository_invitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Repository_invitationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *Repository_invitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Repository_invitationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

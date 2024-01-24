@@ -10,13 +10,6 @@ import (
 type ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderInternal instantiates a new WithArchive_formatItemRequestBuilder and sets the default values.
 func NewItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) {
     m := &ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder{
@@ -34,7 +27,7 @@ func NewItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder(rawUrl 
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/artifacts#download-an-artifact
-func (m *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderGetRequestConfiguration)([]byte, error) {
+func (m *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -52,12 +45,9 @@ func (m *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) Get(c
     return res.([]byte), nil
 }
 // ToGetRequestInformation gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` inthe response header to find the URL for the download. The `:archive_format` must be `zip`.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsArtifactsItemWithArchive_formatItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

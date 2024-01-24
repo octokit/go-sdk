@@ -10,19 +10,7 @@ type ItemItemActionsRunsItemAttemptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByAttempt_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item.attempts.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemActionsRunsItemAttemptsRequestBuilder) ByAttempt_number(attempt_number string)(*ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if attempt_number != "" {
-        urlTplParams["attempt_number"] = attempt_number
-    }
-    return NewItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByAttempt_numberInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item.attempts.item collection
-func (m *ItemItemActionsRunsItemAttemptsRequestBuilder) ByAttempt_numberInteger(attempt_number int32)(*ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) {
+func (m *ItemItemActionsRunsItemAttemptsRequestBuilder) ByAttempt_number(attempt_number int32)(*ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

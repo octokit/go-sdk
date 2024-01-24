@@ -16,15 +16,6 @@ type ItemItemActionsOrganizationVariablesRequestBuilderGetQueryParameters struct
     // The number of results per page (max 30). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemActionsOrganizationVariablesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsOrganizationVariablesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsOrganizationVariablesRequestBuilderGetQueryParameters
-}
 // NewItemItemActionsOrganizationVariablesRequestBuilderInternal instantiates a new OrganizationVariablesRequestBuilder and sets the default values.
 func NewItemItemActionsOrganizationVariablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsOrganizationVariablesRequestBuilder) {
     m := &ItemItemActionsOrganizationVariablesRequestBuilder{
@@ -39,29 +30,10 @@ func NewItemItemActionsOrganizationVariablesRequestBuilder(rawUrl string, reques
     return NewItemItemActionsOrganizationVariablesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all organiation variables shared with a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
-// Deprecated: This method is obsolete. Use GetAsOrganizationVariablesGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#list-repository-organization-variables
-func (m *ItemItemActionsOrganizationVariablesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsOrganizationVariablesRequestBuilderGetRequestConfiguration)(ItemItemActionsOrganizationVariablesResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsOrganizationVariablesResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsOrganizationVariablesResponseable), nil
-}
-// GetAsOrganizationVariablesGetResponse lists all organiation variables shared with a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/variables#list-repository-organization-variables
-func (m *ItemItemActionsOrganizationVariablesRequestBuilder) GetAsOrganizationVariablesGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsOrganizationVariablesRequestBuilderGetRequestConfiguration)(ItemItemActionsOrganizationVariablesGetResponseable, error) {
+func (m *ItemItemActionsOrganizationVariablesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsOrganizationVariablesRequestBuilderGetQueryParameters])(ItemItemActionsOrganizationVariablesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -76,15 +48,9 @@ func (m *ItemItemActionsOrganizationVariablesRequestBuilder) GetAsOrganizationVa
     return res.(ItemItemActionsOrganizationVariablesGetResponseable), nil
 }
 // ToGetRequestInformation lists all organiation variables shared with a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
-func (m *ItemItemActionsOrganizationVariablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsOrganizationVariablesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsOrganizationVariablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsOrganizationVariablesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

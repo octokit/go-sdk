@@ -18,15 +18,6 @@ type ItemItemStargazersRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemStargazersRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemStargazersRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemStargazersRequestBuilderGetQueryParameters
-}
 // StargazersGetResponse composed type wrapper for classes ItemItemStargazersSimpleUser, ItemItemStargazersStargazer
 type StargazersGetResponse struct {
     // Composed type representation for type ItemItemStargazersSimpleUser
@@ -121,110 +112,8 @@ func (m *StargazersGetResponse) SetItemItemStargazersSimpleUser(value []ItemItem
 func (m *StargazersGetResponse) SetItemItemStargazersStargazer(value []ItemItemStargazersStargazerable)() {
     m.itemItemStargazersStargazer = value
 }
-// StargazersResponse composed type wrapper for classes ItemItemStargazersSimpleUser, ItemItemStargazersStargazer
-type StargazersResponse struct {
-    // Composed type representation for type ItemItemStargazersSimpleUser
-    itemItemStargazersSimpleUser []ItemItemStargazersSimpleUserable
-    // Composed type representation for type ItemItemStargazersStargazer
-    itemItemStargazersStargazer []ItemItemStargazersStargazerable
-}
-// NewStargazersResponse instantiates a new stargazersResponse and sets the default values.
-func NewStargazersResponse()(*StargazersResponse) {
-    m := &StargazersResponse{
-    }
-    return m
-}
-// CreateStargazersResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateStargazersResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    result := NewStargazersResponse()
-    if parseNode != nil {
-        if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemStargazersSimpleUserFromDiscriminatorValue); val != nil {
-            if err != nil {
-                return nil, err
-            }
-            cast := make([]ItemItemStargazersSimpleUserable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    cast[i] = v.(ItemItemStargazersSimpleUserable)
-                }
-            }
-            result.SetItemItemStargazersSimpleUser(cast)
-        } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemStargazersStargazerFromDiscriminatorValue); val != nil {
-            if err != nil {
-                return nil, err
-            }
-            cast := make([]ItemItemStargazersStargazerable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    cast[i] = v.(ItemItemStargazersStargazerable)
-                }
-            }
-            result.SetItemItemStargazersStargazer(cast)
-        }
-    }
-    return result, nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *StargazersResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-}
-// GetIsComposedType determines if the current object is a wrapper around a composed type
-func (m *StargazersResponse) GetIsComposedType()(bool) {
-    return true
-}
-// GetItemItemStargazersSimpleUser gets the ItemItemStargazersSimpleUser property value. Composed type representation for type ItemItemStargazersSimpleUser
-func (m *StargazersResponse) GetItemItemStargazersSimpleUser()([]ItemItemStargazersSimpleUserable) {
-    return m.itemItemStargazersSimpleUser
-}
-// GetItemItemStargazersStargazer gets the ItemItemStargazersStargazer property value. Composed type representation for type ItemItemStargazersStargazer
-func (m *StargazersResponse) GetItemItemStargazersStargazer()([]ItemItemStargazersStargazerable) {
-    return m.itemItemStargazersStargazer
-}
-// Serialize serializes information the current object
-func (m *StargazersResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetItemItemStargazersSimpleUser() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemItemStargazersSimpleUser()))
-        for i, v := range m.GetItemItemStargazersSimpleUser() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("", cast)
-        if err != nil {
-            return err
-        }
-    } else if m.GetItemItemStargazersStargazer() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItemItemStargazersStargazer()))
-        for i, v := range m.GetItemItemStargazersStargazer() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetItemItemStargazersSimpleUser sets the ItemItemStargazersSimpleUser property value. Composed type representation for type ItemItemStargazersSimpleUser
-func (m *StargazersResponse) SetItemItemStargazersSimpleUser(value []ItemItemStargazersSimpleUserable)() {
-    m.itemItemStargazersSimpleUser = value
-}
-// SetItemItemStargazersStargazer sets the ItemItemStargazersStargazer property value. Composed type representation for type ItemItemStargazersStargazer
-func (m *StargazersResponse) SetItemItemStargazersStargazer(value []ItemItemStargazersStargazerable)() {
-    m.itemItemStargazersStargazer = value
-}
 // StargazersGetResponseable 
 type StargazersGetResponseable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetItemItemStargazersSimpleUser()([]ItemItemStargazersSimpleUserable)
-    GetItemItemStargazersStargazer()([]ItemItemStargazersStargazerable)
-    SetItemItemStargazersSimpleUser(value []ItemItemStargazersSimpleUserable)()
-    SetItemItemStargazersStargazer(value []ItemItemStargazersStargazerable)()
-}
-// StargazersResponseable 
-type StargazersResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemStargazersSimpleUser()([]ItemItemStargazersSimpleUserable)
     GetItemItemStargazersStargazer()([]ItemItemStargazersStargazerable)
@@ -245,32 +134,10 @@ func NewItemItemStargazersRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewItemItemStargazersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the people that have starred the repository.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
-// Deprecated: This method is obsolete. Use GetAsStargazersGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/starring#list-stargazers
-func (m *ItemItemStargazersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemStargazersRequestBuilderGetRequestConfiguration)(StargazersResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateStargazersResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(StargazersResponseable), nil
-}
-// GetAsStargazersGetResponse lists the people that have starred the repository.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/activity/starring#list-stargazers
-func (m *ItemItemStargazersRequestBuilder) GetAsStargazersGetResponse(ctx context.Context, requestConfiguration *ItemItemStargazersRequestBuilderGetRequestConfiguration)(StargazersGetResponseable, error) {
+func (m *ItemItemStargazersRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemStargazersRequestBuilderGetQueryParameters])(StargazersGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -288,15 +155,9 @@ func (m *ItemItemStargazersRequestBuilder) GetAsStargazersGetResponse(ctx contex
     return res.(StargazersGetResponseable), nil
 }
 // ToGetRequestInformation lists the people that have starred the repository.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
-func (m *ItemItemStargazersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemStargazersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemStargazersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemStargazersRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -9,13 +9,6 @@ import (
 type ItemItemWithEnablementItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemWithEnablementItemRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemWithEnablementItemRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemItemWithEnablementItemRequestBuilderInternal instantiates a new WithEnablementItemRequestBuilder and sets the default values.
 func NewItemItemWithEnablementItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemWithEnablementItemRequestBuilder) {
     m := &ItemItemWithEnablementItemRequestBuilder{
@@ -33,7 +26,7 @@ func NewItemItemWithEnablementItemRequestBuilder(rawUrl string, requestAdapter i
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization
-func (m *ItemItemWithEnablementItemRequestBuilder) Post(ctx context.Context, body ItemItemItemWithEnablementPostRequestBodyable, requestConfiguration *ItemItemWithEnablementItemRequestBuilderPostRequestConfiguration)(error) {
+func (m *ItemItemWithEnablementItemRequestBuilder) Post(ctx context.Context, body ItemItemItemWithEnablementPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -45,12 +38,9 @@ func (m *ItemItemWithEnablementItemRequestBuilder) Post(ctx context.Context, bod
     return nil
 }
 // ToPostRequestInformation enables or disables the specified security feature for all eligible repositories in an organization.To use this endpoint, you must be an organization owner or be member of a team with the security manager role.A token with the 'write:org' scope is also required.GitHub Apps must have the `organization_administration:write` permission to use this endpoint.For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
-func (m *ItemItemWithEnablementItemRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemItemWithEnablementPostRequestBodyable, requestConfiguration *ItemItemWithEnablementItemRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemWithEnablementItemRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemItemWithEnablementPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
     if err != nil {
         return nil, err

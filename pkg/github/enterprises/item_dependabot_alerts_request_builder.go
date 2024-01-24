@@ -18,10 +18,7 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Before *string `uriparametername:"before"`
     // The direction to sort the results by.
-    // Deprecated: This property is deprecated, use directionAsGetDirectionQueryParameterType instead
-    Direction *string `uriparametername:"direction"`
-    // The direction to sort the results by.
-    DirectionAsGetDirectionQueryParameterType *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetDirectionQueryParameterType `uriparametername:"direction"`
+    Direction *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetDirectionQueryParameterType `uriparametername:"direction"`
     // A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned.Can be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`
     Ecosystem *string `uriparametername:"ecosystem"`
     // **Deprecated**. The number of results per page (max 100), starting from the first matching result.This parameter must not be used in combination with `last`.Instead, use `per_page` in combination with `after` to fetch the first page of results.
@@ -33,28 +30,13 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
-    // Deprecated: This property is deprecated, use scopeAsGetScopeQueryParameterType instead
-    Scope *string `uriparametername:"scope"`
-    // The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned.
-    ScopeAsGetScopeQueryParameterType *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetScopeQueryParameterType `uriparametername:"scope"`
+    Scope *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetScopeQueryParameterType `uriparametername:"scope"`
     // A comma-separated list of severities. If specified, only alerts with these severities will be returned.Can be: `low`, `medium`, `high`, `critical`
     Severity *string `uriparametername:"severity"`
     // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.
-    // Deprecated: This property is deprecated, use sortAsGetSortQueryParameterType instead
-    Sort *string `uriparametername:"sort"`
-    // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.
-    SortAsGetSortQueryParameterType *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetSortQueryParameterType `uriparametername:"sort"`
+    Sort *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetSortQueryParameterType `uriparametername:"sort"`
     // A comma-separated list of states. If specified, only alerts with these states will be returned.Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
     State *string `uriparametername:"state"`
-}
-// ItemDependabotAlertsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemDependabotAlertsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemDependabotAlertsRequestBuilderGetQueryParameters
 }
 // NewItemDependabotAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
 func NewItemDependabotAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDependabotAlertsRequestBuilder) {
@@ -73,7 +55,7 @@ func NewItemDependabotAlertsRequestBuilder(rawUrl string, requestAdapter i2ae418
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-enterprise
-func (m *ItemDependabotAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDependabotAlertsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DependabotAlertWithRepositoryable, error) {
+func (m *ItemDependabotAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemDependabotAlertsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DependabotAlertWithRepositoryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -96,15 +78,9 @@ func (m *ItemDependabotAlertsRequestBuilder) Get(ctx context.Context, requestCon
     return val, nil
 }
 // ToGetRequestInformation lists Dependabot alerts for repositories that are owned by the specified enterprise.To use this endpoint, you must be a member of the enterprise, and you must use anaccess token with the `repo` scope or `security_events` scope.Alerts are only returned for organizations in the enterprise for which you are an organization owner or a security manager. For more information about security managers, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
-func (m *ItemDependabotAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDependabotAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemDependabotAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemDependabotAlertsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

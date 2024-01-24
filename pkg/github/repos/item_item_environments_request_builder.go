@@ -16,15 +16,6 @@ type ItemItemEnvironmentsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemEnvironmentsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemEnvironmentsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemEnvironmentsRequestBuilderGetQueryParameters
-}
 // ByEnvironment_name gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item collection
 func (m *ItemItemEnvironmentsRequestBuilder) ByEnvironment_name(environment_name string)(*ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -50,29 +41,10 @@ func NewItemItemEnvironmentsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemItemEnvironmentsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the environments for a repository.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsEnvironmentsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/environments#list-environments
-func (m *ItemItemEnvironmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemEnvironmentsRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemEnvironmentsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemEnvironmentsResponseable), nil
-}
-// GetAsEnvironmentsGetResponse lists the environments for a repository.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/deployments/environments#list-environments
-func (m *ItemItemEnvironmentsRequestBuilder) GetAsEnvironmentsGetResponse(ctx context.Context, requestConfiguration *ItemItemEnvironmentsRequestBuilderGetRequestConfiguration)(ItemItemEnvironmentsGetResponseable, error) {
+func (m *ItemItemEnvironmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemEnvironmentsRequestBuilderGetQueryParameters])(ItemItemEnvironmentsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,15 +59,9 @@ func (m *ItemItemEnvironmentsRequestBuilder) GetAsEnvironmentsGetResponse(ctx co
     return res.(ItemItemEnvironmentsGetResponseable), nil
 }
 // ToGetRequestInformation lists the environments for a repository.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemEnvironmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemEnvironmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemEnvironmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemEnvironmentsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

@@ -10,13 +10,6 @@ import (
 type ItemHooksItemDeliveriesItemAttemptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHooksItemDeliveriesItemAttemptsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemHooksItemDeliveriesItemAttemptsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewItemHooksItemDeliveriesItemAttemptsRequestBuilderInternal instantiates a new AttemptsRequestBuilder and sets the default values.
 func NewItemHooksItemDeliveriesItemAttemptsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHooksItemDeliveriesItemAttemptsRequestBuilder) {
     m := &ItemHooksItemDeliveriesItemAttemptsRequestBuilder{
@@ -31,33 +24,10 @@ func NewItemHooksItemDeliveriesItemAttemptsRequestBuilder(rawUrl string, request
     return NewItemHooksItemDeliveriesItemAttemptsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post redeliver a delivery for a webhook configured in an organization.
-// Deprecated: This method is obsolete. Use PostAsAttemptsPostResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/webhooks#redeliver-a-delivery-for-an-organization-webhook
-func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemHooksItemDeliveriesItemAttemptsRequestBuilderPostRequestConfiguration)(ItemHooksItemDeliveriesItemAttemptsResponseable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "400": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemHooksItemDeliveriesItemAttemptsResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemHooksItemDeliveriesItemAttemptsResponseable), nil
-}
-// PostAsAttemptsPostResponse redeliver a delivery for a webhook configured in an organization.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/orgs/webhooks#redeliver-a-delivery-for-an-organization-webhook
-func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) PostAsAttemptsPostResponse(ctx context.Context, requestConfiguration *ItemHooksItemDeliveriesItemAttemptsRequestBuilderPostRequestConfiguration)(ItemHooksItemDeliveriesItemAttemptsPostResponseable, error) {
+func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) Post(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(ItemHooksItemDeliveriesItemAttemptsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -76,12 +46,9 @@ func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) PostAsAttemptsPostRe
     return res.(ItemHooksItemDeliveriesItemAttemptsPostResponseable), nil
 }
 // ToPostRequestInformation redeliver a delivery for a webhook configured in an organization.
-func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemHooksItemDeliveriesItemAttemptsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemHooksItemDeliveriesItemAttemptsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

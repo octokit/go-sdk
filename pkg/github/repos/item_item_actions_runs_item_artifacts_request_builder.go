@@ -18,15 +18,6 @@ type ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ItemItemActionsRunsItemArtifactsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemActionsRunsItemArtifactsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters
-}
 // NewItemItemActionsRunsItemArtifactsRequestBuilderInternal instantiates a new ArtifactsRequestBuilder and sets the default values.
 func NewItemItemActionsRunsItemArtifactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsItemArtifactsRequestBuilder) {
     m := &ItemItemActionsRunsItemArtifactsRequestBuilder{
@@ -41,29 +32,10 @@ func NewItemItemActionsRunsItemArtifactsRequestBuilder(rawUrl string, requestAda
     return NewItemItemActionsRunsItemArtifactsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// Deprecated: This method is obsolete. Use GetAsArtifactsGetResponse instead.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/artifacts#list-workflow-run-artifacts
-func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemActionsRunsItemArtifactsRequestBuilderGetRequestConfiguration)(ItemItemActionsRunsItemArtifactsResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, CreateItemItemActionsRunsItemArtifactsResponseFromDiscriminatorValue, nil)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ItemItemActionsRunsItemArtifactsResponseable), nil
-}
-// GetAsArtifactsGetResponse lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-// [API method documentation]
-// 
-// [API method documentation]: https://docs.github.com/rest/actions/artifacts#list-workflow-run-artifacts
-func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) GetAsArtifactsGetResponse(ctx context.Context, requestConfiguration *ItemItemActionsRunsItemArtifactsRequestBuilderGetRequestConfiguration)(ItemItemActionsRunsItemArtifactsGetResponseable, error) {
+func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters])(ItemItemActionsRunsItemArtifactsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -78,15 +50,9 @@ func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) GetAsArtifactsGetRespon
     return res.(ItemItemActionsRunsItemArtifactsGetResponseable), nil
 }
 // ToGetRequestInformation lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemActionsRunsItemArtifactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }

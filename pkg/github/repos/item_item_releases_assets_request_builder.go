@@ -10,19 +10,7 @@ type ItemItemReleasesAssetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByAsset_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.releases.assets.item collection
-// Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
-func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_id(asset_id string)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if asset_id != "" {
-        urlTplParams["asset_id"] = asset_id
-    }
-    return NewItemItemReleasesAssetsWithAsset_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
-// ByAsset_idInteger gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.releases.assets.item collection
-func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_idInteger(asset_id int32)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
+func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_id(asset_id int32)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item

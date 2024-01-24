@@ -14,28 +14,13 @@ type ItemItemCollaboratorsRequestBuilder struct {
 // ItemItemCollaboratorsRequestBuilderGetQueryParameters for organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.Organization members with write, maintain, or admin privileges on the organization-owned repository can use this endpoint.Team members will include the members of child teams.You must authenticate using an access token with the `read:org` and `repo` scopes with push access to use thisendpoint. GitHub Apps must have the `members` organization permission and `metadata` repository permission to use thisendpoint.
 type ItemItemCollaboratorsRequestBuilderGetQueryParameters struct {
     // Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
-    // Deprecated: This property is deprecated, use affiliationAsGetAffiliationQueryParameterType instead
-    Affiliation *string `uriparametername:"affiliation"`
-    // Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
-    AffiliationAsGetAffiliationQueryParameterType *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetAffiliationQueryParameterType `uriparametername:"affiliation"`
+    Affiliation *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetAffiliationQueryParameterType `uriparametername:"affiliation"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
     // Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.
-    // Deprecated: This property is deprecated, use permissionAsGetPermissionQueryParameterType instead
-    Permission *string `uriparametername:"permission"`
-    // Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.
-    PermissionAsGetPermissionQueryParameterType *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetPermissionQueryParameterType `uriparametername:"permission"`
-}
-// ItemItemCollaboratorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemItemCollaboratorsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemItemCollaboratorsRequestBuilderGetQueryParameters
+    Permission *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetPermissionQueryParameterType `uriparametername:"permission"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.collaborators.item collection
 func (m *ItemItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemItemCollaboratorsWithUsernameItemRequestBuilder) {
@@ -65,7 +50,7 @@ func NewItemItemCollaboratorsRequestBuilder(rawUrl string, requestAdapter i2ae41
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/collaborators/collaborators#list-repository-collaborators
-func (m *ItemItemCollaboratorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemCollaboratorsRequestBuilderGetRequestConfiguration)([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Collaboratorable, error) {
+func (m *ItemItemCollaboratorsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCollaboratorsRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Collaboratorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -86,15 +71,9 @@ func (m *ItemItemCollaboratorsRequestBuilder) Get(ctx context.Context, requestCo
     return val, nil
 }
 // ToGetRequestInformation for organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.Organization members with write, maintain, or admin privileges on the organization-owned repository can use this endpoint.Team members will include the members of child teams.You must authenticate using an access token with the `read:org` and `repo` scopes with push access to use thisendpoint. GitHub Apps must have the `members` organization permission and `metadata` repository permission to use thisendpoint.
-func (m *ItemItemCollaboratorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemCollaboratorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemItemCollaboratorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCollaboratorsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
