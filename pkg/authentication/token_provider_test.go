@@ -167,15 +167,20 @@ func TestHappyPathIntegration(t *testing.T) {
 	_ = headers.TryAdd("Accept", "application/vnd.github.v3+json")
 
 	client := github.NewApiClient(adapter)
-	emailsRequestConfig := &user.EmailsRequestBuilderGetRequestConfiguration{
-		Headers: headers,
+
+	// Create a new instance of abstractions.RequestConfiguration
+	requestConfig := &abstractions.RequestConfiguration[user.EmailsRequestBuilderGetQueryParameters]{
+	Headers: headers,
 	}
-	userEmails, err := client.User().Emails().Get(context.Background(), emailsRequestConfig)
+
+
+
+	userEmails, err := client.User().Emails().Get(context.Background(), requestConfig)
 	if err != nil {
-		log.Fatalf("%v\n", err)
+	log.Fatalf("%v\n", err)
 	}
 
 	for _, v := range userEmails {
-		fmt.Printf("%v\n", *v.GetEmail())
+	fmt.Printf("%v\n", *v.GetEmail())
 	}
 }

@@ -33,12 +33,13 @@ func ExampleUnauthenticatedRequest() {
 	headers := abstractions.NewRequestHeaders()
 	_ = headers.TryAdd("Accept", "application/vnd.github.v3+json")
 
-	octocatRequestConfig := &octocat.OctocatRequestBuilderGetRequestConfiguration{
-		QueryParameters: &octocat.OctocatRequestBuilderGetQueryParameters{
+	octocatRequestConfig := &abstractions.RequestConfiguration[octocat.OctocatRequestBuilderGetQueryParameters]{
+		QueryParameters: &octocat.OctocatRequestBuilderGetQueryParameters {
 			S: &s,
 		},
 		Headers: headers,
 	}
+
 	cat, err := client.Octocat().Get(context.Background(), octocatRequestConfig)
 	if err != nil {
 		log.Fatalf("error getting octocat: %v", err)
