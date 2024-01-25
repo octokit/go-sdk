@@ -11,7 +11,7 @@ import (
 type ItemStarredRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemStarredRequestBuilderGetQueryParameters lists repositories a user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+// ItemStarredRequestBuilderGetQueryParameters lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 type ItemStarredRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
     Direction *i79bee196f908e2ec3c0a95608a335c04823e48e52984cbf48aa57b354fe8088c.GetDirectionQueryParameterType `uriparametername:"direction"`
@@ -137,7 +137,7 @@ func NewItemStarredRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemStarredRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists repositories a user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+// Get lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/starring#list-repositories-starred-by-a-user
@@ -155,7 +155,7 @@ func (m *ItemStarredRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(StarredGetResponseable), nil
 }
-// ToGetRequestInformation lists repositories a user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+// ToGetRequestInformation lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
 func (m *ItemStarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemStarredRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

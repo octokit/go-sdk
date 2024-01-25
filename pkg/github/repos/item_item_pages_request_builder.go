@@ -47,9 +47,9 @@ func (m *ItemItemPagesRequestBuilder) Delete(ctx context.Context, requestConfigu
     }
     return nil
 }
-// Deployment the deployment property
-func (m *ItemItemPagesRequestBuilder) Deployment()(*ItemItemPagesDeploymentRequestBuilder) {
-    return NewItemItemPagesDeploymentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// Deployments the deployments property
+func (m *ItemItemPagesRequestBuilder) Deployments()(*ItemItemPagesDeploymentsRequestBuilder) {
+    return NewItemItemPagesDeploymentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get gets information about a GitHub Pages site.A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
 // [API method documentation]
