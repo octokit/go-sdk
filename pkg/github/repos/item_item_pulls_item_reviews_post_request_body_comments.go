@@ -14,7 +14,7 @@ type ItemItemPullsItemReviewsPostRequestBody_comments struct {
     line *int32
     // The relative path to the file that necessitates a review comment.
     path *string
-    // The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+    // The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
     position *int32
     // The side property
     side *string
@@ -125,7 +125,7 @@ func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetLine()(*int32) {
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetPath()(*string) {
     return m.path
 }
-// GetPosition gets the position property value. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+// GetPosition gets the position property value. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetPosition()(*int32) {
     return m.position
 }
@@ -209,7 +209,7 @@ func (m *ItemItemPullsItemReviewsPostRequestBody_comments) SetLine(value *int32)
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) SetPath(value *string)() {
     m.path = value
 }
-// SetPosition sets the position property value. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+// SetPosition sets the position property value. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) SetPosition(value *int32)() {
     m.position = value
 }
