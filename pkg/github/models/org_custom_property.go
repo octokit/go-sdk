@@ -8,7 +8,7 @@ import (
 type OrgCustomProperty struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Ordered list of allowed values of the property
+    // An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
     allowed_values []string
     // Default value of the property
     default_value *string
@@ -38,7 +38,7 @@ func CreateOrgCustomPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d268
 func (m *OrgCustomProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAllowedValues gets the allowed_values property value. Ordered list of allowed values of the property
+// GetAllowedValues gets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
 func (m *OrgCustomProperty) GetAllowedValues()([]string) {
     return m.allowed_values
 }
@@ -205,7 +205,7 @@ func (m *OrgCustomProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 func (m *OrgCustomProperty) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAllowedValues sets the allowed_values property value. Ordered list of allowed values of the property
+// SetAllowedValues sets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
 func (m *OrgCustomProperty) SetAllowedValues(value []string)() {
     m.allowed_values = value
 }
