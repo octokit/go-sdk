@@ -8,7 +8,7 @@ import (
 type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Ordered list of allowed values of the property
+    // An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
     allowed_values []string
     // Default value of the property
     default_value *string
@@ -32,7 +32,7 @@ func CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyFromDis
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAllowedValues gets the allowed_values property value. Ordered list of allowed values of the property
+// GetAllowedValues gets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetAllowedValues()([]string) {
     return m.allowed_values
 }
@@ -137,7 +137,7 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) Seriali
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAllowedValues sets the allowed_values property value. Ordered list of allowed values of the property
+// SetAllowedValues sets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetAllowedValues(value []string)() {
     m.allowed_values = value
 }
