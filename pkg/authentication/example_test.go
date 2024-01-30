@@ -12,7 +12,9 @@ import (
 	"github.com/octokit/go-sdk/pkg/github/octocat"
 )
 
-func ExampleUnauthenticatedRequest() {
+// ExampleApiClient_Octocat shows how to initialize an unauthenticated client
+// and make a simple API request.
+func ExampleApiClient_Octocat() {
 	tokenProvider := auth.NewTokenProvider(
 		// to create an authenticated provider, uncomment the below line and pass in your token
 		// auth.WithAuthorizationToken("ghp_your_token"),
@@ -25,16 +27,15 @@ func ExampleUnauthenticatedRequest() {
 
 	client := github.NewApiClient(adapter)
 
-	// unauthenticated request
 	s := "Salutations"
 
-	// create headers that accept json back; our spec says octet-stream
-	// but that's not actually what the API returns in this case
+	// create headers that accept json back; GitHub's OpenAPI definition says
+	// octet-stream but that's not actually what the API returns in this case
 	headers := abstractions.NewRequestHeaders()
 	_ = headers.TryAdd("Accept", "application/vnd.github.v3+json")
 
 	octocatRequestConfig := &abstractions.RequestConfiguration[octocat.OctocatRequestBuilderGetQueryParameters]{
-		QueryParameters: &octocat.OctocatRequestBuilderGetQueryParameters {
+		QueryParameters: &octocat.OctocatRequestBuilderGetQueryParameters{
 			S: &s,
 		},
 		Headers: headers,
@@ -67,5 +68,4 @@ func ExampleUnauthenticatedRequest() {
 	//             ~~~~~~==~==~~~==~==~~~~~~
 	//              ~~~~~~==~==~==~==~~~~~~
 	//                  :~==~==~==~==~~
-
 }
