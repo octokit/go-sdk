@@ -3,92 +3,12 @@ package orgs
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
 // WithOrgItemRequestBuilder builds and executes requests for operations under \orgs\{org}
 type WithOrgItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
-}
-// OrganizationFull422Error composed type wrapper for classes validationError, validationErrorSimple
-type OrganizationFull422Error struct {
-    // Composed type representation for type validationError
-    validationError i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorable
-    // Composed type representation for type validationErrorSimple
-    validationErrorSimple i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorSimpleable
-}
-// NewOrganizationFull422Error instantiates a new organizationFull422Error and sets the default values.
-func NewOrganizationFull422Error()(*OrganizationFull422Error) {
-    m := &OrganizationFull422Error{
-    }
-    return m
-}
-// CreateOrganizationFull422ErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-func CreateOrganizationFull422ErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    result := NewOrganizationFull422Error()
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-            }
-        }
-    }
-    return result, nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-func (m *OrganizationFull422Error) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-}
-// GetIsComposedType determines if the current object is a wrapper around a composed type
-func (m *OrganizationFull422Error) GetIsComposedType()(bool) {
-    return true
-}
-// GetValidationError gets the validationError property value. Composed type representation for type validationError
-func (m *OrganizationFull422Error) GetValidationError()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorable) {
-    return m.validationError
-}
-// GetValidationErrorSimple gets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *OrganizationFull422Error) GetValidationErrorSimple()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorSimpleable) {
-    return m.validationErrorSimple
-}
-// Serialize serializes information the current object
-func (m *OrganizationFull422Error) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetValidationError() != nil {
-        err := writer.WriteObjectValue("", m.GetValidationError())
-        if err != nil {
-            return err
-        }
-    } else if m.GetValidationErrorSimple() != nil {
-        err := writer.WriteObjectValue("", m.GetValidationErrorSimple())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetValidationError sets the validationError property value. Composed type representation for type validationError
-func (m *OrganizationFull422Error) SetValidationError(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorable)() {
-    m.validationError = value
-}
-// SetValidationErrorSimple sets the validationErrorSimple property value. Composed type representation for type validationErrorSimple
-func (m *OrganizationFull422Error) SetValidationErrorSimple(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorSimpleable)() {
-    m.validationErrorSimple = value
-}
-// OrganizationFull422Errorable 
-type OrganizationFull422Errorable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValidationError()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorable)
-    GetValidationErrorSimple()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorSimpleable)
-    SetValidationError(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorable)()
-    SetValidationErrorSimple(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ValidationErrorSimpleable)()
 }
 // Actions the actions property
 func (m *WithOrgItemRequestBuilder) Actions()(*ItemActionsRequestBuilder) {
@@ -256,7 +176,6 @@ func (m *WithOrgItemRequestBuilder) Patch(ctx context.Context, body ItemWithOrgP
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "409": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "422": CreateOrganizationFull422ErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateOrganizationFullFromDiscriminatorValue, errorMapping)
     if err != nil {
