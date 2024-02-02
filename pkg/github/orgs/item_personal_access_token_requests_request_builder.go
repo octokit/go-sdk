@@ -46,7 +46,7 @@ func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ByPat_request_id(pat_req
 // NewItemPersonalAccessTokenRequestsRequestBuilderInternal instantiates a new PersonalAccessTokenRequestsRequestBuilder and sets the default values.
 func NewItemPersonalAccessTokenRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPersonalAccessTokenRequestsRequestBuilder) {
     m := &ItemPersonalAccessTokenRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?per_page*,page*,sort*,direction*,owner*,repository*,permission*,last_used_before*,last_used_after*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,permission*,per_page*,repository*,sort*}", pathParameters),
     }
     return m
 }

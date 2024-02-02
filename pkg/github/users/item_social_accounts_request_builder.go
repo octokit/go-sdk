@@ -20,7 +20,7 @@ type ItemSocial_accountsRequestBuilderGetQueryParameters struct {
 // NewItemSocial_accountsRequestBuilderInternal instantiates a new Social_accountsRequestBuilder and sets the default values.
 func NewItemSocial_accountsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSocial_accountsRequestBuilder) {
     m := &ItemSocial_accountsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/social_accounts{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/social_accounts{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -36,7 +36,7 @@ func (m *StarredRequestBuilder) ByOwner(owner string)(*StarredWithOwnerItemReque
 // NewStarredRequestBuilderInternal instantiates a new StarredRequestBuilder and sets the default values.
 func NewStarredRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*StarredRequestBuilder) {
     m := &StarredRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/starred{?sort*,direction*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/starred{?direction*,page*,per_page*,sort*}", pathParameters),
     }
     return m
 }

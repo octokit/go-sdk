@@ -21,7 +21,7 @@ type TopicsRequestBuilderGetQueryParameters struct {
 // NewTopicsRequestBuilderInternal instantiates a new TopicsRequestBuilder and sets the default values.
 func NewTopicsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TopicsRequestBuilder) {
     m := &TopicsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/topics{?q*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/search/topics?q={q}{&page*,per_page*}", pathParameters),
     }
     return m
 }

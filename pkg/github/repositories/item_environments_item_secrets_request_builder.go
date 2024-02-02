@@ -30,7 +30,7 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) BySecret_name(secret_name st
 // NewItemEnvironmentsItemSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemSecretsRequestBuilder) {
     m := &ItemEnvironmentsItemSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/secrets{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

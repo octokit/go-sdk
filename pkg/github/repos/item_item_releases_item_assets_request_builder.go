@@ -27,7 +27,7 @@ type ItemItemReleasesItemAssetsRequestBuilderPostQueryParameters struct {
 // NewItemItemReleasesItemAssetsRequestBuilderInternal instantiates a new AssetsRequestBuilder and sets the default values.
 func NewItemItemReleasesItemAssetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemReleasesItemAssetsRequestBuilder) {
     m := &ItemItemReleasesItemAssetsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/{release_id}/assets{?per_page*,page*,name*,label*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/{release_id}/assets?name={name}{&label*,page*,per_page*}", pathParameters),
     }
     return m
 }

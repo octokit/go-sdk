@@ -20,7 +20,7 @@ type ItemEventsOrgsWithOrgItemRequestBuilderGetQueryParameters struct {
 // NewItemEventsOrgsWithOrgItemRequestBuilderInternal instantiates a new WithOrgItemRequestBuilder and sets the default values.
 func NewItemEventsOrgsWithOrgItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEventsOrgsWithOrgItemRequestBuilder) {
     m := &ItemEventsOrgsWithOrgItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/events/orgs/{org}{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/events/orgs/{org}{?page*,per_page*}", pathParameters),
     }
     return m
 }

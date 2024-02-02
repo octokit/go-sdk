@@ -33,7 +33,7 @@ func (m *LicensesRequestBuilder) ByLicense(license string)(*WithLicenseItemReque
 // NewLicensesRequestBuilderInternal instantiates a new LicensesRequestBuilder and sets the default values.
 func NewLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LicensesRequestBuilder) {
     m := &LicensesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/licenses{?featured*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", pathParameters),
     }
     return m
 }

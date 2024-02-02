@@ -30,7 +30,7 @@ func (m *CodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(*Cod
 // NewCodespacesSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
 func NewCodespacesSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CodespacesSecretsRequestBuilder) {
     m := &CodespacesSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/codespaces/secrets{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/codespaces/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

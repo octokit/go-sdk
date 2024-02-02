@@ -30,7 +30,7 @@ func (m *ItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(
 // NewItemCodespacesSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
 func NewItemCodespacesSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCodespacesSecretsRequestBuilder) {
     m := &ItemCodespacesSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/secrets{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

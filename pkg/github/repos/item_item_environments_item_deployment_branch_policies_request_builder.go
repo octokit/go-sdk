@@ -30,7 +30,7 @@ func (m *ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) ByBranc
 // NewItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderInternal instantiates a new DeploymentBranchPoliciesRequestBuilder and sets the default values.
 func NewItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder) {
     m := &ItemItemEnvironmentsItemDeploymentBranchPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment-branch-policies{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment-branch-policies{?page*,per_page*}", pathParameters),
     }
     return m
 }

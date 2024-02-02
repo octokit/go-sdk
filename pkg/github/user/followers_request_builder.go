@@ -20,7 +20,7 @@ type FollowersRequestBuilderGetQueryParameters struct {
 // NewFollowersRequestBuilderInternal instantiates a new FollowersRequestBuilder and sets the default values.
 func NewFollowersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FollowersRequestBuilder) {
     m := &FollowersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/followers{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/followers{?page*,per_page*}", pathParameters),
     }
     return m
 }

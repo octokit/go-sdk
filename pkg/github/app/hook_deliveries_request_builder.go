@@ -32,7 +32,7 @@ func (m *HookDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)(*HookDel
 // NewHookDeliveriesRequestBuilderInternal instantiates a new DeliveriesRequestBuilder and sets the default values.
 func NewHookDeliveriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HookDeliveriesRequestBuilder) {
     m := &HookDeliveriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/hook/deliveries{?per_page*,cursor*,redelivery*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/hook/deliveries{?cursor*,per_page*,redelivery*}", pathParameters),
     }
     return m
 }

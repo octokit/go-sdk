@@ -30,7 +30,7 @@ func (m *KeysRequestBuilder) ByKey_id(key_id int32)(*KeysWithKey_ItemRequestBuil
 // NewKeysRequestBuilderInternal instantiates a new KeysRequestBuilder and sets the default values.
 func NewKeysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*KeysRequestBuilder) {
     m := &KeysRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/keys{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/keys{?page*,per_page*}", pathParameters),
     }
     return m
 }

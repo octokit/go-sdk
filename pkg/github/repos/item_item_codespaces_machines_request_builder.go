@@ -22,7 +22,7 @@ type ItemItemCodespacesMachinesRequestBuilderGetQueryParameters struct {
 // NewItemItemCodespacesMachinesRequestBuilderInternal instantiates a new MachinesRequestBuilder and sets the default values.
 func NewItemItemCodespacesMachinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodespacesMachinesRequestBuilder) {
     m := &ItemItemCodespacesMachinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/machines{?location*,client_ip*,ref*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/machines{?client_ip*,location*,ref*}", pathParameters),
     }
     return m
 }
