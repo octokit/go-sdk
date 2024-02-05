@@ -20,7 +20,7 @@ type ItemItemEventsRequestBuilderGetQueryParameters struct {
 // NewItemItemEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemItemEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEventsRequestBuilder) {
     m := &ItemItemEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?page*,per_page*}", pathParameters),
     }
     return m
 }

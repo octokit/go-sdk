@@ -30,7 +30,7 @@ func (m *ItemHooksRequestBuilder) ByHook_id(hook_id int32)(*ItemHooksWithHook_It
 // NewItemHooksRequestBuilderInternal instantiates a new HooksRequestBuilder and sets the default values.
 func NewItemHooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHooksRequestBuilder) {
     m := &ItemHooksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/hooks{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/hooks{?page*,per_page*}", pathParameters),
     }
     return m
 }

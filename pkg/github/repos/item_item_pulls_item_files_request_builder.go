@@ -20,7 +20,7 @@ type ItemItemPullsItemFilesRequestBuilderGetQueryParameters struct {
 // NewItemItemPullsItemFilesRequestBuilderInternal instantiates a new FilesRequestBuilder and sets the default values.
 func NewItemItemPullsItemFilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsItemFilesRequestBuilder) {
     m := &ItemItemPullsItemFilesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/files{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/files{?page*,per_page*}", pathParameters),
     }
     return m
 }

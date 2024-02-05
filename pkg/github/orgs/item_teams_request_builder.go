@@ -31,7 +31,7 @@ func (m *ItemTeamsRequestBuilder) ByTeam_slug(team_slug string)(*ItemTeamsWithTe
 // NewItemTeamsRequestBuilderInternal instantiates a new TeamsRequestBuilder and sets the default values.
 func NewItemTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamsRequestBuilder) {
     m := &ItemTeamsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams{?page*,per_page*}", pathParameters),
     }
     return m
 }

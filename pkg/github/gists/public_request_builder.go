@@ -23,7 +23,7 @@ type PublicRequestBuilderGetQueryParameters struct {
 // NewPublicRequestBuilderInternal instantiates a new PublicRequestBuilder and sets the default values.
 func NewPublicRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PublicRequestBuilder) {
     m := &PublicRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/public{?since*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/public{?page*,per_page*,since*}", pathParameters),
     }
     return m
 }

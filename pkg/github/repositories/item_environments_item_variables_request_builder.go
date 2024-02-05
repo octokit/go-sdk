@@ -31,7 +31,7 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) ByName(name string)(*ItemE
 // NewItemEnvironmentsItemVariablesRequestBuilderInternal instantiates a new VariablesRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemVariablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemVariablesRequestBuilder) {
     m := &ItemEnvironmentsItemVariablesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/variables{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/variables{?page*,per_page*}", pathParameters),
     }
     return m
 }

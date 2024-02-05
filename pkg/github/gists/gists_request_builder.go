@@ -34,7 +34,7 @@ func (m *GistsRequestBuilder) ByGist_id(gist_id string)(*WithGist_ItemRequestBui
 // NewGistsRequestBuilderInternal instantiates a new GistsRequestBuilder and sets the default values.
 func NewGistsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GistsRequestBuilder) {
     m := &GistsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists{?since*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists{?page*,per_page*,since*}", pathParameters),
     }
     return m
 }

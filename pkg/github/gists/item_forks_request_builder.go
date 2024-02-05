@@ -20,7 +20,7 @@ type ItemForksRequestBuilderGetQueryParameters struct {
 // NewItemForksRequestBuilderInternal instantiates a new ForksRequestBuilder and sets the default values.
 func NewItemForksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemForksRequestBuilder) {
     m := &ItemForksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/forks{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/forks{?page*,per_page*}", pathParameters),
     }
     return m
 }

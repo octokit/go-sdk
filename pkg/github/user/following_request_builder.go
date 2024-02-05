@@ -31,7 +31,7 @@ func (m *FollowingRequestBuilder) ByUsername(username string)(*FollowingWithUser
 // NewFollowingRequestBuilderInternal instantiates a new FollowingRequestBuilder and sets the default values.
 func NewFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FollowingRequestBuilder) {
     m := &FollowingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/following{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/following{?page*,per_page*}", pathParameters),
     }
     return m
 }

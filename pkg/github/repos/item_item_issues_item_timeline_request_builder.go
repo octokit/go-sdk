@@ -20,7 +20,7 @@ type ItemItemIssuesItemTimelineRequestBuilderGetQueryParameters struct {
 // NewItemItemIssuesItemTimelineRequestBuilderInternal instantiates a new TimelineRequestBuilder and sets the default values.
 func NewItemItemIssuesItemTimelineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemTimelineRequestBuilder) {
     m := &ItemItemIssuesItemTimelineRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/timeline{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/timeline{?page*,per_page*}", pathParameters),
     }
     return m
 }

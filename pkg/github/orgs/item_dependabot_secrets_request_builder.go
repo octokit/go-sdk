@@ -30,7 +30,7 @@ func (m *ItemDependabotSecretsRequestBuilder) BySecret_name(secret_name string)(
 // NewItemDependabotSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
 func NewItemDependabotSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDependabotSecretsRequestBuilder) {
     m := &ItemDependabotSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/dependabot/secrets{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/dependabot/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -46,7 +46,7 @@ func (m *ItemItemActionsCachesRequestBuilder) ByCache_id(cache_id int32)(*ItemIt
 // NewItemItemActionsCachesRequestBuilderInternal instantiates a new CachesRequestBuilder and sets the default values.
 func NewItemItemActionsCachesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsCachesRequestBuilder) {
     m := &ItemItemActionsCachesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches{?per_page*,page*,ref*,key*,sort*,direction*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches{?direction*,key*,page*,per_page*,ref*,sort*}", pathParameters),
     }
     return m
 }

@@ -123,7 +123,7 @@ type StargazersGetResponseable interface {
 // NewItemItemStargazersRequestBuilderInternal instantiates a new StargazersRequestBuilder and sets the default values.
 func NewItemItemStargazersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemStargazersRequestBuilder) {
     m := &ItemItemStargazersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stargazers{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stargazers{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -38,7 +38,7 @@ func (m *ItemItemDeploymentsRequestBuilder) ByDeployment_id(deployment_id int32)
 // NewItemItemDeploymentsRequestBuilderInternal instantiates a new DeploymentsRequestBuilder and sets the default values.
 func NewItemItemDeploymentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDeploymentsRequestBuilder) {
     m := &ItemItemDeploymentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?sha*,ref*,task*,environment*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?environment*,page*,per_page*,ref*,sha*,task*}", pathParameters),
     }
     return m
 }

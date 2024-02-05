@@ -147,7 +147,7 @@ func (m *CodespacesRequestBuilder) ByCodespace_name(codespace_name string)(*Code
 // NewCodespacesRequestBuilderInternal instantiates a new CodespacesRequestBuilder and sets the default values.
 func NewCodespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CodespacesRequestBuilder) {
     m := &CodespacesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/codespaces{?per_page*,page*,repository_id*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", pathParameters),
     }
     return m
 }

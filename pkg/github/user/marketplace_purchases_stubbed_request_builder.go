@@ -20,7 +20,7 @@ type Marketplace_purchasesStubbedRequestBuilderGetQueryParameters struct {
 // NewMarketplace_purchasesStubbedRequestBuilderInternal instantiates a new StubbedRequestBuilder and sets the default values.
 func NewMarketplace_purchasesStubbedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Marketplace_purchasesStubbedRequestBuilder) {
     m := &Marketplace_purchasesStubbedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/marketplace_purchases/stubbed{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/marketplace_purchases/stubbed{?page*,per_page*}", pathParameters),
     }
     return m
 }

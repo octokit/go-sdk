@@ -30,7 +30,7 @@ func (m *ItemItemDeploymentsItemStatusesRequestBuilder) ByStatus_id(status_id in
 // NewItemItemDeploymentsItemStatusesRequestBuilderInternal instantiates a new StatusesRequestBuilder and sets the default values.
 func NewItemItemDeploymentsItemStatusesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDeploymentsItemStatusesRequestBuilder) {
     m := &ItemItemDeploymentsItemStatusesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments/{deployment_id}/statuses{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments/{deployment_id}/statuses{?page*,per_page*}", pathParameters),
     }
     return m
 }

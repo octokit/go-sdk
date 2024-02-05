@@ -23,7 +23,7 @@ type ItemGistsRequestBuilderGetQueryParameters struct {
 // NewItemGistsRequestBuilderInternal instantiates a new GistsRequestBuilder and sets the default values.
 func NewItemGistsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGistsRequestBuilder) {
     m := &ItemGistsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/gists{?since*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/gists{?page*,per_page*,since*}", pathParameters),
     }
     return m
 }

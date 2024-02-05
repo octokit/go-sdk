@@ -30,7 +30,7 @@ func (m *ItemCommentsRequestBuilder) ByComment_id(comment_id int32)(*ItemComment
 // NewItemCommentsRequestBuilderInternal instantiates a new CommentsRequestBuilder and sets the default values.
 func NewItemCommentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommentsRequestBuilder) {
     m := &ItemCommentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/comments{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/comments{?page*,per_page*}", pathParameters),
     }
     return m
 }

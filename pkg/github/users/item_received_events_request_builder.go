@@ -20,7 +20,7 @@ type ItemReceived_eventsRequestBuilderGetQueryParameters struct {
 // NewItemReceived_eventsRequestBuilderInternal instantiates a new Received_eventsRequestBuilder and sets the default values.
 func NewItemReceived_eventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReceived_eventsRequestBuilder) {
     m := &ItemReceived_eventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/received_events{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/received_events{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -31,7 +31,7 @@ func (m *ItemItemActionsVariablesRequestBuilder) ByName(name string)(*ItemItemAc
 // NewItemItemActionsVariablesRequestBuilderInternal instantiates a new VariablesRequestBuilder and sets the default values.
 func NewItemItemActionsVariablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsVariablesRequestBuilder) {
     m := &ItemItemActionsVariablesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/variables{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/variables{?page*,per_page*}", pathParameters),
     }
     return m
 }

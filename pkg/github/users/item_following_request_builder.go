@@ -31,7 +31,7 @@ func (m *ItemFollowingRequestBuilder) ByTarget_user(target_user string)(*ItemFol
 // NewItemFollowingRequestBuilderInternal instantiates a new FollowingRequestBuilder and sets the default values.
 func NewItemFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowingRequestBuilder) {
     m := &ItemFollowingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/following{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/following{?page*,per_page*}", pathParameters),
     }
     return m
 }
