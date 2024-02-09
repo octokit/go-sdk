@@ -8,12 +8,104 @@ import (
 type PageDeployment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+    id PageDeployment_PageDeployment_idable
     // The URI to the deployed GitHub Pages.
     page_url *string
     // The URI to the deployed GitHub Pages preview.
     preview_url *string
     // The URI to monitor GitHub Pages deployment status.
     status_url *string
+}
+// PageDeployment_PageDeployment_id composed type wrapper for classes integer, string
+type PageDeployment_PageDeployment_id struct {
+    // Composed type representation for type integer
+    integer *int32
+    // Composed type representation for type string
+    string *string
+}
+// NewPageDeployment_PageDeployment_id instantiates a new pageDeployment_id and sets the default values.
+func NewPageDeployment_PageDeployment_id()(*PageDeployment_PageDeployment_id) {
+    m := &PageDeployment_PageDeployment_id{
+    }
+    return m
+}
+// CreatePageDeployment_PageDeployment_idFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+func CreatePageDeployment_PageDeployment_idFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewPageDeployment_PageDeployment_id()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetInt32Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetInteger(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+func (m *PageDeployment_PageDeployment_id) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetInteger gets the integer property value. Composed type representation for type integer
+func (m *PageDeployment_PageDeployment_id) GetInteger()(*int32) {
+    return m.integer
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+func (m *PageDeployment_PageDeployment_id) GetIsComposedType()(bool) {
+    return true
+}
+// GetString gets the string property value. Composed type representation for type string
+func (m *PageDeployment_PageDeployment_id) GetString()(*string) {
+    return m.string
+}
+// Serialize serializes information the current object
+func (m *PageDeployment_PageDeployment_id) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetInteger() != nil {
+        err := writer.WriteInt32Value("", m.GetInteger())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetInteger sets the integer property value. Composed type representation for type integer
+func (m *PageDeployment_PageDeployment_id) SetInteger(value *int32)() {
+    m.integer = value
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *PageDeployment_PageDeployment_id) SetString(value *string)() {
+    m.string = value
+}
+// PageDeployment_PageDeployment_idable 
+type PageDeployment_PageDeployment_idable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInteger()(*int32)
+    GetString()(*string)
+    SetInteger(value *int32)()
+    SetString(value *string)()
 }
 // NewPageDeployment instantiates a new pageDeployment and sets the default values.
 func NewPageDeployment()(*PageDeployment) {
@@ -33,6 +125,16 @@ func (m *PageDeployment) GetAdditionalData()(map[string]any) {
 // GetFieldDeserializers the deserialization information for the current model
 func (m *PageDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePageDeployment_PageDeployment_idFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val.(PageDeployment_PageDeployment_idable))
+        }
+        return nil
+    }
     res["page_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -65,6 +167,10 @@ func (m *PageDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetId gets the id property value. The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+func (m *PageDeployment) GetId()(PageDeployment_PageDeployment_idable) {
+    return m.id
+}
 // GetPageUrl gets the page_url property value. The URI to the deployed GitHub Pages.
 func (m *PageDeployment) GetPageUrl()(*string) {
     return m.page_url
@@ -79,6 +185,12 @@ func (m *PageDeployment) GetStatusUrl()(*string) {
 }
 // Serialize serializes information the current object
 func (m *PageDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("page_url", m.GetPageUrl())
         if err != nil {
@@ -109,6 +221,10 @@ func (m *PageDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 func (m *PageDeployment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetId sets the id property value. The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+func (m *PageDeployment) SetId(value PageDeployment_PageDeployment_idable)() {
+    m.id = value
+}
 // SetPageUrl sets the page_url property value. The URI to the deployed GitHub Pages.
 func (m *PageDeployment) SetPageUrl(value *string)() {
     m.page_url = value
@@ -125,9 +241,11 @@ func (m *PageDeployment) SetStatusUrl(value *string)() {
 type PageDeploymentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetId()(PageDeployment_PageDeployment_idable)
     GetPageUrl()(*string)
     GetPreviewUrl()(*string)
     GetStatusUrl()(*string)
+    SetId(value PageDeployment_PageDeployment_idable)()
     SetPageUrl(value *string)()
     SetPreviewUrl(value *string)()
     SetStatusUrl(value *string)()
