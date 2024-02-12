@@ -20,7 +20,7 @@ type ItemFailed_invitationsRequestBuilderGetQueryParameters struct {
 // NewItemFailed_invitationsRequestBuilderInternal instantiates a new Failed_invitationsRequestBuilder and sets the default values.
 func NewItemFailed_invitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFailed_invitationsRequestBuilder) {
     m := &ItemFailed_invitationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/failed_invitations{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/failed_invitations{?page*,per_page*}", pathParameters),
     }
     return m
 }

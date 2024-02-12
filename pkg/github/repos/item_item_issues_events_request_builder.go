@@ -30,7 +30,7 @@ func (m *ItemItemIssuesEventsRequestBuilder) ByEvent_id(event_id int32)(*ItemIte
 // NewItemItemIssuesEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewItemItemIssuesEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesEventsRequestBuilder) {
     m := &ItemItemIssuesEventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/events{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/events{?page*,per_page*}", pathParameters),
     }
     return m
 }

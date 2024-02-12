@@ -20,7 +20,7 @@ type OrganizationsRequestBuilderGetQueryParameters struct {
 // NewOrganizationsRequestBuilderInternal instantiates a new OrganizationsRequestBuilder and sets the default values.
 func NewOrganizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationsRequestBuilder) {
     m := &OrganizationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organizations{?since*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organizations{?per_page*,since*}", pathParameters),
     }
     return m
 }

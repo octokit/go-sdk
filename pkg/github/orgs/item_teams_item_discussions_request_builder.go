@@ -35,7 +35,7 @@ func (m *ItemTeamsItemDiscussionsRequestBuilder) ByDiscussion_number(discussion_
 // NewItemTeamsItemDiscussionsRequestBuilderInternal instantiates a new DiscussionsRequestBuilder and sets the default values.
 func NewItemTeamsItemDiscussionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamsItemDiscussionsRequestBuilder) {
     m := &ItemTeamsItemDiscussionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/discussions{?direction*,per_page*,page*,pinned*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/discussions{?direction*,page*,per_page*,pinned*}", pathParameters),
     }
     return m
 }

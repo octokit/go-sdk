@@ -19,7 +19,7 @@ type ItemItemActionsOrganizationVariablesRequestBuilderGetQueryParameters struct
 // NewItemItemActionsOrganizationVariablesRequestBuilderInternal instantiates a new OrganizationVariablesRequestBuilder and sets the default values.
 func NewItemItemActionsOrganizationVariablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsOrganizationVariablesRequestBuilder) {
     m := &ItemItemActionsOrganizationVariablesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-variables{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-variables{?page*,per_page*}", pathParameters),
     }
     return m
 }

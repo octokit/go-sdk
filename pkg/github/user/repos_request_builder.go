@@ -36,7 +36,7 @@ type ReposRequestBuilderGetQueryParameters struct {
 // NewReposRequestBuilderInternal instantiates a new ReposRequestBuilder and sets the default values.
 func NewReposRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReposRequestBuilder) {
     m := &ReposRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/repos{?visibility*,affiliation*,type*,sort*,direction*,per_page*,page*,since*,before*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/repos{?affiliation*,before*,direction*,page*,per_page*,since*,sort*,type*,visibility*}", pathParameters),
     }
     return m
 }

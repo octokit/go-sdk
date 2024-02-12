@@ -30,7 +30,7 @@ func (m *ItemItemPullsItemReviewsRequestBuilder) ByReview_id(review_id int32)(*I
 // NewItemItemPullsItemReviewsRequestBuilderInternal instantiates a new ReviewsRequestBuilder and sets the default values.
 func NewItemItemPullsItemReviewsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsItemReviewsRequestBuilder) {
     m := &ItemItemPullsItemReviewsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/reviews{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/reviews{?page*,per_page*}", pathParameters),
     }
     return m
 }

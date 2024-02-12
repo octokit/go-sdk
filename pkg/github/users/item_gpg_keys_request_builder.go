@@ -20,7 +20,7 @@ type ItemGpg_keysRequestBuilderGetQueryParameters struct {
 // NewItemGpg_keysRequestBuilderInternal instantiates a new Gpg_keysRequestBuilder and sets the default values.
 func NewItemGpg_keysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGpg_keysRequestBuilder) {
     m := &ItemGpg_keysRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/gpg_keys{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/gpg_keys{?page*,per_page*}", pathParameters),
     }
     return m
 }

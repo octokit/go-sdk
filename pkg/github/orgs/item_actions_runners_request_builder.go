@@ -31,7 +31,7 @@ func (m *ItemActionsRunnersRequestBuilder) ByRunner_id(runner_id int32)(*ItemAct
 // NewItemActionsRunnersRequestBuilderInternal instantiates a new RunnersRequestBuilder and sets the default values.
 func NewItemActionsRunnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsRunnersRequestBuilder) {
     m := &ItemActionsRunnersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,page*,per_page*}", pathParameters),
     }
     return m
 }

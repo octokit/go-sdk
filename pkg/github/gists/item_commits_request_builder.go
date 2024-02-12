@@ -20,7 +20,7 @@ type ItemCommitsRequestBuilderGetQueryParameters struct {
 // NewItemCommitsRequestBuilderInternal instantiates a new CommitsRequestBuilder and sets the default values.
 func NewItemCommitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCommitsRequestBuilder) {
     m := &ItemCommitsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/commits{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/gists/{gist_id}/commits{?page*,per_page*}", pathParameters),
     }
     return m
 }

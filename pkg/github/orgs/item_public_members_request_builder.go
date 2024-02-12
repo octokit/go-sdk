@@ -31,7 +31,7 @@ func (m *ItemPublic_membersRequestBuilder) ByUsername(username string)(*ItemPubl
 // NewItemPublic_membersRequestBuilderInternal instantiates a new Public_membersRequestBuilder and sets the default values.
 func NewItemPublic_membersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPublic_membersRequestBuilder) {
     m := &ItemPublic_membersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?page*,per_page*}", pathParameters),
     }
     return m
 }

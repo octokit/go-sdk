@@ -30,7 +30,7 @@ func (m *ItemItemEnvironmentsRequestBuilder) ByEnvironment_name(environment_name
 // NewItemItemEnvironmentsRequestBuilderInternal instantiates a new EnvironmentsRequestBuilder and sets the default values.
 func NewItemItemEnvironmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEnvironmentsRequestBuilder) {
     m := &ItemItemEnvironmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments{?page*,per_page*}", pathParameters),
     }
     return m
 }

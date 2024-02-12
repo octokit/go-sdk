@@ -33,7 +33,7 @@ func (m *ItemItemBranchesRequestBuilder) ByBranch(branch string)(*ItemItemBranch
 // NewItemItemBranchesRequestBuilderInternal instantiates a new BranchesRequestBuilder and sets the default values.
 func NewItemItemBranchesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesRequestBuilder) {
     m := &ItemItemBranchesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches{?protected*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches{?page*,per_page*,protected*}", pathParameters),
     }
     return m
 }

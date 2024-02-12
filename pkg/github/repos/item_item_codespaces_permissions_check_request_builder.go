@@ -20,7 +20,7 @@ type ItemItemCodespacesPermissions_checkRequestBuilderGetQueryParameters struct 
 // NewItemItemCodespacesPermissions_checkRequestBuilderInternal instantiates a new Permissions_checkRequestBuilder and sets the default values.
 func NewItemItemCodespacesPermissions_checkRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodespacesPermissions_checkRequestBuilder) {
     m := &ItemItemCodespacesPermissions_checkRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check{?ref*,devcontainer_path*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", pathParameters),
     }
     return m
 }

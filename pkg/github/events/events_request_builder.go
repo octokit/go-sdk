@@ -20,7 +20,7 @@ type EventsRequestBuilderGetQueryParameters struct {
 // NewEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
 func NewEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EventsRequestBuilder) {
     m := &EventsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/events{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/events{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -35,7 +35,7 @@ func (m *InstallationsRequestBuilder) ByInstallation_id(installation_id int32)(*
 // NewInstallationsRequestBuilderInternal instantiates a new InstallationsRequestBuilder and sets the default values.
 func NewInstallationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InstallationsRequestBuilder) {
     m := &InstallationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/installations{?per_page*,page*,since*,outdated*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/installations{?outdated*,page*,per_page*,since*}", pathParameters),
     }
     return m
 }

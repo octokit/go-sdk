@@ -23,7 +23,7 @@ type ItemProjectsRequestBuilderGetQueryParameters struct {
 // NewItemProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
 func NewItemProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProjectsRequestBuilder) {
     m := &ItemProjectsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/projects{?state*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/projects{?page*,per_page*,state*}", pathParameters),
     }
     return m
 }

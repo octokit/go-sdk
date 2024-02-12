@@ -31,7 +31,7 @@ func (m *ItemProjectsRequestBuilder) ByProject_id(project_id int32)(*ItemProject
 // NewItemProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
 func NewItemProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProjectsRequestBuilder) {
     m := &ItemProjectsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/projects{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/projects{?page*,per_page*}", pathParameters),
     }
     return m
 }

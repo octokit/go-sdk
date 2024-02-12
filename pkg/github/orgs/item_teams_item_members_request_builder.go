@@ -23,7 +23,7 @@ type ItemTeamsItemMembersRequestBuilderGetQueryParameters struct {
 // NewItemTeamsItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
 func NewItemTeamsItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamsItemMembersRequestBuilder) {
     m := &ItemTeamsItemMembersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?role*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?page*,per_page*,role*}", pathParameters),
     }
     return m
 }

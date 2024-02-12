@@ -32,7 +32,7 @@ func (m *ItemMigrationsRequestBuilder) ByMigration_id(migration_id int32)(*ItemM
 // NewItemMigrationsRequestBuilderInternal instantiates a new MigrationsRequestBuilder and sets the default values.
 func NewItemMigrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsRequestBuilder) {
     m := &ItemMigrationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/migrations{?per_page*,page*,exclude*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/migrations{?exclude*,page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -23,7 +23,7 @@ type ItemDiscussionsItemReactionsRequestBuilderGetQueryParameters struct {
 // NewItemDiscussionsItemReactionsRequestBuilderInternal instantiates a new ReactionsRequestBuilder and sets the default values.
 func NewItemDiscussionsItemReactionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDiscussionsItemReactionsRequestBuilder) {
     m := &ItemDiscussionsItemReactionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/discussions/{discussion_number}/reactions{?content*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/discussions/{discussion_number}/reactions{?content*,page*,per_page*}", pathParameters),
     }
     return m
 }

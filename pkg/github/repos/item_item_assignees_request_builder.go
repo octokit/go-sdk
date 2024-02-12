@@ -31,7 +31,7 @@ func (m *ItemItemAssigneesRequestBuilder) ByAssignee(assignee string)(*ItemItemA
 // NewItemItemAssigneesRequestBuilderInternal instantiates a new AssigneesRequestBuilder and sets the default values.
 func NewItemItemAssigneesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemAssigneesRequestBuilder) {
     m := &ItemItemAssigneesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/assignees{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/assignees{?page*,per_page*}", pathParameters),
     }
     return m
 }

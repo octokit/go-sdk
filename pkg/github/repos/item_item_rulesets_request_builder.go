@@ -32,7 +32,7 @@ func (m *ItemItemRulesetsRequestBuilder) ByRuleset_id(ruleset_id int32)(*ItemIte
 // NewItemItemRulesetsRequestBuilderInternal instantiates a new RulesetsRequestBuilder and sets the default values.
 func NewItemItemRulesetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsRequestBuilder) {
     m := &ItemItemRulesetsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets{?per_page*,page*,includes_parents*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets{?includes_parents*,page*,per_page*}", pathParameters),
     }
     return m
 }

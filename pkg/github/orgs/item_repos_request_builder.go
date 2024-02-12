@@ -27,7 +27,7 @@ type ItemReposRequestBuilderGetQueryParameters struct {
 // NewItemReposRequestBuilderInternal instantiates a new ReposRequestBuilder and sets the default values.
 func NewItemReposRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReposRequestBuilder) {
     m := &ItemReposRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/repos{?type*,sort*,direction*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/repos{?direction*,page*,per_page*,sort*,type*}", pathParameters),
     }
     return m
 }

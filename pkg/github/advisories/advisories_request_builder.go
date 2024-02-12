@@ -59,7 +59,7 @@ func (m *AdvisoriesRequestBuilder) ByGhsa_id(ghsa_id string)(*WithGhsa_ItemReque
 // NewAdvisoriesRequestBuilderInternal instantiates a new AdvisoriesRequestBuilder and sets the default values.
 func NewAdvisoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdvisoriesRequestBuilder) {
     m := &AdvisoriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/advisories{?ghsa_id*,type*,cve_id*,ecosystem*,severity*,cwes*,is_withdrawn*,affects*,published*,updated*,modified*,before*,after*,direction*,per_page*,sort*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", pathParameters),
     }
     return m
 }

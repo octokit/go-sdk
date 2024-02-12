@@ -11,11 +11,6 @@ import (
 type ItemItemAutolinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemAutolinksRequestBuilderGetQueryParameters this returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
-type ItemItemAutolinksRequestBuilderGetQueryParameters struct {
-    // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
-    Page *int32 `uriparametername:"page"`
-}
 // ByAutolink_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.autolinks.item collection
 func (m *ItemItemAutolinksRequestBuilder) ByAutolink_id(autolink_id int32)(*ItemItemAutolinksWithAutolink_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -28,7 +23,7 @@ func (m *ItemItemAutolinksRequestBuilder) ByAutolink_id(autolink_id int32)(*Item
 // NewItemItemAutolinksRequestBuilderInternal instantiates a new AutolinksRequestBuilder and sets the default values.
 func NewItemItemAutolinksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemAutolinksRequestBuilder) {
     m := &ItemItemAutolinksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks{?page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks", pathParameters),
     }
     return m
 }
@@ -38,11 +33,11 @@ func NewItemItemAutolinksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemAutolinksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get this returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
+// Get gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository
-func (m *ItemItemAutolinksRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemAutolinksRequestBuilderGetQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Autolinkable, error) {
+// [API method documentation]: https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository
+func (m *ItemItemAutolinksRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Autolinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -80,8 +75,8 @@ func (m *ItemItemAutolinksRequestBuilder) Post(ctx context.Context, body ItemIte
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Autolinkable), nil
 }
-// ToGetRequestInformation this returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
-func (m *ItemItemAutolinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemAutolinksRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+// ToGetRequestInformation gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
+func (m *ItemItemAutolinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")

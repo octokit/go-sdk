@@ -269,7 +269,7 @@ type EmailsPostRequestBodyable interface {
 // NewEmailsRequestBuilderInternal instantiates a new EmailsRequestBuilder and sets the default values.
 func NewEmailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmailsRequestBuilder) {
     m := &EmailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/emails{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/emails{?page*,per_page*}", pathParameters),
     }
     return m
 }

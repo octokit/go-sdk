@@ -30,7 +30,7 @@ func (m *Repository_invitationsRequestBuilder) ByInvitation_id(invitation_id int
 // NewRepository_invitationsRequestBuilderInternal instantiates a new Repository_invitationsRequestBuilder and sets the default values.
 func NewRepository_invitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Repository_invitationsRequestBuilder) {
     m := &Repository_invitationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/repository_invitations{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", pathParameters),
     }
     return m
 }

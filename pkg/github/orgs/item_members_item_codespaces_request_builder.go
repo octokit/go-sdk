@@ -31,7 +31,7 @@ func (m *ItemMembersItemCodespacesRequestBuilder) ByCodespace_name(codespace_nam
 // NewItemMembersItemCodespacesRequestBuilderInternal instantiates a new CodespacesRequestBuilder and sets the default values.
 func NewItemMembersItemCodespacesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersItemCodespacesRequestBuilder) {
     m := &ItemMembersItemCodespacesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/codespaces{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/codespaces{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -34,7 +34,7 @@ func (m *ItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemColla
 // NewItemCollaboratorsRequestBuilderInternal instantiates a new CollaboratorsRequestBuilder and sets the default values.
 func NewItemCollaboratorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCollaboratorsRequestBuilder) {
     m := &ItemCollaboratorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,page*,per_page*}", pathParameters),
     }
     return m
 }

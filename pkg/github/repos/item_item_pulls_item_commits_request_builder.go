@@ -20,7 +20,7 @@ type ItemItemPullsItemCommitsRequestBuilderGetQueryParameters struct {
 // NewItemItemPullsItemCommitsRequestBuilderInternal instantiates a new CommitsRequestBuilder and sets the default values.
 func NewItemItemPullsItemCommitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsItemCommitsRequestBuilder) {
     m := &ItemItemPullsItemCommitsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/commits{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/commits{?page*,per_page*}", pathParameters),
     }
     return m
 }

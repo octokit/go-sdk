@@ -20,7 +20,7 @@ type ItemItemTeamsRequestBuilderGetQueryParameters struct {
 // NewItemItemTeamsRequestBuilderInternal instantiates a new TeamsRequestBuilder and sets the default values.
 func NewItemItemTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTeamsRequestBuilder) {
     m := &ItemItemTeamsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/teams{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/teams{?page*,per_page*}", pathParameters),
     }
     return m
 }

@@ -45,7 +45,7 @@ func (m *ItemItemPullsRequestBuilder) Comments()(*ItemItemPullsCommentsRequestBu
 // NewItemItemPullsRequestBuilderInternal instantiates a new PullsRequestBuilder and sets the default values.
 func NewItemItemPullsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPullsRequestBuilder) {
     m := &ItemItemPullsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls{?state*,head*,base*,sort*,direction*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls{?base*,direction*,head*,page*,per_page*,sort*,state*}", pathParameters),
     }
     return m
 }

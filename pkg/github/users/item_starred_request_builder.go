@@ -127,7 +127,7 @@ type StarredGetResponseable interface {
 // NewItemStarredRequestBuilderInternal instantiates a new StarredRequestBuilder and sets the default values.
 func NewItemStarredRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemStarredRequestBuilder) {
     m := &ItemStarredRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/starred{?sort*,direction*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/starred{?direction*,page*,per_page*,sort*}", pathParameters),
     }
     return m
 }

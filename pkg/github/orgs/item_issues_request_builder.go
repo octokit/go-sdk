@@ -34,7 +34,7 @@ type ItemIssuesRequestBuilderGetQueryParameters struct {
 // NewItemIssuesRequestBuilderInternal instantiates a new IssuesRequestBuilder and sets the default values.
 func NewItemIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemIssuesRequestBuilder) {
     m := &ItemIssuesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/issues{?filter*,state*,labels*,sort*,direction*,since*,per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/issues{?direction*,filter*,labels*,page*,per_page*,since*,sort*,state*}", pathParameters),
     }
     return m
 }

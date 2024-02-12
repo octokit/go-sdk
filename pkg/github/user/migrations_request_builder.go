@@ -30,7 +30,7 @@ func (m *MigrationsRequestBuilder) ByMigration_id(migration_id int32)(*Migration
 // NewMigrationsRequestBuilderInternal instantiates a new MigrationsRequestBuilder and sets the default values.
 func NewMigrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MigrationsRequestBuilder) {
     m := &MigrationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/migrations{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/migrations{?page*,per_page*}", pathParameters),
     }
     return m
 }

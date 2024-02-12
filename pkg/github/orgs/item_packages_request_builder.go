@@ -36,7 +36,7 @@ func (m *ItemPackagesRequestBuilder) ByPackage_type(package_type string)(*ItemPa
 // NewItemPackagesRequestBuilderInternal instantiates a new PackagesRequestBuilder and sets the default values.
 func NewItemPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPackagesRequestBuilder) {
     m := &ItemPackagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/packages{?package_type*,visibility*,page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/packages?package_type={package_type}{&page*,per_page*,visibility*}", pathParameters),
     }
     return m
 }

@@ -35,7 +35,7 @@ func (m *ItemInvitationsRequestBuilder) ByInvitation_id(invitation_id int32)(*It
 // NewItemInvitationsRequestBuilderInternal instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewItemInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInvitationsRequestBuilder) {
     m := &ItemInvitationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/invitations{?per_page*,page*,role*,invitation_source*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/invitations{?invitation_source*,page*,per_page*,role*}", pathParameters),
     }
     return m
 }

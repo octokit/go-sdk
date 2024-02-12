@@ -30,7 +30,7 @@ func (m *Ssh_signing_keysRequestBuilder) BySsh_signing_key_id(ssh_signing_key_id
 // NewSsh_signing_keysRequestBuilderInternal instantiates a new Ssh_signing_keysRequestBuilder and sets the default values.
 func NewSsh_signing_keysRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*Ssh_signing_keysRequestBuilder) {
     m := &Ssh_signing_keysRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/ssh_signing_keys{?per_page*,page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/ssh_signing_keys{?page*,per_page*}", pathParameters),
     }
     return m
 }
