@@ -11,7 +11,7 @@ There are two types of contributions: issues and pull requests (PRs). Issues are
 ## Creating an issue
 
 Before you create a new issue:
-1. Search the [project's issues](https://github.com/octokit/dotnet-sdk/issues) to see if a similar issue already exists. If so, please add onto that issue rather than creating a new one.
+1. Search the [project's issues](https://github.com/octokit/go-sdk/issues) to see if a similar issue already exists. If so, please add onto that issue rather than creating a new one.
 1. If submitting a bug report, include steps and a minimal code sample that will reproduce the issue.
 1. If submitting a feature request, please share the motivation for the new feature, what alternatives you considered, and any implementation suggestions.
 
