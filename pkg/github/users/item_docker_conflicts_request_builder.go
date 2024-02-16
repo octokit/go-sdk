@@ -23,7 +23,7 @@ func NewItemDockerConflictsRequestBuilder(rawUrl string, requestAdapter i2ae4187
     urlParams["request-raw-url"] = rawUrl
     return NewItemDockerConflictsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+// Get lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-user
@@ -48,7 +48,7 @@ func (m *ItemDockerConflictsRequestBuilder) Get(ctx context.Context, requestConf
     }
     return val, nil
 }
-// ToGetRequestInformation lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+// ToGetRequestInformation lists all packages that are in a specific user's namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
 func (m *ItemDockerConflictsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

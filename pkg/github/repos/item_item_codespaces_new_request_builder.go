@@ -10,7 +10,7 @@ import (
 type ItemItemCodespacesNewRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemCodespacesNewRequestBuilderGetQueryParameters gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
+// ItemItemCodespacesNewRequestBuilderGetQueryParameters gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 type ItemItemCodespacesNewRequestBuilderGetQueryParameters struct {
     // An alternative IP for default location auto-detection, such as when proxying a request.
     Client_ip *string `uriparametername:"client_ip"`
@@ -30,7 +30,7 @@ func NewItemItemCodespacesNewRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCodespacesNewRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
+// Get gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#get-default-attributes-for-a-codespace
@@ -53,7 +53,7 @@ func (m *ItemItemCodespacesNewRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ItemItemCodespacesNewGetResponseable), nil
 }
-// ToGetRequestInformation gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see "[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user)."- The app must have write access to the `codespaces` repository permission.
+// ToGetRequestInformation gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
 func (m *ItemItemCodespacesNewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCodespacesNewRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

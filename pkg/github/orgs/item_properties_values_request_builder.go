@@ -10,7 +10,7 @@ import (
 type ItemPropertiesValuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPropertiesValuesRequestBuilderGetQueryParameters lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+// ItemPropertiesValuesRequestBuilderGetQueryParameters lists organization repositories with all of their custom property values.Organization members can read these properties.
 type ItemPropertiesValuesRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -32,7 +32,7 @@ func NewItemPropertiesValuesRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemPropertiesValuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+// Get lists organization repositories with all of their custom property values.Organization members can read these properties.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#list-custom-property-values-for-organization-repositories
@@ -57,7 +57,7 @@ func (m *ItemPropertiesValuesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return val, nil
 }
-// Patch create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.GitHub Apps must have the `organization_custom_properties:write` organization permission to use this endpoint.
+// Patch create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories
@@ -69,6 +69,7 @@ func (m *ItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body Ite
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
+        "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
     }
     err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
     if err != nil {
@@ -76,14 +77,14 @@ func (m *ItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body Ite
     }
     return nil
 }
-// ToGetRequestInformation lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+// ToGetRequestInformation lists organization repositories with all of their custom property values.Organization members can read these properties.
 func (m *ItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPropertiesValuesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.GitHub Apps must have the `organization_custom_properties:write` organization permission to use this endpoint.
+// ToPatchRequestInformation create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.
 func (m *ItemPropertiesValuesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemPropertiesValuesPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

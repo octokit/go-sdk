@@ -27,7 +27,7 @@ func NewItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets the current status of a GitHub Pages deployment.Users must have read permission for the GitHub Pages site. GitHub Apps must have the `pages:read` permission.
+// Get gets the current status of a GitHub Pages deployment.The authenticated user must have read permission for the GitHub Pages site.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment
@@ -48,7 +48,7 @@ func (m *ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder) Get(ct
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PagesDeploymentStatusable), nil
 }
-// ToGetRequestInformation gets the current status of a GitHub Pages deployment.Users must have read permission for the GitHub Pages site. GitHub Apps must have the `pages:read` permission.
+// ToGetRequestInformation gets the current status of a GitHub Pages deployment.The authenticated user must have read permission for the GitHub Pages site.
 func (m *ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

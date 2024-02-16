@@ -134,8 +134,6 @@ type Repository struct {
     mirror_url *string
     // The name of the repository.
     name *string
-    // The network_count property
-    network_count *int32
     // The node_id property
     node_id *string
     // The notifications_url property
@@ -144,8 +142,6 @@ type Repository struct {
     open_issues *int32
     // The open_issues_count property
     open_issues_count *int32
-    // A GitHub user.
-    organization NullableSimpleUserable
     // A GitHub user.
     owner SimpleUserable
     // The permissions property
@@ -174,8 +170,6 @@ type Repository struct {
     starred_at *string
     // The statuses_url property
     statuses_url *string
-    // The subscribers_count property
-    subscribers_count *int32
     // The subscribers_url property
     subscribers_url *string
     // The subscription_url property
@@ -188,8 +182,6 @@ type Repository struct {
     teams_url *string
     // The temp_clone_token property
     temp_clone_token *string
-    // The template_repository property
-    template_repository Repository_template_repositoryable
     // The topics property
     topics []string
     // The trees_url property
@@ -958,16 +950,6 @@ func (m *Repository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["network_count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkCount(val)
-        }
-        return nil
-    }
     res["node_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1005,16 +987,6 @@ func (m *Repository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetOpenIssuesCount(val)
-        }
-        return nil
-    }
-    res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrganization(val.(NullableSimpleUserable))
         }
         return nil
     }
@@ -1158,16 +1130,6 @@ func (m *Repository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["subscribers_count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSubscribersCount(val)
-        }
-        return nil
-    }
     res["subscribers_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1225,16 +1187,6 @@ func (m *Repository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetTempCloneToken(val)
-        }
-        return nil
-    }
-    res["template_repository"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateRepository_template_repositoryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTemplateRepository(val.(Repository_template_repositoryable))
         }
         return nil
     }
@@ -1477,10 +1429,6 @@ func (m *Repository) GetMirrorUrl()(*string) {
 func (m *Repository) GetName()(*string) {
     return m.name
 }
-// GetNetworkCount gets the network_count property value. The network_count property
-func (m *Repository) GetNetworkCount()(*int32) {
-    return m.network_count
-}
 // GetNodeId gets the node_id property value. The node_id property
 func (m *Repository) GetNodeId()(*string) {
     return m.node_id
@@ -1496,10 +1444,6 @@ func (m *Repository) GetOpenIssues()(*int32) {
 // GetOpenIssuesCount gets the open_issues_count property value. The open_issues_count property
 func (m *Repository) GetOpenIssuesCount()(*int32) {
     return m.open_issues_count
-}
-// GetOrganization gets the organization property value. A GitHub user.
-func (m *Repository) GetOrganization()(NullableSimpleUserable) {
-    return m.organization
 }
 // GetOwner gets the owner property value. A GitHub user.
 func (m *Repository) GetOwner()(SimpleUserable) {
@@ -1557,10 +1501,6 @@ func (m *Repository) GetStarredAt()(*string) {
 func (m *Repository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
-// GetSubscribersCount gets the subscribers_count property value. The subscribers_count property
-func (m *Repository) GetSubscribersCount()(*int32) {
-    return m.subscribers_count
-}
 // GetSubscribersUrl gets the subscribers_url property value. The subscribers_url property
 func (m *Repository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
@@ -1584,10 +1524,6 @@ func (m *Repository) GetTeamsUrl()(*string) {
 // GetTempCloneToken gets the temp_clone_token property value. The temp_clone_token property
 func (m *Repository) GetTempCloneToken()(*string) {
     return m.temp_clone_token
-}
-// GetTemplateRepository gets the template_repository property value. The template_repository property
-func (m *Repository) GetTemplateRepository()(Repository_template_repositoryable) {
-    return m.template_repository
 }
 // GetTopics gets the topics property value. The topics property
 func (m *Repository) GetTopics()([]string) {
@@ -2003,12 +1939,6 @@ func (m *Repository) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteInt32Value("network_count", m.GetNetworkCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("node_id", m.GetNodeId())
         if err != nil {
             return err
@@ -2028,12 +1958,6 @@ func (m *Repository) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteInt32Value("open_issues_count", m.GetOpenIssuesCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("organization", m.GetOrganization())
         if err != nil {
             return err
         }
@@ -2125,12 +2049,6 @@ func (m *Repository) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteInt32Value("subscribers_count", m.GetSubscribersCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("subscribers_url", m.GetSubscribersUrl())
         if err != nil {
             return err
@@ -2156,12 +2074,6 @@ func (m *Repository) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err := writer.WriteStringValue("teams_url", m.GetTeamsUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("template_repository", m.GetTemplateRepository())
         if err != nil {
             return err
         }
@@ -2487,10 +2399,6 @@ func (m *Repository) SetMirrorUrl(value *string)() {
 func (m *Repository) SetName(value *string)() {
     m.name = value
 }
-// SetNetworkCount sets the network_count property value. The network_count property
-func (m *Repository) SetNetworkCount(value *int32)() {
-    m.network_count = value
-}
 // SetNodeId sets the node_id property value. The node_id property
 func (m *Repository) SetNodeId(value *string)() {
     m.node_id = value
@@ -2506,10 +2414,6 @@ func (m *Repository) SetOpenIssues(value *int32)() {
 // SetOpenIssuesCount sets the open_issues_count property value. The open_issues_count property
 func (m *Repository) SetOpenIssuesCount(value *int32)() {
     m.open_issues_count = value
-}
-// SetOrganization sets the organization property value. A GitHub user.
-func (m *Repository) SetOrganization(value NullableSimpleUserable)() {
-    m.organization = value
 }
 // SetOwner sets the owner property value. A GitHub user.
 func (m *Repository) SetOwner(value SimpleUserable)() {
@@ -2567,10 +2471,6 @@ func (m *Repository) SetStarredAt(value *string)() {
 func (m *Repository) SetStatusesUrl(value *string)() {
     m.statuses_url = value
 }
-// SetSubscribersCount sets the subscribers_count property value. The subscribers_count property
-func (m *Repository) SetSubscribersCount(value *int32)() {
-    m.subscribers_count = value
-}
 // SetSubscribersUrl sets the subscribers_url property value. The subscribers_url property
 func (m *Repository) SetSubscribersUrl(value *string)() {
     m.subscribers_url = value
@@ -2594,10 +2494,6 @@ func (m *Repository) SetTeamsUrl(value *string)() {
 // SetTempCloneToken sets the temp_clone_token property value. The temp_clone_token property
 func (m *Repository) SetTempCloneToken(value *string)() {
     m.temp_clone_token = value
-}
-// SetTemplateRepository sets the template_repository property value. The template_repository property
-func (m *Repository) SetTemplateRepository(value Repository_template_repositoryable)() {
-    m.template_repository = value
 }
 // SetTopics sets the topics property value. The topics property
 func (m *Repository) SetTopics(value []string)() {
@@ -2702,12 +2598,10 @@ type Repositoryable interface {
     GetMilestonesUrl()(*string)
     GetMirrorUrl()(*string)
     GetName()(*string)
-    GetNetworkCount()(*int32)
     GetNodeId()(*string)
     GetNotificationsUrl()(*string)
     GetOpenIssues()(*int32)
     GetOpenIssuesCount()(*int32)
-    GetOrganization()(NullableSimpleUserable)
     GetOwner()(SimpleUserable)
     GetPermissions()(Repository_permissionsable)
     GetPrivate()(*bool)
@@ -2722,14 +2616,12 @@ type Repositoryable interface {
     GetStargazersUrl()(*string)
     GetStarredAt()(*string)
     GetStatusesUrl()(*string)
-    GetSubscribersCount()(*int32)
     GetSubscribersUrl()(*string)
     GetSubscriptionUrl()(*string)
     GetSvnUrl()(*string)
     GetTagsUrl()(*string)
     GetTeamsUrl()(*string)
     GetTempCloneToken()(*string)
-    GetTemplateRepository()(Repository_template_repositoryable)
     GetTopics()([]string)
     GetTreesUrl()(*string)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -2801,12 +2693,10 @@ type Repositoryable interface {
     SetMilestonesUrl(value *string)()
     SetMirrorUrl(value *string)()
     SetName(value *string)()
-    SetNetworkCount(value *int32)()
     SetNodeId(value *string)()
     SetNotificationsUrl(value *string)()
     SetOpenIssues(value *int32)()
     SetOpenIssuesCount(value *int32)()
-    SetOrganization(value NullableSimpleUserable)()
     SetOwner(value SimpleUserable)()
     SetPermissions(value Repository_permissionsable)()
     SetPrivate(value *bool)()
@@ -2821,14 +2711,12 @@ type Repositoryable interface {
     SetStargazersUrl(value *string)()
     SetStarredAt(value *string)()
     SetStatusesUrl(value *string)()
-    SetSubscribersCount(value *int32)()
     SetSubscribersUrl(value *string)()
     SetSubscriptionUrl(value *string)()
     SetSvnUrl(value *string)()
     SetTagsUrl(value *string)()
     SetTeamsUrl(value *string)()
     SetTempCloneToken(value *string)()
-    SetTemplateRepository(value Repository_template_repositoryable)()
     SetTopics(value []string)()
     SetTreesUrl(value *string)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

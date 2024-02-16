@@ -9,7 +9,7 @@ import (
 type ItemItemActionsRunsItemArtifactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 type ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters struct {
     // The name field of an artifact. When specified, only artifacts with this name will be returned.
     Name *string `uriparametername:"name"`
@@ -31,7 +31,7 @@ func NewItemItemActionsRunsItemArtifactsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsRunsItemArtifactsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// Get lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/artifacts#list-workflow-run-artifacts
@@ -49,7 +49,7 @@ func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) Get(ctx context.Context
     }
     return res.(ItemItemActionsRunsItemArtifactsGetResponseable), nil
 }
-// ToGetRequestInformation lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// ToGetRequestInformation lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 func (m *ItemItemActionsRunsItemArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsItemArtifactsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
