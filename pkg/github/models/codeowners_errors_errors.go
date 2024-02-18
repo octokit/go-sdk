@@ -16,7 +16,7 @@ type CodeownersErrors_errors struct {
     line *int32
     // A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
     message *string
-    // The path of the file where the error occured.
+    // The path of the file where the error occurred.
     path *string
     // The contents of the line where the error occurs.
     source *string
@@ -129,7 +129,7 @@ func (m *CodeownersErrors_errors) GetLine()(*int32) {
 func (m *CodeownersErrors_errors) GetMessage()(*string) {
     return m.message
 }
-// GetPath gets the path property value. The path of the file where the error occured.
+// GetPath gets the path property value. The path of the file where the error occurred.
 func (m *CodeownersErrors_errors) GetPath()(*string) {
     return m.path
 }
@@ -213,7 +213,7 @@ func (m *CodeownersErrors_errors) SetLine(value *int32)() {
 func (m *CodeownersErrors_errors) SetMessage(value *string)() {
     m.message = value
 }
-// SetPath sets the path property value. The path of the file where the error occured.
+// SetPath sets the path property value. The path of the file where the error occurred.
 func (m *CodeownersErrors_errors) SetPath(value *string)() {
     m.path = value
 }
