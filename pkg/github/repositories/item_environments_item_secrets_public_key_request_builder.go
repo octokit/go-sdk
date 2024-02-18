@@ -23,7 +23,7 @@ func NewItemEnvironmentsItemSecretsPublicKeyRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemEnvironmentsItemSecretsPublicKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+// Get get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/secrets#get-an-environment-public-key
@@ -41,7 +41,7 @@ func (m *ItemEnvironmentsItemSecretsPublicKeyRequestBuilder) Get(ctx context.Con
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ActionsPublicKeyable), nil
 }
-// ToGetRequestInformation get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+// ToGetRequestInformation get the public key for an environment, which you need to encrypt environment secrets. You need to encrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 func (m *ItemEnvironmentsItemSecretsPublicKeyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

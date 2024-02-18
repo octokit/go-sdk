@@ -22,7 +22,7 @@ func NewItemItemActionsRunsItemAttemptsItemLogsRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsRunsItemAttemptsItemLogsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access tothe repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.GitHub Apps must have the `actions:read` permission to use this endpoint.
+// Get gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access tothe repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#download-workflow-run-attempt-logs
@@ -40,7 +40,7 @@ func (m *ItemItemActionsRunsItemAttemptsItemLogsRequestBuilder) Get(ctx context.
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access tothe repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.GitHub Apps must have the `actions:read` permission to use this endpoint.
+// ToGetRequestInformation gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after1 minute. Look for `Location:` in the response header to find the URL for the download. Anyone with read access tothe repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
 func (m *ItemItemActionsRunsItemAttemptsItemLogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

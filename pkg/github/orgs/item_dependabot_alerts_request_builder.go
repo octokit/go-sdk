@@ -11,7 +11,7 @@ import (
 type ItemDependabotAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDependabotAlertsRequestBuilderGetQueryParameters lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+// ItemDependabotAlertsRequestBuilderGetQueryParameters lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
 type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     After *string `uriparametername:"after"`
@@ -51,7 +51,7 @@ func NewItemDependabotAlertsRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemDependabotAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+// Get lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-organization
@@ -78,7 +78,7 @@ func (m *ItemDependabotAlertsRequestBuilder) Get(ctx context.Context, requestCon
     }
     return val, nil
 }
-// ToGetRequestInformation lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
+// ToGetRequestInformation lists Dependabot alerts for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have **Dependabot alerts** read permission to use this endpoint.
 func (m *ItemDependabotAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemDependabotAlertsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

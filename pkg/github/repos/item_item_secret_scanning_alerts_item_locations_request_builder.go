@@ -10,7 +10,7 @@ import (
 type ItemItemSecretScanningAlertsItemLocationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemSecretScanningAlertsItemLocationsRequestBuilderGetQueryParameters lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
+// ItemItemSecretScanningAlertsItemLocationsRequestBuilderGetQueryParameters lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 type ItemItemSecretScanningAlertsItemLocationsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,7 +30,7 @@ func NewItemItemSecretScanningAlertsItemLocationsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemSecretScanningAlertsItemLocationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
+// Get lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert
@@ -54,7 +54,7 @@ func (m *ItemItemSecretScanningAlertsItemLocationsRequestBuilder) Get(ctx contex
     }
     return val, nil
 }
-// ToGetRequestInformation lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
+// ToGetRequestInformation lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope. GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
 func (m *ItemItemSecretScanningAlertsItemLocationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemSecretScanningAlertsItemLocationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
