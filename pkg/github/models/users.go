@@ -16,7 +16,7 @@ type Users struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewUsers instantiates a new users and sets the default values.
@@ -111,7 +111,7 @@ func (m *Users) GetObjectType()(*string) {
 func (m *Users) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Users) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Users) SetObjectType(value *string)() {
 func (m *Users) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Users) SetProperty(value *string)() {
     m.property = value
 }

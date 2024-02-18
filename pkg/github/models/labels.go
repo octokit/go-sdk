@@ -16,7 +16,7 @@ type Labels struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewLabels instantiates a new labels and sets the default values.
@@ -111,7 +111,7 @@ func (m *Labels) GetObjectType()(*string) {
 func (m *Labels) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Labels) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Labels) SetObjectType(value *string)() {
 func (m *Labels) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Labels) SetProperty(value *string)() {
     m.property = value
 }

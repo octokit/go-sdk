@@ -16,7 +16,7 @@ type Code struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewCode instantiates a new code and sets the default values.
@@ -111,7 +111,7 @@ func (m *Code) GetObjectType()(*string) {
 func (m *Code) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Code) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Code) SetObjectType(value *string)() {
 func (m *Code) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Code) SetProperty(value *string)() {
     m.property = value
 }

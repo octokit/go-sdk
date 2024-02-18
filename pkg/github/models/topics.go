@@ -16,7 +16,7 @@ type Topics struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewTopics instantiates a new topics and sets the default values.
@@ -111,7 +111,7 @@ func (m *Topics) GetObjectType()(*string) {
 func (m *Topics) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Topics) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Topics) SetObjectType(value *string)() {
 func (m *Topics) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Topics) SetProperty(value *string)() {
     m.property = value
 }

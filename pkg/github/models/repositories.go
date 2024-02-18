@@ -16,7 +16,7 @@ type Repositories struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewRepositories instantiates a new repositories and sets the default values.
@@ -111,7 +111,7 @@ func (m *Repositories) GetObjectType()(*string) {
 func (m *Repositories) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Repositories) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Repositories) SetObjectType(value *string)() {
 func (m *Repositories) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Repositories) SetProperty(value *string)() {
     m.property = value
 }

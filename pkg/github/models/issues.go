@@ -16,7 +16,7 @@ type Issues struct {
     object_type *string
     // The object_url property
     object_url *string
-    // The property property
+    // The property
     property *string
 }
 // NewIssues instantiates a new issues and sets the default values.
@@ -111,7 +111,7 @@ func (m *Issues) GetObjectType()(*string) {
 func (m *Issues) GetObjectUrl()(*string) {
     return m.object_url
 }
-// GetProperty gets the property property value. The property property
+// GetProperty gets the property value. The property
 func (m *Issues) GetProperty()(*string) {
     return m.property
 }
@@ -181,7 +181,7 @@ func (m *Issues) SetObjectType(value *string)() {
 func (m *Issues) SetObjectUrl(value *string)() {
     m.object_url = value
 }
-// SetProperty sets the property property value. The property property
+// SetProperty sets the property value. The property
 func (m *Issues) SetProperty(value *string)() {
     m.property = value
 }
