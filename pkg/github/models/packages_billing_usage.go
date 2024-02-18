@@ -10,9 +10,9 @@ type PackagesBillingUsage struct {
     additionalData map[string]any
     // Free storage space (GB) for GitHub Packages.
     included_gigabytes_bandwidth *int32
-    // Sum of the free and paid storage space (GB) for GitHuub Packages.
+    // Sum of the free and paid storage space (GB) for GitHub Packages.
     total_gigabytes_bandwidth_used *int32
-    // Total paid storage space (GB) for GitHuub Packages.
+    // Total paid storage space (GB) for GitHub Packages.
     total_paid_gigabytes_bandwidth_used *int32
 }
 // NewPackagesBillingUsage instantiates a new packagesBillingUsage and sets the default values.
@@ -69,11 +69,11 @@ func (m *PackagesBillingUsage) GetFieldDeserializers()(map[string]func(i878a80d2
 func (m *PackagesBillingUsage) GetIncludedGigabytesBandwidth()(*int32) {
     return m.included_gigabytes_bandwidth
 }
-// GetTotalGigabytesBandwidthUsed gets the total_gigabytes_bandwidth_used property value. Sum of the free and paid storage space (GB) for GitHuub Packages.
+// GetTotalGigabytesBandwidthUsed gets the total_gigabytes_bandwidth_used property value. Sum of the free and paid storage space (GB) for GitHub Packages.
 func (m *PackagesBillingUsage) GetTotalGigabytesBandwidthUsed()(*int32) {
     return m.total_gigabytes_bandwidth_used
 }
-// GetTotalPaidGigabytesBandwidthUsed gets the total_paid_gigabytes_bandwidth_used property value. Total paid storage space (GB) for GitHuub Packages.
+// GetTotalPaidGigabytesBandwidthUsed gets the total_paid_gigabytes_bandwidth_used property value. Total paid storage space (GB) for GitHub Packages.
 func (m *PackagesBillingUsage) GetTotalPaidGigabytesBandwidthUsed()(*int32) {
     return m.total_paid_gigabytes_bandwidth_used
 }
@@ -113,11 +113,11 @@ func (m *PackagesBillingUsage) SetAdditionalData(value map[string]any)() {
 func (m *PackagesBillingUsage) SetIncludedGigabytesBandwidth(value *int32)() {
     m.included_gigabytes_bandwidth = value
 }
-// SetTotalGigabytesBandwidthUsed sets the total_gigabytes_bandwidth_used property value. Sum of the free and paid storage space (GB) for GitHuub Packages.
+// SetTotalGigabytesBandwidthUsed sets the total_gigabytes_bandwidth_used property value. Sum of the free and paid storage space (GB) for GitHub Packages.
 func (m *PackagesBillingUsage) SetTotalGigabytesBandwidthUsed(value *int32)() {
     m.total_gigabytes_bandwidth_used = value
 }
-// SetTotalPaidGigabytesBandwidthUsed sets the total_paid_gigabytes_bandwidth_used property value. Total paid storage space (GB) for GitHuub Packages.
+// SetTotalPaidGigabytesBandwidthUsed sets the total_paid_gigabytes_bandwidth_used property value. Total paid storage space (GB) for GitHub Packages.
 func (m *PackagesBillingUsage) SetTotalPaidGigabytesBandwidthUsed(value *int32)() {
     m.total_paid_gigabytes_bandwidth_used = value
 }
