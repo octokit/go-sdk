@@ -107,7 +107,7 @@ type OrganizationFull struct {
     secret_scanning_push_protection_custom_link *string
     // Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
     secret_scanning_push_protection_custom_link_enabled *bool
-    // Whether secret scanning push protection is automatically enabled for new repositories and repositoriestransferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     secret_scanning_push_protection_enabled_for_new_repositories *bool
     // The total_private_repos property
     total_private_repos *int32
@@ -910,7 +910,7 @@ func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLink()(*string) 
 func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLinkEnabled()(*bool) {
     return m.secret_scanning_push_protection_custom_link_enabled
 }
-// GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories and repositoriestransferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) GetSecretScanningPushProtectionEnabledForNewRepositories()(*bool) {
     return m.secret_scanning_push_protection_enabled_for_new_repositories
 }
@@ -1494,7 +1494,7 @@ func (m *OrganizationFull) SetSecretScanningPushProtectionCustomLink(value *stri
 func (m *OrganizationFull) SetSecretScanningPushProtectionCustomLinkEnabled(value *bool)() {
     m.secret_scanning_push_protection_custom_link_enabled = value
 }
-// SetSecretScanningPushProtectionEnabledForNewRepositories sets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories and repositoriestransferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetSecretScanningPushProtectionEnabledForNewRepositories sets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) SetSecretScanningPushProtectionEnabledForNewRepositories(value *bool)() {
     m.secret_scanning_push_protection_enabled_for_new_repositories = value
 }
