@@ -11,7 +11,7 @@ import (
 type ItemItemSecurityAdvisoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemSecurityAdvisoriesRequestBuilderGetQueryParameters lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+// ItemItemSecurityAdvisoriesRequestBuilderGetQueryParameters lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission in order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
 type ItemItemSecurityAdvisoriesRequestBuilderGetQueryParameters struct {
     // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     After *string `uriparametername:"after"`
@@ -50,7 +50,7 @@ func NewItemItemSecurityAdvisoriesRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemSecurityAdvisoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+// Get lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission in order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/security-advisories/repository-advisories#list-repository-security-advisories
@@ -102,7 +102,7 @@ func (m *ItemItemSecurityAdvisoriesRequestBuilder) Post(ctx context.Context, bod
 func (m *ItemItemSecurityAdvisoriesRequestBuilder) Reports()(*ItemItemSecurityAdvisoriesReportsRequestBuilder) {
     return NewItemItemSecurityAdvisoriesReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+// ToGetRequestInformation lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permission in order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
 func (m *ItemItemSecurityAdvisoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemSecurityAdvisoriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
