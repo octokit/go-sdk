@@ -8,7 +8,7 @@ import (
 type ItemItemAutolinksPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
+    // Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case-insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
     is_alphanumeric *bool
     // This prefix appended by certain characters will generate a link any time it is found in an issue, pull request, or commit.
     key_prefix *string
@@ -65,7 +65,7 @@ func (m *ItemItemAutolinksPostRequestBody) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIsAlphanumeric gets the is_alphanumeric property value. Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
+// GetIsAlphanumeric gets the is_alphanumeric property value. Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case-insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
 func (m *ItemItemAutolinksPostRequestBody) GetIsAlphanumeric()(*bool) {
     return m.is_alphanumeric
 }
@@ -109,7 +109,7 @@ func (m *ItemItemAutolinksPostRequestBody) Serialize(writer i878a80d2330e89d2689
 func (m *ItemItemAutolinksPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetIsAlphanumeric sets the is_alphanumeric property value. Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
+// SetIsAlphanumeric sets the is_alphanumeric property value. Whether this autolink reference matches alphanumeric characters. If true, the `<num>` parameter of the `url_template` matches alphanumeric characters `A-Z` (case-insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.
 func (m *ItemItemAutolinksPostRequestBody) SetIsAlphanumeric(value *bool)() {
     m.is_alphanumeric = value
 }
