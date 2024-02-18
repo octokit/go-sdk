@@ -27,7 +27,7 @@ type OrganizationFull struct {
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The default_repository_permission property
     default_repository_permission *string
-    // Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred tothis organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     dependabot_alerts_enabled_for_new_repositories *bool
     // Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.
     dependabot_security_updates_enabled_for_new_repositories *bool
@@ -175,7 +175,7 @@ func (m *OrganizationFull) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3
 func (m *OrganizationFull) GetDefaultRepositoryPermission()(*string) {
     return m.default_repository_permission
 }
-// GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred tothis organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) GetDependabotAlertsEnabledForNewRepositories()(*bool) {
     return m.dependabot_alerts_enabled_for_new_repositories
 }
@@ -1334,7 +1334,7 @@ func (m *OrganizationFull) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *OrganizationFull) SetDefaultRepositoryPermission(value *string)() {
     m.default_repository_permission = value
 }
-// SetDependabotAlertsEnabledForNewRepositories sets the dependabot_alerts_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred tothis organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetDependabotAlertsEnabledForNewRepositories sets the dependabot_alerts_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) SetDependabotAlertsEnabledForNewRepositories(value *bool)() {
     m.dependabot_alerts_enabled_for_new_repositories = value
 }
