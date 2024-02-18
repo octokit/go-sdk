@@ -10,7 +10,7 @@ import (
 type ItemActionsVariablesItemRepositoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActionsVariablesItemRepositoriesRequestBuilderGetQueryParameters lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// ItemActionsVariablesItemRepositoriesRequestBuilderGetQueryParameters lists all repositories that can access an organization variable that is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 type ItemActionsVariablesItemRepositoriesRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -39,7 +39,7 @@ func NewItemActionsVariablesItemRepositoriesRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemActionsVariablesItemRepositoriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// Get lists all repositories that can access an organization variable that is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#list-selected-repositories-for-an-organization-variable
@@ -72,7 +72,7 @@ func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) Put(ctx context.Con
     }
     return nil
 }
-// ToGetRequestInformation lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// ToGetRequestInformation lists all repositories that can access an organization variable that is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemActionsVariablesItemRepositoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemActionsVariablesItemRepositoriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
