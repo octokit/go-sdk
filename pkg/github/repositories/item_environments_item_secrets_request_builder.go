@@ -9,7 +9,7 @@ import (
 type ItemEnvironmentsItemSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+// ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters lists all secrets available in an environment without revealing their encrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 type ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -40,7 +40,7 @@ func NewItemEnvironmentsItemSecretsRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewItemEnvironmentsItemSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+// Get lists all secrets available in an environment without revealing their encrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/secrets#list-environment-secrets
@@ -62,7 +62,7 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) Get(ctx context.Context, req
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) PublicKey()(*ItemEnvironmentsItemSecretsPublicKeyRequestBuilder) {
     return NewItemEnvironmentsItemSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists all secrets available in an environment without revealing theirencrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+// ToGetRequestInformation lists all secrets available in an environment without revealing their encrypted values.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `secrets` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read secrets.
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
