@@ -35,7 +35,7 @@ type ClassroomAssignment struct {
     passing *int32
     // Whether an accepted assignment creates a public repository.
     public_repo *bool
-    // Sluggified name of the assignment.
+    // Slugified name of the assignment.
     slug *string
     // A GitHub repository view for Classroom
     starter_code_repository SimpleClassroomRepositoryable
@@ -310,7 +310,7 @@ func (m *ClassroomAssignment) GetPassing()(*int32) {
 func (m *ClassroomAssignment) GetPublicRepo()(*bool) {
     return m.public_repo
 }
-// GetSlug gets the slug property value. Sluggified name of the assignment.
+// GetSlug gets the slug property value. Slugified name of the assignment.
 func (m *ClassroomAssignment) GetSlug()(*string) {
     return m.slug
 }
@@ -515,7 +515,7 @@ func (m *ClassroomAssignment) SetPassing(value *int32)() {
 func (m *ClassroomAssignment) SetPublicRepo(value *bool)() {
     m.public_repo = value
 }
-// SetSlug sets the slug property value. Sluggified name of the assignment.
+// SetSlug sets the slug property value. Slugified name of the assignment.
 func (m *ClassroomAssignment) SetSlug(value *string)() {
     m.slug = value
 }
