@@ -10,7 +10,7 @@ type ItemWithGist_PatchRequestBody struct {
     additionalData map[string]any
     // The description of the gist.
     description *string
-    // The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also bedeleted if the specified object does not contain at least one of `content` or `filename`.
+    // The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be deleted if the specified object does not contain at least one of `content` or `filename`.
     files ItemWithGist_PatchRequestBody_filesable
 }
 // NewItemWithGist_PatchRequestBody instantiates a new ItemWithGist_PatchRequestBody and sets the default values.
@@ -57,7 +57,7 @@ func (m *ItemWithGist_PatchRequestBody) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetFiles gets the files property value. The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also bedeleted if the specified object does not contain at least one of `content` or `filename`.
+// GetFiles gets the files property value. The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be deleted if the specified object does not contain at least one of `content` or `filename`.
 func (m *ItemWithGist_PatchRequestBody) GetFiles()(ItemWithGist_PatchRequestBody_filesable) {
     return m.files
 }
@@ -91,7 +91,7 @@ func (m *ItemWithGist_PatchRequestBody) SetAdditionalData(value map[string]any)(
 func (m *ItemWithGist_PatchRequestBody) SetDescription(value *string)() {
     m.description = value
 }
-// SetFiles sets the files property value. The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also bedeleted if the specified object does not contain at least one of `content` or `filename`.
+// SetFiles sets the files property value. The gist files to be updated, renamed, or deleted. Each `key` must match the current filename(including extension) of the targeted gist file. For example: `hello.py`.To delete a file, set the whole file to null. For example: `hello.py : null`. The file will also be deleted if the specified object does not contain at least one of `content` or `filename`.
 func (m *ItemWithGist_PatchRequestBody) SetFiles(value ItemWithGist_PatchRequestBody_filesable)() {
     m.files = value
 }
