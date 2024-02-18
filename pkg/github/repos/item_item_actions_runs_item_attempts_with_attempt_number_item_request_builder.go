@@ -10,7 +10,7 @@ import (
 type ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderGetQueryParameters gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+// ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderGetQueryParameters gets a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
 type ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderGetQueryParameters struct {
     // If `true` pull requests are omitted from the response (empty array).
     Exclude_pull_requests *bool `uriparametername:"exclude_pull_requests"`
@@ -28,7 +28,7 @@ func NewItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+// Get gets a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run-attempt
@@ -54,7 +54,7 @@ func (m *ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) Jo
 func (m *ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) Logs()(*ItemItemActionsRunsItemAttemptsItemLogsRequestBuilder) {
     return NewItemItemActionsRunsItemAttemptsItemLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+// ToGetRequestInformation gets a specific workflow run attempt. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
 func (m *ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
