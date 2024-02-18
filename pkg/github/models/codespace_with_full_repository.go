@@ -29,7 +29,7 @@ type CodespaceWithFullRepository struct {
     idle_timeout_notice *string
     // Last known time this codespace was started.
     last_used_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The initally assigned location of a new codespace.
+    // The initially assigned location of a new codespace.
     location *CodespaceWithFullRepository_location
     // A description of the machine powering a codespace.
     machine NullableCodespaceMachineable
@@ -448,7 +448,7 @@ func (m *CodespaceWithFullRepository) GetIdleTimeoutNotice()(*string) {
 func (m *CodespaceWithFullRepository) GetLastUsedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_used_at
 }
-// GetLocation gets the location property value. The initally assigned location of a new codespace.
+// GetLocation gets the location property value. The initially assigned location of a new codespace.
 func (m *CodespaceWithFullRepository) GetLocation()(*CodespaceWithFullRepository_location) {
     return m.location
 }
@@ -774,7 +774,7 @@ func (m *CodespaceWithFullRepository) SetIdleTimeoutNotice(value *string)() {
 func (m *CodespaceWithFullRepository) SetLastUsedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.last_used_at = value
 }
-// SetLocation sets the location property value. The initally assigned location of a new codespace.
+// SetLocation sets the location property value. The initially assigned location of a new codespace.
 func (m *CodespaceWithFullRepository) SetLocation(value *CodespaceWithFullRepository_location)() {
     m.location = value
 }

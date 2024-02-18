@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// The initally assigned location of a new codespace.
+// The initially assigned location of a new codespace.
 type Codespace_location int
 
 const (

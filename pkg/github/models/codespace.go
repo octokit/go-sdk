@@ -31,7 +31,7 @@ type Codespace struct {
     last_known_stop_notice *string
     // Last known time this codespace was started.
     last_used_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The initally assigned location of a new codespace.
+    // The initially assigned location of a new codespace.
     location *Codespace_location
     // A description of the machine powering a codespace.
     machine NullableCodespaceMachineable
@@ -464,7 +464,7 @@ func (m *Codespace) GetLastKnownStopNotice()(*string) {
 func (m *Codespace) GetLastUsedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_used_at
 }
-// GetLocation gets the location property value. The initally assigned location of a new codespace.
+// GetLocation gets the location property value. The initially assigned location of a new codespace.
 func (m *Codespace) GetLocation()(*Codespace_location) {
     return m.location
 }
@@ -800,7 +800,7 @@ func (m *Codespace) SetLastKnownStopNotice(value *string)() {
 func (m *Codespace) SetLastUsedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.last_used_at = value
 }
-// SetLocation sets the location property value. The initally assigned location of a new codespace.
+// SetLocation sets the location property value. The initially assigned location of a new codespace.
 func (m *Codespace) SetLocation(value *Codespace_location)() {
     m.location = value
 }
