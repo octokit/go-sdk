@@ -17,7 +17,7 @@ type RepositoryRuleset struct {
     conditions RepositoryRuleset_RepositoryRuleset_conditionsable
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
+    // The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
     current_user_can_bypass *RepositoryRuleset_current_user_can_bypass
     // The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
     enforcement *RepositoryRuleEnforcement
@@ -147,7 +147,7 @@ func (m *RepositoryRuleset) GetConditions()(RepositoryRuleset_RepositoryRuleset_
 func (m *RepositoryRuleset) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
-// GetCurrentUserCanBypass gets the current_user_can_bypass property value. The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
+// GetCurrentUserCanBypass gets the current_user_can_bypass property value. The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
 func (m *RepositoryRuleset) GetCurrentUserCanBypass()(*RepositoryRuleset_current_user_can_bypass) {
     return m.current_user_can_bypass
 }
@@ -474,7 +474,7 @@ func (m *RepositoryRuleset) SetConditions(value RepositoryRuleset_RepositoryRule
 func (m *RepositoryRuleset) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
 }
-// SetCurrentUserCanBypass sets the current_user_can_bypass property value. The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
+// SetCurrentUserCanBypass sets the current_user_can_bypass property value. The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
 func (m *RepositoryRuleset) SetCurrentUserCanBypass(value *RepositoryRuleset_current_user_can_bypass)() {
     m.current_user_can_bypass = value
 }

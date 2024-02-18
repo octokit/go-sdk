@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
+// The bypass type of the user making the API request for this ruleset. This field is only returned when querying the repository-level endpoint.
 type RepositoryRuleset_current_user_can_bypass int
 
 const (
