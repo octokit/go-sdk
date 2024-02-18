@@ -99,7 +99,7 @@ func (m *ItemItemImportRequestBuilder) Patch(ctx context.Context, body ItemItemI
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ImportEscapedable), nil
 }
-// Put start a source import to a GitHub repository using GitHub Importer.Importing into a GitHub repository with GitHub Actions enabled is not supported and willreturn a status `422 Unprocessable Entity` response.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+// Put start a source import to a GitHub repository using GitHub Importer.Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
 // [API method documentation]
 // 
@@ -151,7 +151,7 @@ func (m *ItemItemImportRequestBuilder) ToPatchRequestInformation(ctx context.Con
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation start a source import to a GitHub repository using GitHub Importer.Importing into a GitHub repository with GitHub Actions enabled is not supported and willreturn a status `422 Unprocessable Entity` response.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+// ToPutRequestInformation start a source import to a GitHub repository using GitHub Importer.Importing into a GitHub repository with GitHub Actions enabled is not supported and will return a status `422 Unprocessable Entity` response.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
 func (m *ItemItemImportRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemImportPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
