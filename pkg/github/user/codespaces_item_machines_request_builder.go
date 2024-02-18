@@ -23,7 +23,7 @@ func NewCodespacesItemMachinesRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewCodespacesItemMachinesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
+// Get list the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint. GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/machines#list-machine-types-for-a-codespace
@@ -47,7 +47,7 @@ func (m *CodespacesItemMachinesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(CodespacesItemMachinesGetResponseable), nil
 }
-// ToGetRequestInformation list the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
+// ToGetRequestInformation list the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint. GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
 func (m *CodespacesItemMachinesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

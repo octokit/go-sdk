@@ -23,7 +23,7 @@ func NewItemItemActionsVariablesWithNameItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsVariablesWithNameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a repository variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// Delete deletes a repository variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#delete-a-repository-variable
@@ -38,7 +38,7 @@ func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get gets a specific variable in a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// Get gets a specific variable in a repository.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#get-a-repository-variable
@@ -56,7 +56,7 @@ func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) Get(ctx context.Con
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ActionsVariableable), nil
 }
-// Patch updates a repository variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// Patch updates a repository variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#update-a-repository-variable
@@ -71,20 +71,20 @@ func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) Patch(ctx context.C
     }
     return nil
 }
-// ToDeleteRequestInformation deletes a repository variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// ToDeleteRequestInformation deletes a repository variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
-// ToGetRequestInformation gets a specific variable in a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// ToGetRequestInformation gets a specific variable in a repository.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation updates a repository variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
+// ToPatchRequestInformation updates a repository variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `actions_variables:write` repository permission to use this endpoint. Authenticated users must have collaborator access to a repository to create, update, or read variables.
 func (m *ItemItemActionsVariablesWithNameItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemActionsVariablesItemWithNamePatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

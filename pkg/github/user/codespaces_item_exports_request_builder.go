@@ -34,7 +34,7 @@ func NewCodespacesItemExportsRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewCodespacesItemExportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.You must authenticate using a personal access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
+// Post triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.You must authenticate using a personal access token with the `codespace` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#export-a-codespace-for-the-authenticated-user
@@ -59,7 +59,7 @@ func (m *CodespacesItemExportsRequestBuilder) Post(ctx context.Context, requestC
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodespaceExportDetailsable), nil
 }
-// ToPostRequestInformation triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.You must authenticate using a personal access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
+// ToPostRequestInformation triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.If changes cannot be pushed to the codespace's repository, they will be pushed to a new or previously-existing fork instead.You must authenticate using a personal access token with the `codespace` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
 func (m *CodespacesItemExportsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

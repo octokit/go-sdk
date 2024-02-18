@@ -23,7 +23,7 @@ func NewItemItemPropertiesValuesRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPropertiesValuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
+// Get gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint. GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository
@@ -48,7 +48,7 @@ func (m *ItemItemPropertiesValuesRequestBuilder) Get(ctx context.Context, reques
     }
     return val, nil
 }
-// Patch create new or update existing custom property values for a repository.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.GitHub Apps must have the `repository_custom_properties:write` permission to use this endpoint.
+// Patch create new or update existing custom property values for a repository.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint. GitHub Apps must have the `repository_custom_properties:write` permission to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/custom-properties#create-or-update-custom-property-values-for-a-repository
@@ -67,14 +67,14 @@ func (m *ItemItemPropertiesValuesRequestBuilder) Patch(ctx context.Context, body
     }
     return nil
 }
-// ToGetRequestInformation gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
+// ToGetRequestInformation gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint. GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
 func (m *ItemItemPropertiesValuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create new or update existing custom property values for a repository.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint.GitHub Apps must have the `repository_custom_properties:write` permission to use this endpoint.
+// ToPatchRequestInformation create new or update existing custom property values for a repository.Using a value of `null` for a custom property will remove or 'unset' the property value from the repository.Repository admins and other users with the repository-level "edit custom property values" fine-grained permission can use this endpoint. GitHub Apps must have the `repository_custom_properties:write` permission to use this endpoint.
 func (m *ItemItemPropertiesValuesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemPropertiesValuesPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
