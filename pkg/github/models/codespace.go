@@ -25,7 +25,7 @@ type Codespace struct {
     id *int32
     // The number of minutes of inactivity after which this codespace will be automatically stopped.
     idle_timeout_minutes *int32
-    // Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+    // Text to show user when codespace idle timeout minutes has been overridden by an organization policy
     idle_timeout_notice *string
     // The text to display to a user when a codespace has been stopped for a potentially actionable reason.
     last_known_stop_notice *string
@@ -452,7 +452,7 @@ func (m *Codespace) GetId()(*int32) {
 func (m *Codespace) GetIdleTimeoutMinutes()(*int32) {
     return m.idle_timeout_minutes
 }
-// GetIdleTimeoutNotice gets the idle_timeout_notice property value. Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+// GetIdleTimeoutNotice gets the idle_timeout_notice property value. Text to show user when codespace idle timeout minutes has been overridden by an organization policy
 func (m *Codespace) GetIdleTimeoutNotice()(*string) {
     return m.idle_timeout_notice
 }
@@ -788,7 +788,7 @@ func (m *Codespace) SetId(value *int32)() {
 func (m *Codespace) SetIdleTimeoutMinutes(value *int32)() {
     m.idle_timeout_minutes = value
 }
-// SetIdleTimeoutNotice sets the idle_timeout_notice property value. Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+// SetIdleTimeoutNotice sets the idle_timeout_notice property value. Text to show user when codespace idle timeout minutes has been overridden by an organization policy
 func (m *Codespace) SetIdleTimeoutNotice(value *string)() {
     m.idle_timeout_notice = value
 }
