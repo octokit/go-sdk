@@ -12,7 +12,7 @@ type DependencyGraphSpdxSbom_sbom_packages struct {
     downloadLocation *string
     // The externalRefs property
     externalRefs []DependencyGraphSpdxSbom_sbom_packages_externalRefsable
-    // Whether the package's file content has been subjected toanalysis during the creation of the SPDX document.
+    // Whether the package's file content has been subjected to analysis during the creation of the SPDX document.
     filesAnalyzed *bool
     // The license of the package as determined while creating the SPDX document.
     licenseConcluded *string
@@ -151,7 +151,7 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetFilesAnalyzed gets the filesAnalyzed property value. Whether the package's file content has been subjected toanalysis during the creation of the SPDX document.
+// GetFilesAnalyzed gets the filesAnalyzed property value. Whether the package's file content has been subjected to analysis during the creation of the SPDX document.
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetFilesAnalyzed()(*bool) {
     return m.filesAnalyzed
 }
@@ -261,7 +261,7 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) SetDownloadLocation(value *strin
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetExternalRefs(value []DependencyGraphSpdxSbom_sbom_packages_externalRefsable)() {
     m.externalRefs = value
 }
-// SetFilesAnalyzed sets the filesAnalyzed property value. Whether the package's file content has been subjected toanalysis during the creation of the SPDX document.
+// SetFilesAnalyzed sets the filesAnalyzed property value. Whether the package's file content has been subjected to analysis during the creation of the SPDX document.
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetFilesAnalyzed(value *bool)() {
     m.filesAnalyzed = value
 }
