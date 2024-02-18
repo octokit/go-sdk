@@ -29,7 +29,7 @@ type OrganizationFull struct {
     default_repository_permission *string
     // Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     dependabot_alerts_enabled_for_new_repositories *bool
-    // Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // Whether dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     dependabot_security_updates_enabled_for_new_repositories *bool
     // Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     dependency_graph_enabled_for_new_repositories *bool
@@ -179,7 +179,7 @@ func (m *OrganizationFull) GetDefaultRepositoryPermission()(*string) {
 func (m *OrganizationFull) GetDependabotAlertsEnabledForNewRepositories()(*bool) {
     return m.dependabot_alerts_enabled_for_new_repositories
 }
-// GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. Whether dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool) {
     return m.dependabot_security_updates_enabled_for_new_repositories
 }
@@ -1338,7 +1338,7 @@ func (m *OrganizationFull) SetDefaultRepositoryPermission(value *string)() {
 func (m *OrganizationFull) SetDependabotAlertsEnabledForNewRepositories(value *bool)() {
     m.dependabot_alerts_enabled_for_new_repositories = value
 }
-// SetDependabotSecurityUpdatesEnabledForNewRepositories sets the dependabot_security_updates_enabled_for_new_repositories property value. Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetDependabotSecurityUpdatesEnabledForNewRepositories sets the dependabot_security_updates_enabled_for_new_repositories property value. Whether dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 func (m *OrganizationFull) SetDependabotSecurityUpdatesEnabledForNewRepositories(value *bool)() {
     m.dependabot_security_updates_enabled_for_new_repositories = value
 }
