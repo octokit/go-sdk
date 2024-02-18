@@ -16,7 +16,7 @@ type DependencyGraphSpdxSbom_sbom_packages struct {
     filesAnalyzed *bool
     // The license of the package as determined while creating the SPDX document.
     licenseConcluded *string
-    // The license of the package as declared by its author, or NOASSERTION if this informationwas not available when the SPDX document was created.
+    // The license of the package as declared by its author, or NOASSERTION if this information was not available when the SPDX document was created.
     licenseDeclared *string
     // The name of the package.
     name *string
@@ -159,7 +159,7 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) GetFilesAnalyzed()(*bool) {
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetLicenseConcluded()(*string) {
     return m.licenseConcluded
 }
-// GetLicenseDeclared gets the licenseDeclared property value. The license of the package as declared by its author, or NOASSERTION if this informationwas not available when the SPDX document was created.
+// GetLicenseDeclared gets the licenseDeclared property value. The license of the package as declared by its author, or NOASSERTION if this information was not available when the SPDX document was created.
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetLicenseDeclared()(*string) {
     return m.licenseDeclared
 }
@@ -269,7 +269,7 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) SetFilesAnalyzed(value *bool)() 
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetLicenseConcluded(value *string)() {
     m.licenseConcluded = value
 }
-// SetLicenseDeclared sets the licenseDeclared property value. The license of the package as declared by its author, or NOASSERTION if this informationwas not available when the SPDX document was created.
+// SetLicenseDeclared sets the licenseDeclared property value. The license of the package as declared by its author, or NOASSERTION if this information was not available when the SPDX document was created.
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetLicenseDeclared(value *string)() {
     m.licenseDeclared = value
 }
