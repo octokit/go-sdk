@@ -64,7 +64,7 @@ func (m *ItemItemDeploymentsItemStatusesRequestBuilder) Get(ctx context.Context,
     }
     return val, nil
 }
-// Post users with `push` access can create deployment statuses for a given deployment.GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth apps require the `repo_deployment` scope.
+// Post users with `push` access can create deployment statuses for a given deployment.OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/deployments/statuses#create-a-deployment-status
@@ -92,7 +92,7 @@ func (m *ItemItemDeploymentsItemStatusesRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation users with `push` access can create deployment statuses for a given deployment.GitHub Apps require `read & write` access to "Deployments" and `read-only` access to "Repo contents" (for private repos). OAuth apps require the `repo_deployment` scope.
+// ToPostRequestInformation users with `push` access can create deployment statuses for a given deployment.OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
 func (m *ItemItemDeploymentsItemStatusesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemDeploymentsItemStatusesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

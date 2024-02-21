@@ -30,7 +30,7 @@ func NewSocial_accountsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewSocial_accountsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes one or more social accounts from the authenticated user's profile. This endpoint is accessible with the `user` scope.
+// Delete deletes one or more social accounts from the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user
@@ -77,7 +77,7 @@ func (m *Social_accountsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return val, nil
 }
-// Post add one or more social accounts to the authenticated user's profile. This endpoint is accessible with the `user` scope.
+// Post add one or more social accounts to the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/social-accounts#add-social-accounts-for-the-authenticated-user
@@ -104,7 +104,7 @@ func (m *Social_accountsRequestBuilder) Post(ctx context.Context, body Social_ac
     }
     return val, nil
 }
-// ToDeleteRequestInformation deletes one or more social accounts from the authenticated user's profile. This endpoint is accessible with the `user` scope.
+// ToDeleteRequestInformation deletes one or more social accounts from the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 func (m *Social_accountsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body Social_accountsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -122,7 +122,7 @@ func (m *Social_accountsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add one or more social accounts to the authenticated user's profile. This endpoint is accessible with the `user` scope.
+// ToPostRequestInformation add one or more social accounts to the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 func (m *Social_accountsRequestBuilder) ToPostRequestInformation(ctx context.Context, body Social_accountsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

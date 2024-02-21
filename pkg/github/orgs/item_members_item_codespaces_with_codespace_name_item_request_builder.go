@@ -23,7 +23,7 @@ func NewItemMembersItemCodespacesWithCodespace_nameItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersItemCodespacesWithCodespace_nameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a user's codespace.To use this endpoint you must authenticate using one of the following methods:- An access token with the `admin:org` scope- An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
+// Delete deletes a user's codespace.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organizations#delete-a-codespace-from-the-organization
@@ -51,7 +51,7 @@ func (m *ItemMembersItemCodespacesWithCodespace_nameItemRequestBuilder) Delete(c
 func (m *ItemMembersItemCodespacesWithCodespace_nameItemRequestBuilder) Stop()(*ItemMembersItemCodespacesItemStopRequestBuilder) {
     return NewItemMembersItemCodespacesItemStopRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes a user's codespace.To use this endpoint you must authenticate using one of the following methods:- An access token with the `admin:org` scope- An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
+// ToDeleteRequestInformation deletes a user's codespace.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemMembersItemCodespacesWithCodespace_nameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

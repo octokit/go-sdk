@@ -10,7 +10,7 @@ import (
 type ItemMembersItemCodespacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMembersItemCodespacesRequestBuilderGetQueryParameters lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+// ItemMembersItemCodespacesRequestBuilderGetQueryParameters lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 type ItemMembersItemCodespacesRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -41,7 +41,7 @@ func NewItemMembersItemCodespacesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersItemCodespacesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+// Get lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organizations#list-codespaces-for-a-user-in-organization
@@ -65,7 +65,7 @@ func (m *ItemMembersItemCodespacesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ItemMembersItemCodespacesGetResponseable), nil
 }
-// ToGetRequestInformation lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+// ToGetRequestInformation lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemMembersItemCodespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemMembersItemCodespacesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

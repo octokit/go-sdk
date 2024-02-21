@@ -131,7 +131,7 @@ func (m *UserRequestBuilder) Followers()(*FollowersRequestBuilder) {
 func (m *UserRequestBuilder) Following()(*FollowingRequestBuilder) {
     return NewFollowingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get if the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
+// Get oAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/users#get-the-authenticated-user
@@ -253,7 +253,7 @@ func (m *UserRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) {
 func (m *UserRequestBuilder) Teams()(*TeamsRequestBuilder) {
     return NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation if the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
+// ToGetRequestInformation oAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
 func (m *UserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

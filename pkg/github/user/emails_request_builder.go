@@ -235,7 +235,7 @@ func (m *EmailsPostRequestBody) SetEmailsPostRequestBodyString(value *string)() 
 func (m *EmailsPostRequestBody) SetString(value *string)() {
     m.string = value
 }
-// EmailsRequestBuilderGetQueryParameters lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+// EmailsRequestBuilderGetQueryParameters lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 type EmailsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -279,7 +279,7 @@ func NewEmailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewEmailsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete this endpoint is accessible with the `user` scope.
+// Delete oAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/emails#delete-an-email-address-for-the-authenticated-user
@@ -300,7 +300,7 @@ func (m *EmailsRequestBuilder) Delete(ctx context.Context, body EmailsDeleteRequ
     }
     return nil
 }
-// Get lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+// Get lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/emails#list-email-addresses-for-the-authenticated-user
@@ -326,7 +326,7 @@ func (m *EmailsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2
     }
     return val, nil
 }
-// Post this endpoint is accessible with the `user` scope.
+// Post oAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/emails#add-an-email-address-for-the-authenticated-user
@@ -353,7 +353,7 @@ func (m *EmailsRequestBuilder) Post(ctx context.Context, body EmailsPostRequestB
     }
     return val, nil
 }
-// ToDeleteRequestInformation this endpoint is accessible with the `user` scope.
+// ToDeleteRequestInformation oAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 func (m *EmailsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body EmailsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -364,14 +364,14 @@ func (m *EmailsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, b
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+// ToGetRequestInformation lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
 func (m *EmailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[EmailsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation this endpoint is accessible with the `user` scope.
+// ToPostRequestInformation oAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
 func (m *EmailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body EmailsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
