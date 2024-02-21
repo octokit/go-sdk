@@ -23,7 +23,7 @@ func NewItemCodespacesSecretsWithSecret_nameItemRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemCodespacesSecretsWithSecret_nameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an organization development environment secret using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// Delete deletes an organization development environment secret using the secret name.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#delete-an-organization-secret
@@ -41,7 +41,7 @@ func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get gets an organization development environment secret without revealing its encrypted value.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// Get gets an organization development environment secret without revealing its encrypted value.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#get-an-organization-secret
@@ -59,7 +59,7 @@ func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) Get(ctx context
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodespacesOrgSecretable), nil
 }
-// Put creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."You must authenticate using an accesstoken with the `admin:org` scope to use this endpoint.
+// Put creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret
@@ -85,21 +85,21 @@ func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) Put(ctx context
 func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) Repositories()(*ItemCodespacesSecretsItemRepositoriesRequestBuilder) {
     return NewItemCodespacesSecretsItemRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation deletes an organization development environment secret using the secret name. You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ToDeleteRequestInformation deletes an organization development environment secret using the secret name.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation gets an organization development environment secret without revealing its encrypted value.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ToGetRequestInformation gets an organization development environment secret without revealing its encrypted value.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."You must authenticate using an accesstoken with the `admin:org` scope to use this endpoint.
+// ToPutRequestInformation creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see "[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api)."OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemCodespacesSecretsItemWithSecret_namePutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

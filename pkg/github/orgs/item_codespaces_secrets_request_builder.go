@@ -9,7 +9,7 @@ import (
 type ItemCodespacesSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCodespacesSecretsRequestBuilderGetQueryParameters lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ItemCodespacesSecretsRequestBuilderGetQueryParameters lists all Codespaces development environment secrets available at the organization-level without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 type ItemCodespacesSecretsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -40,7 +40,7 @@ func NewItemCodespacesSecretsRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemCodespacesSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// Get lists all Codespaces development environment secrets available at the organization-level without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/organization-secrets#list-organization-secrets
@@ -62,7 +62,7 @@ func (m *ItemCodespacesSecretsRequestBuilder) Get(ctx context.Context, requestCo
 func (m *ItemCodespacesSecretsRequestBuilder) PublicKey()(*ItemCodespacesSecretsPublicKeyRequestBuilder) {
     return NewItemCodespacesSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted values.You must authenticate using an access token with the `admin:org` scope to use this endpoint.
+// ToGetRequestInformation lists all Codespaces development environment secrets available at the organization-level without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
 func (m *ItemCodespacesSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCodespacesSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

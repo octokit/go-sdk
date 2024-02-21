@@ -23,7 +23,7 @@ func NewItemItemCodeScanningDefaultSetupRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCodeScanningDefaultSetupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
+// Get gets a code scanning default setup configuration.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#get-a-code-scanning-default-setup-configuration
@@ -46,7 +46,7 @@ func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) Get(ctx context.Context
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningDefaultSetupable), nil
 }
-// Patch updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
+// Patch updates a code scanning default setup configuration.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-default-setup-configuration
@@ -70,14 +70,14 @@ func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) Patch(ctx context.Conte
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.EmptyObjectable), nil
 }
-// ToGetRequestInformation gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
+// ToGetRequestInformation gets a code scanning default setup configuration.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
+// ToPatchRequestInformation updates a code scanning default setup configuration.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 func (m *ItemItemCodeScanningDefaultSetupRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningDefaultSetupUpdateable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

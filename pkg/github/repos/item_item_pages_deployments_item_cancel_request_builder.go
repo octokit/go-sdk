@@ -23,7 +23,7 @@ func NewItemItemPagesDeploymentsItemCancelRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPagesDeploymentsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancels a GitHub Pages deployment.Users must have write permissions for the GitHub Pages site. GitHub Apps must have the `pages:write` permission to use this endpoint.
+// Post cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment
@@ -41,7 +41,7 @@ func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) Post(ctx context.Cont
     }
     return nil
 }
-// ToPostRequestInformation cancels a GitHub Pages deployment.Users must have write permissions for the GitHub Pages site. GitHub Apps must have the `pages:write` permission to use this endpoint.
+// ToPostRequestInformation cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
 func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

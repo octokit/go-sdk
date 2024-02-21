@@ -13,7 +13,7 @@ import (
 type ItemPersonalAccessTokenRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+// ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters lists requests from organization members to access organization resources with a fine-grained personal access token.Only GitHub Apps can use this endpoint.
 type ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
     Direction *if40f6bba016cf7cc8e1dd7375501cb9368628a1bf123e37f5946192c743664a2.GetDirectionQueryParameterType `uriparametername:"direction"`
@@ -56,7 +56,7 @@ func NewItemPersonalAccessTokenRequestsRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemPersonalAccessTokenRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+// Get lists requests from organization members to access organization resources with a fine-grained personal access token.Only GitHub Apps can use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
@@ -83,7 +83,7 @@ func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Get(ctx context.Context,
     }
     return val, nil
 }
-// Post approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+// Post approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.Only GitHub Apps can use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#review-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
@@ -107,14 +107,14 @@ func (m *ItemPersonalAccessTokenRequestsRequestBuilder) Post(ctx context.Context
     }
     return res.(ItemPersonalAccessTokenRequestsPostResponseable), nil
 }
-// ToGetRequestInformation lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+// ToGetRequestInformation lists requests from organization members to access organization resources with a fine-grained personal access token.Only GitHub Apps can use this endpoint.
 func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPersonalAccessTokenRequestsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+// ToPostRequestInformation approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.Only GitHub Apps can use this endpoint.
 func (m *ItemPersonalAccessTokenRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokenRequestsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

@@ -10,7 +10,7 @@ import (
 type ItemItemActionsRunsWithRun_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemActionsRunsWithRun_ItemRequestBuilderGetQueryParameters gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// ItemItemActionsRunsWithRun_ItemRequestBuilderGetQueryParameters gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 type ItemItemActionsRunsWithRun_ItemRequestBuilderGetQueryParameters struct {
     // If `true` pull requests are omitted from the response (empty array).
     Exclude_pull_requests *bool `uriparametername:"exclude_pull_requests"`
@@ -48,7 +48,7 @@ func NewItemItemActionsRunsWithRun_ItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsRunsWithRun_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific workflow run. Anyone with write access to the repository can use this endpoint. If the repository isprivate you must use an access token with the `repo` scope. GitHub Apps must have the `actions:write` permission to usethis endpoint.
+// Delete deletes a specific workflow run.Anyone with write access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#delete-a-workflow-run
@@ -71,7 +71,7 @@ func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) Deployment_protection_ru
 func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) ForceCancel()(*ItemItemActionsRunsItemForceCancelRequestBuilder) {
     return NewItemItemActionsRunsItemForceCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// Get gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run
@@ -113,13 +113,13 @@ func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) RerunFailedJobs()(*ItemI
 func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) Timing()(*ItemItemActionsRunsItemTimingRequestBuilder) {
     return NewItemItemActionsRunsItemTimingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a specific workflow run. Anyone with write access to the repository can use this endpoint. If the repository isprivate you must use an access token with the `repo` scope. GitHub Apps must have the `actions:write` permission to usethis endpoint.
+// ToDeleteRequestInformation deletes a specific workflow run.Anyone with write access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
-// ToGetRequestInformation gets a specific workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+// ToGetRequestInformation gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
 func (m *ItemItemActionsRunsWithRun_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsRunsWithRun_ItemRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
