@@ -17,7 +17,7 @@ Before you create a new issue:
 
 ## Creating a pull request
 
-First, is your code a change to the generated source code present in `pikg/github`? If so, you'll want to go to [octokit/source-generator](https://github.com/octokit/source-generator) to modify the generation process.
+First, is your code a change to the generated source code present in `pkg/github`? If so, you'll want to go to [octokit/source-generator](https://github.com/octokit/source-generator) to modify the generation process.
 
 If your changes do need to be made here, fork the repository. If you're not sure how to do so, please read [the linked docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo). Then clone your fork and `cd` to that directory locally.
 
