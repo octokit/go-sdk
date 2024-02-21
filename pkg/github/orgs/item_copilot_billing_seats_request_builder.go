@@ -10,7 +10,7 @@ import (
 type ItemCopilotBillingSeatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCopilotBillingSeatsRequestBuilderGetQueryParameters **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// ItemCopilotBillingSeatsRequestBuilderGetQueryParameters **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
 type ItemCopilotBillingSeatsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,10 +30,10 @@ func NewItemCopilotBillingSeatsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemCopilotBillingSeatsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// Get **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/copilot/copilot-business#list-all-copilot-business-seat-assignments-for-an-organization
+// [API method documentation]: https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization
 func (m *ItemCopilotBillingSeatsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCopilotBillingSeatsRequestBuilderGetQueryParameters])(ItemCopilotBillingSeatsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +54,7 @@ func (m *ItemCopilotBillingSeatsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ItemCopilotBillingSeatsGetResponseable), nil
 }
-// ToGetRequestInformation **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// ToGetRequestInformation **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
 func (m *ItemCopilotBillingSeatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCopilotBillingSeatsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)

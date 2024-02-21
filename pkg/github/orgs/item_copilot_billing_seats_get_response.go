@@ -11,7 +11,7 @@ type ItemCopilotBillingSeatsGetResponse struct {
     additionalData map[string]any
     // The seats property
     seats []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CopilotSeatDetailsable
-    // Total number of Copilot For Business seats for the organization currently being billed.
+    // Total number of Copilot seats for the organization currently being billed.
     total_seats *int32
 }
 // NewItemCopilotBillingSeatsGetResponse instantiates a new ItemCopilotBillingSeatsGetResponse and sets the default values.
@@ -64,7 +64,7 @@ func (m *ItemCopilotBillingSeatsGetResponse) GetFieldDeserializers()(map[string]
 func (m *ItemCopilotBillingSeatsGetResponse) GetSeats()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CopilotSeatDetailsable) {
     return m.seats
 }
-// GetTotalSeats gets the total_seats property value. Total number of Copilot For Business seats for the organization currently being billed.
+// GetTotalSeats gets the total_seats property value. Total number of Copilot seats for the organization currently being billed.
 func (m *ItemCopilotBillingSeatsGetResponse) GetTotalSeats()(*int32) {
     return m.total_seats
 }
@@ -104,7 +104,7 @@ func (m *ItemCopilotBillingSeatsGetResponse) SetAdditionalData(value map[string]
 func (m *ItemCopilotBillingSeatsGetResponse) SetSeats(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CopilotSeatDetailsable)() {
     m.seats = value
 }
-// SetTotalSeats sets the total_seats property value. Total number of Copilot For Business seats for the organization currently being billed.
+// SetTotalSeats sets the total_seats property value. Total number of Copilot seats for the organization currently being billed.
 func (m *ItemCopilotBillingSeatsGetResponse) SetTotalSeats(value *int32)() {
     m.total_seats = value
 }
