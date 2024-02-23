@@ -13,7 +13,7 @@ type ShortBlob struct {
     // The url property
     url *string
 }
-// NewShortBlob instantiates a new shortBlob and sets the default values.
+// NewShortBlob instantiates a new ShortBlob and sets the default values.
 func NewShortBlob()(*ShortBlob) {
     m := &ShortBlob{
     }
@@ -21,14 +21,17 @@ func NewShortBlob()(*ShortBlob) {
     return m
 }
 // CreateShortBlobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateShortBlobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShortBlob(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ShortBlob) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ShortBlob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["sha"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *ShortBlob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *ShortBlob) GetSha()(*string) {
     return m.sha
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ShortBlob) GetUrl()(*string) {
     return m.url
 }
@@ -95,7 +100,6 @@ func (m *ShortBlob) SetSha(value *string)() {
 func (m *ShortBlob) SetUrl(value *string)() {
     m.url = value
 }
-// ShortBlobable 
 type ShortBlobable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

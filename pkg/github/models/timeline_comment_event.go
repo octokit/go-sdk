@@ -42,7 +42,7 @@ type TimelineCommentEvent struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewTimelineCommentEvent instantiates a new timelineCommentEvent and sets the default values.
+// NewTimelineCommentEvent instantiates a new TimelineCommentEvent and sets the default values.
 func NewTimelineCommentEvent()(*TimelineCommentEvent) {
     m := &TimelineCommentEvent{
     }
@@ -50,42 +50,52 @@ func NewTimelineCommentEvent()(*TimelineCommentEvent) {
     return m
 }
 // CreateTimelineCommentEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineCommentEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineCommentEvent(), nil
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineCommentEvent) GetActor()(SimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineCommentEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *TimelineCommentEvent) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. Contents of the issue comment
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetBodyText()(*string) {
     return m.body_text
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TimelineCommentEvent) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineCommentEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -251,38 +261,47 @@ func (m *TimelineCommentEvent) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the issue comment
+// returns a *int32 when successful
 func (m *TimelineCommentEvent) GetId()(*int32) {
     return m.id
 }
 // GetIssueUrl gets the issue_url property value. The issue_url property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetIssueUrl()(*string) {
     return m.issue_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *TimelineCommentEvent) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *TimelineCommentEvent) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TimelineCommentEvent) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. URL for the issue comment
+// returns a *string when successful
 func (m *TimelineCommentEvent) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineCommentEvent) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -461,7 +480,6 @@ func (m *TimelineCommentEvent) SetUrl(value *string)() {
 func (m *TimelineCommentEvent) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// TimelineCommentEventable 
 type TimelineCommentEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

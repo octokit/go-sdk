@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemCodespacesNewGetResponse_defaults 
 type ItemItemCodespacesNewGetResponse_defaults struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,18 +20,22 @@ func NewItemItemCodespacesNewGetResponse_defaults()(*ItemItemCodespacesNewGetRes
     return m
 }
 // CreateItemItemCodespacesNewGetResponse_defaultsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemCodespacesNewGetResponse_defaultsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemCodespacesNewGetResponse_defaults(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemCodespacesNewGetResponse_defaults) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDevcontainerPath gets the devcontainer_path property value. The devcontainer_path property
+// returns a *string when successful
 func (m *ItemItemCodespacesNewGetResponse_defaults) GetDevcontainerPath()(*string) {
     return m.devcontainer_path
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemCodespacesNewGetResponse_defaults) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["devcontainer_path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *ItemItemCodespacesNewGetResponse_defaults) GetFieldDeserializers()(map[
     return res
 }
 // GetLocation gets the location property value. The location property
+// returns a *string when successful
 func (m *ItemItemCodespacesNewGetResponse_defaults) GetLocation()(*string) {
     return m.location
 }
@@ -95,7 +99,6 @@ func (m *ItemItemCodespacesNewGetResponse_defaults) SetDevcontainerPath(value *s
 func (m *ItemItemCodespacesNewGetResponse_defaults) SetLocation(value *string)() {
     m.location = value
 }
-// ItemItemCodespacesNewGetResponse_defaultsable 
 type ItemItemCodespacesNewGetResponse_defaultsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

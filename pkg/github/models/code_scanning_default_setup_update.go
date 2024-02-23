@@ -13,17 +13,19 @@ type CodeScanningDefaultSetupUpdate struct {
     // The desired state of code scanning default setup.
     state *CodeScanningDefaultSetupUpdate_state
 }
-// NewCodeScanningDefaultSetupUpdate instantiates a new codeScanningDefaultSetupUpdate and sets the default values.
+// NewCodeScanningDefaultSetupUpdate instantiates a new CodeScanningDefaultSetupUpdate and sets the default values.
 func NewCodeScanningDefaultSetupUpdate()(*CodeScanningDefaultSetupUpdate) {
     m := &CodeScanningDefaultSetupUpdate{
     }
     return m
 }
 // CreateCodeScanningDefaultSetupUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningDefaultSetupUpdateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningDefaultSetupUpdate(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningDefaultSetupUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,14 +67,17 @@ func (m *CodeScanningDefaultSetupUpdate) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetLanguages gets the languages property value. CodeQL languages to be analyzed.
+// returns a []CodeScanningDefaultSetupUpdate_languages when successful
 func (m *CodeScanningDefaultSetupUpdate) GetLanguages()([]CodeScanningDefaultSetupUpdate_languages) {
     return m.languages
 }
 // GetQuerySuite gets the query_suite property value. CodeQL query suite to be used.
+// returns a *CodeScanningDefaultSetupUpdate_query_suite when successful
 func (m *CodeScanningDefaultSetupUpdate) GetQuerySuite()(*CodeScanningDefaultSetupUpdate_query_suite) {
     return m.query_suite
 }
 // GetState gets the state property value. The desired state of code scanning default setup.
+// returns a *CodeScanningDefaultSetupUpdate_state when successful
 func (m *CodeScanningDefaultSetupUpdate) GetState()(*CodeScanningDefaultSetupUpdate_state) {
     return m.state
 }
@@ -112,7 +117,6 @@ func (m *CodeScanningDefaultSetupUpdate) SetQuerySuite(value *CodeScanningDefaul
 func (m *CodeScanningDefaultSetupUpdate) SetState(value *CodeScanningDefaultSetupUpdate_state)() {
     m.state = value
 }
-// CodeScanningDefaultSetupUpdateable 
 type CodeScanningDefaultSetupUpdateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLanguages()([]CodeScanningDefaultSetupUpdate_languages)

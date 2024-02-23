@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IssueEventDismissedReview 
 type IssueEventDismissedReview struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type IssueEventDismissedReview struct {
     // The state property
     state *string
 }
-// NewIssueEventDismissedReview instantiates a new issueEventDismissedReview and sets the default values.
+// NewIssueEventDismissedReview instantiates a new IssueEventDismissedReview and sets the default values.
 func NewIssueEventDismissedReview()(*IssueEventDismissedReview) {
     m := &IssueEventDismissedReview{
     }
@@ -25,22 +24,27 @@ func NewIssueEventDismissedReview()(*IssueEventDismissedReview) {
     return m
 }
 // CreateIssueEventDismissedReviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventDismissedReviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueEventDismissedReview(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueEventDismissedReview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDismissalCommitId gets the dismissal_commit_id property value. The dismissal_commit_id property
+// returns a *string when successful
 func (m *IssueEventDismissedReview) GetDismissalCommitId()(*string) {
     return m.dismissal_commit_id
 }
 // GetDismissalMessage gets the dismissal_message property value. The dismissal_message property
+// returns a *string when successful
 func (m *IssueEventDismissedReview) GetDismissalMessage()(*string) {
     return m.dismissal_message
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventDismissedReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dismissal_commit_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,10 +90,12 @@ func (m *IssueEventDismissedReview) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetReviewId gets the review_id property value. The review_id property
+// returns a *int32 when successful
 func (m *IssueEventDismissedReview) GetReviewId()(*int32) {
     return m.review_id
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *IssueEventDismissedReview) GetState()(*string) {
     return m.state
 }
@@ -147,7 +153,6 @@ func (m *IssueEventDismissedReview) SetReviewId(value *int32)() {
 func (m *IssueEventDismissedReview) SetState(value *string)() {
     m.state = value
 }
-// IssueEventDismissedReviewable 
 type IssueEventDismissedReviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

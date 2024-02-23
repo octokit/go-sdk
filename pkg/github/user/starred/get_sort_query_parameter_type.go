@@ -2,7 +2,6 @@ package starred
 import (
     "errors"
 )
-// 
 type GetSortQueryParameterType int
 
 const (

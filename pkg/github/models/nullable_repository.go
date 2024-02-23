@@ -202,7 +202,7 @@ type NullableRepository struct {
     // Whether to require contributors to sign off on web-based commits
     web_commit_signoff_required *bool
 }
-// NewNullableRepository instantiates a new nullableRepository and sets the default values.
+// NewNullableRepository instantiates a new NullableRepository and sets the default values.
 func NewNullableRepository()(*NullableRepository) {
     m := &NullableRepository{
     }
@@ -212,122 +212,152 @@ func NewNullableRepository()(*NullableRepository) {
     return m
 }
 // CreateNullableRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNullableRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNullableRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NullableRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. Whether to allow Auto-merge to be used on pull requests.
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowForking gets the allow_forking property value. Whether to allow forking this repo
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowForking()(*bool) {
     return m.allow_forking
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. Whether to allow merge commits for pull requests.
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. Whether to allow rebase merges for pull requests.
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. Whether to allow squash merges for pull requests.
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetAllowUpdateBranch gets the allow_update_branch property value. Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
+// returns a *bool when successful
 func (m *NullableRepository) GetAllowUpdateBranch()(*bool) {
     return m.allow_update_branch
 }
 // GetAnonymousAccessEnabled gets the anonymous_access_enabled property value. Whether anonymous git access is enabled for this repository
+// returns a *bool when successful
 func (m *NullableRepository) GetAnonymousAccessEnabled()(*bool) {
     return m.anonymous_access_enabled
 }
 // GetArchived gets the archived property value. Whether the repository is archived.
+// returns a *bool when successful
 func (m *NullableRepository) GetArchived()(*bool) {
     return m.archived
 }
 // GetArchiveUrl gets the archive_url property value. The archive_url property
+// returns a *string when successful
 func (m *NullableRepository) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetAssigneesUrl gets the assignees_url property value. The assignees_url property
+// returns a *string when successful
 func (m *NullableRepository) GetAssigneesUrl()(*string) {
     return m.assignees_url
 }
 // GetBlobsUrl gets the blobs_url property value. The blobs_url property
+// returns a *string when successful
 func (m *NullableRepository) GetBlobsUrl()(*string) {
     return m.blobs_url
 }
 // GetBranchesUrl gets the branches_url property value. The branches_url property
+// returns a *string when successful
 func (m *NullableRepository) GetBranchesUrl()(*string) {
     return m.branches_url
 }
 // GetCloneUrl gets the clone_url property value. The clone_url property
+// returns a *string when successful
 func (m *NullableRepository) GetCloneUrl()(*string) {
     return m.clone_url
 }
 // GetCollaboratorsUrl gets the collaborators_url property value. The collaborators_url property
+// returns a *string when successful
 func (m *NullableRepository) GetCollaboratorsUrl()(*string) {
     return m.collaborators_url
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *NullableRepository) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *NullableRepository) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCompareUrl gets the compare_url property value. The compare_url property
+// returns a *string when successful
 func (m *NullableRepository) GetCompareUrl()(*string) {
     return m.compare_url
 }
 // GetContentsUrl gets the contents_url property value. The contents_url property
+// returns a *string when successful
 func (m *NullableRepository) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetContributorsUrl gets the contributors_url property value. The contributors_url property
+// returns a *string when successful
 func (m *NullableRepository) GetContributorsUrl()(*string) {
     return m.contributors_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *NullableRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDefaultBranch gets the default_branch property value. The default branch of the repository.
+// returns a *string when successful
 func (m *NullableRepository) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. Whether to delete head branches when pull requests are merged
+// returns a *bool when successful
 func (m *NullableRepository) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDeploymentsUrl gets the deployments_url property value. The deployments_url property
+// returns a *string when successful
 func (m *NullableRepository) GetDeploymentsUrl()(*string) {
     return m.deployments_url
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *NullableRepository) GetDescription()(*string) {
     return m.description
 }
 // GetDisabled gets the disabled property value. Returns whether or not this repository disabled.
+// returns a *bool when successful
 func (m *NullableRepository) GetDisabled()(*bool) {
     return m.disabled
 }
 // GetDownloadsUrl gets the downloads_url property value. The downloads_url property
+// returns a *string when successful
 func (m *NullableRepository) GetDownloadsUrl()(*string) {
     return m.downloads_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *NullableRepository) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NullableRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1289,276 +1319,344 @@ func (m *NullableRepository) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetFork gets the fork property value. The fork property
+// returns a *bool when successful
 func (m *NullableRepository) GetFork()(*bool) {
     return m.fork
 }
 // GetForks gets the forks property value. The forks property
+// returns a *int32 when successful
 func (m *NullableRepository) GetForks()(*int32) {
     return m.forks
 }
 // GetForksCount gets the forks_count property value. The forks_count property
+// returns a *int32 when successful
 func (m *NullableRepository) GetForksCount()(*int32) {
     return m.forks_count
 }
 // GetForksUrl gets the forks_url property value. The forks_url property
+// returns a *string when successful
 func (m *NullableRepository) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetFullName gets the full_name property value. The full_name property
+// returns a *string when successful
 func (m *NullableRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetGitCommitsUrl gets the git_commits_url property value. The git_commits_url property
+// returns a *string when successful
 func (m *NullableRepository) GetGitCommitsUrl()(*string) {
     return m.git_commits_url
 }
 // GetGitRefsUrl gets the git_refs_url property value. The git_refs_url property
+// returns a *string when successful
 func (m *NullableRepository) GetGitRefsUrl()(*string) {
     return m.git_refs_url
 }
 // GetGitTagsUrl gets the git_tags_url property value. The git_tags_url property
+// returns a *string when successful
 func (m *NullableRepository) GetGitTagsUrl()(*string) {
     return m.git_tags_url
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *NullableRepository) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHasDiscussions gets the has_discussions property value. Whether discussions are enabled.
+// returns a *bool when successful
 func (m *NullableRepository) GetHasDiscussions()(*bool) {
     return m.has_discussions
 }
 // GetHasDownloads gets the has_downloads property value. Whether downloads are enabled.
 // Deprecated: 
+// returns a *bool when successful
 func (m *NullableRepository) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. Whether issues are enabled.
+// returns a *bool when successful
 func (m *NullableRepository) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasPages gets the has_pages property value. The has_pages property
+// returns a *bool when successful
 func (m *NullableRepository) GetHasPages()(*bool) {
     return m.has_pages
 }
 // GetHasProjects gets the has_projects property value. Whether projects are enabled.
+// returns a *bool when successful
 func (m *NullableRepository) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. Whether the wiki is enabled.
+// returns a *bool when successful
 func (m *NullableRepository) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. The homepage property
+// returns a *string when successful
 func (m *NullableRepository) GetHomepage()(*string) {
     return m.homepage
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *NullableRepository) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *NullableRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the repository
+// returns a *int32 when successful
 func (m *NullableRepository) GetId()(*int32) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. The issue_comment_url property
+// returns a *string when successful
 func (m *NullableRepository) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
 // GetIssueEventsUrl gets the issue_events_url property value. The issue_events_url property
+// returns a *string when successful
 func (m *NullableRepository) GetIssueEventsUrl()(*string) {
     return m.issue_events_url
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *NullableRepository) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsTemplate gets the is_template property value. Whether this repository acts as a template that can be used to generate new repositories.
+// returns a *bool when successful
 func (m *NullableRepository) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetKeysUrl gets the keys_url property value. The keys_url property
+// returns a *string when successful
 func (m *NullableRepository) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *NullableRepository) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *NullableRepository) GetLanguage()(*string) {
     return m.language
 }
 // GetLanguagesUrl gets the languages_url property value. The languages_url property
+// returns a *string when successful
 func (m *NullableRepository) GetLanguagesUrl()(*string) {
     return m.languages_url
 }
 // GetLicense gets the license property value. License Simple
+// returns a NullableLicenseSimpleable when successful
 func (m *NullableRepository) GetLicense()(NullableLicenseSimpleable) {
     return m.license
 }
 // GetMasterBranch gets the master_branch property value. The master_branch property
+// returns a *string when successful
 func (m *NullableRepository) GetMasterBranch()(*string) {
     return m.master_branch
 }
 // GetMergeCommitMessage gets the merge_commit_message property value. The default value for a merge commit message.- `PR_TITLE` - default to the pull request's title.- `PR_BODY` - default to the pull request's body.- `BLANK` - default to a blank commit message.
+// returns a *NullableRepository_merge_commit_message when successful
 func (m *NullableRepository) GetMergeCommitMessage()(*NullableRepository_merge_commit_message) {
     return m.merge_commit_message
 }
 // GetMergeCommitTitle gets the merge_commit_title property value. The default value for a merge commit title.- `PR_TITLE` - default to the pull request's title.- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+// returns a *NullableRepository_merge_commit_title when successful
 func (m *NullableRepository) GetMergeCommitTitle()(*NullableRepository_merge_commit_title) {
     return m.merge_commit_title
 }
 // GetMergesUrl gets the merges_url property value. The merges_url property
+// returns a *string when successful
 func (m *NullableRepository) GetMergesUrl()(*string) {
     return m.merges_url
 }
 // GetMilestonesUrl gets the milestones_url property value. The milestones_url property
+// returns a *string when successful
 func (m *NullableRepository) GetMilestonesUrl()(*string) {
     return m.milestones_url
 }
 // GetMirrorUrl gets the mirror_url property value. The mirror_url property
+// returns a *string when successful
 func (m *NullableRepository) GetMirrorUrl()(*string) {
     return m.mirror_url
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *NullableRepository) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *NullableRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationsUrl gets the notifications_url property value. The notifications_url property
+// returns a *string when successful
 func (m *NullableRepository) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOpenIssues gets the open_issues property value. The open_issues property
+// returns a *int32 when successful
 func (m *NullableRepository) GetOpenIssues()(*int32) {
     return m.open_issues
 }
 // GetOpenIssuesCount gets the open_issues_count property value. The open_issues_count property
+// returns a *int32 when successful
 func (m *NullableRepository) GetOpenIssuesCount()(*int32) {
     return m.open_issues_count
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *NullableRepository) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a NullableRepository_permissionsable when successful
 func (m *NullableRepository) GetPermissions()(NullableRepository_permissionsable) {
     return m.permissions
 }
 // GetPrivate gets the private property value. Whether the repository is private or public.
+// returns a *bool when successful
 func (m *NullableRepository) GetPrivate()(*bool) {
     return m.private
 }
 // GetPullsUrl gets the pulls_url property value. The pulls_url property
+// returns a *string when successful
 func (m *NullableRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetPushedAt gets the pushed_at property value. The pushed_at property
+// returns a *Time when successful
 func (m *NullableRepository) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pushed_at
 }
 // GetReleasesUrl gets the releases_url property value. The releases_url property
+// returns a *string when successful
 func (m *NullableRepository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
 // GetSize gets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
+// returns a *int32 when successful
 func (m *NullableRepository) GetSize()(*int32) {
     return m.size
 }
 // GetSquashMergeCommitMessage gets the squash_merge_commit_message property value. The default value for a squash merge commit message:- `PR_BODY` - default to the pull request's body.- `COMMIT_MESSAGES` - default to the branch's commit messages.- `BLANK` - default to a blank commit message.
+// returns a *NullableRepository_squash_merge_commit_message when successful
 func (m *NullableRepository) GetSquashMergeCommitMessage()(*NullableRepository_squash_merge_commit_message) {
     return m.squash_merge_commit_message
 }
 // GetSquashMergeCommitTitle gets the squash_merge_commit_title property value. The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request's title.- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+// returns a *NullableRepository_squash_merge_commit_title when successful
 func (m *NullableRepository) GetSquashMergeCommitTitle()(*NullableRepository_squash_merge_commit_title) {
     return m.squash_merge_commit_title
 }
 // GetSshUrl gets the ssh_url property value. The ssh_url property
+// returns a *string when successful
 func (m *NullableRepository) GetSshUrl()(*string) {
     return m.ssh_url
 }
 // GetStargazersCount gets the stargazers_count property value. The stargazers_count property
+// returns a *int32 when successful
 func (m *NullableRepository) GetStargazersCount()(*int32) {
     return m.stargazers_count
 }
 // GetStargazersUrl gets the stargazers_url property value. The stargazers_url property
+// returns a *string when successful
 func (m *NullableRepository) GetStargazersUrl()(*string) {
     return m.stargazers_url
 }
 // GetStarredAt gets the starred_at property value. The starred_at property
+// returns a *string when successful
 func (m *NullableRepository) GetStarredAt()(*string) {
     return m.starred_at
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *NullableRepository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetSubscribersUrl gets the subscribers_url property value. The subscribers_url property
+// returns a *string when successful
 func (m *NullableRepository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
 }
 // GetSubscriptionUrl gets the subscription_url property value. The subscription_url property
+// returns a *string when successful
 func (m *NullableRepository) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetSvnUrl gets the svn_url property value. The svn_url property
+// returns a *string when successful
 func (m *NullableRepository) GetSvnUrl()(*string) {
     return m.svn_url
 }
 // GetTagsUrl gets the tags_url property value. The tags_url property
+// returns a *string when successful
 func (m *NullableRepository) GetTagsUrl()(*string) {
     return m.tags_url
 }
 // GetTeamsUrl gets the teams_url property value. The teams_url property
+// returns a *string when successful
 func (m *NullableRepository) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetTempCloneToken gets the temp_clone_token property value. The temp_clone_token property
+// returns a *string when successful
 func (m *NullableRepository) GetTempCloneToken()(*string) {
     return m.temp_clone_token
 }
 // GetTopics gets the topics property value. The topics property
+// returns a []string when successful
 func (m *NullableRepository) GetTopics()([]string) {
     return m.topics
 }
 // GetTreesUrl gets the trees_url property value. The trees_url property
+// returns a *string when successful
 func (m *NullableRepository) GetTreesUrl()(*string) {
     return m.trees_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *NullableRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *NullableRepository) GetUrl()(*string) {
     return m.url
 }
 // GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
+// returns a *bool when successful
 func (m *NullableRepository) GetUseSquashPrTitleAsDefault()(*bool) {
     return m.use_squash_pr_title_as_default
 }
 // GetVisibility gets the visibility property value. The repository visibility: public, private, or internal.
+// returns a *string when successful
 func (m *NullableRepository) GetVisibility()(*string) {
     return m.visibility
 }
 // GetWatchers gets the watchers property value. The watchers property
+// returns a *int32 when successful
 func (m *NullableRepository) GetWatchers()(*int32) {
     return m.watchers
 }
 // GetWatchersCount gets the watchers_count property value. The watchers_count property
+// returns a *int32 when successful
 func (m *NullableRepository) GetWatchersCount()(*int32) {
     return m.watchers_count
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. Whether to require contributors to sign off on web-based commits
+// returns a *bool when successful
 func (m *NullableRepository) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -2532,7 +2630,6 @@ func (m *NullableRepository) SetWatchersCount(value *int32)() {
 func (m *NullableRepository) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// NullableRepositoryable 
 type NullableRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

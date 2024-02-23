@@ -60,65 +60,79 @@ type RepositoryAdvisory struct {
     // The date and time of when the advisory was withdrawn, in ISO 8601 format.
     withdrawn_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewRepositoryAdvisory instantiates a new repositoryAdvisory and sets the default values.
+// NewRepositoryAdvisory instantiates a new RepositoryAdvisory and sets the default values.
 func NewRepositoryAdvisory()(*RepositoryAdvisory) {
     m := &RepositoryAdvisory{
     }
     return m
 }
 // CreateRepositoryAdvisoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisory(), nil
 }
 // GetAuthor gets the author property value. The author of the advisory.
+// returns a SimpleUserable when successful
 func (m *RepositoryAdvisory) GetAuthor()(SimpleUserable) {
     return m.author
 }
 // GetClosedAt gets the closed_at property value. The date and time of when the advisory was closed, in ISO 8601 format.
+// returns a *Time when successful
 func (m *RepositoryAdvisory) GetClosedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.closed_at
 }
 // GetCollaboratingTeams gets the collaborating_teams property value. A list of teams that collaborate on the advisory.
+// returns a []Teamable when successful
 func (m *RepositoryAdvisory) GetCollaboratingTeams()([]Teamable) {
     return m.collaborating_teams
 }
 // GetCollaboratingUsers gets the collaborating_users property value. A list of users that collaborate on the advisory.
+// returns a []SimpleUserable when successful
 func (m *RepositoryAdvisory) GetCollaboratingUsers()([]SimpleUserable) {
     return m.collaborating_users
 }
 // GetCreatedAt gets the created_at property value. The date and time of when the advisory was created, in ISO 8601 format.
+// returns a *Time when successful
 func (m *RepositoryAdvisory) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCredits gets the credits property value. The credits property
+// returns a []RepositoryAdvisory_creditsable when successful
 func (m *RepositoryAdvisory) GetCredits()([]RepositoryAdvisory_creditsable) {
     return m.credits
 }
 // GetCreditsDetailed gets the credits_detailed property value. The credits_detailed property
+// returns a []RepositoryAdvisoryCreditable when successful
 func (m *RepositoryAdvisory) GetCreditsDetailed()([]RepositoryAdvisoryCreditable) {
     return m.credits_detailed
 }
 // GetCveId gets the cve_id property value. The Common Vulnerabilities and Exposures (CVE) ID.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetCveId()(*string) {
     return m.cve_id
 }
 // GetCvss gets the cvss property value. The cvss property
+// returns a RepositoryAdvisory_cvssable when successful
 func (m *RepositoryAdvisory) GetCvss()(RepositoryAdvisory_cvssable) {
     return m.cvss
 }
 // GetCweIds gets the cwe_ids property value. A list of only the CWE IDs.
+// returns a []string when successful
 func (m *RepositoryAdvisory) GetCweIds()([]string) {
     return m.cwe_ids
 }
 // GetCwes gets the cwes property value. The cwes property
+// returns a []RepositoryAdvisory_cwesable when successful
 func (m *RepositoryAdvisory) GetCwes()([]RepositoryAdvisory_cwesable) {
     return m.cwes
 }
 // GetDescription gets the description property value. A detailed description of what the advisory entails.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -432,58 +446,72 @@ func (m *RepositoryAdvisory) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGhsaId gets the ghsa_id property value. The GitHub Security Advisory ID.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetGhsaId()(*string) {
     return m.ghsa_id
 }
 // GetHtmlUrl gets the html_url property value. The URL for the advisory.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetIdentifiers gets the identifiers property value. The identifiers property
+// returns a []RepositoryAdvisory_identifiersable when successful
 func (m *RepositoryAdvisory) GetIdentifiers()([]RepositoryAdvisory_identifiersable) {
     return m.identifiers
 }
 // GetPrivateFork gets the private_fork property value. A temporary private fork of the advisory's repository for collaborating on a fix.
+// returns a SimpleRepositoryable when successful
 func (m *RepositoryAdvisory) GetPrivateFork()(SimpleRepositoryable) {
     return m.private_fork
 }
 // GetPublishedAt gets the published_at property value. The date and time of when the advisory was published, in ISO 8601 format.
+// returns a *Time when successful
 func (m *RepositoryAdvisory) GetPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.published_at
 }
 // GetPublisher gets the publisher property value. The publisher of the advisory.
+// returns a SimpleUserable when successful
 func (m *RepositoryAdvisory) GetPublisher()(SimpleUserable) {
     return m.publisher
 }
 // GetSeverity gets the severity property value. The severity of the advisory.
+// returns a *RepositoryAdvisory_severity when successful
 func (m *RepositoryAdvisory) GetSeverity()(*RepositoryAdvisory_severity) {
     return m.severity
 }
 // GetState gets the state property value. The state of the advisory.
+// returns a *RepositoryAdvisory_state when successful
 func (m *RepositoryAdvisory) GetState()(*RepositoryAdvisory_state) {
     return m.state
 }
 // GetSubmission gets the submission property value. The submission property
+// returns a RepositoryAdvisory_submissionable when successful
 func (m *RepositoryAdvisory) GetSubmission()(RepositoryAdvisory_submissionable) {
     return m.submission
 }
 // GetSummary gets the summary property value. A short summary of the advisory.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetSummary()(*string) {
     return m.summary
 }
 // GetUpdatedAt gets the updated_at property value. The date and time of when the advisory was last updated, in ISO 8601 format.
+// returns a *Time when successful
 func (m *RepositoryAdvisory) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The API URL for the advisory.
+// returns a *string when successful
 func (m *RepositoryAdvisory) GetUrl()(*string) {
     return m.url
 }
 // GetVulnerabilities gets the vulnerabilities property value. The vulnerabilities property
+// returns a []RepositoryAdvisoryVulnerabilityable when successful
 func (m *RepositoryAdvisory) GetVulnerabilities()([]RepositoryAdvisoryVulnerabilityable) {
     return m.vulnerabilities
 }
 // GetWithdrawnAt gets the withdrawn_at property value. The date and time of when the advisory was withdrawn, in ISO 8601 format.
+// returns a *Time when successful
 func (m *RepositoryAdvisory) GetWithdrawnAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.withdrawn_at
 }
@@ -687,7 +715,6 @@ func (m *RepositoryAdvisory) SetVulnerabilities(value []RepositoryAdvisoryVulner
 func (m *RepositoryAdvisory) SetWithdrawnAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.withdrawn_at = value
 }
-// RepositoryAdvisoryable 
 type RepositoryAdvisoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthor()(SimpleUserable)

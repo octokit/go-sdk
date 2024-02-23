@@ -20,20 +20,21 @@ type IntegrationInstallationRequest struct {
     // A GitHub user.
     requester SimpleUserable
 }
-// IntegrationInstallationRequest_IntegrationInstallationRequest_account composed type wrapper for classes enterprise, simpleUser
+// IntegrationInstallationRequest_IntegrationInstallationRequest_account composed type wrapper for classes Enterpriseable, SimpleUserable
 type IntegrationInstallationRequest_IntegrationInstallationRequest_account struct {
-    // Composed type representation for type enterprise
+    // Composed type representation for type Enterpriseable
     enterprise Enterpriseable
-    // Composed type representation for type simpleUser
+    // Composed type representation for type SimpleUserable
     simpleUser SimpleUserable
 }
-// NewIntegrationInstallationRequest_IntegrationInstallationRequest_account instantiates a new integrationInstallationRequest_account and sets the default values.
+// NewIntegrationInstallationRequest_IntegrationInstallationRequest_account instantiates a new IntegrationInstallationRequest_IntegrationInstallationRequest_account and sets the default values.
 func NewIntegrationInstallationRequest_IntegrationInstallationRequest_account()(*IntegrationInstallationRequest_IntegrationInstallationRequest_account) {
     m := &IntegrationInstallationRequest_IntegrationInstallationRequest_account{
     }
     return m
 }
 // CreateIntegrationInstallationRequest_IntegrationInstallationRequest_accountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntegrationInstallationRequest_IntegrationInstallationRequest_accountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewIntegrationInstallationRequest_IntegrationInstallationRequest_account()
     if parseNode != nil {
@@ -55,19 +56,23 @@ func CreateIntegrationInstallationRequest_IntegrationInstallationRequest_account
     }
     return result, nil
 }
-// GetEnterprise gets the enterprise property value. Composed type representation for type enterprise
+// GetEnterprise gets the enterprise property value. Composed type representation for type Enterpriseable
+// returns a Enterpriseable when successful
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) GetEnterprise()(Enterpriseable) {
     return m.enterprise
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) GetIsComposedType()(bool) {
     return true
 }
-// GetSimpleUser gets the simpleUser property value. Composed type representation for type simpleUser
+// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
+// returns a SimpleUserable when successful
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) GetSimpleUser()(SimpleUserable) {
     return m.simpleUser
 }
@@ -86,15 +91,14 @@ func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) 
     }
     return nil
 }
-// SetEnterprise sets the enterprise property value. Composed type representation for type enterprise
+// SetEnterprise sets the enterprise property value. Composed type representation for type Enterpriseable
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) SetEnterprise(value Enterpriseable)() {
     m.enterprise = value
 }
-// SetSimpleUser sets the simpleUser property value. Composed type representation for type simpleUser
+// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
 func (m *IntegrationInstallationRequest_IntegrationInstallationRequest_account) SetSimpleUser(value SimpleUserable)() {
     m.simpleUser = value
 }
-// IntegrationInstallationRequest_IntegrationInstallationRequest_accountable 
 type IntegrationInstallationRequest_IntegrationInstallationRequest_accountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnterprise()(Enterpriseable)
@@ -102,7 +106,7 @@ type IntegrationInstallationRequest_IntegrationInstallationRequest_accountable i
     SetEnterprise(value Enterpriseable)()
     SetSimpleUser(value SimpleUserable)()
 }
-// NewIntegrationInstallationRequest instantiates a new integrationInstallationRequest and sets the default values.
+// NewIntegrationInstallationRequest instantiates a new IntegrationInstallationRequest and sets the default values.
 func NewIntegrationInstallationRequest()(*IntegrationInstallationRequest) {
     m := &IntegrationInstallationRequest{
     }
@@ -110,22 +114,27 @@ func NewIntegrationInstallationRequest()(*IntegrationInstallationRequest) {
     return m
 }
 // CreateIntegrationInstallationRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntegrationInstallationRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntegrationInstallationRequest(), nil
 }
 // GetAccount gets the account property value. The account property
+// returns a IntegrationInstallationRequest_IntegrationInstallationRequest_accountable when successful
 func (m *IntegrationInstallationRequest) GetAccount()(IntegrationInstallationRequest_IntegrationInstallationRequest_accountable) {
     return m.account
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IntegrationInstallationRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *IntegrationInstallationRequest) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IntegrationInstallationRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -181,14 +190,17 @@ func (m *IntegrationInstallationRequest) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetId gets the id property value. Unique identifier of the request installation.
+// returns a *int32 when successful
 func (m *IntegrationInstallationRequest) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *IntegrationInstallationRequest) GetNodeId()(*string) {
     return m.node_id
 }
 // GetRequester gets the requester property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *IntegrationInstallationRequest) GetRequester()(SimpleUserable) {
     return m.requester
 }
@@ -256,7 +268,6 @@ func (m *IntegrationInstallationRequest) SetNodeId(value *string)() {
 func (m *IntegrationInstallationRequest) SetRequester(value SimpleUserable)() {
     m.requester = value
 }
-// IntegrationInstallationRequestable 
 type IntegrationInstallationRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

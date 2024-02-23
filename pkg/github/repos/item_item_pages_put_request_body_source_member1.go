@@ -19,18 +19,22 @@ func NewItemItemPagesPutRequestBody_sourceMember1()(*ItemItemPagesPutRequestBody
     return m
 }
 // CreateItemItemPagesPutRequestBody_sourceMember1FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPagesPutRequestBody_sourceMember1FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPagesPutRequestBody_sourceMember1(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPagesPutRequestBody_sourceMember1) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBranch gets the branch property value. The repository branch used to publish your site's source files.
+// returns a *string when successful
 func (m *ItemItemPagesPutRequestBody_sourceMember1) GetBranch()(*string) {
     return m.branch
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPagesPutRequestBody_sourceMember1) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["branch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +73,6 @@ func (m *ItemItemPagesPutRequestBody_sourceMember1) SetAdditionalData(value map[
 func (m *ItemItemPagesPutRequestBody_sourceMember1) SetBranch(value *string)() {
     m.branch = value
 }
-// ItemItemPagesPutRequestBody_sourceMember1able 
 type ItemItemPagesPutRequestBody_sourceMember1able interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

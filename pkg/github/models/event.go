@@ -26,7 +26,7 @@ type Event struct {
     // The type property
     typeEscaped *string
 }
-// NewEvent instantiates a new event and sets the default values.
+// NewEvent instantiates a new Event and sets the default values.
 func NewEvent()(*Event) {
     m := &Event{
     }
@@ -34,22 +34,27 @@ func NewEvent()(*Event) {
     return m
 }
 // CreateEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvent(), nil
 }
 // GetActor gets the actor property value. Actor
+// returns a Actorable when successful
 func (m *Event) GetActor()(Actorable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Event) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Event) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,26 +140,32 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *string when successful
 func (m *Event) GetId()(*string) {
     return m.id
 }
 // GetOrg gets the org property value. Actor
+// returns a Actorable when successful
 func (m *Event) GetOrg()(Actorable) {
     return m.org
 }
 // GetPayload gets the payload property value. The payload property
+// returns a Event_payloadable when successful
 func (m *Event) GetPayload()(Event_payloadable) {
     return m.payload
 }
 // GetPublic gets the public property value. The public property
+// returns a *bool when successful
 func (m *Event) GetPublic()(*bool) {
     return m.public
 }
 // GetRepo gets the repo property value. The repo property
+// returns a Event_repoable when successful
 func (m *Event) GetRepo()(Event_repoable) {
     return m.repo
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Event) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
@@ -252,7 +263,6 @@ func (m *Event) SetRepo(value Event_repoable)() {
 func (m *Event) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }
-// Eventable 
 type Eventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

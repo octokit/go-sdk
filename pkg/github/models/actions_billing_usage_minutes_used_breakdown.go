@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActionsBillingUsage_minutes_used_breakdown 
 type ActionsBillingUsage_minutes_used_breakdown struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -39,7 +38,7 @@ type ActionsBillingUsage_minutes_used_breakdown struct {
     // Total minutes used on Windows 8 core runner machines.
     windows_8_core *int32
 }
-// NewActionsBillingUsage_minutes_used_breakdown instantiates a new actionsBillingUsage_minutes_used_breakdown and sets the default values.
+// NewActionsBillingUsage_minutes_used_breakdown instantiates a new ActionsBillingUsage_minutes_used_breakdown and sets the default values.
 func NewActionsBillingUsage_minutes_used_breakdown()(*ActionsBillingUsage_minutes_used_breakdown) {
     m := &ActionsBillingUsage_minutes_used_breakdown{
     }
@@ -47,14 +46,17 @@ func NewActionsBillingUsage_minutes_used_breakdown()(*ActionsBillingUsage_minute
     return m
 }
 // CreateActionsBillingUsage_minutes_used_breakdownFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActionsBillingUsage_minutes_used_breakdownFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsBillingUsage_minutes_used_breakdown(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["MACOS"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -210,62 +212,77 @@ func (m *ActionsBillingUsage_minutes_used_breakdown) GetFieldDeserializers()(map
     return res
 }
 // GetMACOS gets the MACOS property value. Total minutes used on macOS runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetMACOS()(*int32) {
     return m.mACOS
 }
 // GetMacos12Core gets the macos_12_core property value. Total minutes used on macOS 12 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetMacos12Core()(*int32) {
     return m.macos_12_core
 }
 // GetTotal gets the total property value. Total minutes used on all runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetTotal()(*int32) {
     return m.total
 }
 // GetUBUNTU gets the UBUNTU property value. Total minutes used on Ubuntu runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUBUNTU()(*int32) {
     return m.uBUNTU
 }
 // GetUbuntu16Core gets the ubuntu_16_core property value. Total minutes used on Ubuntu 16 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUbuntu16Core()(*int32) {
     return m.ubuntu_16_core
 }
 // GetUbuntu32Core gets the ubuntu_32_core property value. Total minutes used on Ubuntu 32 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUbuntu32Core()(*int32) {
     return m.ubuntu_32_core
 }
 // GetUbuntu4Core gets the ubuntu_4_core property value. Total minutes used on Ubuntu 4 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUbuntu4Core()(*int32) {
     return m.ubuntu_4_core
 }
 // GetUbuntu64Core gets the ubuntu_64_core property value. Total minutes used on Ubuntu 64 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUbuntu64Core()(*int32) {
     return m.ubuntu_64_core
 }
 // GetUbuntu8Core gets the ubuntu_8_core property value. Total minutes used on Ubuntu 8 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetUbuntu8Core()(*int32) {
     return m.ubuntu_8_core
 }
 // GetWINDOWS gets the WINDOWS property value. Total minutes used on Windows runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWINDOWS()(*int32) {
     return m.wINDOWS
 }
 // GetWindows16Core gets the windows_16_core property value. Total minutes used on Windows 16 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWindows16Core()(*int32) {
     return m.windows_16_core
 }
 // GetWindows32Core gets the windows_32_core property value. Total minutes used on Windows 32 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWindows32Core()(*int32) {
     return m.windows_32_core
 }
 // GetWindows4Core gets the windows_4_core property value. Total minutes used on Windows 4 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWindows4Core()(*int32) {
     return m.windows_4_core
 }
 // GetWindows64Core gets the windows_64_core property value. Total minutes used on Windows 64 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWindows64Core()(*int32) {
     return m.windows_64_core
 }
 // GetWindows8Core gets the windows_8_core property value. Total minutes used on Windows 8 core runner machines.
+// returns a *int32 when successful
 func (m *ActionsBillingUsage_minutes_used_breakdown) GetWindows8Core()(*int32) {
     return m.windows_8_core
 }
@@ -433,7 +450,6 @@ func (m *ActionsBillingUsage_minutes_used_breakdown) SetWindows64Core(value *int
 func (m *ActionsBillingUsage_minutes_used_breakdown) SetWindows8Core(value *int32)() {
     m.windows_8_core = value
 }
-// ActionsBillingUsage_minutes_used_breakdownable 
 type ActionsBillingUsage_minutes_used_breakdownable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

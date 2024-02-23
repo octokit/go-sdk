@@ -26,7 +26,7 @@ type PageBuild struct {
     // The url property
     url *string
 }
-// NewPageBuild instantiates a new pageBuild and sets the default values.
+// NewPageBuild instantiates a new PageBuild and sets the default values.
 func NewPageBuild()(*PageBuild) {
     m := &PageBuild{
     }
@@ -34,30 +34,37 @@ func NewPageBuild()(*PageBuild) {
     return m
 }
 // CreatePageBuildFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePageBuildFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPageBuild(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PageBuild) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommit gets the commit property value. The commit property
+// returns a *string when successful
 func (m *PageBuild) GetCommit()(*string) {
     return m.commit
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PageBuild) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDuration gets the duration property value. The duration property
+// returns a *int32 when successful
 func (m *PageBuild) GetDuration()(*int32) {
     return m.duration
 }
 // GetError gets the error property value. The error property
+// returns a PageBuild_errorable when successful
 func (m *PageBuild) GetError()(PageBuild_errorable) {
     return m.error
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PageBuild) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,18 +150,22 @@ func (m *PageBuild) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetPusher gets the pusher property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *PageBuild) GetPusher()(NullableSimpleUserable) {
     return m.pusher
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *PageBuild) GetStatus()(*string) {
     return m.status
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PageBuild) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PageBuild) GetUrl()(*string) {
     return m.url
 }
@@ -252,7 +263,6 @@ func (m *PageBuild) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *PageBuild) SetUrl(value *string)() {
     m.url = value
 }
-// PageBuildable 
 type PageBuildable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReactionRollup 
 type ReactionRollup struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,7 +28,7 @@ type ReactionRollup struct {
     // The url property
     url *string
 }
-// NewReactionRollup instantiates a new reactionRollup and sets the default values.
+// NewReactionRollup instantiates a new ReactionRollup and sets the default values.
 func NewReactionRollup()(*ReactionRollup) {
     m := &ReactionRollup{
     }
@@ -37,22 +36,27 @@ func NewReactionRollup()(*ReactionRollup) {
     return m
 }
 // CreateReactionRollupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReactionRollupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReactionRollup(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReactionRollup) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfused gets the confused property value. The confused property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetConfused()(*int32) {
     return m.confused
 }
 // GetEyes gets the eyes property value. The eyes property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetEyes()(*int32) {
     return m.eyes
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReactionRollup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["confused"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -158,34 +162,42 @@ func (m *ReactionRollup) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHeart gets the heart property value. The heart property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetHeart()(*int32) {
     return m.heart
 }
 // GetHooray gets the hooray property value. The hooray property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetHooray()(*int32) {
     return m.hooray
 }
 // GetLaugh gets the laugh property value. The laugh property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetLaugh()(*int32) {
     return m.laugh
 }
 // GetMinus1 gets the -1 property value. The minus_1 property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetMinus1()(*int32) {
     return m.minus_1
 }
 // GetPlus1 gets the +1 property value. The plus_1 property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetPlus1()(*int32) {
     return m.plus_1
 }
 // GetRocket gets the rocket property value. The rocket property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetRocket()(*int32) {
     return m.rocket
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *ReactionRollup) GetTotalCount()(*int32) {
     return m.total_count
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ReactionRollup) GetUrl()(*string) {
     return m.url
 }
@@ -303,7 +315,6 @@ func (m *ReactionRollup) SetTotalCount(value *int32)() {
 func (m *ReactionRollup) SetUrl(value *string)() {
     m.url = value
 }
-// ReactionRollupable 
 type ReactionRollupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

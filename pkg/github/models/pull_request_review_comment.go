@@ -68,7 +68,7 @@ type PullRequestReviewComment struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewPullRequestReviewComment instantiates a new pullRequestReviewComment and sets the default values.
+// NewPullRequestReviewComment instantiates a new PullRequestReviewComment and sets the default values.
 func NewPullRequestReviewComment()(*PullRequestReviewComment) {
     m := &PullRequestReviewComment{
     }
@@ -80,42 +80,52 @@ func NewPullRequestReviewComment()(*PullRequestReviewComment) {
     return m
 }
 // CreatePullRequestReviewCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestReviewCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequestReviewComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequestReviewComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *PullRequestReviewComment) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. The text of the comment.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetBodyText()(*string) {
     return m.body_text
 }
 // GetCommitId gets the commit_id property value. The SHA of the commit to which the comment applies.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PullRequestReviewComment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDiffHunk gets the diff_hunk property value. The diff of the line that the comment refers to.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetDiffHunk()(*string) {
     return m.diff_hunk
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequestReviewComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -411,90 +421,112 @@ func (m *PullRequestReviewComment) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetHtmlUrl gets the html_url property value. HTML URL for the pull request review comment.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The ID of the pull request review comment.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetId()(*int32) {
     return m.id
 }
 // GetInReplyToId gets the in_reply_to_id property value. The comment ID to reply to.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetInReplyToId()(*int32) {
     return m.in_reply_to_id
 }
 // GetLine gets the line property value. The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetLine()(*int32) {
     return m.line
 }
 // GetLinks gets the _links property value. The _links property
+// returns a PullRequestReviewComment__linksable when successful
 func (m *PullRequestReviewComment) GetLinks()(PullRequestReviewComment__linksable) {
     return m._links
 }
 // GetNodeId gets the node_id property value. The node ID of the pull request review comment.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOriginalCommitId gets the original_commit_id property value. The SHA of the original commit to which the comment applies.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetOriginalCommitId()(*string) {
     return m.original_commit_id
 }
 // GetOriginalLine gets the original_line property value. The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetOriginalLine()(*int32) {
     return m.original_line
 }
 // GetOriginalPosition gets the original_position property value. The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetOriginalPosition()(*int32) {
     return m.original_position
 }
 // GetOriginalStartLine gets the original_start_line property value. The first line of the range for a multi-line comment.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetOriginalStartLine()(*int32) {
     return m.original_start_line
 }
 // GetPath gets the path property value. The relative path of the file to which the comment applies.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetPosition()(*int32) {
     return m.position
 }
 // GetPullRequestReviewId gets the pull_request_review_id property value. The ID of the pull request review to which the comment belongs.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetPullRequestReviewId()(*int32) {
     return m.pull_request_review_id
 }
 // GetPullRequestUrl gets the pull_request_url property value. URL for the pull request that the review comment belongs to.
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetPullRequestUrl()(*string) {
     return m.pull_request_url
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *PullRequestReviewComment) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetSide gets the side property value. The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
+// returns a *PullRequestReviewComment_side when successful
 func (m *PullRequestReviewComment) GetSide()(*PullRequestReviewComment_side) {
     return m.side
 }
 // GetStartLine gets the start_line property value. The first line of the range for a multi-line comment.
+// returns a *int32 when successful
 func (m *PullRequestReviewComment) GetStartLine()(*int32) {
     return m.start_line
 }
 // GetStartSide gets the start_side property value. The side of the first line of the range for a multi-line comment.
+// returns a *PullRequestReviewComment_start_side when successful
 func (m *PullRequestReviewComment) GetStartSide()(*PullRequestReviewComment_start_side) {
     return m.start_side
 }
 // GetSubjectType gets the subject_type property value. The level at which the comment is targeted, can be a diff line or a file.
+// returns a *PullRequestReviewComment_subject_type when successful
 func (m *PullRequestReviewComment) GetSubjectType()(*PullRequestReviewComment_subject_type) {
     return m.subject_type
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PullRequestReviewComment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. URL for the pull request review comment
+// returns a *string when successful
 func (m *PullRequestReviewComment) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *PullRequestReviewComment) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -806,7 +838,6 @@ func (m *PullRequestReviewComment) SetUrl(value *string)() {
 func (m *PullRequestReviewComment) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// PullRequestReviewCommentable 
 type PullRequestReviewCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

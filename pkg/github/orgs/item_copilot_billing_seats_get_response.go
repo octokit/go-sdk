@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemCopilotBillingSeatsGetResponse 
 type ItemCopilotBillingSeatsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,14 +21,17 @@ func NewItemCopilotBillingSeatsGetResponse()(*ItemCopilotBillingSeatsGetResponse
     return m
 }
 // CreateItemCopilotBillingSeatsGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemCopilotBillingSeatsGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCopilotBillingSeatsGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemCopilotBillingSeatsGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemCopilotBillingSeatsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["seats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,10 +63,12 @@ func (m *ItemCopilotBillingSeatsGetResponse) GetFieldDeserializers()(map[string]
     return res
 }
 // GetSeats gets the seats property value. The seats property
+// returns a []CopilotSeatDetailsable when successful
 func (m *ItemCopilotBillingSeatsGetResponse) GetSeats()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CopilotSeatDetailsable) {
     return m.seats
 }
 // GetTotalSeats gets the total_seats property value. Total number of Copilot seats for the organization currently being billed.
+// returns a *int32 when successful
 func (m *ItemCopilotBillingSeatsGetResponse) GetTotalSeats()(*int32) {
     return m.total_seats
 }
@@ -108,7 +112,6 @@ func (m *ItemCopilotBillingSeatsGetResponse) SetSeats(value []i59ea7d99994c6a4bb
 func (m *ItemCopilotBillingSeatsGetResponse) SetTotalSeats(value *int32)() {
     m.total_seats = value
 }
-// ItemCopilotBillingSeatsGetResponseable 
 type ItemCopilotBillingSeatsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemDispatchesPostRequestBody 
 type ItemItemDispatchesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,22 +20,27 @@ func NewItemItemDispatchesPostRequestBody()(*ItemItemDispatchesPostRequestBody) 
     return m
 }
 // CreateItemItemDispatchesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemDispatchesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemDispatchesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemDispatchesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientPayload gets the client_payload property value. JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+// returns a ItemItemDispatchesPostRequestBody_client_payloadable when successful
 func (m *ItemItemDispatchesPostRequestBody) GetClientPayload()(ItemItemDispatchesPostRequestBody_client_payloadable) {
     return m.client_payload
 }
 // GetEventType gets the event_type property value. A custom webhook event name. Must be 100 characters or fewer.
+// returns a *string when successful
 func (m *ItemItemDispatchesPostRequestBody) GetEventType()(*string) {
     return m.event_type
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemDispatchesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["client_payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,7 +99,6 @@ func (m *ItemItemDispatchesPostRequestBody) SetClientPayload(value ItemItemDispa
 func (m *ItemItemDispatchesPostRequestBody) SetEventType(value *string)() {
     m.event_type = value
 }
-// ItemItemDispatchesPostRequestBodyable 
 type ItemItemDispatchesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

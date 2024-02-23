@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemDeploymentsPostRequestBody 
 type ItemItemDeploymentsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -39,26 +38,32 @@ func NewItemItemDeploymentsPostRequestBody()(*ItemItemDeploymentsPostRequestBody
     return m
 }
 // CreateItemItemDeploymentsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemDeploymentsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemDeploymentsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutoMerge gets the auto_merge property value. Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.
+// returns a *bool when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetAutoMerge()(*bool) {
     return m.auto_merge
 }
 // GetDescription gets the description property value. Short description of the deployment.
+// returns a *string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetEnvironment gets the environment property value. Name for the target deployment environment (e.g., `production`, `staging`, `qa`).
+// returns a *string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetEnvironment()(*string) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -160,26 +165,32 @@ func (m *ItemItemDeploymentsPostRequestBody) GetFieldDeserializers()(map[string]
     return res
 }
 // GetPayload gets the payload property value. The payload property
+// returns a *string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetPayload()(*string) {
     return m.payload
 }
 // GetProductionEnvironment gets the production_environment property value. Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.
+// returns a *bool when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetProductionEnvironment()(*bool) {
     return m.production_environment
 }
 // GetRef gets the ref property value. The ref to deploy. This can be a branch, tag, or SHA.
+// returns a *string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetRef()(*string) {
     return m.ref
 }
 // GetRequiredContexts gets the required_contexts property value. The [status](https://docs.github.com/rest/commits/statuses) contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts.
+// returns a []string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetRequiredContexts()([]string) {
     return m.required_contexts
 }
 // GetTask gets the task property value. Specifies a task to execute (e.g., `deploy` or `deploy:migrations`).
+// returns a *string when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetTask()(*string) {
     return m.task
 }
 // GetTransientEnvironment gets the transient_environment property value. Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: `false`
+// returns a *bool when successful
 func (m *ItemItemDeploymentsPostRequestBody) GetTransientEnvironment()(*bool) {
     return m.transient_environment
 }
@@ -287,7 +298,6 @@ func (m *ItemItemDeploymentsPostRequestBody) SetTask(value *string)() {
 func (m *ItemItemDeploymentsPostRequestBody) SetTransientEnvironment(value *bool)() {
     m.transient_environment = value
 }
-// ItemItemDeploymentsPostRequestBodyable 
 type ItemItemDeploymentsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

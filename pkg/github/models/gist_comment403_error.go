@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GistComment403Error 
 type GistComment403Error struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ApiError
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -17,7 +16,7 @@ type GistComment403Error struct {
     // The message property
     message *string
 }
-// NewGistComment403Error instantiates a new gistComment403Error and sets the default values.
+// NewGistComment403Error instantiates a new GistComment403Error and sets the default values.
 func NewGistComment403Error()(*GistComment403Error) {
     m := &GistComment403Error{
         ApiError: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewApiError(),
@@ -26,26 +25,32 @@ func NewGistComment403Error()(*GistComment403Error) {
     return m
 }
 // CreateGistComment403ErrorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGistComment403ErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGistComment403Error(), nil
 }
 // Error the primary error message.
+// returns a string when successful
 func (m *GistComment403Error) Error()(string) {
     return m.ApiError.Error()
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GistComment403Error) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlock gets the block property value. The block property
+// returns a GistComment403Error_blockable when successful
 func (m *GistComment403Error) GetBlock()(GistComment403Error_blockable) {
     return m.block
 }
 // GetDocumentationUrl gets the documentation_url property value. The documentation_url property
+// returns a *string when successful
 func (m *GistComment403Error) GetDocumentationUrl()(*string) {
     return m.documentation_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GistComment403Error) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["block"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,6 +86,7 @@ func (m *GistComment403Error) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *GistComment403Error) GetMessage()(*string) {
     return m.message
 }
@@ -128,7 +134,6 @@ func (m *GistComment403Error) SetDocumentationUrl(value *string)() {
 func (m *GistComment403Error) SetMessage(value *string)() {
     m.message = value
 }
-// GistComment403Errorable 
 type GistComment403Errorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

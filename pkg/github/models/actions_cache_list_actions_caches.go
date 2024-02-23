@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActionsCacheList_actions_caches 
 type ActionsCacheList_actions_caches struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,7 +23,7 @@ type ActionsCacheList_actions_caches struct {
     // The version property
     version *string
 }
-// NewActionsCacheList_actions_caches instantiates a new actionsCacheList_actions_caches and sets the default values.
+// NewActionsCacheList_actions_caches instantiates a new ActionsCacheList_actions_caches and sets the default values.
 func NewActionsCacheList_actions_caches()(*ActionsCacheList_actions_caches) {
     m := &ActionsCacheList_actions_caches{
     }
@@ -32,18 +31,22 @@ func NewActionsCacheList_actions_caches()(*ActionsCacheList_actions_caches) {
     return m
 }
 // CreateActionsCacheList_actions_cachesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActionsCacheList_actions_cachesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsCacheList_actions_caches(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ActionsCacheList_actions_caches) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *ActionsCacheList_actions_caches) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActionsCacheList_actions_caches) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,26 +122,32 @@ func (m *ActionsCacheList_actions_caches) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *ActionsCacheList_actions_caches) GetId()(*int32) {
     return m.id
 }
 // GetKey gets the key property value. The key property
+// returns a *string when successful
 func (m *ActionsCacheList_actions_caches) GetKey()(*string) {
     return m.key
 }
 // GetLastAccessedAt gets the last_accessed_at property value. The last_accessed_at property
+// returns a *Time when successful
 func (m *ActionsCacheList_actions_caches) GetLastAccessedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_accessed_at
 }
 // GetRef gets the ref property value. The ref property
+// returns a *string when successful
 func (m *ActionsCacheList_actions_caches) GetRef()(*string) {
     return m.ref
 }
 // GetSizeInBytes gets the size_in_bytes property value. The size_in_bytes property
+// returns a *int32 when successful
 func (m *ActionsCacheList_actions_caches) GetSizeInBytes()(*int32) {
     return m.size_in_bytes
 }
 // GetVersion gets the version property value. The version property
+// returns a *string when successful
 func (m *ActionsCacheList_actions_caches) GetVersion()(*string) {
     return m.version
 }
@@ -226,7 +235,6 @@ func (m *ActionsCacheList_actions_caches) SetSizeInBytes(value *int32)() {
 func (m *ActionsCacheList_actions_caches) SetVersion(value *string)() {
     m.version = value
 }
-// ActionsCacheList_actions_cachesable 
 type ActionsCacheList_actions_cachesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

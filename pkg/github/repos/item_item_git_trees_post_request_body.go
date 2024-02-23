@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemGitTreesPostRequestBody 
 type ItemItemGitTreesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,18 +20,22 @@ func NewItemItemGitTreesPostRequestBody()(*ItemItemGitTreesPostRequestBody) {
     return m
 }
 // CreateItemItemGitTreesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemGitTreesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemGitTreesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemGitTreesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBaseTree gets the base_tree property value. The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you're creating new changes on a branch, then normally you'd set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you're working on.If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.
+// returns a *string when successful
 func (m *ItemItemGitTreesPostRequestBody) GetBaseTree()(*string) {
     return m.base_tree
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemGitTreesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["base_tree"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +67,7 @@ func (m *ItemItemGitTreesPostRequestBody) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetTree gets the tree property value. Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
+// returns a []ItemItemGitTreesPostRequestBody_treeable when successful
 func (m *ItemItemGitTreesPostRequestBody) GetTree()([]ItemItemGitTreesPostRequestBody_treeable) {
     return m.tree
 }
@@ -107,7 +111,6 @@ func (m *ItemItemGitTreesPostRequestBody) SetBaseTree(value *string)() {
 func (m *ItemItemGitTreesPostRequestBody) SetTree(value []ItemItemGitTreesPostRequestBody_treeable)() {
     m.tree = value
 }
-// ItemItemGitTreesPostRequestBodyable 
 type ItemItemGitTreesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

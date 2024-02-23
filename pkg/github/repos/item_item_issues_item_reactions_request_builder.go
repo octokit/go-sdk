@@ -22,6 +22,7 @@ type ItemItemIssuesItemReactionsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByReaction_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item.reactions.item collection
+// returns a *ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder when successful
 func (m *ItemItemIssuesItemReactionsRequestBuilder) ByReaction_id(reaction_id int32)(*ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -30,20 +31,23 @@ func (m *ItemItemIssuesItemReactionsRequestBuilder) ByReaction_id(reaction_id in
     urlTplParams["reaction_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(reaction_id), 10)
     return NewItemItemIssuesItemReactionsWithReaction_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemIssuesItemReactionsRequestBuilderInternal instantiates a new ReactionsRequestBuilder and sets the default values.
+// NewItemItemIssuesItemReactionsRequestBuilderInternal instantiates a new ItemItemIssuesItemReactionsRequestBuilder and sets the default values.
 func NewItemItemIssuesItemReactionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemReactionsRequestBuilder) {
     m := &ItemItemIssuesItemReactionsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/reactions{?content*,page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemIssuesItemReactionsRequestBuilder instantiates a new ReactionsRequestBuilder and sets the default values.
+// NewItemItemIssuesItemReactionsRequestBuilder instantiates a new ItemItemIssuesItemReactionsRequestBuilder and sets the default values.
 func NewItemItemIssuesItemReactionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemReactionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemIssuesItemReactionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list the reactions to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
+// returns a []Reactionable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 410 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/reactions/reactions#list-reactions-for-an-issue
@@ -69,6 +73,8 @@ func (m *ItemItemIssuesItemReactionsRequestBuilder) Get(ctx context.Context, req
     return val, nil
 }
 // Post create a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue). A response with an HTTP `200` status means that you already added the reaction type to this issue.
+// returns a Reactionable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/reactions/reactions#create-reaction-for-an-issue
@@ -90,6 +96,7 @@ func (m *ItemItemIssuesItemReactionsRequestBuilder) Post(ctx context.Context, bo
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Reactionable), nil
 }
 // ToGetRequestInformation list the reactions to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
+// returns a *RequestInformation when successful
 func (m *ItemItemIssuesItemReactionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemIssuesItemReactionsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -97,8 +104,9 @@ func (m *ItemItemIssuesItemReactionsRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPostRequestInformation create a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue). A response with an HTTP `200` status means that you already added the reaction type to this issue.
+// returns a *RequestInformation when successful
 func (m *ItemItemIssuesItemReactionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemIssuesItemReactionsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/reactions", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -108,6 +116,7 @@ func (m *ItemItemIssuesItemReactionsRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemIssuesItemReactionsRequestBuilder when successful
 func (m *ItemItemIssuesItemReactionsRequestBuilder) WithUrl(rawUrl string)(*ItemItemIssuesItemReactionsRequestBuilder) {
     return NewItemItemIssuesItemReactionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommitSearchResultItem_commit_author 
 type CommitSearchResultItem_commit_author struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -16,7 +15,7 @@ type CommitSearchResultItem_commit_author struct {
     // The name property
     name *string
 }
-// NewCommitSearchResultItem_commit_author instantiates a new commitSearchResultItem_commit_author and sets the default values.
+// NewCommitSearchResultItem_commit_author instantiates a new CommitSearchResultItem_commit_author and sets the default values.
 func NewCommitSearchResultItem_commit_author()(*CommitSearchResultItem_commit_author) {
     m := &CommitSearchResultItem_commit_author{
     }
@@ -24,22 +23,27 @@ func NewCommitSearchResultItem_commit_author()(*CommitSearchResultItem_commit_au
     return m
 }
 // CreateCommitSearchResultItem_commit_authorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitSearchResultItem_commit_authorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommitSearchResultItem_commit_author(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommitSearchResultItem_commit_author) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDate gets the date property value. The date property
+// returns a *Time when successful
 func (m *CommitSearchResultItem_commit_author) GetDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.date
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *CommitSearchResultItem_commit_author) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommitSearchResultItem_commit_author) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +79,7 @@ func (m *CommitSearchResultItem_commit_author) GetFieldDeserializers()(map[strin
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *CommitSearchResultItem_commit_author) GetName()(*string) {
     return m.name
 }
@@ -122,7 +127,6 @@ func (m *CommitSearchResultItem_commit_author) SetEmail(value *string)() {
 func (m *CommitSearchResultItem_commit_author) SetName(value *string)() {
     m.name = value
 }
-// CommitSearchResultItem_commit_authorable 
 type CommitSearchResultItem_commit_authorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,13 +2,12 @@ package models
 import (
     "errors"
 )
-// 
 type CodeScanningDefaultSetup_languages int
 
 const (
     CCPP_CODESCANNINGDEFAULTSETUP_LANGUAGES CodeScanningDefaultSetup_languages = iota
     CSHARP_CODESCANNINGDEFAULTSETUP_LANGUAGES
-    GOESCAPED_CODESCANNINGDEFAULTSETUP_LANGUAGES
+    GO_CODESCANNINGDEFAULTSETUP_LANGUAGES
     JAVAKOTLIN_CODESCANNINGDEFAULTSETUP_LANGUAGES
     JAVASCRIPTTYPESCRIPT_CODESCANNINGDEFAULTSETUP_LANGUAGES
     JAVASCRIPT_CODESCANNINGDEFAULTSETUP_LANGUAGES
@@ -29,7 +28,7 @@ func ParseCodeScanningDefaultSetup_languages(v string) (any, error) {
         case "csharp":
             result = CSHARP_CODESCANNINGDEFAULTSETUP_LANGUAGES
         case "go":
-            result = GOESCAPED_CODESCANNINGDEFAULTSETUP_LANGUAGES
+            result = GO_CODESCANNINGDEFAULTSETUP_LANGUAGES
         case "java-kotlin":
             result = JAVAKOTLIN_CODESCANNINGDEFAULTSETUP_LANGUAGES
         case "javascript-typescript":

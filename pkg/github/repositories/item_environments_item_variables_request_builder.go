@@ -18,6 +18,7 @@ type ItemEnvironmentsItemVariablesRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item.environments.item.variables.item collection
+// returns a *ItemEnvironmentsItemVariablesWithNameItemRequestBuilder when successful
 func (m *ItemEnvironmentsItemVariablesRequestBuilder) ByName(name string)(*ItemEnvironmentsItemVariablesWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,20 +29,21 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) ByName(name string)(*ItemE
     }
     return NewItemEnvironmentsItemVariablesWithNameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemEnvironmentsItemVariablesRequestBuilderInternal instantiates a new VariablesRequestBuilder and sets the default values.
+// NewItemEnvironmentsItemVariablesRequestBuilderInternal instantiates a new ItemEnvironmentsItemVariablesRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemVariablesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemVariablesRequestBuilder) {
     m := &ItemEnvironmentsItemVariablesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/variables{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemEnvironmentsItemVariablesRequestBuilder instantiates a new VariablesRequestBuilder and sets the default values.
+// NewItemEnvironmentsItemVariablesRequestBuilder instantiates a new ItemEnvironmentsItemVariablesRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemVariablesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemVariablesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEnvironmentsItemVariablesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all environment variables.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a ItemEnvironmentsItemVariablesGetResponseable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#list-environment-variables
@@ -60,6 +62,7 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) Get(ctx context.Context, r
     return res.(ItemEnvironmentsItemVariablesGetResponseable), nil
 }
 // Post create an environment variable that you can reference in a GitHub Actions workflow.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a EmptyObjectable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/variables#create-an-environment-variable
@@ -78,6 +81,7 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) Post(ctx context.Context, 
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.EmptyObjectable), nil
 }
 // ToGetRequestInformation lists all environment variables.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemEnvironmentsItemVariablesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEnvironmentsItemVariablesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -85,8 +89,9 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPostRequestInformation create an environment variable that you can reference in a GitHub Actions workflow.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemEnvironmentsItemVariablesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemEnvironmentsItemVariablesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/variables", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -96,6 +101,7 @@ func (m *ItemEnvironmentsItemVariablesRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEnvironmentsItemVariablesRequestBuilder when successful
 func (m *ItemEnvironmentsItemVariablesRequestBuilder) WithUrl(rawUrl string)(*ItemEnvironmentsItemVariablesRequestBuilder) {
     return NewItemEnvironmentsItemVariablesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

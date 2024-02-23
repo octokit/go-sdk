@@ -4,28 +4,30 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectedBranch_enforce_admins 
 type ProtectedBranch_enforce_admins struct {
     // The enabled property
     enabled *bool
     // The url property
     url *string
 }
-// NewProtectedBranch_enforce_admins instantiates a new protectedBranch_enforce_admins and sets the default values.
+// NewProtectedBranch_enforce_admins instantiates a new ProtectedBranch_enforce_admins and sets the default values.
 func NewProtectedBranch_enforce_admins()(*ProtectedBranch_enforce_admins) {
     m := &ProtectedBranch_enforce_admins{
     }
     return m
 }
 // CreateProtectedBranch_enforce_adminsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectedBranch_enforce_adminsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectedBranch_enforce_admins(), nil
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *ProtectedBranch_enforce_admins) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectedBranch_enforce_admins) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -51,6 +53,7 @@ func (m *ProtectedBranch_enforce_admins) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ProtectedBranch_enforce_admins) GetUrl()(*string) {
     return m.url
 }
@@ -78,7 +81,6 @@ func (m *ProtectedBranch_enforce_admins) SetEnabled(value *bool)() {
 func (m *ProtectedBranch_enforce_admins) SetUrl(value *string)() {
     m.url = value
 }
-// ProtectedBranch_enforce_adminsable 
 type ProtectedBranch_enforce_adminsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnabled()(*bool)

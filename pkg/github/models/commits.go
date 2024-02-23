@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Commits 
 type Commits struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type Commits struct {
     // The property property
     property *string
 }
-// NewCommits instantiates a new commits and sets the default values.
+// NewCommits instantiates a new Commits and sets the default values.
 func NewCommits()(*Commits) {
     m := &Commits{
     }
@@ -27,14 +26,17 @@ func NewCommits()(*Commits) {
     return m
 }
 // CreateCommitsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommits(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Commits) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Commits) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fragment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,22 +98,27 @@ func (m *Commits) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetFragment gets the fragment property value. The fragment property
+// returns a *string when successful
 func (m *Commits) GetFragment()(*string) {
     return m.fragment
 }
 // GetMatches gets the matches property value. The matches property
+// returns a []Commits_matchesable when successful
 func (m *Commits) GetMatches()([]Commits_matchesable) {
     return m.matches
 }
 // GetObjectType gets the object_type property value. The object_type property
+// returns a *string when successful
 func (m *Commits) GetObjectType()(*string) {
     return m.object_type
 }
 // GetObjectUrl gets the object_url property value. The object_url property
+// returns a *string when successful
 func (m *Commits) GetObjectUrl()(*string) {
     return m.object_url
 }
 // GetProperty gets the property property value. The property property
+// returns a *string when successful
 func (m *Commits) GetProperty()(*string) {
     return m.property
 }
@@ -185,7 +192,6 @@ func (m *Commits) SetObjectUrl(value *string)() {
 func (m *Commits) SetProperty(value *string)() {
     m.property = value
 }
-// Commitsable 
 type Commitsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

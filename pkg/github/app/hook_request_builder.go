@@ -9,6 +9,7 @@ type HookRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Config the config property
+// returns a *HookConfigRequestBuilder when successful
 func (m *HookRequestBuilder) Config()(*HookConfigRequestBuilder) {
     return NewHookConfigRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
@@ -26,6 +27,7 @@ func NewHookRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewHookRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Deliveries the deliveries property
+// returns a *HookDeliveriesRequestBuilder when successful
 func (m *HookRequestBuilder) Deliveries()(*HookDeliveriesRequestBuilder) {
     return NewHookDeliveriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

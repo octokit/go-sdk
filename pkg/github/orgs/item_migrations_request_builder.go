@@ -21,6 +21,7 @@ type ItemMigrationsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByMigration_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.migrations.item collection
+// returns a *ItemMigrationsWithMigration_ItemRequestBuilder when successful
 func (m *ItemMigrationsRequestBuilder) ByMigration_id(migration_id int32)(*ItemMigrationsWithMigration_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -29,20 +30,21 @@ func (m *ItemMigrationsRequestBuilder) ByMigration_id(migration_id int32)(*ItemM
     urlTplParams["migration_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(migration_id), 10)
     return NewItemMigrationsWithMigration_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemMigrationsRequestBuilderInternal instantiates a new MigrationsRequestBuilder and sets the default values.
+// NewItemMigrationsRequestBuilderInternal instantiates a new ItemMigrationsRequestBuilder and sets the default values.
 func NewItemMigrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsRequestBuilder) {
     m := &ItemMigrationsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/migrations{?exclude*,page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemMigrationsRequestBuilder instantiates a new MigrationsRequestBuilder and sets the default values.
+// NewItemMigrationsRequestBuilder instantiates a new ItemMigrationsRequestBuilder and sets the default values.
 func NewItemMigrationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMigrationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
+// returns a []Migrationable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/orgs#list-organization-migrations
@@ -64,6 +66,9 @@ func (m *ItemMigrationsRequestBuilder) Get(ctx context.Context, requestConfigura
     return val, nil
 }
 // Post initiates the generation of a migration archive.
+// returns a Migrationable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/orgs#start-an-organization-migration
@@ -86,6 +91,7 @@ func (m *ItemMigrationsRequestBuilder) Post(ctx context.Context, body ItemMigrat
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Migrationable), nil
 }
 // ToGetRequestInformation lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
+// returns a *RequestInformation when successful
 func (m *ItemMigrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemMigrationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -93,8 +99,9 @@ func (m *ItemMigrationsRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPostRequestInformation initiates the generation of a migration archive.
+// returns a *RequestInformation when successful
 func (m *ItemMigrationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMigrationsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/orgs/{org}/migrations", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -104,6 +111,7 @@ func (m *ItemMigrationsRequestBuilder) ToPostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMigrationsRequestBuilder when successful
 func (m *ItemMigrationsRequestBuilder) WithUrl(rawUrl string)(*ItemMigrationsRequestBuilder) {
     return NewItemMigrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

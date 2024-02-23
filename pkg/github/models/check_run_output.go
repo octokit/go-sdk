@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CheckRun_output 
 type CheckRun_output struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type CheckRun_output struct {
     // The title property
     title *string
 }
-// NewCheckRun_output instantiates a new checkRun_output and sets the default values.
+// NewCheckRun_output instantiates a new CheckRun_output and sets the default values.
 func NewCheckRun_output()(*CheckRun_output) {
     m := &CheckRun_output{
     }
@@ -27,22 +26,27 @@ func NewCheckRun_output()(*CheckRun_output) {
     return m
 }
 // CreateCheckRun_outputFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckRun_outputFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckRun_output(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckRun_output) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnnotationsCount gets the annotations_count property value. The annotations_count property
+// returns a *int32 when successful
 func (m *CheckRun_output) GetAnnotationsCount()(*int32) {
     return m.annotations_count
 }
 // GetAnnotationsUrl gets the annotations_url property value. The annotations_url property
+// returns a *string when successful
 func (m *CheckRun_output) GetAnnotationsUrl()(*string) {
     return m.annotations_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckRun_output) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["annotations_count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,14 +102,17 @@ func (m *CheckRun_output) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetSummary gets the summary property value. The summary property
+// returns a *string when successful
 func (m *CheckRun_output) GetSummary()(*string) {
     return m.summary
 }
 // GetText gets the text property value. The text property
+// returns a *string when successful
 func (m *CheckRun_output) GetText()(*string) {
     return m.text
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *CheckRun_output) GetTitle()(*string) {
     return m.title
 }
@@ -173,7 +180,6 @@ func (m *CheckRun_output) SetText(value *string)() {
 func (m *CheckRun_output) SetTitle(value *string)() {
     m.title = value
 }
-// CheckRun_outputable 
 type CheckRun_outputable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

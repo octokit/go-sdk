@@ -17,10 +17,10 @@ type ItemHooksItemDeliveriesRequestBuilderGetQueryParameters struct {
     Cursor *string `uriparametername:"cursor"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
-    // 
     Redelivery *bool `uriparametername:"redelivery"`
 }
 // ByDelivery_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.hooks.item.deliveries.item collection
+// returns a *ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder when successful
 func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)(*ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -29,20 +29,23 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)
     urlTplParams["delivery_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(delivery_id), 10)
     return NewItemHooksItemDeliveriesWithDelivery_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemHooksItemDeliveriesRequestBuilderInternal instantiates a new DeliveriesRequestBuilder and sets the default values.
+// NewItemHooksItemDeliveriesRequestBuilderInternal instantiates a new ItemHooksItemDeliveriesRequestBuilder and sets the default values.
 func NewItemHooksItemDeliveriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHooksItemDeliveriesRequestBuilder) {
     m := &ItemHooksItemDeliveriesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?cursor*,per_page*,redelivery*}", pathParameters),
     }
     return m
 }
-// NewItemHooksItemDeliveriesRequestBuilder instantiates a new DeliveriesRequestBuilder and sets the default values.
+// NewItemHooksItemDeliveriesRequestBuilder instantiates a new ItemHooksItemDeliveriesRequestBuilder and sets the default values.
 func NewItemHooksItemDeliveriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHooksItemDeliveriesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemHooksItemDeliveriesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get returns a list of webhook deliveries for a webhook configured in an organization.
+// returns a []HookDeliveryItemable when successful
+// returns a BasicError error when the service returns a 400 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/webhooks#list-deliveries-for-an-organization-webhook
@@ -68,6 +71,7 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) Get(ctx context.Context, request
     return val, nil
 }
 // ToGetRequestInformation returns a list of webhook deliveries for a webhook configured in an organization.
+// returns a *RequestInformation when successful
 func (m *ItemHooksItemDeliveriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemHooksItemDeliveriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -75,6 +79,7 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemHooksItemDeliveriesRequestBuilder when successful
 func (m *ItemHooksItemDeliveriesRequestBuilder) WithUrl(rawUrl string)(*ItemHooksItemDeliveriesRequestBuilder) {
     return NewItemHooksItemDeliveriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

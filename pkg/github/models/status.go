@@ -31,7 +31,7 @@ type Status struct {
     // The url property
     url *string
 }
-// NewStatus instantiates a new status and sets the default values.
+// NewStatus instantiates a new Status and sets the default values.
 func NewStatus()(*Status) {
     m := &Status{
     }
@@ -39,34 +39,42 @@ func NewStatus()(*Status) {
     return m
 }
 // CreateStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Status) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Status) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetContext gets the context property value. The context property
+// returns a *string when successful
 func (m *Status) GetContext()(*string) {
     return m.context
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *Status) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Status) GetCreator()(NullableSimpleUserable) {
     return m.creator
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *Status) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Status) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,26 +190,32 @@ func (m *Status) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Status) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Status) GetNodeId()(*string) {
     return m.node_id
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *Status) GetState()(*string) {
     return m.state
 }
 // GetTargetUrl gets the target_url property value. The target_url property
+// returns a *string when successful
 func (m *Status) GetTargetUrl()(*string) {
     return m.target_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *Status) GetUpdatedAt()(*string) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Status) GetUrl()(*string) {
     return m.url
 }
@@ -329,7 +343,6 @@ func (m *Status) SetUpdatedAt(value *string)() {
 func (m *Status) SetUrl(value *string)() {
     m.url = value
 }
-// Statusable 
 type Statusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

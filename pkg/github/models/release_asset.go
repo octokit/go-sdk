@@ -36,7 +36,7 @@ type ReleaseAsset struct {
     // The url property
     url *string
 }
-// NewReleaseAsset instantiates a new releaseAsset and sets the default values.
+// NewReleaseAsset instantiates a new ReleaseAsset and sets the default values.
 func NewReleaseAsset()(*ReleaseAsset) {
     m := &ReleaseAsset{
     }
@@ -44,30 +44,37 @@ func NewReleaseAsset()(*ReleaseAsset) {
     return m
 }
 // CreateReleaseAssetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReleaseAssetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReleaseAsset(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReleaseAsset) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBrowserDownloadUrl gets the browser_download_url property value. The browser_download_url property
+// returns a *string when successful
 func (m *ReleaseAsset) GetBrowserDownloadUrl()(*string) {
     return m.browser_download_url
 }
 // GetContentType gets the content_type property value. The content_type property
+// returns a *string when successful
 func (m *ReleaseAsset) GetContentType()(*string) {
     return m.content_type
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *ReleaseAsset) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDownloadCount gets the download_count property value. The download_count property
+// returns a *int32 when successful
 func (m *ReleaseAsset) GetDownloadCount()(*int32) {
     return m.download_count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReleaseAsset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["browser_download_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -203,38 +210,47 @@ func (m *ReleaseAsset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *ReleaseAsset) GetId()(*int32) {
     return m.id
 }
 // GetLabel gets the label property value. The label property
+// returns a *string when successful
 func (m *ReleaseAsset) GetLabel()(*string) {
     return m.label
 }
 // GetName gets the name property value. The file name of the asset.
+// returns a *string when successful
 func (m *ReleaseAsset) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *ReleaseAsset) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *ReleaseAsset) GetSize()(*int32) {
     return m.size
 }
 // GetState gets the state property value. State of the release asset.
+// returns a *ReleaseAsset_state when successful
 func (m *ReleaseAsset) GetState()(*ReleaseAsset_state) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *ReleaseAsset) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUploader gets the uploader property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *ReleaseAsset) GetUploader()(NullableSimpleUserable) {
     return m.uploader
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ReleaseAsset) GetUrl()(*string) {
     return m.url
 }
@@ -383,7 +399,6 @@ func (m *ReleaseAsset) SetUploader(value NullableSimpleUserable)() {
 func (m *ReleaseAsset) SetUrl(value *string)() {
     m.url = value
 }
-// ReleaseAssetable 
 type ReleaseAssetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

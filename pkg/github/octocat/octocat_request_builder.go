@@ -28,6 +28,7 @@ func NewOctocatRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewOctocatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the octocat as ASCII art
+// returns a []byte when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/meta/meta#get-octocat
@@ -46,6 +47,7 @@ func (m *OctocatRequestBuilder) Get(ctx context.Context, requestConfiguration *i
     return res.([]byte), nil
 }
 // ToGetRequestInformation get the octocat as ASCII art
+// returns a *RequestInformation when successful
 func (m *OctocatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[OctocatRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -53,6 +55,7 @@ func (m *OctocatRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OctocatRequestBuilder when successful
 func (m *OctocatRequestBuilder) WithUrl(rawUrl string)(*OctocatRequestBuilder) {
     return NewOctocatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

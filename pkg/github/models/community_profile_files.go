@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CommunityProfile_files 
 type CommunityProfile_files struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,7 +22,7 @@ type CommunityProfile_files struct {
     // The readme property
     readme NullableCommunityHealthFileable
 }
-// NewCommunityProfile_files instantiates a new communityProfile_files and sets the default values.
+// NewCommunityProfile_files instantiates a new CommunityProfile_files and sets the default values.
 func NewCommunityProfile_files()(*CommunityProfile_files) {
     m := &CommunityProfile_files{
     }
@@ -31,26 +30,32 @@ func NewCommunityProfile_files()(*CommunityProfile_files) {
     return m
 }
 // CreateCommunityProfile_filesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunityProfile_filesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunityProfile_files(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommunityProfile_files) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCodeOfConduct gets the code_of_conduct property value. Code of Conduct Simple
+// returns a NullableCodeOfConductSimpleable when successful
 func (m *CommunityProfile_files) GetCodeOfConduct()(NullableCodeOfConductSimpleable) {
     return m.code_of_conduct
 }
 // GetCodeOfConductFile gets the code_of_conduct_file property value. The code_of_conduct_file property
+// returns a NullableCommunityHealthFileable when successful
 func (m *CommunityProfile_files) GetCodeOfConductFile()(NullableCommunityHealthFileable) {
     return m.code_of_conduct_file
 }
 // GetContributing gets the contributing property value. The contributing property
+// returns a NullableCommunityHealthFileable when successful
 func (m *CommunityProfile_files) GetContributing()(NullableCommunityHealthFileable) {
     return m.contributing
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunityProfile_files) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code_of_conduct"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,18 +131,22 @@ func (m *CommunityProfile_files) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIssueTemplate gets the issue_template property value. The issue_template property
+// returns a NullableCommunityHealthFileable when successful
 func (m *CommunityProfile_files) GetIssueTemplate()(NullableCommunityHealthFileable) {
     return m.issue_template
 }
 // GetLicense gets the license property value. License Simple
+// returns a NullableLicenseSimpleable when successful
 func (m *CommunityProfile_files) GetLicense()(NullableLicenseSimpleable) {
     return m.license
 }
 // GetPullRequestTemplate gets the pull_request_template property value. The pull_request_template property
+// returns a NullableCommunityHealthFileable when successful
 func (m *CommunityProfile_files) GetPullRequestTemplate()(NullableCommunityHealthFileable) {
     return m.pull_request_template
 }
 // GetReadme gets the readme property value. The readme property
+// returns a NullableCommunityHealthFileable when successful
 func (m *CommunityProfile_files) GetReadme()(NullableCommunityHealthFileable) {
     return m.readme
 }
@@ -225,7 +234,6 @@ func (m *CommunityProfile_files) SetPullRequestTemplate(value NullableCommunityH
 func (m *CommunityProfile_files) SetReadme(value NullableCommunityHealthFileable)() {
     m.readme = value
 }
-// CommunityProfile_filesable 
 type CommunityProfile_filesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

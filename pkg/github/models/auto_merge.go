@@ -17,7 +17,7 @@ type AutoMerge struct {
     // The merge method to use.
     merge_method *AutoMerge_merge_method
 }
-// NewAutoMerge instantiates a new autoMerge and sets the default values.
+// NewAutoMerge instantiates a new AutoMerge and sets the default values.
 func NewAutoMerge()(*AutoMerge) {
     m := &AutoMerge{
     }
@@ -25,26 +25,32 @@ func NewAutoMerge()(*AutoMerge) {
     return m
 }
 // CreateAutoMergeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAutoMergeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAutoMerge(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AutoMerge) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommitMessage gets the commit_message property value. Commit message for the merge commit.
+// returns a *string when successful
 func (m *AutoMerge) GetCommitMessage()(*string) {
     return m.commit_message
 }
 // GetCommitTitle gets the commit_title property value. Title for the merge commit message.
+// returns a *string when successful
 func (m *AutoMerge) GetCommitTitle()(*string) {
     return m.commit_title
 }
 // GetEnabledBy gets the enabled_by property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *AutoMerge) GetEnabledBy()(SimpleUserable) {
     return m.enabled_by
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AutoMerge) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit_message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +96,7 @@ func (m *AutoMerge) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetMergeMethod gets the merge_method property value. The merge method to use.
+// returns a *AutoMerge_merge_method when successful
 func (m *AutoMerge) GetMergeMethod()(*AutoMerge_merge_method) {
     return m.merge_method
 }
@@ -148,7 +155,6 @@ func (m *AutoMerge) SetEnabledBy(value SimpleUserable)() {
 func (m *AutoMerge) SetMergeMethod(value *AutoMerge_merge_method)() {
     m.merge_method = value
 }
-// AutoMergeable 
 type AutoMergeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

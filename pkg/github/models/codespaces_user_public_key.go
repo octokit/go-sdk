@@ -13,7 +13,7 @@ type CodespacesUserPublicKey struct {
     // The identifier for the key.
     key_id *string
 }
-// NewCodespacesUserPublicKey instantiates a new codespacesUserPublicKey and sets the default values.
+// NewCodespacesUserPublicKey instantiates a new CodespacesUserPublicKey and sets the default values.
 func NewCodespacesUserPublicKey()(*CodespacesUserPublicKey) {
     m := &CodespacesUserPublicKey{
     }
@@ -21,14 +21,17 @@ func NewCodespacesUserPublicKey()(*CodespacesUserPublicKey) {
     return m
 }
 // CreateCodespacesUserPublicKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespacesUserPublicKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespacesUserPublicKey(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespacesUserPublicKey) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespacesUserPublicKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *CodespacesUserPublicKey) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetKey gets the key property value. The Base64 encoded public key.
+// returns a *string when successful
 func (m *CodespacesUserPublicKey) GetKey()(*string) {
     return m.key
 }
 // GetKeyId gets the key_id property value. The identifier for the key.
+// returns a *string when successful
 func (m *CodespacesUserPublicKey) GetKeyId()(*string) {
     return m.key_id
 }
@@ -95,7 +100,6 @@ func (m *CodespacesUserPublicKey) SetKey(value *string)() {
 func (m *CodespacesUserPublicKey) SetKeyId(value *string)() {
     m.key_id = value
 }
-// CodespacesUserPublicKeyable 
 type CodespacesUserPublicKeyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

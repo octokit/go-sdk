@@ -106,7 +106,7 @@ type PullRequest struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewPullRequest instantiates a new pullRequest and sets the default values.
+// NewPullRequest instantiates a new PullRequest and sets the default values.
 func NewPullRequest()(*PullRequest) {
     m := &PullRequest{
     }
@@ -114,86 +114,107 @@ func NewPullRequest()(*PullRequest) {
     return m
 }
 // CreatePullRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequest(), nil
 }
 // GetActiveLockReason gets the active_lock_reason property value. The active_lock_reason property
+// returns a *string when successful
 func (m *PullRequest) GetActiveLockReason()(*string) {
     return m.active_lock_reason
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditions gets the additions property value. The additions property
+// returns a *int32 when successful
 func (m *PullRequest) GetAdditions()(*int32) {
     return m.additions
 }
 // GetAssignee gets the assignee property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *PullRequest) GetAssignee()(NullableSimpleUserable) {
     return m.assignee
 }
 // GetAssignees gets the assignees property value. The assignees property
+// returns a []SimpleUserable when successful
 func (m *PullRequest) GetAssignees()([]SimpleUserable) {
     return m.assignees
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *PullRequest) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetAutoMerge gets the auto_merge property value. The status of auto merging a pull request.
+// returns a AutoMergeable when successful
 func (m *PullRequest) GetAutoMerge()(AutoMergeable) {
     return m.auto_merge
 }
 // GetBase gets the base property value. The base property
+// returns a PullRequest_baseable when successful
 func (m *PullRequest) GetBase()(PullRequest_baseable) {
     return m.base
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *PullRequest) GetBody()(*string) {
     return m.body
 }
 // GetChangedFiles gets the changed_files property value. The changed_files property
+// returns a *int32 when successful
 func (m *PullRequest) GetChangedFiles()(*int32) {
     return m.changed_files
 }
 // GetClosedAt gets the closed_at property value. The closed_at property
+// returns a *Time when successful
 func (m *PullRequest) GetClosedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.closed_at
 }
 // GetComments gets the comments property value. The comments property
+// returns a *int32 when successful
 func (m *PullRequest) GetComments()(*int32) {
     return m.comments
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *PullRequest) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommits gets the commits property value. The commits property
+// returns a *int32 when successful
 func (m *PullRequest) GetCommits()(*int32) {
     return m.commits
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *PullRequest) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PullRequest) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDeletions gets the deletions property value. The deletions property
+// returns a *int32 when successful
 func (m *PullRequest) GetDeletions()(*int32) {
     return m.deletions
 }
 // GetDiffUrl gets the diff_url property value. The diff_url property
+// returns a *string when successful
 func (m *PullRequest) GetDiffUrl()(*string) {
     return m.diff_url
 }
 // GetDraft gets the draft property value. Indicates whether or not the pull request is a draft.
+// returns a *bool when successful
 func (m *PullRequest) GetDraft()(*bool) {
     return m.draft
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -703,122 +724,152 @@ func (m *PullRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHead gets the head property value. The head property
+// returns a PullRequest_headable when successful
 func (m *PullRequest) GetHead()(PullRequest_headable) {
     return m.head
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *PullRequest) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *PullRequest) GetId()(*int32) {
     return m.id
 }
 // GetIssueUrl gets the issue_url property value. The issue_url property
+// returns a *string when successful
 func (m *PullRequest) GetIssueUrl()(*string) {
     return m.issue_url
 }
 // GetLabels gets the labels property value. The labels property
+// returns a []PullRequest_labelsable when successful
 func (m *PullRequest) GetLabels()([]PullRequest_labelsable) {
     return m.labels
 }
 // GetLinks gets the _links property value. The _links property
+// returns a PullRequest__linksable when successful
 func (m *PullRequest) GetLinks()(PullRequest__linksable) {
     return m._links
 }
 // GetLocked gets the locked property value. The locked property
+// returns a *bool when successful
 func (m *PullRequest) GetLocked()(*bool) {
     return m.locked
 }
 // GetMaintainerCanModify gets the maintainer_can_modify property value. Indicates whether maintainers can modify the pull request.
+// returns a *bool when successful
 func (m *PullRequest) GetMaintainerCanModify()(*bool) {
     return m.maintainer_can_modify
 }
 // GetMergeable gets the mergeable property value. The mergeable property
+// returns a *bool when successful
 func (m *PullRequest) GetMergeable()(*bool) {
     return m.mergeable
 }
 // GetMergeableState gets the mergeable_state property value. The mergeable_state property
+// returns a *string when successful
 func (m *PullRequest) GetMergeableState()(*string) {
     return m.mergeable_state
 }
 // GetMergeCommitSha gets the merge_commit_sha property value. The merge_commit_sha property
+// returns a *string when successful
 func (m *PullRequest) GetMergeCommitSha()(*string) {
     return m.merge_commit_sha
 }
 // GetMerged gets the merged property value. The merged property
+// returns a *bool when successful
 func (m *PullRequest) GetMerged()(*bool) {
     return m.merged
 }
 // GetMergedAt gets the merged_at property value. The merged_at property
+// returns a *Time when successful
 func (m *PullRequest) GetMergedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.merged_at
 }
 // GetMergedBy gets the merged_by property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *PullRequest) GetMergedBy()(NullableSimpleUserable) {
     return m.merged_by
 }
 // GetMilestone gets the milestone property value. A collection of related issues and pull requests.
+// returns a NullableMilestoneable when successful
 func (m *PullRequest) GetMilestone()(NullableMilestoneable) {
     return m.milestone
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *PullRequest) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. Number uniquely identifying the pull request within its repository.
+// returns a *int32 when successful
 func (m *PullRequest) GetNumber()(*int32) {
     return m.number
 }
 // GetPatchUrl gets the patch_url property value. The patch_url property
+// returns a *string when successful
 func (m *PullRequest) GetPatchUrl()(*string) {
     return m.patch_url
 }
 // GetRebaseable gets the rebaseable property value. The rebaseable property
+// returns a *bool when successful
 func (m *PullRequest) GetRebaseable()(*bool) {
     return m.rebaseable
 }
 // GetRequestedReviewers gets the requested_reviewers property value. The requested_reviewers property
+// returns a []SimpleUserable when successful
 func (m *PullRequest) GetRequestedReviewers()([]SimpleUserable) {
     return m.requested_reviewers
 }
 // GetRequestedTeams gets the requested_teams property value. The requested_teams property
+// returns a []TeamSimpleable when successful
 func (m *PullRequest) GetRequestedTeams()([]TeamSimpleable) {
     return m.requested_teams
 }
 // GetReviewComments gets the review_comments property value. The review_comments property
+// returns a *int32 when successful
 func (m *PullRequest) GetReviewComments()(*int32) {
     return m.review_comments
 }
 // GetReviewCommentsUrl gets the review_comments_url property value. The review_comments_url property
+// returns a *string when successful
 func (m *PullRequest) GetReviewCommentsUrl()(*string) {
     return m.review_comments_url
 }
 // GetReviewCommentUrl gets the review_comment_url property value. The review_comment_url property
+// returns a *string when successful
 func (m *PullRequest) GetReviewCommentUrl()(*string) {
     return m.review_comment_url
 }
 // GetState gets the state property value. State of this Pull Request. Either `open` or `closed`.
+// returns a *PullRequest_state when successful
 func (m *PullRequest) GetState()(*PullRequest_state) {
     return m.state
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *PullRequest) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetTitle gets the title property value. The title of the pull request.
+// returns a *string when successful
 func (m *PullRequest) GetTitle()(*string) {
     return m.title
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PullRequest) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PullRequest) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *PullRequest) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -1342,7 +1393,6 @@ func (m *PullRequest) SetUrl(value *string)() {
 func (m *PullRequest) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// PullRequestable 
 type PullRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -22,7 +22,7 @@ type CommunityProfile struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewCommunityProfile instantiates a new communityProfile and sets the default values.
+// NewCommunityProfile instantiates a new CommunityProfile and sets the default values.
 func NewCommunityProfile()(*CommunityProfile) {
     m := &CommunityProfile{
     }
@@ -30,26 +30,32 @@ func NewCommunityProfile()(*CommunityProfile) {
     return m
 }
 // CreateCommunityProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommunityProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunityProfile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommunityProfile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentReportsEnabled gets the content_reports_enabled property value. The content_reports_enabled property
+// returns a *bool when successful
 func (m *CommunityProfile) GetContentReportsEnabled()(*bool) {
     return m.content_reports_enabled
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *CommunityProfile) GetDescription()(*string) {
     return m.description
 }
 // GetDocumentation gets the documentation property value. The documentation property
+// returns a *string when successful
 func (m *CommunityProfile) GetDocumentation()(*string) {
     return m.documentation
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommunityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content_reports_enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,14 +121,17 @@ func (m *CommunityProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFiles gets the files property value. The files property
+// returns a CommunityProfile_filesable when successful
 func (m *CommunityProfile) GetFiles()(CommunityProfile_filesable) {
     return m.files
 }
 // GetHealthPercentage gets the health_percentage property value. The health_percentage property
+// returns a *int32 when successful
 func (m *CommunityProfile) GetHealthPercentage()(*int32) {
     return m.health_percentage
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *CommunityProfile) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -200,7 +209,6 @@ func (m *CommunityProfile) SetHealthPercentage(value *int32)() {
 func (m *CommunityProfile) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// CommunityProfileable 
 type CommunityProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Verification 
 type Verification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type Verification struct {
     // The verified property
     verified *bool
 }
-// NewVerification instantiates a new verification and sets the default values.
+// NewVerification instantiates a new Verification and sets the default values.
 func NewVerification()(*Verification) {
     m := &Verification{
     }
@@ -25,14 +24,17 @@ func NewVerification()(*Verification) {
     return m
 }
 // CreateVerificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateVerificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerification(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Verification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Verification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *Verification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetPayload gets the payload property value. The payload property
+// returns a *string when successful
 func (m *Verification) GetPayload()(*string) {
     return m.payload
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *Verification) GetReason()(*string) {
     return m.reason
 }
 // GetSignature gets the signature property value. The signature property
+// returns a *string when successful
 func (m *Verification) GetSignature()(*string) {
     return m.signature
 }
 // GetVerified gets the verified property value. The verified property
+// returns a *bool when successful
 func (m *Verification) GetVerified()(*bool) {
     return m.verified
 }
@@ -147,7 +153,6 @@ func (m *Verification) SetSignature(value *string)() {
 func (m *Verification) SetVerified(value *bool)() {
     m.verified = value
 }
-// Verificationable 
 type Verificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

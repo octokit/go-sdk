@@ -19,7 +19,7 @@ type ShortBranch struct {
     // The protection_url property
     protection_url *string
 }
-// NewShortBranch instantiates a new shortBranch and sets the default values.
+// NewShortBranch instantiates a new ShortBranch and sets the default values.
 func NewShortBranch()(*ShortBranch) {
     m := &ShortBranch{
     }
@@ -27,18 +27,22 @@ func NewShortBranch()(*ShortBranch) {
     return m
 }
 // CreateShortBranchFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateShortBranchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewShortBranch(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ShortBranch) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommit gets the commit property value. The commit property
+// returns a ShortBranch_commitable when successful
 func (m *ShortBranch) GetCommit()(ShortBranch_commitable) {
     return m.commit
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ShortBranch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +98,22 @@ func (m *ShortBranch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ShortBranch) GetName()(*string) {
     return m.name
 }
 // GetProtected gets the protected property value. The protected property
+// returns a *bool when successful
 func (m *ShortBranch) GetProtected()(*bool) {
     return m.protected
 }
 // GetProtection gets the protection property value. Branch Protection
+// returns a BranchProtectionable when successful
 func (m *ShortBranch) GetProtection()(BranchProtectionable) {
     return m.protection
 }
 // GetProtectionUrl gets the protection_url property value. The protection_url property
+// returns a *string when successful
 func (m *ShortBranch) GetProtectionUrl()(*string) {
     return m.protection_url
 }
@@ -173,7 +181,6 @@ func (m *ShortBranch) SetProtection(value BranchProtectionable)() {
 func (m *ShortBranch) SetProtectionUrl(value *string)() {
     m.protection_url = value
 }
-// ShortBranchable 
 type ShortBranchable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

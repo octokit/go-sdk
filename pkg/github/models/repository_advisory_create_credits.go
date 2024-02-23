@@ -4,24 +4,25 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryAdvisoryCreate_credits 
 type RepositoryAdvisoryCreate_credits struct {
     // The username of the user credited.
     login *string
     // The type of credit the user is receiving.
     typeEscaped *SecurityAdvisoryCreditTypes
 }
-// NewRepositoryAdvisoryCreate_credits instantiates a new repositoryAdvisoryCreate_credits and sets the default values.
+// NewRepositoryAdvisoryCreate_credits instantiates a new RepositoryAdvisoryCreate_credits and sets the default values.
 func NewRepositoryAdvisoryCreate_credits()(*RepositoryAdvisoryCreate_credits) {
     m := &RepositoryAdvisoryCreate_credits{
     }
     return m
 }
 // CreateRepositoryAdvisoryCreate_creditsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryCreate_creditsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryCreate_credits(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryCreate_credits) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["login"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,10 +48,12 @@ func (m *RepositoryAdvisoryCreate_credits) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetLogin gets the login property value. The username of the user credited.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate_credits) GetLogin()(*string) {
     return m.login
 }
 // GetTypeEscaped gets the type property value. The type of credit the user is receiving.
+// returns a *SecurityAdvisoryCreditTypes when successful
 func (m *RepositoryAdvisoryCreate_credits) GetTypeEscaped()(*SecurityAdvisoryCreditTypes) {
     return m.typeEscaped
 }
@@ -79,7 +82,6 @@ func (m *RepositoryAdvisoryCreate_credits) SetLogin(value *string)() {
 func (m *RepositoryAdvisoryCreate_credits) SetTypeEscaped(value *SecurityAdvisoryCreditTypes)() {
     m.typeEscaped = value
 }
-// RepositoryAdvisoryCreate_creditsable 
 type RepositoryAdvisoryCreate_creditsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLogin()(*string)

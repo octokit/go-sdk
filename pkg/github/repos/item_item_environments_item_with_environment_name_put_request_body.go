@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody struct {
     // The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
     deployment_branch_policy i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicySettingsable
@@ -23,14 +22,17 @@ func NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody()(*ItemItemEn
     return m
 }
 // CreateItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody(), nil
 }
 // GetDeploymentBranchPolicy gets the deployment_branch_policy property value. The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+// returns a DeploymentBranchPolicySettingsable when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetDeploymentBranchPolicy()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicySettingsable) {
     return m.deployment_branch_policy
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["deployment_branch_policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +84,17 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetFieldDes
     return res
 }
 // GetPreventSelfReview gets the prevent_self_review property value. Whether or not a user who created the job is prevented from approving their own job.
+// returns a *bool when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetPreventSelfReview()(*bool) {
     return m.prevent_self_review
 }
 // GetReviewers gets the reviewers property value. The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+// returns a []ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetReviewers()([]ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable) {
     return m.reviewers
 }
 // GetWaitTimer gets the wait_timer property value. The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).
+// returns a *int32 when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) GetWaitTimer()(*int32) {
     return m.wait_timer
 }
@@ -143,7 +148,6 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) SetReviewer
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody) SetWaitTimer(value *int32)() {
     m.wait_timer = value
 }
-// ItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyable 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeploymentBranchPolicy()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentBranchPolicySettingsable)

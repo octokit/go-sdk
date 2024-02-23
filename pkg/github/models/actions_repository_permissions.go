@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActionsRepositoryPermissions 
 type ActionsRepositoryPermissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type ActionsRepositoryPermissions struct {
     // The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
     selected_actions_url *string
 }
-// NewActionsRepositoryPermissions instantiates a new actionsRepositoryPermissions and sets the default values.
+// NewActionsRepositoryPermissions instantiates a new ActionsRepositoryPermissions and sets the default values.
 func NewActionsRepositoryPermissions()(*ActionsRepositoryPermissions) {
     m := &ActionsRepositoryPermissions{
     }
@@ -23,22 +22,27 @@ func NewActionsRepositoryPermissions()(*ActionsRepositoryPermissions) {
     return m
 }
 // CreateActionsRepositoryPermissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActionsRepositoryPermissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsRepositoryPermissions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ActionsRepositoryPermissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedActions gets the allowed_actions property value. The permissions policy that controls the actions and reusable workflows that are allowed to run.
+// returns a *AllowedActions when successful
 func (m *ActionsRepositoryPermissions) GetAllowedActions()(*AllowedActions) {
     return m.allowed_actions
 }
 // GetEnabled gets the enabled property value. Whether GitHub Actions is enabled on the repository.
+// returns a *bool when successful
 func (m *ActionsRepositoryPermissions) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActionsRepositoryPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowed_actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *ActionsRepositoryPermissions) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetSelectedActionsUrl gets the selected_actions_url property value. The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+// returns a *string when successful
 func (m *ActionsRepositoryPermissions) GetSelectedActionsUrl()(*string) {
     return m.selected_actions_url
 }
@@ -122,7 +127,6 @@ func (m *ActionsRepositoryPermissions) SetEnabled(value *bool)() {
 func (m *ActionsRepositoryPermissions) SetSelectedActionsUrl(value *string)() {
     m.selected_actions_url = value
 }
-// ActionsRepositoryPermissionsable 
 type ActionsRepositoryPermissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -28,22 +28,23 @@ type Environment struct {
     // The url property
     url *string
 }
-// Environment_Environment_protection_rules composed type wrapper for classes environment_protection_rulesMember1, environment_protection_rulesMember2, environment_protection_rulesMember3
+// Environment_Environment_protection_rules composed type wrapper for classes Environment_protection_rulesMember1able, Environment_protection_rulesMember2able, Environment_protection_rulesMember3able
 type Environment_Environment_protection_rules struct {
-    // Composed type representation for type environment_protection_rulesMember1
+    // Composed type representation for type Environment_protection_rulesMember1able
     environment_protection_rulesMember1 Environment_protection_rulesMember1able
-    // Composed type representation for type environment_protection_rulesMember2
+    // Composed type representation for type Environment_protection_rulesMember2able
     environment_protection_rulesMember2 Environment_protection_rulesMember2able
-    // Composed type representation for type environment_protection_rulesMember3
+    // Composed type representation for type Environment_protection_rulesMember3able
     environment_protection_rulesMember3 Environment_protection_rulesMember3able
 }
-// NewEnvironment_Environment_protection_rules instantiates a new environment_protection_rules and sets the default values.
+// NewEnvironment_Environment_protection_rules instantiates a new Environment_Environment_protection_rules and sets the default values.
 func NewEnvironment_Environment_protection_rules()(*Environment_Environment_protection_rules) {
     m := &Environment_Environment_protection_rules{
     }
     return m
 }
 // CreateEnvironment_Environment_protection_rulesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnvironment_Environment_protection_rulesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewEnvironment_Environment_protection_rules()
     if parseNode != nil {
@@ -72,23 +73,28 @@ func CreateEnvironment_Environment_protection_rulesFromDiscriminatorValue(parseN
     }
     return result, nil
 }
-// GetEnvironmentProtectionRulesMember1 gets the environment_protection_rulesMember1 property value. Composed type representation for type environment_protection_rulesMember1
+// GetEnvironmentProtectionRulesMember1 gets the environment_protection_rulesMember1 property value. Composed type representation for type Environment_protection_rulesMember1able
+// returns a Environment_protection_rulesMember1able when successful
 func (m *Environment_Environment_protection_rules) GetEnvironmentProtectionRulesMember1()(Environment_protection_rulesMember1able) {
     return m.environment_protection_rulesMember1
 }
-// GetEnvironmentProtectionRulesMember2 gets the environment_protection_rulesMember2 property value. Composed type representation for type environment_protection_rulesMember2
+// GetEnvironmentProtectionRulesMember2 gets the environment_protection_rulesMember2 property value. Composed type representation for type Environment_protection_rulesMember2able
+// returns a Environment_protection_rulesMember2able when successful
 func (m *Environment_Environment_protection_rules) GetEnvironmentProtectionRulesMember2()(Environment_protection_rulesMember2able) {
     return m.environment_protection_rulesMember2
 }
-// GetEnvironmentProtectionRulesMember3 gets the environment_protection_rulesMember3 property value. Composed type representation for type environment_protection_rulesMember3
+// GetEnvironmentProtectionRulesMember3 gets the environment_protection_rulesMember3 property value. Composed type representation for type Environment_protection_rulesMember3able
+// returns a Environment_protection_rulesMember3able when successful
 func (m *Environment_Environment_protection_rules) GetEnvironmentProtectionRulesMember3()(Environment_protection_rulesMember3able) {
     return m.environment_protection_rulesMember3
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Environment_Environment_protection_rules) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *Environment_Environment_protection_rules) GetIsComposedType()(bool) {
     return true
 }
@@ -112,19 +118,18 @@ func (m *Environment_Environment_protection_rules) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetEnvironmentProtectionRulesMember1 sets the environment_protection_rulesMember1 property value. Composed type representation for type environment_protection_rulesMember1
+// SetEnvironmentProtectionRulesMember1 sets the environment_protection_rulesMember1 property value. Composed type representation for type Environment_protection_rulesMember1able
 func (m *Environment_Environment_protection_rules) SetEnvironmentProtectionRulesMember1(value Environment_protection_rulesMember1able)() {
     m.environment_protection_rulesMember1 = value
 }
-// SetEnvironmentProtectionRulesMember2 sets the environment_protection_rulesMember2 property value. Composed type representation for type environment_protection_rulesMember2
+// SetEnvironmentProtectionRulesMember2 sets the environment_protection_rulesMember2 property value. Composed type representation for type Environment_protection_rulesMember2able
 func (m *Environment_Environment_protection_rules) SetEnvironmentProtectionRulesMember2(value Environment_protection_rulesMember2able)() {
     m.environment_protection_rulesMember2 = value
 }
-// SetEnvironmentProtectionRulesMember3 sets the environment_protection_rulesMember3 property value. Composed type representation for type environment_protection_rulesMember3
+// SetEnvironmentProtectionRulesMember3 sets the environment_protection_rulesMember3 property value. Composed type representation for type Environment_protection_rulesMember3able
 func (m *Environment_Environment_protection_rules) SetEnvironmentProtectionRulesMember3(value Environment_protection_rulesMember3able)() {
     m.environment_protection_rulesMember3 = value
 }
-// Environment_Environment_protection_rulesable 
 type Environment_Environment_protection_rulesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnvironmentProtectionRulesMember1()(Environment_protection_rulesMember1able)
@@ -134,7 +139,7 @@ type Environment_Environment_protection_rulesable interface {
     SetEnvironmentProtectionRulesMember2(value Environment_protection_rulesMember2able)()
     SetEnvironmentProtectionRulesMember3(value Environment_protection_rulesMember3able)()
 }
-// NewEnvironment instantiates a new environment and sets the default values.
+// NewEnvironment instantiates a new Environment and sets the default values.
 func NewEnvironment()(*Environment) {
     m := &Environment{
     }
@@ -142,22 +147,27 @@ func NewEnvironment()(*Environment) {
     return m
 }
 // CreateEnvironmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnvironmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnvironment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Environment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The time that the environment was created, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Environment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDeploymentBranchPolicy gets the deployment_branch_policy property value. The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+// returns a DeploymentBranchPolicySettingsable when successful
 func (m *Environment) GetDeploymentBranchPolicy()(DeploymentBranchPolicySettingsable) {
     return m.deployment_branch_policy
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Environment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -259,30 +269,37 @@ func (m *Environment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Environment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id of the environment.
+// returns a *int32 when successful
 func (m *Environment) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the environment.
+// returns a *string when successful
 func (m *Environment) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Environment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetProtectionRules gets the protection_rules property value. Built-in deployment protection rules for the environment.
+// returns a []Environment_Environment_protection_rulesable when successful
 func (m *Environment) GetProtectionRules()([]Environment_Environment_protection_rulesable) {
     return m.protection_rules
 }
 // GetUpdatedAt gets the updated_at property value. The time that the environment was last updated, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Environment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Environment) GetUrl()(*string) {
     return m.url
 }
@@ -396,7 +413,6 @@ func (m *Environment) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f30
 func (m *Environment) SetUrl(value *string)() {
     m.url = value
 }
-// Environmentable 
 type Environmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

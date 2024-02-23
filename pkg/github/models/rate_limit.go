@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RateLimit 
 type RateLimit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type RateLimit struct {
     // The used property
     used *int32
 }
-// NewRateLimit instantiates a new rateLimit and sets the default values.
+// NewRateLimit instantiates a new RateLimit and sets the default values.
 func NewRateLimit()(*RateLimit) {
     m := &RateLimit{
     }
@@ -25,14 +24,17 @@ func NewRateLimit()(*RateLimit) {
     return m
 }
 // CreateRateLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRateLimitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRateLimit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RateLimit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RateLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["limit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *RateLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetLimit gets the limit property value. The limit property
+// returns a *int32 when successful
 func (m *RateLimit) GetLimit()(*int32) {
     return m.limit
 }
 // GetRemaining gets the remaining property value. The remaining property
+// returns a *int32 when successful
 func (m *RateLimit) GetRemaining()(*int32) {
     return m.remaining
 }
 // GetReset gets the reset property value. The reset property
+// returns a *int32 when successful
 func (m *RateLimit) GetReset()(*int32) {
     return m.reset
 }
 // GetUsed gets the used property value. The used property
+// returns a *int32 when successful
 func (m *RateLimit) GetUsed()(*int32) {
     return m.used
 }
@@ -147,7 +153,6 @@ func (m *RateLimit) SetReset(value *int32)() {
 func (m *RateLimit) SetUsed(value *int32)() {
     m.used = value
 }
-// RateLimitable 
 type RateLimitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

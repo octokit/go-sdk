@@ -35,7 +35,7 @@ type CommitComparison struct {
     // The url property
     url *string
 }
-// NewCommitComparison instantiates a new commitComparison and sets the default values.
+// NewCommitComparison instantiates a new CommitComparison and sets the default values.
 func NewCommitComparison()(*CommitComparison) {
     m := &CommitComparison{
     }
@@ -43,34 +43,42 @@ func NewCommitComparison()(*CommitComparison) {
     return m
 }
 // CreateCommitComparisonFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitComparisonFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommitComparison(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommitComparison) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAheadBy gets the ahead_by property value. The ahead_by property
+// returns a *int32 when successful
 func (m *CommitComparison) GetAheadBy()(*int32) {
     return m.ahead_by
 }
 // GetBaseCommit gets the base_commit property value. Commit
+// returns a Commitable when successful
 func (m *CommitComparison) GetBaseCommit()(Commitable) {
     return m.base_commit
 }
 // GetBehindBy gets the behind_by property value. The behind_by property
+// returns a *int32 when successful
 func (m *CommitComparison) GetBehindBy()(*int32) {
     return m.behind_by
 }
 // GetCommits gets the commits property value. The commits property
+// returns a []Commitable when successful
 func (m *CommitComparison) GetCommits()([]Commitable) {
     return m.commits
 }
 // GetDiffUrl gets the diff_url property value. The diff_url property
+// returns a *string when successful
 func (m *CommitComparison) GetDiffUrl()(*string) {
     return m.diff_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommitComparison) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ahead_by"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -218,34 +226,42 @@ func (m *CommitComparison) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFiles gets the files property value. The files property
+// returns a []DiffEntryable when successful
 func (m *CommitComparison) GetFiles()([]DiffEntryable) {
     return m.files
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CommitComparison) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetMergeBaseCommit gets the merge_base_commit property value. Commit
+// returns a Commitable when successful
 func (m *CommitComparison) GetMergeBaseCommit()(Commitable) {
     return m.merge_base_commit
 }
 // GetPatchUrl gets the patch_url property value. The patch_url property
+// returns a *string when successful
 func (m *CommitComparison) GetPatchUrl()(*string) {
     return m.patch_url
 }
 // GetPermalinkUrl gets the permalink_url property value. The permalink_url property
+// returns a *string when successful
 func (m *CommitComparison) GetPermalinkUrl()(*string) {
     return m.permalink_url
 }
 // GetStatus gets the status property value. The status property
+// returns a *CommitComparison_status when successful
 func (m *CommitComparison) GetStatus()(*CommitComparison_status) {
     return m.status
 }
 // GetTotalCommits gets the total_commits property value. The total_commits property
+// returns a *int32 when successful
 func (m *CommitComparison) GetTotalCommits()(*int32) {
     return m.total_commits
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CommitComparison) GetUrl()(*string) {
     return m.url
 }
@@ -406,7 +422,6 @@ func (m *CommitComparison) SetTotalCommits(value *int32)() {
 func (m *CommitComparison) SetUrl(value *string)() {
     m.url = value
 }
-// CommitComparisonable 
 type CommitComparisonable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -29,7 +29,7 @@ type UnlabeledIssueEvent struct {
     // The url property
     url *string
 }
-// NewUnlabeledIssueEvent instantiates a new unlabeledIssueEvent and sets the default values.
+// NewUnlabeledIssueEvent instantiates a new UnlabeledIssueEvent and sets the default values.
 func NewUnlabeledIssueEvent()(*UnlabeledIssueEvent) {
     m := &UnlabeledIssueEvent{
     }
@@ -37,34 +37,42 @@ func NewUnlabeledIssueEvent()(*UnlabeledIssueEvent) {
     return m
 }
 // CreateUnlabeledIssueEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUnlabeledIssueEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnlabeledIssueEvent(), nil
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *UnlabeledIssueEvent) GetActor()(SimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UnlabeledIssueEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommitId gets the commit_id property value. The commit_id property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetCommitUrl gets the commit_url property value. The commit_url property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetCommitUrl()(*string) {
     return m.commit_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnlabeledIssueEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,22 +178,27 @@ func (m *UnlabeledIssueEvent) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *UnlabeledIssueEvent) GetId()(*int32) {
     return m.id
 }
 // GetLabel gets the label property value. The label property
+// returns a UnlabeledIssueEvent_labelable when successful
 func (m *UnlabeledIssueEvent) GetLabel()(UnlabeledIssueEvent_labelable) {
     return m.label
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *UnlabeledIssueEvent) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *UnlabeledIssueEvent) GetUrl()(*string) {
     return m.url
 }
@@ -303,7 +316,6 @@ func (m *UnlabeledIssueEvent) SetPerformedViaGithubApp(value NullableIntegration
 func (m *UnlabeledIssueEvent) SetUrl(value *string)() {
     m.url = value
 }
-// UnlabeledIssueEventable 
 type UnlabeledIssueEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -13,7 +13,7 @@ type RepositoryRuleWorkflows struct {
     // The type property
     typeEscaped *RepositoryRuleWorkflows_type
 }
-// NewRepositoryRuleWorkflows instantiates a new repositoryRuleWorkflows and sets the default values.
+// NewRepositoryRuleWorkflows instantiates a new RepositoryRuleWorkflows and sets the default values.
 func NewRepositoryRuleWorkflows()(*RepositoryRuleWorkflows) {
     m := &RepositoryRuleWorkflows{
     }
@@ -21,14 +21,17 @@ func NewRepositoryRuleWorkflows()(*RepositoryRuleWorkflows) {
     return m
 }
 // CreateRepositoryRuleWorkflowsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleWorkflowsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleWorkflows(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleWorkflows) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleWorkflows) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *RepositoryRuleWorkflows) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
+// returns a RepositoryRuleWorkflows_parametersable when successful
 func (m *RepositoryRuleWorkflows) GetParameters()(RepositoryRuleWorkflows_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleWorkflows_type when successful
 func (m *RepositoryRuleWorkflows) GetTypeEscaped()(*RepositoryRuleWorkflows_type) {
     return m.typeEscaped
 }
@@ -96,7 +101,6 @@ func (m *RepositoryRuleWorkflows) SetParameters(value RepositoryRuleWorkflows_pa
 func (m *RepositoryRuleWorkflows) SetTypeEscaped(value *RepositoryRuleWorkflows_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleWorkflowsable 
 type RepositoryRuleWorkflowsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

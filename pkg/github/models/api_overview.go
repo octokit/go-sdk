@@ -37,7 +37,7 @@ type ApiOverview struct {
     // The web property
     web []string
 }
-// NewApiOverview instantiates a new apiOverview and sets the default values.
+// NewApiOverview instantiates a new ApiOverview and sets the default values.
 func NewApiOverview()(*ApiOverview) {
     m := &ApiOverview{
     }
@@ -45,30 +45,37 @@ func NewApiOverview()(*ApiOverview) {
     return m
 }
 // CreateApiOverviewFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApiOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApiOverview(), nil
 }
 // GetActions gets the actions property value. The actions property
+// returns a []string when successful
 func (m *ApiOverview) GetActions()([]string) {
     return m.actions
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ApiOverview) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApi gets the api property value. The api property
+// returns a []string when successful
 func (m *ApiOverview) GetApi()([]string) {
     return m.api
 }
 // GetDependabot gets the dependabot property value. The dependabot property
+// returns a []string when successful
 func (m *ApiOverview) GetDependabot()([]string) {
     return m.dependabot
 }
 // GetDomains gets the domains property value. The domains property
+// returns a ApiOverview_domainsable when successful
 func (m *ApiOverview) GetDomains()(ApiOverview_domainsable) {
     return m.domains
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApiOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -280,42 +287,52 @@ func (m *ApiOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGit gets the git property value. The git property
+// returns a []string when successful
 func (m *ApiOverview) GetGit()([]string) {
     return m.git
 }
 // GetGithubEnterpriseImporter gets the github_enterprise_importer property value. The github_enterprise_importer property
+// returns a []string when successful
 func (m *ApiOverview) GetGithubEnterpriseImporter()([]string) {
     return m.github_enterprise_importer
 }
 // GetHooks gets the hooks property value. The hooks property
+// returns a []string when successful
 func (m *ApiOverview) GetHooks()([]string) {
     return m.hooks
 }
 // GetImporter gets the importer property value. The importer property
+// returns a []string when successful
 func (m *ApiOverview) GetImporter()([]string) {
     return m.importer
 }
 // GetPackages gets the packages property value. The packages property
+// returns a []string when successful
 func (m *ApiOverview) GetPackages()([]string) {
     return m.packages
 }
 // GetPages gets the pages property value. The pages property
+// returns a []string when successful
 func (m *ApiOverview) GetPages()([]string) {
     return m.pages
 }
 // GetSshKeyFingerprints gets the ssh_key_fingerprints property value. The ssh_key_fingerprints property
+// returns a ApiOverview_ssh_key_fingerprintsable when successful
 func (m *ApiOverview) GetSshKeyFingerprints()(ApiOverview_ssh_key_fingerprintsable) {
     return m.ssh_key_fingerprints
 }
 // GetSshKeys gets the ssh_keys property value. The ssh_keys property
+// returns a []string when successful
 func (m *ApiOverview) GetSshKeys()([]string) {
     return m.ssh_keys
 }
 // GetVerifiablePasswordAuthentication gets the verifiable_password_authentication property value. The verifiable_password_authentication property
+// returns a *bool when successful
 func (m *ApiOverview) GetVerifiablePasswordAuthentication()(*bool) {
     return m.verifiable_password_authentication
 }
 // GetWeb gets the web property value. The web property
+// returns a []string when successful
 func (m *ApiOverview) GetWeb()([]string) {
     return m.web
 }
@@ -473,7 +490,6 @@ func (m *ApiOverview) SetVerifiablePasswordAuthentication(value *bool)() {
 func (m *ApiOverview) SetWeb(value []string)() {
     m.web = value
 }
-// ApiOverviewable 
 type ApiOverviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

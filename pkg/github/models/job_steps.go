@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Job_steps 
 type Job_steps struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,7 +21,7 @@ type Job_steps struct {
     // The phase of the lifecycle that the job is currently in.
     status *Job_steps_status
 }
-// NewJob_steps instantiates a new job_steps and sets the default values.
+// NewJob_steps instantiates a new Job_steps and sets the default values.
 func NewJob_steps()(*Job_steps) {
     m := &Job_steps{
     }
@@ -30,22 +29,27 @@ func NewJob_steps()(*Job_steps) {
     return m
 }
 // CreateJob_stepsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateJob_stepsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewJob_steps(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Job_steps) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCompletedAt gets the completed_at property value. The time that the job finished, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Job_steps) GetCompletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completed_at
 }
 // GetConclusion gets the conclusion property value. The outcome of the job.
+// returns a *string when successful
 func (m *Job_steps) GetConclusion()(*string) {
     return m.conclusion
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Job_steps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["completed_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -111,18 +115,22 @@ func (m *Job_steps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetName gets the name property value. The name of the job.
+// returns a *string when successful
 func (m *Job_steps) GetName()(*string) {
     return m.name
 }
 // GetNumber gets the number property value. The number property
+// returns a *int32 when successful
 func (m *Job_steps) GetNumber()(*int32) {
     return m.number
 }
 // GetStartedAt gets the started_at property value. The time that the step started, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Job_steps) GetStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.started_at
 }
 // GetStatus gets the status property value. The phase of the lifecycle that the job is currently in.
+// returns a *Job_steps_status when successful
 func (m *Job_steps) GetStatus()(*Job_steps_status) {
     return m.status
 }
@@ -201,7 +209,6 @@ func (m *Job_steps) SetStartedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *Job_steps) SetStatus(value *Job_steps_status)() {
     m.status = value
 }
-// Job_stepsable 
 type Job_stepsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

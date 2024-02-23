@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemTokenScopedPostRequestBody 
 type ItemTokenScopedPostRequestBody struct {
     // The access token used to authenticate to the GitHub API.
     access_token *string
@@ -30,18 +29,22 @@ func NewItemTokenScopedPostRequestBody()(*ItemTokenScopedPostRequestBody) {
     return m
 }
 // CreateItemTokenScopedPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTokenScopedPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTokenScopedPostRequestBody(), nil
 }
 // GetAccessToken gets the access_token property value. The access token used to authenticate to the GitHub API.
+// returns a *string when successful
 func (m *ItemTokenScopedPostRequestBody) GetAccessToken()(*string) {
     return m.access_token
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTokenScopedPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTokenScopedPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["access_token"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,22 +122,27 @@ func (m *ItemTokenScopedPostRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetPermissions gets the permissions property value. The permissions granted to the user access token.
+// returns a AppPermissionsable when successful
 func (m *ItemTokenScopedPostRequestBody) GetPermissions()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.AppPermissionsable) {
     return m.permissions
 }
 // GetRepositories gets the repositories property value. The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
+// returns a []string when successful
 func (m *ItemTokenScopedPostRequestBody) GetRepositories()([]string) {
     return m.repositories
 }
 // GetRepositoryIds gets the repository_ids property value. The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.
+// returns a []int32 when successful
 func (m *ItemTokenScopedPostRequestBody) GetRepositoryIds()([]int32) {
     return m.repository_ids
 }
 // GetTarget gets the target property value. The name of the user or organization to scope the user access token to. **Required** unless `target_id` is specified.
+// returns a *string when successful
 func (m *ItemTokenScopedPostRequestBody) GetTarget()(*string) {
     return m.target
 }
 // GetTargetId gets the target_id property value. The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.
+// returns a *int32 when successful
 func (m *ItemTokenScopedPostRequestBody) GetTargetId()(*int32) {
     return m.target_id
 }
@@ -212,7 +220,6 @@ func (m *ItemTokenScopedPostRequestBody) SetTarget(value *string)() {
 func (m *ItemTokenScopedPostRequestBody) SetTargetId(value *int32)() {
     m.target_id = value
 }
-// ItemTokenScopedPostRequestBodyable 
 type ItemTokenScopedPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

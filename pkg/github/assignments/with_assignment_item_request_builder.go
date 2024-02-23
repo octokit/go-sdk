@@ -11,6 +11,7 @@ type WithAssignment_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Accepted_assignments the accepted_assignments property
+// returns a *ItemAccepted_assignmentsRequestBuilder when successful
 func (m *WithAssignment_ItemRequestBuilder) Accepted_assignments()(*ItemAccepted_assignmentsRequestBuilder) {
     return NewItemAccepted_assignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
@@ -28,6 +29,8 @@ func NewWithAssignment_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewWithAssignment_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+// returns a ClassroomAssignmentable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/classroom/classroom#get-an-assignment
@@ -49,10 +52,12 @@ func (m *WithAssignment_ItemRequestBuilder) Get(ctx context.Context, requestConf
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ClassroomAssignmentable), nil
 }
 // Grades the grades property
+// returns a *ItemGradesRequestBuilder when successful
 func (m *WithAssignment_ItemRequestBuilder) Grades()(*ItemGradesRequestBuilder) {
     return NewItemGradesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
+// returns a *RequestInformation when successful
 func (m *WithAssignment_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -60,6 +65,7 @@ func (m *WithAssignment_ItemRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WithAssignment_ItemRequestBuilder when successful
 func (m *WithAssignment_ItemRequestBuilder) WithUrl(rawUrl string)(*WithAssignment_ItemRequestBuilder) {
     return NewWithAssignment_ItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

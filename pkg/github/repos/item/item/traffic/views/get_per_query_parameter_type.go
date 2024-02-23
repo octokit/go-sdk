@@ -2,7 +2,6 @@ package views
 import (
     "errors"
 )
-// 
 type GetPerQueryParameterType int
 
 const (

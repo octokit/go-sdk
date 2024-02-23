@@ -11,7 +11,7 @@ type SecretScanningLocationIssueComment struct {
     // The API URL to get the issue comment where the secret was detected.
     issue_comment_url *string
 }
-// NewSecretScanningLocationIssueComment instantiates a new secretScanningLocationIssueComment and sets the default values.
+// NewSecretScanningLocationIssueComment instantiates a new SecretScanningLocationIssueComment and sets the default values.
 func NewSecretScanningLocationIssueComment()(*SecretScanningLocationIssueComment) {
     m := &SecretScanningLocationIssueComment{
     }
@@ -19,14 +19,17 @@ func NewSecretScanningLocationIssueComment()(*SecretScanningLocationIssueComment
     return m
 }
 // CreateSecretScanningLocationIssueCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecretScanningLocationIssueCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecretScanningLocationIssueComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecretScanningLocationIssueComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecretScanningLocationIssueComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["issue_comment_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *SecretScanningLocationIssueComment) GetFieldDeserializers()(map[string]
     return res
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. The API URL to get the issue comment where the secret was detected.
+// returns a *string when successful
 func (m *SecretScanningLocationIssueComment) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
@@ -69,7 +73,6 @@ func (m *SecretScanningLocationIssueComment) SetAdditionalData(value map[string]
 func (m *SecretScanningLocationIssueComment) SetIssueCommentUrl(value *string)() {
     m.issue_comment_url = value
 }
-// SecretScanningLocationIssueCommentable 
 type SecretScanningLocationIssueCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

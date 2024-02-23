@@ -9,6 +9,7 @@ type DockerRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Conflicts the conflicts property
+// returns a *DockerConflictsRequestBuilder when successful
 func (m *DockerRequestBuilder) Conflicts()(*DockerConflictsRequestBuilder) {
     return NewDockerConflictsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

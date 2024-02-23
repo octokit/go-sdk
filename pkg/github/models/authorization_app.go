@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Authorization_app 
 type Authorization_app struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type Authorization_app struct {
     // The url property
     url *string
 }
-// NewAuthorization_app instantiates a new authorization_app and sets the default values.
+// NewAuthorization_app instantiates a new Authorization_app and sets the default values.
 func NewAuthorization_app()(*Authorization_app) {
     m := &Authorization_app{
     }
@@ -23,18 +22,22 @@ func NewAuthorization_app()(*Authorization_app) {
     return m
 }
 // CreateAuthorization_appFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthorization_appFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthorization_app(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Authorization_app) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientId gets the client_id property value. The client_id property
+// returns a *string when successful
 func (m *Authorization_app) GetClientId()(*string) {
     return m.client_id
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Authorization_app) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["client_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +73,12 @@ func (m *Authorization_app) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Authorization_app) GetName()(*string) {
     return m.name
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Authorization_app) GetUrl()(*string) {
     return m.url
 }
@@ -121,7 +126,6 @@ func (m *Authorization_app) SetName(value *string)() {
 func (m *Authorization_app) SetUrl(value *string)() {
     m.url = value
 }
-// Authorization_appable 
 type Authorization_appable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

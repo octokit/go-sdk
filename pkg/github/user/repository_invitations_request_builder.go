@@ -19,6 +19,7 @@ type Repository_invitationsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByInvitation_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.repository_invitations.item collection
+// returns a *Repository_invitationsWithInvitation_ItemRequestBuilder when successful
 func (m *Repository_invitationsRequestBuilder) ByInvitation_id(invitation_id int32)(*Repository_invitationsWithInvitation_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -41,6 +42,10 @@ func NewRepository_invitationsRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewRepository_invitationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get when authenticating as a user, this endpoint will list all currently open repository invitations for that user.
+// returns a []RepositoryInvitationable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/collaborators/invitations#list-repository-invitations-for-the-authenticated-user
@@ -67,6 +72,7 @@ func (m *Repository_invitationsRequestBuilder) Get(ctx context.Context, requestC
     return val, nil
 }
 // ToGetRequestInformation when authenticating as a user, this endpoint will list all currently open repository invitations for that user.
+// returns a *RequestInformation when successful
 func (m *Repository_invitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Repository_invitationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -74,6 +80,7 @@ func (m *Repository_invitationsRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Repository_invitationsRequestBuilder when successful
 func (m *Repository_invitationsRequestBuilder) WithUrl(rawUrl string)(*Repository_invitationsRequestBuilder) {
     return NewRepository_invitationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

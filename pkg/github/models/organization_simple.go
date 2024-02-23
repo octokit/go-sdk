@@ -33,7 +33,7 @@ type OrganizationSimple struct {
     // The url property
     url *string
 }
-// NewOrganizationSimple instantiates a new organizationSimple and sets the default values.
+// NewOrganizationSimple instantiates a new OrganizationSimple and sets the default values.
 func NewOrganizationSimple()(*OrganizationSimple) {
     m := &OrganizationSimple{
     }
@@ -41,26 +41,32 @@ func NewOrganizationSimple()(*OrganizationSimple) {
     return m
 }
 // CreateOrganizationSimpleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationSimpleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationSimple(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationSimple) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *OrganizationSimple) GetDescription()(*string) {
     return m.description
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -186,38 +192,47 @@ func (m *OrganizationSimple) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *OrganizationSimple) GetId()(*int32) {
     return m.id
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *OrganizationSimple) GetLogin()(*string) {
     return m.login
 }
 // GetMembersUrl gets the members_url property value. The members_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetMembersUrl()(*string) {
     return m.members_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *OrganizationSimple) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPublicMembersUrl gets the public_members_url property value. The public_members_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetPublicMembersUrl()(*string) {
     return m.public_members_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *OrganizationSimple) GetUrl()(*string) {
     return m.url
 }
@@ -355,7 +370,6 @@ func (m *OrganizationSimple) SetReposUrl(value *string)() {
 func (m *OrganizationSimple) SetUrl(value *string)() {
     m.url = value
 }
-// OrganizationSimpleable 
 type OrganizationSimpleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

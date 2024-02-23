@@ -66,7 +66,7 @@ type ReviewComment struct {
     // A GitHub user.
     user NullableSimpleUserable
 }
-// NewReviewComment instantiates a new reviewComment and sets the default values.
+// NewReviewComment instantiates a new ReviewComment and sets the default values.
 func NewReviewComment()(*ReviewComment) {
     m := &ReviewComment{
     }
@@ -78,42 +78,52 @@ func NewReviewComment()(*ReviewComment) {
     return m
 }
 // CreateReviewCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReviewCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReviewComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReviewComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *ReviewComment) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *ReviewComment) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *ReviewComment) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *ReviewComment) GetBodyText()(*string) {
     return m.body_text
 }
 // GetCommitId gets the commit_id property value. The commit_id property
+// returns a *string when successful
 func (m *ReviewComment) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *ReviewComment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDiffHunk gets the diff_hunk property value. The diff_hunk property
+// returns a *string when successful
 func (m *ReviewComment) GetDiffHunk()(*string) {
     return m.diff_hunk
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReviewComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -399,86 +409,107 @@ func (m *ReviewComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *ReviewComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *ReviewComment) GetId()(*int32) {
     return m.id
 }
 // GetInReplyToId gets the in_reply_to_id property value. The in_reply_to_id property
+// returns a *int32 when successful
 func (m *ReviewComment) GetInReplyToId()(*int32) {
     return m.in_reply_to_id
 }
 // GetLine gets the line property value. The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+// returns a *int32 when successful
 func (m *ReviewComment) GetLine()(*int32) {
     return m.line
 }
 // GetLinks gets the _links property value. The _links property
+// returns a ReviewComment__linksable when successful
 func (m *ReviewComment) GetLinks()(ReviewComment__linksable) {
     return m._links
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *ReviewComment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOriginalCommitId gets the original_commit_id property value. The original_commit_id property
+// returns a *string when successful
 func (m *ReviewComment) GetOriginalCommitId()(*string) {
     return m.original_commit_id
 }
 // GetOriginalLine gets the original_line property value. The original line of the blob to which the comment applies. The last line of the range for a multi-line comment
+// returns a *int32 when successful
 func (m *ReviewComment) GetOriginalLine()(*int32) {
     return m.original_line
 }
 // GetOriginalPosition gets the original_position property value. The original_position property
+// returns a *int32 when successful
 func (m *ReviewComment) GetOriginalPosition()(*int32) {
     return m.original_position
 }
 // GetOriginalStartLine gets the original_start_line property value. The original first line of the range for a multi-line comment.
+// returns a *int32 when successful
 func (m *ReviewComment) GetOriginalStartLine()(*int32) {
     return m.original_start_line
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *ReviewComment) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. The position property
+// returns a *int32 when successful
 func (m *ReviewComment) GetPosition()(*int32) {
     return m.position
 }
 // GetPullRequestReviewId gets the pull_request_review_id property value. The pull_request_review_id property
+// returns a *int32 when successful
 func (m *ReviewComment) GetPullRequestReviewId()(*int32) {
     return m.pull_request_review_id
 }
 // GetPullRequestUrl gets the pull_request_url property value. The pull_request_url property
+// returns a *string when successful
 func (m *ReviewComment) GetPullRequestUrl()(*string) {
     return m.pull_request_url
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *ReviewComment) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetSide gets the side property value. The side of the first line of the range for a multi-line comment.
+// returns a *ReviewComment_side when successful
 func (m *ReviewComment) GetSide()(*ReviewComment_side) {
     return m.side
 }
 // GetStartLine gets the start_line property value. The first line of the range for a multi-line comment.
+// returns a *int32 when successful
 func (m *ReviewComment) GetStartLine()(*int32) {
     return m.start_line
 }
 // GetStartSide gets the start_side property value. The side of the first line of the range for a multi-line comment.
+// returns a *ReviewComment_start_side when successful
 func (m *ReviewComment) GetStartSide()(*ReviewComment_start_side) {
     return m.start_side
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *ReviewComment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ReviewComment) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *ReviewComment) GetUser()(NullableSimpleUserable) {
     return m.user
 }
@@ -779,7 +810,6 @@ func (m *ReviewComment) SetUrl(value *string)() {
 func (m *ReviewComment) SetUser(value NullableSimpleUserable)() {
     m.user = value
 }
-// ReviewCommentable 
 type ReviewCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,46 +4,47 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// IssueEventForIssue composed type wrapper for classes addedToProjectIssueEvent, assignedIssueEvent, convertedNoteToIssueIssueEvent, demilestonedIssueEvent, labeledIssueEvent, lockedIssueEvent, milestonedIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, renamedIssueEvent, reviewDismissedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, unassignedIssueEvent, unlabeledIssueEvent
+// IssueEventForIssue composed type wrapper for classes AddedToProjectIssueEventable, AssignedIssueEventable, ConvertedNoteToIssueIssueEventable, DemilestonedIssueEventable, LabeledIssueEventable, LockedIssueEventable, MilestonedIssueEventable, MovedColumnInProjectIssueEventable, RemovedFromProjectIssueEventable, RenamedIssueEventable, ReviewDismissedIssueEventable, ReviewRequestedIssueEventable, ReviewRequestRemovedIssueEventable, UnassignedIssueEventable, UnlabeledIssueEventable
 type IssueEventForIssue struct {
-    // Composed type representation for type addedToProjectIssueEvent
+    // Composed type representation for type AddedToProjectIssueEventable
     addedToProjectIssueEvent AddedToProjectIssueEventable
-    // Composed type representation for type assignedIssueEvent
+    // Composed type representation for type AssignedIssueEventable
     assignedIssueEvent AssignedIssueEventable
-    // Composed type representation for type convertedNoteToIssueIssueEvent
+    // Composed type representation for type ConvertedNoteToIssueIssueEventable
     convertedNoteToIssueIssueEvent ConvertedNoteToIssueIssueEventable
-    // Composed type representation for type demilestonedIssueEvent
+    // Composed type representation for type DemilestonedIssueEventable
     demilestonedIssueEvent DemilestonedIssueEventable
-    // Composed type representation for type labeledIssueEvent
+    // Composed type representation for type LabeledIssueEventable
     labeledIssueEvent LabeledIssueEventable
-    // Composed type representation for type lockedIssueEvent
+    // Composed type representation for type LockedIssueEventable
     lockedIssueEvent LockedIssueEventable
-    // Composed type representation for type milestonedIssueEvent
+    // Composed type representation for type MilestonedIssueEventable
     milestonedIssueEvent MilestonedIssueEventable
-    // Composed type representation for type movedColumnInProjectIssueEvent
+    // Composed type representation for type MovedColumnInProjectIssueEventable
     movedColumnInProjectIssueEvent MovedColumnInProjectIssueEventable
-    // Composed type representation for type removedFromProjectIssueEvent
+    // Composed type representation for type RemovedFromProjectIssueEventable
     removedFromProjectIssueEvent RemovedFromProjectIssueEventable
-    // Composed type representation for type renamedIssueEvent
+    // Composed type representation for type RenamedIssueEventable
     renamedIssueEvent RenamedIssueEventable
-    // Composed type representation for type reviewDismissedIssueEvent
+    // Composed type representation for type ReviewDismissedIssueEventable
     reviewDismissedIssueEvent ReviewDismissedIssueEventable
-    // Composed type representation for type reviewRequestedIssueEvent
+    // Composed type representation for type ReviewRequestedIssueEventable
     reviewRequestedIssueEvent ReviewRequestedIssueEventable
-    // Composed type representation for type reviewRequestRemovedIssueEvent
+    // Composed type representation for type ReviewRequestRemovedIssueEventable
     reviewRequestRemovedIssueEvent ReviewRequestRemovedIssueEventable
-    // Composed type representation for type unassignedIssueEvent
+    // Composed type representation for type UnassignedIssueEventable
     unassignedIssueEvent UnassignedIssueEventable
-    // Composed type representation for type unlabeledIssueEvent
+    // Composed type representation for type UnlabeledIssueEventable
     unlabeledIssueEvent UnlabeledIssueEventable
 }
-// NewIssueEventForIssue instantiates a new issueEventForIssue and sets the default values.
+// NewIssueEventForIssue instantiates a new IssueEventForIssue and sets the default values.
 func NewIssueEventForIssue()(*IssueEventForIssue) {
     m := &IssueEventForIssue{
     }
     return m
 }
 // CreateIssueEventForIssueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventForIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewIssueEventForIssue()
     if parseNode != nil {
@@ -156,71 +157,88 @@ func CreateIssueEventForIssueFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return result, nil
 }
-// GetAddedToProjectIssueEvent gets the addedToProjectIssueEvent property value. Composed type representation for type addedToProjectIssueEvent
+// GetAddedToProjectIssueEvent gets the addedToProjectIssueEvent property value. Composed type representation for type AddedToProjectIssueEventable
+// returns a AddedToProjectIssueEventable when successful
 func (m *IssueEventForIssue) GetAddedToProjectIssueEvent()(AddedToProjectIssueEventable) {
     return m.addedToProjectIssueEvent
 }
-// GetAssignedIssueEvent gets the assignedIssueEvent property value. Composed type representation for type assignedIssueEvent
+// GetAssignedIssueEvent gets the assignedIssueEvent property value. Composed type representation for type AssignedIssueEventable
+// returns a AssignedIssueEventable when successful
 func (m *IssueEventForIssue) GetAssignedIssueEvent()(AssignedIssueEventable) {
     return m.assignedIssueEvent
 }
-// GetConvertedNoteToIssueIssueEvent gets the convertedNoteToIssueIssueEvent property value. Composed type representation for type convertedNoteToIssueIssueEvent
+// GetConvertedNoteToIssueIssueEvent gets the convertedNoteToIssueIssueEvent property value. Composed type representation for type ConvertedNoteToIssueIssueEventable
+// returns a ConvertedNoteToIssueIssueEventable when successful
 func (m *IssueEventForIssue) GetConvertedNoteToIssueIssueEvent()(ConvertedNoteToIssueIssueEventable) {
     return m.convertedNoteToIssueIssueEvent
 }
-// GetDemilestonedIssueEvent gets the demilestonedIssueEvent property value. Composed type representation for type demilestonedIssueEvent
+// GetDemilestonedIssueEvent gets the demilestonedIssueEvent property value. Composed type representation for type DemilestonedIssueEventable
+// returns a DemilestonedIssueEventable when successful
 func (m *IssueEventForIssue) GetDemilestonedIssueEvent()(DemilestonedIssueEventable) {
     return m.demilestonedIssueEvent
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventForIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *IssueEventForIssue) GetIsComposedType()(bool) {
     return true
 }
-// GetLabeledIssueEvent gets the labeledIssueEvent property value. Composed type representation for type labeledIssueEvent
+// GetLabeledIssueEvent gets the labeledIssueEvent property value. Composed type representation for type LabeledIssueEventable
+// returns a LabeledIssueEventable when successful
 func (m *IssueEventForIssue) GetLabeledIssueEvent()(LabeledIssueEventable) {
     return m.labeledIssueEvent
 }
-// GetLockedIssueEvent gets the lockedIssueEvent property value. Composed type representation for type lockedIssueEvent
+// GetLockedIssueEvent gets the lockedIssueEvent property value. Composed type representation for type LockedIssueEventable
+// returns a LockedIssueEventable when successful
 func (m *IssueEventForIssue) GetLockedIssueEvent()(LockedIssueEventable) {
     return m.lockedIssueEvent
 }
-// GetMilestonedIssueEvent gets the milestonedIssueEvent property value. Composed type representation for type milestonedIssueEvent
+// GetMilestonedIssueEvent gets the milestonedIssueEvent property value. Composed type representation for type MilestonedIssueEventable
+// returns a MilestonedIssueEventable when successful
 func (m *IssueEventForIssue) GetMilestonedIssueEvent()(MilestonedIssueEventable) {
     return m.milestonedIssueEvent
 }
-// GetMovedColumnInProjectIssueEvent gets the movedColumnInProjectIssueEvent property value. Composed type representation for type movedColumnInProjectIssueEvent
+// GetMovedColumnInProjectIssueEvent gets the movedColumnInProjectIssueEvent property value. Composed type representation for type MovedColumnInProjectIssueEventable
+// returns a MovedColumnInProjectIssueEventable when successful
 func (m *IssueEventForIssue) GetMovedColumnInProjectIssueEvent()(MovedColumnInProjectIssueEventable) {
     return m.movedColumnInProjectIssueEvent
 }
-// GetRemovedFromProjectIssueEvent gets the removedFromProjectIssueEvent property value. Composed type representation for type removedFromProjectIssueEvent
+// GetRemovedFromProjectIssueEvent gets the removedFromProjectIssueEvent property value. Composed type representation for type RemovedFromProjectIssueEventable
+// returns a RemovedFromProjectIssueEventable when successful
 func (m *IssueEventForIssue) GetRemovedFromProjectIssueEvent()(RemovedFromProjectIssueEventable) {
     return m.removedFromProjectIssueEvent
 }
-// GetRenamedIssueEvent gets the renamedIssueEvent property value. Composed type representation for type renamedIssueEvent
+// GetRenamedIssueEvent gets the renamedIssueEvent property value. Composed type representation for type RenamedIssueEventable
+// returns a RenamedIssueEventable when successful
 func (m *IssueEventForIssue) GetRenamedIssueEvent()(RenamedIssueEventable) {
     return m.renamedIssueEvent
 }
-// GetReviewDismissedIssueEvent gets the reviewDismissedIssueEvent property value. Composed type representation for type reviewDismissedIssueEvent
+// GetReviewDismissedIssueEvent gets the reviewDismissedIssueEvent property value. Composed type representation for type ReviewDismissedIssueEventable
+// returns a ReviewDismissedIssueEventable when successful
 func (m *IssueEventForIssue) GetReviewDismissedIssueEvent()(ReviewDismissedIssueEventable) {
     return m.reviewDismissedIssueEvent
 }
-// GetReviewRequestedIssueEvent gets the reviewRequestedIssueEvent property value. Composed type representation for type reviewRequestedIssueEvent
+// GetReviewRequestedIssueEvent gets the reviewRequestedIssueEvent property value. Composed type representation for type ReviewRequestedIssueEventable
+// returns a ReviewRequestedIssueEventable when successful
 func (m *IssueEventForIssue) GetReviewRequestedIssueEvent()(ReviewRequestedIssueEventable) {
     return m.reviewRequestedIssueEvent
 }
-// GetReviewRequestRemovedIssueEvent gets the reviewRequestRemovedIssueEvent property value. Composed type representation for type reviewRequestRemovedIssueEvent
+// GetReviewRequestRemovedIssueEvent gets the reviewRequestRemovedIssueEvent property value. Composed type representation for type ReviewRequestRemovedIssueEventable
+// returns a ReviewRequestRemovedIssueEventable when successful
 func (m *IssueEventForIssue) GetReviewRequestRemovedIssueEvent()(ReviewRequestRemovedIssueEventable) {
     return m.reviewRequestRemovedIssueEvent
 }
-// GetUnassignedIssueEvent gets the unassignedIssueEvent property value. Composed type representation for type unassignedIssueEvent
+// GetUnassignedIssueEvent gets the unassignedIssueEvent property value. Composed type representation for type UnassignedIssueEventable
+// returns a UnassignedIssueEventable when successful
 func (m *IssueEventForIssue) GetUnassignedIssueEvent()(UnassignedIssueEventable) {
     return m.unassignedIssueEvent
 }
-// GetUnlabeledIssueEvent gets the unlabeledIssueEvent property value. Composed type representation for type unlabeledIssueEvent
+// GetUnlabeledIssueEvent gets the unlabeledIssueEvent property value. Composed type representation for type UnlabeledIssueEventable
+// returns a UnlabeledIssueEventable when successful
 func (m *IssueEventForIssue) GetUnlabeledIssueEvent()(UnlabeledIssueEventable) {
     return m.unlabeledIssueEvent
 }
@@ -304,67 +322,66 @@ func (m *IssueEventForIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAddedToProjectIssueEvent sets the addedToProjectIssueEvent property value. Composed type representation for type addedToProjectIssueEvent
+// SetAddedToProjectIssueEvent sets the addedToProjectIssueEvent property value. Composed type representation for type AddedToProjectIssueEventable
 func (m *IssueEventForIssue) SetAddedToProjectIssueEvent(value AddedToProjectIssueEventable)() {
     m.addedToProjectIssueEvent = value
 }
-// SetAssignedIssueEvent sets the assignedIssueEvent property value. Composed type representation for type assignedIssueEvent
+// SetAssignedIssueEvent sets the assignedIssueEvent property value. Composed type representation for type AssignedIssueEventable
 func (m *IssueEventForIssue) SetAssignedIssueEvent(value AssignedIssueEventable)() {
     m.assignedIssueEvent = value
 }
-// SetConvertedNoteToIssueIssueEvent sets the convertedNoteToIssueIssueEvent property value. Composed type representation for type convertedNoteToIssueIssueEvent
+// SetConvertedNoteToIssueIssueEvent sets the convertedNoteToIssueIssueEvent property value. Composed type representation for type ConvertedNoteToIssueIssueEventable
 func (m *IssueEventForIssue) SetConvertedNoteToIssueIssueEvent(value ConvertedNoteToIssueIssueEventable)() {
     m.convertedNoteToIssueIssueEvent = value
 }
-// SetDemilestonedIssueEvent sets the demilestonedIssueEvent property value. Composed type representation for type demilestonedIssueEvent
+// SetDemilestonedIssueEvent sets the demilestonedIssueEvent property value. Composed type representation for type DemilestonedIssueEventable
 func (m *IssueEventForIssue) SetDemilestonedIssueEvent(value DemilestonedIssueEventable)() {
     m.demilestonedIssueEvent = value
 }
-// SetLabeledIssueEvent sets the labeledIssueEvent property value. Composed type representation for type labeledIssueEvent
+// SetLabeledIssueEvent sets the labeledIssueEvent property value. Composed type representation for type LabeledIssueEventable
 func (m *IssueEventForIssue) SetLabeledIssueEvent(value LabeledIssueEventable)() {
     m.labeledIssueEvent = value
 }
-// SetLockedIssueEvent sets the lockedIssueEvent property value. Composed type representation for type lockedIssueEvent
+// SetLockedIssueEvent sets the lockedIssueEvent property value. Composed type representation for type LockedIssueEventable
 func (m *IssueEventForIssue) SetLockedIssueEvent(value LockedIssueEventable)() {
     m.lockedIssueEvent = value
 }
-// SetMilestonedIssueEvent sets the milestonedIssueEvent property value. Composed type representation for type milestonedIssueEvent
+// SetMilestonedIssueEvent sets the milestonedIssueEvent property value. Composed type representation for type MilestonedIssueEventable
 func (m *IssueEventForIssue) SetMilestonedIssueEvent(value MilestonedIssueEventable)() {
     m.milestonedIssueEvent = value
 }
-// SetMovedColumnInProjectIssueEvent sets the movedColumnInProjectIssueEvent property value. Composed type representation for type movedColumnInProjectIssueEvent
+// SetMovedColumnInProjectIssueEvent sets the movedColumnInProjectIssueEvent property value. Composed type representation for type MovedColumnInProjectIssueEventable
 func (m *IssueEventForIssue) SetMovedColumnInProjectIssueEvent(value MovedColumnInProjectIssueEventable)() {
     m.movedColumnInProjectIssueEvent = value
 }
-// SetRemovedFromProjectIssueEvent sets the removedFromProjectIssueEvent property value. Composed type representation for type removedFromProjectIssueEvent
+// SetRemovedFromProjectIssueEvent sets the removedFromProjectIssueEvent property value. Composed type representation for type RemovedFromProjectIssueEventable
 func (m *IssueEventForIssue) SetRemovedFromProjectIssueEvent(value RemovedFromProjectIssueEventable)() {
     m.removedFromProjectIssueEvent = value
 }
-// SetRenamedIssueEvent sets the renamedIssueEvent property value. Composed type representation for type renamedIssueEvent
+// SetRenamedIssueEvent sets the renamedIssueEvent property value. Composed type representation for type RenamedIssueEventable
 func (m *IssueEventForIssue) SetRenamedIssueEvent(value RenamedIssueEventable)() {
     m.renamedIssueEvent = value
 }
-// SetReviewDismissedIssueEvent sets the reviewDismissedIssueEvent property value. Composed type representation for type reviewDismissedIssueEvent
+// SetReviewDismissedIssueEvent sets the reviewDismissedIssueEvent property value. Composed type representation for type ReviewDismissedIssueEventable
 func (m *IssueEventForIssue) SetReviewDismissedIssueEvent(value ReviewDismissedIssueEventable)() {
     m.reviewDismissedIssueEvent = value
 }
-// SetReviewRequestedIssueEvent sets the reviewRequestedIssueEvent property value. Composed type representation for type reviewRequestedIssueEvent
+// SetReviewRequestedIssueEvent sets the reviewRequestedIssueEvent property value. Composed type representation for type ReviewRequestedIssueEventable
 func (m *IssueEventForIssue) SetReviewRequestedIssueEvent(value ReviewRequestedIssueEventable)() {
     m.reviewRequestedIssueEvent = value
 }
-// SetReviewRequestRemovedIssueEvent sets the reviewRequestRemovedIssueEvent property value. Composed type representation for type reviewRequestRemovedIssueEvent
+// SetReviewRequestRemovedIssueEvent sets the reviewRequestRemovedIssueEvent property value. Composed type representation for type ReviewRequestRemovedIssueEventable
 func (m *IssueEventForIssue) SetReviewRequestRemovedIssueEvent(value ReviewRequestRemovedIssueEventable)() {
     m.reviewRequestRemovedIssueEvent = value
 }
-// SetUnassignedIssueEvent sets the unassignedIssueEvent property value. Composed type representation for type unassignedIssueEvent
+// SetUnassignedIssueEvent sets the unassignedIssueEvent property value. Composed type representation for type UnassignedIssueEventable
 func (m *IssueEventForIssue) SetUnassignedIssueEvent(value UnassignedIssueEventable)() {
     m.unassignedIssueEvent = value
 }
-// SetUnlabeledIssueEvent sets the unlabeledIssueEvent property value. Composed type representation for type unlabeledIssueEvent
+// SetUnlabeledIssueEvent sets the unlabeledIssueEvent property value. Composed type representation for type UnlabeledIssueEventable
 func (m *IssueEventForIssue) SetUnlabeledIssueEvent(value UnlabeledIssueEventable)() {
     m.unlabeledIssueEvent = value
 }
-// IssueEventForIssueable 
 type IssueEventForIssueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddedToProjectIssueEvent()(AddedToProjectIssueEventable)

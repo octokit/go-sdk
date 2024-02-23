@@ -31,7 +31,7 @@ type DiffEntry struct {
     // The status property
     status *DiffEntry_status
 }
-// NewDiffEntry instantiates a new diffEntry and sets the default values.
+// NewDiffEntry instantiates a new DiffEntry and sets the default values.
 func NewDiffEntry()(*DiffEntry) {
     m := &DiffEntry{
     }
@@ -39,34 +39,42 @@ func NewDiffEntry()(*DiffEntry) {
     return m
 }
 // CreateDiffEntryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDiffEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDiffEntry(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DiffEntry) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditions gets the additions property value. The additions property
+// returns a *int32 when successful
 func (m *DiffEntry) GetAdditions()(*int32) {
     return m.additions
 }
 // GetBlobUrl gets the blob_url property value. The blob_url property
+// returns a *string when successful
 func (m *DiffEntry) GetBlobUrl()(*string) {
     return m.blob_url
 }
 // GetChanges gets the changes property value. The changes property
+// returns a *int32 when successful
 func (m *DiffEntry) GetChanges()(*int32) {
     return m.changes
 }
 // GetContentsUrl gets the contents_url property value. The contents_url property
+// returns a *string when successful
 func (m *DiffEntry) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetDeletions gets the deletions property value. The deletions property
+// returns a *int32 when successful
 func (m *DiffEntry) GetDeletions()(*int32) {
     return m.deletions
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DiffEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,26 +190,32 @@ func (m *DiffEntry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetFilename gets the filename property value. The filename property
+// returns a *string when successful
 func (m *DiffEntry) GetFilename()(*string) {
     return m.filename
 }
 // GetPatch gets the patch property value. The patch property
+// returns a *string when successful
 func (m *DiffEntry) GetPatch()(*string) {
     return m.patch
 }
 // GetPreviousFilename gets the previous_filename property value. The previous_filename property
+// returns a *string when successful
 func (m *DiffEntry) GetPreviousFilename()(*string) {
     return m.previous_filename
 }
 // GetRawUrl gets the raw_url property value. The raw_url property
+// returns a *string when successful
 func (m *DiffEntry) GetRawUrl()(*string) {
     return m.raw_url
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *DiffEntry) GetSha()(*string) {
     return m.sha
 }
 // GetStatus gets the status property value. The status property
+// returns a *DiffEntry_status when successful
 func (m *DiffEntry) GetStatus()(*DiffEntry_status) {
     return m.status
 }
@@ -330,7 +344,6 @@ func (m *DiffEntry) SetSha(value *string)() {
 func (m *DiffEntry) SetStatus(value *DiffEntry_status)() {
     m.status = value
 }
-// DiffEntryable 
 type DiffEntryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

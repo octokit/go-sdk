@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRuleRequiredStatusChecks_parameters 
 type RepositoryRuleRequiredStatusChecks_parameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type RepositoryRuleRequiredStatusChecks_parameters struct {
     // Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
     strict_required_status_checks_policy *bool
 }
-// NewRepositoryRuleRequiredStatusChecks_parameters instantiates a new repositoryRuleRequiredStatusChecks_parameters and sets the default values.
+// NewRepositoryRuleRequiredStatusChecks_parameters instantiates a new RepositoryRuleRequiredStatusChecks_parameters and sets the default values.
 func NewRepositoryRuleRequiredStatusChecks_parameters()(*RepositoryRuleRequiredStatusChecks_parameters) {
     m := &RepositoryRuleRequiredStatusChecks_parameters{
     }
@@ -21,14 +20,17 @@ func NewRepositoryRuleRequiredStatusChecks_parameters()(*RepositoryRuleRequiredS
     return m
 }
 // CreateRepositoryRuleRequiredStatusChecks_parametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleRequiredStatusChecks_parametersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleRequiredStatusChecks_parameters(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleRequiredStatusChecks_parameters) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleRequiredStatusChecks_parameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["required_status_checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -60,10 +62,12 @@ func (m *RepositoryRuleRequiredStatusChecks_parameters) GetFieldDeserializers()(
     return res
 }
 // GetRequiredStatusChecks gets the required_status_checks property value. Status checks that are required.
+// returns a []RepositoryRuleParamsStatusCheckConfigurationable when successful
 func (m *RepositoryRuleRequiredStatusChecks_parameters) GetRequiredStatusChecks()([]RepositoryRuleParamsStatusCheckConfigurationable) {
     return m.required_status_checks
 }
 // GetStrictRequiredStatusChecksPolicy gets the strict_required_status_checks_policy property value. Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
+// returns a *bool when successful
 func (m *RepositoryRuleRequiredStatusChecks_parameters) GetStrictRequiredStatusChecksPolicy()(*bool) {
     return m.strict_required_status_checks_policy
 }
@@ -107,7 +111,6 @@ func (m *RepositoryRuleRequiredStatusChecks_parameters) SetRequiredStatusChecks(
 func (m *RepositoryRuleRequiredStatusChecks_parameters) SetStrictRequiredStatusChecksPolicy(value *bool)() {
     m.strict_required_status_checks_policy = value
 }
-// RepositoryRuleRequiredStatusChecks_parametersable 
 type RepositoryRuleRequiredStatusChecks_parametersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

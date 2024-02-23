@@ -23,6 +23,7 @@ type StarredRequestBuilderGetQueryParameters struct {
     Sort *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetSortQueryParameterType `uriparametername:"sort"`
 }
 // ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github/.user.starred.item collection
+// returns a *StarredWithOwnerItemRequestBuilder when successful
 func (m *StarredRequestBuilder) ByOwner(owner string)(*StarredWithOwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -47,6 +48,9 @@ func NewStarredRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewStarredRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
+// returns a []Repositoryable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/starring#list-repositories-starred-by-the-authenticated-user
@@ -72,6 +76,7 @@ func (m *StarredRequestBuilder) Get(ctx context.Context, requestConfiguration *i
     return val, nil
 }
 // ToGetRequestInformation lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
+// returns a *RequestInformation when successful
 func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[StarredRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -79,6 +84,7 @@ func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *StarredRequestBuilder when successful
 func (m *StarredRequestBuilder) WithUrl(rawUrl string)(*StarredRequestBuilder) {
     return NewStarredRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

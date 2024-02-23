@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Issue_pull_request 
 type Issue_pull_request struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -20,7 +19,7 @@ type Issue_pull_request struct {
     // The url property
     url *string
 }
-// NewIssue_pull_request instantiates a new issue_pull_request and sets the default values.
+// NewIssue_pull_request instantiates a new Issue_pull_request and sets the default values.
 func NewIssue_pull_request()(*Issue_pull_request) {
     m := &Issue_pull_request{
     }
@@ -28,18 +27,22 @@ func NewIssue_pull_request()(*Issue_pull_request) {
     return m
 }
 // CreateIssue_pull_requestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssue_pull_requestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssue_pull_request(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Issue_pull_request) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDiffUrl gets the diff_url property value. The diff_url property
+// returns a *string when successful
 func (m *Issue_pull_request) GetDiffUrl()(*string) {
     return m.diff_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Issue_pull_request) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["diff_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,18 +98,22 @@ func (m *Issue_pull_request) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Issue_pull_request) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetMergedAt gets the merged_at property value. The merged_at property
+// returns a *Time when successful
 func (m *Issue_pull_request) GetMergedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.merged_at
 }
 // GetPatchUrl gets the patch_url property value. The patch_url property
+// returns a *string when successful
 func (m *Issue_pull_request) GetPatchUrl()(*string) {
     return m.patch_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Issue_pull_request) GetUrl()(*string) {
     return m.url
 }
@@ -174,7 +181,6 @@ func (m *Issue_pull_request) SetPatchUrl(value *string)() {
 func (m *Issue_pull_request) SetUrl(value *string)() {
     m.url = value
 }
-// Issue_pull_requestable 
 type Issue_pull_requestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -22,10 +22,12 @@ func NewWithEnterpriseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewWithEnterpriseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Dependabot the dependabot property
+// returns a *ItemDependabotRequestBuilder when successful
 func (m *WithEnterpriseItemRequestBuilder) Dependabot()(*ItemDependabotRequestBuilder) {
     return NewItemDependabotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecretScanning the secretScanning property
+// returns a *ItemSecretScanningRequestBuilder when successful
 func (m *WithEnterpriseItemRequestBuilder) SecretScanning()(*ItemSecretScanningRequestBuilder) {
     return NewItemSecretScanningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

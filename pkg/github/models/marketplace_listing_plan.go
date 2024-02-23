@@ -35,7 +35,7 @@ type MarketplaceListingPlan struct {
     // The yearly_price_in_cents property
     yearly_price_in_cents *int32
 }
-// NewMarketplaceListingPlan instantiates a new marketplaceListingPlan and sets the default values.
+// NewMarketplaceListingPlan instantiates a new MarketplaceListingPlan and sets the default values.
 func NewMarketplaceListingPlan()(*MarketplaceListingPlan) {
     m := &MarketplaceListingPlan{
     }
@@ -43,26 +43,32 @@ func NewMarketplaceListingPlan()(*MarketplaceListingPlan) {
     return m
 }
 // CreateMarketplaceListingPlanFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarketplaceListingPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarketplaceListingPlan(), nil
 }
 // GetAccountsUrl gets the accounts_url property value. The accounts_url property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetAccountsUrl()(*string) {
     return m.accounts_url
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarketplaceListingPlan) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBullets gets the bullets property value. The bullets property
+// returns a []string when successful
 func (m *MarketplaceListingPlan) GetBullets()([]string) {
     return m.bullets
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarketplaceListingPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accounts_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -204,42 +210,52 @@ func (m *MarketplaceListingPlan) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetHasFreeTrial gets the has_free_trial property value. The has_free_trial property
+// returns a *bool when successful
 func (m *MarketplaceListingPlan) GetHasFreeTrial()(*bool) {
     return m.has_free_trial
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *MarketplaceListingPlan) GetId()(*int32) {
     return m.id
 }
 // GetMonthlyPriceInCents gets the monthly_price_in_cents property value. The monthly_price_in_cents property
+// returns a *int32 when successful
 func (m *MarketplaceListingPlan) GetMonthlyPriceInCents()(*int32) {
     return m.monthly_price_in_cents
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetName()(*string) {
     return m.name
 }
 // GetNumber gets the number property value. The number property
+// returns a *int32 when successful
 func (m *MarketplaceListingPlan) GetNumber()(*int32) {
     return m.number
 }
 // GetPriceModel gets the price_model property value. The price_model property
+// returns a *MarketplaceListingPlan_price_model when successful
 func (m *MarketplaceListingPlan) GetPriceModel()(*MarketplaceListingPlan_price_model) {
     return m.price_model
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetState()(*string) {
     return m.state
 }
 // GetUnitName gets the unit_name property value. The unit_name property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetUnitName()(*string) {
     return m.unit_name
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *MarketplaceListingPlan) GetUrl()(*string) {
     return m.url
 }
 // GetYearlyPriceInCents gets the yearly_price_in_cents property value. The yearly_price_in_cents property
+// returns a *int32 when successful
 func (m *MarketplaceListingPlan) GetYearlyPriceInCents()(*int32) {
     return m.yearly_price_in_cents
 }
@@ -388,7 +404,6 @@ func (m *MarketplaceListingPlan) SetUrl(value *string)() {
 func (m *MarketplaceListingPlan) SetYearlyPriceInCents(value *int32)() {
     m.yearly_price_in_cents = value
 }
-// MarketplaceListingPlanable 
 type MarketplaceListingPlanable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

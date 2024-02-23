@@ -216,7 +216,7 @@ type FullRepository struct {
     // The web_commit_signoff_required property
     web_commit_signoff_required *bool
 }
-// NewFullRepository instantiates a new fullRepository and sets the default values.
+// NewFullRepository instantiates a new FullRepository and sets the default values.
 func NewFullRepository()(*FullRepository) {
     m := &FullRepository{
     }
@@ -224,130 +224,162 @@ func NewFullRepository()(*FullRepository) {
     return m
 }
 // CreateFullRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFullRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFullRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FullRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. The allow_auto_merge property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowForking gets the allow_forking property value. The allow_forking property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowForking()(*bool) {
     return m.allow_forking
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. The allow_merge_commit property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. The allow_rebase_merge property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. The allow_squash_merge property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetAllowUpdateBranch gets the allow_update_branch property value. The allow_update_branch property
+// returns a *bool when successful
 func (m *FullRepository) GetAllowUpdateBranch()(*bool) {
     return m.allow_update_branch
 }
 // GetAnonymousAccessEnabled gets the anonymous_access_enabled property value. Whether anonymous git access is allowed.
+// returns a *bool when successful
 func (m *FullRepository) GetAnonymousAccessEnabled()(*bool) {
     return m.anonymous_access_enabled
 }
 // GetArchived gets the archived property value. The archived property
+// returns a *bool when successful
 func (m *FullRepository) GetArchived()(*bool) {
     return m.archived
 }
 // GetArchiveUrl gets the archive_url property value. The archive_url property
+// returns a *string when successful
 func (m *FullRepository) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetAssigneesUrl gets the assignees_url property value. The assignees_url property
+// returns a *string when successful
 func (m *FullRepository) GetAssigneesUrl()(*string) {
     return m.assignees_url
 }
 // GetBlobsUrl gets the blobs_url property value. The blobs_url property
+// returns a *string when successful
 func (m *FullRepository) GetBlobsUrl()(*string) {
     return m.blobs_url
 }
 // GetBranchesUrl gets the branches_url property value. The branches_url property
+// returns a *string when successful
 func (m *FullRepository) GetBranchesUrl()(*string) {
     return m.branches_url
 }
 // GetCloneUrl gets the clone_url property value. The clone_url property
+// returns a *string when successful
 func (m *FullRepository) GetCloneUrl()(*string) {
     return m.clone_url
 }
 // GetCodeOfConduct gets the code_of_conduct property value. Code of Conduct Simple
+// returns a CodeOfConductSimpleable when successful
 func (m *FullRepository) GetCodeOfConduct()(CodeOfConductSimpleable) {
     return m.code_of_conduct
 }
 // GetCollaboratorsUrl gets the collaborators_url property value. The collaborators_url property
+// returns a *string when successful
 func (m *FullRepository) GetCollaboratorsUrl()(*string) {
     return m.collaborators_url
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *FullRepository) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *FullRepository) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCompareUrl gets the compare_url property value. The compare_url property
+// returns a *string when successful
 func (m *FullRepository) GetCompareUrl()(*string) {
     return m.compare_url
 }
 // GetContentsUrl gets the contents_url property value. The contents_url property
+// returns a *string when successful
 func (m *FullRepository) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetContributorsUrl gets the contributors_url property value. The contributors_url property
+// returns a *string when successful
 func (m *FullRepository) GetContributorsUrl()(*string) {
     return m.contributors_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *FullRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCustomProperties gets the custom_properties property value. The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
+// returns a FullRepository_custom_propertiesable when successful
 func (m *FullRepository) GetCustomProperties()(FullRepository_custom_propertiesable) {
     return m.custom_properties
 }
 // GetDefaultBranch gets the default_branch property value. The default_branch property
+// returns a *string when successful
 func (m *FullRepository) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. The delete_branch_on_merge property
+// returns a *bool when successful
 func (m *FullRepository) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDeploymentsUrl gets the deployments_url property value. The deployments_url property
+// returns a *string when successful
 func (m *FullRepository) GetDeploymentsUrl()(*string) {
     return m.deployments_url
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *FullRepository) GetDescription()(*string) {
     return m.description
 }
 // GetDisabled gets the disabled property value. Returns whether or not this repository disabled.
+// returns a *bool when successful
 func (m *FullRepository) GetDisabled()(*bool) {
     return m.disabled
 }
 // GetDownloadsUrl gets the downloads_url property value. The downloads_url property
+// returns a *string when successful
 func (m *FullRepository) GetDownloadsUrl()(*string) {
     return m.downloads_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *FullRepository) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FullRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1389,298 +1421,372 @@ func (m *FullRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFork gets the fork property value. The fork property
+// returns a *bool when successful
 func (m *FullRepository) GetFork()(*bool) {
     return m.fork
 }
 // GetForks gets the forks property value. The forks property
+// returns a *int32 when successful
 func (m *FullRepository) GetForks()(*int32) {
     return m.forks
 }
 // GetForksCount gets the forks_count property value. The forks_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetForksCount()(*int32) {
     return m.forks_count
 }
 // GetForksUrl gets the forks_url property value. The forks_url property
+// returns a *string when successful
 func (m *FullRepository) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetFullName gets the full_name property value. The full_name property
+// returns a *string when successful
 func (m *FullRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetGitCommitsUrl gets the git_commits_url property value. The git_commits_url property
+// returns a *string when successful
 func (m *FullRepository) GetGitCommitsUrl()(*string) {
     return m.git_commits_url
 }
 // GetGitRefsUrl gets the git_refs_url property value. The git_refs_url property
+// returns a *string when successful
 func (m *FullRepository) GetGitRefsUrl()(*string) {
     return m.git_refs_url
 }
 // GetGitTagsUrl gets the git_tags_url property value. The git_tags_url property
+// returns a *string when successful
 func (m *FullRepository) GetGitTagsUrl()(*string) {
     return m.git_tags_url
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *FullRepository) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHasDiscussions gets the has_discussions property value. The has_discussions property
+// returns a *bool when successful
 func (m *FullRepository) GetHasDiscussions()(*bool) {
     return m.has_discussions
 }
 // GetHasDownloads gets the has_downloads property value. The has_downloads property
+// returns a *bool when successful
 func (m *FullRepository) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. The has_issues property
+// returns a *bool when successful
 func (m *FullRepository) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasPages gets the has_pages property value. The has_pages property
+// returns a *bool when successful
 func (m *FullRepository) GetHasPages()(*bool) {
     return m.has_pages
 }
 // GetHasProjects gets the has_projects property value. The has_projects property
+// returns a *bool when successful
 func (m *FullRepository) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. The has_wiki property
+// returns a *bool when successful
 func (m *FullRepository) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. The homepage property
+// returns a *string when successful
 func (m *FullRepository) GetHomepage()(*string) {
     return m.homepage
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *FullRepository) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *FullRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *FullRepository) GetId()(*int32) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. The issue_comment_url property
+// returns a *string when successful
 func (m *FullRepository) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
 // GetIssueEventsUrl gets the issue_events_url property value. The issue_events_url property
+// returns a *string when successful
 func (m *FullRepository) GetIssueEventsUrl()(*string) {
     return m.issue_events_url
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *FullRepository) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsTemplate gets the is_template property value. The is_template property
+// returns a *bool when successful
 func (m *FullRepository) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetKeysUrl gets the keys_url property value. The keys_url property
+// returns a *string when successful
 func (m *FullRepository) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *FullRepository) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *FullRepository) GetLanguage()(*string) {
     return m.language
 }
 // GetLanguagesUrl gets the languages_url property value. The languages_url property
+// returns a *string when successful
 func (m *FullRepository) GetLanguagesUrl()(*string) {
     return m.languages_url
 }
 // GetLicense gets the license property value. License Simple
+// returns a NullableLicenseSimpleable when successful
 func (m *FullRepository) GetLicense()(NullableLicenseSimpleable) {
     return m.license
 }
 // GetMasterBranch gets the master_branch property value. The master_branch property
+// returns a *string when successful
 func (m *FullRepository) GetMasterBranch()(*string) {
     return m.master_branch
 }
 // GetMergeCommitMessage gets the merge_commit_message property value. The default value for a merge commit message.- `PR_TITLE` - default to the pull request's title.- `PR_BODY` - default to the pull request's body.- `BLANK` - default to a blank commit message.
+// returns a *FullRepository_merge_commit_message when successful
 func (m *FullRepository) GetMergeCommitMessage()(*FullRepository_merge_commit_message) {
     return m.merge_commit_message
 }
 // GetMergeCommitTitle gets the merge_commit_title property value. The default value for a merge commit title.  - `PR_TITLE` - default to the pull request's title.  - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
+// returns a *FullRepository_merge_commit_title when successful
 func (m *FullRepository) GetMergeCommitTitle()(*FullRepository_merge_commit_title) {
     return m.merge_commit_title
 }
 // GetMergesUrl gets the merges_url property value. The merges_url property
+// returns a *string when successful
 func (m *FullRepository) GetMergesUrl()(*string) {
     return m.merges_url
 }
 // GetMilestonesUrl gets the milestones_url property value. The milestones_url property
+// returns a *string when successful
 func (m *FullRepository) GetMilestonesUrl()(*string) {
     return m.milestones_url
 }
 // GetMirrorUrl gets the mirror_url property value. The mirror_url property
+// returns a *string when successful
 func (m *FullRepository) GetMirrorUrl()(*string) {
     return m.mirror_url
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *FullRepository) GetName()(*string) {
     return m.name
 }
 // GetNetworkCount gets the network_count property value. The network_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetNetworkCount()(*int32) {
     return m.network_count
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *FullRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationsUrl gets the notifications_url property value. The notifications_url property
+// returns a *string when successful
 func (m *FullRepository) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOpenIssues gets the open_issues property value. The open_issues property
+// returns a *int32 when successful
 func (m *FullRepository) GetOpenIssues()(*int32) {
     return m.open_issues
 }
 // GetOpenIssuesCount gets the open_issues_count property value. The open_issues_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetOpenIssuesCount()(*int32) {
     return m.open_issues_count
 }
 // GetOrganization gets the organization property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *FullRepository) GetOrganization()(NullableSimpleUserable) {
     return m.organization
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *FullRepository) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetParent gets the parent property value. A repository on GitHub.
+// returns a Repositoryable when successful
 func (m *FullRepository) GetParent()(Repositoryable) {
     return m.parent
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a FullRepository_permissionsable when successful
 func (m *FullRepository) GetPermissions()(FullRepository_permissionsable) {
     return m.permissions
 }
 // GetPrivate gets the private property value. The private property
+// returns a *bool when successful
 func (m *FullRepository) GetPrivate()(*bool) {
     return m.private
 }
 // GetPullsUrl gets the pulls_url property value. The pulls_url property
+// returns a *string when successful
 func (m *FullRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetPushedAt gets the pushed_at property value. The pushed_at property
+// returns a *Time when successful
 func (m *FullRepository) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pushed_at
 }
 // GetReleasesUrl gets the releases_url property value. The releases_url property
+// returns a *string when successful
 func (m *FullRepository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
 // GetSecurityAndAnalysis gets the security_and_analysis property value. The security_and_analysis property
+// returns a SecurityAndAnalysisable when successful
 func (m *FullRepository) GetSecurityAndAnalysis()(SecurityAndAnalysisable) {
     return m.security_and_analysis
 }
 // GetSize gets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
+// returns a *int32 when successful
 func (m *FullRepository) GetSize()(*int32) {
     return m.size
 }
 // GetSource gets the source property value. A repository on GitHub.
+// returns a Repositoryable when successful
 func (m *FullRepository) GetSource()(Repositoryable) {
     return m.source
 }
 // GetSquashMergeCommitMessage gets the squash_merge_commit_message property value. The default value for a squash merge commit message:- `PR_BODY` - default to the pull request's body.- `COMMIT_MESSAGES` - default to the branch's commit messages.- `BLANK` - default to a blank commit message.
+// returns a *FullRepository_squash_merge_commit_message when successful
 func (m *FullRepository) GetSquashMergeCommitMessage()(*FullRepository_squash_merge_commit_message) {
     return m.squash_merge_commit_message
 }
 // GetSquashMergeCommitTitle gets the squash_merge_commit_title property value. The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request's title.- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
+// returns a *FullRepository_squash_merge_commit_title when successful
 func (m *FullRepository) GetSquashMergeCommitTitle()(*FullRepository_squash_merge_commit_title) {
     return m.squash_merge_commit_title
 }
 // GetSshUrl gets the ssh_url property value. The ssh_url property
+// returns a *string when successful
 func (m *FullRepository) GetSshUrl()(*string) {
     return m.ssh_url
 }
 // GetStargazersCount gets the stargazers_count property value. The stargazers_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetStargazersCount()(*int32) {
     return m.stargazers_count
 }
 // GetStargazersUrl gets the stargazers_url property value. The stargazers_url property
+// returns a *string when successful
 func (m *FullRepository) GetStargazersUrl()(*string) {
     return m.stargazers_url
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *FullRepository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetSubscribersCount gets the subscribers_count property value. The subscribers_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetSubscribersCount()(*int32) {
     return m.subscribers_count
 }
 // GetSubscribersUrl gets the subscribers_url property value. The subscribers_url property
+// returns a *string when successful
 func (m *FullRepository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
 }
 // GetSubscriptionUrl gets the subscription_url property value. The subscription_url property
+// returns a *string when successful
 func (m *FullRepository) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetSvnUrl gets the svn_url property value. The svn_url property
+// returns a *string when successful
 func (m *FullRepository) GetSvnUrl()(*string) {
     return m.svn_url
 }
 // GetTagsUrl gets the tags_url property value. The tags_url property
+// returns a *string when successful
 func (m *FullRepository) GetTagsUrl()(*string) {
     return m.tags_url
 }
 // GetTeamsUrl gets the teams_url property value. The teams_url property
+// returns a *string when successful
 func (m *FullRepository) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetTempCloneToken gets the temp_clone_token property value. The temp_clone_token property
+// returns a *string when successful
 func (m *FullRepository) GetTempCloneToken()(*string) {
     return m.temp_clone_token
 }
 // GetTemplateRepository gets the template_repository property value. A repository on GitHub.
+// returns a NullableRepositoryable when successful
 func (m *FullRepository) GetTemplateRepository()(NullableRepositoryable) {
     return m.template_repository
 }
 // GetTopics gets the topics property value. The topics property
+// returns a []string when successful
 func (m *FullRepository) GetTopics()([]string) {
     return m.topics
 }
 // GetTreesUrl gets the trees_url property value. The trees_url property
+// returns a *string when successful
 func (m *FullRepository) GetTreesUrl()(*string) {
     return m.trees_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *FullRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *FullRepository) GetUrl()(*string) {
     return m.url
 }
 // GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. The use_squash_pr_title_as_default property
+// returns a *bool when successful
 func (m *FullRepository) GetUseSquashPrTitleAsDefault()(*bool) {
     return m.use_squash_pr_title_as_default
 }
 // GetVisibility gets the visibility property value. The repository visibility: public, private, or internal.
+// returns a *string when successful
 func (m *FullRepository) GetVisibility()(*string) {
     return m.visibility
 }
 // GetWatchers gets the watchers property value. The watchers property
+// returns a *int32 when successful
 func (m *FullRepository) GetWatchers()(*int32) {
     return m.watchers
 }
 // GetWatchersCount gets the watchers_count property value. The watchers_count property
+// returns a *int32 when successful
 func (m *FullRepository) GetWatchersCount()(*int32) {
     return m.watchers_count
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. The web_commit_signoff_required property
+// returns a *bool when successful
 func (m *FullRepository) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -2732,7 +2838,6 @@ func (m *FullRepository) SetWatchersCount(value *int32)() {
 func (m *FullRepository) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// FullRepositoryable 
 type FullRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

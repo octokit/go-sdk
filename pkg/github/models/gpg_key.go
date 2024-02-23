@@ -40,7 +40,7 @@ type GpgKey struct {
     // The subkeys property
     subkeys []GpgKey_subkeysable
 }
-// NewGpgKey instantiates a new gpgKey and sets the default values.
+// NewGpgKey instantiates a new GpgKey and sets the default values.
 func NewGpgKey()(*GpgKey) {
     m := &GpgKey{
     }
@@ -48,42 +48,52 @@ func NewGpgKey()(*GpgKey) {
     return m
 }
 // CreateGpgKeyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGpgKeyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGpgKey(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GpgKey) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCanCertify gets the can_certify property value. The can_certify property
+// returns a *bool when successful
 func (m *GpgKey) GetCanCertify()(*bool) {
     return m.can_certify
 }
 // GetCanEncryptComms gets the can_encrypt_comms property value. The can_encrypt_comms property
+// returns a *bool when successful
 func (m *GpgKey) GetCanEncryptComms()(*bool) {
     return m.can_encrypt_comms
 }
 // GetCanEncryptStorage gets the can_encrypt_storage property value. The can_encrypt_storage property
+// returns a *bool when successful
 func (m *GpgKey) GetCanEncryptStorage()(*bool) {
     return m.can_encrypt_storage
 }
 // GetCanSign gets the can_sign property value. The can_sign property
+// returns a *bool when successful
 func (m *GpgKey) GetCanSign()(*bool) {
     return m.can_sign
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *GpgKey) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetEmails gets the emails property value. The emails property
+// returns a []GpgKey_emailsable when successful
 func (m *GpgKey) GetEmails()([]GpgKey_emailsable) {
     return m.emails
 }
 // GetExpiresAt gets the expires_at property value. The expires_at property
+// returns a *Time when successful
 func (m *GpgKey) GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expires_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GpgKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["can_certify"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -251,34 +261,42 @@ func (m *GpgKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *GpgKey) GetId()(*int32) {
     return m.id
 }
 // GetKeyId gets the key_id property value. The key_id property
+// returns a *string when successful
 func (m *GpgKey) GetKeyId()(*string) {
     return m.key_id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *GpgKey) GetName()(*string) {
     return m.name
 }
 // GetPrimaryKeyId gets the primary_key_id property value. The primary_key_id property
+// returns a *int32 when successful
 func (m *GpgKey) GetPrimaryKeyId()(*int32) {
     return m.primary_key_id
 }
 // GetPublicKey gets the public_key property value. The public_key property
+// returns a *string when successful
 func (m *GpgKey) GetPublicKey()(*string) {
     return m.public_key
 }
 // GetRawKey gets the raw_key property value. The raw_key property
+// returns a *string when successful
 func (m *GpgKey) GetRawKey()(*string) {
     return m.raw_key
 }
 // GetRevoked gets the revoked property value. The revoked property
+// returns a *bool when successful
 func (m *GpgKey) GetRevoked()(*bool) {
     return m.revoked
 }
 // GetSubkeys gets the subkeys property value. The subkeys property
+// returns a []GpgKey_subkeysable when successful
 func (m *GpgKey) GetSubkeys()([]GpgKey_subkeysable) {
     return m.subkeys
 }
@@ -458,7 +476,6 @@ func (m *GpgKey) SetRevoked(value *bool)() {
 func (m *GpgKey) SetSubkeys(value []GpgKey_subkeysable)() {
     m.subkeys = value
 }
-// GpgKeyable 
 type GpgKeyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -18,6 +18,7 @@ type BlocksRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.user.blocks.item collection
+// returns a *BlocksWithUsernameItemRequestBuilder when successful
 func (m *BlocksRequestBuilder) ByUsername(username string)(*BlocksWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -42,6 +43,10 @@ func NewBlocksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewBlocksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list the users you've blocked on your personal account.
+// returns a []SimpleUserable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/blocking#list-users-blocked-by-the-authenticated-user
@@ -68,6 +73,7 @@ func (m *BlocksRequestBuilder) Get(ctx context.Context, requestConfiguration *i2
     return val, nil
 }
 // ToGetRequestInformation list the users you've blocked on your personal account.
+// returns a *RequestInformation when successful
 func (m *BlocksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[BlocksRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -75,6 +81,7 @@ func (m *BlocksRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *BlocksRequestBuilder when successful
 func (m *BlocksRequestBuilder) WithUrl(rawUrl string)(*BlocksRequestBuilder) {
     return NewBlocksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

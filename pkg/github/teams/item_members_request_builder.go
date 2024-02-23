@@ -22,6 +22,7 @@ type ItemMembersRequestBuilderGetQueryParameters struct {
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item.members.item collection
 // Deprecated: 
+// returns a *ItemMembersWithUsernameItemRequestBuilder when successful
 func (m *ItemMembersRequestBuilder) ByUsername(username string)(*ItemMembersWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -32,14 +33,14 @@ func (m *ItemMembersRequestBuilder) ByUsername(username string)(*ItemMembersWith
     }
     return NewItemMembersWithUsernameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemMembersRequestBuilderInternal instantiates a new ItemMembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     m := &ItemMembersRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/members{?page*,per_page*,role*}", pathParameters),
     }
     return m
 }
-// NewItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemMembersRequestBuilder instantiates a new ItemMembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -47,6 +48,8 @@ func NewItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Get **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://docs.github.com/rest/teams/members#list-team-members) endpoint.Team members will include the members of child teams.
 // Deprecated: 
+// returns a []SimpleUserable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/teams/members#list-team-members-legacy
@@ -72,6 +75,7 @@ func (m *ItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguratio
 }
 // ToGetRequestInformation **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List team members`](https://docs.github.com/rest/teams/members#list-team-members) endpoint.Team members will include the members of child teams.
 // Deprecated: 
+// returns a *RequestInformation when successful
 func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemMembersRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -80,6 +84,7 @@ func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context,
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: 
+// returns a *ItemMembersRequestBuilder when successful
 func (m *ItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemMembersRequestBuilder) {
     return NewItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

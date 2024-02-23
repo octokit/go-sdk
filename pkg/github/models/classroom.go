@@ -19,7 +19,7 @@ type Classroom struct {
     // The URL of the classroom on GitHub Classroom.
     url *string
 }
-// NewClassroom instantiates a new classroom and sets the default values.
+// NewClassroom instantiates a new Classroom and sets the default values.
 func NewClassroom()(*Classroom) {
     m := &Classroom{
     }
@@ -27,18 +27,22 @@ func NewClassroom()(*Classroom) {
     return m
 }
 // CreateClassroomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassroomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassroom(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Classroom) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchived gets the archived property value. Whether classroom is archived.
+// returns a *bool when successful
 func (m *Classroom) GetArchived()(*bool) {
     return m.archived
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Classroom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +98,22 @@ func (m *Classroom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetId gets the id property value. Unique identifier of the classroom.
+// returns a *int32 when successful
 func (m *Classroom) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the classroom.
+// returns a *string when successful
 func (m *Classroom) GetName()(*string) {
     return m.name
 }
 // GetOrganization gets the organization property value. A GitHub organization.
+// returns a SimpleClassroomOrganizationable when successful
 func (m *Classroom) GetOrganization()(SimpleClassroomOrganizationable) {
     return m.organization
 }
 // GetUrl gets the url property value. The URL of the classroom on GitHub Classroom.
+// returns a *string when successful
 func (m *Classroom) GetUrl()(*string) {
     return m.url
 }
@@ -173,7 +181,6 @@ func (m *Classroom) SetOrganization(value SimpleClassroomOrganizationable)() {
 func (m *Classroom) SetUrl(value *string)() {
     m.url = value
 }
-// Classroomable 
 type Classroomable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

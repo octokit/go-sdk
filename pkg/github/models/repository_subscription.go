@@ -22,7 +22,7 @@ type RepositorySubscription struct {
     // The url property
     url *string
 }
-// NewRepositorySubscription instantiates a new repositorySubscription and sets the default values.
+// NewRepositorySubscription instantiates a new RepositorySubscription and sets the default values.
 func NewRepositorySubscription()(*RepositorySubscription) {
     m := &RepositorySubscription{
     }
@@ -30,18 +30,22 @@ func NewRepositorySubscription()(*RepositorySubscription) {
     return m
 }
 // CreateRepositorySubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositorySubscriptionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositorySubscription(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositorySubscription) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *RepositorySubscription) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositorySubscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,22 +111,27 @@ func (m *RepositorySubscription) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIgnored gets the ignored property value. Determines if all notifications should be blocked from this repository.
+// returns a *bool when successful
 func (m *RepositorySubscription) GetIgnored()(*bool) {
     return m.ignored
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *RepositorySubscription) GetReason()(*string) {
     return m.reason
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *RepositorySubscription) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetSubscribed gets the subscribed property value. Determines if notifications should be received from this repository.
+// returns a *bool when successful
 func (m *RepositorySubscription) GetSubscribed()(*bool) {
     return m.subscribed
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *RepositorySubscription) GetUrl()(*string) {
     return m.url
 }
@@ -200,7 +209,6 @@ func (m *RepositorySubscription) SetSubscribed(value *bool)() {
 func (m *RepositorySubscription) SetUrl(value *string)() {
     m.url = value
 }
-// RepositorySubscriptionable 
 type RepositorySubscriptionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

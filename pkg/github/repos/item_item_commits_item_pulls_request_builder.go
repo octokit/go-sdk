@@ -17,20 +17,21 @@ type ItemItemCommitsItemPullsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// NewItemItemCommitsItemPullsRequestBuilderInternal instantiates a new PullsRequestBuilder and sets the default values.
+// NewItemItemCommitsItemPullsRequestBuilderInternal instantiates a new ItemItemCommitsItemPullsRequestBuilder and sets the default values.
 func NewItemItemCommitsItemPullsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommitsItemPullsRequestBuilder) {
     m := &ItemItemCommitsItemPullsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/commits/{commits%2Did}/pulls{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemCommitsItemPullsRequestBuilder instantiates a new PullsRequestBuilder and sets the default values.
+// NewItemItemCommitsItemPullsRequestBuilder instantiates a new ItemItemCommitsItemPullsRequestBuilder and sets the default values.
 func NewItemItemCommitsItemPullsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommitsItemPullsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCommitsItemPullsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
+// returns a []PullRequestSimpleable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/commits/commits#list-pull-requests-associated-with-a-commit
@@ -52,6 +53,7 @@ func (m *ItemItemCommitsItemPullsRequestBuilder) Get(ctx context.Context, reques
     return val, nil
 }
 // ToGetRequestInformation lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
+// returns a *RequestInformation when successful
 func (m *ItemItemCommitsItemPullsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCommitsItemPullsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -59,6 +61,7 @@ func (m *ItemItemCommitsItemPullsRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemCommitsItemPullsRequestBuilder when successful
 func (m *ItemItemCommitsItemPullsRequestBuilder) WithUrl(rawUrl string)(*ItemItemCommitsItemPullsRequestBuilder) {
     return NewItemItemCommitsItemPullsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

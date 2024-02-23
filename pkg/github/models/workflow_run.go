@@ -82,7 +82,7 @@ type WorkflowRun struct {
     // The URL to the workflow.
     workflow_url *string
 }
-// NewWorkflowRun instantiates a new workflowRun and sets the default values.
+// NewWorkflowRun instantiates a new WorkflowRun and sets the default values.
 func NewWorkflowRun()(*WorkflowRun) {
     m := &WorkflowRun{
     }
@@ -90,54 +90,67 @@ func NewWorkflowRun()(*WorkflowRun) {
     return m
 }
 // CreateWorkflowRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowRun(), nil
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *WorkflowRun) GetActor()(SimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkflowRun) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArtifactsUrl gets the artifacts_url property value. The URL to the artifacts for the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetArtifactsUrl()(*string) {
     return m.artifacts_url
 }
 // GetCancelUrl gets the cancel_url property value. The URL to cancel the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetCancelUrl()(*string) {
     return m.cancel_url
 }
 // GetCheckSuiteId gets the check_suite_id property value. The ID of the associated check suite.
+// returns a *int32 when successful
 func (m *WorkflowRun) GetCheckSuiteId()(*int32) {
     return m.check_suite_id
 }
 // GetCheckSuiteNodeId gets the check_suite_node_id property value. The node ID of the associated check suite.
+// returns a *string when successful
 func (m *WorkflowRun) GetCheckSuiteNodeId()(*string) {
     return m.check_suite_node_id
 }
 // GetCheckSuiteUrl gets the check_suite_url property value. The URL to the associated check suite.
+// returns a *string when successful
 func (m *WorkflowRun) GetCheckSuiteUrl()(*string) {
     return m.check_suite_url
 }
 // GetConclusion gets the conclusion property value. The conclusion property
+// returns a *string when successful
 func (m *WorkflowRun) GetConclusion()(*string) {
     return m.conclusion
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *WorkflowRun) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDisplayTitle gets the display_title property value. The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.
+// returns a *string when successful
 func (m *WorkflowRun) GetDisplayTitle()(*string) {
     return m.display_title
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *WorkflowRun) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -515,106 +528,132 @@ func (m *WorkflowRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHeadBranch gets the head_branch property value. The head_branch property
+// returns a *string when successful
 func (m *WorkflowRun) GetHeadBranch()(*string) {
     return m.head_branch
 }
 // GetHeadCommit gets the head_commit property value. A commit.
+// returns a NullableSimpleCommitable when successful
 func (m *WorkflowRun) GetHeadCommit()(NullableSimpleCommitable) {
     return m.head_commit
 }
 // GetHeadRepository gets the head_repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *WorkflowRun) GetHeadRepository()(MinimalRepositoryable) {
     return m.head_repository
 }
 // GetHeadRepositoryId gets the head_repository_id property value. The head_repository_id property
+// returns a *int32 when successful
 func (m *WorkflowRun) GetHeadRepositoryId()(*int32) {
     return m.head_repository_id
 }
 // GetHeadSha gets the head_sha property value. The SHA of the head commit that points to the version of the workflow being run.
+// returns a *string when successful
 func (m *WorkflowRun) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *WorkflowRun) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The ID of the workflow run.
+// returns a *int32 when successful
 func (m *WorkflowRun) GetId()(*int32) {
     return m.id
 }
 // GetJobsUrl gets the jobs_url property value. The URL to the jobs for the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetJobsUrl()(*string) {
     return m.jobs_url
 }
 // GetLogsUrl gets the logs_url property value. The URL to download the logs for the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetLogsUrl()(*string) {
     return m.logs_url
 }
 // GetName gets the name property value. The name of the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *WorkflowRun) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPath gets the path property value. The full path of the workflow
+// returns a *string when successful
 func (m *WorkflowRun) GetPath()(*string) {
     return m.path
 }
 // GetPreviousAttemptUrl gets the previous_attempt_url property value. The URL to the previous attempted run of this workflow, if one exists.
+// returns a *string when successful
 func (m *WorkflowRun) GetPreviousAttemptUrl()(*string) {
     return m.previous_attempt_url
 }
 // GetPullRequests gets the pull_requests property value. Pull requests that are open with a `head_sha` or `head_branch` that matches the workflow run. The returned pull requests do not necessarily indicate pull requests that triggered the run.
+// returns a []PullRequestMinimalable when successful
 func (m *WorkflowRun) GetPullRequests()([]PullRequestMinimalable) {
     return m.pull_requests
 }
 // GetReferencedWorkflows gets the referenced_workflows property value. The referenced_workflows property
+// returns a []ReferencedWorkflowable when successful
 func (m *WorkflowRun) GetReferencedWorkflows()([]ReferencedWorkflowable) {
     return m.referenced_workflows
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *WorkflowRun) GetRepository()(MinimalRepositoryable) {
     return m.repository
 }
 // GetRerunUrl gets the rerun_url property value. The URL to rerun the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetRerunUrl()(*string) {
     return m.rerun_url
 }
 // GetRunAttempt gets the run_attempt property value. Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.
+// returns a *int32 when successful
 func (m *WorkflowRun) GetRunAttempt()(*int32) {
     return m.run_attempt
 }
 // GetRunNumber gets the run_number property value. The auto incrementing run number for the workflow run.
+// returns a *int32 when successful
 func (m *WorkflowRun) GetRunNumber()(*int32) {
     return m.run_number
 }
 // GetRunStartedAt gets the run_started_at property value. The start time of the latest run. Resets on re-run.
+// returns a *Time when successful
 func (m *WorkflowRun) GetRunStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.run_started_at
 }
 // GetStatus gets the status property value. The status property
+// returns a *string when successful
 func (m *WorkflowRun) GetStatus()(*string) {
     return m.status
 }
 // GetTriggeringActor gets the triggering_actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *WorkflowRun) GetTriggeringActor()(SimpleUserable) {
     return m.triggering_actor
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *WorkflowRun) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The URL to the workflow run.
+// returns a *string when successful
 func (m *WorkflowRun) GetUrl()(*string) {
     return m.url
 }
 // GetWorkflowId gets the workflow_id property value. The ID of the parent workflow.
+// returns a *int32 when successful
 func (m *WorkflowRun) GetWorkflowId()(*int32) {
     return m.workflow_id
 }
 // GetWorkflowUrl gets the workflow_url property value. The URL to the workflow.
+// returns a *string when successful
 func (m *WorkflowRun) GetWorkflowUrl()(*string) {
     return m.workflow_url
 }
@@ -1004,7 +1043,6 @@ func (m *WorkflowRun) SetWorkflowId(value *int32)() {
 func (m *WorkflowRun) SetWorkflowUrl(value *string)() {
     m.workflow_url = value
 }
-// WorkflowRunable 
 type WorkflowRunable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RuleSuite_rule_evaluations_rule_source 
 type RuleSuite_rule_evaluations_rule_source struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type RuleSuite_rule_evaluations_rule_source struct {
     // The type of rule source.
     typeEscaped *string
 }
-// NewRuleSuite_rule_evaluations_rule_source instantiates a new ruleSuite_rule_evaluations_rule_source and sets the default values.
+// NewRuleSuite_rule_evaluations_rule_source instantiates a new RuleSuite_rule_evaluations_rule_source and sets the default values.
 func NewRuleSuite_rule_evaluations_rule_source()(*RuleSuite_rule_evaluations_rule_source) {
     m := &RuleSuite_rule_evaluations_rule_source{
     }
@@ -23,14 +22,17 @@ func NewRuleSuite_rule_evaluations_rule_source()(*RuleSuite_rule_evaluations_rul
     return m
 }
 // CreateRuleSuite_rule_evaluations_rule_sourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRuleSuite_rule_evaluations_rule_sourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRuleSuite_rule_evaluations_rule_source(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RuleSuite_rule_evaluations_rule_source) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RuleSuite_rule_evaluations_rule_source) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *RuleSuite_rule_evaluations_rule_source) GetFieldDeserializers()(map[str
     return res
 }
 // GetId gets the id property value. The ID of the rule source.
+// returns a *int32 when successful
 func (m *RuleSuite_rule_evaluations_rule_source) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the rule source.
+// returns a *string when successful
 func (m *RuleSuite_rule_evaluations_rule_source) GetName()(*string) {
     return m.name
 }
 // GetTypeEscaped gets the type property value. The type of rule source.
+// returns a *string when successful
 func (m *RuleSuite_rule_evaluations_rule_source) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
@@ -121,7 +126,6 @@ func (m *RuleSuite_rule_evaluations_rule_source) SetName(value *string)() {
 func (m *RuleSuite_rule_evaluations_rule_source) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }
-// RuleSuite_rule_evaluations_rule_sourceable 
 type RuleSuite_rule_evaluations_rule_sourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

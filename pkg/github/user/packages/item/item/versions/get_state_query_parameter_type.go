@@ -2,7 +2,6 @@ package versions
 import (
     "errors"
 )
-// 
 type GetStateQueryParameterType int
 
 const (

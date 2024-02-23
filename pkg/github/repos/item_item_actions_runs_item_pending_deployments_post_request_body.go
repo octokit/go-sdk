@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemActionsRunsItemPending_deploymentsPostRequestBody 
 type ItemItemActionsRunsItemPending_deploymentsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,22 +20,27 @@ func NewItemItemActionsRunsItemPending_deploymentsPostRequestBody()(*ItemItemAct
     return m
 }
 // CreateItemItemActionsRunsItemPending_deploymentsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemActionsRunsItemPending_deploymentsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemActionsRunsItemPending_deploymentsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. A comment to accompany the deployment review
+// returns a *string when successful
 func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) GetComment()(*string) {
     return m.comment
 }
 // GetEnvironmentIds gets the environment_ids property value. The list of environment ids to approve or reject
+// returns a []int32 when successful
 func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) GetEnvironmentIds()([]int32) {
     return m.environment_ids
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -101,7 +105,6 @@ func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) SetComment(v
 func (m *ItemItemActionsRunsItemPending_deploymentsPostRequestBody) SetEnvironmentIds(value []int32)() {
     m.environment_ids = value
 }
-// ItemItemActionsRunsItemPending_deploymentsPostRequestBodyable 
 type ItemItemActionsRunsItemPending_deploymentsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

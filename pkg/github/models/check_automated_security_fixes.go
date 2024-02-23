@@ -13,7 +13,7 @@ type CheckAutomatedSecurityFixes struct {
     // Whether automated security fixes are paused for the repository.
     paused *bool
 }
-// NewCheckAutomatedSecurityFixes instantiates a new checkAutomatedSecurityFixes and sets the default values.
+// NewCheckAutomatedSecurityFixes instantiates a new CheckAutomatedSecurityFixes and sets the default values.
 func NewCheckAutomatedSecurityFixes()(*CheckAutomatedSecurityFixes) {
     m := &CheckAutomatedSecurityFixes{
     }
@@ -21,18 +21,22 @@ func NewCheckAutomatedSecurityFixes()(*CheckAutomatedSecurityFixes) {
     return m
 }
 // CreateCheckAutomatedSecurityFixesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckAutomatedSecurityFixesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckAutomatedSecurityFixes(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckAutomatedSecurityFixes) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. Whether automated security fixes are enabled for the repository.
+// returns a *bool when successful
 func (m *CheckAutomatedSecurityFixes) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckAutomatedSecurityFixes) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *CheckAutomatedSecurityFixes) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetPaused gets the paused property value. Whether automated security fixes are paused for the repository.
+// returns a *bool when successful
 func (m *CheckAutomatedSecurityFixes) GetPaused()(*bool) {
     return m.paused
 }
@@ -95,7 +100,6 @@ func (m *CheckAutomatedSecurityFixes) SetEnabled(value *bool)() {
 func (m *CheckAutomatedSecurityFixes) SetPaused(value *bool)() {
     m.paused = value
 }
-// CheckAutomatedSecurityFixesable 
 type CheckAutomatedSecurityFixesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

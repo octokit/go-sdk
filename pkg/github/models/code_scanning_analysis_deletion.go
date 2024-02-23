@@ -13,7 +13,7 @@ type CodeScanningAnalysisDeletion struct {
     // Next deletable analysis in chain, without last analysis deletion confirmation
     next_analysis_url *string
 }
-// NewCodeScanningAnalysisDeletion instantiates a new codeScanningAnalysisDeletion and sets the default values.
+// NewCodeScanningAnalysisDeletion instantiates a new CodeScanningAnalysisDeletion and sets the default values.
 func NewCodeScanningAnalysisDeletion()(*CodeScanningAnalysisDeletion) {
     m := &CodeScanningAnalysisDeletion{
     }
@@ -21,18 +21,22 @@ func NewCodeScanningAnalysisDeletion()(*CodeScanningAnalysisDeletion) {
     return m
 }
 // CreateCodeScanningAnalysisDeletionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningAnalysisDeletionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningAnalysisDeletion(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningAnalysisDeletion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfirmDeleteUrl gets the confirm_delete_url property value. Next deletable analysis in chain, with last analysis deletion confirmation
+// returns a *string when successful
 func (m *CodeScanningAnalysisDeletion) GetConfirmDeleteUrl()(*string) {
     return m.confirm_delete_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningAnalysisDeletion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["confirm_delete_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *CodeScanningAnalysisDeletion) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetNextAnalysisUrl gets the next_analysis_url property value. Next deletable analysis in chain, without last analysis deletion confirmation
+// returns a *string when successful
 func (m *CodeScanningAnalysisDeletion) GetNextAnalysisUrl()(*string) {
     return m.next_analysis_url
 }
@@ -83,7 +88,6 @@ func (m *CodeScanningAnalysisDeletion) SetConfirmDeleteUrl(value *string)() {
 func (m *CodeScanningAnalysisDeletion) SetNextAnalysisUrl(value *string)() {
     m.next_analysis_url = value
 }
-// CodeScanningAnalysisDeletionable 
 type CodeScanningAnalysisDeletionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

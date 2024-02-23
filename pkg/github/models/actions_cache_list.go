@@ -13,7 +13,7 @@ type ActionsCacheList struct {
     // Total number of caches
     total_count *int32
 }
-// NewActionsCacheList instantiates a new actionsCacheList and sets the default values.
+// NewActionsCacheList instantiates a new ActionsCacheList and sets the default values.
 func NewActionsCacheList()(*ActionsCacheList) {
     m := &ActionsCacheList{
     }
@@ -21,18 +21,22 @@ func NewActionsCacheList()(*ActionsCacheList) {
     return m
 }
 // CreateActionsCacheListFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActionsCacheListFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsCacheList(), nil
 }
 // GetActionsCaches gets the actions_caches property value. Array of caches
+// returns a []ActionsCacheList_actions_cachesable when successful
 func (m *ActionsCacheList) GetActionsCaches()([]ActionsCacheList_actions_cachesable) {
     return m.actions_caches
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ActionsCacheList) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActionsCacheList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions_caches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -64,6 +68,7 @@ func (m *ActionsCacheList) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetTotalCount gets the total_count property value. Total number of caches
+// returns a *int32 when successful
 func (m *ActionsCacheList) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -107,7 +112,6 @@ func (m *ActionsCacheList) SetAdditionalData(value map[string]any)() {
 func (m *ActionsCacheList) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// ActionsCacheListable 
 type ActionsCacheListable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

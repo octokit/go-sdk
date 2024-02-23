@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ParticipationStats 
 type ParticipationStats struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type ParticipationStats struct {
     // The owner property
     owner []int32
 }
-// NewParticipationStats instantiates a new participationStats and sets the default values.
+// NewParticipationStats instantiates a new ParticipationStats and sets the default values.
 func NewParticipationStats()(*ParticipationStats) {
     m := &ParticipationStats{
     }
@@ -21,18 +20,22 @@ func NewParticipationStats()(*ParticipationStats) {
     return m
 }
 // CreateParticipationStatsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateParticipationStatsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewParticipationStats(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ParticipationStats) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAll gets the all property value. The all property
+// returns a []int32 when successful
 func (m *ParticipationStats) GetAll()([]int32) {
     return m.all
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ParticipationStats) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["all"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,6 +73,7 @@ func (m *ParticipationStats) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetOwner gets the owner property value. The owner property
+// returns a []int32 when successful
 func (m *ParticipationStats) GetOwner()([]int32) {
     return m.owner
 }
@@ -107,7 +111,6 @@ func (m *ParticipationStats) SetAll(value []int32)() {
 func (m *ParticipationStats) SetOwner(value []int32)() {
     m.owner = value
 }
-// ParticipationStatsable 
 type ParticipationStatsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

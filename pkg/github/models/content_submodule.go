@@ -31,7 +31,7 @@ type ContentSubmodule struct {
     // The url property
     url *string
 }
-// NewContentSubmodule instantiates a new contentSubmodule and sets the default values.
+// NewContentSubmodule instantiates a new ContentSubmodule and sets the default values.
 func NewContentSubmodule()(*ContentSubmodule) {
     m := &ContentSubmodule{
     }
@@ -39,18 +39,22 @@ func NewContentSubmodule()(*ContentSubmodule) {
     return m
 }
 // CreateContentSubmoduleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentSubmoduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentSubmodule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContentSubmodule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDownloadUrl gets the download_url property value. The download_url property
+// returns a *string when successful
 func (m *ContentSubmodule) GetDownloadUrl()(*string) {
     return m.download_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentSubmodule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,42 +170,52 @@ func (m *ContentSubmodule) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *ContentSubmodule) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *ContentSubmodule) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLinks gets the _links property value. The _links property
+// returns a ContentSubmodule__linksable when successful
 func (m *ContentSubmodule) GetLinks()(ContentSubmodule__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ContentSubmodule) GetName()(*string) {
     return m.name
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *ContentSubmodule) GetPath()(*string) {
     return m.path
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *ContentSubmodule) GetSha()(*string) {
     return m.sha
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *ContentSubmodule) GetSize()(*int32) {
     return m.size
 }
 // GetSubmoduleGitUrl gets the submodule_git_url property value. The submodule_git_url property
+// returns a *string when successful
 func (m *ContentSubmodule) GetSubmoduleGitUrl()(*string) {
     return m.submodule_git_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *ContentSubmodule_type when successful
 func (m *ContentSubmodule) GetTypeEscaped()(*ContentSubmodule_type) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ContentSubmodule) GetUrl()(*string) {
     return m.url
 }
@@ -330,7 +344,6 @@ func (m *ContentSubmodule) SetTypeEscaped(value *ContentSubmodule_type)() {
 func (m *ContentSubmodule) SetUrl(value *string)() {
     m.url = value
 }
-// ContentSubmoduleable 
 type ContentSubmoduleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

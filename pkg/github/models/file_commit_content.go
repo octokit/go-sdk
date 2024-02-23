@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileCommit_content 
 type FileCommit_content struct {
     // The _links property
     _links FileCommit_content__linksable
@@ -29,7 +28,7 @@ type FileCommit_content struct {
     // The url property
     url *string
 }
-// NewFileCommit_content instantiates a new fileCommit_content and sets the default values.
+// NewFileCommit_content instantiates a new FileCommit_content and sets the default values.
 func NewFileCommit_content()(*FileCommit_content) {
     m := &FileCommit_content{
     }
@@ -37,18 +36,22 @@ func NewFileCommit_content()(*FileCommit_content) {
     return m
 }
 // CreateFileCommit_contentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileCommit_contentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileCommit_content(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FileCommit_content) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDownloadUrl gets the download_url property value. The download_url property
+// returns a *string when successful
 func (m *FileCommit_content) GetDownloadUrl()(*string) {
     return m.download_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileCommit_content) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,38 +157,47 @@ func (m *FileCommit_content) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *FileCommit_content) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *FileCommit_content) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLinks gets the _links property value. The _links property
+// returns a FileCommit_content__linksable when successful
 func (m *FileCommit_content) GetLinks()(FileCommit_content__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *FileCommit_content) GetName()(*string) {
     return m.name
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *FileCommit_content) GetPath()(*string) {
     return m.path
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *FileCommit_content) GetSha()(*string) {
     return m.sha
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *FileCommit_content) GetSize()(*int32) {
     return m.size
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *FileCommit_content) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *FileCommit_content) GetUrl()(*string) {
     return m.url
 }
@@ -303,7 +315,6 @@ func (m *FileCommit_content) SetTypeEscaped(value *string)() {
 func (m *FileCommit_content) SetUrl(value *string)() {
     m.url = value
 }
-// FileCommit_contentable 
 type FileCommit_contentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

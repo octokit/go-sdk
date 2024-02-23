@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequest_head_repo_owner 
 type PullRequest_head_repo_owner struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -45,7 +44,7 @@ type PullRequest_head_repo_owner struct {
     // The url property
     url *string
 }
-// NewPullRequest_head_repo_owner instantiates a new pullRequest_head_repo_owner and sets the default values.
+// NewPullRequest_head_repo_owner instantiates a new PullRequest_head_repo_owner and sets the default values.
 func NewPullRequest_head_repo_owner()(*PullRequest_head_repo_owner) {
     m := &PullRequest_head_repo_owner{
     }
@@ -53,22 +52,27 @@ func NewPullRequest_head_repo_owner()(*PullRequest_head_repo_owner) {
     return m
 }
 // CreatePullRequest_head_repo_ownerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequest_head_repo_ownerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequest_head_repo_owner(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequest_head_repo_owner) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequest_head_repo_owner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -254,66 +258,82 @@ func (m *PullRequest_head_repo_owner) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *PullRequest_head_repo_owner) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetLogin()(*string) {
     return m.login
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetOrganizationsUrl()(*string) {
     return m.organizations_url
 }
 // GetReceivedEventsUrl gets the received_events_url property value. The received_events_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetReceivedEventsUrl()(*string) {
     return m.received_events_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetSiteAdmin gets the site_admin property value. The site_admin property
+// returns a *bool when successful
 func (m *PullRequest_head_repo_owner) GetSiteAdmin()(*bool) {
     return m.site_admin
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetSubscriptionsUrl gets the subscriptions_url property value. The subscriptions_url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_owner) GetUrl()(*string) {
     return m.url
 }
@@ -511,7 +531,6 @@ func (m *PullRequest_head_repo_owner) SetTypeEscaped(value *string)() {
 func (m *PullRequest_head_repo_owner) SetUrl(value *string)() {
     m.url = value
 }
-// PullRequest_head_repo_ownerable 
 type PullRequest_head_repo_ownerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

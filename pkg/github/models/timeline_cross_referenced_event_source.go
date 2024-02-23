@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimelineCrossReferencedEvent_source 
 type TimelineCrossReferencedEvent_source struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type TimelineCrossReferencedEvent_source struct {
     // The type property
     typeEscaped *string
 }
-// NewTimelineCrossReferencedEvent_source instantiates a new timelineCrossReferencedEvent_source and sets the default values.
+// NewTimelineCrossReferencedEvent_source instantiates a new TimelineCrossReferencedEvent_source and sets the default values.
 func NewTimelineCrossReferencedEvent_source()(*TimelineCrossReferencedEvent_source) {
     m := &TimelineCrossReferencedEvent_source{
     }
@@ -21,14 +20,17 @@ func NewTimelineCrossReferencedEvent_source()(*TimelineCrossReferencedEvent_sour
     return m
 }
 // CreateTimelineCrossReferencedEvent_sourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineCrossReferencedEvent_sourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineCrossReferencedEvent_source(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineCrossReferencedEvent_source) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineCrossReferencedEvent_source) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["issue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *TimelineCrossReferencedEvent_source) GetFieldDeserializers()(map[string
     return res
 }
 // GetIssue gets the issue property value. Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
+// returns a Issueable when successful
 func (m *TimelineCrossReferencedEvent_source) GetIssue()(Issueable) {
     return m.issue
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *TimelineCrossReferencedEvent_source) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
@@ -95,7 +99,6 @@ func (m *TimelineCrossReferencedEvent_source) SetIssue(value Issueable)() {
 func (m *TimelineCrossReferencedEvent_source) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }
-// TimelineCrossReferencedEvent_sourceable 
 type TimelineCrossReferencedEvent_sourceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

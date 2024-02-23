@@ -13,7 +13,7 @@ type RepositoryRuleRequiredStatusChecks struct {
     // The type property
     typeEscaped *RepositoryRuleRequiredStatusChecks_type
 }
-// NewRepositoryRuleRequiredStatusChecks instantiates a new repositoryRuleRequiredStatusChecks and sets the default values.
+// NewRepositoryRuleRequiredStatusChecks instantiates a new RepositoryRuleRequiredStatusChecks and sets the default values.
 func NewRepositoryRuleRequiredStatusChecks()(*RepositoryRuleRequiredStatusChecks) {
     m := &RepositoryRuleRequiredStatusChecks{
     }
@@ -21,14 +21,17 @@ func NewRepositoryRuleRequiredStatusChecks()(*RepositoryRuleRequiredStatusChecks
     return m
 }
 // CreateRepositoryRuleRequiredStatusChecksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleRequiredStatusChecksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleRequiredStatusChecks(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleRequiredStatusChecks) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleRequiredStatusChecks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *RepositoryRuleRequiredStatusChecks) GetFieldDeserializers()(map[string]
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
+// returns a RepositoryRuleRequiredStatusChecks_parametersable when successful
 func (m *RepositoryRuleRequiredStatusChecks) GetParameters()(RepositoryRuleRequiredStatusChecks_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleRequiredStatusChecks_type when successful
 func (m *RepositoryRuleRequiredStatusChecks) GetTypeEscaped()(*RepositoryRuleRequiredStatusChecks_type) {
     return m.typeEscaped
 }
@@ -96,7 +101,6 @@ func (m *RepositoryRuleRequiredStatusChecks) SetParameters(value RepositoryRuleR
 func (m *RepositoryRuleRequiredStatusChecks) SetTypeEscaped(value *RepositoryRuleRequiredStatusChecks_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleRequiredStatusChecksable 
 type RepositoryRuleRequiredStatusChecksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

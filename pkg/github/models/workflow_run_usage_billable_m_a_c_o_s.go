@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WorkflowRunUsage_billable_MACOS 
 type WorkflowRunUsage_billable_MACOS struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type WorkflowRunUsage_billable_MACOS struct {
     // The total_ms property
     total_ms *int32
 }
-// NewWorkflowRunUsage_billable_MACOS instantiates a new workflowRunUsage_billable_MACOS and sets the default values.
+// NewWorkflowRunUsage_billable_MACOS instantiates a new WorkflowRunUsage_billable_MACOS and sets the default values.
 func NewWorkflowRunUsage_billable_MACOS()(*WorkflowRunUsage_billable_MACOS) {
     m := &WorkflowRunUsage_billable_MACOS{
     }
@@ -23,14 +22,17 @@ func NewWorkflowRunUsage_billable_MACOS()(*WorkflowRunUsage_billable_MACOS) {
     return m
 }
 // CreateWorkflowRunUsage_billable_MACOSFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowRunUsage_billable_MACOSFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowRunUsage_billable_MACOS(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkflowRunUsage_billable_MACOS) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowRunUsage_billable_MACOS) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["job_runs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,14 +74,17 @@ func (m *WorkflowRunUsage_billable_MACOS) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetJobRuns gets the job_runs property value. The job_runs property
+// returns a []WorkflowRunUsage_billable_MACOS_job_runsable when successful
 func (m *WorkflowRunUsage_billable_MACOS) GetJobRuns()([]WorkflowRunUsage_billable_MACOS_job_runsable) {
     return m.job_runs
 }
 // GetJobs gets the jobs property value. The jobs property
+// returns a *int32 when successful
 func (m *WorkflowRunUsage_billable_MACOS) GetJobs()(*int32) {
     return m.jobs
 }
 // GetTotalMs gets the total_ms property value. The total_ms property
+// returns a *int32 when successful
 func (m *WorkflowRunUsage_billable_MACOS) GetTotalMs()(*int32) {
     return m.total_ms
 }
@@ -133,7 +138,6 @@ func (m *WorkflowRunUsage_billable_MACOS) SetJobs(value *int32)() {
 func (m *WorkflowRunUsage_billable_MACOS) SetTotalMs(value *int32)() {
     m.total_ms = value
 }
-// WorkflowRunUsage_billable_MACOSable 
 type WorkflowRunUsage_billable_MACOSable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

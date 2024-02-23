@@ -19,6 +19,7 @@ type ItemItemHooksRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByHook_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.hooks.item collection
+// returns a *ItemItemHooksWithHook_ItemRequestBuilder when successful
 func (m *ItemItemHooksRequestBuilder) ByHook_id(hook_id int32)(*ItemItemHooksWithHook_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -27,20 +28,22 @@ func (m *ItemItemHooksRequestBuilder) ByHook_id(hook_id int32)(*ItemItemHooksWit
     urlTplParams["hook_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(hook_id), 10)
     return NewItemItemHooksWithHook_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemHooksRequestBuilderInternal instantiates a new HooksRequestBuilder and sets the default values.
+// NewItemItemHooksRequestBuilderInternal instantiates a new ItemItemHooksRequestBuilder and sets the default values.
 func NewItemItemHooksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemHooksRequestBuilder) {
     m := &ItemItemHooksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/hooks{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemHooksRequestBuilder instantiates a new HooksRequestBuilder and sets the default values.
+// NewItemItemHooksRequestBuilder instantiates a new ItemItemHooksRequestBuilder and sets the default values.
 func NewItemItemHooksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemHooksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemHooksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
+// returns a []Hookable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/webhooks#list-repository-webhooks
@@ -65,6 +68,10 @@ func (m *ItemItemHooksRequestBuilder) Get(ctx context.Context, requestConfigurat
     return val, nil
 }
 // Post repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks canshare the same `config` as long as those webhooks do not have any `events` that overlap.
+// returns a Hookable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/webhooks#create-a-repository-webhook
@@ -88,6 +95,7 @@ func (m *ItemItemHooksRequestBuilder) Post(ctx context.Context, body ItemItemHoo
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Hookable), nil
 }
 // ToGetRequestInformation lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
+// returns a *RequestInformation when successful
 func (m *ItemItemHooksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemHooksRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -95,8 +103,9 @@ func (m *ItemItemHooksRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToPostRequestInformation repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks canshare the same `config` as long as those webhooks do not have any `events` that overlap.
+// returns a *RequestInformation when successful
 func (m *ItemItemHooksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemHooksPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/hooks", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -106,6 +115,7 @@ func (m *ItemItemHooksRequestBuilder) ToPostRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemHooksRequestBuilder when successful
 func (m *ItemItemHooksRequestBuilder) WithUrl(rawUrl string)(*ItemItemHooksRequestBuilder) {
     return NewItemItemHooksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

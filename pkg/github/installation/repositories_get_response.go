@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// RepositoriesGetResponse 
 type RepositoriesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,14 +23,17 @@ func NewRepositoriesGetResponse()(*RepositoriesGetResponse) {
     return m
 }
 // CreateRepositoriesGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoriesGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoriesGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoriesGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoriesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,14 +75,17 @@ func (m *RepositoriesGetResponse) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetRepositories gets the repositories property value. The repositories property
+// returns a []Repositoryable when successful
 func (m *RepositoriesGetResponse) GetRepositories()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Repositoryable) {
     return m.repositories
 }
 // GetRepositorySelection gets the repository_selection property value. The repository_selection property
+// returns a *string when successful
 func (m *RepositoriesGetResponse) GetRepositorySelection()(*string) {
     return m.repository_selection
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *RepositoriesGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -134,7 +139,6 @@ func (m *RepositoriesGetResponse) SetRepositorySelection(value *string)() {
 func (m *RepositoriesGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// RepositoriesGetResponseable 
 type RepositoriesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

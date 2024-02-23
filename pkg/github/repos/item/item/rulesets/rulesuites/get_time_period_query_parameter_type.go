@@ -2,7 +2,6 @@ package rulesuites
 import (
     "errors"
 )
-// 
 type GetTime_periodQueryParameterType int
 
 const (

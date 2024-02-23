@@ -9,17 +9,18 @@ type ItemItemSecretScanningRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Alerts the alerts property
+// returns a *ItemItemSecretScanningAlertsRequestBuilder when successful
 func (m *ItemItemSecretScanningRequestBuilder) Alerts()(*ItemItemSecretScanningAlertsRequestBuilder) {
     return NewItemItemSecretScanningAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemSecretScanningRequestBuilderInternal instantiates a new SecretScanningRequestBuilder and sets the default values.
+// NewItemItemSecretScanningRequestBuilderInternal instantiates a new ItemItemSecretScanningRequestBuilder and sets the default values.
 func NewItemItemSecretScanningRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemSecretScanningRequestBuilder) {
     m := &ItemItemSecretScanningRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/secret-scanning", pathParameters),
     }
     return m
 }
-// NewItemItemSecretScanningRequestBuilder instantiates a new SecretScanningRequestBuilder and sets the default values.
+// NewItemItemSecretScanningRequestBuilder instantiates a new ItemItemSecretScanningRequestBuilder and sets the default values.
 func NewItemItemSecretScanningRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemSecretScanningRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

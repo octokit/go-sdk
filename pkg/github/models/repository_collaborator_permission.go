@@ -15,7 +15,7 @@ type RepositoryCollaboratorPermission struct {
     // Collaborator
     user NullableCollaboratorable
 }
-// NewRepositoryCollaboratorPermission instantiates a new repositoryCollaboratorPermission and sets the default values.
+// NewRepositoryCollaboratorPermission instantiates a new RepositoryCollaboratorPermission and sets the default values.
 func NewRepositoryCollaboratorPermission()(*RepositoryCollaboratorPermission) {
     m := &RepositoryCollaboratorPermission{
     }
@@ -23,14 +23,17 @@ func NewRepositoryCollaboratorPermission()(*RepositoryCollaboratorPermission) {
     return m
 }
 // CreateRepositoryCollaboratorPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryCollaboratorPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryCollaboratorPermission(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryCollaboratorPermission) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryCollaboratorPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +69,17 @@ func (m *RepositoryCollaboratorPermission) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetPermission gets the permission property value. The permission property
+// returns a *string when successful
 func (m *RepositoryCollaboratorPermission) GetPermission()(*string) {
     return m.permission
 }
 // GetRoleName gets the role_name property value. The role_name property
+// returns a *string when successful
 func (m *RepositoryCollaboratorPermission) GetRoleName()(*string) {
     return m.role_name
 }
 // GetUser gets the user property value. Collaborator
+// returns a NullableCollaboratorable when successful
 func (m *RepositoryCollaboratorPermission) GetUser()(NullableCollaboratorable) {
     return m.user
 }
@@ -121,7 +127,6 @@ func (m *RepositoryCollaboratorPermission) SetRoleName(value *string)() {
 func (m *RepositoryCollaboratorPermission) SetUser(value NullableCollaboratorable)() {
     m.user = value
 }
-// RepositoryCollaboratorPermissionable 
 type RepositoryCollaboratorPermissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BranchRestrictionPolicy_apps 
 type BranchRestrictionPolicy_apps struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -33,7 +32,7 @@ type BranchRestrictionPolicy_apps struct {
     // The updated_at property
     updated_at *string
 }
-// NewBranchRestrictionPolicy_apps instantiates a new branchRestrictionPolicy_apps and sets the default values.
+// NewBranchRestrictionPolicy_apps instantiates a new BranchRestrictionPolicy_apps and sets the default values.
 func NewBranchRestrictionPolicy_apps()(*BranchRestrictionPolicy_apps) {
     m := &BranchRestrictionPolicy_apps{
     }
@@ -41,30 +40,37 @@ func NewBranchRestrictionPolicy_apps()(*BranchRestrictionPolicy_apps) {
     return m
 }
 // CreateBranchRestrictionPolicy_appsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchRestrictionPolicy_appsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchRestrictionPolicy_apps(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchRestrictionPolicy_apps) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetDescription()(*string) {
     return m.description
 }
 // GetEvents gets the events property value. The events property
+// returns a []string when successful
 func (m *BranchRestrictionPolicy_apps) GetEvents()([]string) {
     return m.events
 }
 // GetExternalUrl gets the external_url property value. The external_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetExternalUrl()(*string) {
     return m.external_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchRestrictionPolicy_apps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -196,34 +202,42 @@ func (m *BranchRestrictionPolicy_apps) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *BranchRestrictionPolicy_apps) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOwner gets the owner property value. The owner property
+// returns a BranchRestrictionPolicy_apps_ownerable when successful
 func (m *BranchRestrictionPolicy_apps) GetOwner()(BranchRestrictionPolicy_apps_ownerable) {
     return m.owner
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a BranchRestrictionPolicy_apps_permissionsable when successful
 func (m *BranchRestrictionPolicy_apps) GetPermissions()(BranchRestrictionPolicy_apps_permissionsable) {
     return m.permissions
 }
 // GetSlug gets the slug property value. The slug property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetSlug()(*string) {
     return m.slug
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetUpdatedAt()(*string) {
     return m.updated_at
 }
@@ -361,7 +375,6 @@ func (m *BranchRestrictionPolicy_apps) SetSlug(value *string)() {
 func (m *BranchRestrictionPolicy_apps) SetUpdatedAt(value *string)() {
     m.updated_at = value
 }
-// BranchRestrictionPolicy_appsable 
 type BranchRestrictionPolicy_appsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

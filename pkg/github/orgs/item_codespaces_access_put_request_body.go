@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemCodespacesAccessPutRequestBody 
 type ItemCodespacesAccessPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,14 +18,17 @@ func NewItemCodespacesAccessPutRequestBody()(*ItemCodespacesAccessPutRequestBody
     return m
 }
 // CreateItemCodespacesAccessPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemCodespacesAccessPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCodespacesAccessPutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemCodespacesAccessPutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemCodespacesAccessPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["selected_usernames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +50,7 @@ func (m *ItemCodespacesAccessPutRequestBody) GetFieldDeserializers()(map[string]
     return res
 }
 // GetSelectedUsernames gets the selected_usernames property value. The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
+// returns a []string when successful
 func (m *ItemCodespacesAccessPutRequestBody) GetSelectedUsernames()([]string) {
     return m.selected_usernames
 }
@@ -75,7 +78,6 @@ func (m *ItemCodespacesAccessPutRequestBody) SetAdditionalData(value map[string]
 func (m *ItemCodespacesAccessPutRequestBody) SetSelectedUsernames(value []string)() {
     m.selected_usernames = value
 }
-// ItemCodespacesAccessPutRequestBodyable 
 type ItemCodespacesAccessPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

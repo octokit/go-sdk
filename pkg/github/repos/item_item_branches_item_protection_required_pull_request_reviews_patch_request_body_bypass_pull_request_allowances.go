@@ -23,18 +23,22 @@ func NewItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestB
     return m
 }
 // CreateItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowancesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowancesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. The list of app `slug`s allowed to bypass pull request requirements.
+// returns a []string when successful
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) GetApps()([]string) {
     return m.apps
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,10 +92,12 @@ func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequest
     return res
 }
 // GetTeams gets the teams property value. The list of team `slug`s allowed to bypass pull request requirements.
+// returns a []string when successful
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) GetTeams()([]string) {
     return m.teams
 }
 // GetUsers gets the users property value. The list of user `login`s allowed to bypass pull request requirements.
+// returns a []string when successful
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) GetUsers()([]string) {
     return m.users
 }
@@ -139,7 +145,6 @@ func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequest
 func (m *ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances) SetUsers(value []string)() {
     m.users = value
 }
-// ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowancesable 
 type ItemItemBranchesItemProtectionRequired_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowancesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

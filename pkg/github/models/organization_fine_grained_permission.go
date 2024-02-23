@@ -13,7 +13,7 @@ type OrganizationFineGrainedPermission struct {
     // The name property
     name *string
 }
-// NewOrganizationFineGrainedPermission instantiates a new organizationFineGrainedPermission and sets the default values.
+// NewOrganizationFineGrainedPermission instantiates a new OrganizationFineGrainedPermission and sets the default values.
 func NewOrganizationFineGrainedPermission()(*OrganizationFineGrainedPermission) {
     m := &OrganizationFineGrainedPermission{
     }
@@ -21,18 +21,22 @@ func NewOrganizationFineGrainedPermission()(*OrganizationFineGrainedPermission) 
     return m
 }
 // CreateOrganizationFineGrainedPermissionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationFineGrainedPermissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationFineGrainedPermission(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationFineGrainedPermission) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *OrganizationFineGrainedPermission) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationFineGrainedPermission) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *OrganizationFineGrainedPermission) GetFieldDeserializers()(map[string]f
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *OrganizationFineGrainedPermission) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *OrganizationFineGrainedPermission) SetDescription(value *string)() {
 func (m *OrganizationFineGrainedPermission) SetName(value *string)() {
     m.name = value
 }
-// OrganizationFineGrainedPermissionable 
 type OrganizationFineGrainedPermissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

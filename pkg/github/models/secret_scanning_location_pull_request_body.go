@@ -11,7 +11,7 @@ type SecretScanningLocationPullRequestBody struct {
     // The API URL to get the pull request where the secret was detected.
     pull_request_body_url *string
 }
-// NewSecretScanningLocationPullRequestBody instantiates a new secretScanningLocationPullRequestBody and sets the default values.
+// NewSecretScanningLocationPullRequestBody instantiates a new SecretScanningLocationPullRequestBody and sets the default values.
 func NewSecretScanningLocationPullRequestBody()(*SecretScanningLocationPullRequestBody) {
     m := &SecretScanningLocationPullRequestBody{
     }
@@ -19,14 +19,17 @@ func NewSecretScanningLocationPullRequestBody()(*SecretScanningLocationPullReque
     return m
 }
 // CreateSecretScanningLocationPullRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecretScanningLocationPullRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecretScanningLocationPullRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecretScanningLocationPullRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecretScanningLocationPullRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["pull_request_body_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *SecretScanningLocationPullRequestBody) GetFieldDeserializers()(map[stri
     return res
 }
 // GetPullRequestBodyUrl gets the pull_request_body_url property value. The API URL to get the pull request where the secret was detected.
+// returns a *string when successful
 func (m *SecretScanningLocationPullRequestBody) GetPullRequestBodyUrl()(*string) {
     return m.pull_request_body_url
 }
@@ -69,7 +73,6 @@ func (m *SecretScanningLocationPullRequestBody) SetAdditionalData(value map[stri
 func (m *SecretScanningLocationPullRequestBody) SetPullRequestBodyUrl(value *string)() {
     m.pull_request_body_url = value
 }
-// SecretScanningLocationPullRequestBodyable 
 type SecretScanningLocationPullRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -44,7 +44,7 @@ type CheckRun struct {
     // The url property
     url *string
 }
-// NewCheckRun instantiates a new checkRun and sets the default values.
+// NewCheckRun instantiates a new CheckRun and sets the default values.
 func NewCheckRun()(*CheckRun) {
     m := &CheckRun{
     }
@@ -52,42 +52,52 @@ func NewCheckRun()(*CheckRun) {
     return m
 }
 // CreateCheckRunFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckRunFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckRun(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckRun) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApp gets the app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *CheckRun) GetApp()(NullableIntegrationable) {
     return m.app
 }
 // GetCheckSuite gets the check_suite property value. The check_suite property
+// returns a CheckRun_check_suiteable when successful
 func (m *CheckRun) GetCheckSuite()(CheckRun_check_suiteable) {
     return m.check_suite
 }
 // GetCompletedAt gets the completed_at property value. The completed_at property
+// returns a *Time when successful
 func (m *CheckRun) GetCompletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completed_at
 }
 // GetConclusion gets the conclusion property value. The conclusion property
+// returns a *CheckRun_conclusion when successful
 func (m *CheckRun) GetConclusion()(*CheckRun_conclusion) {
     return m.conclusion
 }
 // GetDeployment gets the deployment property value. A deployment created as the result of an Actions check run from a workflow that references an environment
+// returns a DeploymentSimpleable when successful
 func (m *CheckRun) GetDeployment()(DeploymentSimpleable) {
     return m.deployment
 }
 // GetDetailsUrl gets the details_url property value. The details_url property
+// returns a *string when successful
 func (m *CheckRun) GetDetailsUrl()(*string) {
     return m.details_url
 }
 // GetExternalId gets the external_id property value. The external_id property
+// returns a *string when successful
 func (m *CheckRun) GetExternalId()(*string) {
     return m.external_id
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["app"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -269,42 +279,52 @@ func (m *CheckRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHeadSha gets the head_sha property value. The SHA of the commit that is being checked.
+// returns a *string when successful
 func (m *CheckRun) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CheckRun) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id of the check.
+// returns a *int32 when successful
 func (m *CheckRun) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the check.
+// returns a *string when successful
 func (m *CheckRun) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *CheckRun) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOutput gets the output property value. The output property
+// returns a CheckRun_outputable when successful
 func (m *CheckRun) GetOutput()(CheckRun_outputable) {
     return m.output
 }
 // GetPullRequests gets the pull_requests property value. Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
+// returns a []PullRequestMinimalable when successful
 func (m *CheckRun) GetPullRequests()([]PullRequestMinimalable) {
     return m.pull_requests
 }
 // GetStartedAt gets the started_at property value. The started_at property
+// returns a *Time when successful
 func (m *CheckRun) GetStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.started_at
 }
 // GetStatus gets the status property value. The phase of the lifecycle that the check is currently in.
+// returns a *CheckRun_status when successful
 func (m *CheckRun) GetStatus()(*CheckRun_status) {
     return m.status
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CheckRun) GetUrl()(*string) {
     return m.url
 }
@@ -500,7 +520,6 @@ func (m *CheckRun) SetStatus(value *CheckRun_status)() {
 func (m *CheckRun) SetUrl(value *string)() {
     m.url = value
 }
-// CheckRunable 
 type CheckRunable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

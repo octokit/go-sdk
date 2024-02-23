@@ -20,7 +20,7 @@ type PendingDeployment struct {
     // The time that the wait timer began.
     wait_timer_started_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewPendingDeployment instantiates a new pendingDeployment and sets the default values.
+// NewPendingDeployment instantiates a new PendingDeployment and sets the default values.
 func NewPendingDeployment()(*PendingDeployment) {
     m := &PendingDeployment{
     }
@@ -28,22 +28,27 @@ func NewPendingDeployment()(*PendingDeployment) {
     return m
 }
 // CreatePendingDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePendingDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPendingDeployment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PendingDeployment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentUserCanApprove gets the current_user_can_approve property value. Whether the currently authenticated user can approve the deployment
+// returns a *bool when successful
 func (m *PendingDeployment) GetCurrentUserCanApprove()(*bool) {
     return m.current_user_can_approve
 }
 // GetEnvironment gets the environment property value. The environment property
+// returns a PendingDeployment_environmentable when successful
 func (m *PendingDeployment) GetEnvironment()(PendingDeployment_environmentable) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PendingDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["current_user_can_approve"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -105,14 +110,17 @@ func (m *PendingDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetReviewers gets the reviewers property value. The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+// returns a []PendingDeployment_reviewersable when successful
 func (m *PendingDeployment) GetReviewers()([]PendingDeployment_reviewersable) {
     return m.reviewers
 }
 // GetWaitTimer gets the wait_timer property value. The set duration of the wait timer
+// returns a *int32 when successful
 func (m *PendingDeployment) GetWaitTimer()(*int32) {
     return m.wait_timer
 }
 // GetWaitTimerStartedAt gets the wait_timer_started_at property value. The time that the wait timer began.
+// returns a *Time when successful
 func (m *PendingDeployment) GetWaitTimerStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.wait_timer_started_at
 }
@@ -186,7 +194,6 @@ func (m *PendingDeployment) SetWaitTimer(value *int32)() {
 func (m *PendingDeployment) SetWaitTimerStartedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.wait_timer_started_at = value
 }
-// PendingDeploymentable 
 type PendingDeploymentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

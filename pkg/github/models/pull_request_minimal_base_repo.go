@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequestMinimal_base_repo 
 type PullRequestMinimal_base_repo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type PullRequestMinimal_base_repo struct {
     // The url property
     url *string
 }
-// NewPullRequestMinimal_base_repo instantiates a new pullRequestMinimal_base_repo and sets the default values.
+// NewPullRequestMinimal_base_repo instantiates a new PullRequestMinimal_base_repo and sets the default values.
 func NewPullRequestMinimal_base_repo()(*PullRequestMinimal_base_repo) {
     m := &PullRequestMinimal_base_repo{
     }
@@ -23,14 +22,17 @@ func NewPullRequestMinimal_base_repo()(*PullRequestMinimal_base_repo) {
     return m
 }
 // CreatePullRequestMinimal_base_repoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestMinimal_base_repoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequestMinimal_base_repo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequestMinimal_base_repo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequestMinimal_base_repo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *PullRequestMinimal_base_repo) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *PullRequestMinimal_base_repo) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PullRequestMinimal_base_repo) GetName()(*string) {
     return m.name
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PullRequestMinimal_base_repo) GetUrl()(*string) {
     return m.url
 }
@@ -121,7 +126,6 @@ func (m *PullRequestMinimal_base_repo) SetName(value *string)() {
 func (m *PullRequestMinimal_base_repo) SetUrl(value *string)() {
     m.url = value
 }
-// PullRequestMinimal_base_repoable 
 type PullRequestMinimal_base_repoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

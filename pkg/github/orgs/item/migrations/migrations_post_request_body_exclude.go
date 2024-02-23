@@ -2,7 +2,6 @@ package migrations
 import (
     "errors"
 )
-// 
 type MigrationsPostRequestBody_exclude int
 
 const (

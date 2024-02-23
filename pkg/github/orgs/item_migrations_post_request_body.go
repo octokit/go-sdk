@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemMigrationsPostRequestBody 
 type ItemMigrationsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -33,34 +32,42 @@ func NewItemMigrationsPostRequestBody()(*ItemMigrationsPostRequestBody) {
     return m
 }
 // CreateItemMigrationsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemMigrationsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemMigrationsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemMigrationsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExcludeAttachments gets the exclude_attachments property value. Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetExcludeAttachments()(*bool) {
     return m.exclude_attachments
 }
 // GetExcludeGitData gets the exclude_git_data property value. Indicates whether the repository git data should be excluded from the migration.
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetExcludeGitData()(*bool) {
     return m.exclude_git_data
 }
 // GetExcludeMetadata gets the exclude_metadata property value. Indicates whether metadata should be excluded and only git source should be included for the migration.
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetExcludeMetadata()(*bool) {
     return m.exclude_metadata
 }
 // GetExcludeOwnerProjects gets the exclude_owner_projects property value. Indicates whether projects owned by the organization or users should be excluded. from the migration.
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetExcludeOwnerProjects()(*bool) {
     return m.exclude_owner_projects
 }
 // GetExcludeReleases gets the exclude_releases property value. Indicates whether releases should be excluded from the migration (to reduce migration archive file size).
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetExcludeReleases()(*bool) {
     return m.exclude_releases
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemMigrationsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["exclude_attachments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -152,14 +159,17 @@ func (m *ItemMigrationsPostRequestBody) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetLockRepositories gets the lock_repositories property value. Indicates whether repositories should be locked (to prevent manipulation) while migrating data.
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetLockRepositories()(*bool) {
     return m.lock_repositories
 }
 // GetOrgMetadataOnly gets the org_metadata_only property value. Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).
+// returns a *bool when successful
 func (m *ItemMigrationsPostRequestBody) GetOrgMetadataOnly()(*bool) {
     return m.org_metadata_only
 }
 // GetRepositories gets the repositories property value. A list of arrays indicating which repositories should be migrated.
+// returns a []string when successful
 func (m *ItemMigrationsPostRequestBody) GetRepositories()([]string) {
     return m.repositories
 }
@@ -257,7 +267,6 @@ func (m *ItemMigrationsPostRequestBody) SetOrgMetadataOnly(value *bool)() {
 func (m *ItemMigrationsPostRequestBody) SetRepositories(value []string)() {
     m.repositories = value
 }
-// ItemMigrationsPostRequestBodyable 
 type ItemMigrationsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

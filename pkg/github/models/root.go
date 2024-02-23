@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Root 
 type Root struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -75,7 +74,7 @@ type Root struct {
     // The user_url property
     user_url *string
 }
-// NewRoot instantiates a new root and sets the default values.
+// NewRoot instantiates a new Root and sets the default values.
 func NewRoot()(*Root) {
     m := &Root{
     }
@@ -83,54 +82,67 @@ func NewRoot()(*Root) {
     return m
 }
 // CreateRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRoot(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Root) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorizationsUrl gets the authorizations_url property value. The authorizations_url property
+// returns a *string when successful
 func (m *Root) GetAuthorizationsUrl()(*string) {
     return m.authorizations_url
 }
 // GetCodeSearchUrl gets the code_search_url property value. The code_search_url property
+// returns a *string when successful
 func (m *Root) GetCodeSearchUrl()(*string) {
     return m.code_search_url
 }
 // GetCommitSearchUrl gets the commit_search_url property value. The commit_search_url property
+// returns a *string when successful
 func (m *Root) GetCommitSearchUrl()(*string) {
     return m.commit_search_url
 }
 // GetCurrentUserAuthorizationsHtmlUrl gets the current_user_authorizations_html_url property value. The current_user_authorizations_html_url property
+// returns a *string when successful
 func (m *Root) GetCurrentUserAuthorizationsHtmlUrl()(*string) {
     return m.current_user_authorizations_html_url
 }
 // GetCurrentUserRepositoriesUrl gets the current_user_repositories_url property value. The current_user_repositories_url property
+// returns a *string when successful
 func (m *Root) GetCurrentUserRepositoriesUrl()(*string) {
     return m.current_user_repositories_url
 }
 // GetCurrentUserUrl gets the current_user_url property value. The current_user_url property
+// returns a *string when successful
 func (m *Root) GetCurrentUserUrl()(*string) {
     return m.current_user_url
 }
 // GetEmailsUrl gets the emails_url property value. The emails_url property
+// returns a *string when successful
 func (m *Root) GetEmailsUrl()(*string) {
     return m.emails_url
 }
 // GetEmojisUrl gets the emojis_url property value. The emojis_url property
+// returns a *string when successful
 func (m *Root) GetEmojisUrl()(*string) {
     return m.emojis_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *Root) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFeedsUrl gets the feeds_url property value. The feeds_url property
+// returns a *string when successful
 func (m *Root) GetFeedsUrl()(*string) {
     return m.feeds_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Root) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authorizations_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -466,94 +478,117 @@ func (m *Root) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *Root) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *Root) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *Root) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetHubUrl gets the hub_url property value. The hub_url property
+// returns a *string when successful
 func (m *Root) GetHubUrl()(*string) {
     return m.hub_url
 }
 // GetIssueSearchUrl gets the issue_search_url property value. The issue_search_url property
+// returns a *string when successful
 func (m *Root) GetIssueSearchUrl()(*string) {
     return m.issue_search_url
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *Root) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetKeysUrl gets the keys_url property value. The keys_url property
+// returns a *string when successful
 func (m *Root) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelSearchUrl gets the label_search_url property value. The label_search_url property
+// returns a *string when successful
 func (m *Root) GetLabelSearchUrl()(*string) {
     return m.label_search_url
 }
 // GetNotificationsUrl gets the notifications_url property value. The notifications_url property
+// returns a *string when successful
 func (m *Root) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOrganizationRepositoriesUrl gets the organization_repositories_url property value. The organization_repositories_url property
+// returns a *string when successful
 func (m *Root) GetOrganizationRepositoriesUrl()(*string) {
     return m.organization_repositories_url
 }
 // GetOrganizationTeamsUrl gets the organization_teams_url property value. The organization_teams_url property
+// returns a *string when successful
 func (m *Root) GetOrganizationTeamsUrl()(*string) {
     return m.organization_teams_url
 }
 // GetOrganizationUrl gets the organization_url property value. The organization_url property
+// returns a *string when successful
 func (m *Root) GetOrganizationUrl()(*string) {
     return m.organization_url
 }
 // GetPublicGistsUrl gets the public_gists_url property value. The public_gists_url property
+// returns a *string when successful
 func (m *Root) GetPublicGistsUrl()(*string) {
     return m.public_gists_url
 }
 // GetRateLimitUrl gets the rate_limit_url property value. The rate_limit_url property
+// returns a *string when successful
 func (m *Root) GetRateLimitUrl()(*string) {
     return m.rate_limit_url
 }
 // GetRepositorySearchUrl gets the repository_search_url property value. The repository_search_url property
+// returns a *string when successful
 func (m *Root) GetRepositorySearchUrl()(*string) {
     return m.repository_search_url
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *Root) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetStarredGistsUrl gets the starred_gists_url property value. The starred_gists_url property
+// returns a *string when successful
 func (m *Root) GetStarredGistsUrl()(*string) {
     return m.starred_gists_url
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *Root) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetTopicSearchUrl gets the topic_search_url property value. The topic_search_url property
+// returns a *string when successful
 func (m *Root) GetTopicSearchUrl()(*string) {
     return m.topic_search_url
 }
 // GetUserOrganizationsUrl gets the user_organizations_url property value. The user_organizations_url property
+// returns a *string when successful
 func (m *Root) GetUserOrganizationsUrl()(*string) {
     return m.user_organizations_url
 }
 // GetUserRepositoriesUrl gets the user_repositories_url property value. The user_repositories_url property
+// returns a *string when successful
 func (m *Root) GetUserRepositoriesUrl()(*string) {
     return m.user_repositories_url
 }
 // GetUserSearchUrl gets the user_search_url property value. The user_search_url property
+// returns a *string when successful
 func (m *Root) GetUserSearchUrl()(*string) {
     return m.user_search_url
 }
 // GetUserUrl gets the user_url property value. The user_url property
+// returns a *string when successful
 func (m *Root) GetUserUrl()(*string) {
     return m.user_url
 }
@@ -901,7 +936,6 @@ func (m *Root) SetUserSearchUrl(value *string)() {
 func (m *Root) SetUserUrl(value *string)() {
     m.user_url = value
 }
-// Rootable 
 type Rootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

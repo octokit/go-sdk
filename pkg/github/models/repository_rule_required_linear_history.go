@@ -11,7 +11,7 @@ type RepositoryRuleRequiredLinearHistory struct {
     // The type property
     typeEscaped *RepositoryRuleRequiredLinearHistory_type
 }
-// NewRepositoryRuleRequiredLinearHistory instantiates a new repositoryRuleRequiredLinearHistory and sets the default values.
+// NewRepositoryRuleRequiredLinearHistory instantiates a new RepositoryRuleRequiredLinearHistory and sets the default values.
 func NewRepositoryRuleRequiredLinearHistory()(*RepositoryRuleRequiredLinearHistory) {
     m := &RepositoryRuleRequiredLinearHistory{
     }
@@ -19,14 +19,17 @@ func NewRepositoryRuleRequiredLinearHistory()(*RepositoryRuleRequiredLinearHisto
     return m
 }
 // CreateRepositoryRuleRequiredLinearHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleRequiredLinearHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleRequiredLinearHistory(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleRequiredLinearHistory) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleRequiredLinearHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *RepositoryRuleRequiredLinearHistory) GetFieldDeserializers()(map[string
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleRequiredLinearHistory_type when successful
 func (m *RepositoryRuleRequiredLinearHistory) GetTypeEscaped()(*RepositoryRuleRequiredLinearHistory_type) {
     return m.typeEscaped
 }
@@ -70,7 +74,6 @@ func (m *RepositoryRuleRequiredLinearHistory) SetAdditionalData(value map[string
 func (m *RepositoryRuleRequiredLinearHistory) SetTypeEscaped(value *RepositoryRuleRequiredLinearHistory_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleRequiredLinearHistoryable 
 type RepositoryRuleRequiredLinearHistoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

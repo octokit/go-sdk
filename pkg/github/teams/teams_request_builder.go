@@ -11,6 +11,7 @@ type TeamsRequestBuilder struct {
 }
 // ByTeam_id gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item collection
 // Deprecated: 
+// returns a *WithTeam_ItemRequestBuilder when successful
 func (m *TeamsRequestBuilder) ByTeam_id(team_id int32)(*WithTeam_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

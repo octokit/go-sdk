@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRuleCommitterEmailPattern_parameters 
 type RepositoryRuleCommitterEmailPattern_parameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type RepositoryRuleCommitterEmailPattern_parameters struct {
     // The pattern to match with.
     pattern *string
 }
-// NewRepositoryRuleCommitterEmailPattern_parameters instantiates a new repositoryRuleCommitterEmailPattern_parameters and sets the default values.
+// NewRepositoryRuleCommitterEmailPattern_parameters instantiates a new RepositoryRuleCommitterEmailPattern_parameters and sets the default values.
 func NewRepositoryRuleCommitterEmailPattern_parameters()(*RepositoryRuleCommitterEmailPattern_parameters) {
     m := &RepositoryRuleCommitterEmailPattern_parameters{
     }
@@ -25,14 +24,17 @@ func NewRepositoryRuleCommitterEmailPattern_parameters()(*RepositoryRuleCommitte
     return m
 }
 // CreateRepositoryRuleCommitterEmailPattern_parametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleCommitterEmailPattern_parametersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleCommitterEmailPattern_parameters(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *RepositoryRuleCommitterEmailPattern_parameters) GetFieldDeserializers()
     return res
 }
 // GetName gets the name property value. How this rule will appear to users.
+// returns a *string when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetName()(*string) {
     return m.name
 }
 // GetNegate gets the negate property value. If true, the rule will fail if the pattern matches.
+// returns a *bool when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetNegate()(*bool) {
     return m.negate
 }
 // GetOperator gets the operator property value. The operator to use for matching.
+// returns a *RepositoryRuleCommitterEmailPattern_parameters_operator when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetOperator()(*RepositoryRuleCommitterEmailPattern_parameters_operator) {
     return m.operator
 }
 // GetPattern gets the pattern property value. The pattern to match with.
+// returns a *string when successful
 func (m *RepositoryRuleCommitterEmailPattern_parameters) GetPattern()(*string) {
     return m.pattern
 }
@@ -148,7 +154,6 @@ func (m *RepositoryRuleCommitterEmailPattern_parameters) SetOperator(value *Repo
 func (m *RepositoryRuleCommitterEmailPattern_parameters) SetPattern(value *string)() {
     m.pattern = value
 }
-// RepositoryRuleCommitterEmailPattern_parametersable 
 type RepositoryRuleCommitterEmailPattern_parametersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

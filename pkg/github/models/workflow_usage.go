@@ -11,7 +11,7 @@ type WorkflowUsage struct {
     // The billable property
     billable WorkflowUsage_billableable
 }
-// NewWorkflowUsage instantiates a new workflowUsage and sets the default values.
+// NewWorkflowUsage instantiates a new WorkflowUsage and sets the default values.
 func NewWorkflowUsage()(*WorkflowUsage) {
     m := &WorkflowUsage{
     }
@@ -19,18 +19,22 @@ func NewWorkflowUsage()(*WorkflowUsage) {
     return m
 }
 // CreateWorkflowUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowUsage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkflowUsage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillable gets the billable property value. The billable property
+// returns a WorkflowUsage_billableable when successful
 func (m *WorkflowUsage) GetBillable()(WorkflowUsage_billableable) {
     return m.billable
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +73,6 @@ func (m *WorkflowUsage) SetAdditionalData(value map[string]any)() {
 func (m *WorkflowUsage) SetBillable(value WorkflowUsage_billableable)() {
     m.billable = value
 }
-// WorkflowUsageable 
 type WorkflowUsageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

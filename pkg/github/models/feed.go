@@ -31,7 +31,7 @@ type Feed struct {
     // The user_url property
     user_url *string
 }
-// NewFeed instantiates a new feed and sets the default values.
+// NewFeed instantiates a new Feed and sets the default values.
 func NewFeed()(*Feed) {
     m := &Feed{
     }
@@ -39,34 +39,42 @@ func NewFeed()(*Feed) {
     return m
 }
 // CreateFeedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFeedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeed(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Feed) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentUserActorUrl gets the current_user_actor_url property value. The current_user_actor_url property
+// returns a *string when successful
 func (m *Feed) GetCurrentUserActorUrl()(*string) {
     return m.current_user_actor_url
 }
 // GetCurrentUserOrganizationUrl gets the current_user_organization_url property value. The current_user_organization_url property
+// returns a *string when successful
 func (m *Feed) GetCurrentUserOrganizationUrl()(*string) {
     return m.current_user_organization_url
 }
 // GetCurrentUserOrganizationUrls gets the current_user_organization_urls property value. The current_user_organization_urls property
+// returns a []string when successful
 func (m *Feed) GetCurrentUserOrganizationUrls()([]string) {
     return m.current_user_organization_urls
 }
 // GetCurrentUserPublicUrl gets the current_user_public_url property value. The current_user_public_url property
+// returns a *string when successful
 func (m *Feed) GetCurrentUserPublicUrl()(*string) {
     return m.current_user_public_url
 }
 // GetCurrentUserUrl gets the current_user_url property value. The current_user_url property
+// returns a *string when successful
 func (m *Feed) GetCurrentUserUrl()(*string) {
     return m.current_user_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Feed) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -188,26 +196,32 @@ func (m *Feed) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetLinks gets the _links property value. The _links property
+// returns a Feed__linksable when successful
 func (m *Feed) GetLinks()(Feed__linksable) {
     return m._links
 }
 // GetRepositoryDiscussionsCategoryUrl gets the repository_discussions_category_url property value. A feed of discussions for a given repository and category.
+// returns a *string when successful
 func (m *Feed) GetRepositoryDiscussionsCategoryUrl()(*string) {
     return m.repository_discussions_category_url
 }
 // GetRepositoryDiscussionsUrl gets the repository_discussions_url property value. A feed of discussions for a given repository.
+// returns a *string when successful
 func (m *Feed) GetRepositoryDiscussionsUrl()(*string) {
     return m.repository_discussions_url
 }
 // GetSecurityAdvisoriesUrl gets the security_advisories_url property value. The security_advisories_url property
+// returns a *string when successful
 func (m *Feed) GetSecurityAdvisoriesUrl()(*string) {
     return m.security_advisories_url
 }
 // GetTimelineUrl gets the timeline_url property value. The timeline_url property
+// returns a *string when successful
 func (m *Feed) GetTimelineUrl()(*string) {
     return m.timeline_url
 }
 // GetUserUrl gets the user_url property value. The user_url property
+// returns a *string when successful
 func (m *Feed) GetUserUrl()(*string) {
     return m.user_url
 }
@@ -335,7 +349,6 @@ func (m *Feed) SetTimelineUrl(value *string)() {
 func (m *Feed) SetUserUrl(value *string)() {
     m.user_url = value
 }
-// Feedable 
 type Feedable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

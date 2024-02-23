@@ -6,7 +6,7 @@ import (
 type CodeScanningDefaultSetup_query_suite int
 
 const (
-    DEFAULTESCAPED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE CodeScanningDefaultSetup_query_suite = iota
+    DEFAULT_CODESCANNINGDEFAULTSETUP_QUERY_SUITE CodeScanningDefaultSetup_query_suite = iota
     EXTENDED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
 )
 
@@ -14,10 +14,10 @@ func (i CodeScanningDefaultSetup_query_suite) String() string {
     return []string{"default", "extended"}[i]
 }
 func ParseCodeScanningDefaultSetup_query_suite(v string) (any, error) {
-    result := DEFAULTESCAPED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
+    result := DEFAULT_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
+            result = DEFAULT_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
         case "extended":
             result = EXTENDED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
         default:

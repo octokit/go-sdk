@@ -11,7 +11,7 @@ type IssueEventMilestone struct {
     // The title property
     title *string
 }
-// NewIssueEventMilestone instantiates a new issueEventMilestone and sets the default values.
+// NewIssueEventMilestone instantiates a new IssueEventMilestone and sets the default values.
 func NewIssueEventMilestone()(*IssueEventMilestone) {
     m := &IssueEventMilestone{
     }
@@ -19,14 +19,17 @@ func NewIssueEventMilestone()(*IssueEventMilestone) {
     return m
 }
 // CreateIssueEventMilestoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventMilestoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueEventMilestone(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueEventMilestone) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventMilestone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *IssueEventMilestone) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *IssueEventMilestone) GetTitle()(*string) {
     return m.title
 }
@@ -69,7 +73,6 @@ func (m *IssueEventMilestone) SetAdditionalData(value map[string]any)() {
 func (m *IssueEventMilestone) SetTitle(value *string)() {
     m.title = value
 }
-// IssueEventMilestoneable 
 type IssueEventMilestoneable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

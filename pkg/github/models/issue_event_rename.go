@@ -13,7 +13,7 @@ type IssueEventRename struct {
     // The to property
     to *string
 }
-// NewIssueEventRename instantiates a new issueEventRename and sets the default values.
+// NewIssueEventRename instantiates a new IssueEventRename and sets the default values.
 func NewIssueEventRename()(*IssueEventRename) {
     m := &IssueEventRename{
     }
@@ -21,14 +21,17 @@ func NewIssueEventRename()(*IssueEventRename) {
     return m
 }
 // CreateIssueEventRenameFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventRenameFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueEventRename(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueEventRename) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventRename) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *IssueEventRename) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFrom gets the from property value. The from property
+// returns a *string when successful
 func (m *IssueEventRename) GetFrom()(*string) {
     return m.from
 }
 // GetTo gets the to property value. The to property
+// returns a *string when successful
 func (m *IssueEventRename) GetTo()(*string) {
     return m.to
 }
@@ -95,7 +100,6 @@ func (m *IssueEventRename) SetFrom(value *string)() {
 func (m *IssueEventRename) SetTo(value *string)() {
     m.to = value
 }
-// IssueEventRenameable 
 type IssueEventRenameable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -24,22 +24,27 @@ func NewItemItemGitTagsPostRequestBody_tagger()(*ItemItemGitTagsPostRequestBody_
     return m
 }
 // CreateItemItemGitTagsPostRequestBody_taggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemGitTagsPostRequestBody_taggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemGitTagsPostRequestBody_tagger(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemGitTagsPostRequestBody_tagger) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDate gets the date property value. When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *ItemItemGitTagsPostRequestBody_tagger) GetDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.date
 }
 // GetEmail gets the email property value. The email of the author of the tag
+// returns a *string when successful
 func (m *ItemItemGitTagsPostRequestBody_tagger) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemGitTagsPostRequestBody_tagger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +80,7 @@ func (m *ItemItemGitTagsPostRequestBody_tagger) GetFieldDeserializers()(map[stri
     return res
 }
 // GetName gets the name property value. The name of the author of the tag
+// returns a *string when successful
 func (m *ItemItemGitTagsPostRequestBody_tagger) GetName()(*string) {
     return m.name
 }
@@ -122,7 +128,6 @@ func (m *ItemItemGitTagsPostRequestBody_tagger) SetEmail(value *string)() {
 func (m *ItemItemGitTagsPostRequestBody_tagger) SetName(value *string)() {
     m.name = value
 }
-// ItemItemGitTagsPostRequestBody_taggerable 
 type ItemItemGitTagsPostRequestBody_taggerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

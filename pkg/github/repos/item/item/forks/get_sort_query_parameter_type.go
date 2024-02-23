@@ -2,7 +2,6 @@ package forks
 import (
     "errors"
 )
-// 
 type GetSortQueryParameterType int
 
 const (

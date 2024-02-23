@@ -2,7 +2,6 @@ package comments
 import (
     "errors"
 )
-// 
 type GetDirectionQueryParameterType int
 
 const (

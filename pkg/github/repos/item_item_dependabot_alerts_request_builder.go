@@ -46,6 +46,7 @@ type ItemItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     State *string `uriparametername:"state"`
 }
 // ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.dependabot.alerts.item collection
+// returns a *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder when successful
 func (m *ItemItemDependabotAlertsRequestBuilder) ByAlert_number(alert_number int32)(*ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -54,20 +55,25 @@ func (m *ItemItemDependabotAlertsRequestBuilder) ByAlert_number(alert_number int
     urlTplParams["alert_number"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(alert_number), 10)
     return NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemDependabotAlertsRequestBuilderInternal instantiates a new AlertsRequestBuilder and sets the default values.
+// NewItemItemDependabotAlertsRequestBuilderInternal instantiates a new ItemItemDependabotAlertsRequestBuilder and sets the default values.
 func NewItemItemDependabotAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotAlertsRequestBuilder) {
     m := &ItemItemDependabotAlertsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,manifest*,package*,page*,per_page*,scope*,severity*,sort*,state*}", pathParameters),
     }
     return m
 }
-// NewItemItemDependabotAlertsRequestBuilder instantiates a new AlertsRequestBuilder and sets the default values.
+// NewItemItemDependabotAlertsRequestBuilder instantiates a new ItemItemDependabotAlertsRequestBuilder and sets the default values.
 func NewItemItemDependabotAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotAlertsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemDependabotAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get oAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a []DependabotAlertable when successful
+// returns a BasicError error when the service returns a 400 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-a-repository
@@ -95,6 +101,7 @@ func (m *ItemItemDependabotAlertsRequestBuilder) Get(ctx context.Context, reques
     return val, nil
 }
 // ToGetRequestInformation oAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a *RequestInformation when successful
 func (m *ItemItemDependabotAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemDependabotAlertsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -102,6 +109,7 @@ func (m *ItemItemDependabotAlertsRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemDependabotAlertsRequestBuilder when successful
 func (m *ItemItemDependabotAlertsRequestBuilder) WithUrl(rawUrl string)(*ItemItemDependabotAlertsRequestBuilder) {
     return NewItemItemDependabotAlertsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

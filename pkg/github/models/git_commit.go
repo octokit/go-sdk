@@ -29,7 +29,7 @@ type GitCommit struct {
     // The verification property
     verification GitCommit_verificationable
 }
-// NewGitCommit instantiates a new gitCommit and sets the default values.
+// NewGitCommit instantiates a new GitCommit and sets the default values.
 func NewGitCommit()(*GitCommit) {
     m := &GitCommit{
     }
@@ -37,22 +37,27 @@ func NewGitCommit()(*GitCommit) {
     return m
 }
 // CreateGitCommitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitCommitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitCommit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitCommit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. Identifying information for the git-user
+// returns a GitCommit_authorable when successful
 func (m *GitCommit) GetAuthor()(GitCommit_authorable) {
     return m.author
 }
 // GetCommitter gets the committer property value. Identifying information for the git-user
+// returns a GitCommit_committerable when successful
 func (m *GitCommit) GetCommitter()(GitCommit_committerable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitCommit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,34 +169,42 @@ func (m *GitCommit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *GitCommit) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetMessage gets the message property value. Message describing the purpose of the commit
+// returns a *string when successful
 func (m *GitCommit) GetMessage()(*string) {
     return m.message
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *GitCommit) GetNodeId()(*string) {
     return m.node_id
 }
 // GetParents gets the parents property value. The parents property
+// returns a []GitCommit_parentsable when successful
 func (m *GitCommit) GetParents()([]GitCommit_parentsable) {
     return m.parents
 }
 // GetSha gets the sha property value. SHA for the commit
+// returns a *string when successful
 func (m *GitCommit) GetSha()(*string) {
     return m.sha
 }
 // GetTree gets the tree property value. The tree property
+// returns a GitCommit_treeable when successful
 func (m *GitCommit) GetTree()(GitCommit_treeable) {
     return m.tree
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GitCommit) GetUrl()(*string) {
     return m.url
 }
 // GetVerification gets the verification property value. The verification property
+// returns a GitCommit_verificationable when successful
 func (m *GitCommit) GetVerification()(GitCommit_verificationable) {
     return m.verification
 }
@@ -315,7 +328,6 @@ func (m *GitCommit) SetUrl(value *string)() {
 func (m *GitCommit) SetVerification(value GitCommit_verificationable)() {
     m.verification = value
 }
-// GitCommitable 
 type GitCommitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

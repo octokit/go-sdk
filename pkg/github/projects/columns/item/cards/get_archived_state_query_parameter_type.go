@@ -2,7 +2,6 @@ package cards
 import (
     "errors"
 )
-// 
 type GetArchived_stateQueryParameterType int
 
 const (

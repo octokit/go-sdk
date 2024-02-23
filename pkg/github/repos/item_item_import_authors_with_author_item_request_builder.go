@@ -10,14 +10,14 @@ import (
 type ItemItemImportAuthorsWithAuthor_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal instantiates a new WithAuthor_ItemRequestBuilder and sets the default values.
+// NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal instantiates a new ItemItemImportAuthorsWithAuthor_ItemRequestBuilder and sets the default values.
 func NewItemItemImportAuthorsWithAuthor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
     m := &ItemItemImportAuthorsWithAuthor_ItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import/authors/{author_id}", pathParameters),
     }
     return m
 }
-// NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder instantiates a new WithAuthor_ItemRequestBuilder and sets the default values.
+// NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder instantiates a new ItemItemImportAuthorsWithAuthor_ItemRequestBuilder and sets the default values.
 func NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -25,6 +25,10 @@ func NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder(rawUrl string, reques
 }
 // Patch update an author's identity for the import. Your application can continue updating authors any time before you pushnew commits to the repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
+// returns a PorterAuthorable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
+// returns a BasicError error when the service returns a 503 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/source-imports#map-a-commit-author
@@ -49,6 +53,7 @@ func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) Patch(ctx context.C
 }
 // ToPatchRequestInformation update an author's identity for the import. Your application can continue updating authors any time before you pushnew commits to the repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
+// returns a *RequestInformation when successful
 func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemImportAuthorsItemWithAuthor_PatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -61,6 +66,7 @@ func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) ToPatchRequestInfor
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: 
+// returns a *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder when successful
 func (m *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) WithUrl(rawUrl string)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {
     return NewItemItemImportAuthorsWithAuthor_ItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

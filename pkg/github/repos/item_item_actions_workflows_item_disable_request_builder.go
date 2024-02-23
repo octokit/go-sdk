@@ -9,14 +9,14 @@ import (
 type ItemItemActionsWorkflowsItemDisableRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemActionsWorkflowsItemDisableRequestBuilderInternal instantiates a new DisableRequestBuilder and sets the default values.
+// NewItemItemActionsWorkflowsItemDisableRequestBuilderInternal instantiates a new ItemItemActionsWorkflowsItemDisableRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemDisableRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemDisableRequestBuilder) {
     m := &ItemItemActionsWorkflowsItemDisableRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/disable", pathParameters),
     }
     return m
 }
-// NewItemItemActionsWorkflowsItemDisableRequestBuilder instantiates a new DisableRequestBuilder and sets the default values.
+// NewItemItemActionsWorkflowsItemDisableRequestBuilder instantiates a new ItemItemActionsWorkflowsItemDisableRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemDisableRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemDisableRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -38,12 +38,14 @@ func (m *ItemItemActionsWorkflowsItemDisableRequestBuilder) Put(ctx context.Cont
     return nil
 }
 // ToPutRequestInformation disables a workflow and sets the `state` of the workflow to `disabled_manually`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemItemActionsWorkflowsItemDisableRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemActionsWorkflowsItemDisableRequestBuilder when successful
 func (m *ItemItemActionsWorkflowsItemDisableRequestBuilder) WithUrl(rawUrl string)(*ItemItemActionsWorkflowsItemDisableRequestBuilder) {
     return NewItemItemActionsWorkflowsItemDisableRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

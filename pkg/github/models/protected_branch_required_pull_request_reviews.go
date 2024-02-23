@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ProtectedBranch_required_pull_request_reviews 
 type ProtectedBranch_required_pull_request_reviews struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,7 +22,7 @@ type ProtectedBranch_required_pull_request_reviews struct {
     // The url property
     url *string
 }
-// NewProtectedBranch_required_pull_request_reviews instantiates a new protectedBranch_required_pull_request_reviews and sets the default values.
+// NewProtectedBranch_required_pull_request_reviews instantiates a new ProtectedBranch_required_pull_request_reviews and sets the default values.
 func NewProtectedBranch_required_pull_request_reviews()(*ProtectedBranch_required_pull_request_reviews) {
     m := &ProtectedBranch_required_pull_request_reviews{
     }
@@ -31,26 +30,32 @@ func NewProtectedBranch_required_pull_request_reviews()(*ProtectedBranch_require
     return m
 }
 // CreateProtectedBranch_required_pull_request_reviewsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectedBranch_required_pull_request_reviewsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectedBranch_required_pull_request_reviews(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBypassPullRequestAllowances gets the bypass_pull_request_allowances property value. The bypass_pull_request_allowances property
+// returns a ProtectedBranch_required_pull_request_reviews_bypass_pull_request_allowancesable when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetBypassPullRequestAllowances()(ProtectedBranch_required_pull_request_reviews_bypass_pull_request_allowancesable) {
     return m.bypass_pull_request_allowances
 }
 // GetDismissalRestrictions gets the dismissal_restrictions property value. The dismissal_restrictions property
+// returns a ProtectedBranch_required_pull_request_reviews_dismissal_restrictionsable when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetDismissalRestrictions()(ProtectedBranch_required_pull_request_reviews_dismissal_restrictionsable) {
     return m.dismissal_restrictions
 }
 // GetDismissStaleReviews gets the dismiss_stale_reviews property value. The dismiss_stale_reviews property
+// returns a *bool when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetDismissStaleReviews()(*bool) {
     return m.dismiss_stale_reviews
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bypass_pull_request_allowances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,18 +131,22 @@ func (m *ProtectedBranch_required_pull_request_reviews) GetFieldDeserializers()(
     return res
 }
 // GetRequireCodeOwnerReviews gets the require_code_owner_reviews property value. The require_code_owner_reviews property
+// returns a *bool when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetRequireCodeOwnerReviews()(*bool) {
     return m.require_code_owner_reviews
 }
 // GetRequiredApprovingReviewCount gets the required_approving_review_count property value. The required_approving_review_count property
+// returns a *int32 when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetRequiredApprovingReviewCount()(*int32) {
     return m.required_approving_review_count
 }
 // GetRequireLastPushApproval gets the require_last_push_approval property value. Whether the most recent push must be approved by someone other than the person who pushed it.
+// returns a *bool when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetRequireLastPushApproval()(*bool) {
     return m.require_last_push_approval
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ProtectedBranch_required_pull_request_reviews) GetUrl()(*string) {
     return m.url
 }
@@ -225,7 +234,6 @@ func (m *ProtectedBranch_required_pull_request_reviews) SetRequireLastPushApprov
 func (m *ProtectedBranch_required_pull_request_reviews) SetUrl(value *string)() {
     m.url = value
 }
-// ProtectedBranch_required_pull_request_reviewsable 
 type ProtectedBranch_required_pull_request_reviewsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

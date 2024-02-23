@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsPostRequestBody 
 type ItemItemPullsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -33,26 +32,32 @@ func NewItemItemPullsPostRequestBody()(*ItemItemPullsPostRequestBody) {
     return m
 }
 // CreateItemItemPullsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBase gets the base property value. The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+// returns a *string when successful
 func (m *ItemItemPullsPostRequestBody) GetBase()(*string) {
     return m.base
 }
 // GetBody gets the body property value. The contents of the pull request.
+// returns a *string when successful
 func (m *ItemItemPullsPostRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetDraft gets the draft property value. Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
+// returns a *bool when successful
 func (m *ItemItemPullsPostRequestBody) GetDraft()(*bool) {
     return m.draft
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["base"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,22 +143,27 @@ func (m *ItemItemPullsPostRequestBody) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHead gets the head property value. The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
+// returns a *string when successful
 func (m *ItemItemPullsPostRequestBody) GetHead()(*string) {
     return m.head
 }
 // GetHeadRepo gets the head_repo property value. The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.
+// returns a *string when successful
 func (m *ItemItemPullsPostRequestBody) GetHeadRepo()(*string) {
     return m.head_repo
 }
 // GetIssue gets the issue property value. An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.
+// returns a *int64 when successful
 func (m *ItemItemPullsPostRequestBody) GetIssue()(*int64) {
     return m.issue
 }
 // GetMaintainerCanModify gets the maintainer_can_modify property value. Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+// returns a *bool when successful
 func (m *ItemItemPullsPostRequestBody) GetMaintainerCanModify()(*bool) {
     return m.maintainer_can_modify
 }
 // GetTitle gets the title property value. The title of the new pull request. Required unless `issue` is specified.
+// returns a *string when successful
 func (m *ItemItemPullsPostRequestBody) GetTitle()(*string) {
     return m.title
 }
@@ -251,7 +261,6 @@ func (m *ItemItemPullsPostRequestBody) SetMaintainerCanModify(value *bool)() {
 func (m *ItemItemPullsPostRequestBody) SetTitle(value *string)() {
     m.title = value
 }
-// ItemItemPullsPostRequestBodyable 
 type ItemItemPullsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodeScanningAlertInstance 
 type CodeScanningAlertInstance struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,7 +28,7 @@ type CodeScanningAlertInstance struct {
     // State of a code scanning alert.
     state *CodeScanningAlertState
 }
-// NewCodeScanningAlertInstance instantiates a new codeScanningAlertInstance and sets the default values.
+// NewCodeScanningAlertInstance instantiates a new CodeScanningAlertInstance and sets the default values.
 func NewCodeScanningAlertInstance()(*CodeScanningAlertInstance) {
     m := &CodeScanningAlertInstance{
     }
@@ -37,34 +36,42 @@ func NewCodeScanningAlertInstance()(*CodeScanningAlertInstance) {
     return m
 }
 // CreateCodeScanningAlertInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningAlertInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningAlertInstance(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningAlertInstance) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnalysisKey gets the analysis_key property value. Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetAnalysisKey()(*string) {
     return m.analysis_key
 }
 // GetCategory gets the category property value. Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetCategory()(*string) {
     return m.category
 }
 // GetClassifications gets the classifications property value. Classifications that have been applied to the file that triggered the alert.For example identifying it as documentation, or a generated file.
+// returns a []CodeScanningAlertClassification when successful
 func (m *CodeScanningAlertInstance) GetClassifications()([]CodeScanningAlertClassification) {
     return m.classifications
 }
 // GetCommitSha gets the commit_sha property value. The commit_sha property
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetCommitSha()(*string) {
     return m.commit_sha
 }
 // GetEnvironment gets the environment property value. Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetEnvironment()(*string) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningAlertInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["analysis_key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -176,22 +183,27 @@ func (m *CodeScanningAlertInstance) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLocation gets the location property value. Describe a region within a file for the alert.
+// returns a CodeScanningAlertLocationable when successful
 func (m *CodeScanningAlertInstance) GetLocation()(CodeScanningAlertLocationable) {
     return m.location
 }
 // GetMessage gets the message property value. The message property
+// returns a CodeScanningAlertInstance_messageable when successful
 func (m *CodeScanningAlertInstance) GetMessage()(CodeScanningAlertInstance_messageable) {
     return m.message
 }
 // GetRef gets the ref property value. The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,`refs/heads/<branch name>` or simply `<branch name>`.
+// returns a *string when successful
 func (m *CodeScanningAlertInstance) GetRef()(*string) {
     return m.ref
 }
 // GetState gets the state property value. State of a code scanning alert.
+// returns a *CodeScanningAlertState when successful
 func (m *CodeScanningAlertInstance) GetState()(*CodeScanningAlertState) {
     return m.state
 }
@@ -310,7 +322,6 @@ func (m *CodeScanningAlertInstance) SetRef(value *string)() {
 func (m *CodeScanningAlertInstance) SetState(value *CodeScanningAlertState)() {
     m.state = value
 }
-// CodeScanningAlertInstanceable 
 type CodeScanningAlertInstanceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

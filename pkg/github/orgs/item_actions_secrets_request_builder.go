@@ -17,6 +17,7 @@ type ItemActionsSecretsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.actions.secrets.item collection
+// returns a *ItemActionsSecretsWithSecret_nameItemRequestBuilder when successful
 func (m *ItemActionsSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemActionsSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -27,20 +28,21 @@ func (m *ItemActionsSecretsRequestBuilder) BySecret_name(secret_name string)(*It
     }
     return NewItemActionsSecretsWithSecret_nameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemActionsSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemActionsSecretsRequestBuilderInternal instantiates a new ItemActionsSecretsRequestBuilder and sets the default values.
 func NewItemActionsSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsSecretsRequestBuilder) {
     m := &ItemActionsSecretsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/actions/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemActionsSecretsRequestBuilder instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemActionsSecretsRequestBuilder instantiates a new ItemActionsSecretsRequestBuilder and sets the default values.
 func NewItemActionsSecretsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsSecretsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemActionsSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all secrets available in an organization without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+// returns a ItemActionsSecretsGetResponseable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/secrets#list-organization-secrets
@@ -59,10 +61,12 @@ func (m *ItemActionsSecretsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ItemActionsSecretsGetResponseable), nil
 }
 // PublicKey the publicKey property
+// returns a *ItemActionsSecretsPublicKeyRequestBuilder when successful
 func (m *ItemActionsSecretsRequestBuilder) PublicKey()(*ItemActionsSecretsPublicKeyRequestBuilder) {
     return NewItemActionsSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists all secrets available in an organization without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
+// returns a *RequestInformation when successful
 func (m *ItemActionsSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemActionsSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +74,7 @@ func (m *ItemActionsSecretsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemActionsSecretsRequestBuilder when successful
 func (m *ItemActionsSecretsRequestBuilder) WithUrl(rawUrl string)(*ItemActionsSecretsRequestBuilder) {
     return NewItemActionsSecretsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -20,20 +20,22 @@ type ItemProjectsRequestBuilderGetQueryParameters struct {
     // Indicates the state of the projects to return.
     State *icca4326a4d3967039c59fe33a86af8ae6f2286dcd8769ed1c103306e802c277c.GetStateQueryParameterType `uriparametername:"state"`
 }
-// NewItemProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
+// NewItemProjectsRequestBuilderInternal instantiates a new ItemProjectsRequestBuilder and sets the default values.
 func NewItemProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProjectsRequestBuilder) {
     m := &ItemProjectsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/projects{?page*,per_page*,state*}", pathParameters),
     }
     return m
 }
-// NewItemProjectsRequestBuilder instantiates a new ProjectsRequestBuilder and sets the default values.
+// NewItemProjectsRequestBuilder instantiates a new ItemProjectsRequestBuilder and sets the default values.
 func NewItemProjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemProjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists projects for a user.
+// returns a []Projectable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/projects#list-user-projects
@@ -58,6 +60,7 @@ func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return val, nil
 }
 // ToGetRequestInformation lists projects for a user.
+// returns a *RequestInformation when successful
 func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemProjectsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -65,6 +68,7 @@ func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemProjectsRequestBuilder when successful
 func (m *ItemProjectsRequestBuilder) WithUrl(rawUrl string)(*ItemProjectsRequestBuilder) {
     return NewItemProjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

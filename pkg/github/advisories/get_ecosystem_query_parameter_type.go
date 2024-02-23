@@ -2,14 +2,13 @@ package advisories
 import (
     "errors"
 )
-// 
 type GetEcosystemQueryParameterType int
 
 const (
     ACTIONS_GETECOSYSTEMQUERYPARAMETERTYPE GetEcosystemQueryParameterType = iota
     COMPOSER_GETECOSYSTEMQUERYPARAMETERTYPE
     ERLANG_GETECOSYSTEMQUERYPARAMETERTYPE
-    GOESCAPED_GETECOSYSTEMQUERYPARAMETERTYPE
+    GO_GETECOSYSTEMQUERYPARAMETERTYPE
     MAVEN_GETECOSYSTEMQUERYPARAMETERTYPE
     NPM_GETECOSYSTEMQUERYPARAMETERTYPE
     NUGET_GETECOSYSTEMQUERYPARAMETERTYPE
@@ -33,7 +32,7 @@ func ParseGetEcosystemQueryParameterType(v string) (any, error) {
         case "erlang":
             result = ERLANG_GETECOSYSTEMQUERYPARAMETERTYPE
         case "go":
-            result = GOESCAPED_GETECOSYSTEMQUERYPARAMETERTYPE
+            result = GO_GETECOSYSTEMQUERYPARAMETERTYPE
         case "maven":
             result = MAVEN_GETECOSYSTEMQUERYPARAMETERTYPE
         case "npm":

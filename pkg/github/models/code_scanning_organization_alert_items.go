@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodeScanningOrganizationAlertItems 
 type CodeScanningOrganizationAlertItems struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -42,7 +41,7 @@ type CodeScanningOrganizationAlertItems struct {
     // The REST API URL of the alert resource.
     url *string
 }
-// NewCodeScanningOrganizationAlertItems instantiates a new codeScanningOrganizationAlertItems and sets the default values.
+// NewCodeScanningOrganizationAlertItems instantiates a new CodeScanningOrganizationAlertItems and sets the default values.
 func NewCodeScanningOrganizationAlertItems()(*CodeScanningOrganizationAlertItems) {
     m := &CodeScanningOrganizationAlertItems{
     }
@@ -50,34 +49,42 @@ func NewCodeScanningOrganizationAlertItems()(*CodeScanningOrganizationAlertItems
     return m
 }
 // CreateCodeScanningOrganizationAlertItemsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningOrganizationAlertItemsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningOrganizationAlertItems(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningOrganizationAlertItems) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *CodeScanningOrganizationAlertItems) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDismissedAt gets the dismissed_at property value. The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *CodeScanningOrganizationAlertItems) GetDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.dismissed_at
 }
 // GetDismissedBy gets the dismissed_by property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *CodeScanningOrganizationAlertItems) GetDismissedBy()(NullableSimpleUserable) {
     return m.dismissed_by
 }
 // GetDismissedComment gets the dismissed_comment property value. The dismissal comment associated with the dismissal of the alert.
+// returns a *string when successful
 func (m *CodeScanningOrganizationAlertItems) GetDismissedComment()(*string) {
     return m.dismissed_comment
 }
 // GetDismissedReason gets the dismissed_reason property value. **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+// returns a *CodeScanningAlertDismissedReason when successful
 func (m *CodeScanningOrganizationAlertItems) GetDismissedReason()(*CodeScanningAlertDismissedReason) {
     return m.dismissed_reason
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningOrganizationAlertItems) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -243,46 +250,57 @@ func (m *CodeScanningOrganizationAlertItems) GetFieldDeserializers()(map[string]
     return res
 }
 // GetFixedAt gets the fixed_at property value. The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *CodeScanningOrganizationAlertItems) GetFixedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.fixed_at
 }
 // GetHtmlUrl gets the html_url property value. The GitHub URL of the alert resource.
+// returns a *string when successful
 func (m *CodeScanningOrganizationAlertItems) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetInstancesUrl gets the instances_url property value. The REST API URL for fetching the list of instances for an alert.
+// returns a *string when successful
 func (m *CodeScanningOrganizationAlertItems) GetInstancesUrl()(*string) {
     return m.instances_url
 }
 // GetMostRecentInstance gets the most_recent_instance property value. The most_recent_instance property
+// returns a CodeScanningAlertInstanceable when successful
 func (m *CodeScanningOrganizationAlertItems) GetMostRecentInstance()(CodeScanningAlertInstanceable) {
     return m.most_recent_instance
 }
 // GetNumber gets the number property value. The security alert number.
+// returns a *int32 when successful
 func (m *CodeScanningOrganizationAlertItems) GetNumber()(*int32) {
     return m.number
 }
 // GetRepository gets the repository property value. A GitHub repository.
+// returns a SimpleRepositoryable when successful
 func (m *CodeScanningOrganizationAlertItems) GetRepository()(SimpleRepositoryable) {
     return m.repository
 }
 // GetRule gets the rule property value. The rule property
+// returns a CodeScanningAlertRuleSummaryable when successful
 func (m *CodeScanningOrganizationAlertItems) GetRule()(CodeScanningAlertRuleSummaryable) {
     return m.rule
 }
 // GetState gets the state property value. State of a code scanning alert.
+// returns a *CodeScanningAlertState when successful
 func (m *CodeScanningOrganizationAlertItems) GetState()(*CodeScanningAlertState) {
     return m.state
 }
 // GetTool gets the tool property value. The tool property
+// returns a CodeScanningAnalysisToolable when successful
 func (m *CodeScanningOrganizationAlertItems) GetTool()(CodeScanningAnalysisToolable) {
     return m.tool
 }
 // GetUpdatedAt gets the updated_at property value. The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *CodeScanningOrganizationAlertItems) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The REST API URL of the alert resource.
+// returns a *string when successful
 func (m *CodeScanningOrganizationAlertItems) GetUrl()(*string) {
     return m.url
 }
@@ -414,7 +432,6 @@ func (m *CodeScanningOrganizationAlertItems) SetUpdatedAt(value *i336074805fc853
 func (m *CodeScanningOrganizationAlertItems) SetUrl(value *string)() {
     m.url = value
 }
-// CodeScanningOrganizationAlertItemsable 
 type CodeScanningOrganizationAlertItemsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

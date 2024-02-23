@@ -2,7 +2,6 @@ package dismissals
 import (
     "errors"
 )
-// 
 type DismissalsPutRequestBody_event int
 
 const (

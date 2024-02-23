@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemRulesetsPostRequestBody 
 type ItemItemRulesetsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -28,26 +27,32 @@ func NewItemItemRulesetsPostRequestBody()(*ItemItemRulesetsPostRequestBody) {
     return m
 }
 // CreateItemItemRulesetsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemRulesetsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemRulesetsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemRulesetsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBypassActors gets the bypass_actors property value. The actors that can bypass the rules in this ruleset
+// returns a []RepositoryRulesetBypassActorable when successful
 func (m *ItemItemRulesetsPostRequestBody) GetBypassActors()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRulesetBypassActorable) {
     return m.bypass_actors
 }
 // GetConditions gets the conditions property value. Parameters for a repository ruleset ref name condition
+// returns a RepositoryRulesetConditionsable when successful
 func (m *ItemItemRulesetsPostRequestBody) GetConditions()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRulesetConditionsable) {
     return m.conditions
 }
 // GetEnforcement gets the enforcement property value. The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+// returns a *RepositoryRuleEnforcement when successful
 func (m *ItemItemRulesetsPostRequestBody) GetEnforcement()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRuleEnforcement) {
     return m.enforcement
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemRulesetsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bypass_actors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -115,10 +120,12 @@ func (m *ItemItemRulesetsPostRequestBody) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetName gets the name property value. The name of the ruleset.
+// returns a *string when successful
 func (m *ItemItemRulesetsPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetRules gets the rules property value. An array of rules within the ruleset.
+// returns a []RepositoryRuleable when successful
 func (m *ItemItemRulesetsPostRequestBody) GetRules()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRuleable) {
     return m.rules
 }
@@ -199,7 +206,6 @@ func (m *ItemItemRulesetsPostRequestBody) SetName(value *string)() {
 func (m *ItemItemRulesetsPostRequestBody) SetRules(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRuleable)() {
     m.rules = value
 }
-// ItemItemRulesetsPostRequestBodyable 
 type ItemItemRulesetsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -18,6 +18,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     Since *int32 `uriparametername:"since"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.users.item collection
+// returns a *WithUsernameItemRequestBuilder when successful
 func (m *UsersRequestBuilder) ByUsername(username string)(*WithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -42,6 +43,7 @@ func NewUsersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewUsersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
+// returns a []SimpleUserable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/users#list-users
@@ -63,6 +65,7 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *i2a
     return val, nil
 }
 // ToGetRequestInformation lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
+// returns a *RequestInformation when successful
 func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[UsersRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +73,7 @@ func (m *UsersRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *UsersRequestBuilder when successful
 func (m *UsersRequestBuilder) WithUrl(rawUrl string)(*UsersRequestBuilder) {
     return NewUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

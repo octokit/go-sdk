@@ -19,7 +19,7 @@ type Integration_permissions struct {
     // The metadata property
     metadata *string
 }
-// NewIntegration_permissions instantiates a new integration_permissions and sets the default values.
+// NewIntegration_permissions instantiates a new Integration_permissions and sets the default values.
 func NewIntegration_permissions()(*Integration_permissions) {
     m := &Integration_permissions{
     }
@@ -27,26 +27,32 @@ func NewIntegration_permissions()(*Integration_permissions) {
     return m
 }
 // CreateIntegration_permissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIntegration_permissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIntegration_permissions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Integration_permissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChecks gets the checks property value. The checks property
+// returns a *string when successful
 func (m *Integration_permissions) GetChecks()(*string) {
     return m.checks
 }
 // GetContents gets the contents property value. The contents property
+// returns a *string when successful
 func (m *Integration_permissions) GetContents()(*string) {
     return m.contents
 }
 // GetDeployments gets the deployments property value. The deployments property
+// returns a *string when successful
 func (m *Integration_permissions) GetDeployments()(*string) {
     return m.deployments
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Integration_permissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,10 +108,12 @@ func (m *Integration_permissions) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetIssues gets the issues property value. The issues property
+// returns a *string when successful
 func (m *Integration_permissions) GetIssues()(*string) {
     return m.issues
 }
 // GetMetadata gets the metadata property value. The metadata property
+// returns a *string when successful
 func (m *Integration_permissions) GetMetadata()(*string) {
     return m.metadata
 }
@@ -173,7 +181,6 @@ func (m *Integration_permissions) SetIssues(value *string)() {
 func (m *Integration_permissions) SetMetadata(value *string)() {
     m.metadata = value
 }
-// Integration_permissionsable 
 type Integration_permissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

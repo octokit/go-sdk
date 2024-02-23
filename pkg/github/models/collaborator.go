@@ -53,7 +53,7 @@ type Collaborator struct {
     // The url property
     url *string
 }
-// NewCollaborator instantiates a new collaborator and sets the default values.
+// NewCollaborator instantiates a new Collaborator and sets the default values.
 func NewCollaborator()(*Collaborator) {
     m := &Collaborator{
     }
@@ -61,26 +61,32 @@ func NewCollaborator()(*Collaborator) {
     return m
 }
 // CreateCollaboratorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCollaboratorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCollaborator(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Collaborator) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Collaborator) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *Collaborator) GetEmail()(*string) {
     return m.email
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *Collaborator) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Collaborator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -306,78 +312,97 @@ func (m *Collaborator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *Collaborator) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *Collaborator) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *Collaborator) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *Collaborator) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Collaborator) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Collaborator) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *Collaborator) GetLogin()(*string) {
     return m.login
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Collaborator) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Collaborator) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
+// returns a *string when successful
 func (m *Collaborator) GetOrganizationsUrl()(*string) {
     return m.organizations_url
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a Collaborator_permissionsable when successful
 func (m *Collaborator) GetPermissions()(Collaborator_permissionsable) {
     return m.permissions
 }
 // GetReceivedEventsUrl gets the received_events_url property value. The received_events_url property
+// returns a *string when successful
 func (m *Collaborator) GetReceivedEventsUrl()(*string) {
     return m.received_events_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *Collaborator) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetRoleName gets the role_name property value. The role_name property
+// returns a *string when successful
 func (m *Collaborator) GetRoleName()(*string) {
     return m.role_name
 }
 // GetSiteAdmin gets the site_admin property value. The site_admin property
+// returns a *bool when successful
 func (m *Collaborator) GetSiteAdmin()(*bool) {
     return m.site_admin
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *Collaborator) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetSubscriptionsUrl gets the subscriptions_url property value. The subscriptions_url property
+// returns a *string when successful
 func (m *Collaborator) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Collaborator) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Collaborator) GetUrl()(*string) {
     return m.url
 }
@@ -615,7 +640,6 @@ func (m *Collaborator) SetTypeEscaped(value *string)() {
 func (m *Collaborator) SetUrl(value *string)() {
     m.url = value
 }
-// Collaboratorable 
 type Collaboratorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

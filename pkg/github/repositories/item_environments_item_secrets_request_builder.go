@@ -17,6 +17,7 @@ type ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item.environments.item.secrets.item collection
+// returns a *ItemEnvironmentsItemSecretsWithSecret_nameItemRequestBuilder when successful
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemEnvironmentsItemSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -27,20 +28,21 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) BySecret_name(secret_name st
     }
     return NewItemEnvironmentsItemSecretsWithSecret_nameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemEnvironmentsItemSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemEnvironmentsItemSecretsRequestBuilderInternal instantiates a new ItemEnvironmentsItemSecretsRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemSecretsRequestBuilder) {
     m := &ItemEnvironmentsItemSecretsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemEnvironmentsItemSecretsRequestBuilder instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemEnvironmentsItemSecretsRequestBuilder instantiates a new ItemEnvironmentsItemSecretsRequestBuilder and sets the default values.
 func NewItemEnvironmentsItemSecretsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEnvironmentsItemSecretsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemEnvironmentsItemSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all secrets available in an environment without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a ItemEnvironmentsItemSecretsGetResponseable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/secrets#list-environment-secrets
@@ -59,10 +61,12 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) Get(ctx context.Context, req
     return res.(ItemEnvironmentsItemSecretsGetResponseable), nil
 }
 // PublicKey the publicKey property
+// returns a *ItemEnvironmentsItemSecretsPublicKeyRequestBuilder when successful
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) PublicKey()(*ItemEnvironmentsItemSecretsPublicKeyRequestBuilder) {
     return NewItemEnvironmentsItemSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists all secrets available in an environment without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEnvironmentsItemSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +74,7 @@ func (m *ItemEnvironmentsItemSecretsRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemEnvironmentsItemSecretsRequestBuilder when successful
 func (m *ItemEnvironmentsItemSecretsRequestBuilder) WithUrl(rawUrl string)(*ItemEnvironmentsItemSecretsRequestBuilder) {
     return NewItemEnvironmentsItemSecretsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

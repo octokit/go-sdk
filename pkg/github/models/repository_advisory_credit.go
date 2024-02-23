@@ -13,17 +13,19 @@ type RepositoryAdvisoryCredit struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewRepositoryAdvisoryCredit instantiates a new repositoryAdvisoryCredit and sets the default values.
+// NewRepositoryAdvisoryCredit instantiates a new RepositoryAdvisoryCredit and sets the default values.
 func NewRepositoryAdvisoryCredit()(*RepositoryAdvisoryCredit) {
     m := &RepositoryAdvisoryCredit{
     }
     return m
 }
 // CreateRepositoryAdvisoryCreditFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryCreditFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryCredit(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryCredit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,14 +61,17 @@ func (m *RepositoryAdvisoryCredit) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetState gets the state property value. The state of the user's acceptance of the credit.
+// returns a *RepositoryAdvisoryCredit_state when successful
 func (m *RepositoryAdvisoryCredit) GetState()(*RepositoryAdvisoryCredit_state) {
     return m.state
 }
 // GetTypeEscaped gets the type property value. The type of credit the user is receiving.
+// returns a *SecurityAdvisoryCreditTypes when successful
 func (m *RepositoryAdvisoryCredit) GetTypeEscaped()(*SecurityAdvisoryCreditTypes) {
     return m.typeEscaped
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *RepositoryAdvisoryCredit) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -106,7 +111,6 @@ func (m *RepositoryAdvisoryCredit) SetTypeEscaped(value *SecurityAdvisoryCreditT
 func (m *RepositoryAdvisoryCredit) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// RepositoryAdvisoryCreditable 
 type RepositoryAdvisoryCreditable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetState()(*RepositoryAdvisoryCredit_state)

@@ -37,7 +37,7 @@ type ContentFile struct {
     // The url property
     url *string
 }
-// NewContentFile instantiates a new contentFile and sets the default values.
+// NewContentFile instantiates a new ContentFile and sets the default values.
 func NewContentFile()(*ContentFile) {
     m := &ContentFile{
     }
@@ -45,26 +45,32 @@ func NewContentFile()(*ContentFile) {
     return m
 }
 // CreateContentFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentFile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContentFile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content property
+// returns a *string when successful
 func (m *ContentFile) GetContent()(*string) {
     return m.content
 }
 // GetDownloadUrl gets the download_url property value. The download_url property
+// returns a *string when successful
 func (m *ContentFile) GetDownloadUrl()(*string) {
     return m.download_url
 }
 // GetEncoding gets the encoding property value. The encoding property
+// returns a *string when successful
 func (m *ContentFile) GetEncoding()(*string) {
     return m.encoding
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -210,46 +216,57 @@ func (m *ContentFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *ContentFile) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *ContentFile) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLinks gets the _links property value. The _links property
+// returns a ContentFile__linksable when successful
 func (m *ContentFile) GetLinks()(ContentFile__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *ContentFile) GetName()(*string) {
     return m.name
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *ContentFile) GetPath()(*string) {
     return m.path
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *ContentFile) GetSha()(*string) {
     return m.sha
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *ContentFile) GetSize()(*int32) {
     return m.size
 }
 // GetSubmoduleGitUrl gets the submodule_git_url property value. The submodule_git_url property
+// returns a *string when successful
 func (m *ContentFile) GetSubmoduleGitUrl()(*string) {
     return m.submodule_git_url
 }
 // GetTarget gets the target property value. The target property
+// returns a *string when successful
 func (m *ContentFile) GetTarget()(*string) {
     return m.target
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *ContentFile_type when successful
 func (m *ContentFile) GetTypeEscaped()(*ContentFile_type) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ContentFile) GetUrl()(*string) {
     return m.url
 }
@@ -408,7 +425,6 @@ func (m *ContentFile) SetTypeEscaped(value *ContentFile_type)() {
 func (m *ContentFile) SetUrl(value *string)() {
     m.url = value
 }
-// ContentFileable 
 type ContentFileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

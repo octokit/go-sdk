@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemCommentsPostRequestBody 
 type ItemItemPullsItemCommentsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -32,22 +31,27 @@ func NewItemItemPullsItemCommentsPostRequestBody()(*ItemItemPullsItemCommentsPos
     return m
 }
 // CreateItemItemPullsItemCommentsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemCommentsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemCommentsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The text of the review comment.
+// returns a *string when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetCommitId gets the commit_id property value. The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the `position`.
+// returns a *string when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,23 +127,28 @@ func (m *ItemItemPullsItemCommentsPostRequestBody) GetFieldDeserializers()(map[s
     return res
 }
 // GetInReplyTo gets the in_reply_to property value. The ID of the review comment to reply to. To find the ID of a review comment with ["List review comments on a pull request"](#list-review-comments-on-a-pull-request). When specified, all parameters other than `body` in the request body are ignored.
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetInReplyTo()(*int32) {
     return m.in_reply_to
 }
 // GetLine gets the line property value. **Required unless using `subject_type:file`**. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to.
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetLine()(*int32) {
     return m.line
 }
 // GetPath gets the path property value. The relative path to the file that necessitates a comment.
+// returns a *string when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. **This parameter is deprecated. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 // Deprecated: 
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetPosition()(*int32) {
     return m.position
 }
 // GetStartLine gets the start_line property value. **Required when using multi-line comments unless using `in_reply_to`**. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetStartLine()(*int32) {
     return m.start_line
 }
@@ -228,7 +237,6 @@ func (m *ItemItemPullsItemCommentsPostRequestBody) SetPosition(value *int32)() {
 func (m *ItemItemPullsItemCommentsPostRequestBody) SetStartLine(value *int32)() {
     m.start_line = value
 }
-// ItemItemPullsItemCommentsPostRequestBodyable 
 type ItemItemPullsItemCommentsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

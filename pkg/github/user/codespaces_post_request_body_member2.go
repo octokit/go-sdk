@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodespacesPostRequestBodyMember2 
 type CodespacesPostRequestBodyMember2 struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,18 +28,22 @@ func NewCodespacesPostRequestBodyMember2()(*CodespacesPostRequestBodyMember2) {
     return m
 }
 // CreateCodespacesPostRequestBodyMember2FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespacesPostRequestBodyMember2FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespacesPostRequestBodyMember2(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespacesPostRequestBodyMember2) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDevcontainerPath gets the devcontainer_path property value. Path to devcontainer.json config to use for this codespace
+// returns a *string when successful
 func (m *CodespacesPostRequestBodyMember2) GetDevcontainerPath()(*string) {
     return m.devcontainer_path
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespacesPostRequestBodyMember2) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["devcontainer_path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,22 +109,27 @@ func (m *CodespacesPostRequestBodyMember2) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetIdleTimeoutMinutes gets the idle_timeout_minutes property value. Time in minutes before codespace stops from inactivity
+// returns a *int32 when successful
 func (m *CodespacesPostRequestBodyMember2) GetIdleTimeoutMinutes()(*int32) {
     return m.idle_timeout_minutes
 }
 // GetLocation gets the location property value. The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+// returns a *string when successful
 func (m *CodespacesPostRequestBodyMember2) GetLocation()(*string) {
     return m.location
 }
 // GetMachine gets the machine property value. Machine type to use for this codespace
+// returns a *string when successful
 func (m *CodespacesPostRequestBodyMember2) GetMachine()(*string) {
     return m.machine
 }
 // GetPullRequest gets the pull_request property value. Pull request number for this codespace
+// returns a CodespacesPostRequestBodyMember2_pull_requestable when successful
 func (m *CodespacesPostRequestBodyMember2) GetPullRequest()(CodespacesPostRequestBodyMember2_pull_requestable) {
     return m.pull_request
 }
 // GetWorkingDirectory gets the working_directory property value. Working directory for this codespace
+// returns a *string when successful
 func (m *CodespacesPostRequestBodyMember2) GetWorkingDirectory()(*string) {
     return m.working_directory
 }
@@ -199,7 +207,6 @@ func (m *CodespacesPostRequestBodyMember2) SetPullRequest(value CodespacesPostRe
 func (m *CodespacesPostRequestBodyMember2) SetWorkingDirectory(value *string)() {
     m.working_directory = value
 }
-// CodespacesPostRequestBodyMember2able 
 type CodespacesPostRequestBodyMember2able interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

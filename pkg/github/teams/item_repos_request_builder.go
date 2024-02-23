@@ -18,6 +18,7 @@ type ItemReposRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item.repos.item collection
+// returns a *ItemReposWithOwnerItemRequestBuilder when successful
 func (m *ItemReposRequestBuilder) ByOwner(owner string)(*ItemReposWithOwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,14 +29,14 @@ func (m *ItemReposRequestBuilder) ByOwner(owner string)(*ItemReposWithOwnerItemR
     }
     return NewItemReposWithOwnerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemReposRequestBuilderInternal instantiates a new ReposRequestBuilder and sets the default values.
+// NewItemReposRequestBuilderInternal instantiates a new ItemReposRequestBuilder and sets the default values.
 func NewItemReposRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReposRequestBuilder) {
     m := &ItemReposRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team_id}/repos{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemReposRequestBuilder instantiates a new ReposRequestBuilder and sets the default values.
+// NewItemReposRequestBuilder instantiates a new ItemReposRequestBuilder and sets the default values.
 func NewItemReposRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReposRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -43,6 +44,8 @@ func NewItemReposRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 }
 // Get **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://docs.github.com/rest/teams/teams#list-team-repositories) endpoint.
 // Deprecated: 
+// returns a []MinimalRepositoryable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/teams/teams#list-team-repositories-legacy
@@ -68,6 +71,7 @@ func (m *ItemReposRequestBuilder) Get(ctx context.Context, requestConfiguration 
 }
 // ToGetRequestInformation **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List team repositories](https://docs.github.com/rest/teams/teams#list-team-repositories) endpoint.
 // Deprecated: 
+// returns a *RequestInformation when successful
 func (m *ItemReposRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemReposRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -76,6 +80,7 @@ func (m *ItemReposRequestBuilder) ToGetRequestInformation(ctx context.Context, r
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: 
+// returns a *ItemReposRequestBuilder when successful
 func (m *ItemReposRequestBuilder) WithUrl(rawUrl string)(*ItemReposRequestBuilder) {
     return NewItemReposRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

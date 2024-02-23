@@ -2,7 +2,6 @@ package orgs
 import (
     "errors"
 )
-// 
 type GetStateQueryParameterType int
 
 const (

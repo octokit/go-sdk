@@ -23,18 +23,22 @@ func NewItemItemOwnerPatchRequestBody_security_and_analysis()(*ItemItemOwnerPatc
     return m
 }
 // CreateItemItemOwnerPatchRequestBody_security_and_analysisFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemOwnerPatchRequestBody_security_and_analysisFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemOwnerPatchRequestBody_security_and_analysis(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdvancedSecurity gets the advanced_security property value. Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+// returns a ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityable when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetAdvancedSecurity()(ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityable) {
     return m.advanced_security
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["advanced_security"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +74,12 @@ func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetFieldDeserializ
     return res
 }
 // GetSecretScanning gets the secret_scanning property value. Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
+// returns a ItemItemOwnerPatchRequestBody_security_and_analysis_secret_scanningable when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetSecretScanning()(ItemItemOwnerPatchRequestBody_security_and_analysis_secret_scanningable) {
     return m.secret_scanning
 }
 // GetSecretScanningPushProtection gets the secret_scanning_push_protection property value. Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
+// returns a ItemItemOwnerPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) GetSecretScanningPushProtection()(ItemItemOwnerPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable) {
     return m.secret_scanning_push_protection
 }
@@ -121,7 +127,6 @@ func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) SetSecretScanning(
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis) SetSecretScanningPushProtection(value ItemItemOwnerPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable)() {
     m.secret_scanning_push_protection = value
 }
-// ItemItemOwnerPatchRequestBody_security_and_analysisable 
 type ItemItemOwnerPatchRequestBody_security_and_analysisable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

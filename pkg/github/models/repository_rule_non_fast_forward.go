@@ -11,7 +11,7 @@ type RepositoryRuleNonFastForward struct {
     // The type property
     typeEscaped *RepositoryRuleNonFastForward_type
 }
-// NewRepositoryRuleNonFastForward instantiates a new repositoryRuleNonFastForward and sets the default values.
+// NewRepositoryRuleNonFastForward instantiates a new RepositoryRuleNonFastForward and sets the default values.
 func NewRepositoryRuleNonFastForward()(*RepositoryRuleNonFastForward) {
     m := &RepositoryRuleNonFastForward{
     }
@@ -19,14 +19,17 @@ func NewRepositoryRuleNonFastForward()(*RepositoryRuleNonFastForward) {
     return m
 }
 // CreateRepositoryRuleNonFastForwardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleNonFastForwardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleNonFastForward(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleNonFastForward) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleNonFastForward) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *RepositoryRuleNonFastForward) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleNonFastForward_type when successful
 func (m *RepositoryRuleNonFastForward) GetTypeEscaped()(*RepositoryRuleNonFastForward_type) {
     return m.typeEscaped
 }
@@ -70,7 +74,6 @@ func (m *RepositoryRuleNonFastForward) SetAdditionalData(value map[string]any)()
 func (m *RepositoryRuleNonFastForward) SetTypeEscaped(value *RepositoryRuleNonFastForward_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleNonFastForwardable 
 type RepositoryRuleNonFastForwardable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

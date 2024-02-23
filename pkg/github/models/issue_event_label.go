@@ -13,7 +13,7 @@ type IssueEventLabel struct {
     // The name property
     name *string
 }
-// NewIssueEventLabel instantiates a new issueEventLabel and sets the default values.
+// NewIssueEventLabel instantiates a new IssueEventLabel and sets the default values.
 func NewIssueEventLabel()(*IssueEventLabel) {
     m := &IssueEventLabel{
     }
@@ -21,18 +21,22 @@ func NewIssueEventLabel()(*IssueEventLabel) {
     return m
 }
 // CreateIssueEventLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueEventLabel(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueEventLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColor gets the color property value. The color property
+// returns a *string when successful
 func (m *IssueEventLabel) GetColor()(*string) {
     return m.color
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *IssueEventLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *IssueEventLabel) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *IssueEventLabel) SetColor(value *string)() {
 func (m *IssueEventLabel) SetName(value *string)() {
     m.name = value
 }
-// IssueEventLabelable 
 type IssueEventLabelable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

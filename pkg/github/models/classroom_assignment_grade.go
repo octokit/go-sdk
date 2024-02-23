@@ -31,7 +31,7 @@ type ClassroomAssignmentGrade struct {
     // Timestamp of the student's assignment submission
     submission_timestamp *string
 }
-// NewClassroomAssignmentGrade instantiates a new classroomAssignmentGrade and sets the default values.
+// NewClassroomAssignmentGrade instantiates a new ClassroomAssignmentGrade and sets the default values.
 func NewClassroomAssignmentGrade()(*ClassroomAssignmentGrade) {
     m := &ClassroomAssignmentGrade{
     }
@@ -39,22 +39,27 @@ func NewClassroomAssignmentGrade()(*ClassroomAssignmentGrade) {
     return m
 }
 // CreateClassroomAssignmentGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassroomAssignmentGradeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassroomAssignmentGrade(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ClassroomAssignmentGrade) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignmentName gets the assignment_name property value. Name of the assignment
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetAssignmentName()(*string) {
     return m.assignment_name
 }
 // GetAssignmentUrl gets the assignment_url property value. URL of the assignment
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetAssignmentUrl()(*string) {
     return m.assignment_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClassroomAssignmentGrade) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignment_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,38 +175,47 @@ func (m *ClassroomAssignmentGrade) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetGithubUsername gets the github_username property value. GitHub username of the student
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetGithubUsername()(*string) {
     return m.github_username
 }
 // GetGroupName gets the group_name property value. If a group assignment, name of the group the student is in
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetGroupName()(*string) {
     return m.group_name
 }
 // GetPointsAvailable gets the points_available property value. Number of points available for the assignment
+// returns a *int32 when successful
 func (m *ClassroomAssignmentGrade) GetPointsAvailable()(*int32) {
     return m.points_available
 }
 // GetPointsAwarded gets the points_awarded property value. Number of points awarded to the student
+// returns a *int32 when successful
 func (m *ClassroomAssignmentGrade) GetPointsAwarded()(*int32) {
     return m.points_awarded
 }
 // GetRosterIdentifier gets the roster_identifier property value. Roster identifier of the student
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetRosterIdentifier()(*string) {
     return m.roster_identifier
 }
 // GetStarterCodeUrl gets the starter_code_url property value. URL of the starter code for the assignment
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetStarterCodeUrl()(*string) {
     return m.starter_code_url
 }
 // GetStudentRepositoryName gets the student_repository_name property value. Name of the student's assignment repository
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetStudentRepositoryName()(*string) {
     return m.student_repository_name
 }
 // GetStudentRepositoryUrl gets the student_repository_url property value. URL of the student's assignment repository
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetStudentRepositoryUrl()(*string) {
     return m.student_repository_url
 }
 // GetSubmissionTimestamp gets the submission_timestamp property value. Timestamp of the student's assignment submission
+// returns a *string when successful
 func (m *ClassroomAssignmentGrade) GetSubmissionTimestamp()(*string) {
     return m.submission_timestamp
 }
@@ -329,7 +343,6 @@ func (m *ClassroomAssignmentGrade) SetStudentRepositoryUrl(value *string)() {
 func (m *ClassroomAssignmentGrade) SetSubmissionTimestamp(value *string)() {
     m.submission_timestamp = value
 }
-// ClassroomAssignmentGradeable 
 type ClassroomAssignmentGradeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -22,7 +22,7 @@ type AuthenticationToken struct {
     // The token used for authentication
     token *string
 }
-// NewAuthenticationToken instantiates a new authenticationToken and sets the default values.
+// NewAuthenticationToken instantiates a new AuthenticationToken and sets the default values.
 func NewAuthenticationToken()(*AuthenticationToken) {
     m := &AuthenticationToken{
     }
@@ -30,18 +30,22 @@ func NewAuthenticationToken()(*AuthenticationToken) {
     return m
 }
 // CreateAuthenticationTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAuthenticationTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAuthenticationToken(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AuthenticationToken) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiresAt gets the expires_at property value. The time this token expires
+// returns a *Time when successful
 func (m *AuthenticationToken) GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expires_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expires_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -113,22 +117,27 @@ func (m *AuthenticationToken) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a AuthenticationToken_permissionsable when successful
 func (m *AuthenticationToken) GetPermissions()(AuthenticationToken_permissionsable) {
     return m.permissions
 }
 // GetRepositories gets the repositories property value. The repositories this token has access to
+// returns a []Repositoryable when successful
 func (m *AuthenticationToken) GetRepositories()([]Repositoryable) {
     return m.repositories
 }
 // GetRepositorySelection gets the repository_selection property value. Describe whether all repositories have been selected or there's a selection involved
+// returns a *AuthenticationToken_repository_selection when successful
 func (m *AuthenticationToken) GetRepositorySelection()(*AuthenticationToken_repository_selection) {
     return m.repository_selection
 }
 // GetSingleFile gets the single_file property value. The single_file property
+// returns a *string when successful
 func (m *AuthenticationToken) GetSingleFile()(*string) {
     return m.single_file
 }
 // GetToken gets the token property value. The token used for authentication
+// returns a *string when successful
 func (m *AuthenticationToken) GetToken()(*string) {
     return m.token
 }
@@ -213,7 +222,6 @@ func (m *AuthenticationToken) SetSingleFile(value *string)() {
 func (m *AuthenticationToken) SetToken(value *string)() {
     m.token = value
 }
-// AuthenticationTokenable 
 type AuthenticationTokenable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

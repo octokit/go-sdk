@@ -31,26 +31,32 @@ func NewItemItemPagesDeploymentsPostRequestBody()(*ItemItemPagesDeploymentsPostR
     return m
 }
 // CreateItemItemPagesDeploymentsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPagesDeploymentsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPagesDeploymentsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArtifactId gets the artifact_id property value. The ID of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+// returns a *float64 when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetArtifactId()(*float64) {
     return m.artifact_id
 }
 // GetArtifactUrl gets the artifact_url property value. The URL of an artifact that contains the .zip or .tar of static assets to deploy. The artifact belongs to the repository. Either `artifact_id` or `artifact_url` are required.
+// returns a *string when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetArtifactUrl()(*string) {
     return m.artifact_url
 }
 // GetEnvironment gets the environment property value. The target environment for this GitHub Pages deployment.
+// returns a *string when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetEnvironment()(*string) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["artifact_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,10 +112,12 @@ func (m *ItemItemPagesDeploymentsPostRequestBody) GetFieldDeserializers()(map[st
     return res
 }
 // GetOidcToken gets the oidc_token property value. The OIDC token issued by GitHub Actions certifying the origin of the deployment.
+// returns a *string when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetOidcToken()(*string) {
     return m.oidc_token
 }
 // GetPagesBuildVersion gets the pages_build_version property value. A unique string that represents the version of the build for this deployment.
+// returns a *string when successful
 func (m *ItemItemPagesDeploymentsPostRequestBody) GetPagesBuildVersion()(*string) {
     return m.pages_build_version
 }
@@ -177,7 +185,6 @@ func (m *ItemItemPagesDeploymentsPostRequestBody) SetOidcToken(value *string)() 
 func (m *ItemItemPagesDeploymentsPostRequestBody) SetPagesBuildVersion(value *string)() {
     m.pages_build_version = value
 }
-// ItemItemPagesDeploymentsPostRequestBodyable 
 type ItemItemPagesDeploymentsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

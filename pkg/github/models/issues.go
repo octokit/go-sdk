@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Issues 
 type Issues struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type Issues struct {
     // The property property
     property *string
 }
-// NewIssues instantiates a new issues and sets the default values.
+// NewIssues instantiates a new Issues and sets the default values.
 func NewIssues()(*Issues) {
     m := &Issues{
     }
@@ -27,14 +26,17 @@ func NewIssues()(*Issues) {
     return m
 }
 // CreateIssuesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssuesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssues(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Issues) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Issues) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fragment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,22 +98,27 @@ func (m *Issues) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetFragment gets the fragment property value. The fragment property
+// returns a *string when successful
 func (m *Issues) GetFragment()(*string) {
     return m.fragment
 }
 // GetMatches gets the matches property value. The matches property
+// returns a []Issues_matchesable when successful
 func (m *Issues) GetMatches()([]Issues_matchesable) {
     return m.matches
 }
 // GetObjectType gets the object_type property value. The object_type property
+// returns a *string when successful
 func (m *Issues) GetObjectType()(*string) {
     return m.object_type
 }
 // GetObjectUrl gets the object_url property value. The object_url property
+// returns a *string when successful
 func (m *Issues) GetObjectUrl()(*string) {
     return m.object_url
 }
 // GetProperty gets the property property value. The property property
+// returns a *string when successful
 func (m *Issues) GetProperty()(*string) {
     return m.property
 }
@@ -185,7 +192,6 @@ func (m *Issues) SetObjectUrl(value *string)() {
 func (m *Issues) SetProperty(value *string)() {
     m.property = value
 }
-// Issuesable 
 type Issuesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

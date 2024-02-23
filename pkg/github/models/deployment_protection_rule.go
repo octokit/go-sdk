@@ -17,7 +17,7 @@ type DeploymentProtectionRule struct {
     // The node ID for the deployment protection rule.
     node_id *string
 }
-// NewDeploymentProtectionRule instantiates a new deploymentProtectionRule and sets the default values.
+// NewDeploymentProtectionRule instantiates a new DeploymentProtectionRule and sets the default values.
 func NewDeploymentProtectionRule()(*DeploymentProtectionRule) {
     m := &DeploymentProtectionRule{
     }
@@ -25,22 +25,27 @@ func NewDeploymentProtectionRule()(*DeploymentProtectionRule) {
     return m
 }
 // CreateDeploymentProtectionRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentProtectionRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentProtectionRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeploymentProtectionRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApp gets the app property value. A GitHub App that is providing a custom deployment protection rule.
+// returns a CustomDeploymentRuleAppable when successful
 func (m *DeploymentProtectionRule) GetApp()(CustomDeploymentRuleAppable) {
     return m.app
 }
 // GetEnabled gets the enabled property value. Whether the deployment protection rule is enabled for the environment.
+// returns a *bool when successful
 func (m *DeploymentProtectionRule) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeploymentProtectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["app"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,10 +91,12 @@ func (m *DeploymentProtectionRule) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetId gets the id property value. The unique identifier for the deployment protection rule.
+// returns a *int32 when successful
 func (m *DeploymentProtectionRule) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node ID for the deployment protection rule.
+// returns a *string when successful
 func (m *DeploymentProtectionRule) GetNodeId()(*string) {
     return m.node_id
 }
@@ -147,7 +154,6 @@ func (m *DeploymentProtectionRule) SetId(value *int32)() {
 func (m *DeploymentProtectionRule) SetNodeId(value *string)() {
     m.node_id = value
 }
-// DeploymentProtectionRuleable 
 type DeploymentProtectionRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

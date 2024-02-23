@@ -21,6 +21,7 @@ type GistsRequestBuilderGetQueryParameters struct {
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`
 }
 // ByGist_id gets an item from the github.com/octokit/go-sdk/pkg/github/.gists.item collection
+// returns a *WithGist_ItemRequestBuilder when successful
 func (m *GistsRequestBuilder) ByGist_id(gist_id string)(*WithGist_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -45,6 +46,8 @@ func NewGistsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewGistsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
+// returns a []BaseGistable when successful
+// returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gists/gists#list-gists-for-the-authenticated-user
@@ -69,6 +72,10 @@ func (m *GistsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2a
     return val, nil
 }
 // Post allows you to add a new gist with one or more files.**Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+// returns a GistSimpleable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gists/gists#create-a-gist
@@ -92,14 +99,17 @@ func (m *GistsRequestBuilder) Post(ctx context.Context, body GistsPostRequestBod
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GistSimpleable), nil
 }
 // Public the public property
+// returns a *PublicRequestBuilder when successful
 func (m *GistsRequestBuilder) Public()(*PublicRequestBuilder) {
     return NewPublicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Starred the starred property
+// returns a *StarredRequestBuilder when successful
 func (m *GistsRequestBuilder) Starred()(*StarredRequestBuilder) {
     return NewStarredRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists the authenticated user's gists or if called anonymously, this endpoint returns all public gists:
+// returns a *RequestInformation when successful
 func (m *GistsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[GistsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -107,8 +117,9 @@ func (m *GistsRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // ToPostRequestInformation allows you to add a new gist with one or more files.**Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+// returns a *RequestInformation when successful
 func (m *GistsRequestBuilder) ToPostRequestInformation(ctx context.Context, body GistsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/gists", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -118,6 +129,7 @@ func (m *GistsRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *GistsRequestBuilder when successful
 func (m *GistsRequestBuilder) WithUrl(rawUrl string)(*GistsRequestBuilder) {
     return NewGistsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

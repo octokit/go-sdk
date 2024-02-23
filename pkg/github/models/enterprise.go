@@ -30,7 +30,7 @@ type Enterprise struct {
     // The enterprise's website URL.
     website_url *string
 }
-// NewEnterprise instantiates a new enterprise and sets the default values.
+// NewEnterprise instantiates a new Enterprise and sets the default values.
 func NewEnterprise()(*Enterprise) {
     m := &Enterprise{
     }
@@ -38,26 +38,32 @@ func NewEnterprise()(*Enterprise) {
     return m
 }
 // CreateEnterpriseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnterpriseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnterprise(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Enterprise) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Enterprise) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Enterprise) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. A short description of the enterprise.
+// returns a *string when successful
 func (m *Enterprise) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Enterprise) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,30 +169,37 @@ func (m *Enterprise) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Enterprise) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the enterprise
+// returns a *int32 when successful
 func (m *Enterprise) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the enterprise.
+// returns a *string when successful
 func (m *Enterprise) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Enterprise) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSlug gets the slug property value. The slug url identifier for the enterprise.
+// returns a *string when successful
 func (m *Enterprise) GetSlug()(*string) {
     return m.slug
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Enterprise) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetWebsiteUrl gets the website_url property value. The enterprise's website URL.
+// returns a *string when successful
 func (m *Enterprise) GetWebsiteUrl()(*string) {
     return m.website_url
 }
@@ -304,7 +317,6 @@ func (m *Enterprise) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *Enterprise) SetWebsiteUrl(value *string)() {
     m.website_url = value
 }
-// Enterpriseable 
 type Enterpriseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

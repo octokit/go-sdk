@@ -101,7 +101,7 @@ type SimpleRepository struct {
     // The URL to get more information about the repository from the GitHub API.
     url *string
 }
-// NewSimpleRepository instantiates a new simpleRepository and sets the default values.
+// NewSimpleRepository instantiates a new SimpleRepository and sets the default values.
 func NewSimpleRepository()(*SimpleRepository) {
     m := &SimpleRepository{
     }
@@ -109,70 +109,87 @@ func NewSimpleRepository()(*SimpleRepository) {
     return m
 }
 // CreateSimpleRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimpleRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimpleRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SimpleRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchiveUrl gets the archive_url property value. A template for the API URL to download the repository as an archive.
+// returns a *string when successful
 func (m *SimpleRepository) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetAssigneesUrl gets the assignees_url property value. A template for the API URL to list the available assignees for issues in the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetAssigneesUrl()(*string) {
     return m.assignees_url
 }
 // GetBlobsUrl gets the blobs_url property value. A template for the API URL to create or retrieve a raw Git blob in the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetBlobsUrl()(*string) {
     return m.blobs_url
 }
 // GetBranchesUrl gets the branches_url property value. A template for the API URL to get information about branches in the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetBranchesUrl()(*string) {
     return m.branches_url
 }
 // GetCollaboratorsUrl gets the collaborators_url property value. A template for the API URL to get information about collaborators of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetCollaboratorsUrl()(*string) {
     return m.collaborators_url
 }
 // GetCommentsUrl gets the comments_url property value. A template for the API URL to get information about comments on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. A template for the API URL to get information about commits on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCompareUrl gets the compare_url property value. A template for the API URL to compare two commits or refs.
+// returns a *string when successful
 func (m *SimpleRepository) GetCompareUrl()(*string) {
     return m.compare_url
 }
 // GetContentsUrl gets the contents_url property value. A template for the API URL to get the contents of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetContributorsUrl gets the contributors_url property value. A template for the API URL to list the contributors to the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetContributorsUrl()(*string) {
     return m.contributors_url
 }
 // GetDeploymentsUrl gets the deployments_url property value. The API URL to list the deployments of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetDeploymentsUrl()(*string) {
     return m.deployments_url
 }
 // GetDescription gets the description property value. The repository description.
+// returns a *string when successful
 func (m *SimpleRepository) GetDescription()(*string) {
     return m.description
 }
 // GetDownloadsUrl gets the downloads_url property value. The API URL to list the downloads on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetDownloadsUrl()(*string) {
     return m.downloads_url
 }
 // GetEventsUrl gets the events_url property value. The API URL to list the events of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimpleRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archive_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -638,130 +655,162 @@ func (m *SimpleRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFork gets the fork property value. Whether the repository is a fork.
+// returns a *bool when successful
 func (m *SimpleRepository) GetFork()(*bool) {
     return m.fork
 }
 // GetForksUrl gets the forks_url property value. The API URL to list the forks of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetFullName gets the full_name property value. The full, globally unique, name of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetGitCommitsUrl gets the git_commits_url property value. A template for the API URL to get information about Git commits of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetGitCommitsUrl()(*string) {
     return m.git_commits_url
 }
 // GetGitRefsUrl gets the git_refs_url property value. A template for the API URL to get information about Git refs of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetGitRefsUrl()(*string) {
     return m.git_refs_url
 }
 // GetGitTagsUrl gets the git_tags_url property value. A template for the API URL to get information about Git tags of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetGitTagsUrl()(*string) {
     return m.git_tags_url
 }
 // GetHooksUrl gets the hooks_url property value. The API URL to list the hooks on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The URL to view the repository on GitHub.com.
+// returns a *string when successful
 func (m *SimpleRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. A unique identifier of the repository.
+// returns a *int32 when successful
 func (m *SimpleRepository) GetId()(*int32) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. A template for the API URL to get information about issue comments on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
 // GetIssueEventsUrl gets the issue_events_url property value. A template for the API URL to get information about issue events on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetIssueEventsUrl()(*string) {
     return m.issue_events_url
 }
 // GetIssuesUrl gets the issues_url property value. A template for the API URL to get information about issues on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetKeysUrl gets the keys_url property value. A template for the API URL to get information about deploy keys on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelsUrl gets the labels_url property value. A template for the API URL to get information about labels of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLanguagesUrl gets the languages_url property value. The API URL to get information about the languages of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetLanguagesUrl()(*string) {
     return m.languages_url
 }
 // GetMergesUrl gets the merges_url property value. The API URL to merge branches in the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetMergesUrl()(*string) {
     return m.merges_url
 }
 // GetMilestonesUrl gets the milestones_url property value. A template for the API URL to get information about milestones of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetMilestonesUrl()(*string) {
     return m.milestones_url
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The GraphQL identifier of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationsUrl gets the notifications_url property value. A template for the API URL to get information about notifications on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *SimpleRepository) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPrivate gets the private property value. Whether the repository is private.
+// returns a *bool when successful
 func (m *SimpleRepository) GetPrivate()(*bool) {
     return m.private
 }
 // GetPullsUrl gets the pulls_url property value. A template for the API URL to get information about pull requests on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetReleasesUrl gets the releases_url property value. A template for the API URL to get information about releases on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
 // GetStargazersUrl gets the stargazers_url property value. The API URL to list the stargazers on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetStargazersUrl()(*string) {
     return m.stargazers_url
 }
 // GetStatusesUrl gets the statuses_url property value. A template for the API URL to get information about statuses of a commit.
+// returns a *string when successful
 func (m *SimpleRepository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetSubscribersUrl gets the subscribers_url property value. The API URL to list the subscribers on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
 }
 // GetSubscriptionUrl gets the subscription_url property value. The API URL to subscribe to notifications for this repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetTagsUrl gets the tags_url property value. The API URL to get information about tags on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetTagsUrl()(*string) {
     return m.tags_url
 }
 // GetTeamsUrl gets the teams_url property value. The API URL to list the teams on the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetTreesUrl gets the trees_url property value. A template for the API URL to create or retrieve a raw Git tree of the repository.
+// returns a *string when successful
 func (m *SimpleRepository) GetTreesUrl()(*string) {
     return m.trees_url
 }
 // GetUrl gets the url property value. The URL to get more information about the repository from the GitHub API.
+// returns a *string when successful
 func (m *SimpleRepository) GetUrl()(*string) {
     return m.url
 }
@@ -1239,7 +1288,6 @@ func (m *SimpleRepository) SetTreesUrl(value *string)() {
 func (m *SimpleRepository) SetUrl(value *string)() {
     m.url = value
 }
-// SimpleRepositoryable 
 type SimpleRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

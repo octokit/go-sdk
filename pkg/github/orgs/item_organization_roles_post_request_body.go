@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemOrganizationRolesPostRequestBody 
 type ItemOrganizationRolesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,18 +22,22 @@ func NewItemOrganizationRolesPostRequestBody()(*ItemOrganizationRolesPostRequest
     return m
 }
 // CreateItemOrganizationRolesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemOrganizationRolesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemOrganizationRolesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemOrganizationRolesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A short description about the intended usage of this role or what permissions it grants.
+// returns a *string when successful
 func (m *ItemOrganizationRolesPostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemOrganizationRolesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,10 +79,12 @@ func (m *ItemOrganizationRolesPostRequestBody) GetFieldDeserializers()(map[strin
     return res
 }
 // GetName gets the name property value. The name of the custom role.
+// returns a *string when successful
 func (m *ItemOrganizationRolesPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetPermissions gets the permissions property value. A list of additional permissions included in this role.
+// returns a []string when successful
 func (m *ItemOrganizationRolesPostRequestBody) GetPermissions()([]string) {
     return m.permissions
 }
@@ -127,7 +132,6 @@ func (m *ItemOrganizationRolesPostRequestBody) SetName(value *string)() {
 func (m *ItemOrganizationRolesPostRequestBody) SetPermissions(value []string)() {
     m.permissions = value
 }
-// ItemOrganizationRolesPostRequestBodyable 
 type ItemOrganizationRolesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

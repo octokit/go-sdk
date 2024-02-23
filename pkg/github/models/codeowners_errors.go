@@ -11,7 +11,7 @@ type CodeownersErrors struct {
     // The errors property
     errors []CodeownersErrors_errorsable
 }
-// NewCodeownersErrors instantiates a new codeownersErrors and sets the default values.
+// NewCodeownersErrors instantiates a new CodeownersErrors and sets the default values.
 func NewCodeownersErrors()(*CodeownersErrors) {
     m := &CodeownersErrors{
     }
@@ -19,18 +19,22 @@ func NewCodeownersErrors()(*CodeownersErrors) {
     return m
 }
 // CreateCodeownersErrorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeownersErrorsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeownersErrors(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeownersErrors) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetErrors gets the errors property value. The errors property
+// returns a []CodeownersErrors_errorsable when successful
 func (m *CodeownersErrors) GetErrors()([]CodeownersErrors_errorsable) {
     return m.errors
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeownersErrors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["errors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,7 +85,6 @@ func (m *CodeownersErrors) SetAdditionalData(value map[string]any)() {
 func (m *CodeownersErrors) SetErrors(value []CodeownersErrors_errorsable)() {
     m.errors = value
 }
-// CodeownersErrorsable 
 type CodeownersErrorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package members
 import (
     "errors"
 )
-// 
 type GetRoleQueryParameterType int
 
 const (

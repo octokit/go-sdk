@@ -13,7 +13,7 @@ type RepositoryRuleTagNamePattern struct {
     // The type property
     typeEscaped *RepositoryRuleTagNamePattern_type
 }
-// NewRepositoryRuleTagNamePattern instantiates a new repositoryRuleTagNamePattern and sets the default values.
+// NewRepositoryRuleTagNamePattern instantiates a new RepositoryRuleTagNamePattern and sets the default values.
 func NewRepositoryRuleTagNamePattern()(*RepositoryRuleTagNamePattern) {
     m := &RepositoryRuleTagNamePattern{
     }
@@ -21,14 +21,17 @@ func NewRepositoryRuleTagNamePattern()(*RepositoryRuleTagNamePattern) {
     return m
 }
 // CreateRepositoryRuleTagNamePatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleTagNamePatternFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleTagNamePattern(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleTagNamePattern) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleTagNamePattern) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *RepositoryRuleTagNamePattern) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
+// returns a RepositoryRuleTagNamePattern_parametersable when successful
 func (m *RepositoryRuleTagNamePattern) GetParameters()(RepositoryRuleTagNamePattern_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleTagNamePattern_type when successful
 func (m *RepositoryRuleTagNamePattern) GetTypeEscaped()(*RepositoryRuleTagNamePattern_type) {
     return m.typeEscaped
 }
@@ -96,7 +101,6 @@ func (m *RepositoryRuleTagNamePattern) SetParameters(value RepositoryRuleTagName
 func (m *RepositoryRuleTagNamePattern) SetTypeEscaped(value *RepositoryRuleTagNamePattern_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleTagNamePatternable 
 type RepositoryRuleTagNamePatternable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

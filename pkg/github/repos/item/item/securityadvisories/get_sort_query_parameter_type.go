@@ -2,7 +2,6 @@ package securityadvisories
 import (
     "errors"
 )
-// 
 type GetSortQueryParameterType int
 
 const (

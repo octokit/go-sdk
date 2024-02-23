@@ -10,14 +10,14 @@ import (
 type ItemItemImportLfsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemImportLfsRequestBuilderInternal instantiates a new LfsRequestBuilder and sets the default values.
+// NewItemItemImportLfsRequestBuilderInternal instantiates a new ItemItemImportLfsRequestBuilder and sets the default values.
 func NewItemItemImportLfsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemImportLfsRequestBuilder) {
     m := &ItemItemImportLfsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import/lfs", pathParameters),
     }
     return m
 }
-// NewItemItemImportLfsRequestBuilder instantiates a new LfsRequestBuilder and sets the default values.
+// NewItemItemImportLfsRequestBuilder instantiates a new ItemItemImportLfsRequestBuilder and sets the default values.
 func NewItemItemImportLfsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemImportLfsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
@@ -25,6 +25,9 @@ func NewItemItemImportLfsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Patch you can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This abilityis powered by [Git LFS](https://git-lfs.com).You can learn more about our LFS feature and working with large files [on our helpsite](https://docs.github.com/repositories/working-with-files/managing-large-files).**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
+// returns a ImportEscapedable when successful
+// returns a ValidationError error when the service returns a 422 status code
+// returns a BasicError error when the service returns a 503 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/source-imports#update-git-lfs-preference
@@ -48,6 +51,7 @@ func (m *ItemItemImportLfsRequestBuilder) Patch(ctx context.Context, body ItemIt
 }
 // ToPatchRequestInformation you can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This abilityis powered by [Git LFS](https://git-lfs.com).You can learn more about our LFS feature and working with large files [on our helpsite](https://docs.github.com/repositories/working-with-files/managing-large-files).**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
+// returns a *RequestInformation when successful
 func (m *ItemItemImportLfsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemImportLfsPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -60,6 +64,7 @@ func (m *ItemItemImportLfsRequestBuilder) ToPatchRequestInformation(ctx context.
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: 
+// returns a *ItemItemImportLfsRequestBuilder when successful
 func (m *ItemItemImportLfsRequestBuilder) WithUrl(rawUrl string)(*ItemItemImportLfsRequestBuilder) {
     return NewItemItemImportLfsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

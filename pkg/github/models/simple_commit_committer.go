@@ -13,7 +13,7 @@ type SimpleCommit_committer struct {
     // Name of the commit's committer
     name *string
 }
-// NewSimpleCommit_committer instantiates a new simpleCommit_committer and sets the default values.
+// NewSimpleCommit_committer instantiates a new SimpleCommit_committer and sets the default values.
 func NewSimpleCommit_committer()(*SimpleCommit_committer) {
     m := &SimpleCommit_committer{
     }
@@ -21,18 +21,22 @@ func NewSimpleCommit_committer()(*SimpleCommit_committer) {
     return m
 }
 // CreateSimpleCommit_committerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimpleCommit_committerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimpleCommit_committer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SimpleCommit_committer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. Git email address of the commit's committer
+// returns a *string when successful
 func (m *SimpleCommit_committer) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimpleCommit_committer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *SimpleCommit_committer) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetName gets the name property value. Name of the commit's committer
+// returns a *string when successful
 func (m *SimpleCommit_committer) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *SimpleCommit_committer) SetEmail(value *string)() {
 func (m *SimpleCommit_committer) SetName(value *string)() {
     m.name = value
 }
-// SimpleCommit_committerable 
 type SimpleCommit_committerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

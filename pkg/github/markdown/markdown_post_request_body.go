@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MarkdownPostRequestBody 
 type MarkdownPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type MarkdownPostRequestBody struct {
     // The Markdown text to render in HTML.
     text *string
 }
-// NewMarkdownPostRequestBody instantiates a new markdownPostRequestBody and sets the default values.
+// NewMarkdownPostRequestBody instantiates a new MarkdownPostRequestBody and sets the default values.
 func NewMarkdownPostRequestBody()(*MarkdownPostRequestBody) {
     m := &MarkdownPostRequestBody{
     }
@@ -25,18 +24,22 @@ func NewMarkdownPostRequestBody()(*MarkdownPostRequestBody) {
     return m
 }
 // CreateMarkdownPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarkdownPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarkdownPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarkdownPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContext gets the context property value. The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
+// returns a *string when successful
 func (m *MarkdownPostRequestBody) GetContext()(*string) {
     return m.context
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarkdownPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["context"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,10 +75,12 @@ func (m *MarkdownPostRequestBody) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetMode gets the mode property value. The rendering mode.
+// returns a *MarkdownPostRequestBody_mode when successful
 func (m *MarkdownPostRequestBody) GetMode()(*MarkdownPostRequestBody_mode) {
     return m.mode
 }
 // GetText gets the text property value. The Markdown text to render in HTML.
+// returns a *string when successful
 func (m *MarkdownPostRequestBody) GetText()(*string) {
     return m.text
 }
@@ -124,7 +129,6 @@ func (m *MarkdownPostRequestBody) SetMode(value *MarkdownPostRequestBody_mode)()
 func (m *MarkdownPostRequestBody) SetText(value *string)() {
     m.text = value
 }
-// MarkdownPostRequestBodyable 
 type MarkdownPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

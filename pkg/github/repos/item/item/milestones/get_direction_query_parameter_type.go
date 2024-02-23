@@ -2,7 +2,6 @@ package milestones
 import (
     "errors"
 )
-// 
 type GetDirectionQueryParameterType int
 
 const (

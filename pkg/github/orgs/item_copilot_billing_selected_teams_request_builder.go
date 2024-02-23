@@ -10,20 +10,25 @@ import (
 type ItemCopilotBillingSelected_teamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemCopilotBillingSelected_teamsRequestBuilderInternal instantiates a new Selected_teamsRequestBuilder and sets the default values.
+// NewItemCopilotBillingSelected_teamsRequestBuilderInternal instantiates a new ItemCopilotBillingSelected_teamsRequestBuilder and sets the default values.
 func NewItemCopilotBillingSelected_teamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCopilotBillingSelected_teamsRequestBuilder) {
     m := &ItemCopilotBillingSelected_teamsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/selected_teams", pathParameters),
     }
     return m
 }
-// NewItemCopilotBillingSelected_teamsRequestBuilder instantiates a new Selected_teamsRequestBuilder and sets the default values.
+// NewItemCopilotBillingSelected_teamsRequestBuilder instantiates a new ItemCopilotBillingSelected_teamsRequestBuilder and sets the default values.
 func NewItemCopilotBillingSelected_teamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCopilotBillingSelected_teamsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCopilotBillingSelected_teamsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete **Note**: This endpoint is in beta and is subject to change.Cancels the Copilot seat assignment for all members of each team specified.This will cause the members of the specified team(s) to lose access to GitHub Copilot at the end of the current billing cycle, and the organization will not be billed further for those users.For more information about Copilot pricing, see "[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)".For more information about disabling access to Copilot Business or Enterprise, see "[Revoking access to GitHub Copilot for specific users in your organization](https://docs.github.com/copilot/managing-copilot/managing-access-for-copilot-in-your-organization#revoking-access-to-github-copilot-for-specific-users-in-your-organization)".Only organization owners can configure GitHub Copilot in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a ItemCopilotBillingSelected_teamsDeleteResponseable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/copilot/copilot-user-management#remove-teams-from-the-copilot-subscription-for-an-organization
@@ -48,6 +53,11 @@ func (m *ItemCopilotBillingSelected_teamsRequestBuilder) Delete(ctx context.Cont
     return res.(ItemCopilotBillingSelected_teamsDeleteResponseable), nil
 }
 // Post **Note**: This endpoint is in beta and is subject to change.Purchases a GitHub Copilot seat for all users within each specified team.The organization will be billed accordingly. For more information about Copilot pricing, see "[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)".Only organization owners can configure GitHub Copilot in their organization.In order for an admin to use this endpoint, the organization must have a Copilot Business or Enterprise subscription and a configured suggestion matching policy.For more information about setting up a Copilot subscription, see "[Setting up a Copilot subscription for your organization](https://docs.github.com/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-organization-or-enterprise)".For more information about setting a suggestion matching policy, see "[Configuring suggestion matching policies for GitHub Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-github-copilot-in-your-organization#configuring-suggestion-matching-policies-for-github-copilot-in-your-organization)".OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a ItemCopilotBillingSelected_teamsPostResponseable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/copilot/copilot-user-management#add-teams-to-the-copilot-subscription-for-an-organization
@@ -72,6 +82,7 @@ func (m *ItemCopilotBillingSelected_teamsRequestBuilder) Post(ctx context.Contex
     return res.(ItemCopilotBillingSelected_teamsPostResponseable), nil
 }
 // ToDeleteRequestInformation **Note**: This endpoint is in beta and is subject to change.Cancels the Copilot seat assignment for all members of each team specified.This will cause the members of the specified team(s) to lose access to GitHub Copilot at the end of the current billing cycle, and the organization will not be billed further for those users.For more information about Copilot pricing, see "[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)".For more information about disabling access to Copilot Business or Enterprise, see "[Revoking access to GitHub Copilot for specific users in your organization](https://docs.github.com/copilot/managing-copilot/managing-access-for-copilot-in-your-organization#revoking-access-to-github-copilot-for-specific-users-in-your-organization)".Only organization owners can configure GitHub Copilot in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemCopilotBillingSelected_teamsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body ItemCopilotBillingSelected_teamsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -83,6 +94,7 @@ func (m *ItemCopilotBillingSelected_teamsRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToPostRequestInformation **Note**: This endpoint is in beta and is subject to change.Purchases a GitHub Copilot seat for all users within each specified team.The organization will be billed accordingly. For more information about Copilot pricing, see "[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)".Only organization owners can configure GitHub Copilot in their organization.In order for an admin to use this endpoint, the organization must have a Copilot Business or Enterprise subscription and a configured suggestion matching policy.For more information about setting up a Copilot subscription, see "[Setting up a Copilot subscription for your organization](https://docs.github.com/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-organization-or-enterprise)".For more information about setting a suggestion matching policy, see "[Configuring suggestion matching policies for GitHub Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-github-copilot-in-your-organization#configuring-suggestion-matching-policies-for-github-copilot-in-your-organization)".OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemCopilotBillingSelected_teamsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCopilotBillingSelected_teamsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -94,6 +106,7 @@ func (m *ItemCopilotBillingSelected_teamsRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCopilotBillingSelected_teamsRequestBuilder when successful
 func (m *ItemCopilotBillingSelected_teamsRequestBuilder) WithUrl(rawUrl string)(*ItemCopilotBillingSelected_teamsRequestBuilder) {
     return NewItemCopilotBillingSelected_teamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

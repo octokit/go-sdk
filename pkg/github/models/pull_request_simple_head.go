@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequestSimple_head 
 type PullRequestSimple_head struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type PullRequestSimple_head struct {
     // A GitHub user.
     user NullableSimpleUserable
 }
-// NewPullRequestSimple_head instantiates a new pullRequestSimple_head and sets the default values.
+// NewPullRequestSimple_head instantiates a new PullRequestSimple_head and sets the default values.
 func NewPullRequestSimple_head()(*PullRequestSimple_head) {
     m := &PullRequestSimple_head{
     }
@@ -27,14 +26,17 @@ func NewPullRequestSimple_head()(*PullRequestSimple_head) {
     return m
 }
 // CreatePullRequestSimple_headFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestSimple_headFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequestSimple_head(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequestSimple_head) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequestSimple_head) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,22 +92,27 @@ func (m *PullRequestSimple_head) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetLabel gets the label property value. The label property
+// returns a *string when successful
 func (m *PullRequestSimple_head) GetLabel()(*string) {
     return m.label
 }
 // GetRef gets the ref property value. The ref property
+// returns a *string when successful
 func (m *PullRequestSimple_head) GetRef()(*string) {
     return m.ref
 }
 // GetRepo gets the repo property value. A repository on GitHub.
+// returns a Repositoryable when successful
 func (m *PullRequestSimple_head) GetRepo()(Repositoryable) {
     return m.repo
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *PullRequestSimple_head) GetSha()(*string) {
     return m.sha
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *PullRequestSimple_head) GetUser()(NullableSimpleUserable) {
     return m.user
 }
@@ -173,7 +180,6 @@ func (m *PullRequestSimple_head) SetSha(value *string)() {
 func (m *PullRequestSimple_head) SetUser(value NullableSimpleUserable)() {
     m.user = value
 }
-// PullRequestSimple_headable 
 type PullRequestSimple_headable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -80,7 +80,7 @@ type IssueSearchResultItem struct {
     // A GitHub user.
     user NullableSimpleUserable
 }
-// NewIssueSearchResultItem instantiates a new issueSearchResultItem and sets the default values.
+// NewIssueSearchResultItem instantiates a new IssueSearchResultItem and sets the default values.
 func NewIssueSearchResultItem()(*IssueSearchResultItem) {
     m := &IssueSearchResultItem{
     }
@@ -88,66 +88,82 @@ func NewIssueSearchResultItem()(*IssueSearchResultItem) {
     return m
 }
 // CreateIssueSearchResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueSearchResultItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueSearchResultItem(), nil
 }
 // GetActiveLockReason gets the active_lock_reason property value. The active_lock_reason property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetActiveLockReason()(*string) {
     return m.active_lock_reason
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueSearchResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignee gets the assignee property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *IssueSearchResultItem) GetAssignee()(NullableSimpleUserable) {
     return m.assignee
 }
 // GetAssignees gets the assignees property value. The assignees property
+// returns a []SimpleUserable when successful
 func (m *IssueSearchResultItem) GetAssignees()([]SimpleUserable) {
     return m.assignees
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *IssueSearchResultItem) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetBodyText()(*string) {
     return m.body_text
 }
 // GetClosedAt gets the closed_at property value. The closed_at property
+// returns a *Time when successful
 func (m *IssueSearchResultItem) GetClosedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.closed_at
 }
 // GetComments gets the comments property value. The comments property
+// returns a *int32 when successful
 func (m *IssueSearchResultItem) GetComments()(*int32) {
     return m.comments
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *IssueSearchResultItem) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDraft gets the draft property value. The draft property
+// returns a *bool when successful
 func (m *IssueSearchResultItem) GetDraft()(*bool) {
     return m.draft
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["active_lock_reason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -521,90 +537,112 @@ func (m *IssueSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int64 when successful
 func (m *IssueSearchResultItem) GetId()(*int64) {
     return m.id
 }
 // GetLabels gets the labels property value. The labels property
+// returns a []IssueSearchResultItem_labelsable when successful
 func (m *IssueSearchResultItem) GetLabels()([]IssueSearchResultItem_labelsable) {
     return m.labels
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLocked gets the locked property value. The locked property
+// returns a *bool when successful
 func (m *IssueSearchResultItem) GetLocked()(*bool) {
     return m.locked
 }
 // GetMilestone gets the milestone property value. A collection of related issues and pull requests.
+// returns a NullableMilestoneable when successful
 func (m *IssueSearchResultItem) GetMilestone()(NullableMilestoneable) {
     return m.milestone
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. The number property
+// returns a *int32 when successful
 func (m *IssueSearchResultItem) GetNumber()(*int32) {
     return m.number
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *IssueSearchResultItem) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetPullRequest gets the pull_request property value. The pull_request property
+// returns a IssueSearchResultItem_pull_requestable when successful
 func (m *IssueSearchResultItem) GetPullRequest()(IssueSearchResultItem_pull_requestable) {
     return m.pull_request
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *IssueSearchResultItem) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetRepository gets the repository property value. A repository on GitHub.
+// returns a Repositoryable when successful
 func (m *IssueSearchResultItem) GetRepository()(Repositoryable) {
     return m.repository
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetScore gets the score property value. The score property
+// returns a *float64 when successful
 func (m *IssueSearchResultItem) GetScore()(*float64) {
     return m.score
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetState()(*string) {
     return m.state
 }
 // GetStateReason gets the state_reason property value. The state_reason property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetStateReason()(*string) {
     return m.state_reason
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
+// returns a []Issuesable when successful
 func (m *IssueSearchResultItem) GetTextMatches()([]Issuesable) {
     return m.text_matches
 }
 // GetTimelineUrl gets the timeline_url property value. The timeline_url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetTimelineUrl()(*string) {
     return m.timeline_url
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetTitle()(*string) {
     return m.title
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *IssueSearchResultItem) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *IssueSearchResultItem) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *IssueSearchResultItem) GetUser()(NullableSimpleUserable) {
     return m.user
 }
@@ -991,7 +1029,6 @@ func (m *IssueSearchResultItem) SetUrl(value *string)() {
 func (m *IssueSearchResultItem) SetUser(value NullableSimpleUserable)() {
     m.user = value
 }
-// IssueSearchResultItemable 
 type IssueSearchResultItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

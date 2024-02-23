@@ -24,20 +24,21 @@ type ItemReposRequestBuilderGetQueryParameters struct {
     // Limit results to repositories of the specified type.
     Type *i487dd991a050255d595716157a2da48d14b5f796b611f60abee72f569fd2147b.GetTypeQueryParameterType `uriparametername:"type"`
 }
-// NewItemReposRequestBuilderInternal instantiates a new ReposRequestBuilder and sets the default values.
+// NewItemReposRequestBuilderInternal instantiates a new ItemReposRequestBuilder and sets the default values.
 func NewItemReposRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReposRequestBuilder) {
     m := &ItemReposRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/repos{?direction*,page*,per_page*,sort*,type*}", pathParameters),
     }
     return m
 }
-// NewItemReposRequestBuilder instantiates a new ReposRequestBuilder and sets the default values.
+// NewItemReposRequestBuilder instantiates a new ItemReposRequestBuilder and sets the default values.
 func NewItemReposRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemReposRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemReposRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists public repositories for the specified user.
+// returns a []MinimalRepositoryable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/repos#list-repositories-for-a-user
@@ -59,6 +60,7 @@ func (m *ItemReposRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return val, nil
 }
 // ToGetRequestInformation lists public repositories for the specified user.
+// returns a *RequestInformation when successful
 func (m *ItemReposRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemReposRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -66,6 +68,7 @@ func (m *ItemReposRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemReposRequestBuilder when successful
 func (m *ItemReposRequestBuilder) WithUrl(rawUrl string)(*ItemReposRequestBuilder) {
     return NewItemReposRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

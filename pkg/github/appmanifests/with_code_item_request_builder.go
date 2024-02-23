@@ -22,6 +22,7 @@ func NewWithCodeItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewWithCodeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Conversions the conversions property
+// returns a *ItemConversionsRequestBuilder when successful
 func (m *WithCodeItemRequestBuilder) Conversions()(*ItemConversionsRequestBuilder) {
     return NewItemConversionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

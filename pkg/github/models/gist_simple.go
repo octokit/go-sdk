@@ -53,7 +53,7 @@ type GistSimple struct {
     // The user property
     user *string
 }
-// NewGistSimple instantiates a new gistSimple and sets the default values.
+// NewGistSimple instantiates a new GistSimple and sets the default values.
 func NewGistSimple()(*GistSimple) {
     m := &GistSimple{
     }
@@ -61,34 +61,42 @@ func NewGistSimple()(*GistSimple) {
     return m
 }
 // CreateGistSimpleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGistSimpleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGistSimple(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GistSimple) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComments gets the comments property value. The comments property
+// returns a *int32 when successful
 func (m *GistSimple) GetComments()(*int32) {
     return m.comments
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *GistSimple) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *GistSimple) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *GistSimple) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *GistSimple) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GistSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -316,68 +324,84 @@ func (m *GistSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFiles gets the files property value. The files property
+// returns a GistSimple_filesable when successful
 func (m *GistSimple) GetFiles()(GistSimple_filesable) {
     return m.files
 }
 // GetForkOf gets the fork_of property value. Gist
+// returns a GistSimple_fork_ofable when successful
 func (m *GistSimple) GetForkOf()(GistSimple_fork_ofable) {
     return m.fork_of
 }
 // GetForks gets the forks property value. The forks property
 // Deprecated: 
+// returns a []GistSimple_forksable when successful
 func (m *GistSimple) GetForks()([]GistSimple_forksable) {
     return m.forks
 }
 // GetForksUrl gets the forks_url property value. The forks_url property
+// returns a *string when successful
 func (m *GistSimple) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetGitPullUrl gets the git_pull_url property value. The git_pull_url property
+// returns a *string when successful
 func (m *GistSimple) GetGitPullUrl()(*string) {
     return m.git_pull_url
 }
 // GetGitPushUrl gets the git_push_url property value. The git_push_url property
+// returns a *string when successful
 func (m *GistSimple) GetGitPushUrl()(*string) {
     return m.git_push_url
 }
 // GetHistory gets the history property value. The history property
 // Deprecated: 
+// returns a []GistHistoryable when successful
 func (m *GistSimple) GetHistory()([]GistHistoryable) {
     return m.history
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *GistSimple) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *string when successful
 func (m *GistSimple) GetId()(*string) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *GistSimple) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *GistSimple) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPublic gets the public property value. The public property
+// returns a *bool when successful
 func (m *GistSimple) GetPublic()(*bool) {
     return m.public
 }
 // GetTruncated gets the truncated property value. The truncated property
+// returns a *bool when successful
 func (m *GistSimple) GetTruncated()(*bool) {
     return m.truncated
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *GistSimple) GetUpdatedAt()(*string) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GistSimple) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. The user property
+// returns a *string when successful
 func (m *GistSimple) GetUser()(*string) {
     return m.user
 }
@@ -619,7 +643,6 @@ func (m *GistSimple) SetUrl(value *string)() {
 func (m *GistSimple) SetUser(value *string)() {
     m.user = value
 }
-// GistSimpleable 
 type GistSimpleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

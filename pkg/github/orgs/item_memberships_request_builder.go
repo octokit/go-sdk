@@ -9,6 +9,7 @@ type ItemMembershipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.memberships.item collection
+// returns a *ItemMembershipsWithUsernameItemRequestBuilder when successful
 func (m *ItemMembershipsRequestBuilder) ByUsername(username string)(*ItemMembershipsWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,14 +20,14 @@ func (m *ItemMembershipsRequestBuilder) ByUsername(username string)(*ItemMembers
     }
     return NewItemMembershipsWithUsernameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemMembershipsRequestBuilderInternal instantiates a new MembershipsRequestBuilder and sets the default values.
+// NewItemMembershipsRequestBuilderInternal instantiates a new ItemMembershipsRequestBuilder and sets the default values.
 func NewItemMembershipsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembershipsRequestBuilder) {
     m := &ItemMembershipsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/memberships", pathParameters),
     }
     return m
 }
-// NewItemMembershipsRequestBuilder instantiates a new MembershipsRequestBuilder and sets the default values.
+// NewItemMembershipsRequestBuilder instantiates a new ItemMembershipsRequestBuilder and sets the default values.
 func NewItemMembershipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembershipsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

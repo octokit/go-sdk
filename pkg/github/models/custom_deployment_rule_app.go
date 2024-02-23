@@ -17,7 +17,7 @@ type CustomDeploymentRuleApp struct {
     // The slugified name of the deployment protection rule integration.
     slug *string
 }
-// NewCustomDeploymentRuleApp instantiates a new customDeploymentRuleApp and sets the default values.
+// NewCustomDeploymentRuleApp instantiates a new CustomDeploymentRuleApp and sets the default values.
 func NewCustomDeploymentRuleApp()(*CustomDeploymentRuleApp) {
     m := &CustomDeploymentRuleApp{
     }
@@ -25,14 +25,17 @@ func NewCustomDeploymentRuleApp()(*CustomDeploymentRuleApp) {
     return m
 }
 // CreateCustomDeploymentRuleAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomDeploymentRuleAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomDeploymentRuleApp(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomDeploymentRuleApp) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomDeploymentRuleApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *CustomDeploymentRuleApp) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetId gets the id property value. The unique identifier of the deployment protection rule integration.
+// returns a *int32 when successful
 func (m *CustomDeploymentRuleApp) GetId()(*int32) {
     return m.id
 }
 // GetIntegrationUrl gets the integration_url property value. The URL for the endpoint to get details about the app.
+// returns a *string when successful
 func (m *CustomDeploymentRuleApp) GetIntegrationUrl()(*string) {
     return m.integration_url
 }
 // GetNodeId gets the node_id property value. The node ID for the deployment protection rule integration.
+// returns a *string when successful
 func (m *CustomDeploymentRuleApp) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSlug gets the slug property value. The slugified name of the deployment protection rule integration.
+// returns a *string when successful
 func (m *CustomDeploymentRuleApp) GetSlug()(*string) {
     return m.slug
 }
@@ -147,7 +154,6 @@ func (m *CustomDeploymentRuleApp) SetNodeId(value *string)() {
 func (m *CustomDeploymentRuleApp) SetSlug(value *string)() {
     m.slug = value
 }
-// CustomDeploymentRuleAppable 
 type CustomDeploymentRuleAppable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

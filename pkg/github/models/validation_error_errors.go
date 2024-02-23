@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ValidationError_errors 
 type ValidationError_errors struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,20 +20,21 @@ type ValidationError_errors struct {
     // The value property
     value ValidationError_errors_ValidationError_errors_valueable
 }
-// ValidationError_errors_ValidationError_errors_value composed type wrapper for classes integer, string
+// ValidationError_errors_ValidationError_errors_value composed type wrapper for classes int32, string
 type ValidationError_errors_ValidationError_errors_value struct {
-    // Composed type representation for type integer
+    // Composed type representation for type int32
     integer *int32
     // Composed type representation for type string
     string *string
 }
-// NewValidationError_errors_ValidationError_errors_value instantiates a new validationError_errors_value and sets the default values.
+// NewValidationError_errors_ValidationError_errors_value instantiates a new ValidationError_errors_ValidationError_errors_value and sets the default values.
 func NewValidationError_errors_ValidationError_errors_value()(*ValidationError_errors_ValidationError_errors_value) {
     m := &ValidationError_errors_ValidationError_errors_value{
     }
     return m
 }
 // CreateValidationError_errors_ValidationError_errors_valueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateValidationError_errors_ValidationError_errors_valueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewValidationError_errors_ValidationError_errors_value()
     if parseNode != nil {
@@ -65,18 +65,22 @@ func CreateValidationError_errors_ValidationError_errors_valueFromDiscriminatorV
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ValidationError_errors_ValidationError_errors_value) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
-// GetInteger gets the integer property value. Composed type representation for type integer
+// GetInteger gets the integer property value. Composed type representation for type int32
+// returns a *int32 when successful
 func (m *ValidationError_errors_ValidationError_errors_value) GetInteger()(*int32) {
     return m.integer
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *ValidationError_errors_ValidationError_errors_value) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *ValidationError_errors_ValidationError_errors_value) GetString()(*string) {
     return m.string
 }
@@ -95,7 +99,7 @@ func (m *ValidationError_errors_ValidationError_errors_value) Serialize(writer i
     }
     return nil
 }
-// SetInteger sets the integer property value. Composed type representation for type integer
+// SetInteger sets the integer property value. Composed type representation for type int32
 func (m *ValidationError_errors_ValidationError_errors_value) SetInteger(value *int32)() {
     m.integer = value
 }
@@ -103,7 +107,6 @@ func (m *ValidationError_errors_ValidationError_errors_value) SetInteger(value *
 func (m *ValidationError_errors_ValidationError_errors_value) SetString(value *string)() {
     m.string = value
 }
-// ValidationError_errors_ValidationError_errors_valueable 
 type ValidationError_errors_ValidationError_errors_valueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteger()(*int32)
@@ -111,7 +114,7 @@ type ValidationError_errors_ValidationError_errors_valueable interface {
     SetInteger(value *int32)()
     SetString(value *string)()
 }
-// NewValidationError_errors instantiates a new validationError_errors and sets the default values.
+// NewValidationError_errors instantiates a new ValidationError_errors and sets the default values.
 func NewValidationError_errors()(*ValidationError_errors) {
     m := &ValidationError_errors{
     }
@@ -119,22 +122,27 @@ func NewValidationError_errors()(*ValidationError_errors) {
     return m
 }
 // CreateValidationError_errorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateValidationError_errorsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewValidationError_errors(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ValidationError_errors) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *ValidationError_errors) GetCode()(*string) {
     return m.code
 }
 // GetField gets the field property value. The field property
+// returns a *string when successful
 func (m *ValidationError_errors) GetField()(*string) {
     return m.field
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ValidationError_errors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -200,18 +208,22 @@ func (m *ValidationError_errors) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetIndex gets the index property value. The index property
+// returns a *int32 when successful
 func (m *ValidationError_errors) GetIndex()(*int32) {
     return m.index
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ValidationError_errors) GetMessage()(*string) {
     return m.message
 }
 // GetResource gets the resource property value. The resource property
+// returns a *string when successful
 func (m *ValidationError_errors) GetResource()(*string) {
     return m.resource
 }
 // GetValue gets the value property value. The value property
+// returns a ValidationError_errors_ValidationError_errors_valueable when successful
 func (m *ValidationError_errors) GetValue()(ValidationError_errors_ValidationError_errors_valueable) {
     return m.value
 }
@@ -289,7 +301,6 @@ func (m *ValidationError_errors) SetResource(value *string)() {
 func (m *ValidationError_errors) SetValue(value ValidationError_errors_ValidationError_errors_valueable)() {
     m.value = value
 }
-// ValidationError_errorsable 
 type ValidationError_errorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

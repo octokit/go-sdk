@@ -20,7 +20,7 @@ type CodespacesSecret struct {
     // The type of repositories in the organization that the secret is visible to
     visibility *CodespacesSecret_visibility
 }
-// NewCodespacesSecret instantiates a new codespacesSecret and sets the default values.
+// NewCodespacesSecret instantiates a new CodespacesSecret and sets the default values.
 func NewCodespacesSecret()(*CodespacesSecret) {
     m := &CodespacesSecret{
     }
@@ -28,18 +28,22 @@ func NewCodespacesSecret()(*CodespacesSecret) {
     return m
 }
 // CreateCodespacesSecretFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespacesSecretFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespacesSecret(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespacesSecret) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The date and time at which the secret was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *CodespacesSecret) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespacesSecret) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -95,18 +99,22 @@ func (m *CodespacesSecret) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetName gets the name property value. The name of the secret
+// returns a *string when successful
 func (m *CodespacesSecret) GetName()(*string) {
     return m.name
 }
 // GetSelectedRepositoriesUrl gets the selected_repositories_url property value. The API URL at which the list of repositories this secret is visible to can be retrieved
+// returns a *string when successful
 func (m *CodespacesSecret) GetSelectedRepositoriesUrl()(*string) {
     return m.selected_repositories_url
 }
 // GetUpdatedAt gets the updated_at property value. The date and time at which the secret was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *CodespacesSecret) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetVisibility gets the visibility property value. The type of repositories in the organization that the secret is visible to
+// returns a *CodespacesSecret_visibility when successful
 func (m *CodespacesSecret) GetVisibility()(*CodespacesSecret_visibility) {
     return m.visibility
 }
@@ -175,7 +183,6 @@ func (m *CodespacesSecret) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *CodespacesSecret) SetVisibility(value *CodespacesSecret_visibility)() {
     m.visibility = value
 }
-// CodespacesSecretable 
 type CodespacesSecretable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

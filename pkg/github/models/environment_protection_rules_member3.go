@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Environment_protection_rulesMember3 
 type Environment_protection_rulesMember3 struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type Environment_protection_rulesMember3 struct {
     // The type property
     typeEscaped *string
 }
-// NewEnvironment_protection_rulesMember3 instantiates a new environment_protection_rulesMember3 and sets the default values.
+// NewEnvironment_protection_rulesMember3 instantiates a new Environment_protection_rulesMember3 and sets the default values.
 func NewEnvironment_protection_rulesMember3()(*Environment_protection_rulesMember3) {
     m := &Environment_protection_rulesMember3{
     }
@@ -23,14 +22,17 @@ func NewEnvironment_protection_rulesMember3()(*Environment_protection_rulesMembe
     return m
 }
 // CreateEnvironment_protection_rulesMember3FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnvironment_protection_rulesMember3FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnvironment_protection_rulesMember3(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Environment_protection_rulesMember3) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Environment_protection_rulesMember3) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *Environment_protection_rulesMember3) GetFieldDeserializers()(map[string
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Environment_protection_rulesMember3) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Environment_protection_rulesMember3) GetNodeId()(*string) {
     return m.node_id
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Environment_protection_rulesMember3) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
@@ -121,7 +126,6 @@ func (m *Environment_protection_rulesMember3) SetNodeId(value *string)() {
 func (m *Environment_protection_rulesMember3) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }
-// Environment_protection_rulesMember3able 
 type Environment_protection_rulesMember3able interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

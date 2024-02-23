@@ -25,7 +25,7 @@ type ClassroomAcceptedAssignment struct {
     // Whether an accepted assignment has been submitted.
     submitted *bool
 }
-// NewClassroomAcceptedAssignment instantiates a new classroomAcceptedAssignment and sets the default values.
+// NewClassroomAcceptedAssignment instantiates a new ClassroomAcceptedAssignment and sets the default values.
 func NewClassroomAcceptedAssignment()(*ClassroomAcceptedAssignment) {
     m := &ClassroomAcceptedAssignment{
     }
@@ -33,22 +33,27 @@ func NewClassroomAcceptedAssignment()(*ClassroomAcceptedAssignment) {
     return m
 }
 // CreateClassroomAcceptedAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassroomAcceptedAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassroomAcceptedAssignment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ClassroomAcceptedAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignment gets the assignment property value. A GitHub Classroom assignment
+// returns a SimpleClassroomAssignmentable when successful
 func (m *ClassroomAcceptedAssignment) GetAssignment()(SimpleClassroomAssignmentable) {
     return m.assignment
 }
 // GetCommitCount gets the commit_count property value. Count of student commits.
+// returns a *int32 when successful
 func (m *ClassroomAcceptedAssignment) GetCommitCount()(*int32) {
     return m.commit_count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClassroomAcceptedAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,26 +145,32 @@ func (m *ClassroomAcceptedAssignment) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetGrade gets the grade property value. Most recent grade.
+// returns a *string when successful
 func (m *ClassroomAcceptedAssignment) GetGrade()(*string) {
     return m.grade
 }
 // GetId gets the id property value. Unique identifier of the repository.
+// returns a *int32 when successful
 func (m *ClassroomAcceptedAssignment) GetId()(*int32) {
     return m.id
 }
 // GetPassing gets the passing property value. Whether a submission passed.
+// returns a *bool when successful
 func (m *ClassroomAcceptedAssignment) GetPassing()(*bool) {
     return m.passing
 }
 // GetRepository gets the repository property value. A GitHub repository view for Classroom
+// returns a SimpleClassroomRepositoryable when successful
 func (m *ClassroomAcceptedAssignment) GetRepository()(SimpleClassroomRepositoryable) {
     return m.repository
 }
 // GetStudents gets the students property value. The students property
+// returns a []SimpleClassroomUserable when successful
 func (m *ClassroomAcceptedAssignment) GetStudents()([]SimpleClassroomUserable) {
     return m.students
 }
 // GetSubmitted gets the submitted property value. Whether an accepted assignment has been submitted.
+// returns a *bool when successful
 func (m *ClassroomAcceptedAssignment) GetSubmitted()(*bool) {
     return m.submitted
 }
@@ -263,7 +274,6 @@ func (m *ClassroomAcceptedAssignment) SetStudents(value []SimpleClassroomUserabl
 func (m *ClassroomAcceptedAssignment) SetSubmitted(value *bool)() {
     m.submitted = value
 }
-// ClassroomAcceptedAssignmentable 
 type ClassroomAcceptedAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

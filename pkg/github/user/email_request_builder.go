@@ -22,6 +22,7 @@ func NewEmailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewEmailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Visibility the visibility property
+// returns a *EmailVisibilityRequestBuilder when successful
 func (m *EmailRequestBuilder) Visibility()(*EmailVisibilityRequestBuilder) {
     return NewEmailVisibilityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

@@ -5,7 +5,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Traffic 
 type Traffic struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -16,7 +15,7 @@ type Traffic struct {
     // The uniques property
     uniques *int32
 }
-// NewTraffic instantiates a new traffic and sets the default values.
+// NewTraffic instantiates a new Traffic and sets the default values.
 func NewTraffic()(*Traffic) {
     m := &Traffic{
     }
@@ -24,18 +23,22 @@ func NewTraffic()(*Traffic) {
     return m
 }
 // CreateTrafficFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTraffic(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Traffic) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCount gets the count property value. The count property
+// returns a *int32 when successful
 func (m *Traffic) GetCount()(*int32) {
     return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Traffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -71,10 +74,12 @@ func (m *Traffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetTimestamp gets the timestamp property value. The timestamp property
+// returns a *Time when successful
 func (m *Traffic) GetTimestamp()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.timestamp
 }
 // GetUniques gets the uniques property value. The uniques property
+// returns a *int32 when successful
 func (m *Traffic) GetUniques()(*int32) {
     return m.uniques
 }
@@ -122,7 +127,6 @@ func (m *Traffic) SetTimestamp(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a1
 func (m *Traffic) SetUniques(value *int32)() {
     m.uniques = value
 }
-// Trafficable 
 type Trafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

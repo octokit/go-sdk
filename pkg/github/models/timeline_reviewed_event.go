@@ -38,7 +38,7 @@ type TimelineReviewedEvent struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewTimelineReviewedEvent instantiates a new timelineReviewedEvent and sets the default values.
+// NewTimelineReviewedEvent instantiates a new TimelineReviewedEvent and sets the default values.
 func NewTimelineReviewedEvent()(*TimelineReviewedEvent) {
     m := &TimelineReviewedEvent{
     }
@@ -46,38 +46,47 @@ func NewTimelineReviewedEvent()(*TimelineReviewedEvent) {
     return m
 }
 // CreateTimelineReviewedEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineReviewedEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineReviewedEvent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineReviewedEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *TimelineReviewedEvent) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. The text of the review.
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetBodyText()(*string) {
     return m.body_text
 }
 // GetCommitId gets the commit_id property value. A commit SHA for the review.
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineReviewedEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -223,34 +232,42 @@ func (m *TimelineReviewedEvent) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the review
+// returns a *int32 when successful
 func (m *TimelineReviewedEvent) GetId()(*int32) {
     return m.id
 }
 // GetLinks gets the _links property value. The _links property
+// returns a TimelineReviewedEvent__linksable when successful
 func (m *TimelineReviewedEvent) GetLinks()(TimelineReviewedEvent__linksable) {
     return m._links
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPullRequestUrl gets the pull_request_url property value. The pull_request_url property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetPullRequestUrl()(*string) {
     return m.pull_request_url
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *TimelineReviewedEvent) GetState()(*string) {
     return m.state
 }
 // GetSubmittedAt gets the submitted_at property value. The submitted_at property
+// returns a *Time when successful
 func (m *TimelineReviewedEvent) GetSubmittedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.submitted_at
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineReviewedEvent) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -409,7 +426,6 @@ func (m *TimelineReviewedEvent) SetSubmittedAt(value *i336074805fc853987abe6f7fe
 func (m *TimelineReviewedEvent) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// TimelineReviewedEventable 
 type TimelineReviewedEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

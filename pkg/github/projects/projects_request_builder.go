@@ -10,6 +10,7 @@ type ProjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByProject_id gets an item from the github.com/octokit/go-sdk/pkg/github/.projects.item collection
+// returns a *WithProject_ItemRequestBuilder when successful
 func (m *ProjectsRequestBuilder) ByProject_id(project_id int32)(*WithProject_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,6 +20,7 @@ func (m *ProjectsRequestBuilder) ByProject_id(project_id int32)(*WithProject_Ite
     return NewWithProject_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Columns the columns property
+// returns a *ColumnsRequestBuilder when successful
 func (m *ProjectsRequestBuilder) Columns()(*ColumnsRequestBuilder) {
     return NewColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

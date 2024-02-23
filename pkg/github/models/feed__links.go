@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Feed__links 
 type Feed__links struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,7 +28,7 @@ type Feed__links struct {
     // Hypermedia Link with Type
     user LinkWithTypeable
 }
-// NewFeed__links instantiates a new feed__links and sets the default values.
+// NewFeed__links instantiates a new Feed__links and sets the default values.
 func NewFeed__links()(*Feed__links) {
     m := &Feed__links{
     }
@@ -37,34 +36,42 @@ func NewFeed__links()(*Feed__links) {
     return m
 }
 // CreateFeed__linksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFeed__linksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFeed__links(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Feed__links) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCurrentUser gets the current_user property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetCurrentUser()(LinkWithTypeable) {
     return m.current_user
 }
 // GetCurrentUserActor gets the current_user_actor property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetCurrentUserActor()(LinkWithTypeable) {
     return m.current_user_actor
 }
 // GetCurrentUserOrganization gets the current_user_organization property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetCurrentUserOrganization()(LinkWithTypeable) {
     return m.current_user_organization
 }
 // GetCurrentUserOrganizations gets the current_user_organizations property value. The current_user_organizations property
+// returns a []LinkWithTypeable when successful
 func (m *Feed__links) GetCurrentUserOrganizations()([]LinkWithTypeable) {
     return m.current_user_organizations
 }
 // GetCurrentUserPublic gets the current_user_public property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetCurrentUserPublic()(LinkWithTypeable) {
     return m.current_user_public
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Feed__links) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["current_user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -176,22 +183,27 @@ func (m *Feed__links) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetRepositoryDiscussions gets the repository_discussions property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetRepositoryDiscussions()(LinkWithTypeable) {
     return m.repository_discussions
 }
 // GetRepositoryDiscussionsCategory gets the repository_discussions_category property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetRepositoryDiscussionsCategory()(LinkWithTypeable) {
     return m.repository_discussions_category
 }
 // GetSecurityAdvisories gets the security_advisories property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetSecurityAdvisories()(LinkWithTypeable) {
     return m.security_advisories
 }
 // GetTimeline gets the timeline property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetTimeline()(LinkWithTypeable) {
     return m.timeline
 }
 // GetUser gets the user property value. Hypermedia Link with Type
+// returns a LinkWithTypeable when successful
 func (m *Feed__links) GetUser()(LinkWithTypeable) {
     return m.user
 }
@@ -315,7 +327,6 @@ func (m *Feed__links) SetTimeline(value LinkWithTypeable)() {
 func (m *Feed__links) SetUser(value LinkWithTypeable)() {
     m.user = value
 }
-// Feed__linksable 
 type Feed__linksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

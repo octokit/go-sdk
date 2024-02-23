@@ -17,7 +17,7 @@ type WebhookConfig struct {
     // The URL to which the payloads will be delivered.
     url *string
 }
-// NewWebhookConfig instantiates a new webhookConfig and sets the default values.
+// NewWebhookConfig instantiates a new WebhookConfig and sets the default values.
 func NewWebhookConfig()(*WebhookConfig) {
     m := &WebhookConfig{
     }
@@ -25,18 +25,22 @@ func NewWebhookConfig()(*WebhookConfig) {
     return m
 }
 // CreateWebhookConfigFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebhookConfigFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebhookConfig(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WebhookConfig) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContentType gets the content_type property value. The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+// returns a *string when successful
 func (m *WebhookConfig) GetContentType()(*string) {
     return m.content_type
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebhookConfig) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +86,17 @@ func (m *WebhookConfig) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetInsecureSsl gets the insecure_ssl property value. The insecure_ssl property
+// returns a WebhookConfigInsecureSslable when successful
 func (m *WebhookConfig) GetInsecureSsl()(WebhookConfigInsecureSslable) {
     return m.insecure_ssl
 }
 // GetSecret gets the secret property value. If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+// returns a *string when successful
 func (m *WebhookConfig) GetSecret()(*string) {
     return m.secret
 }
 // GetUrl gets the url property value. The URL to which the payloads will be delivered.
+// returns a *string when successful
 func (m *WebhookConfig) GetUrl()(*string) {
     return m.url
 }
@@ -147,7 +154,6 @@ func (m *WebhookConfig) SetSecret(value *string)() {
 func (m *WebhookConfig) SetUrl(value *string)() {
     m.url = value
 }
-// WebhookConfigable 
 type WebhookConfigable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

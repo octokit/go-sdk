@@ -34,33 +34,39 @@ type DependabotAlertSecurityAdvisory struct {
     // The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     withdrawn_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewDependabotAlertSecurityAdvisory instantiates a new dependabotAlertSecurityAdvisory and sets the default values.
+// NewDependabotAlertSecurityAdvisory instantiates a new DependabotAlertSecurityAdvisory and sets the default values.
 func NewDependabotAlertSecurityAdvisory()(*DependabotAlertSecurityAdvisory) {
     m := &DependabotAlertSecurityAdvisory{
     }
     return m
 }
 // CreateDependabotAlertSecurityAdvisoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependabotAlertSecurityAdvisoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependabotAlertSecurityAdvisory(), nil
 }
 // GetCveId gets the cve_id property value. The unique CVE ID assigned to the advisory.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory) GetCveId()(*string) {
     return m.cve_id
 }
 // GetCvss gets the cvss property value. Details for the advisory pertaining to the Common Vulnerability Scoring System.
+// returns a DependabotAlertSecurityAdvisory_cvssable when successful
 func (m *DependabotAlertSecurityAdvisory) GetCvss()(DependabotAlertSecurityAdvisory_cvssable) {
     return m.cvss
 }
 // GetCwes gets the cwes property value. Details for the advisory pertaining to Common Weakness Enumeration.
+// returns a []DependabotAlertSecurityAdvisory_cwesable when successful
 func (m *DependabotAlertSecurityAdvisory) GetCwes()([]DependabotAlertSecurityAdvisory_cwesable) {
     return m.cwes
 }
 // GetDescription gets the description property value. A long-form Markdown-supported description of the advisory.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependabotAlertSecurityAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["cve_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,38 +226,47 @@ func (m *DependabotAlertSecurityAdvisory) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetGhsaId gets the ghsa_id property value. The unique GitHub Security Advisory ID assigned to the advisory.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory) GetGhsaId()(*string) {
     return m.ghsa_id
 }
 // GetIdentifiers gets the identifiers property value. Values that identify this advisory among security information sources.
+// returns a []DependabotAlertSecurityAdvisory_identifiersable when successful
 func (m *DependabotAlertSecurityAdvisory) GetIdentifiers()([]DependabotAlertSecurityAdvisory_identifiersable) {
     return m.identifiers
 }
 // GetPublishedAt gets the published_at property value. The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertSecurityAdvisory) GetPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.published_at
 }
 // GetReferences gets the references property value. Links to additional advisory information.
+// returns a []DependabotAlertSecurityAdvisory_referencesable when successful
 func (m *DependabotAlertSecurityAdvisory) GetReferences()([]DependabotAlertSecurityAdvisory_referencesable) {
     return m.references
 }
 // GetSeverity gets the severity property value. The severity of the advisory.
+// returns a *DependabotAlertSecurityAdvisory_severity when successful
 func (m *DependabotAlertSecurityAdvisory) GetSeverity()(*DependabotAlertSecurityAdvisory_severity) {
     return m.severity
 }
 // GetSummary gets the summary property value. A short, plain text summary of the advisory.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory) GetSummary()(*string) {
     return m.summary
 }
 // GetUpdatedAt gets the updated_at property value. The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertSecurityAdvisory) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetVulnerabilities gets the vulnerabilities property value. Vulnerable version range information for the advisory.
+// returns a []DependabotAlertSecurityVulnerabilityable when successful
 func (m *DependabotAlertSecurityAdvisory) GetVulnerabilities()([]DependabotAlertSecurityVulnerabilityable) {
     return m.vulnerabilities
 }
 // GetWithdrawnAt gets the withdrawn_at property value. The time that the advisory was withdrawn in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertSecurityAdvisory) GetWithdrawnAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.withdrawn_at
 }
@@ -311,7 +326,6 @@ func (m *DependabotAlertSecurityAdvisory) SetVulnerabilities(value []DependabotA
 func (m *DependabotAlertSecurityAdvisory) SetWithdrawnAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.withdrawn_at = value
 }
-// DependabotAlertSecurityAdvisoryable 
 type DependabotAlertSecurityAdvisoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCveId()(*string)

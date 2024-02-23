@@ -15,7 +15,7 @@ type ContributorActivity struct {
     // The weeks property
     weeks []ContributorActivity_weeksable
 }
-// NewContributorActivity instantiates a new contributorActivity and sets the default values.
+// NewContributorActivity instantiates a new ContributorActivity and sets the default values.
 func NewContributorActivity()(*ContributorActivity) {
     m := &ContributorActivity{
     }
@@ -23,18 +23,22 @@ func NewContributorActivity()(*ContributorActivity) {
     return m
 }
 // CreateContributorActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContributorActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContributorActivity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContributorActivity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *ContributorActivity) GetAuthor()(NullableSimpleUserable) {
     return m.author
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContributorActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,10 +80,12 @@ func (m *ContributorActivity) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetTotal gets the total property value. The total property
+// returns a *int32 when successful
 func (m *ContributorActivity) GetTotal()(*int32) {
     return m.total
 }
 // GetWeeks gets the weeks property value. The weeks property
+// returns a []ContributorActivity_weeksable when successful
 func (m *ContributorActivity) GetWeeks()([]ContributorActivity_weeksable) {
     return m.weeks
 }
@@ -133,7 +139,6 @@ func (m *ContributorActivity) SetTotal(value *int32)() {
 func (m *ContributorActivity) SetWeeks(value []ContributorActivity_weeksable)() {
     m.weeks = value
 }
-// ContributorActivityable 
 type ContributorActivityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

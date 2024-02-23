@@ -29,7 +29,7 @@ type OrganizationProgrammaticAccessGrantRequest struct {
     // Date and time when the associated fine-grained personal access token was last used for authentication.
     token_last_used_at *string
 }
-// NewOrganizationProgrammaticAccessGrantRequest instantiates a new organizationProgrammaticAccessGrantRequest and sets the default values.
+// NewOrganizationProgrammaticAccessGrantRequest instantiates a new OrganizationProgrammaticAccessGrantRequest and sets the default values.
 func NewOrganizationProgrammaticAccessGrantRequest()(*OrganizationProgrammaticAccessGrantRequest) {
     m := &OrganizationProgrammaticAccessGrantRequest{
     }
@@ -37,18 +37,22 @@ func NewOrganizationProgrammaticAccessGrantRequest()(*OrganizationProgrammaticAc
     return m
 }
 // CreateOrganizationProgrammaticAccessGrantRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationProgrammaticAccessGrantRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationProgrammaticAccessGrantRequest(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. Date and time when the request for access was created.
+// returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,38 +158,47 @@ func (m *OrganizationProgrammaticAccessGrantRequest) GetFieldDeserializers()(map
     return res
 }
 // GetId gets the id property value. Unique identifier of the request for access via fine-grained personal access token. The `pat_request_id` used to review PAT requests.
+// returns a *int32 when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetId()(*int32) {
     return m.id
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPermissions gets the permissions property value. Permissions requested, categorized by type of permission.
+// returns a OrganizationProgrammaticAccessGrantRequest_permissionsable when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetPermissions()(OrganizationProgrammaticAccessGrantRequest_permissionsable) {
     return m.permissions
 }
 // GetReason gets the reason property value. Reason for requesting access.
+// returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetReason()(*string) {
     return m.reason
 }
 // GetRepositoriesUrl gets the repositories_url property value. URL to the list of repositories requested to be accessed via fine-grained personal access token. Should only be followed when `repository_selection` is `subset`.
+// returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetRepositoriesUrl()(*string) {
     return m.repositories_url
 }
 // GetRepositorySelection gets the repository_selection property value. Type of repository selection requested.
+// returns a *OrganizationProgrammaticAccessGrantRequest_repository_selection when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetRepositorySelection()(*OrganizationProgrammaticAccessGrantRequest_repository_selection) {
     return m.repository_selection
 }
 // GetTokenExpired gets the token_expired property value. Whether the associated fine-grained personal access token has expired.
+// returns a *bool when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenExpired()(*bool) {
     return m.token_expired
 }
 // GetTokenExpiresAt gets the token_expires_at property value. Date and time when the associated fine-grained personal access token expires.
+// returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenExpiresAt()(*string) {
     return m.token_expires_at
 }
 // GetTokenLastUsedAt gets the token_last_used_at property value. Date and time when the associated fine-grained personal access token was last used for authentication.
+// returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenLastUsedAt()(*string) {
     return m.token_last_used_at
 }
@@ -304,7 +317,6 @@ func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenExpiresAt(value *st
 func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenLastUsedAt(value *string)() {
     m.token_last_used_at = value
 }
-// OrganizationProgrammaticAccessGrantRequestable 
 type OrganizationProgrammaticAccessGrantRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -22,10 +22,12 @@ func NewWithClient_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewWithClient_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Grant the grant property
+// returns a *ItemGrantRequestBuilder when successful
 func (m *WithClient_ItemRequestBuilder) Grant()(*ItemGrantRequestBuilder) {
     return NewItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Token the token property
+// returns a *ItemTokenRequestBuilder when successful
 func (m *WithClient_ItemRequestBuilder) Token()(*ItemTokenRequestBuilder) {
     return NewItemTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

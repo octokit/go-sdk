@@ -25,7 +25,7 @@ type GitTag struct {
     // The verification property
     verification Verificationable
 }
-// NewGitTag instantiates a new gitTag and sets the default values.
+// NewGitTag instantiates a new GitTag and sets the default values.
 func NewGitTag()(*GitTag) {
     m := &GitTag{
     }
@@ -33,14 +33,17 @@ func NewGitTag()(*GitTag) {
     return m
 }
 // CreateGitTagFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitTagFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitTag(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitTag) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,34 +129,42 @@ func (m *GitTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetMessage gets the message property value. Message describing the purpose of the tag
+// returns a *string when successful
 func (m *GitTag) GetMessage()(*string) {
     return m.message
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *GitTag) GetNodeId()(*string) {
     return m.node_id
 }
 // GetObject gets the object property value. The object property
+// returns a GitTag_objectable when successful
 func (m *GitTag) GetObject()(GitTag_objectable) {
     return m.object
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *GitTag) GetSha()(*string) {
     return m.sha
 }
 // GetTag gets the tag property value. Name of the tag
+// returns a *string when successful
 func (m *GitTag) GetTag()(*string) {
     return m.tag
 }
 // GetTagger gets the tagger property value. The tagger property
+// returns a GitTag_taggerable when successful
 func (m *GitTag) GetTagger()(GitTag_taggerable) {
     return m.tagger
 }
 // GetUrl gets the url property value. URL for the tag
+// returns a *string when successful
 func (m *GitTag) GetUrl()(*string) {
     return m.url
 }
 // GetVerification gets the verification property value. The verification property
+// returns a Verificationable when successful
 func (m *GitTag) GetVerification()(Verificationable) {
     return m.verification
 }
@@ -251,7 +262,6 @@ func (m *GitTag) SetUrl(value *string)() {
 func (m *GitTag) SetVerification(value Verificationable)() {
     m.verification = value
 }
-// GitTagable 
 type GitTagable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

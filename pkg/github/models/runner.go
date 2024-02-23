@@ -23,7 +23,7 @@ type Runner struct {
     // The status of the runner.
     status *string
 }
-// NewRunner instantiates a new runner and sets the default values.
+// NewRunner instantiates a new Runner and sets the default values.
 func NewRunner()(*Runner) {
     m := &Runner{
     }
@@ -31,18 +31,22 @@ func NewRunner()(*Runner) {
     return m
 }
 // CreateRunnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRunnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRunner(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Runner) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBusy gets the busy property value. The busy property
+// returns a *bool when successful
 func (m *Runner) GetBusy()(*bool) {
     return m.busy
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Runner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["busy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,26 +128,32 @@ func (m *Runner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetId gets the id property value. The id of the runner.
+// returns a *int32 when successful
 func (m *Runner) GetId()(*int32) {
     return m.id
 }
 // GetLabels gets the labels property value. The labels property
+// returns a []RunnerLabelable when successful
 func (m *Runner) GetLabels()([]RunnerLabelable) {
     return m.labels
 }
 // GetName gets the name property value. The name of the runner.
+// returns a *string when successful
 func (m *Runner) GetName()(*string) {
     return m.name
 }
 // GetOs gets the os property value. The Operating System of the runner.
+// returns a *string when successful
 func (m *Runner) GetOs()(*string) {
     return m.os
 }
 // GetRunnerGroupId gets the runner_group_id property value. The id of the runner group.
+// returns a *int32 when successful
 func (m *Runner) GetRunnerGroupId()(*int32) {
     return m.runner_group_id
 }
 // GetStatus gets the status property value. The status of the runner.
+// returns a *string when successful
 func (m *Runner) GetStatus()(*string) {
     return m.status
 }
@@ -237,7 +247,6 @@ func (m *Runner) SetRunnerGroupId(value *int32)() {
 func (m *Runner) SetStatus(value *string)() {
     m.status = value
 }
-// Runnerable 
 type Runnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

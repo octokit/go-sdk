@@ -35,7 +35,7 @@ type LicenseContent struct {
     // The url property
     url *string
 }
-// NewLicenseContent instantiates a new licenseContent and sets the default values.
+// NewLicenseContent instantiates a new LicenseContent and sets the default values.
 func NewLicenseContent()(*LicenseContent) {
     m := &LicenseContent{
     }
@@ -43,26 +43,32 @@ func NewLicenseContent()(*LicenseContent) {
     return m
 }
 // CreateLicenseContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLicenseContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLicenseContent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LicenseContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content property
+// returns a *string when successful
 func (m *LicenseContent) GetContent()(*string) {
     return m.content
 }
 // GetDownloadUrl gets the download_url property value. The download_url property
+// returns a *string when successful
 func (m *LicenseContent) GetDownloadUrl()(*string) {
     return m.download_url
 }
 // GetEncoding gets the encoding property value. The encoding property
+// returns a *string when successful
 func (m *LicenseContent) GetEncoding()(*string) {
     return m.encoding
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LicenseContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -198,42 +204,52 @@ func (m *LicenseContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *LicenseContent) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *LicenseContent) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLicense gets the license property value. License Simple
+// returns a NullableLicenseSimpleable when successful
 func (m *LicenseContent) GetLicense()(NullableLicenseSimpleable) {
     return m.license
 }
 // GetLinks gets the _links property value. The _links property
+// returns a LicenseContent__linksable when successful
 func (m *LicenseContent) GetLinks()(LicenseContent__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *LicenseContent) GetName()(*string) {
     return m.name
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *LicenseContent) GetPath()(*string) {
     return m.path
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *LicenseContent) GetSha()(*string) {
     return m.sha
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *LicenseContent) GetSize()(*int32) {
     return m.size
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *LicenseContent) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *LicenseContent) GetUrl()(*string) {
     return m.url
 }
@@ -381,7 +397,6 @@ func (m *LicenseContent) SetTypeEscaped(value *string)() {
 func (m *LicenseContent) SetUrl(value *string)() {
     m.url = value
 }
-// LicenseContentable 
 type LicenseContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

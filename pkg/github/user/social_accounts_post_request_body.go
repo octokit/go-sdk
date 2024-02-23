@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Social_accountsPostRequestBody 
 type Social_accountsPostRequestBody struct {
     // Full URLs for the social media profiles to add.
     account_urls []string
@@ -19,18 +18,22 @@ func NewSocial_accountsPostRequestBody()(*Social_accountsPostRequestBody) {
     return m
 }
 // CreateSocial_accountsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSocial_accountsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSocial_accountsPostRequestBody(), nil
 }
 // GetAccountUrls gets the account_urls property value. Full URLs for the social media profiles to add.
+// returns a []string when successful
 func (m *Social_accountsPostRequestBody) GetAccountUrls()([]string) {
     return m.account_urls
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Social_accountsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Social_accountsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["account_urls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,7 +78,6 @@ func (m *Social_accountsPostRequestBody) SetAccountUrls(value []string)() {
 func (m *Social_accountsPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// Social_accountsPostRequestBodyable 
 type Social_accountsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

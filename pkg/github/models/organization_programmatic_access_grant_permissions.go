@@ -15,7 +15,7 @@ type OrganizationProgrammaticAccessGrant_permissions struct {
     // The repository property
     repository OrganizationProgrammaticAccessGrant_permissions_repositoryable
 }
-// NewOrganizationProgrammaticAccessGrant_permissions instantiates a new organizationProgrammaticAccessGrant_permissions and sets the default values.
+// NewOrganizationProgrammaticAccessGrant_permissions instantiates a new OrganizationProgrammaticAccessGrant_permissions and sets the default values.
 func NewOrganizationProgrammaticAccessGrant_permissions()(*OrganizationProgrammaticAccessGrant_permissions) {
     m := &OrganizationProgrammaticAccessGrant_permissions{
     }
@@ -23,14 +23,17 @@ func NewOrganizationProgrammaticAccessGrant_permissions()(*OrganizationProgramma
     return m
 }
 // CreateOrganizationProgrammaticAccessGrant_permissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationProgrammaticAccessGrant_permissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationProgrammaticAccessGrant_permissions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationProgrammaticAccessGrant_permissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationProgrammaticAccessGrant_permissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +69,17 @@ func (m *OrganizationProgrammaticAccessGrant_permissions) GetFieldDeserializers(
     return res
 }
 // GetOrganization gets the organization property value. The organization property
+// returns a OrganizationProgrammaticAccessGrant_permissions_organizationable when successful
 func (m *OrganizationProgrammaticAccessGrant_permissions) GetOrganization()(OrganizationProgrammaticAccessGrant_permissions_organizationable) {
     return m.organization
 }
 // GetOther gets the other property value. The other property
+// returns a OrganizationProgrammaticAccessGrant_permissions_otherable when successful
 func (m *OrganizationProgrammaticAccessGrant_permissions) GetOther()(OrganizationProgrammaticAccessGrant_permissions_otherable) {
     return m.other
 }
 // GetRepository gets the repository property value. The repository property
+// returns a OrganizationProgrammaticAccessGrant_permissions_repositoryable when successful
 func (m *OrganizationProgrammaticAccessGrant_permissions) GetRepository()(OrganizationProgrammaticAccessGrant_permissions_repositoryable) {
     return m.repository
 }
@@ -121,7 +127,6 @@ func (m *OrganizationProgrammaticAccessGrant_permissions) SetOther(value Organiz
 func (m *OrganizationProgrammaticAccessGrant_permissions) SetRepository(value OrganizationProgrammaticAccessGrant_permissions_repositoryable)() {
     m.repository = value
 }
-// OrganizationProgrammaticAccessGrant_permissionsable 
 type OrganizationProgrammaticAccessGrant_permissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

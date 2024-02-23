@@ -23,6 +23,7 @@ type ItemMembersRequestBuilderGetQueryParameters struct {
     Role *id17450d82944fa531d7f154d669a8b6ce833b49a25250377061627d436cc43a6.GetRoleQueryParameterType `uriparametername:"role"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.members.item collection
+// returns a *ItemMembersWithUsernameItemRequestBuilder when successful
 func (m *ItemMembersRequestBuilder) ByUsername(username string)(*ItemMembersWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -33,20 +34,22 @@ func (m *ItemMembersRequestBuilder) ByUsername(username string)(*ItemMembersWith
     }
     return NewItemMembersWithUsernameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemMembersRequestBuilderInternal instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemMembersRequestBuilderInternal instantiates a new ItemMembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     m := &ItemMembersRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/members{?filter*,page*,per_page*,role*}", pathParameters),
     }
     return m
 }
-// NewItemMembersRequestBuilder instantiates a new MembersRequestBuilder and sets the default values.
+// NewItemMembersRequestBuilder instantiates a new ItemMembersRequestBuilder and sets the default values.
 func NewItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMembersRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
+// returns a []SimpleUserable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/members#list-organization-members
@@ -71,6 +74,7 @@ func (m *ItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return val, nil
 }
 // ToGetRequestInformation list all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
+// returns a *RequestInformation when successful
 func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemMembersRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -78,6 +82,7 @@ func (m *ItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMembersRequestBuilder when successful
 func (m *ItemMembersRequestBuilder) WithUrl(rawUrl string)(*ItemMembersRequestBuilder) {
     return NewItemMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

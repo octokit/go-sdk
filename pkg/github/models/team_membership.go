@@ -15,7 +15,7 @@ type TeamMembership struct {
     // The url property
     url *string
 }
-// NewTeamMembership instantiates a new teamMembership and sets the default values.
+// NewTeamMembership instantiates a new TeamMembership and sets the default values.
 func NewTeamMembership()(*TeamMembership) {
     m := &TeamMembership{
     }
@@ -25,14 +25,17 @@ func NewTeamMembership()(*TeamMembership) {
     return m
 }
 // CreateTeamMembershipFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamMembershipFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamMembership(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamMembership) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamMembership) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -68,14 +71,17 @@ func (m *TeamMembership) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetRole gets the role property value. The role of the user in the team.
+// returns a *TeamMembership_role when successful
 func (m *TeamMembership) GetRole()(*TeamMembership_role) {
     return m.role
 }
 // GetState gets the state property value. The state of the user's membership in the team.
+// returns a *TeamMembership_state when successful
 func (m *TeamMembership) GetState()(*TeamMembership_state) {
     return m.state
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TeamMembership) GetUrl()(*string) {
     return m.url
 }
@@ -125,7 +131,6 @@ func (m *TeamMembership) SetState(value *TeamMembership_state)() {
 func (m *TeamMembership) SetUrl(value *string)() {
     m.url = value
 }
-// TeamMembershipable 
 type TeamMembershipable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

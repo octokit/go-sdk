@@ -22,6 +22,7 @@ type PackagesItemItemVersionsRequestBuilderGetQueryParameters struct {
     State *i74b3087dddecf30253e135889419530355ad6be6bee6d9ec44ce931f8f78bc3f.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item.item.versions.item collection
+// returns a *PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder when successful
 func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_version_id int32)(*PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -30,20 +31,24 @@ func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_ve
     urlTplParams["package_version_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(package_version_id), 10)
     return NewPackagesItemItemVersionsWithPackage_version_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewPackagesItemItemVersionsRequestBuilderInternal instantiates a new VersionsRequestBuilder and sets the default values.
+// NewPackagesItemItemVersionsRequestBuilderInternal instantiates a new PackagesItemItemVersionsRequestBuilder and sets the default values.
 func NewPackagesItemItemVersionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PackagesItemItemVersionsRequestBuilder) {
     m := &PackagesItemItemVersionsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/packages/{package_type}/{package_name}/versions{?page*,per_page*,state*}", pathParameters),
     }
     return m
 }
-// NewPackagesItemItemVersionsRequestBuilder instantiates a new VersionsRequestBuilder and sets the default values.
+// NewPackagesItemItemVersionsRequestBuilder instantiates a new PackagesItemItemVersionsRequestBuilder and sets the default values.
 func NewPackagesItemItemVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PackagesItemItemVersionsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewPackagesItemItemVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists package versions for a package owned by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a []PackageVersionable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#list-package-versions-for-a-package-owned-by-the-authenticated-user
@@ -70,6 +75,7 @@ func (m *PackagesItemItemVersionsRequestBuilder) Get(ctx context.Context, reques
     return val, nil
 }
 // ToGetRequestInformation lists package versions for a package owned by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a *RequestInformation when successful
 func (m *PackagesItemItemVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesItemItemVersionsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -77,6 +83,7 @@ func (m *PackagesItemItemVersionsRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PackagesItemItemVersionsRequestBuilder when successful
 func (m *PackagesItemItemVersionsRequestBuilder) WithUrl(rawUrl string)(*PackagesItemItemVersionsRequestBuilder) {
     return NewPackagesItemItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

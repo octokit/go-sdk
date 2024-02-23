@@ -30,7 +30,7 @@ type CodeScanningCodeqlDatabase struct {
     // The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
     url *string
 }
-// NewCodeScanningCodeqlDatabase instantiates a new codeScanningCodeqlDatabase and sets the default values.
+// NewCodeScanningCodeqlDatabase instantiates a new CodeScanningCodeqlDatabase and sets the default values.
 func NewCodeScanningCodeqlDatabase()(*CodeScanningCodeqlDatabase) {
     m := &CodeScanningCodeqlDatabase{
     }
@@ -38,26 +38,32 @@ func NewCodeScanningCodeqlDatabase()(*CodeScanningCodeqlDatabase) {
     return m
 }
 // CreateCodeScanningCodeqlDatabaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningCodeqlDatabaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningCodeqlDatabase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningCodeqlDatabase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommitOid gets the commit_oid property value. The commit SHA of the repository at the time the CodeQL database was created.
+// returns a *string when successful
 func (m *CodeScanningCodeqlDatabase) GetCommitOid()(*string) {
     return m.commit_oid
 }
 // GetContentType gets the content_type property value. The MIME type of the CodeQL database file.
+// returns a *string when successful
 func (m *CodeScanningCodeqlDatabase) GetContentType()(*string) {
     return m.content_type
 }
 // GetCreatedAt gets the created_at property value. The date and time at which the CodeQL database was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *CodeScanningCodeqlDatabase) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningCodeqlDatabase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit_oid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -163,30 +169,37 @@ func (m *CodeScanningCodeqlDatabase) GetFieldDeserializers()(map[string]func(i87
     return res
 }
 // GetId gets the id property value. The ID of the CodeQL database.
+// returns a *int32 when successful
 func (m *CodeScanningCodeqlDatabase) GetId()(*int32) {
     return m.id
 }
 // GetLanguage gets the language property value. The language of the CodeQL database.
+// returns a *string when successful
 func (m *CodeScanningCodeqlDatabase) GetLanguage()(*string) {
     return m.language
 }
 // GetName gets the name property value. The name of the CodeQL database.
+// returns a *string when successful
 func (m *CodeScanningCodeqlDatabase) GetName()(*string) {
     return m.name
 }
 // GetSize gets the size property value. The size of the CodeQL database file in bytes.
+// returns a *int32 when successful
 func (m *CodeScanningCodeqlDatabase) GetSize()(*int32) {
     return m.size
 }
 // GetUpdatedAt gets the updated_at property value. The date and time at which the CodeQL database was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *CodeScanningCodeqlDatabase) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUploader gets the uploader property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *CodeScanningCodeqlDatabase) GetUploader()(SimpleUserable) {
     return m.uploader
 }
 // GetUrl gets the url property value. The URL at which to download the CodeQL database. The `Accept` header must be set to the value of the `content_type` property.
+// returns a *string when successful
 func (m *CodeScanningCodeqlDatabase) GetUrl()(*string) {
     return m.url
 }
@@ -304,7 +317,6 @@ func (m *CodeScanningCodeqlDatabase) SetUploader(value SimpleUserable)() {
 func (m *CodeScanningCodeqlDatabase) SetUrl(value *string)() {
     m.url = value
 }
-// CodeScanningCodeqlDatabaseable 
 type CodeScanningCodeqlDatabaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

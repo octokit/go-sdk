@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Users_matches 
 type Users_matches struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type Users_matches struct {
     // The text property
     text *string
 }
-// NewUsers_matches instantiates a new users_matches and sets the default values.
+// NewUsers_matches instantiates a new Users_matches and sets the default values.
 func NewUsers_matches()(*Users_matches) {
     m := &Users_matches{
     }
@@ -21,14 +20,17 @@ func NewUsers_matches()(*Users_matches) {
     return m
 }
 // CreateUsers_matchesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUsers_matchesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUsers_matches(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Users_matches) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Users_matches) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["indices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -60,10 +62,12 @@ func (m *Users_matches) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetIndices gets the indices property value. The indices property
+// returns a []int32 when successful
 func (m *Users_matches) GetIndices()([]int32) {
     return m.indices
 }
 // GetText gets the text property value. The text property
+// returns a *string when successful
 func (m *Users_matches) GetText()(*string) {
     return m.text
 }
@@ -101,7 +105,6 @@ func (m *Users_matches) SetIndices(value []int32)() {
 func (m *Users_matches) SetText(value *string)() {
     m.text = value
 }
-// Users_matchesable 
 type Users_matchesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

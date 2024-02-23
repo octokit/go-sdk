@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequest__links 
 type PullRequest__links struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,7 +24,7 @@ type PullRequest__links struct {
     // Hypermedia Link
     statuses Linkable
 }
-// NewPullRequest__links instantiates a new pullRequest__links and sets the default values.
+// NewPullRequest__links instantiates a new PullRequest__links and sets the default values.
 func NewPullRequest__links()(*PullRequest__links) {
     m := &PullRequest__links{
     }
@@ -33,22 +32,27 @@ func NewPullRequest__links()(*PullRequest__links) {
     return m
 }
 // CreatePullRequest__linksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequest__linksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequest__links(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequest__links) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComments gets the comments property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetComments()(Linkable) {
     return m.comments
 }
 // GetCommits gets the commits property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetCommits()(Linkable) {
     return m.commits
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequest__links) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -134,26 +138,32 @@ func (m *PullRequest__links) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetHtml gets the html property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetHtml()(Linkable) {
     return m.html
 }
 // GetIssue gets the issue property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetIssue()(Linkable) {
     return m.issue
 }
 // GetReviewComment gets the review_comment property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetReviewComment()(Linkable) {
     return m.review_comment
 }
 // GetReviewComments gets the review_comments property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetReviewComments()(Linkable) {
     return m.review_comments
 }
 // GetSelf gets the self property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetSelf()(Linkable) {
     return m.self
 }
 // GetStatuses gets the statuses property value. Hypermedia Link
+// returns a Linkable when successful
 func (m *PullRequest__links) GetStatuses()(Linkable) {
     return m.statuses
 }
@@ -251,7 +261,6 @@ func (m *PullRequest__links) SetSelf(value Linkable)() {
 func (m *PullRequest__links) SetStatuses(value Linkable)() {
     m.statuses = value
 }
-// PullRequest__linksable 
 type PullRequest__linksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

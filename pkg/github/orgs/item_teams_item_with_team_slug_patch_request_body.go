@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemTeamsItemWithTeam_slugPatchRequestBody 
 type ItemTeamsItemWithTeam_slugPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,18 +22,22 @@ func NewItemTeamsItemWithTeam_slugPatchRequestBody()(*ItemTeamsItemWithTeam_slug
     return m
 }
 // CreateItemTeamsItemWithTeam_slugPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTeamsItemWithTeam_slugPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTeamsItemWithTeam_slugPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description of the team.
+// returns a *string when successful
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +73,12 @@ func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetFieldDeserializers()(map
     return res
 }
 // GetName gets the name property value. The name of the team.
+// returns a *string when successful
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetName()(*string) {
     return m.name
 }
 // GetParentTeamId gets the parent_team_id property value. The ID of a team to set as the parent team.
+// returns a *int32 when successful
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) GetParentTeamId()(*int32) {
     return m.parent_team_id
 }
@@ -121,7 +126,6 @@ func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) SetName(value *string)() {
 func (m *ItemTeamsItemWithTeam_slugPatchRequestBody) SetParentTeamId(value *int32)() {
     m.parent_team_id = value
 }
-// ItemTeamsItemWithTeam_slugPatchRequestBodyable 
 type ItemTeamsItemWithTeam_slugPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

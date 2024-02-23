@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type InstallationToken_repository_selection int
 
 const (

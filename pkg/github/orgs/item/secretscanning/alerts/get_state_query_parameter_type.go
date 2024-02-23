@@ -2,7 +2,6 @@ package alerts
 import (
     "errors"
 )
-// 
 type GetStateQueryParameterType int
 
 const (

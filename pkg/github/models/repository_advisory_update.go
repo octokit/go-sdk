@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryAdvisoryUpdate 
 type RepositoryAdvisoryUpdate struct {
     // A list of team slugs which have been granted write access to the advisory.
     collaborating_teams []string
@@ -29,45 +28,54 @@ type RepositoryAdvisoryUpdate struct {
     // A product affected by the vulnerability detailed in a repository security advisory.
     vulnerabilities []RepositoryAdvisoryUpdate_vulnerabilitiesable
 }
-// NewRepositoryAdvisoryUpdate instantiates a new repositoryAdvisoryUpdate and sets the default values.
+// NewRepositoryAdvisoryUpdate instantiates a new RepositoryAdvisoryUpdate and sets the default values.
 func NewRepositoryAdvisoryUpdate()(*RepositoryAdvisoryUpdate) {
     m := &RepositoryAdvisoryUpdate{
     }
     return m
 }
 // CreateRepositoryAdvisoryUpdateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryUpdateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryUpdate(), nil
 }
 // GetCollaboratingTeams gets the collaborating_teams property value. A list of team slugs which have been granted write access to the advisory.
+// returns a []string when successful
 func (m *RepositoryAdvisoryUpdate) GetCollaboratingTeams()([]string) {
     return m.collaborating_teams
 }
 // GetCollaboratingUsers gets the collaborating_users property value. A list of usernames who have been granted write access to the advisory.
+// returns a []string when successful
 func (m *RepositoryAdvisoryUpdate) GetCollaboratingUsers()([]string) {
     return m.collaborating_users
 }
 // GetCredits gets the credits property value. A list of users receiving credit for their participation in the security advisory.
+// returns a []RepositoryAdvisoryUpdate_creditsable when successful
 func (m *RepositoryAdvisoryUpdate) GetCredits()([]RepositoryAdvisoryUpdate_creditsable) {
     return m.credits
 }
 // GetCveId gets the cve_id property value. The Common Vulnerabilities and Exposures (CVE) ID.
+// returns a *string when successful
 func (m *RepositoryAdvisoryUpdate) GetCveId()(*string) {
     return m.cve_id
 }
 // GetCvssVectorString gets the cvss_vector_string property value. The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+// returns a *string when successful
 func (m *RepositoryAdvisoryUpdate) GetCvssVectorString()(*string) {
     return m.cvss_vector_string
 }
 // GetCweIds gets the cwe_ids property value. A list of Common Weakness Enumeration (CWE) IDs.
+// returns a []string when successful
 func (m *RepositoryAdvisoryUpdate) GetCweIds()([]string) {
     return m.cwe_ids
 }
 // GetDescription gets the description property value. A detailed description of what the advisory impacts.
+// returns a *string when successful
 func (m *RepositoryAdvisoryUpdate) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryUpdate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["collaborating_teams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -213,18 +221,22 @@ func (m *RepositoryAdvisoryUpdate) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetSeverity gets the severity property value. The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+// returns a *RepositoryAdvisoryUpdate_severity when successful
 func (m *RepositoryAdvisoryUpdate) GetSeverity()(*RepositoryAdvisoryUpdate_severity) {
     return m.severity
 }
 // GetState gets the state property value. The state of the advisory.
+// returns a *RepositoryAdvisoryUpdate_state when successful
 func (m *RepositoryAdvisoryUpdate) GetState()(*RepositoryAdvisoryUpdate_state) {
     return m.state
 }
 // GetSummary gets the summary property value. A short summary of the advisory.
+// returns a *string when successful
 func (m *RepositoryAdvisoryUpdate) GetSummary()(*string) {
     return m.summary
 }
 // GetVulnerabilities gets the vulnerabilities property value. A product affected by the vulnerability detailed in a repository security advisory.
+// returns a []RepositoryAdvisoryUpdate_vulnerabilitiesable when successful
 func (m *RepositoryAdvisoryUpdate) GetVulnerabilities()([]RepositoryAdvisoryUpdate_vulnerabilitiesable) {
     return m.vulnerabilities
 }
@@ -356,7 +368,6 @@ func (m *RepositoryAdvisoryUpdate) SetSummary(value *string)() {
 func (m *RepositoryAdvisoryUpdate) SetVulnerabilities(value []RepositoryAdvisoryUpdate_vulnerabilitiesable)() {
     m.vulnerabilities = value
 }
-// RepositoryAdvisoryUpdateable 
 type RepositoryAdvisoryUpdateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCollaboratingTeams()([]string)

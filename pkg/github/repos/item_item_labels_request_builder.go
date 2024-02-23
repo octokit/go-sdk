@@ -18,6 +18,7 @@ type ItemItemLabelsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.labels.item collection
+// returns a *ItemItemLabelsWithNameItemRequestBuilder when successful
 func (m *ItemItemLabelsRequestBuilder) ByName(name string)(*ItemItemLabelsWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,20 +29,22 @@ func (m *ItemItemLabelsRequestBuilder) ByName(name string)(*ItemItemLabelsWithNa
     }
     return NewItemItemLabelsWithNameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemLabelsRequestBuilderInternal instantiates a new LabelsRequestBuilder and sets the default values.
+// NewItemItemLabelsRequestBuilderInternal instantiates a new ItemItemLabelsRequestBuilder and sets the default values.
 func NewItemItemLabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemLabelsRequestBuilder) {
     m := &ItemItemLabelsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/labels{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemLabelsRequestBuilder instantiates a new LabelsRequestBuilder and sets the default values.
+// NewItemItemLabelsRequestBuilder instantiates a new ItemItemLabelsRequestBuilder and sets the default values.
 func NewItemItemLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemLabelsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemLabelsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all labels for a repository.
+// returns a []Labelable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/labels#list-labels-for-a-repository
@@ -66,6 +69,9 @@ func (m *ItemItemLabelsRequestBuilder) Get(ctx context.Context, requestConfigura
     return val, nil
 }
 // Post creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
+// returns a Labelable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/labels#create-a-label
@@ -88,6 +94,7 @@ func (m *ItemItemLabelsRequestBuilder) Post(ctx context.Context, body ItemItemLa
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Labelable), nil
 }
 // ToGetRequestInformation lists all labels for a repository.
+// returns a *RequestInformation when successful
 func (m *ItemItemLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemLabelsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -95,8 +102,9 @@ func (m *ItemItemLabelsRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a label for the specified repository with the given name and color. The name and color parameters are required. The color must be a valid [hexadecimal color code](http://www.color-hex.com/).
+// returns a *RequestInformation when successful
 func (m *ItemItemLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemLabelsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/labels", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -106,6 +114,7 @@ func (m *ItemItemLabelsRequestBuilder) ToPostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemLabelsRequestBuilder when successful
 func (m *ItemItemLabelsRequestBuilder) WithUrl(rawUrl string)(*ItemItemLabelsRequestBuilder) {
     return NewItemItemLabelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

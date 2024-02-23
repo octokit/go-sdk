@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ApiOverview_domains 
 type ApiOverview_domains struct {
     // The actions property
     actions []string
@@ -19,7 +18,7 @@ type ApiOverview_domains struct {
     // The website property
     website []string
 }
-// NewApiOverview_domains instantiates a new apiOverview_domains and sets the default values.
+// NewApiOverview_domains instantiates a new ApiOverview_domains and sets the default values.
 func NewApiOverview_domains()(*ApiOverview_domains) {
     m := &ApiOverview_domains{
     }
@@ -27,26 +26,32 @@ func NewApiOverview_domains()(*ApiOverview_domains) {
     return m
 }
 // CreateApiOverview_domainsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateApiOverview_domainsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApiOverview_domains(), nil
 }
 // GetActions gets the actions property value. The actions property
+// returns a []string when successful
 func (m *ApiOverview_domains) GetActions()([]string) {
     return m.actions
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ApiOverview_domains) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCodespaces gets the codespaces property value. The codespaces property
+// returns a []string when successful
 func (m *ApiOverview_domains) GetCodespaces()([]string) {
     return m.codespaces
 }
 // GetCopilot gets the copilot property value. The copilot property
+// returns a []string when successful
 func (m *ApiOverview_domains) GetCopilot()([]string) {
     return m.copilot
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ApiOverview_domains) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,10 +137,12 @@ func (m *ApiOverview_domains) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetPackages gets the packages property value. The packages property
+// returns a []string when successful
 func (m *ApiOverview_domains) GetPackages()([]string) {
     return m.packages
 }
 // GetWebsite gets the website property value. The website property
+// returns a []string when successful
 func (m *ApiOverview_domains) GetWebsite()([]string) {
     return m.website
 }
@@ -203,7 +210,6 @@ func (m *ApiOverview_domains) SetPackages(value []string)() {
 func (m *ApiOverview_domains) SetWebsite(value []string)() {
     m.website = value
 }
-// ApiOverview_domainsable 
 type ApiOverview_domainsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

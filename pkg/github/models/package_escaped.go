@@ -32,7 +32,7 @@ type PackageEscaped struct {
     // The visibility property
     visibility *Package_visibility
 }
-// NewPackageEscaped instantiates a new packageEscaped and sets the default values.
+// NewPackageEscaped instantiates a new PackageEscaped and sets the default values.
 func NewPackageEscaped()(*PackageEscaped) {
     m := &PackageEscaped{
     }
@@ -40,18 +40,22 @@ func NewPackageEscaped()(*PackageEscaped) {
     return m
 }
 // CreatePackageEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePackageEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPackageEscaped(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PackageEscaped) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PackageEscaped) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PackageEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -167,42 +171,52 @@ func (m *PackageEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *PackageEscaped) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the package.
+// returns a *int32 when successful
 func (m *PackageEscaped) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the package.
+// returns a *string when successful
 func (m *PackageEscaped) GetName()(*string) {
     return m.name
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *PackageEscaped) GetOwner()(NullableSimpleUserable) {
     return m.owner
 }
 // GetPackageType gets the package_type property value. The package_type property
+// returns a *Package_package_type when successful
 func (m *PackageEscaped) GetPackageType()(*Package_package_type) {
     return m.package_type
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a NullableMinimalRepositoryable when successful
 func (m *PackageEscaped) GetRepository()(NullableMinimalRepositoryable) {
     return m.repository
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PackageEscaped) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PackageEscaped) GetUrl()(*string) {
     return m.url
 }
 // GetVersionCount gets the version_count property value. The number of versions of the package.
+// returns a *int32 when successful
 func (m *PackageEscaped) GetVersionCount()(*int32) {
     return m.version_count
 }
 // GetVisibility gets the visibility property value. The visibility property
+// returns a *Package_visibility when successful
 func (m *PackageEscaped) GetVisibility()(*Package_visibility) {
     return m.visibility
 }
@@ -332,7 +346,6 @@ func (m *PackageEscaped) SetVersionCount(value *int32)() {
 func (m *PackageEscaped) SetVisibility(value *Package_visibility)() {
     m.visibility = value
 }
-// PackageEscapedable 
 type PackageEscapedable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

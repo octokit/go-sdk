@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type MarketplaceListingPlan_price_model int
 
 const (

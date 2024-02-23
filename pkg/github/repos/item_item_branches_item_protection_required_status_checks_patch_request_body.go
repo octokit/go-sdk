@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody 
 type ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,23 +23,28 @@ func NewItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody()(*
     return m
 }
 // CreateItemItemBranchesItemProtectionRequired_status_checksPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemBranchesItemProtectionRequired_status_checksPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChecks gets the checks property value. The list of status checks to require in order to merge into this branch.
+// returns a []ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody_checksable when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetChecks()([]ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody_checksable) {
     return m.checks
 }
 // GetContexts gets the contexts property value. **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
 // Deprecated: 
+// returns a []string when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetContexts()([]string) {
     return m.contexts
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +92,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) G
     return res
 }
 // GetStrict gets the strict property value. Require branches to be up to date before merging.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetStrict()(*bool) {
     return m.strict
 }
@@ -142,7 +147,6 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) S
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) SetStrict(value *bool)() {
     m.strict = value
 }
-// ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBodyable 
 type ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

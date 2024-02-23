@@ -86,53 +86,64 @@ type PublicUser struct {
     // The url property
     url *string
 }
-// NewPublicUser instantiates a new publicUser and sets the default values.
+// NewPublicUser instantiates a new PublicUser and sets the default values.
 func NewPublicUser()(*PublicUser) {
     m := &PublicUser{
     }
     return m
 }
 // CreatePublicUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePublicUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPublicUser(), nil
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *PublicUser) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetBio gets the bio property value. The bio property
+// returns a *string when successful
 func (m *PublicUser) GetBio()(*string) {
     return m.bio
 }
 // GetBlog gets the blog property value. The blog property
+// returns a *string when successful
 func (m *PublicUser) GetBlog()(*string) {
     return m.blog
 }
 // GetCollaborators gets the collaborators property value. The collaborators property
+// returns a *int32 when successful
 func (m *PublicUser) GetCollaborators()(*int32) {
     return m.collaborators
 }
 // GetCompany gets the company property value. The company property
+// returns a *string when successful
 func (m *PublicUser) GetCompany()(*string) {
     return m.company
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PublicUser) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDiskUsage gets the disk_usage property value. The disk_usage property
+// returns a *int32 when successful
 func (m *PublicUser) GetDiskUsage()(*int32) {
     return m.disk_usage
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *PublicUser) GetEmail()(*string) {
     return m.email
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *PublicUser) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PublicUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -528,122 +539,152 @@ func (m *PublicUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetFollowers gets the followers property value. The followers property
+// returns a *int32 when successful
 func (m *PublicUser) GetFollowers()(*int32) {
     return m.followers
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *PublicUser) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowing gets the following property value. The following property
+// returns a *int32 when successful
 func (m *PublicUser) GetFollowing()(*int32) {
     return m.following
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *PublicUser) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *PublicUser) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *PublicUser) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetHireable gets the hireable property value. The hireable property
+// returns a *bool when successful
 func (m *PublicUser) GetHireable()(*bool) {
     return m.hireable
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *PublicUser) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *PublicUser) GetId()(*int32) {
     return m.id
 }
 // GetLocation gets the location property value. The location property
+// returns a *string when successful
 func (m *PublicUser) GetLocation()(*string) {
     return m.location
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *PublicUser) GetLogin()(*string) {
     return m.login
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PublicUser) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *PublicUser) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
+// returns a *string when successful
 func (m *PublicUser) GetOrganizationsUrl()(*string) {
     return m.organizations_url
 }
 // GetOwnedPrivateRepos gets the owned_private_repos property value. The owned_private_repos property
+// returns a *int32 when successful
 func (m *PublicUser) GetOwnedPrivateRepos()(*int32) {
     return m.owned_private_repos
 }
 // GetPlan gets the plan property value. The plan property
+// returns a PublicUser_planable when successful
 func (m *PublicUser) GetPlan()(PublicUser_planable) {
     return m.plan
 }
 // GetPrivateGists gets the private_gists property value. The private_gists property
+// returns a *int32 when successful
 func (m *PublicUser) GetPrivateGists()(*int32) {
     return m.private_gists
 }
 // GetPublicGists gets the public_gists property value. The public_gists property
+// returns a *int32 when successful
 func (m *PublicUser) GetPublicGists()(*int32) {
     return m.public_gists
 }
 // GetPublicRepos gets the public_repos property value. The public_repos property
+// returns a *int32 when successful
 func (m *PublicUser) GetPublicRepos()(*int32) {
     return m.public_repos
 }
 // GetReceivedEventsUrl gets the received_events_url property value. The received_events_url property
+// returns a *string when successful
 func (m *PublicUser) GetReceivedEventsUrl()(*string) {
     return m.received_events_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *PublicUser) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetSiteAdmin gets the site_admin property value. The site_admin property
+// returns a *bool when successful
 func (m *PublicUser) GetSiteAdmin()(*bool) {
     return m.site_admin
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *PublicUser) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetSubscriptionsUrl gets the subscriptions_url property value. The subscriptions_url property
+// returns a *string when successful
 func (m *PublicUser) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
 // GetSuspendedAt gets the suspended_at property value. The suspended_at property
+// returns a *Time when successful
 func (m *PublicUser) GetSuspendedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.suspended_at
 }
 // GetTotalPrivateRepos gets the total_private_repos property value. The total_private_repos property
+// returns a *int32 when successful
 func (m *PublicUser) GetTotalPrivateRepos()(*int32) {
     return m.total_private_repos
 }
 // GetTwitterUsername gets the twitter_username property value. The twitter_username property
+// returns a *string when successful
 func (m *PublicUser) GetTwitterUsername()(*string) {
     return m.twitter_username
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *PublicUser) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PublicUser) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PublicUser) GetUrl()(*string) {
     return m.url
 }
@@ -1041,7 +1082,6 @@ func (m *PublicUser) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *PublicUser) SetUrl(value *string)() {
     m.url = value
 }
-// PublicUserable 
 type PublicUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAvatarUrl()(*string)

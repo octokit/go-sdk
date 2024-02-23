@@ -55,7 +55,7 @@ type ImportEscaped struct {
     // The URL of the originating repository.
     vcs_url *string
 }
-// NewImportEscaped instantiates a new importEscaped and sets the default values.
+// NewImportEscaped instantiates a new ImportEscaped and sets the default values.
 func NewImportEscaped()(*ImportEscaped) {
     m := &ImportEscaped{
     }
@@ -63,34 +63,42 @@ func NewImportEscaped()(*ImportEscaped) {
     return m
 }
 // CreateImportEscapedFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateImportEscapedFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewImportEscaped(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ImportEscaped) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorsCount gets the authors_count property value. The authors_count property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetAuthorsCount()(*int32) {
     return m.authors_count
 }
 // GetAuthorsUrl gets the authors_url property value. The authors_url property
+// returns a *string when successful
 func (m *ImportEscaped) GetAuthorsUrl()(*string) {
     return m.authors_url
 }
 // GetCommitCount gets the commit_count property value. The commit_count property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetCommitCount()(*int32) {
     return m.commit_count
 }
 // GetErrorMessage gets the error_message property value. The error_message property
+// returns a *string when successful
 func (m *ImportEscaped) GetErrorMessage()(*string) {
     return m.error_message
 }
 // GetFailedStep gets the failed_step property value. The failed_step property
+// returns a *string when successful
 func (m *ImportEscaped) GetFailedStep()(*string) {
     return m.failed_step
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ImportEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authors_count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -332,74 +340,92 @@ func (m *ImportEscaped) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetHasLargeFiles gets the has_large_files property value. The has_large_files property
+// returns a *bool when successful
 func (m *ImportEscaped) GetHasLargeFiles()(*bool) {
     return m.has_large_files
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *ImportEscaped) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetImportPercent gets the import_percent property value. The import_percent property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetImportPercent()(*int32) {
     return m.import_percent
 }
 // GetLargeFilesCount gets the large_files_count property value. The large_files_count property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetLargeFilesCount()(*int32) {
     return m.large_files_count
 }
 // GetLargeFilesSize gets the large_files_size property value. The large_files_size property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetLargeFilesSize()(*int32) {
     return m.large_files_size
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ImportEscaped) GetMessage()(*string) {
     return m.message
 }
 // GetProjectChoices gets the project_choices property value. The project_choices property
+// returns a []Import_project_choicesable when successful
 func (m *ImportEscaped) GetProjectChoices()([]Import_project_choicesable) {
     return m.project_choices
 }
 // GetPushPercent gets the push_percent property value. The push_percent property
+// returns a *int32 when successful
 func (m *ImportEscaped) GetPushPercent()(*int32) {
     return m.push_percent
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *ImportEscaped) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetStatus gets the status property value. The status property
+// returns a *Import_status when successful
 func (m *ImportEscaped) GetStatus()(*Import_status) {
     return m.status
 }
 // GetStatusText gets the status_text property value. The status_text property
+// returns a *string when successful
 func (m *ImportEscaped) GetStatusText()(*string) {
     return m.status_text
 }
 // GetSvcRoot gets the svc_root property value. The svc_root property
+// returns a *string when successful
 func (m *ImportEscaped) GetSvcRoot()(*string) {
     return m.svc_root
 }
 // GetSvnRoot gets the svn_root property value. The svn_root property
+// returns a *string when successful
 func (m *ImportEscaped) GetSvnRoot()(*string) {
     return m.svn_root
 }
 // GetTfvcProject gets the tfvc_project property value. The tfvc_project property
+// returns a *string when successful
 func (m *ImportEscaped) GetTfvcProject()(*string) {
     return m.tfvc_project
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ImportEscaped) GetUrl()(*string) {
     return m.url
 }
 // GetUseLfs gets the use_lfs property value. The use_lfs property
+// returns a *bool when successful
 func (m *ImportEscaped) GetUseLfs()(*bool) {
     return m.use_lfs
 }
 // GetVcs gets the vcs property value. The vcs property
+// returns a *string when successful
 func (m *ImportEscaped) GetVcs()(*string) {
     return m.vcs
 }
 // GetVcsUrl gets the vcs_url property value. The URL of the originating repository.
+// returns a *string when successful
 func (m *ImportEscaped) GetVcsUrl()(*string) {
     return m.vcs_url
 }
@@ -654,7 +680,6 @@ func (m *ImportEscaped) SetVcs(value *string)() {
 func (m *ImportEscaped) SetVcsUrl(value *string)() {
     m.vcs_url = value
 }
-// ImportEscapedable 
 type ImportEscapedable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

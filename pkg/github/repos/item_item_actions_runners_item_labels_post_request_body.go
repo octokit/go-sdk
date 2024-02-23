@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemActionsRunnersItemLabelsPostRequestBody 
 type ItemItemActionsRunnersItemLabelsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,14 +18,17 @@ func NewItemItemActionsRunnersItemLabelsPostRequestBody()(*ItemItemActionsRunner
     return m
 }
 // CreateItemItemActionsRunnersItemLabelsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemActionsRunnersItemLabelsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemActionsRunnersItemLabelsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +50,7 @@ func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) GetFieldDeserializers(
     return res
 }
 // GetLabels gets the labels property value. The names of the custom labels to add to the runner.
+// returns a []string when successful
 func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) GetLabels()([]string) {
     return m.labels
 }
@@ -75,7 +78,6 @@ func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) SetAdditionalData(valu
 func (m *ItemItemActionsRunnersItemLabelsPostRequestBody) SetLabels(value []string)() {
     m.labels = value
 }
-// ItemItemActionsRunnersItemLabelsPostRequestBodyable 
 type ItemItemActionsRunnersItemLabelsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

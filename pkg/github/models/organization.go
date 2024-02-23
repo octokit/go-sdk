@@ -68,7 +68,7 @@ type Organization struct {
     // URL for the organization
     url *string
 }
-// NewOrganization instantiates a new organization and sets the default values.
+// NewOrganization instantiates a new Organization and sets the default values.
 func NewOrganization()(*Organization) {
     m := &Organization{
     }
@@ -76,42 +76,52 @@ func NewOrganization()(*Organization) {
     return m
 }
 // CreateOrganizationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganization(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Organization) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Organization) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetBlog gets the blog property value. Display blog url for the organization
+// returns a *string when successful
 func (m *Organization) GetBlog()(*string) {
     return m.blog
 }
 // GetCompany gets the company property value. Display company name for the organization
+// returns a *string when successful
 func (m *Organization) GetCompany()(*string) {
     return m.company
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Organization) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *Organization) GetDescription()(*string) {
     return m.description
 }
 // GetEmail gets the email property value. Display email for the organization
+// returns a *string when successful
 func (m *Organization) GetEmail()(*string) {
     return m.email
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *Organization) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -407,90 +417,112 @@ func (m *Organization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetFollowers gets the followers property value. The followers property
+// returns a *int32 when successful
 func (m *Organization) GetFollowers()(*int32) {
     return m.followers
 }
 // GetFollowing gets the following property value. The following property
+// returns a *int32 when successful
 func (m *Organization) GetFollowing()(*int32) {
     return m.following
 }
 // GetHasOrganizationProjects gets the has_organization_projects property value. Specifies if organization projects are enabled for this org
+// returns a *bool when successful
 func (m *Organization) GetHasOrganizationProjects()(*bool) {
     return m.has_organization_projects
 }
 // GetHasRepositoryProjects gets the has_repository_projects property value. Specifies if repository projects are enabled for repositories that belong to this org
+// returns a *bool when successful
 func (m *Organization) GetHasRepositoryProjects()(*bool) {
     return m.has_repository_projects
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *Organization) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Organization) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Organization) GetId()(*int32) {
     return m.id
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *Organization) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsVerified gets the is_verified property value. The is_verified property
+// returns a *bool when successful
 func (m *Organization) GetIsVerified()(*bool) {
     return m.is_verified
 }
 // GetLocation gets the location property value. Display location for the organization
+// returns a *string when successful
 func (m *Organization) GetLocation()(*string) {
     return m.location
 }
 // GetLogin gets the login property value. Unique login name of the organization
+// returns a *string when successful
 func (m *Organization) GetLogin()(*string) {
     return m.login
 }
 // GetMembersUrl gets the members_url property value. The members_url property
+// returns a *string when successful
 func (m *Organization) GetMembersUrl()(*string) {
     return m.members_url
 }
 // GetName gets the name property value. Display name for the organization
+// returns a *string when successful
 func (m *Organization) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Organization) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPlan gets the plan property value. The plan property
+// returns a Organization_planable when successful
 func (m *Organization) GetPlan()(Organization_planable) {
     return m.plan
 }
 // GetPublicGists gets the public_gists property value. The public_gists property
+// returns a *int32 when successful
 func (m *Organization) GetPublicGists()(*int32) {
     return m.public_gists
 }
 // GetPublicMembersUrl gets the public_members_url property value. The public_members_url property
+// returns a *string when successful
 func (m *Organization) GetPublicMembersUrl()(*string) {
     return m.public_members_url
 }
 // GetPublicRepos gets the public_repos property value. The public_repos property
+// returns a *int32 when successful
 func (m *Organization) GetPublicRepos()(*int32) {
     return m.public_repos
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *Organization) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Organization) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Organization) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. URL for the organization
+// returns a *string when successful
 func (m *Organization) GetUrl()(*string) {
     return m.url
 }
@@ -798,7 +830,6 @@ func (m *Organization) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3
 func (m *Organization) SetUrl(value *string)() {
     m.url = value
 }
-// Organizationable 
 type Organizationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

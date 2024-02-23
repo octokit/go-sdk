@@ -2,7 +2,6 @@ package issues
 import (
     "errors"
 )
-// 
 type GetOrderQueryParameterType int
 
 const (

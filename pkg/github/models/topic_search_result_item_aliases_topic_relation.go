@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TopicSearchResultItem_aliases_topic_relation 
 type TopicSearchResultItem_aliases_topic_relation struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type TopicSearchResultItem_aliases_topic_relation struct {
     // The topic_id property
     topic_id *int32
 }
-// NewTopicSearchResultItem_aliases_topic_relation instantiates a new topicSearchResultItem_aliases_topic_relation and sets the default values.
+// NewTopicSearchResultItem_aliases_topic_relation instantiates a new TopicSearchResultItem_aliases_topic_relation and sets the default values.
 func NewTopicSearchResultItem_aliases_topic_relation()(*TopicSearchResultItem_aliases_topic_relation) {
     m := &TopicSearchResultItem_aliases_topic_relation{
     }
@@ -25,14 +24,17 @@ func NewTopicSearchResultItem_aliases_topic_relation()(*TopicSearchResultItem_al
     return m
 }
 // CreateTopicSearchResultItem_aliases_topic_relationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTopicSearchResultItem_aliases_topic_relationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTopicSearchResultItem_aliases_topic_relation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *TopicSearchResultItem_aliases_topic_relation) GetFieldDeserializers()(m
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetName()(*string) {
     return m.name
 }
 // GetRelationType gets the relation_type property value. The relation_type property
+// returns a *string when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetRelationType()(*string) {
     return m.relation_type
 }
 // GetTopicId gets the topic_id property value. The topic_id property
+// returns a *int32 when successful
 func (m *TopicSearchResultItem_aliases_topic_relation) GetTopicId()(*int32) {
     return m.topic_id
 }
@@ -147,7 +153,6 @@ func (m *TopicSearchResultItem_aliases_topic_relation) SetRelationType(value *st
 func (m *TopicSearchResultItem_aliases_topic_relation) SetTopicId(value *int32)() {
     m.topic_id = value
 }
-// TopicSearchResultItem_aliases_topic_relationable 
 type TopicSearchResultItem_aliases_topic_relationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

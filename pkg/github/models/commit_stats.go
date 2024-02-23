@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Commit_stats 
 type Commit_stats struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type Commit_stats struct {
     // The total property
     total *int32
 }
-// NewCommit_stats instantiates a new commit_stats and sets the default values.
+// NewCommit_stats instantiates a new Commit_stats and sets the default values.
 func NewCommit_stats()(*Commit_stats) {
     m := &Commit_stats{
     }
@@ -23,22 +22,27 @@ func NewCommit_stats()(*Commit_stats) {
     return m
 }
 // CreateCommit_statsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommit_statsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommit_stats(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Commit_stats) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdditions gets the additions property value. The additions property
+// returns a *int32 when successful
 func (m *Commit_stats) GetAdditions()(*int32) {
     return m.additions
 }
 // GetDeletions gets the deletions property value. The deletions property
+// returns a *int32 when successful
 func (m *Commit_stats) GetDeletions()(*int32) {
     return m.deletions
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Commit_stats) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *Commit_stats) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetTotal gets the total property value. The total property
+// returns a *int32 when successful
 func (m *Commit_stats) GetTotal()(*int32) {
     return m.total
 }
@@ -121,7 +126,6 @@ func (m *Commit_stats) SetDeletions(value *int32)() {
 func (m *Commit_stats) SetTotal(value *int32)() {
     m.total = value
 }
-// Commit_statsable 
 type Commit_statsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

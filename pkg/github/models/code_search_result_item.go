@@ -36,7 +36,7 @@ type CodeSearchResultItem struct {
     // The url property
     url *string
 }
-// NewCodeSearchResultItem instantiates a new codeSearchResultItem and sets the default values.
+// NewCodeSearchResultItem instantiates a new CodeSearchResultItem and sets the default values.
 func NewCodeSearchResultItem()(*CodeSearchResultItem) {
     m := &CodeSearchResultItem{
     }
@@ -44,14 +44,17 @@ func NewCodeSearchResultItem()(*CodeSearchResultItem) {
     return m
 }
 // CreateCodeSearchResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeSearchResultItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeSearchResultItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeSearchResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["file_size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -199,54 +202,67 @@ func (m *CodeSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetFileSize gets the file_size property value. The file_size property
+// returns a *int32 when successful
 func (m *CodeSearchResultItem) GetFileSize()(*int32) {
     return m.file_size
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetLanguage()(*string) {
     return m.language
 }
 // GetLastModifiedAt gets the last_modified_at property value. The last_modified_at property
+// returns a *Time when successful
 func (m *CodeSearchResultItem) GetLastModifiedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_modified_at
 }
 // GetLineNumbers gets the line_numbers property value. The line_numbers property
+// returns a []string when successful
 func (m *CodeSearchResultItem) GetLineNumbers()([]string) {
     return m.line_numbers
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetName()(*string) {
     return m.name
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetPath()(*string) {
     return m.path
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *CodeSearchResultItem) GetRepository()(MinimalRepositoryable) {
     return m.repository
 }
 // GetScore gets the score property value. The score property
+// returns a *float64 when successful
 func (m *CodeSearchResultItem) GetScore()(*float64) {
     return m.score
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetSha()(*string) {
     return m.sha
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
+// returns a []Codeable when successful
 func (m *CodeSearchResultItem) GetTextMatches()([]Codeable) {
     return m.text_matches
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CodeSearchResultItem) GetUrl()(*string) {
     return m.url
 }
@@ -400,7 +416,6 @@ func (m *CodeSearchResultItem) SetTextMatches(value []Codeable)() {
 func (m *CodeSearchResultItem) SetUrl(value *string)() {
     m.url = value
 }
-// CodeSearchResultItemable 
 type CodeSearchResultItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

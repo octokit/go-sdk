@@ -50,20 +50,21 @@ type Installation struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// Installation_Installation_account composed type wrapper for classes enterprise, simpleUser
+// Installation_Installation_account composed type wrapper for classes Enterpriseable, SimpleUserable
 type Installation_Installation_account struct {
-    // Composed type representation for type enterprise
+    // Composed type representation for type Enterpriseable
     enterprise Enterpriseable
-    // Composed type representation for type simpleUser
+    // Composed type representation for type SimpleUserable
     simpleUser SimpleUserable
 }
-// NewInstallation_Installation_account instantiates a new installation_account and sets the default values.
+// NewInstallation_Installation_account instantiates a new Installation_Installation_account and sets the default values.
 func NewInstallation_Installation_account()(*Installation_Installation_account) {
     m := &Installation_Installation_account{
     }
     return m
 }
 // CreateInstallation_Installation_accountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInstallation_Installation_accountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewInstallation_Installation_account()
     if parseNode != nil {
@@ -85,19 +86,23 @@ func CreateInstallation_Installation_accountFromDiscriminatorValue(parseNode i87
     }
     return result, nil
 }
-// GetEnterprise gets the enterprise property value. Composed type representation for type enterprise
+// GetEnterprise gets the enterprise property value. Composed type representation for type Enterpriseable
+// returns a Enterpriseable when successful
 func (m *Installation_Installation_account) GetEnterprise()(Enterpriseable) {
     return m.enterprise
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Installation_Installation_account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *Installation_Installation_account) GetIsComposedType()(bool) {
     return true
 }
-// GetSimpleUser gets the simpleUser property value. Composed type representation for type simpleUser
+// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
+// returns a SimpleUserable when successful
 func (m *Installation_Installation_account) GetSimpleUser()(SimpleUserable) {
     return m.simpleUser
 }
@@ -116,15 +121,14 @@ func (m *Installation_Installation_account) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetEnterprise sets the enterprise property value. Composed type representation for type enterprise
+// SetEnterprise sets the enterprise property value. Composed type representation for type Enterpriseable
 func (m *Installation_Installation_account) SetEnterprise(value Enterpriseable)() {
     m.enterprise = value
 }
-// SetSimpleUser sets the simpleUser property value. Composed type representation for type simpleUser
+// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
 func (m *Installation_Installation_account) SetSimpleUser(value SimpleUserable)() {
     m.simpleUser = value
 }
-// Installation_Installation_accountable 
 type Installation_Installation_accountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnterprise()(Enterpriseable)
@@ -132,7 +136,7 @@ type Installation_Installation_accountable interface {
     SetEnterprise(value Enterpriseable)()
     SetSimpleUser(value SimpleUserable)()
 }
-// NewInstallation instantiates a new installation and sets the default values.
+// NewInstallation instantiates a new Installation and sets the default values.
 func NewInstallation()(*Installation) {
     m := &Installation{
     }
@@ -140,42 +144,52 @@ func NewInstallation()(*Installation) {
     return m
 }
 // CreateInstallationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInstallationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInstallation(), nil
 }
 // GetAccessTokensUrl gets the access_tokens_url property value. The access_tokens_url property
+// returns a *string when successful
 func (m *Installation) GetAccessTokensUrl()(*string) {
     return m.access_tokens_url
 }
 // GetAccount gets the account property value. The account property
+// returns a Installation_Installation_accountable when successful
 func (m *Installation) GetAccount()(Installation_Installation_accountable) {
     return m.account
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Installation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAppId gets the app_id property value. The app_id property
+// returns a *int32 when successful
 func (m *Installation) GetAppId()(*int32) {
     return m.app_id
 }
 // GetAppSlug gets the app_slug property value. The app_slug property
+// returns a *string when successful
 func (m *Installation) GetAppSlug()(*string) {
     return m.app_slug
 }
 // GetContactEmail gets the contact_email property value. The contact_email property
+// returns a *string when successful
 func (m *Installation) GetContactEmail()(*string) {
     return m.contact_email
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Installation) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetEvents gets the events property value. The events property
+// returns a []string when successful
 func (m *Installation) GetEvents()([]string) {
     return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Installation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["access_tokens_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -393,54 +407,67 @@ func (m *Installation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetHasMultipleSingleFiles gets the has_multiple_single_files property value. The has_multiple_single_files property
+// returns a *bool when successful
 func (m *Installation) GetHasMultipleSingleFiles()(*bool) {
     return m.has_multiple_single_files
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Installation) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The ID of the installation.
+// returns a *int32 when successful
 func (m *Installation) GetId()(*int32) {
     return m.id
 }
 // GetPermissions gets the permissions property value. The permissions granted to the user access token.
+// returns a AppPermissionsable when successful
 func (m *Installation) GetPermissions()(AppPermissionsable) {
     return m.permissions
 }
 // GetRepositoriesUrl gets the repositories_url property value. The repositories_url property
+// returns a *string when successful
 func (m *Installation) GetRepositoriesUrl()(*string) {
     return m.repositories_url
 }
 // GetRepositorySelection gets the repository_selection property value. Describe whether all repositories have been selected or there's a selection involved
+// returns a *Installation_repository_selection when successful
 func (m *Installation) GetRepositorySelection()(*Installation_repository_selection) {
     return m.repository_selection
 }
 // GetSingleFileName gets the single_file_name property value. The single_file_name property
+// returns a *string when successful
 func (m *Installation) GetSingleFileName()(*string) {
     return m.single_file_name
 }
 // GetSingleFilePaths gets the single_file_paths property value. The single_file_paths property
+// returns a []string when successful
 func (m *Installation) GetSingleFilePaths()([]string) {
     return m.single_file_paths
 }
 // GetSuspendedAt gets the suspended_at property value. The suspended_at property
+// returns a *Time when successful
 func (m *Installation) GetSuspendedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.suspended_at
 }
 // GetSuspendedBy gets the suspended_by property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Installation) GetSuspendedBy()(NullableSimpleUserable) {
     return m.suspended_by
 }
 // GetTargetId gets the target_id property value. The ID of the user or organization this token is being scoped to.
+// returns a *int32 when successful
 func (m *Installation) GetTargetId()(*int32) {
     return m.target_id
 }
 // GetTargetType gets the target_type property value. The target_type property
+// returns a *string when successful
 func (m *Installation) GetTargetType()(*string) {
     return m.target_type
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Installation) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -659,7 +686,6 @@ func (m *Installation) SetTargetType(value *string)() {
 func (m *Installation) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// Installationable 
 type Installationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

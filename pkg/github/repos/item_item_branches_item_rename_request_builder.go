@@ -10,20 +10,24 @@ import (
 type ItemItemBranchesItemRenameRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemBranchesItemRenameRequestBuilderInternal instantiates a new RenameRequestBuilder and sets the default values.
+// NewItemItemBranchesItemRenameRequestBuilderInternal instantiates a new ItemItemBranchesItemRenameRequestBuilder and sets the default values.
 func NewItemItemBranchesItemRenameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesItemRenameRequestBuilder) {
     m := &ItemItemBranchesItemRenameRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/rename", pathParameters),
     }
     return m
 }
-// NewItemItemBranchesItemRenameRequestBuilder instantiates a new RenameRequestBuilder and sets the default values.
+// NewItemItemBranchesItemRenameRequestBuilder instantiates a new ItemItemBranchesItemRenameRequestBuilder and sets the default values.
 func NewItemItemBranchesItemRenameRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesItemRenameRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemBranchesItemRenameRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post renames a branch in a repository.**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+// returns a BranchWithProtectionable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branches#rename-a-branch
@@ -47,6 +51,7 @@ func (m *ItemItemBranchesItemRenameRequestBuilder) Post(ctx context.Context, bod
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.BranchWithProtectionable), nil
 }
 // ToPostRequestInformation renames a branch in a repository.**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesItemRenameRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemBranchesItemRenamePostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -58,6 +63,7 @@ func (m *ItemItemBranchesItemRenameRequestBuilder) ToPostRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemBranchesItemRenameRequestBuilder when successful
 func (m *ItemItemBranchesItemRenameRequestBuilder) WithUrl(rawUrl string)(*ItemItemBranchesItemRenameRequestBuilder) {
     return NewItemItemBranchesItemRenameRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

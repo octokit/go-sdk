@@ -31,6 +31,9 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get we delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+// returns a []Eventable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a Events503Error error when the service returns a 503 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/events#list-public-events
@@ -56,6 +59,7 @@ func (m *EventsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2
     return val, nil
 }
 // ToGetRequestInformation we delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+// returns a *RequestInformation when successful
 func (m *EventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[EventsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -63,6 +67,7 @@ func (m *EventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *EventsRequestBuilder when successful
 func (m *EventsRequestBuilder) WithUrl(rawUrl string)(*EventsRequestBuilder) {
     return NewEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -46,7 +46,7 @@ type Deployment struct {
     // The url property
     url *string
 }
-// NewDeployment instantiates a new deployment and sets the default values.
+// NewDeployment instantiates a new Deployment and sets the default values.
 func NewDeployment()(*Deployment) {
     m := &Deployment{
     }
@@ -54,30 +54,37 @@ func NewDeployment()(*Deployment) {
     return m
 }
 // CreateDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeployment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Deployment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Deployment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Deployment) GetCreator()(NullableSimpleUserable) {
     return m.creator
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *Deployment) GetDescription()(*string) {
     return m.description
 }
 // GetEnvironment gets the environment property value. Name for the target deployment environment.
+// returns a *string when successful
 func (m *Deployment) GetEnvironment()(*string) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -263,58 +270,72 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetId gets the id property value. Unique identifier of the deployment
+// returns a *int32 when successful
 func (m *Deployment) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Deployment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOriginalEnvironment gets the original_environment property value. The original_environment property
+// returns a *string when successful
 func (m *Deployment) GetOriginalEnvironment()(*string) {
     return m.original_environment
 }
 // GetPayload gets the payload property value. The payload property
+// returns a *string when successful
 func (m *Deployment) GetPayload()(*string) {
     return m.payload
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *Deployment) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetProductionEnvironment gets the production_environment property value. Specifies if the given environment is one that end-users directly interact with. Default: false.
+// returns a *bool when successful
 func (m *Deployment) GetProductionEnvironment()(*bool) {
     return m.production_environment
 }
 // GetRef gets the ref property value. The ref to deploy. This can be a branch, tag, or sha.
+// returns a *string when successful
 func (m *Deployment) GetRef()(*string) {
     return m.ref
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *Deployment) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *Deployment) GetSha()(*string) {
     return m.sha
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *Deployment) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetTask gets the task property value. Parameter to specify a task to execute
+// returns a *string when successful
 func (m *Deployment) GetTask()(*string) {
     return m.task
 }
 // GetTransientEnvironment gets the transient_environment property value. Specifies if the given environment is will no longer exist at some point in the future. Default: false.
+// returns a *bool when successful
 func (m *Deployment) GetTransientEnvironment()(*bool) {
     return m.transient_environment
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Deployment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Deployment) GetUrl()(*string) {
     return m.url
 }
@@ -512,7 +533,6 @@ func (m *Deployment) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *Deployment) SetUrl(value *string)() {
     m.url = value
 }
-// Deploymentable 
 type Deploymentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

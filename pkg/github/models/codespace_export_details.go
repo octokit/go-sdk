@@ -24,7 +24,7 @@ type CodespaceExportDetails struct {
     // State of the latest export
     state *string
 }
-// NewCodespaceExportDetails instantiates a new codespaceExportDetails and sets the default values.
+// NewCodespaceExportDetails instantiates a new CodespaceExportDetails and sets the default values.
 func NewCodespaceExportDetails()(*CodespaceExportDetails) {
     m := &CodespaceExportDetails{
     }
@@ -32,26 +32,32 @@ func NewCodespaceExportDetails()(*CodespaceExportDetails) {
     return m
 }
 // CreateCodespaceExportDetailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespaceExportDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespaceExportDetails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespaceExportDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBranch gets the branch property value. Name of the exported branch
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetBranch()(*string) {
     return m.branch
 }
 // GetCompletedAt gets the completed_at property value. Completion time of the last export operation
+// returns a *Time when successful
 func (m *CodespaceExportDetails) GetCompletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completed_at
 }
 // GetExportUrl gets the export_url property value. Url for fetching export details
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetExportUrl()(*string) {
     return m.export_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespaceExportDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["branch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -127,18 +133,22 @@ func (m *CodespaceExportDetails) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetHtmlUrl gets the html_url property value. Web url for the exported branch
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Id for the export details
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetId()(*string) {
     return m.id
 }
 // GetSha gets the sha property value. Git commit SHA of the exported branch
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetSha()(*string) {
     return m.sha
 }
 // GetState gets the state property value. State of the latest export
+// returns a *string when successful
 func (m *CodespaceExportDetails) GetState()(*string) {
     return m.state
 }
@@ -226,7 +236,6 @@ func (m *CodespaceExportDetails) SetSha(value *string)() {
 func (m *CodespaceExportDetails) SetState(value *string)() {
     m.state = value
 }
-// CodespaceExportDetailsable 
 type CodespaceExportDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

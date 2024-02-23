@@ -27,7 +27,7 @@ type LabelSearchResultItem struct {
     // The url property
     url *string
 }
-// NewLabelSearchResultItem instantiates a new labelSearchResultItem and sets the default values.
+// NewLabelSearchResultItem instantiates a new LabelSearchResultItem and sets the default values.
 func NewLabelSearchResultItem()(*LabelSearchResultItem) {
     m := &LabelSearchResultItem{
     }
@@ -35,26 +35,32 @@ func NewLabelSearchResultItem()(*LabelSearchResultItem) {
     return m
 }
 // CreateLabelSearchResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLabelSearchResultItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLabelSearchResultItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *LabelSearchResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColor gets the color property value. The color property
+// returns a *string when successful
 func (m *LabelSearchResultItem) GetColor()(*string) {
     return m.color
 }
 // GetDefaultEscaped gets the default property value. The default property
+// returns a *bool when successful
 func (m *LabelSearchResultItem) GetDefaultEscaped()(*bool) {
     return m.defaultEscaped
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *LabelSearchResultItem) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *LabelSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -156,26 +162,32 @@ func (m *LabelSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *LabelSearchResultItem) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *LabelSearchResultItem) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *LabelSearchResultItem) GetNodeId()(*string) {
     return m.node_id
 }
 // GetScore gets the score property value. The score property
+// returns a *float64 when successful
 func (m *LabelSearchResultItem) GetScore()(*float64) {
     return m.score
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
+// returns a []Labelsable when successful
 func (m *LabelSearchResultItem) GetTextMatches()([]Labelsable) {
     return m.text_matches
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *LabelSearchResultItem) GetUrl()(*string) {
     return m.url
 }
@@ -289,7 +301,6 @@ func (m *LabelSearchResultItem) SetTextMatches(value []Labelsable)() {
 func (m *LabelSearchResultItem) SetUrl(value *string)() {
     m.url = value
 }
-// LabelSearchResultItemable 
 type LabelSearchResultItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

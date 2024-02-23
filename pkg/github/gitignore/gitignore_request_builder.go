@@ -22,6 +22,7 @@ func NewGitignoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewGitignoreRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Templates the templates property
+// returns a *TemplatesRequestBuilder when successful
 func (m *GitignoreRequestBuilder) Templates()(*TemplatesRequestBuilder) {
     return NewTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

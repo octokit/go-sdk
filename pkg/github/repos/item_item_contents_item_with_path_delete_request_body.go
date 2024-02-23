@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemContentsItemWithPathDeleteRequestBody 
 type ItemItemContentsItemWithPathDeleteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -27,26 +26,32 @@ func NewItemItemContentsItemWithPathDeleteRequestBody()(*ItemItemContentsItemWit
     return m
 }
 // CreateItemItemContentsItemWithPathDeleteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemContentsItemWithPathDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemContentsItemWithPathDeleteRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. object containing information about the author.
+// returns a ItemItemContentsItemWithPathDeleteRequestBody_authorable when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetAuthor()(ItemItemContentsItemWithPathDeleteRequestBody_authorable) {
     return m.author
 }
 // GetBranch gets the branch property value. The branch name. Default: the repository’s default branch
+// returns a *string when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetBranch()(*string) {
     return m.branch
 }
 // GetCommitter gets the committer property value. object containing information about the committer.
+// returns a ItemItemContentsItemWithPathDeleteRequestBody_committerable when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetCommitter()(ItemItemContentsItemWithPathDeleteRequestBody_committerable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -102,10 +107,12 @@ func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetFieldDeserializers()(
     return res
 }
 // GetMessage gets the message property value. The commit message.
+// returns a *string when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetMessage()(*string) {
     return m.message
 }
 // GetSha gets the sha property value. The blob SHA of the file being deleted.
+// returns a *string when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) GetSha()(*string) {
     return m.sha
 }
@@ -173,7 +180,6 @@ func (m *ItemItemContentsItemWithPathDeleteRequestBody) SetMessage(value *string
 func (m *ItemItemContentsItemWithPathDeleteRequestBody) SetSha(value *string)() {
     m.sha = value
 }
-// ItemItemContentsItemWithPathDeleteRequestBodyable 
 type ItemItemContentsItemWithPathDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

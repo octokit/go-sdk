@@ -17,7 +17,7 @@ type Email struct {
     // The visibility property
     visibility *string
 }
-// NewEmail instantiates a new email and sets the default values.
+// NewEmail instantiates a new Email and sets the default values.
 func NewEmail()(*Email) {
     m := &Email{
     }
@@ -25,18 +25,22 @@ func NewEmail()(*Email) {
     return m
 }
 // CreateEmailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEmailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEmail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Email) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *Email) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Email) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +86,17 @@ func (m *Email) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetPrimary gets the primary property value. The primary property
+// returns a *bool when successful
 func (m *Email) GetPrimary()(*bool) {
     return m.primary
 }
 // GetVerified gets the verified property value. The verified property
+// returns a *bool when successful
 func (m *Email) GetVerified()(*bool) {
     return m.verified
 }
 // GetVisibility gets the visibility property value. The visibility property
+// returns a *string when successful
 func (m *Email) GetVisibility()(*string) {
     return m.visibility
 }
@@ -147,7 +154,6 @@ func (m *Email) SetVerified(value *bool)() {
 func (m *Email) SetVisibility(value *string)() {
     m.visibility = value
 }
-// Emailable 
 type Emailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GitTag_tagger 
 type GitTag_tagger struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type GitTag_tagger struct {
     // The name property
     name *string
 }
-// NewGitTag_tagger instantiates a new gitTag_tagger and sets the default values.
+// NewGitTag_tagger instantiates a new GitTag_tagger and sets the default values.
 func NewGitTag_tagger()(*GitTag_tagger) {
     m := &GitTag_tagger{
     }
@@ -23,22 +22,27 @@ func NewGitTag_tagger()(*GitTag_tagger) {
     return m
 }
 // CreateGitTag_taggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitTag_taggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitTag_tagger(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitTag_tagger) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDate gets the date property value. The date property
+// returns a *string when successful
 func (m *GitTag_tagger) GetDate()(*string) {
     return m.date
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *GitTag_tagger) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitTag_tagger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *GitTag_tagger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *GitTag_tagger) GetName()(*string) {
     return m.name
 }
@@ -121,7 +126,6 @@ func (m *GitTag_tagger) SetEmail(value *string)() {
 func (m *GitTag_tagger) SetName(value *string)() {
     m.name = value
 }
-// GitTag_taggerable 
 type GitTag_taggerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

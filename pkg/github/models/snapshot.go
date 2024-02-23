@@ -24,21 +24,24 @@ type Snapshot struct {
     // The version of the repository snapshot submission.
     version *int32
 }
-// NewSnapshot instantiates a new snapshot and sets the default values.
+// NewSnapshot instantiates a new Snapshot and sets the default values.
 func NewSnapshot()(*Snapshot) {
     m := &Snapshot{
     }
     return m
 }
 // CreateSnapshotFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSnapshotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSnapshot(), nil
 }
 // GetDetector gets the detector property value. A description of the detector used.
+// returns a Snapshot_detectorable when successful
 func (m *Snapshot) GetDetector()(Snapshot_detectorable) {
     return m.detector
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Snapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["detector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -124,30 +127,37 @@ func (m *Snapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetJob gets the job property value. The job property
+// returns a Snapshot_jobable when successful
 func (m *Snapshot) GetJob()(Snapshot_jobable) {
     return m.job
 }
 // GetManifests gets the manifests property value. A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
+// returns a Snapshot_manifestsable when successful
 func (m *Snapshot) GetManifests()(Snapshot_manifestsable) {
     return m.manifests
 }
 // GetMetadata gets the metadata property value. User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+// returns a Metadataable when successful
 func (m *Snapshot) GetMetadata()(Metadataable) {
     return m.metadata
 }
 // GetRef gets the ref property value. The repository branch that triggered this snapshot.
+// returns a *string when successful
 func (m *Snapshot) GetRef()(*string) {
     return m.ref
 }
 // GetScanned gets the scanned property value. The time at which the snapshot was scanned.
+// returns a *Time when successful
 func (m *Snapshot) GetScanned()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.scanned
 }
 // GetSha gets the sha property value. The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.
+// returns a *string when successful
 func (m *Snapshot) GetSha()(*string) {
     return m.sha
 }
 // GetVersion gets the version property value. The version of the repository snapshot submission.
+// returns a *int32 when successful
 func (m *Snapshot) GetVersion()(*int32) {
     return m.version
 }
@@ -235,7 +245,6 @@ func (m *Snapshot) SetSha(value *string)() {
 func (m *Snapshot) SetVersion(value *int32)() {
     m.version = value
 }
-// Snapshotable 
 type Snapshotable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDetector()(Snapshot_detectorable)

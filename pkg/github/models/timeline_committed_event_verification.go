@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimelineCommittedEvent_verification 
 type TimelineCommittedEvent_verification struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type TimelineCommittedEvent_verification struct {
     // The verified property
     verified *bool
 }
-// NewTimelineCommittedEvent_verification instantiates a new timelineCommittedEvent_verification and sets the default values.
+// NewTimelineCommittedEvent_verification instantiates a new TimelineCommittedEvent_verification and sets the default values.
 func NewTimelineCommittedEvent_verification()(*TimelineCommittedEvent_verification) {
     m := &TimelineCommittedEvent_verification{
     }
@@ -25,14 +24,17 @@ func NewTimelineCommittedEvent_verification()(*TimelineCommittedEvent_verificati
     return m
 }
 // CreateTimelineCommittedEvent_verificationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineCommittedEvent_verificationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineCommittedEvent_verification(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineCommittedEvent_verification) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineCommittedEvent_verification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["payload"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *TimelineCommittedEvent_verification) GetFieldDeserializers()(map[string
     return res
 }
 // GetPayload gets the payload property value. The payload property
+// returns a *string when successful
 func (m *TimelineCommittedEvent_verification) GetPayload()(*string) {
     return m.payload
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *TimelineCommittedEvent_verification) GetReason()(*string) {
     return m.reason
 }
 // GetSignature gets the signature property value. The signature property
+// returns a *string when successful
 func (m *TimelineCommittedEvent_verification) GetSignature()(*string) {
     return m.signature
 }
 // GetVerified gets the verified property value. The verified property
+// returns a *bool when successful
 func (m *TimelineCommittedEvent_verification) GetVerified()(*bool) {
     return m.verified
 }
@@ -147,7 +153,6 @@ func (m *TimelineCommittedEvent_verification) SetSignature(value *string)() {
 func (m *TimelineCommittedEvent_verification) SetVerified(value *bool)() {
     m.verified = value
 }
-// TimelineCommittedEvent_verificationable 
 type TimelineCommittedEvent_verificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

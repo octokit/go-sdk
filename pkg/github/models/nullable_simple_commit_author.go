@@ -13,7 +13,7 @@ type NullableSimpleCommit_author struct {
     // Name of the commit's author
     name *string
 }
-// NewNullableSimpleCommit_author instantiates a new nullableSimpleCommit_author and sets the default values.
+// NewNullableSimpleCommit_author instantiates a new NullableSimpleCommit_author and sets the default values.
 func NewNullableSimpleCommit_author()(*NullableSimpleCommit_author) {
     m := &NullableSimpleCommit_author{
     }
@@ -21,18 +21,22 @@ func NewNullableSimpleCommit_author()(*NullableSimpleCommit_author) {
     return m
 }
 // CreateNullableSimpleCommit_authorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNullableSimpleCommit_authorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNullableSimpleCommit_author(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NullableSimpleCommit_author) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. Git email address of the commit's author
+// returns a *string when successful
 func (m *NullableSimpleCommit_author) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NullableSimpleCommit_author) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *NullableSimpleCommit_author) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetName gets the name property value. Name of the commit's author
+// returns a *string when successful
 func (m *NullableSimpleCommit_author) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *NullableSimpleCommit_author) SetEmail(value *string)() {
 func (m *NullableSimpleCommit_author) SetName(value *string)() {
     m.name = value
 }
-// NullableSimpleCommit_authorable 
 type NullableSimpleCommit_authorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

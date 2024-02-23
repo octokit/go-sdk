@@ -44,7 +44,7 @@ type NullableIntegration struct {
     // The webhook_secret property
     webhook_secret *string
 }
-// NewNullableIntegration instantiates a new nullableIntegration and sets the default values.
+// NewNullableIntegration instantiates a new NullableIntegration and sets the default values.
 func NewNullableIntegration()(*NullableIntegration) {
     m := &NullableIntegration{
     }
@@ -52,38 +52,47 @@ func NewNullableIntegration()(*NullableIntegration) {
     return m
 }
 // CreateNullableIntegrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNullableIntegrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNullableIntegration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NullableIntegration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientId gets the client_id property value. The client_id property
+// returns a *string when successful
 func (m *NullableIntegration) GetClientId()(*string) {
     return m.client_id
 }
 // GetClientSecret gets the client_secret property value. The client_secret property
+// returns a *string when successful
 func (m *NullableIntegration) GetClientSecret()(*string) {
     return m.client_secret
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *NullableIntegration) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *NullableIntegration) GetDescription()(*string) {
     return m.description
 }
 // GetEvents gets the events property value. The list of events for the GitHub app
+// returns a []string when successful
 func (m *NullableIntegration) GetEvents()([]string) {
     return m.events
 }
 // GetExternalUrl gets the external_url property value. The external_url property
+// returns a *string when successful
 func (m *NullableIntegration) GetExternalUrl()(*string) {
     return m.external_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NullableIntegration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["client_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -265,46 +274,57 @@ func (m *NullableIntegration) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *NullableIntegration) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the GitHub app
+// returns a *int32 when successful
 func (m *NullableIntegration) GetId()(*int32) {
     return m.id
 }
 // GetInstallationsCount gets the installations_count property value. The number of installations associated with the GitHub app
+// returns a *int32 when successful
 func (m *NullableIntegration) GetInstallationsCount()(*int32) {
     return m.installations_count
 }
 // GetName gets the name property value. The name of the GitHub app
+// returns a *string when successful
 func (m *NullableIntegration) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *NullableIntegration) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *NullableIntegration) GetOwner()(NullableSimpleUserable) {
     return m.owner
 }
 // GetPem gets the pem property value. The pem property
+// returns a *string when successful
 func (m *NullableIntegration) GetPem()(*string) {
     return m.pem
 }
 // GetPermissions gets the permissions property value. The set of permissions for the GitHub app
+// returns a NullableIntegration_permissionsable when successful
 func (m *NullableIntegration) GetPermissions()(NullableIntegration_permissionsable) {
     return m.permissions
 }
 // GetSlug gets the slug property value. The slug name of the GitHub app
+// returns a *string when successful
 func (m *NullableIntegration) GetSlug()(*string) {
     return m.slug
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *NullableIntegration) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetWebhookSecret gets the webhook_secret property value. The webhook_secret property
+// returns a *string when successful
 func (m *NullableIntegration) GetWebhookSecret()(*string) {
     return m.webhook_secret
 }
@@ -492,7 +512,6 @@ func (m *NullableIntegration) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad9
 func (m *NullableIntegration) SetWebhookSecret(value *string)() {
     m.webhook_secret = value
 }
-// NullableIntegrationable 
 type NullableIntegrationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

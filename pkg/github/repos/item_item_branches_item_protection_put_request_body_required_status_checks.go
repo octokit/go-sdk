@@ -24,23 +24,28 @@ func NewItemItemBranchesItemProtectionPutRequestBody_required_status_checks()(*I
     return m
 }
 // CreateItemItemBranchesItemProtectionPutRequestBody_required_status_checksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemBranchesItemProtectionPutRequestBody_required_status_checksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemBranchesItemProtectionPutRequestBody_required_status_checks(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChecks gets the checks property value. The list of status checks to require in order to merge into this branch.
+// returns a []ItemItemBranchesItemProtectionPutRequestBody_required_status_checks_checksable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) GetChecks()([]ItemItemBranchesItemProtectionPutRequestBody_required_status_checks_checksable) {
     return m.checks
 }
 // GetContexts gets the contexts property value. **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
 // Deprecated: 
+// returns a []string when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) GetContexts()([]string) {
     return m.contexts
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -88,6 +93,7 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) Ge
     return res
 }
 // GetStrict gets the strict property value. Require branches to be up to date before merging.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) GetStrict()(*bool) {
     return m.strict
 }
@@ -142,7 +148,6 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) Se
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_status_checks) SetStrict(value *bool)() {
     m.strict = value
 }
-// ItemItemBranchesItemProtectionPutRequestBody_required_status_checksable 
 type ItemItemBranchesItemProtectionPutRequestBody_required_status_checksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

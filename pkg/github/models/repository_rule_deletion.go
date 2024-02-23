@@ -11,7 +11,7 @@ type RepositoryRuleDeletion struct {
     // The type property
     typeEscaped *RepositoryRuleDeletion_type
 }
-// NewRepositoryRuleDeletion instantiates a new repositoryRuleDeletion and sets the default values.
+// NewRepositoryRuleDeletion instantiates a new RepositoryRuleDeletion and sets the default values.
 func NewRepositoryRuleDeletion()(*RepositoryRuleDeletion) {
     m := &RepositoryRuleDeletion{
     }
@@ -19,14 +19,17 @@ func NewRepositoryRuleDeletion()(*RepositoryRuleDeletion) {
     return m
 }
 // CreateRepositoryRuleDeletionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleDeletionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleDeletion(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleDeletion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleDeletion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *RepositoryRuleDeletion) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleDeletion_type when successful
 func (m *RepositoryRuleDeletion) GetTypeEscaped()(*RepositoryRuleDeletion_type) {
     return m.typeEscaped
 }
@@ -70,7 +74,6 @@ func (m *RepositoryRuleDeletion) SetAdditionalData(value map[string]any)() {
 func (m *RepositoryRuleDeletion) SetTypeEscaped(value *RepositoryRuleDeletion_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleDeletionable 
 type RepositoryRuleDeletionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

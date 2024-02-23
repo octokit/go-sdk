@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemReposPostRequestBody 
 type ItemReposPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -58,46 +57,57 @@ func NewItemReposPostRequestBody()(*ItemReposPostRequestBody) {
     return m
 }
 // CreateItemReposPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemReposPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemReposPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemReposPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetAutoInit gets the auto_init property value. Pass `true` to create an initial commit with empty README.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetAutoInit()(*bool) {
     return m.auto_init
 }
 // GetCustomProperties gets the custom_properties property value. The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
+// returns a ItemReposPostRequestBody_custom_propertiesable when successful
 func (m *ItemReposPostRequestBody) GetCustomProperties()(ItemReposPostRequestBody_custom_propertiesable) {
     return m.custom_properties
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion. **The authenticated user must be an organization owner to set this property to `true`.**
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDescription gets the description property value. A short description of the repository.
+// returns a *string when successful
 func (m *ItemReposPostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemReposPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -303,51 +313,63 @@ func (m *ItemReposPostRequestBody) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetGitignoreTemplate gets the gitignore_template property value. Desired language or platform [.gitignore template](https://github.com/github/gitignore) to apply. Use the name of the template without the extension. For example, "Haskell".
+// returns a *string when successful
 func (m *ItemReposPostRequestBody) GetGitignoreTemplate()(*string) {
     return m.gitignore_template
 }
 // GetHasDownloads gets the has_downloads property value. Whether downloads are enabled.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. Either `true` to enable issues for this repository or `false` to disable them.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasProjects gets the has_projects property value. Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. Either `true` to enable the wiki for this repository or `false` to disable it.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. A URL with more information about the repository.
+// returns a *string when successful
 func (m *ItemReposPostRequestBody) GetHomepage()(*string) {
     return m.homepage
 }
 // GetIsTemplate gets the is_template property value. Either `true` to make this repo available as a template repository or `false` to prevent it.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetLicenseTemplate gets the license_template property value. Choose an [open source license template](https://choosealicense.com/) that best suits your needs, and then use the [license keyword](https://docs.github.com/articles/licensing-a-repository/#searching-github-by-license-type) as the `license_template` string. For example, "mit" or "mpl-2.0".
+// returns a *string when successful
 func (m *ItemReposPostRequestBody) GetLicenseTemplate()(*string) {
     return m.license_template
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *ItemReposPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetPrivate gets the private property value. Whether the repository is private.
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetPrivate()(*bool) {
     return m.private
 }
 // GetTeamId gets the team_id property value. The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+// returns a *int32 when successful
 func (m *ItemReposPostRequestBody) GetTeamId()(*int32) {
     return m.team_id
 }
 // GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
+// returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetUseSquashPrTitleAsDefault()(*bool) {
     return m.use_squash_pr_title_as_default
 }
@@ -566,7 +588,6 @@ func (m *ItemReposPostRequestBody) SetTeamId(value *int32)() {
 func (m *ItemReposPostRequestBody) SetUseSquashPrTitleAsDefault(value *bool)() {
     m.use_squash_pr_title_as_default = value
 }
-// ItemReposPostRequestBodyable 
 type ItemReposPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

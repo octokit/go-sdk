@@ -29,7 +29,7 @@ type CheckAnnotation struct {
     // The title property
     title *string
 }
-// NewCheckAnnotation instantiates a new checkAnnotation and sets the default values.
+// NewCheckAnnotation instantiates a new CheckAnnotation and sets the default values.
 func NewCheckAnnotation()(*CheckAnnotation) {
     m := &CheckAnnotation{
     }
@@ -37,30 +37,37 @@ func NewCheckAnnotation()(*CheckAnnotation) {
     return m
 }
 // CreateCheckAnnotationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckAnnotationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckAnnotation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckAnnotation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAnnotationLevel gets the annotation_level property value. The annotation_level property
+// returns a *string when successful
 func (m *CheckAnnotation) GetAnnotationLevel()(*string) {
     return m.annotation_level
 }
 // GetBlobHref gets the blob_href property value. The blob_href property
+// returns a *string when successful
 func (m *CheckAnnotation) GetBlobHref()(*string) {
     return m.blob_href
 }
 // GetEndColumn gets the end_column property value. The end_column property
+// returns a *int32 when successful
 func (m *CheckAnnotation) GetEndColumn()(*int32) {
     return m.end_column
 }
 // GetEndLine gets the end_line property value. The end_line property
+// returns a *int32 when successful
 func (m *CheckAnnotation) GetEndLine()(*int32) {
     return m.end_line
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckAnnotation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["annotation_level"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -166,26 +173,32 @@ func (m *CheckAnnotation) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *CheckAnnotation) GetMessage()(*string) {
     return m.message
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *CheckAnnotation) GetPath()(*string) {
     return m.path
 }
 // GetRawDetails gets the raw_details property value. The raw_details property
+// returns a *string when successful
 func (m *CheckAnnotation) GetRawDetails()(*string) {
     return m.raw_details
 }
 // GetStartColumn gets the start_column property value. The start_column property
+// returns a *int32 when successful
 func (m *CheckAnnotation) GetStartColumn()(*int32) {
     return m.start_column
 }
 // GetStartLine gets the start_line property value. The start_line property
+// returns a *int32 when successful
 func (m *CheckAnnotation) GetStartLine()(*int32) {
     return m.start_line
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *CheckAnnotation) GetTitle()(*string) {
     return m.title
 }
@@ -303,7 +316,6 @@ func (m *CheckAnnotation) SetStartLine(value *int32)() {
 func (m *CheckAnnotation) SetTitle(value *string)() {
     m.title = value
 }
-// CheckAnnotationable 
 type CheckAnnotationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

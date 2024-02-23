@@ -2,7 +2,6 @@ package repos
 import (
     "errors"
 )
-// 
 type GetTypeQueryParameterType int
 
 const (

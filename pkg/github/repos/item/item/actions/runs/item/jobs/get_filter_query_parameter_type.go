@@ -2,7 +2,6 @@ package jobs
 import (
     "errors"
 )
-// 
 type GetFilterQueryParameterType int
 
 const (

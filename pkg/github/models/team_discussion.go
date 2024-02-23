@@ -46,7 +46,7 @@ type TeamDiscussion struct {
     // The url property
     url *string
 }
-// NewTeamDiscussion instantiates a new teamDiscussion and sets the default values.
+// NewTeamDiscussion instantiates a new TeamDiscussion and sets the default values.
 func NewTeamDiscussion()(*TeamDiscussion) {
     m := &TeamDiscussion{
     }
@@ -54,42 +54,52 @@ func NewTeamDiscussion()(*TeamDiscussion) {
     return m
 }
 // CreateTeamDiscussionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamDiscussionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamDiscussion(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamDiscussion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *TeamDiscussion) GetAuthor()(NullableSimpleUserable) {
     return m.author
 }
 // GetBody gets the body property value. The main text of the discussion.
+// returns a *string when successful
 func (m *TeamDiscussion) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *TeamDiscussion) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyVersion gets the body_version property value. The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+// returns a *string when successful
 func (m *TeamDiscussion) GetBodyVersion()(*string) {
     return m.body_version
 }
 // GetCommentsCount gets the comments_count property value. The comments_count property
+// returns a *int32 when successful
 func (m *TeamDiscussion) GetCommentsCount()(*int32) {
     return m.comments_count
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *TeamDiscussion) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TeamDiscussion) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamDiscussion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -275,46 +285,57 @@ func (m *TeamDiscussion) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TeamDiscussion) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLastEditedAt gets the last_edited_at property value. The last_edited_at property
+// returns a *Time when successful
 func (m *TeamDiscussion) GetLastEditedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_edited_at
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TeamDiscussion) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. The unique sequence number of a team discussion.
+// returns a *int32 when successful
 func (m *TeamDiscussion) GetNumber()(*int32) {
     return m.number
 }
 // GetPinned gets the pinned property value. Whether or not this discussion should be pinned for easy retrieval.
+// returns a *bool when successful
 func (m *TeamDiscussion) GetPinned()(*bool) {
     return m.pinned
 }
 // GetPrivate gets the private property value. Whether or not this discussion should be restricted to team members and organization owners.
+// returns a *bool when successful
 func (m *TeamDiscussion) GetPrivate()(*bool) {
     return m.private
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *TeamDiscussion) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetTeamUrl gets the team_url property value. The team_url property
+// returns a *string when successful
 func (m *TeamDiscussion) GetTeamUrl()(*string) {
     return m.team_url
 }
 // GetTitle gets the title property value. The title of the discussion.
+// returns a *string when successful
 func (m *TeamDiscussion) GetTitle()(*string) {
     return m.title
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TeamDiscussion) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TeamDiscussion) GetUrl()(*string) {
     return m.url
 }
@@ -512,7 +533,6 @@ func (m *TeamDiscussion) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6
 func (m *TeamDiscussion) SetUrl(value *string)() {
     m.url = value
 }
-// TeamDiscussionable 
 type TeamDiscussionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

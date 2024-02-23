@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GitCommit_parents 
 type GitCommit_parents struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type GitCommit_parents struct {
     // The url property
     url *string
 }
-// NewGitCommit_parents instantiates a new gitCommit_parents and sets the default values.
+// NewGitCommit_parents instantiates a new GitCommit_parents and sets the default values.
 func NewGitCommit_parents()(*GitCommit_parents) {
     m := &GitCommit_parents{
     }
@@ -23,14 +22,17 @@ func NewGitCommit_parents()(*GitCommit_parents) {
     return m
 }
 // CreateGitCommit_parentsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitCommit_parentsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitCommit_parents(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitCommit_parents) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitCommit_parents) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["html_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *GitCommit_parents) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *GitCommit_parents) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetSha gets the sha property value. SHA for the commit
+// returns a *string when successful
 func (m *GitCommit_parents) GetSha()(*string) {
     return m.sha
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GitCommit_parents) GetUrl()(*string) {
     return m.url
 }
@@ -121,7 +126,6 @@ func (m *GitCommit_parents) SetSha(value *string)() {
 func (m *GitCommit_parents) SetUrl(value *string)() {
     m.url = value
 }
-// GitCommit_parentsable 
 type GitCommit_parentsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

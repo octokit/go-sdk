@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemCheckSuitesPreferencesPatchRequestBody 
 type ItemItemCheckSuitesPreferencesPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,18 +18,22 @@ func NewItemItemCheckSuitesPreferencesPatchRequestBody()(*ItemItemCheckSuitesPre
     return m
 }
 // CreateItemItemCheckSuitesPreferencesPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemCheckSuitesPreferencesPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemCheckSuitesPreferencesPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemCheckSuitesPreferencesPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutoTriggerChecks gets the auto_trigger_checks property value. Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default.
+// returns a []ItemItemCheckSuitesPreferencesPatchRequestBody_auto_trigger_checksable when successful
 func (m *ItemItemCheckSuitesPreferencesPatchRequestBody) GetAutoTriggerChecks()([]ItemItemCheckSuitesPreferencesPatchRequestBody_auto_trigger_checksable) {
     return m.auto_trigger_checks
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemCheckSuitesPreferencesPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["auto_trigger_checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,7 +84,6 @@ func (m *ItemItemCheckSuitesPreferencesPatchRequestBody) SetAdditionalData(value
 func (m *ItemItemCheckSuitesPreferencesPatchRequestBody) SetAutoTriggerChecks(value []ItemItemCheckSuitesPreferencesPatchRequestBody_auto_trigger_checksable)() {
     m.auto_trigger_checks = value
 }
-// ItemItemCheckSuitesPreferencesPatchRequestBodyable 
 type ItemItemCheckSuitesPreferencesPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

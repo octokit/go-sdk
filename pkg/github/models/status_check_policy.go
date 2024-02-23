@@ -19,7 +19,7 @@ type StatusCheckPolicy struct {
     // The url property
     url *string
 }
-// NewStatusCheckPolicy instantiates a new statusCheckPolicy and sets the default values.
+// NewStatusCheckPolicy instantiates a new StatusCheckPolicy and sets the default values.
 func NewStatusCheckPolicy()(*StatusCheckPolicy) {
     m := &StatusCheckPolicy{
     }
@@ -27,26 +27,32 @@ func NewStatusCheckPolicy()(*StatusCheckPolicy) {
     return m
 }
 // CreateStatusCheckPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateStatusCheckPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStatusCheckPolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *StatusCheckPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChecks gets the checks property value. The checks property
+// returns a []StatusCheckPolicy_checksable when successful
 func (m *StatusCheckPolicy) GetChecks()([]StatusCheckPolicy_checksable) {
     return m.checks
 }
 // GetContexts gets the contexts property value. The contexts property
+// returns a []string when successful
 func (m *StatusCheckPolicy) GetContexts()([]string) {
     return m.contexts
 }
 // GetContextsUrl gets the contexts_url property value. The contexts_url property
+// returns a *string when successful
 func (m *StatusCheckPolicy) GetContextsUrl()(*string) {
     return m.contexts_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *StatusCheckPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -114,10 +120,12 @@ func (m *StatusCheckPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetStrict gets the strict property value. The strict property
+// returns a *bool when successful
 func (m *StatusCheckPolicy) GetStrict()(*bool) {
     return m.strict
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *StatusCheckPolicy) GetUrl()(*string) {
     return m.url
 }
@@ -191,7 +199,6 @@ func (m *StatusCheckPolicy) SetStrict(value *bool)() {
 func (m *StatusCheckPolicy) SetUrl(value *string)() {
     m.url = value
 }
-// StatusCheckPolicyable 
 type StatusCheckPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

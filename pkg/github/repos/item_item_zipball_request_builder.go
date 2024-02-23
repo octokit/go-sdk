@@ -9,6 +9,7 @@ type ItemItemZipballRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByRef gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.zipball.item collection
+// returns a *ItemItemZipballWithRefItemRequestBuilder when successful
 func (m *ItemItemZipballRequestBuilder) ByRef(ref string)(*ItemItemZipballWithRefItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,14 +20,14 @@ func (m *ItemItemZipballRequestBuilder) ByRef(ref string)(*ItemItemZipballWithRe
     }
     return NewItemItemZipballWithRefItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemZipballRequestBuilderInternal instantiates a new ZipballRequestBuilder and sets the default values.
+// NewItemItemZipballRequestBuilderInternal instantiates a new ItemItemZipballRequestBuilder and sets the default values.
 func NewItemItemZipballRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemZipballRequestBuilder) {
     m := &ItemItemZipballRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/zipball", pathParameters),
     }
     return m
 }
-// NewItemItemZipballRequestBuilder instantiates a new ZipballRequestBuilder and sets the default values.
+// NewItemItemZipballRequestBuilder instantiates a new ItemItemZipballRequestBuilder and sets the default values.
 func NewItemItemZipballRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemZipballRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

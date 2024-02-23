@@ -10,20 +10,21 @@ import (
 type ItemItemCheckSuitesItemRerequestRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemCheckSuitesItemRerequestRequestBuilderInternal instantiates a new RerequestRequestBuilder and sets the default values.
+// NewItemItemCheckSuitesItemRerequestRequestBuilderInternal instantiates a new ItemItemCheckSuitesItemRerequestRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesItemRerequestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesItemRerequestRequestBuilder) {
     m := &ItemItemCheckSuitesItemRerequestRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites/{check_suite_id}/rerequest", pathParameters),
     }
     return m
 }
-// NewItemItemCheckSuitesItemRerequestRequestBuilder instantiates a new RerequestRequestBuilder and sets the default values.
+// NewItemItemCheckSuitesItemRerequestRequestBuilder instantiates a new ItemItemCheckSuitesItemRerequestRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesItemRerequestRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesItemRerequestRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCheckSuitesItemRerequestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.OAuth apps and personal access tokens (classic) cannot use this endpoint.
+// returns a EmptyObjectable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/checks/suites#rerequest-a-check-suite
@@ -42,6 +43,7 @@ func (m *ItemItemCheckSuitesItemRerequestRequestBuilder) Post(ctx context.Contex
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.EmptyObjectable), nil
 }
 // ToPostRequestInformation triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.OAuth apps and personal access tokens (classic) cannot use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemItemCheckSuitesItemRerequestRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -49,6 +51,7 @@ func (m *ItemItemCheckSuitesItemRerequestRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemCheckSuitesItemRerequestRequestBuilder when successful
 func (m *ItemItemCheckSuitesItemRerequestRequestBuilder) WithUrl(rawUrl string)(*ItemItemCheckSuitesItemRerequestRequestBuilder) {
     return NewItemItemCheckSuitesItemRerequestRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

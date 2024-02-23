@@ -15,7 +15,7 @@ type RunnerLabel struct {
     // The type of label. Read-only labels are applied automatically when the runner is configured.
     typeEscaped *RunnerLabel_type
 }
-// NewRunnerLabel instantiates a new runnerLabel and sets the default values.
+// NewRunnerLabel instantiates a new RunnerLabel and sets the default values.
 func NewRunnerLabel()(*RunnerLabel) {
     m := &RunnerLabel{
     }
@@ -23,14 +23,17 @@ func NewRunnerLabel()(*RunnerLabel) {
     return m
 }
 // CreateRunnerLabelFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRunnerLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRunnerLabel(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RunnerLabel) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RunnerLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +69,17 @@ func (m *RunnerLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetId gets the id property value. Unique identifier of the label.
+// returns a *int32 when successful
 func (m *RunnerLabel) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. Name of the label.
+// returns a *string when successful
 func (m *RunnerLabel) GetName()(*string) {
     return m.name
 }
 // GetTypeEscaped gets the type property value. The type of label. Read-only labels are applied automatically when the runner is configured.
+// returns a *RunnerLabel_type when successful
 func (m *RunnerLabel) GetTypeEscaped()(*RunnerLabel_type) {
     return m.typeEscaped
 }
@@ -122,7 +128,6 @@ func (m *RunnerLabel) SetName(value *string)() {
 func (m *RunnerLabel) SetTypeEscaped(value *RunnerLabel_type)() {
     m.typeEscaped = value
 }
-// RunnerLabelable 
 type RunnerLabelable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

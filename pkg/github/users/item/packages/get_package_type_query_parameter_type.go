@@ -2,7 +2,6 @@ package packages
 import (
     "errors"
 )
-// 
 type GetPackage_typeQueryParameterType int
 
 const (

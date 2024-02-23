@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimelineReviewedEvent__links 
 type TimelineReviewedEvent__links struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type TimelineReviewedEvent__links struct {
     // The pull_request property
     pull_request TimelineReviewedEvent__links_pull_requestable
 }
-// NewTimelineReviewedEvent__links instantiates a new timelineReviewedEvent__links and sets the default values.
+// NewTimelineReviewedEvent__links instantiates a new TimelineReviewedEvent__links and sets the default values.
 func NewTimelineReviewedEvent__links()(*TimelineReviewedEvent__links) {
     m := &TimelineReviewedEvent__links{
     }
@@ -21,14 +20,17 @@ func NewTimelineReviewedEvent__links()(*TimelineReviewedEvent__links) {
     return m
 }
 // CreateTimelineReviewedEvent__linksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineReviewedEvent__linksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineReviewedEvent__links(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineReviewedEvent__links) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineReviewedEvent__links) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["html"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *TimelineReviewedEvent__links) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetHtml gets the html property value. The html property
+// returns a TimelineReviewedEvent__links_htmlable when successful
 func (m *TimelineReviewedEvent__links) GetHtml()(TimelineReviewedEvent__links_htmlable) {
     return m.html
 }
 // GetPullRequest gets the pull_request property value. The pull_request property
+// returns a TimelineReviewedEvent__links_pull_requestable when successful
 func (m *TimelineReviewedEvent__links) GetPullRequest()(TimelineReviewedEvent__links_pull_requestable) {
     return m.pull_request
 }
@@ -95,7 +99,6 @@ func (m *TimelineReviewedEvent__links) SetHtml(value TimelineReviewedEvent__link
 func (m *TimelineReviewedEvent__links) SetPullRequest(value TimelineReviewedEvent__links_pull_requestable)() {
     m.pull_request = value
 }
-// TimelineReviewedEvent__linksable 
 type TimelineReviewedEvent__linksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

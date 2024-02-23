@@ -2,7 +2,6 @@ package activity
 import (
     "errors"
 )
-// 
 type GetDirectionQueryParameterType int
 
 const (

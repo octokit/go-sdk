@@ -21,7 +21,7 @@ type SimpleClassroomRepository struct {
     // Whether the repository is private.
     private *bool
 }
-// NewSimpleClassroomRepository instantiates a new simpleClassroomRepository and sets the default values.
+// NewSimpleClassroomRepository instantiates a new SimpleClassroomRepository and sets the default values.
 func NewSimpleClassroomRepository()(*SimpleClassroomRepository) {
     m := &SimpleClassroomRepository{
     }
@@ -29,18 +29,22 @@ func NewSimpleClassroomRepository()(*SimpleClassroomRepository) {
     return m
 }
 // CreateSimpleClassroomRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSimpleClassroomRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSimpleClassroomRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SimpleClassroomRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDefaultBranch gets the default_branch property value. The default branch for the repository.
+// returns a *string when successful
 func (m *SimpleClassroomRepository) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SimpleClassroomRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["default_branch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,22 +110,27 @@ func (m *SimpleClassroomRepository) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetFullName gets the full_name property value. The full, globally unique name of the repository.
+// returns a *string when successful
 func (m *SimpleClassroomRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetHtmlUrl gets the html_url property value. The URL to view the repository on GitHub.com.
+// returns a *string when successful
 func (m *SimpleClassroomRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. A unique identifier of the repository.
+// returns a *int32 when successful
 func (m *SimpleClassroomRepository) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The GraphQL identifier of the repository.
+// returns a *string when successful
 func (m *SimpleClassroomRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPrivate gets the private property value. Whether the repository is private.
+// returns a *bool when successful
 func (m *SimpleClassroomRepository) GetPrivate()(*bool) {
     return m.private
 }
@@ -199,7 +208,6 @@ func (m *SimpleClassroomRepository) SetNodeId(value *string)() {
 func (m *SimpleClassroomRepository) SetPrivate(value *bool)() {
     m.private = value
 }
-// SimpleClassroomRepositoryable 
 type SimpleClassroomRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

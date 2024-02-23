@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemGitTreesPostRequestBody_tree 
 type ItemItemGitTreesPostRequestBody_tree struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,18 +22,22 @@ func NewItemItemGitTreesPostRequestBody_tree()(*ItemItemGitTreesPostRequestBody_
     return m
 }
 // CreateItemItemGitTreesPostRequestBody_treeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemGitTreesPostRequestBody_treeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemGitTreesPostRequestBody_tree(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemGitTreesPostRequestBody_tree) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or `tree.sha`.    **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+// returns a *string when successful
 func (m *ItemItemGitTreesPostRequestBody_tree) GetContent()(*string) {
     return m.content
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemGitTreesPostRequestBody_tree) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +73,12 @@ func (m *ItemItemGitTreesPostRequestBody_tree) GetFieldDeserializers()(map[strin
     return res
 }
 // GetPath gets the path property value. The file referenced in the tree.
+// returns a *string when successful
 func (m *ItemItemGitTreesPostRequestBody_tree) GetPath()(*string) {
     return m.path
 }
 // GetSha gets the sha property value. The SHA1 checksum ID of the object in the tree. Also called `tree.sha`. If the value is `null` then the file will be deleted.    **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
+// returns a *string when successful
 func (m *ItemItemGitTreesPostRequestBody_tree) GetSha()(*string) {
     return m.sha
 }
@@ -121,7 +126,6 @@ func (m *ItemItemGitTreesPostRequestBody_tree) SetPath(value *string)() {
 func (m *ItemItemGitTreesPostRequestBody_tree) SetSha(value *string)() {
     m.sha = value
 }
-// ItemItemGitTreesPostRequestBody_treeable 
 type ItemItemGitTreesPostRequestBody_treeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

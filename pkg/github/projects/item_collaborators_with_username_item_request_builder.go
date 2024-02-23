@@ -10,20 +10,24 @@ import (
 type ItemCollaboratorsWithUsernameItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemCollaboratorsWithUsernameItemRequestBuilderInternal instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+// NewItemCollaboratorsWithUsernameItemRequestBuilderInternal instantiates a new ItemCollaboratorsWithUsernameItemRequestBuilder and sets the default values.
 func NewItemCollaboratorsWithUsernameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     m := &ItemCollaboratorsWithUsernameItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators/{username}", pathParameters),
     }
     return m
 }
-// NewItemCollaboratorsWithUsernameItemRequestBuilder instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+// NewItemCollaboratorsWithUsernameItemRequestBuilder instantiates a new ItemCollaboratorsWithUsernameItemRequestBuilder and sets the default values.
 func NewItemCollaboratorsWithUsernameItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCollaboratorsWithUsernameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator
@@ -45,10 +49,15 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Permission the permission property
+// returns a *ItemCollaboratorsItemPermissionRequestBuilder when successful
 func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Permission()(*ItemCollaboratorsItemPermissionRequestBuilder) {
     return NewItemCollaboratorsItemPermissionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Put adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/collaborators#add-project-collaborator
@@ -70,6 +79,7 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) Put(ctx context.Contex
     return nil
 }
 // ToDeleteRequestInformation removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
+// returns a *RequestInformation when successful
 func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -77,6 +87,7 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToDeleteRequestInforma
     return requestInfo, nil
 }
 // ToPutRequestInformation adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+// returns a *RequestInformation when successful
 func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemCollaboratorsItemWithUsernamePutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -88,6 +99,7 @@ func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) ToPutRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCollaboratorsWithUsernameItemRequestBuilder when successful
 func (m *ItemCollaboratorsWithUsernameItemRequestBuilder) WithUrl(rawUrl string)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     return NewItemCollaboratorsWithUsernameItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemIssuesItemWithIssue_numberPatchRequestBody 
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,20 +20,21 @@ type ItemItemIssuesItemWithIssue_numberPatchRequestBody struct {
     // The title of the issue.
     title ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable
 }
-// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone composed type wrapper for classes integer, string
+// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone composed type wrapper for classes int32, string
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone struct {
-    // Composed type representation for type integer
+    // Composed type representation for type int32
     integer *int32
     // Composed type representation for type string
     string *string
 }
-// NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone instantiates a new WithIssue_numberPatchRequestBody_milestone and sets the default values.
+// NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone instantiates a new ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone and sets the default values.
 func NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone()(*ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) {
     m := &ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone{
     }
     return m
 }
 // CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone()
     if parseNode != nil {
@@ -65,18 +65,22 @@ func CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPa
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
-// GetInteger gets the integer property value. Composed type representation for type integer
+// GetInteger gets the integer property value. Composed type representation for type int32
+// returns a *int32 when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) GetInteger()(*int32) {
     return m.integer
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) GetString()(*string) {
     return m.string
 }
@@ -95,7 +99,7 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatc
     }
     return nil
 }
-// SetInteger sets the integer property value. Composed type representation for type integer
+// SetInteger sets the integer property value. Composed type representation for type int32
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) SetInteger(value *int32)() {
     m.integer = value
 }
@@ -103,20 +107,21 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatc
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone) SetString(value *string)() {
     m.string = value
 }
-// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title composed type wrapper for classes integer, string
+// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title composed type wrapper for classes int32, string
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title struct {
-    // Composed type representation for type integer
+    // Composed type representation for type int32
     integer *int32
     // Composed type representation for type string
     string *string
 }
-// NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title instantiates a new WithIssue_numberPatchRequestBody_title and sets the default values.
+// NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title instantiates a new ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title and sets the default values.
 func NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title()(*ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) {
     m := &ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title{
     }
     return m
 }
 // CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title()
     if parseNode != nil {
@@ -147,18 +152,22 @@ func CreateItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPa
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
-// GetInteger gets the integer property value. Composed type representation for type integer
+// GetInteger gets the integer property value. Composed type representation for type int32
+// returns a *int32 when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) GetInteger()(*int32) {
     return m.integer
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) GetString()(*string) {
     return m.string
 }
@@ -177,7 +186,7 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatc
     }
     return nil
 }
-// SetInteger sets the integer property value. Composed type representation for type integer
+// SetInteger sets the integer property value. Composed type representation for type int32
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) SetInteger(value *int32)() {
     m.integer = value
 }
@@ -185,7 +194,6 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatc
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_title) SetString(value *string)() {
     m.string = value
 }
-// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable 
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteger()(*int32)
@@ -193,7 +201,6 @@ type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchReq
     SetInteger(value *int32)()
     SetString(value *string)()
 }
-// ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable 
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteger()(*int32)
@@ -209,26 +216,32 @@ func NewItemItemIssuesItemWithIssue_numberPatchRequestBody()(*ItemItemIssuesItem
     return m
 }
 // CreateItemItemIssuesItemWithIssue_numberPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemIssuesItemWithIssue_numberPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemIssuesItemWithIssue_numberPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignee gets the assignee property value. Username to assign to this issue. **This field is deprecated.**
+// returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetAssignee()(*string) {
     return m.assignee
 }
 // GetAssignees gets the assignees property value. Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
+// returns a []string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetAssignees()([]string) {
     return m.assignees
 }
 // GetBody gets the body property value. The contents of the issue.
+// returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -306,14 +319,17 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetFieldDeserialize
     return res
 }
 // GetLabels gets the labels property value. Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
+// returns a []string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetLabels()([]string) {
     return m.labels
 }
 // GetMilestone gets the milestone property value. The milestone property
+// returns a ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetMilestone()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable) {
     return m.milestone
 }
 // GetTitle gets the title property value. The title of the issue.
+// returns a ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetTitle()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable) {
     return m.title
 }
@@ -391,7 +407,6 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetMilestone(value 
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetTitle(value ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable)() {
     m.title = value
 }
-// ItemItemIssuesItemWithIssue_numberPatchRequestBodyable 
 type ItemItemIssuesItemWithIssue_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

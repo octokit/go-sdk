@@ -19,7 +19,7 @@ type Codespace_git_status struct {
     // The current branch (or SHA if in detached HEAD state) of the local repository.
     ref *string
 }
-// NewCodespace_git_status instantiates a new codespace_git_status and sets the default values.
+// NewCodespace_git_status instantiates a new Codespace_git_status and sets the default values.
 func NewCodespace_git_status()(*Codespace_git_status) {
     m := &Codespace_git_status{
     }
@@ -27,22 +27,27 @@ func NewCodespace_git_status()(*Codespace_git_status) {
     return m
 }
 // CreateCodespace_git_statusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespace_git_statusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespace_git_status(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Codespace_git_status) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAhead gets the ahead property value. The number of commits the local repository is ahead of the remote.
+// returns a *int32 when successful
 func (m *Codespace_git_status) GetAhead()(*int32) {
     return m.ahead
 }
 // GetBehind gets the behind property value. The number of commits the local repository is behind the remote.
+// returns a *int32 when successful
 func (m *Codespace_git_status) GetBehind()(*int32) {
     return m.behind
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Codespace_git_status) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ahead"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,14 +103,17 @@ func (m *Codespace_git_status) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHasUncommittedChanges gets the has_uncommitted_changes property value. Whether the local repository has uncommitted changes.
+// returns a *bool when successful
 func (m *Codespace_git_status) GetHasUncommittedChanges()(*bool) {
     return m.has_uncommitted_changes
 }
 // GetHasUnpushedChanges gets the has_unpushed_changes property value. Whether the local repository has unpushed changes.
+// returns a *bool when successful
 func (m *Codespace_git_status) GetHasUnpushedChanges()(*bool) {
     return m.has_unpushed_changes
 }
 // GetRef gets the ref property value. The current branch (or SHA if in detached HEAD state) of the local repository.
+// returns a *string when successful
 func (m *Codespace_git_status) GetRef()(*string) {
     return m.ref
 }
@@ -173,7 +181,6 @@ func (m *Codespace_git_status) SetHasUnpushedChanges(value *bool)() {
 func (m *Codespace_git_status) SetRef(value *string)() {
     m.ref = value
 }
-// Codespace_git_statusable 
 type Codespace_git_statusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

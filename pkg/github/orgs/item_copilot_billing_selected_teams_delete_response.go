@@ -19,14 +19,17 @@ func NewItemCopilotBillingSelected_teamsDeleteResponse()(*ItemCopilotBillingSele
     return m
 }
 // CreateItemCopilotBillingSelected_teamsDeleteResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemCopilotBillingSelected_teamsDeleteResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCopilotBillingSelected_teamsDeleteResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemCopilotBillingSelected_teamsDeleteResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemCopilotBillingSelected_teamsDeleteResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["seats_cancelled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *ItemCopilotBillingSelected_teamsDeleteResponse) GetFieldDeserializers()
     return res
 }
 // GetSeatsCancelled gets the seats_cancelled property value. The seats_cancelled property
+// returns a *int32 when successful
 func (m *ItemCopilotBillingSelected_teamsDeleteResponse) GetSeatsCancelled()(*int32) {
     return m.seats_cancelled
 }
@@ -69,7 +73,6 @@ func (m *ItemCopilotBillingSelected_teamsDeleteResponse) SetAdditionalData(value
 func (m *ItemCopilotBillingSelected_teamsDeleteResponse) SetSeatsCancelled(value *int32)() {
     m.seats_cancelled = value
 }
-// ItemCopilotBillingSelected_teamsDeleteResponseable 
 type ItemCopilotBillingSelected_teamsDeleteResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -31,7 +31,7 @@ type Commit struct {
     // The url property
     url *string
 }
-// NewCommit instantiates a new commit and sets the default values.
+// NewCommit instantiates a new Commit and sets the default values.
 func NewCommit()(*Commit) {
     m := &Commit{
     }
@@ -39,30 +39,37 @@ func NewCommit()(*Commit) {
     return m
 }
 // CreateCommitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Commit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Commit) GetAuthor()(NullableSimpleUserable) {
     return m.author
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *Commit) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommit gets the commit property value. The commit property
+// returns a Commit_commitable when successful
 func (m *Commit) GetCommit()(Commit_commitable) {
     return m.commit
 }
 // GetCommitter gets the committer property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Commit) GetCommitter()(NullableSimpleUserable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -190,30 +197,37 @@ func (m *Commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetFiles gets the files property value. The files property
+// returns a []DiffEntryable when successful
 func (m *Commit) GetFiles()([]DiffEntryable) {
     return m.files
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Commit) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Commit) GetNodeId()(*string) {
     return m.node_id
 }
 // GetParents gets the parents property value. The parents property
+// returns a []Commit_parentsable when successful
 func (m *Commit) GetParents()([]Commit_parentsable) {
     return m.parents
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *Commit) GetSha()(*string) {
     return m.sha
 }
 // GetStats gets the stats property value. The stats property
+// returns a Commit_statsable when successful
 func (m *Commit) GetStats()(Commit_statsable) {
     return m.stats
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Commit) GetUrl()(*string) {
     return m.url
 }
@@ -353,7 +367,6 @@ func (m *Commit) SetStats(value Commit_statsable)() {
 func (m *Commit) SetUrl(value *string)() {
     m.url = value
 }
-// Commitable 
 type Commitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -20,20 +20,22 @@ type ItemItemForksRequestBuilderGetQueryParameters struct {
     // The sort order. `stargazers` will sort by star count.
     Sort *ia8522d4fb15ab1318931fab69bc994cc5db2188067860f52c78d065e2adc8db4.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// NewItemItemForksRequestBuilderInternal instantiates a new ForksRequestBuilder and sets the default values.
+// NewItemItemForksRequestBuilderInternal instantiates a new ItemItemForksRequestBuilder and sets the default values.
 func NewItemItemForksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemForksRequestBuilder) {
     m := &ItemItemForksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/forks{?page*,per_page*,sort*}", pathParameters),
     }
     return m
 }
-// NewItemItemForksRequestBuilder instantiates a new ForksRequestBuilder and sets the default values.
+// NewItemItemForksRequestBuilder instantiates a new ItemItemForksRequestBuilder and sets the default values.
 func NewItemItemForksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemForksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemForksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list forks
+// returns a []MinimalRepositoryable when successful
+// returns a BasicError error when the service returns a 400 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/forks#list-forks
@@ -58,6 +60,11 @@ func (m *ItemItemForksRequestBuilder) Get(ctx context.Context, requestConfigurat
     return val, nil
 }
 // Post create a fork for the authenticated user.**Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).**Note**: Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
+// returns a FullRepositoryable when successful
+// returns a BasicError error when the service returns a 400 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/forks#create-a-fork
@@ -81,6 +88,7 @@ func (m *ItemItemForksRequestBuilder) Post(ctx context.Context, body ItemItemFor
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.FullRepositoryable), nil
 }
+// returns a *RequestInformation when successful
 func (m *ItemItemForksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemForksRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -88,8 +96,9 @@ func (m *ItemItemForksRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToPostRequestInformation create a fork for the authenticated user.**Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).**Note**: Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
+// returns a *RequestInformation when successful
 func (m *ItemItemForksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemForksPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/forks", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -99,6 +108,7 @@ func (m *ItemItemForksRequestBuilder) ToPostRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemForksRequestBuilder when successful
 func (m *ItemItemForksRequestBuilder) WithUrl(rawUrl string)(*ItemItemForksRequestBuilder) {
     return NewItemItemForksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

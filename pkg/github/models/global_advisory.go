@@ -50,37 +50,44 @@ type GlobalAdvisory struct {
     // The date and time of when the advisory was withdrawn, in ISO 8601 format.
     withdrawn_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewGlobalAdvisory instantiates a new globalAdvisory and sets the default values.
+// NewGlobalAdvisory instantiates a new GlobalAdvisory and sets the default values.
 func NewGlobalAdvisory()(*GlobalAdvisory) {
     m := &GlobalAdvisory{
     }
     return m
 }
 // CreateGlobalAdvisoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGlobalAdvisoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGlobalAdvisory(), nil
 }
 // GetCredits gets the credits property value. The users who contributed to the advisory.
+// returns a []GlobalAdvisory_creditsable when successful
 func (m *GlobalAdvisory) GetCredits()([]GlobalAdvisory_creditsable) {
     return m.credits
 }
 // GetCveId gets the cve_id property value. The Common Vulnerabilities and Exposures (CVE) ID.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetCveId()(*string) {
     return m.cve_id
 }
 // GetCvss gets the cvss property value. The cvss property
+// returns a GlobalAdvisory_cvssable when successful
 func (m *GlobalAdvisory) GetCvss()(GlobalAdvisory_cvssable) {
     return m.cvss
 }
 // GetCwes gets the cwes property value. The cwes property
+// returns a []GlobalAdvisory_cwesable when successful
 func (m *GlobalAdvisory) GetCwes()([]GlobalAdvisory_cwesable) {
     return m.cwes
 }
 // GetDescription gets the description property value. A detailed description of what the advisory entails.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["credits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -326,66 +333,82 @@ func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGhsaId gets the ghsa_id property value. The GitHub Security Advisory ID.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetGhsaId()(*string) {
     return m.ghsa_id
 }
 // GetGithubReviewedAt gets the github_reviewed_at property value. The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.
+// returns a *Time when successful
 func (m *GlobalAdvisory) GetGithubReviewedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.github_reviewed_at
 }
 // GetHtmlUrl gets the html_url property value. The URL for the advisory.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetIdentifiers gets the identifiers property value. The identifiers property
+// returns a []GlobalAdvisory_identifiersable when successful
 func (m *GlobalAdvisory) GetIdentifiers()([]GlobalAdvisory_identifiersable) {
     return m.identifiers
 }
 // GetNvdPublishedAt gets the nvd_published_at property value. The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.This field is only populated when the advisory is imported from the National Vulnerability Database.
+// returns a *Time when successful
 func (m *GlobalAdvisory) GetNvdPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.nvd_published_at
 }
 // GetPublishedAt gets the published_at property value. The date and time of when the advisory was published, in ISO 8601 format.
+// returns a *Time when successful
 func (m *GlobalAdvisory) GetPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.published_at
 }
 // GetReferences gets the references property value. The references property
+// returns a []string when successful
 func (m *GlobalAdvisory) GetReferences()([]string) {
     return m.references
 }
 // GetRepositoryAdvisoryUrl gets the repository_advisory_url property value. The API URL for the repository advisory.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetRepositoryAdvisoryUrl()(*string) {
     return m.repository_advisory_url
 }
 // GetSeverity gets the severity property value. The severity of the advisory.
+// returns a *GlobalAdvisory_severity when successful
 func (m *GlobalAdvisory) GetSeverity()(*GlobalAdvisory_severity) {
     return m.severity
 }
 // GetSourceCodeLocation gets the source_code_location property value. The URL of the advisory's source code.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetSourceCodeLocation()(*string) {
     return m.source_code_location
 }
 // GetSummary gets the summary property value. A short summary of the advisory.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetSummary()(*string) {
     return m.summary
 }
 // GetTypeEscaped gets the type property value. The type of advisory.
+// returns a *GlobalAdvisory_type when successful
 func (m *GlobalAdvisory) GetTypeEscaped()(*GlobalAdvisory_type) {
     return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The date and time of when the advisory was last updated, in ISO 8601 format.
+// returns a *Time when successful
 func (m *GlobalAdvisory) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The API URL for the advisory.
+// returns a *string when successful
 func (m *GlobalAdvisory) GetUrl()(*string) {
     return m.url
 }
 // GetVulnerabilities gets the vulnerabilities property value. The products and respective version ranges affected by the advisory.
+// returns a []GlobalAdvisory_vulnerabilitiesable when successful
 func (m *GlobalAdvisory) GetVulnerabilities()([]GlobalAdvisory_vulnerabilitiesable) {
     return m.vulnerabilities
 }
 // GetWithdrawnAt gets the withdrawn_at property value. The date and time of when the advisory was withdrawn, in ISO 8601 format.
+// returns a *Time when successful
 func (m *GlobalAdvisory) GetWithdrawnAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.withdrawn_at
 }
@@ -538,7 +561,6 @@ func (m *GlobalAdvisory) SetVulnerabilities(value []GlobalAdvisory_vulnerabiliti
 func (m *GlobalAdvisory) SetWithdrawnAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.withdrawn_at = value
 }
-// GlobalAdvisoryable 
 type GlobalAdvisoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCredits()([]GlobalAdvisory_creditsable)

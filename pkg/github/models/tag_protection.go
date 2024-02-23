@@ -19,7 +19,7 @@ type TagProtection struct {
     // The updated_at property
     updated_at *string
 }
-// NewTagProtection instantiates a new tagProtection and sets the default values.
+// NewTagProtection instantiates a new TagProtection and sets the default values.
 func NewTagProtection()(*TagProtection) {
     m := &TagProtection{
     }
@@ -27,22 +27,27 @@ func NewTagProtection()(*TagProtection) {
     return m
 }
 // CreateTagProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTagProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTagProtection(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TagProtection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *TagProtection) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *TagProtection) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TagProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,14 +103,17 @@ func (m *TagProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *TagProtection) GetId()(*int32) {
     return m.id
 }
 // GetPattern gets the pattern property value. The pattern property
+// returns a *string when successful
 func (m *TagProtection) GetPattern()(*string) {
     return m.pattern
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *TagProtection) GetUpdatedAt()(*string) {
     return m.updated_at
 }
@@ -173,7 +181,6 @@ func (m *TagProtection) SetPattern(value *string)() {
 func (m *TagProtection) SetUpdatedAt(value *string)() {
     m.updated_at = value
 }
-// TagProtectionable 
 type TagProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

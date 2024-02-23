@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemHooksPostRequestBody 
 type ItemItemHooksPostRequestBody struct {
     // Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
     active *bool
@@ -22,22 +21,27 @@ func NewItemItemHooksPostRequestBody()(*ItemItemHooksPostRequestBody) {
     return m
 }
 // CreateItemItemHooksPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemHooksPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemHooksPostRequestBody(), nil
 }
 // GetActive gets the active property value. Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+// returns a *bool when successful
 func (m *ItemItemHooksPostRequestBody) GetActive()(*bool) {
     return m.active
 }
 // GetConfig gets the config property value. Key/value pairs to provide settings for this webhook.
+// returns a ItemItemHooksPostRequestBody_configable when successful
 func (m *ItemItemHooksPostRequestBody) GetConfig()(ItemItemHooksPostRequestBody_configable) {
     return m.config
 }
 // GetEvents gets the events property value. Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for.
+// returns a []string when successful
 func (m *ItemItemHooksPostRequestBody) GetEvents()([]string) {
     return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemHooksPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -89,6 +93,7 @@ func (m *ItemItemHooksPostRequestBody) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetName gets the name property value. Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
+// returns a *string when successful
 func (m *ItemItemHooksPostRequestBody) GetName()(*string) {
     return m.name
 }
@@ -136,7 +141,6 @@ func (m *ItemItemHooksPostRequestBody) SetEvents(value []string)() {
 func (m *ItemItemHooksPostRequestBody) SetName(value *string)() {
     m.name = value
 }
-// ItemItemHooksPostRequestBodyable 
 type ItemItemHooksPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActive()(*bool)

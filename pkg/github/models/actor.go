@@ -21,7 +21,7 @@ type Actor struct {
     // The url property
     url *string
 }
-// NewActor instantiates a new actor and sets the default values.
+// NewActor instantiates a new Actor and sets the default values.
 func NewActor()(*Actor) {
     m := &Actor{
     }
@@ -29,22 +29,27 @@ func NewActor()(*Actor) {
     return m
 }
 // CreateActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActor(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Actor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Actor) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetDisplayLogin gets the display_login property value. The display_login property
+// returns a *string when successful
 func (m *Actor) GetDisplayLogin()(*string) {
     return m.display_login
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Actor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -110,18 +115,22 @@ func (m *Actor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     return res
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *Actor) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Actor) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *Actor) GetLogin()(*string) {
     return m.login
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Actor) GetUrl()(*string) {
     return m.url
 }
@@ -199,7 +208,6 @@ func (m *Actor) SetLogin(value *string)() {
 func (m *Actor) SetUrl(value *string)() {
     m.url = value
 }
-// Actorable 
 type Actorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

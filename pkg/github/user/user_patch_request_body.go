@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// UserPatchRequestBody 
 type UserPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,7 +24,7 @@ type UserPatchRequestBody struct {
     // The new Twitter username of the user.
     twitter_username *string
 }
-// NewUserPatchRequestBody instantiates a new userPatchRequestBody and sets the default values.
+// NewUserPatchRequestBody instantiates a new UserPatchRequestBody and sets the default values.
 func NewUserPatchRequestBody()(*UserPatchRequestBody) {
     m := &UserPatchRequestBody{
     }
@@ -33,30 +32,37 @@ func NewUserPatchRequestBody()(*UserPatchRequestBody) {
     return m
 }
 // CreateUserPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBio gets the bio property value. The new short biography of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetBio()(*string) {
     return m.bio
 }
 // GetBlog gets the blog property value. The new blog URL of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetBlog()(*string) {
     return m.blog
 }
 // GetCompany gets the company property value. The new company of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetCompany()(*string) {
     return m.company
 }
 // GetEmail gets the email property value. The publicly visible email address of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bio"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,18 +148,22 @@ func (m *UserPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetHireable gets the hireable property value. The new hiring availability of the user.
+// returns a *bool when successful
 func (m *UserPatchRequestBody) GetHireable()(*bool) {
     return m.hireable
 }
 // GetLocation gets the location property value. The new location of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetLocation()(*string) {
     return m.location
 }
 // GetName gets the name property value. The new name of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetName()(*string) {
     return m.name
 }
 // GetTwitterUsername gets the twitter_username property value. The new Twitter username of the user.
+// returns a *string when successful
 func (m *UserPatchRequestBody) GetTwitterUsername()(*string) {
     return m.twitter_username
 }
@@ -251,7 +261,6 @@ func (m *UserPatchRequestBody) SetName(value *string)() {
 func (m *UserPatchRequestBody) SetTwitterUsername(value *string)() {
     m.twitter_username = value
 }
-// UserPatchRequestBodyable 
 type UserPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

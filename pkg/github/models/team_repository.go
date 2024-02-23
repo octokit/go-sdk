@@ -188,7 +188,7 @@ type TeamRepository struct {
     // Whether to require contributors to sign off on web-based commits
     web_commit_signoff_required *bool
 }
-// NewTeamRepository instantiates a new teamRepository and sets the default values.
+// NewTeamRepository instantiates a new TeamRepository and sets the default values.
 func NewTeamRepository()(*TeamRepository) {
     m := &TeamRepository{
     }
@@ -198,114 +198,142 @@ func NewTeamRepository()(*TeamRepository) {
     return m
 }
 // CreateTeamRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. Whether to allow Auto-merge to be used on pull requests.
+// returns a *bool when successful
 func (m *TeamRepository) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowForking gets the allow_forking property value. Whether to allow forking this repo
+// returns a *bool when successful
 func (m *TeamRepository) GetAllowForking()(*bool) {
     return m.allow_forking
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. Whether to allow merge commits for pull requests.
+// returns a *bool when successful
 func (m *TeamRepository) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. Whether to allow rebase merges for pull requests.
+// returns a *bool when successful
 func (m *TeamRepository) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. Whether to allow squash merges for pull requests.
+// returns a *bool when successful
 func (m *TeamRepository) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetArchived gets the archived property value. Whether the repository is archived.
+// returns a *bool when successful
 func (m *TeamRepository) GetArchived()(*bool) {
     return m.archived
 }
 // GetArchiveUrl gets the archive_url property value. The archive_url property
+// returns a *string when successful
 func (m *TeamRepository) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetAssigneesUrl gets the assignees_url property value. The assignees_url property
+// returns a *string when successful
 func (m *TeamRepository) GetAssigneesUrl()(*string) {
     return m.assignees_url
 }
 // GetBlobsUrl gets the blobs_url property value. The blobs_url property
+// returns a *string when successful
 func (m *TeamRepository) GetBlobsUrl()(*string) {
     return m.blobs_url
 }
 // GetBranchesUrl gets the branches_url property value. The branches_url property
+// returns a *string when successful
 func (m *TeamRepository) GetBranchesUrl()(*string) {
     return m.branches_url
 }
 // GetCloneUrl gets the clone_url property value. The clone_url property
+// returns a *string when successful
 func (m *TeamRepository) GetCloneUrl()(*string) {
     return m.clone_url
 }
 // GetCollaboratorsUrl gets the collaborators_url property value. The collaborators_url property
+// returns a *string when successful
 func (m *TeamRepository) GetCollaboratorsUrl()(*string) {
     return m.collaborators_url
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *TeamRepository) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *TeamRepository) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCompareUrl gets the compare_url property value. The compare_url property
+// returns a *string when successful
 func (m *TeamRepository) GetCompareUrl()(*string) {
     return m.compare_url
 }
 // GetContentsUrl gets the contents_url property value. The contents_url property
+// returns a *string when successful
 func (m *TeamRepository) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetContributorsUrl gets the contributors_url property value. The contributors_url property
+// returns a *string when successful
 func (m *TeamRepository) GetContributorsUrl()(*string) {
     return m.contributors_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TeamRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDefaultBranch gets the default_branch property value. The default branch of the repository.
+// returns a *string when successful
 func (m *TeamRepository) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. Whether to delete head branches when pull requests are merged
+// returns a *bool when successful
 func (m *TeamRepository) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDeploymentsUrl gets the deployments_url property value. The deployments_url property
+// returns a *string when successful
 func (m *TeamRepository) GetDeploymentsUrl()(*string) {
     return m.deployments_url
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *TeamRepository) GetDescription()(*string) {
     return m.description
 }
 // GetDisabled gets the disabled property value. Returns whether or not this repository disabled.
+// returns a *bool when successful
 func (m *TeamRepository) GetDisabled()(*bool) {
     return m.disabled
 }
 // GetDownloadsUrl gets the downloads_url property value. The downloads_url property
+// returns a *string when successful
 func (m *TeamRepository) GetDownloadsUrl()(*string) {
     return m.downloads_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *TeamRepository) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1207,258 +1235,322 @@ func (m *TeamRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFork gets the fork property value. The fork property
+// returns a *bool when successful
 func (m *TeamRepository) GetFork()(*bool) {
     return m.fork
 }
 // GetForks gets the forks property value. The forks property
+// returns a *int32 when successful
 func (m *TeamRepository) GetForks()(*int32) {
     return m.forks
 }
 // GetForksCount gets the forks_count property value. The forks_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetForksCount()(*int32) {
     return m.forks_count
 }
 // GetForksUrl gets the forks_url property value. The forks_url property
+// returns a *string when successful
 func (m *TeamRepository) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetFullName gets the full_name property value. The full_name property
+// returns a *string when successful
 func (m *TeamRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetGitCommitsUrl gets the git_commits_url property value. The git_commits_url property
+// returns a *string when successful
 func (m *TeamRepository) GetGitCommitsUrl()(*string) {
     return m.git_commits_url
 }
 // GetGitRefsUrl gets the git_refs_url property value. The git_refs_url property
+// returns a *string when successful
 func (m *TeamRepository) GetGitRefsUrl()(*string) {
     return m.git_refs_url
 }
 // GetGitTagsUrl gets the git_tags_url property value. The git_tags_url property
+// returns a *string when successful
 func (m *TeamRepository) GetGitTagsUrl()(*string) {
     return m.git_tags_url
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *TeamRepository) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHasDownloads gets the has_downloads property value. Whether downloads are enabled.
+// returns a *bool when successful
 func (m *TeamRepository) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. Whether issues are enabled.
+// returns a *bool when successful
 func (m *TeamRepository) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasPages gets the has_pages property value. The has_pages property
+// returns a *bool when successful
 func (m *TeamRepository) GetHasPages()(*bool) {
     return m.has_pages
 }
 // GetHasProjects gets the has_projects property value. Whether projects are enabled.
+// returns a *bool when successful
 func (m *TeamRepository) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. Whether the wiki is enabled.
+// returns a *bool when successful
 func (m *TeamRepository) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. The homepage property
+// returns a *string when successful
 func (m *TeamRepository) GetHomepage()(*string) {
     return m.homepage
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *TeamRepository) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TeamRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the repository
+// returns a *int32 when successful
 func (m *TeamRepository) GetId()(*int32) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. The issue_comment_url property
+// returns a *string when successful
 func (m *TeamRepository) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
 // GetIssueEventsUrl gets the issue_events_url property value. The issue_events_url property
+// returns a *string when successful
 func (m *TeamRepository) GetIssueEventsUrl()(*string) {
     return m.issue_events_url
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *TeamRepository) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsTemplate gets the is_template property value. Whether this repository acts as a template that can be used to generate new repositories.
+// returns a *bool when successful
 func (m *TeamRepository) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetKeysUrl gets the keys_url property value. The keys_url property
+// returns a *string when successful
 func (m *TeamRepository) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *TeamRepository) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *TeamRepository) GetLanguage()(*string) {
     return m.language
 }
 // GetLanguagesUrl gets the languages_url property value. The languages_url property
+// returns a *string when successful
 func (m *TeamRepository) GetLanguagesUrl()(*string) {
     return m.languages_url
 }
 // GetLicense gets the license property value. License Simple
+// returns a NullableLicenseSimpleable when successful
 func (m *TeamRepository) GetLicense()(NullableLicenseSimpleable) {
     return m.license
 }
 // GetMasterBranch gets the master_branch property value. The master_branch property
+// returns a *string when successful
 func (m *TeamRepository) GetMasterBranch()(*string) {
     return m.master_branch
 }
 // GetMergesUrl gets the merges_url property value. The merges_url property
+// returns a *string when successful
 func (m *TeamRepository) GetMergesUrl()(*string) {
     return m.merges_url
 }
 // GetMilestonesUrl gets the milestones_url property value. The milestones_url property
+// returns a *string when successful
 func (m *TeamRepository) GetMilestonesUrl()(*string) {
     return m.milestones_url
 }
 // GetMirrorUrl gets the mirror_url property value. The mirror_url property
+// returns a *string when successful
 func (m *TeamRepository) GetMirrorUrl()(*string) {
     return m.mirror_url
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *TeamRepository) GetName()(*string) {
     return m.name
 }
 // GetNetworkCount gets the network_count property value. The network_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetNetworkCount()(*int32) {
     return m.network_count
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TeamRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationsUrl gets the notifications_url property value. The notifications_url property
+// returns a *string when successful
 func (m *TeamRepository) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOpenIssues gets the open_issues property value. The open_issues property
+// returns a *int32 when successful
 func (m *TeamRepository) GetOpenIssues()(*int32) {
     return m.open_issues
 }
 // GetOpenIssuesCount gets the open_issues_count property value. The open_issues_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetOpenIssuesCount()(*int32) {
     return m.open_issues_count
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *TeamRepository) GetOwner()(NullableSimpleUserable) {
     return m.owner
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a TeamRepository_permissionsable when successful
 func (m *TeamRepository) GetPermissions()(TeamRepository_permissionsable) {
     return m.permissions
 }
 // GetPrivate gets the private property value. Whether the repository is private or public.
+// returns a *bool when successful
 func (m *TeamRepository) GetPrivate()(*bool) {
     return m.private
 }
 // GetPullsUrl gets the pulls_url property value. The pulls_url property
+// returns a *string when successful
 func (m *TeamRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetPushedAt gets the pushed_at property value. The pushed_at property
+// returns a *Time when successful
 func (m *TeamRepository) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pushed_at
 }
 // GetReleasesUrl gets the releases_url property value. The releases_url property
+// returns a *string when successful
 func (m *TeamRepository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
 // GetRoleName gets the role_name property value. The role_name property
+// returns a *string when successful
 func (m *TeamRepository) GetRoleName()(*string) {
     return m.role_name
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *TeamRepository) GetSize()(*int32) {
     return m.size
 }
 // GetSshUrl gets the ssh_url property value. The ssh_url property
+// returns a *string when successful
 func (m *TeamRepository) GetSshUrl()(*string) {
     return m.ssh_url
 }
 // GetStargazersCount gets the stargazers_count property value. The stargazers_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetStargazersCount()(*int32) {
     return m.stargazers_count
 }
 // GetStargazersUrl gets the stargazers_url property value. The stargazers_url property
+// returns a *string when successful
 func (m *TeamRepository) GetStargazersUrl()(*string) {
     return m.stargazers_url
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *TeamRepository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetSubscribersCount gets the subscribers_count property value. The subscribers_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetSubscribersCount()(*int32) {
     return m.subscribers_count
 }
 // GetSubscribersUrl gets the subscribers_url property value. The subscribers_url property
+// returns a *string when successful
 func (m *TeamRepository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
 }
 // GetSubscriptionUrl gets the subscription_url property value. The subscription_url property
+// returns a *string when successful
 func (m *TeamRepository) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetSvnUrl gets the svn_url property value. The svn_url property
+// returns a *string when successful
 func (m *TeamRepository) GetSvnUrl()(*string) {
     return m.svn_url
 }
 // GetTagsUrl gets the tags_url property value. The tags_url property
+// returns a *string when successful
 func (m *TeamRepository) GetTagsUrl()(*string) {
     return m.tags_url
 }
 // GetTeamsUrl gets the teams_url property value. The teams_url property
+// returns a *string when successful
 func (m *TeamRepository) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetTempCloneToken gets the temp_clone_token property value. The temp_clone_token property
+// returns a *string when successful
 func (m *TeamRepository) GetTempCloneToken()(*string) {
     return m.temp_clone_token
 }
 // GetTopics gets the topics property value. The topics property
+// returns a []string when successful
 func (m *TeamRepository) GetTopics()([]string) {
     return m.topics
 }
 // GetTreesUrl gets the trees_url property value. The trees_url property
+// returns a *string when successful
 func (m *TeamRepository) GetTreesUrl()(*string) {
     return m.trees_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TeamRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TeamRepository) GetUrl()(*string) {
     return m.url
 }
 // GetVisibility gets the visibility property value. The repository visibility: public, private, or internal.
+// returns a *string when successful
 func (m *TeamRepository) GetVisibility()(*string) {
     return m.visibility
 }
 // GetWatchers gets the watchers property value. The watchers property
+// returns a *int32 when successful
 func (m *TeamRepository) GetWatchers()(*int32) {
     return m.watchers
 }
 // GetWatchersCount gets the watchers_count property value. The watchers_count property
+// returns a *int32 when successful
 func (m *TeamRepository) GetWatchersCount()(*int32) {
     return m.watchers_count
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. Whether to require contributors to sign off on web-based commits
+// returns a *bool when successful
 func (m *TeamRepository) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -2366,7 +2458,6 @@ func (m *TeamRepository) SetWatchersCount(value *int32)() {
 func (m *TeamRepository) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// TeamRepositoryable 
 type TeamRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

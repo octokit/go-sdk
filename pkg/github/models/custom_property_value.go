@@ -18,13 +18,14 @@ type CustomPropertyValue_CustomPropertyValue_value struct {
     // Composed type representation for type string
     string *string
 }
-// NewCustomPropertyValue_CustomPropertyValue_value instantiates a new customPropertyValue_value and sets the default values.
+// NewCustomPropertyValue_CustomPropertyValue_value instantiates a new CustomPropertyValue_CustomPropertyValue_value and sets the default values.
 func NewCustomPropertyValue_CustomPropertyValue_value()(*CustomPropertyValue_CustomPropertyValue_value) {
     m := &CustomPropertyValue_CustomPropertyValue_value{
     }
     return m
 }
 // CreateCustomPropertyValue_CustomPropertyValue_valueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomPropertyValue_CustomPropertyValue_valueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewCustomPropertyValue_CustomPropertyValue_value()
     if parseNode != nil {
@@ -50,14 +51,17 @@ func CreateCustomPropertyValue_CustomPropertyValue_valueFromDiscriminatorValue(p
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomPropertyValue_CustomPropertyValue_value) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *CustomPropertyValue_CustomPropertyValue_value) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *CustomPropertyValue_CustomPropertyValue_value) GetString()(*string) {
     return m.string
 }
@@ -75,13 +79,12 @@ func (m *CustomPropertyValue_CustomPropertyValue_value) Serialize(writer i878a80
 func (m *CustomPropertyValue_CustomPropertyValue_value) SetString(value *string)() {
     m.string = value
 }
-// CustomPropertyValue_CustomPropertyValue_valueable 
 type CustomPropertyValue_CustomPropertyValue_valueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetString()(*string)
     SetString(value *string)()
 }
-// NewCustomPropertyValue instantiates a new customPropertyValue and sets the default values.
+// NewCustomPropertyValue instantiates a new CustomPropertyValue and sets the default values.
 func NewCustomPropertyValue()(*CustomPropertyValue) {
     m := &CustomPropertyValue{
     }
@@ -89,14 +92,17 @@ func NewCustomPropertyValue()(*CustomPropertyValue) {
     return m
 }
 // CreateCustomPropertyValueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCustomPropertyValueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomPropertyValue(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CustomPropertyValue) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomPropertyValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["property_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,10 +128,12 @@ func (m *CustomPropertyValue) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetPropertyName gets the property_name property value. The name of the property
+// returns a *string when successful
 func (m *CustomPropertyValue) GetPropertyName()(*string) {
     return m.property_name
 }
 // GetValue gets the value property value. The value assigned to the property
+// returns a CustomPropertyValue_CustomPropertyValue_valueable when successful
 func (m *CustomPropertyValue) GetValue()(CustomPropertyValue_CustomPropertyValue_valueable) {
     return m.value
 }
@@ -163,7 +171,6 @@ func (m *CustomPropertyValue) SetPropertyName(value *string)() {
 func (m *CustomPropertyValue) SetValue(value CustomPropertyValue_CustomPropertyValue_valueable)() {
     m.value = value
 }
-// CustomPropertyValueable 
 type CustomPropertyValueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
