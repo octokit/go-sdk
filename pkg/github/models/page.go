@@ -34,7 +34,7 @@ type Page struct {
     // The API address for accessing this Page resource.
     url *string
 }
-// NewPage instantiates a new page and sets the default values.
+// NewPage instantiates a new Page and sets the default values.
 func NewPage()(*Page) {
     m := &Page{
     }
@@ -42,26 +42,32 @@ func NewPage()(*Page) {
     return m
 }
 // CreatePageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Page) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBuildType gets the build_type property value. The process in which the Page will be built.
+// returns a *Page_build_type when successful
 func (m *Page) GetBuildType()(*Page_build_type) {
     return m.build_type
 }
 // GetCname gets the cname property value. The Pages site's custom domain
+// returns a *string when successful
 func (m *Page) GetCname()(*string) {
     return m.cname
 }
 // GetCustom404 gets the custom_404 property value. Whether the Page has a custom 404 page.
+// returns a *bool when successful
 func (m *Page) GetCustom404()(*bool) {
     return m.custom_404
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Page) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["build_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -187,38 +193,47 @@ func (m *Page) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetHtmlUrl gets the html_url property value. The web address the Page can be accessed from.
+// returns a *string when successful
 func (m *Page) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetHttpsCertificate gets the https_certificate property value. The https_certificate property
+// returns a PagesHttpsCertificateable when successful
 func (m *Page) GetHttpsCertificate()(PagesHttpsCertificateable) {
     return m.https_certificate
 }
 // GetHttpsEnforced gets the https_enforced property value. Whether https is enabled on the domain
+// returns a *bool when successful
 func (m *Page) GetHttpsEnforced()(*bool) {
     return m.https_enforced
 }
 // GetPendingDomainUnverifiedAt gets the pending_domain_unverified_at property value. The timestamp when a pending domain becomes unverified.
+// returns a *Time when successful
 func (m *Page) GetPendingDomainUnverifiedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pending_domain_unverified_at
 }
 // GetProtectedDomainState gets the protected_domain_state property value. The state if the domain is verified
+// returns a *Page_protected_domain_state when successful
 func (m *Page) GetProtectedDomainState()(*Page_protected_domain_state) {
     return m.protected_domain_state
 }
 // GetPublic gets the public property value. Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.
+// returns a *bool when successful
 func (m *Page) GetPublic()(*bool) {
     return m.public
 }
 // GetSource gets the source property value. The source property
+// returns a PagesSourceHashable when successful
 func (m *Page) GetSource()(PagesSourceHashable) {
     return m.source
 }
 // GetStatus gets the status property value. The status of the most recent build of the Page.
+// returns a *Page_status when successful
 func (m *Page) GetStatus()(*Page_status) {
     return m.status
 }
 // GetUrl gets the url property value. The API address for accessing this Page resource.
+// returns a *string when successful
 func (m *Page) GetUrl()(*string) {
     return m.url
 }
@@ -359,7 +374,6 @@ func (m *Page) SetStatus(value *Page_status)() {
 func (m *Page) SetUrl(value *string)() {
     m.url = value
 }
-// Pageable 
 type Pageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

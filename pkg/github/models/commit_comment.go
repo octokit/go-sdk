@@ -38,7 +38,7 @@ type CommitComment struct {
     // A GitHub user.
     user NullableSimpleUserable
 }
-// NewCommitComment instantiates a new commitComment and sets the default values.
+// NewCommitComment instantiates a new CommitComment and sets the default values.
 func NewCommitComment()(*CommitComment) {
     m := &CommitComment{
     }
@@ -46,30 +46,37 @@ func NewCommitComment()(*CommitComment) {
     return m
 }
 // CreateCommitCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommitComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommitComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthorAssociation gets the author_association property value. How the author is associated with the repository.
+// returns a *AuthorAssociation when successful
 func (m *CommitComment) GetAuthorAssociation()(*AuthorAssociation) {
     return m.author_association
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *CommitComment) GetBody()(*string) {
     return m.body
 }
 // GetCommitId gets the commit_id property value. The commit_id property
+// returns a *string when successful
 func (m *CommitComment) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *CommitComment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommitComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author_association"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,42 +222,52 @@ func (m *CommitComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CommitComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *CommitComment) GetId()(*int32) {
     return m.id
 }
 // GetLine gets the line property value. The line property
+// returns a *int32 when successful
 func (m *CommitComment) GetLine()(*int32) {
     return m.line
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *CommitComment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *CommitComment) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. The position property
+// returns a *int32 when successful
 func (m *CommitComment) GetPosition()(*int32) {
     return m.position
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *CommitComment) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *CommitComment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CommitComment) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *CommitComment) GetUser()(NullableSimpleUserable) {
     return m.user
 }
@@ -409,7 +426,6 @@ func (m *CommitComment) SetUrl(value *string)() {
 func (m *CommitComment) SetUser(value NullableSimpleUserable)() {
     m.user = value
 }
-// CommitCommentable 
 type CommitCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

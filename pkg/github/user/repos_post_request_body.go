@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReposPostRequestBody 
 type ReposPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -55,42 +54,52 @@ func NewReposPostRequestBody()(*ReposPostRequestBody) {
     return m
 }
 // CreateReposPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReposPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReposPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReposPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. Whether to allow Auto-merge to be used on pull requests.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. Whether to allow merge commits for pull requests.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. Whether to allow rebase merges for pull requests.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. Whether to allow squash merges for pull requests.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetAutoInit gets the auto_init property value. Whether the repository is initialized with a minimal README.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetAutoInit()(*bool) {
     return m.auto_init
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. Whether to delete head branches when pull requests are merged
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDescription gets the description property value. A short description of the repository.
+// returns a *string when successful
 func (m *ReposPostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReposPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -286,50 +295,62 @@ func (m *ReposPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetGitignoreTemplate gets the gitignore_template property value. The desired language or platform to apply to the .gitignore.
+// returns a *string when successful
 func (m *ReposPostRequestBody) GetGitignoreTemplate()(*string) {
     return m.gitignore_template
 }
 // GetHasDiscussions gets the has_discussions property value. Whether discussions are enabled.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetHasDiscussions()(*bool) {
     return m.has_discussions
 }
 // GetHasDownloads gets the has_downloads property value. Whether downloads are enabled.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. Whether issues are enabled.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasProjects gets the has_projects property value. Whether projects are enabled.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. Whether the wiki is enabled.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. A URL with more information about the repository.
+// returns a *string when successful
 func (m *ReposPostRequestBody) GetHomepage()(*string) {
     return m.homepage
 }
 // GetIsTemplate gets the is_template property value. Whether this repository acts as a template that can be used to generate new repositories.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetLicenseTemplate gets the license_template property value. The license keyword of the open source license for this repository.
+// returns a *string when successful
 func (m *ReposPostRequestBody) GetLicenseTemplate()(*string) {
     return m.license_template
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *ReposPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetPrivate gets the private property value. Whether the repository is private.
+// returns a *bool when successful
 func (m *ReposPostRequestBody) GetPrivate()(*bool) {
     return m.private
 }
 // GetTeamId gets the team_id property value. The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
+// returns a *int32 when successful
 func (m *ReposPostRequestBody) GetTeamId()(*int32) {
     return m.team_id
 }
@@ -537,7 +558,6 @@ func (m *ReposPostRequestBody) SetPrivate(value *bool)() {
 func (m *ReposPostRequestBody) SetTeamId(value *int32)() {
     m.team_id = value
 }
-// ReposPostRequestBodyable 
 type ReposPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

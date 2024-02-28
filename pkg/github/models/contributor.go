@@ -51,7 +51,7 @@ type Contributor struct {
     // The url property
     url *string
 }
-// NewContributor instantiates a new contributor and sets the default values.
+// NewContributor instantiates a new Contributor and sets the default values.
 func NewContributor()(*Contributor) {
     m := &Contributor{
     }
@@ -59,30 +59,37 @@ func NewContributor()(*Contributor) {
     return m
 }
 // CreateContributorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContributorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContributor(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Contributor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *Contributor) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetContributions gets the contributions property value. The contributions property
+// returns a *int32 when successful
 func (m *Contributor) GetContributions()(*int32) {
     return m.contributions
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *Contributor) GetEmail()(*string) {
     return m.email
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *Contributor) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Contributor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -298,70 +305,87 @@ func (m *Contributor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *Contributor) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *Contributor) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *Contributor) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *Contributor) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Contributor) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Contributor) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *Contributor) GetLogin()(*string) {
     return m.login
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Contributor) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Contributor) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
+// returns a *string when successful
 func (m *Contributor) GetOrganizationsUrl()(*string) {
     return m.organizations_url
 }
 // GetReceivedEventsUrl gets the received_events_url property value. The received_events_url property
+// returns a *string when successful
 func (m *Contributor) GetReceivedEventsUrl()(*string) {
     return m.received_events_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *Contributor) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetSiteAdmin gets the site_admin property value. The site_admin property
+// returns a *bool when successful
 func (m *Contributor) GetSiteAdmin()(*bool) {
     return m.site_admin
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *Contributor) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetSubscriptionsUrl gets the subscriptions_url property value. The subscriptions_url property
+// returns a *string when successful
 func (m *Contributor) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Contributor) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Contributor) GetUrl()(*string) {
     return m.url
 }
@@ -589,7 +613,6 @@ func (m *Contributor) SetTypeEscaped(value *string)() {
 func (m *Contributor) SetUrl(value *string)() {
     m.url = value
 }
-// Contributorable 
 type Contributorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

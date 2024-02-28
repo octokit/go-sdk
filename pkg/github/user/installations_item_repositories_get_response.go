@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// InstallationsItemRepositoriesGetResponse 
 type InstallationsItemRepositoriesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,14 +23,17 @@ func NewInstallationsItemRepositoriesGetResponse()(*InstallationsItemRepositorie
     return m
 }
 // CreateInstallationsItemRepositoriesGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInstallationsItemRepositoriesGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInstallationsItemRepositoriesGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InstallationsItemRepositoriesGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InstallationsItemRepositoriesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,14 +75,17 @@ func (m *InstallationsItemRepositoriesGetResponse) GetFieldDeserializers()(map[s
     return res
 }
 // GetRepositories gets the repositories property value. The repositories property
+// returns a []Repositoryable when successful
 func (m *InstallationsItemRepositoriesGetResponse) GetRepositories()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Repositoryable) {
     return m.repositories
 }
 // GetRepositorySelection gets the repository_selection property value. The repository_selection property
+// returns a *string when successful
 func (m *InstallationsItemRepositoriesGetResponse) GetRepositorySelection()(*string) {
     return m.repository_selection
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *InstallationsItemRepositoriesGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -134,7 +139,6 @@ func (m *InstallationsItemRepositoriesGetResponse) SetRepositorySelection(value 
 func (m *InstallationsItemRepositoriesGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// InstallationsItemRepositoriesGetResponseable 
 type InstallationsItemRepositoriesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

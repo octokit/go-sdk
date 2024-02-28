@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PagesHealthCheck_alt_domain 
 type PagesHealthCheck_alt_domain struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -65,7 +64,7 @@ type PagesHealthCheck_alt_domain struct {
     // The uri property
     uri *string
 }
-// NewPagesHealthCheck_alt_domain instantiates a new pagesHealthCheck_alt_domain and sets the default values.
+// NewPagesHealthCheck_alt_domain instantiates a new PagesHealthCheck_alt_domain and sets the default values.
 func NewPagesHealthCheck_alt_domain()(*PagesHealthCheck_alt_domain) {
     m := &PagesHealthCheck_alt_domain{
     }
@@ -73,26 +72,32 @@ func NewPagesHealthCheck_alt_domain()(*PagesHealthCheck_alt_domain) {
     return m
 }
 // CreatePagesHealthCheck_alt_domainFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePagesHealthCheck_alt_domainFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPagesHealthCheck_alt_domain(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PagesHealthCheck_alt_domain) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCaaError gets the caa_error property value. The caa_error property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetCaaError()(*string) {
     return m.caa_error
 }
 // GetDnsResolves gets the dns_resolves property value. The dns_resolves property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetDnsResolves()(*bool) {
     return m.dns_resolves
 }
 // GetEnforcesHttps gets the enforces_https property value. The enforces_https property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetEnforcesHttps()(*bool) {
     return m.enforces_https
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PagesHealthCheck_alt_domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["caa_error"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -378,102 +383,127 @@ func (m *PagesHealthCheck_alt_domain) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHasCnameRecord gets the has_cname_record property value. The has_cname_record property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetHasCnameRecord()(*bool) {
     return m.has_cname_record
 }
 // GetHasMxRecordsPresent gets the has_mx_records_present property value. The has_mx_records_present property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetHasMxRecordsPresent()(*bool) {
     return m.has_mx_records_present
 }
 // GetHost gets the host property value. The host property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetHost()(*string) {
     return m.host
 }
 // GetHttpsError gets the https_error property value. The https_error property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetHttpsError()(*string) {
     return m.https_error
 }
 // GetIsApexDomain gets the is_apex_domain property value. The is_apex_domain property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsApexDomain()(*bool) {
     return m.is_apex_domain
 }
 // GetIsARecord gets the is_a_record property value. The is_a_record property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsARecord()(*bool) {
     return m.is_a_record
 }
 // GetIsCloudflareIp gets the is_cloudflare_ip property value. The is_cloudflare_ip property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsCloudflareIp()(*bool) {
     return m.is_cloudflare_ip
 }
 // GetIsCnameToFastly gets the is_cname_to_fastly property value. The is_cname_to_fastly property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsCnameToFastly()(*bool) {
     return m.is_cname_to_fastly
 }
 // GetIsCnameToGithubUserDomain gets the is_cname_to_github_user_domain property value. The is_cname_to_github_user_domain property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsCnameToGithubUserDomain()(*bool) {
     return m.is_cname_to_github_user_domain
 }
 // GetIsCnameToPagesDotGithubDotCom gets the is_cname_to_pages_dot_github_dot_com property value. The is_cname_to_pages_dot_github_dot_com property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsCnameToPagesDotGithubDotCom()(*bool) {
     return m.is_cname_to_pages_dot_github_dot_com
 }
 // GetIsFastlyIp gets the is_fastly_ip property value. The is_fastly_ip property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsFastlyIp()(*bool) {
     return m.is_fastly_ip
 }
 // GetIsHttpsEligible gets the is_https_eligible property value. The is_https_eligible property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsHttpsEligible()(*bool) {
     return m.is_https_eligible
 }
 // GetIsNonGithubPagesIpPresent gets the is_non_github_pages_ip_present property value. The is_non_github_pages_ip_present property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsNonGithubPagesIpPresent()(*bool) {
     return m.is_non_github_pages_ip_present
 }
 // GetIsOldIpAddress gets the is_old_ip_address property value. The is_old_ip_address property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsOldIpAddress()(*bool) {
     return m.is_old_ip_address
 }
 // GetIsPagesDomain gets the is_pages_domain property value. The is_pages_domain property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsPagesDomain()(*bool) {
     return m.is_pages_domain
 }
 // GetIsPointedToGithubPagesIp gets the is_pointed_to_github_pages_ip property value. The is_pointed_to_github_pages_ip property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsPointedToGithubPagesIp()(*bool) {
     return m.is_pointed_to_github_pages_ip
 }
 // GetIsProxied gets the is_proxied property value. The is_proxied property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsProxied()(*bool) {
     return m.is_proxied
 }
 // GetIsServedByPages gets the is_served_by_pages property value. The is_served_by_pages property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsServedByPages()(*bool) {
     return m.is_served_by_pages
 }
 // GetIsValid gets the is_valid property value. The is_valid property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsValid()(*bool) {
     return m.is_valid
 }
 // GetIsValidDomain gets the is_valid_domain property value. The is_valid_domain property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetIsValidDomain()(*bool) {
     return m.is_valid_domain
 }
 // GetNameservers gets the nameservers property value. The nameservers property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetNameservers()(*string) {
     return m.nameservers
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetReason()(*string) {
     return m.reason
 }
 // GetRespondsToHttps gets the responds_to_https property value. The responds_to_https property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetRespondsToHttps()(*bool) {
     return m.responds_to_https
 }
 // GetShouldBeARecord gets the should_be_a_record property value. The should_be_a_record property
+// returns a *bool when successful
 func (m *PagesHealthCheck_alt_domain) GetShouldBeARecord()(*bool) {
     return m.should_be_a_record
 }
 // GetUri gets the uri property value. The uri property
+// returns a *string when successful
 func (m *PagesHealthCheck_alt_domain) GetUri()(*string) {
     return m.uri
 }
@@ -771,7 +801,6 @@ func (m *PagesHealthCheck_alt_domain) SetShouldBeARecord(value *bool)() {
 func (m *PagesHealthCheck_alt_domain) SetUri(value *string)() {
     m.uri = value
 }
-// PagesHealthCheck_alt_domainable 
 type PagesHealthCheck_alt_domainable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -37,7 +37,7 @@ type Team struct {
     // The url property
     url *string
 }
-// NewTeam instantiates a new team and sets the default values.
+// NewTeam instantiates a new Team and sets the default values.
 func NewTeam()(*Team) {
     m := &Team{
     }
@@ -45,18 +45,22 @@ func NewTeam()(*Team) {
     return m
 }
 // CreateTeamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeam(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Team) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *Team) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -202,54 +206,67 @@ func (m *Team) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Team) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Team) GetId()(*int32) {
     return m.id
 }
 // GetMembersUrl gets the members_url property value. The members_url property
+// returns a *string when successful
 func (m *Team) GetMembersUrl()(*string) {
     return m.members_url
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Team) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Team) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationSetting gets the notification_setting property value. The notification_setting property
+// returns a *string when successful
 func (m *Team) GetNotificationSetting()(*string) {
     return m.notification_setting
 }
 // GetParent gets the parent property value. Groups of organization members that gives permissions on specified repositories.
+// returns a NullableTeamSimpleable when successful
 func (m *Team) GetParent()(NullableTeamSimpleable) {
     return m.parent
 }
 // GetPermission gets the permission property value. The permission property
+// returns a *string when successful
 func (m *Team) GetPermission()(*string) {
     return m.permission
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a Team_permissionsable when successful
 func (m *Team) GetPermissions()(Team_permissionsable) {
     return m.permissions
 }
 // GetPrivacy gets the privacy property value. The privacy property
+// returns a *string when successful
 func (m *Team) GetPrivacy()(*string) {
     return m.privacy
 }
 // GetRepositoriesUrl gets the repositories_url property value. The repositories_url property
+// returns a *string when successful
 func (m *Team) GetRepositoriesUrl()(*string) {
     return m.repositories_url
 }
 // GetSlug gets the slug property value. The slug property
+// returns a *string when successful
 func (m *Team) GetSlug()(*string) {
     return m.slug
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Team) GetUrl()(*string) {
     return m.url
 }
@@ -407,7 +424,6 @@ func (m *Team) SetSlug(value *string)() {
 func (m *Team) SetUrl(value *string)() {
     m.url = value
 }
-// Teamable 
 type Teamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

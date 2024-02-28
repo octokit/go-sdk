@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemTransferPostRequestBody 
 type ItemItemTransferPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,14 +22,17 @@ func NewItemItemTransferPostRequestBody()(*ItemItemTransferPostRequestBody) {
     return m
 }
 // CreateItemItemTransferPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemTransferPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemTransferPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemTransferPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemTransferPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["new_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -72,14 +74,17 @@ func (m *ItemItemTransferPostRequestBody) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetNewName gets the new_name property value. The new name to be given to the repository.
+// returns a *string when successful
 func (m *ItemItemTransferPostRequestBody) GetNewName()(*string) {
     return m.new_name
 }
 // GetNewOwner gets the new_owner property value. The username or organization name the repository will be transferred to.
+// returns a *string when successful
 func (m *ItemItemTransferPostRequestBody) GetNewOwner()(*string) {
     return m.new_owner
 }
 // GetTeamIds gets the team_ids property value. ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
+// returns a []int32 when successful
 func (m *ItemItemTransferPostRequestBody) GetTeamIds()([]int32) {
     return m.team_ids
 }
@@ -127,7 +132,6 @@ func (m *ItemItemTransferPostRequestBody) SetNewOwner(value *string)() {
 func (m *ItemItemTransferPostRequestBody) SetTeamIds(value []int32)() {
     m.team_ids = value
 }
-// ItemItemTransferPostRequestBodyable 
 type ItemItemTransferPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

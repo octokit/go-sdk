@@ -17,7 +17,7 @@ type PorterLargeFile struct {
     // The size property
     size *int32
 }
-// NewPorterLargeFile instantiates a new porterLargeFile and sets the default values.
+// NewPorterLargeFile instantiates a new PorterLargeFile and sets the default values.
 func NewPorterLargeFile()(*PorterLargeFile) {
     m := &PorterLargeFile{
     }
@@ -25,14 +25,17 @@ func NewPorterLargeFile()(*PorterLargeFile) {
     return m
 }
 // CreatePorterLargeFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePorterLargeFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPorterLargeFile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PorterLargeFile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PorterLargeFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["oid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *PorterLargeFile) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetOid gets the oid property value. The oid property
+// returns a *string when successful
 func (m *PorterLargeFile) GetOid()(*string) {
     return m.oid
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *PorterLargeFile) GetPath()(*string) {
     return m.path
 }
 // GetRefName gets the ref_name property value. The ref_name property
+// returns a *string when successful
 func (m *PorterLargeFile) GetRefName()(*string) {
     return m.ref_name
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *PorterLargeFile) GetSize()(*int32) {
     return m.size
 }
@@ -147,7 +154,6 @@ func (m *PorterLargeFile) SetRefName(value *string)() {
 func (m *PorterLargeFile) SetSize(value *int32)() {
     m.size = value
 }
-// PorterLargeFileable 
 type PorterLargeFileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// TopicsGetResponse 
 type TopicsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,14 +23,17 @@ func NewTopicsGetResponse()(*TopicsGetResponse) {
     return m
 }
 // CreateTopicsGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTopicsGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTopicsGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TopicsGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TopicsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["incomplete_results"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,14 +75,17 @@ func (m *TopicsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIncompleteResults gets the incomplete_results property value. The incomplete_results property
+// returns a *bool when successful
 func (m *TopicsGetResponse) GetIncompleteResults()(*bool) {
     return m.incomplete_results
 }
 // GetItems gets the items property value. The items property
+// returns a []TopicSearchResultItemable when successful
 func (m *TopicsGetResponse) GetItems()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.TopicSearchResultItemable) {
     return m.items
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *TopicsGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -134,7 +139,6 @@ func (m *TopicsGetResponse) SetItems(value []i59ea7d99994c6a4bb9ef742ed717844297
 func (m *TopicsGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// TopicsGetResponseable 
 type TopicsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

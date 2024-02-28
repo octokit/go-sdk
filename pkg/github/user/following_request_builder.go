@@ -18,6 +18,7 @@ type FollowingRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.user.following.item collection
+// returns a *FollowingWithUsernameItemRequestBuilder when successful
 func (m *FollowingRequestBuilder) ByUsername(username string)(*FollowingWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -42,6 +43,9 @@ func NewFollowingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewFollowingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the people who the authenticated user follows.
+// returns a []SimpleUserable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/followers#list-the-people-the-authenticated-user-follows
@@ -67,6 +71,7 @@ func (m *FollowingRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return val, nil
 }
 // ToGetRequestInformation lists the people who the authenticated user follows.
+// returns a *RequestInformation when successful
 func (m *FollowingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[FollowingRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -74,6 +79,7 @@ func (m *FollowingRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FollowingRequestBuilder when successful
 func (m *FollowingRequestBuilder) WithUrl(rawUrl string)(*FollowingRequestBuilder) {
     return NewFollowingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

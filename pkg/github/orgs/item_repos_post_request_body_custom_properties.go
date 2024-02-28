@@ -17,14 +17,17 @@ func NewItemReposPostRequestBody_custom_properties()(*ItemReposPostRequestBody_c
     return m
 }
 // CreateItemReposPostRequestBody_custom_propertiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemReposPostRequestBody_custom_propertiesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemReposPostRequestBody_custom_properties(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemReposPostRequestBody_custom_properties) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemReposPostRequestBody_custom_properties) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     return res
@@ -43,7 +46,6 @@ func (m *ItemReposPostRequestBody_custom_properties) Serialize(writer i878a80d23
 func (m *ItemReposPostRequestBody_custom_properties) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// ItemReposPostRequestBody_custom_propertiesable 
 type ItemReposPostRequestBody_custom_propertiesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

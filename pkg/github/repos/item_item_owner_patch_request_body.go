@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemOwnerPatchRequestBody 
 type ItemItemOwnerPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -58,54 +57,67 @@ func NewItemItemOwnerPatchRequestBody()(*ItemItemOwnerPatchRequestBody) {
     return m
 }
 // CreateItemItemOwnerPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemOwnerPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemOwnerPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowAutoMerge gets the allow_auto_merge property value. Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowAutoMerge()(*bool) {
     return m.allow_auto_merge
 }
 // GetAllowForking gets the allow_forking property value. Either `true` to allow private forks, or `false` to prevent private forks.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowForking()(*bool) {
     return m.allow_forking
 }
 // GetAllowMergeCommit gets the allow_merge_commit property value. Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowMergeCommit()(*bool) {
     return m.allow_merge_commit
 }
 // GetAllowRebaseMerge gets the allow_rebase_merge property value. Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowRebaseMerge()(*bool) {
     return m.allow_rebase_merge
 }
 // GetAllowSquashMerge gets the allow_squash_merge property value. Either `true` to allow squash-merging pull requests, or `false` to prevent squash-merging.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowSquashMerge()(*bool) {
     return m.allow_squash_merge
 }
 // GetAllowUpdateBranch gets the allow_update_branch property value. Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetAllowUpdateBranch()(*bool) {
     return m.allow_update_branch
 }
 // GetArchived gets the archived property value. Whether to archive this repository. `false` will unarchive a previously archived repository.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetArchived()(*bool) {
     return m.archived
 }
 // GetDefaultBranch gets the default_branch property value. Updates the default branch for this repository.
+// returns a *string when successful
 func (m *ItemItemOwnerPatchRequestBody) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDescription gets the description property value. A short description of the repository.
+// returns a *string when successful
 func (m *ItemItemOwnerPatchRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemOwnerPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_auto_merge"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -311,43 +323,53 @@ func (m *ItemItemOwnerPatchRequestBody) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetHasIssues gets the has_issues property value. Either `true` to enable issues for this repository or `false` to disable them.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasProjects gets the has_projects property value. Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. Either `true` to enable the wiki for this repository or `false` to disable it.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. A URL with more information about the repository.
+// returns a *string when successful
 func (m *ItemItemOwnerPatchRequestBody) GetHomepage()(*string) {
     return m.homepage
 }
 // GetIsTemplate gets the is_template property value. Either `true` to make this repo available as a template repository or `false` to prevent it.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetName gets the name property value. The name of the repository.
+// returns a *string when successful
 func (m *ItemItemOwnerPatchRequestBody) GetName()(*string) {
     return m.name
 }
 // GetPrivate gets the private property value. Either `true` to make the repository private or `false` to make it public. Default: `false`.  **Note**: You will get a `422` error if the organization restricts [changing repository visibility](https://docs.github.com/articles/repository-permission-levels-for-an-organization#changing-the-visibility-of-repositories) to organization owners and a non-owner tries to change the value of private.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetPrivate()(*bool) {
     return m.private
 }
 // GetSecurityAndAnalysis gets the security_and_analysis property value. Specify which security and analysis features to enable or disable for the repository.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:`{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
+// returns a ItemItemOwnerPatchRequestBody_security_and_analysisable when successful
 func (m *ItemItemOwnerPatchRequestBody) GetSecurityAndAnalysis()(ItemItemOwnerPatchRequestBody_security_and_analysisable) {
     return m.security_and_analysis
 }
 // GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetUseSquashPrTitleAsDefault()(*bool) {
     return m.use_squash_pr_title_as_default
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
+// returns a *bool when successful
 func (m *ItemItemOwnerPatchRequestBody) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -566,7 +588,6 @@ func (m *ItemItemOwnerPatchRequestBody) SetUseSquashPrTitleAsDefault(value *bool
 func (m *ItemItemOwnerPatchRequestBody) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// ItemItemOwnerPatchRequestBodyable 
 type ItemItemOwnerPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -56,7 +56,7 @@ type Release struct {
     // The zipball_url property
     zipball_url *string
 }
-// NewRelease instantiates a new release and sets the default values.
+// NewRelease instantiates a new Release and sets the default values.
 func NewRelease()(*Release) {
     m := &Release{
     }
@@ -64,50 +64,62 @@ func NewRelease()(*Release) {
     return m
 }
 // CreateReleaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReleaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRelease(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Release) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssets gets the assets property value. The assets property
+// returns a []ReleaseAssetable when successful
 func (m *Release) GetAssets()([]ReleaseAssetable) {
     return m.assets
 }
 // GetAssetsUrl gets the assets_url property value. The assets_url property
+// returns a *string when successful
 func (m *Release) GetAssetsUrl()(*string) {
     return m.assets_url
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *Release) GetAuthor()(SimpleUserable) {
     return m.author
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *Release) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *Release) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyText gets the body_text property value. The body_text property
+// returns a *string when successful
 func (m *Release) GetBodyText()(*string) {
     return m.body_text
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Release) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDiscussionUrl gets the discussion_url property value. The URL of the release discussion.
+// returns a *string when successful
 func (m *Release) GetDiscussionUrl()(*string) {
     return m.discussion_url
 }
 // GetDraft gets the draft property value. true to create a draft (unpublished) release, false to create a published one.
+// returns a *bool when successful
 func (m *Release) GetDraft()(*bool) {
     return m.draft
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Release) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -349,58 +361,72 @@ func (m *Release) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Release) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Release) GetId()(*int32) {
     return m.id
 }
 // GetMentionsCount gets the mentions_count property value. The mentions_count property
+// returns a *int32 when successful
 func (m *Release) GetMentionsCount()(*int32) {
     return m.mentions_count
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Release) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Release) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPrerelease gets the prerelease property value. Whether to identify the release as a prerelease or a full release.
+// returns a *bool when successful
 func (m *Release) GetPrerelease()(*bool) {
     return m.prerelease
 }
 // GetPublishedAt gets the published_at property value. The published_at property
+// returns a *Time when successful
 func (m *Release) GetPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.published_at
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *Release) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetTagName gets the tag_name property value. The name of the tag.
+// returns a *string when successful
 func (m *Release) GetTagName()(*string) {
     return m.tag_name
 }
 // GetTarballUrl gets the tarball_url property value. The tarball_url property
+// returns a *string when successful
 func (m *Release) GetTarballUrl()(*string) {
     return m.tarball_url
 }
 // GetTargetCommitish gets the target_commitish property value. Specifies the commitish value that determines where the Git tag is created from.
+// returns a *string when successful
 func (m *Release) GetTargetCommitish()(*string) {
     return m.target_commitish
 }
 // GetUploadUrl gets the upload_url property value. The upload_url property
+// returns a *string when successful
 func (m *Release) GetUploadUrl()(*string) {
     return m.upload_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Release) GetUrl()(*string) {
     return m.url
 }
 // GetZipballUrl gets the zipball_url property value. The zipball_url property
+// returns a *string when successful
 func (m *Release) GetZipballUrl()(*string) {
     return m.zipball_url
 }
@@ -654,7 +680,6 @@ func (m *Release) SetUrl(value *string)() {
 func (m *Release) SetZipballUrl(value *string)() {
     m.zipball_url = value
 }
-// Releaseable 
 type Releaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

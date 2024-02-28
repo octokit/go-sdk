@@ -10,20 +10,23 @@ import (
 type ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilderInternal instantiates a new WithAlert_numberItemRequestBuilder and sets the default values.
+// NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilderInternal instantiates a new ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder and sets the default values.
 func NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) {
     m := &ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot/alerts/{alert_number}", pathParameters),
     }
     return m
 }
-// NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilder instantiates a new WithAlert_numberItemRequestBuilder and sets the default values.
+// NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilder instantiates a new ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder and sets the default values.
 func NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get oAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a DependabotAlertable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/alerts#get-a-dependabot-alert
@@ -46,6 +49,12 @@ func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) Get(ctx con
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DependabotAlertable), nil
 }
 // Patch the authenticated user must have access to security alerts for the repository to use this endpoint. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a DependabotAlertable when successful
+// returns a BasicError error when the service returns a 400 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 409 status code
+// returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/alerts#update-a-dependabot-alert
@@ -71,6 +80,7 @@ func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) Patch(ctx c
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DependabotAlertable), nil
 }
 // ToGetRequestInformation oAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a *RequestInformation when successful
 func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -78,6 +88,7 @@ func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPatchRequestInformation the authenticated user must have access to security alerts for the repository to use this endpoint. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+// returns a *RequestInformation when successful
 func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemItemDependabotAlertsItemWithAlert_numberPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -89,6 +100,7 @@ func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) ToPatchRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder when successful
 func (m *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) WithUrl(rawUrl string)(*ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) {
     return NewItemItemDependabotAlertsWithAlert_numberItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -13,7 +13,7 @@ type GlobalAdvisory_vulnerabilities_package struct {
     // The unique package name within its ecosystem.
     name *string
 }
-// NewGlobalAdvisory_vulnerabilities_package instantiates a new globalAdvisory_vulnerabilities_package and sets the default values.
+// NewGlobalAdvisory_vulnerabilities_package instantiates a new GlobalAdvisory_vulnerabilities_package and sets the default values.
 func NewGlobalAdvisory_vulnerabilities_package()(*GlobalAdvisory_vulnerabilities_package) {
     m := &GlobalAdvisory_vulnerabilities_package{
     }
@@ -21,18 +21,22 @@ func NewGlobalAdvisory_vulnerabilities_package()(*GlobalAdvisory_vulnerabilities
     return m
 }
 // CreateGlobalAdvisory_vulnerabilities_packageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGlobalAdvisory_vulnerabilities_packageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGlobalAdvisory_vulnerabilities_package(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GlobalAdvisory_vulnerabilities_package) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEcosystem gets the ecosystem property value. The package's language or package management ecosystem.
+// returns a *SecurityAdvisoryEcosystems when successful
 func (m *GlobalAdvisory_vulnerabilities_package) GetEcosystem()(*SecurityAdvisoryEcosystems) {
     return m.ecosystem
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GlobalAdvisory_vulnerabilities_package) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ecosystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *GlobalAdvisory_vulnerabilities_package) GetFieldDeserializers()(map[str
     return res
 }
 // GetName gets the name property value. The unique package name within its ecosystem.
+// returns a *string when successful
 func (m *GlobalAdvisory_vulnerabilities_package) GetName()(*string) {
     return m.name
 }
@@ -96,7 +101,6 @@ func (m *GlobalAdvisory_vulnerabilities_package) SetEcosystem(value *SecurityAdv
 func (m *GlobalAdvisory_vulnerabilities_package) SetName(value *string)() {
     m.name = value
 }
-// GlobalAdvisory_vulnerabilities_packageable 
 type GlobalAdvisory_vulnerabilities_packageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

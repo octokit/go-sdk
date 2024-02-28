@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,14 +21,17 @@ func NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers()(*
     return m
 }
 // CreateItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -55,10 +57,12 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) G
     return res
 }
 // GetId gets the id property value. The id of the user or team who can review the deployment
+// returns a *int32 when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetId()(*int32) {
     return m.id
 }
 // GetTypeEscaped gets the type property value. The type of reviewer.
+// returns a *DeploymentReviewerType when successful
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) GetTypeEscaped()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentReviewerType) {
     return m.typeEscaped
 }
@@ -97,7 +101,6 @@ func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) S
 func (m *ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewers) SetTypeEscaped(value *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentReviewerType)() {
     m.typeEscaped = value
 }
-// ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable 
 type ItemItemEnvironmentsItemWithEnvironment_namePutRequestBody_reviewersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package checkruns
 import (
     "errors"
 )
-// 
 type GetStatusQueryParameterType int
 
 const (

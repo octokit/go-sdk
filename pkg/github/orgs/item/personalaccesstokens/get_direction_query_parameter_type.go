@@ -2,7 +2,6 @@ package personalaccesstokens
 import (
     "errors"
 )
-// 
 type GetDirectionQueryParameterType int
 
 const (

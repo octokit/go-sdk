@@ -15,7 +15,7 @@ type DependabotAlertWithRepository_dependency struct {
     // The execution scope of the vulnerable dependency.
     scope *DependabotAlertWithRepository_dependency_scope
 }
-// NewDependabotAlertWithRepository_dependency instantiates a new dependabotAlertWithRepository_dependency and sets the default values.
+// NewDependabotAlertWithRepository_dependency instantiates a new DependabotAlertWithRepository_dependency and sets the default values.
 func NewDependabotAlertWithRepository_dependency()(*DependabotAlertWithRepository_dependency) {
     m := &DependabotAlertWithRepository_dependency{
     }
@@ -23,14 +23,17 @@ func NewDependabotAlertWithRepository_dependency()(*DependabotAlertWithRepositor
     return m
 }
 // CreateDependabotAlertWithRepository_dependencyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependabotAlertWithRepository_dependencyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependabotAlertWithRepository_dependency(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DependabotAlertWithRepository_dependency) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependabotAlertWithRepository_dependency) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["manifest_path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +69,17 @@ func (m *DependabotAlertWithRepository_dependency) GetFieldDeserializers()(map[s
     return res
 }
 // GetManifestPath gets the manifest_path property value. The full path to the dependency manifest file, relative to the root of the repository.
+// returns a *string when successful
 func (m *DependabotAlertWithRepository_dependency) GetManifestPath()(*string) {
     return m.manifest_path
 }
 // GetPackageEscaped gets the package property value. Details for the vulnerable package.
+// returns a DependabotAlertPackageable when successful
 func (m *DependabotAlertWithRepository_dependency) GetPackageEscaped()(DependabotAlertPackageable) {
     return m.packageEscaped
 }
 // GetScope gets the scope property value. The execution scope of the vulnerable dependency.
+// returns a *DependabotAlertWithRepository_dependency_scope when successful
 func (m *DependabotAlertWithRepository_dependency) GetScope()(*DependabotAlertWithRepository_dependency_scope) {
     return m.scope
 }
@@ -103,7 +109,6 @@ func (m *DependabotAlertWithRepository_dependency) SetPackageEscaped(value Depen
 func (m *DependabotAlertWithRepository_dependency) SetScope(value *DependabotAlertWithRepository_dependency_scope)() {
     m.scope = value
 }
-// DependabotAlertWithRepository_dependencyable 
 type DependabotAlertWithRepository_dependencyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

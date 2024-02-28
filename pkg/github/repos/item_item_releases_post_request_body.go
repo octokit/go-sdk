@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemReleasesPostRequestBody 
 type ItemItemReleasesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -33,26 +32,32 @@ func NewItemItemReleasesPostRequestBody()(*ItemItemReleasesPostRequestBody) {
     return m
 }
 // CreateItemItemReleasesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemReleasesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemReleasesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemReleasesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. Text describing the contents of the tag.
+// returns a *string when successful
 func (m *ItemItemReleasesPostRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetDiscussionCategoryName gets the discussion_category_name property value. If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
+// returns a *string when successful
 func (m *ItemItemReleasesPostRequestBody) GetDiscussionCategoryName()(*string) {
     return m.discussion_category_name
 }
 // GetDraft gets the draft property value. `true` to create a draft (unpublished) release, `false` to create a published one.
+// returns a *bool when successful
 func (m *ItemItemReleasesPostRequestBody) GetDraft()(*bool) {
     return m.draft
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemReleasesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,22 +143,27 @@ func (m *ItemItemReleasesPostRequestBody) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetGenerateReleaseNotes gets the generate_release_notes property value. Whether to automatically generate the name and body for this release. If `name` is specified, the specified name will be used; otherwise, a name will be automatically generated. If `body` is specified, the body will be pre-pended to the automatically generated notes.
+// returns a *bool when successful
 func (m *ItemItemReleasesPostRequestBody) GetGenerateReleaseNotes()(*bool) {
     return m.generate_release_notes
 }
 // GetName gets the name property value. The name of the release.
+// returns a *string when successful
 func (m *ItemItemReleasesPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetPrerelease gets the prerelease property value. `true` to identify the release as a prerelease. `false` to identify the release as a full release.
+// returns a *bool when successful
 func (m *ItemItemReleasesPostRequestBody) GetPrerelease()(*bool) {
     return m.prerelease
 }
 // GetTagName gets the tag_name property value. The name of the tag.
+// returns a *string when successful
 func (m *ItemItemReleasesPostRequestBody) GetTagName()(*string) {
     return m.tag_name
 }
 // GetTargetCommitish gets the target_commitish property value. Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch.
+// returns a *string when successful
 func (m *ItemItemReleasesPostRequestBody) GetTargetCommitish()(*string) {
     return m.target_commitish
 }
@@ -251,7 +261,6 @@ func (m *ItemItemReleasesPostRequestBody) SetTagName(value *string)() {
 func (m *ItemItemReleasesPostRequestBody) SetTargetCommitish(value *string)() {
     m.target_commitish = value
 }
-// ItemItemReleasesPostRequestBodyable 
 type ItemItemReleasesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

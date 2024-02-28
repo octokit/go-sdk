@@ -124,7 +124,7 @@ type OrganizationFull struct {
     // The web_commit_signoff_required property
     web_commit_signoff_required *bool
 }
-// NewOrganizationFull instantiates a new organizationFull and sets the default values.
+// NewOrganizationFull instantiates a new OrganizationFull and sets the default values.
 func NewOrganizationFull()(*OrganizationFull) {
     m := &OrganizationFull{
     }
@@ -132,78 +132,97 @@ func NewOrganizationFull()(*OrganizationFull) {
     return m
 }
 // CreateOrganizationFullFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationFullFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationFull(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationFull) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdvancedSecurityEnabledForNewRepositories gets the advanced_security_enabled_for_new_repositories property value. Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetAdvancedSecurityEnabledForNewRepositories()(*bool) {
     return m.advanced_security_enabled_for_new_repositories
 }
 // GetArchivedAt gets the archived_at property value. The archived_at property
+// returns a *Time when successful
 func (m *OrganizationFull) GetArchivedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.archived_at
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetBillingEmail gets the billing_email property value. The billing_email property
+// returns a *string when successful
 func (m *OrganizationFull) GetBillingEmail()(*string) {
     return m.billing_email
 }
 // GetBlog gets the blog property value. The blog property
+// returns a *string when successful
 func (m *OrganizationFull) GetBlog()(*string) {
     return m.blog
 }
 // GetCollaborators gets the collaborators property value. The collaborators property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetCollaborators()(*int32) {
     return m.collaborators
 }
 // GetCompany gets the company property value. The company property
+// returns a *string when successful
 func (m *OrganizationFull) GetCompany()(*string) {
     return m.company
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *OrganizationFull) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDefaultRepositoryPermission gets the default_repository_permission property value. The default_repository_permission property
+// returns a *string when successful
 func (m *OrganizationFull) GetDefaultRepositoryPermission()(*string) {
     return m.default_repository_permission
 }
 // GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred tothis organization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetDependabotAlertsEnabledForNewRepositories()(*bool) {
     return m.dependabot_alerts_enabled_for_new_repositories
 }
 // GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool) {
     return m.dependabot_security_updates_enabled_for_new_repositories
 }
 // GetDependencyGraphEnabledForNewRepositories gets the dependency_graph_enabled_for_new_repositories property value. Whether dependency graph is automatically enabled for new repositories and repositories transferred to thisorganization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetDependencyGraphEnabledForNewRepositories()(*bool) {
     return m.dependency_graph_enabled_for_new_repositories
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *OrganizationFull) GetDescription()(*string) {
     return m.description
 }
 // GetDiskUsage gets the disk_usage property value. The disk_usage property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetDiskUsage()(*int32) {
     return m.disk_usage
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *OrganizationFull) GetEmail()(*string) {
     return m.email
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationFull) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["advanced_security_enabled_for_new_repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -779,166 +798,207 @@ func (m *OrganizationFull) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetFollowers gets the followers property value. The followers property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetFollowers()(*int32) {
     return m.followers
 }
 // GetFollowing gets the following property value. The following property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetFollowing()(*int32) {
     return m.following
 }
 // GetHasOrganizationProjects gets the has_organization_projects property value. The has_organization_projects property
+// returns a *bool when successful
 func (m *OrganizationFull) GetHasOrganizationProjects()(*bool) {
     return m.has_organization_projects
 }
 // GetHasRepositoryProjects gets the has_repository_projects property value. The has_repository_projects property
+// returns a *bool when successful
 func (m *OrganizationFull) GetHasRepositoryProjects()(*bool) {
     return m.has_repository_projects
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetId()(*int32) {
     return m.id
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsVerified gets the is_verified property value. The is_verified property
+// returns a *bool when successful
 func (m *OrganizationFull) GetIsVerified()(*bool) {
     return m.is_verified
 }
 // GetLocation gets the location property value. The location property
+// returns a *string when successful
 func (m *OrganizationFull) GetLocation()(*string) {
     return m.location
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *OrganizationFull) GetLogin()(*string) {
     return m.login
 }
 // GetMembersAllowedRepositoryCreationType gets the members_allowed_repository_creation_type property value. The members_allowed_repository_creation_type property
+// returns a *string when successful
 func (m *OrganizationFull) GetMembersAllowedRepositoryCreationType()(*string) {
     return m.members_allowed_repository_creation_type
 }
 // GetMembersCanCreateInternalRepositories gets the members_can_create_internal_repositories property value. The members_can_create_internal_repositories property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreateInternalRepositories()(*bool) {
     return m.members_can_create_internal_repositories
 }
 // GetMembersCanCreatePages gets the members_can_create_pages property value. The members_can_create_pages property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreatePages()(*bool) {
     return m.members_can_create_pages
 }
 // GetMembersCanCreatePrivatePages gets the members_can_create_private_pages property value. The members_can_create_private_pages property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreatePrivatePages()(*bool) {
     return m.members_can_create_private_pages
 }
 // GetMembersCanCreatePrivateRepositories gets the members_can_create_private_repositories property value. The members_can_create_private_repositories property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreatePrivateRepositories()(*bool) {
     return m.members_can_create_private_repositories
 }
 // GetMembersCanCreatePublicPages gets the members_can_create_public_pages property value. The members_can_create_public_pages property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreatePublicPages()(*bool) {
     return m.members_can_create_public_pages
 }
 // GetMembersCanCreatePublicRepositories gets the members_can_create_public_repositories property value. The members_can_create_public_repositories property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreatePublicRepositories()(*bool) {
     return m.members_can_create_public_repositories
 }
 // GetMembersCanCreateRepositories gets the members_can_create_repositories property value. The members_can_create_repositories property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanCreateRepositories()(*bool) {
     return m.members_can_create_repositories
 }
 // GetMembersCanForkPrivateRepositories gets the members_can_fork_private_repositories property value. The members_can_fork_private_repositories property
+// returns a *bool when successful
 func (m *OrganizationFull) GetMembersCanForkPrivateRepositories()(*bool) {
     return m.members_can_fork_private_repositories
 }
 // GetMembersUrl gets the members_url property value. The members_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetMembersUrl()(*string) {
     return m.members_url
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *OrganizationFull) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *OrganizationFull) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOwnedPrivateRepos gets the owned_private_repos property value. The owned_private_repos property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetOwnedPrivateRepos()(*int32) {
     return m.owned_private_repos
 }
 // GetPlan gets the plan property value. The plan property
+// returns a OrganizationFull_planable when successful
 func (m *OrganizationFull) GetPlan()(OrganizationFull_planable) {
     return m.plan
 }
 // GetPrivateGists gets the private_gists property value. The private_gists property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetPrivateGists()(*int32) {
     return m.private_gists
 }
 // GetPublicGists gets the public_gists property value. The public_gists property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetPublicGists()(*int32) {
     return m.public_gists
 }
 // GetPublicMembersUrl gets the public_members_url property value. The public_members_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetPublicMembersUrl()(*string) {
     return m.public_members_url
 }
 // GetPublicRepos gets the public_repos property value. The public_repos property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetPublicRepos()(*int32) {
     return m.public_repos
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *OrganizationFull) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetSecretScanningEnabledForNewRepositories gets the secret_scanning_enabled_for_new_repositories property value. Whether secret scanning is automatically enabled for new repositories and repositories transferred to thisorganization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetSecretScanningEnabledForNewRepositories()(*bool) {
     return m.secret_scanning_enabled_for_new_repositories
 }
 // GetSecretScanningPushProtectionCustomLink gets the secret_scanning_push_protection_custom_link property value. An optional URL string to display to contributors who are blocked from pushing a secret.
+// returns a *string when successful
 func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLink()(*string) {
     return m.secret_scanning_push_protection_custom_link
 }
 // GetSecretScanningPushProtectionCustomLinkEnabled gets the secret_scanning_push_protection_custom_link_enabled property value. Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+// returns a *bool when successful
 func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLinkEnabled()(*bool) {
     return m.secret_scanning_push_protection_custom_link_enabled
 }
 // GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories and repositoriestransferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// returns a *bool when successful
 func (m *OrganizationFull) GetSecretScanningPushProtectionEnabledForNewRepositories()(*bool) {
     return m.secret_scanning_push_protection_enabled_for_new_repositories
 }
 // GetTotalPrivateRepos gets the total_private_repos property value. The total_private_repos property
+// returns a *int32 when successful
 func (m *OrganizationFull) GetTotalPrivateRepos()(*int32) {
     return m.total_private_repos
 }
 // GetTwitterUsername gets the twitter_username property value. The twitter_username property
+// returns a *string when successful
 func (m *OrganizationFull) GetTwitterUsername()(*string) {
     return m.twitter_username
 }
 // GetTwoFactorRequirementEnabled gets the two_factor_requirement_enabled property value. The two_factor_requirement_enabled property
+// returns a *bool when successful
 func (m *OrganizationFull) GetTwoFactorRequirementEnabled()(*bool) {
     return m.two_factor_requirement_enabled
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *OrganizationFull) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *OrganizationFull) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *OrganizationFull) GetUrl()(*string) {
     return m.url
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. The web_commit_signoff_required property
+// returns a *bool when successful
 func (m *OrganizationFull) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -1526,7 +1586,6 @@ func (m *OrganizationFull) SetUrl(value *string)() {
 func (m *OrganizationFull) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// OrganizationFullable 
 type OrganizationFullable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -11,7 +11,7 @@ type SecretScanningLocationIssueTitle struct {
     // The API URL to get the issue where the secret was detected.
     issue_title_url *string
 }
-// NewSecretScanningLocationIssueTitle instantiates a new secretScanningLocationIssueTitle and sets the default values.
+// NewSecretScanningLocationIssueTitle instantiates a new SecretScanningLocationIssueTitle and sets the default values.
 func NewSecretScanningLocationIssueTitle()(*SecretScanningLocationIssueTitle) {
     m := &SecretScanningLocationIssueTitle{
     }
@@ -19,14 +19,17 @@ func NewSecretScanningLocationIssueTitle()(*SecretScanningLocationIssueTitle) {
     return m
 }
 // CreateSecretScanningLocationIssueTitleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecretScanningLocationIssueTitleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecretScanningLocationIssueTitle(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecretScanningLocationIssueTitle) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecretScanningLocationIssueTitle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["issue_title_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *SecretScanningLocationIssueTitle) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetIssueTitleUrl gets the issue_title_url property value. The API URL to get the issue where the secret was detected.
+// returns a *string when successful
 func (m *SecretScanningLocationIssueTitle) GetIssueTitleUrl()(*string) {
     return m.issue_title_url
 }
@@ -69,7 +73,6 @@ func (m *SecretScanningLocationIssueTitle) SetAdditionalData(value map[string]an
 func (m *SecretScanningLocationIssueTitle) SetIssueTitleUrl(value *string)() {
     m.issue_title_url = value
 }
-// SecretScanningLocationIssueTitleable 
 type SecretScanningLocationIssueTitleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

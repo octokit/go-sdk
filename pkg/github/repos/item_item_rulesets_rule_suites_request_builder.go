@@ -28,6 +28,7 @@ type ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     Time_period *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetTime_periodQueryParameterType `uriparametername:"time_period"`
 }
 // ByRule_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.rulesets.ruleSuites.item collection
+// returns a *ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder when successful
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id int32)(*ItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -36,20 +37,23 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id
     urlTplParams["rule_suite_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(rule_suite_id), 10)
     return NewItemItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemRulesetsRuleSuitesRequestBuilderInternal instantiates a new RuleSuitesRequestBuilder and sets the default values.
+// NewItemItemRulesetsRuleSuitesRequestBuilderInternal instantiates a new ItemItemRulesetsRuleSuitesRequestBuilder and sets the default values.
 func NewItemItemRulesetsRuleSuitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsRuleSuitesRequestBuilder) {
     m := &ItemItemRulesetsRuleSuitesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters),
     }
     return m
 }
-// NewItemItemRulesetsRuleSuitesRequestBuilder instantiates a new RuleSuitesRequestBuilder and sets the default values.
+// NewItemItemRulesetsRuleSuitesRequestBuilder instantiates a new ItemItemRulesetsRuleSuitesRequestBuilder and sets the default values.
 func NewItemItemRulesetsRuleSuitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsRuleSuitesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemRulesetsRuleSuitesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists suites of rule evaluations at the repository level.For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
+// returns a []RuleSuitesable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites
@@ -75,6 +79,7 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) Get(ctx context.Context, requ
     return val, nil
 }
 // ToGetRequestInformation lists suites of rule evaluations at the repository level.For more information, see "[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets)."
+// returns a *RequestInformation when successful
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -82,6 +87,7 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemRulesetsRuleSuitesRequestBuilder when successful
 func (m *ItemItemRulesetsRuleSuitesRequestBuilder) WithUrl(rawUrl string)(*ItemItemRulesetsRuleSuitesRequestBuilder) {
     return NewItemItemRulesetsRuleSuitesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BranchRestrictionPolicy_apps_permissions 
 type BranchRestrictionPolicy_apps_permissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type BranchRestrictionPolicy_apps_permissions struct {
     // The single_file property
     single_file *string
 }
-// NewBranchRestrictionPolicy_apps_permissions instantiates a new branchRestrictionPolicy_apps_permissions and sets the default values.
+// NewBranchRestrictionPolicy_apps_permissions instantiates a new BranchRestrictionPolicy_apps_permissions and sets the default values.
 func NewBranchRestrictionPolicy_apps_permissions()(*BranchRestrictionPolicy_apps_permissions) {
     m := &BranchRestrictionPolicy_apps_permissions{
     }
@@ -25,18 +24,22 @@ func NewBranchRestrictionPolicy_apps_permissions()(*BranchRestrictionPolicy_apps
     return m
 }
 // CreateBranchRestrictionPolicy_apps_permissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchRestrictionPolicy_apps_permissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchRestrictionPolicy_apps_permissions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContents gets the contents property value. The contents property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetContents()(*string) {
     return m.contents
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["contents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +85,17 @@ func (m *BranchRestrictionPolicy_apps_permissions) GetFieldDeserializers()(map[s
     return res
 }
 // GetIssues gets the issues property value. The issues property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetIssues()(*string) {
     return m.issues
 }
 // GetMetadata gets the metadata property value. The metadata property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetMetadata()(*string) {
     return m.metadata
 }
 // GetSingleFile gets the single_file property value. The single_file property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_apps_permissions) GetSingleFile()(*string) {
     return m.single_file
 }
@@ -147,7 +153,6 @@ func (m *BranchRestrictionPolicy_apps_permissions) SetMetadata(value *string)() 
 func (m *BranchRestrictionPolicy_apps_permissions) SetSingleFile(value *string)() {
     m.single_file = value
 }
-// BranchRestrictionPolicy_apps_permissionsable 
 type BranchRestrictionPolicy_apps_permissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

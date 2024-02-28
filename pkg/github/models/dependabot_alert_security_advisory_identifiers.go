@@ -11,17 +11,19 @@ type DependabotAlertSecurityAdvisory_identifiers struct {
     // The value of the advisory identifer.
     value *string
 }
-// NewDependabotAlertSecurityAdvisory_identifiers instantiates a new dependabotAlertSecurityAdvisory_identifiers and sets the default values.
+// NewDependabotAlertSecurityAdvisory_identifiers instantiates a new DependabotAlertSecurityAdvisory_identifiers and sets the default values.
 func NewDependabotAlertSecurityAdvisory_identifiers()(*DependabotAlertSecurityAdvisory_identifiers) {
     m := &DependabotAlertSecurityAdvisory_identifiers{
     }
     return m
 }
 // CreateDependabotAlertSecurityAdvisory_identifiersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependabotAlertSecurityAdvisory_identifiersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependabotAlertSecurityAdvisory_identifiers(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependabotAlertSecurityAdvisory_identifiers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,10 +49,12 @@ func (m *DependabotAlertSecurityAdvisory_identifiers) GetFieldDeserializers()(ma
     return res
 }
 // GetTypeEscaped gets the type property value. The type of advisory identifier.
+// returns a *DependabotAlertSecurityAdvisory_identifiers_type when successful
 func (m *DependabotAlertSecurityAdvisory_identifiers) GetTypeEscaped()(*DependabotAlertSecurityAdvisory_identifiers_type) {
     return m.typeEscaped
 }
 // GetValue gets the value property value. The value of the advisory identifer.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory_identifiers) GetValue()(*string) {
     return m.value
 }
@@ -66,7 +70,6 @@ func (m *DependabotAlertSecurityAdvisory_identifiers) SetTypeEscaped(value *Depe
 func (m *DependabotAlertSecurityAdvisory_identifiers) SetValue(value *string)() {
     m.value = value
 }
-// DependabotAlertSecurityAdvisory_identifiersable 
 type DependabotAlertSecurityAdvisory_identifiersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetTypeEscaped()(*DependabotAlertSecurityAdvisory_identifiers_type)

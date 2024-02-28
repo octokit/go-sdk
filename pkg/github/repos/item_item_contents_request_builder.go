@@ -9,6 +9,7 @@ type ItemItemContentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByPath gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.contents.item collection
+// returns a *ItemItemContentsWithPathItemRequestBuilder when successful
 func (m *ItemItemContentsRequestBuilder) ByPath(path string)(*ItemItemContentsWithPathItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,14 +20,14 @@ func (m *ItemItemContentsRequestBuilder) ByPath(path string)(*ItemItemContentsWi
     }
     return NewItemItemContentsWithPathItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemContentsRequestBuilderInternal instantiates a new ContentsRequestBuilder and sets the default values.
+// NewItemItemContentsRequestBuilderInternal instantiates a new ItemItemContentsRequestBuilder and sets the default values.
 func NewItemItemContentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemContentsRequestBuilder) {
     m := &ItemItemContentsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents", pathParameters),
     }
     return m
 }
-// NewItemItemContentsRequestBuilder instantiates a new ContentsRequestBuilder and sets the default values.
+// NewItemItemContentsRequestBuilder instantiates a new ItemItemContentsRequestBuilder and sets the default values.
 func NewItemItemContentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemContentsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

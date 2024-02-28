@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemActionsRunnersGenerateJitconfigPostRequestBody 
 type ItemItemActionsRunnersGenerateJitconfigPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -27,14 +26,17 @@ func NewItemItemActionsRunnersGenerateJitconfigPostRequestBody()(*ItemItemAction
     return m
 }
 // CreateItemItemActionsRunnersGenerateJitconfigPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemActionsRunnersGenerateJitconfigPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemActionsRunnersGenerateJitconfigPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,18 +88,22 @@ func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetFieldDeseria
     return res
 }
 // GetLabels gets the labels property value. The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
+// returns a []string when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetLabels()([]string) {
     return m.labels
 }
 // GetName gets the name property value. The name of the new runner.
+// returns a *string when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetRunnerGroupId gets the runner_group_id property value. The ID of the runner group to register the runner to.
+// returns a *int32 when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetRunnerGroupId()(*int32) {
     return m.runner_group_id
 }
 // GetWorkFolder gets the work_folder property value. The working directory to be used for job execution, relative to the runner install directory.
+// returns a *string when successful
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) GetWorkFolder()(*string) {
     return m.work_folder
 }
@@ -155,7 +161,6 @@ func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) SetRunnerGroupI
 func (m *ItemItemActionsRunnersGenerateJitconfigPostRequestBody) SetWorkFolder(value *string)() {
     m.work_folder = value
 }
-// ItemItemActionsRunnersGenerateJitconfigPostRequestBodyable 
 type ItemItemActionsRunnersGenerateJitconfigPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

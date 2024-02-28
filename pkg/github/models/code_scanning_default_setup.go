@@ -20,7 +20,7 @@ type CodeScanningDefaultSetup struct {
     // Timestamp of latest configuration update.
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewCodeScanningDefaultSetup instantiates a new codeScanningDefaultSetup and sets the default values.
+// NewCodeScanningDefaultSetup instantiates a new CodeScanningDefaultSetup and sets the default values.
 func NewCodeScanningDefaultSetup()(*CodeScanningDefaultSetup) {
     m := &CodeScanningDefaultSetup{
     }
@@ -28,14 +28,17 @@ func NewCodeScanningDefaultSetup()(*CodeScanningDefaultSetup) {
     return m
 }
 // CreateCodeScanningDefaultSetupFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningDefaultSetupFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningDefaultSetup(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningDefaultSetup) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningDefaultSetup) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["languages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -97,22 +100,27 @@ func (m *CodeScanningDefaultSetup) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLanguages gets the languages property value. Languages to be analyzed.
+// returns a []CodeScanningDefaultSetup_languages when successful
 func (m *CodeScanningDefaultSetup) GetLanguages()([]CodeScanningDefaultSetup_languages) {
     return m.languages
 }
 // GetQuerySuite gets the query_suite property value. CodeQL query suite to be used.
+// returns a *CodeScanningDefaultSetup_query_suite when successful
 func (m *CodeScanningDefaultSetup) GetQuerySuite()(*CodeScanningDefaultSetup_query_suite) {
     return m.query_suite
 }
 // GetSchedule gets the schedule property value. The frequency of the periodic analysis.
+// returns a *CodeScanningDefaultSetup_schedule when successful
 func (m *CodeScanningDefaultSetup) GetSchedule()(*CodeScanningDefaultSetup_schedule) {
     return m.schedule
 }
 // GetState gets the state property value. Code scanning default setup has been configured or not.
+// returns a *CodeScanningDefaultSetup_state when successful
 func (m *CodeScanningDefaultSetup) GetState()(*CodeScanningDefaultSetup_state) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. Timestamp of latest configuration update.
+// returns a *Time when successful
 func (m *CodeScanningDefaultSetup) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -183,7 +191,6 @@ func (m *CodeScanningDefaultSetup) SetState(value *CodeScanningDefaultSetup_stat
 func (m *CodeScanningDefaultSetup) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// CodeScanningDefaultSetupable 
 type CodeScanningDefaultSetupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

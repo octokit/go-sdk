@@ -31,6 +31,10 @@ func NewSocial_accountsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewSocial_accountsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes one or more social accounts from the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user
@@ -52,6 +56,10 @@ func (m *Social_accountsRequestBuilder) Delete(ctx context.Context, body Social_
     return nil
 }
 // Get lists all of your social accounts.
+// returns a []SocialAccountable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/social-accounts#list-social-accounts-for-the-authenticated-user
@@ -78,6 +86,11 @@ func (m *Social_accountsRequestBuilder) Get(ctx context.Context, requestConfigur
     return val, nil
 }
 // Post add one or more social accounts to the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+// returns a []SocialAccountable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/social-accounts#add-social-accounts-for-the-authenticated-user
@@ -105,8 +118,9 @@ func (m *Social_accountsRequestBuilder) Post(ctx context.Context, body Social_ac
     return val, nil
 }
 // ToDeleteRequestInformation deletes one or more social accounts from the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *Social_accountsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body Social_accountsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/user/social_accounts", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -116,6 +130,7 @@ func (m *Social_accountsRequestBuilder) ToDeleteRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToGetRequestInformation lists all of your social accounts.
+// returns a *RequestInformation when successful
 func (m *Social_accountsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Social_accountsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -123,8 +138,9 @@ func (m *Social_accountsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // ToPostRequestInformation add one or more social accounts to the authenticated user's profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *Social_accountsRequestBuilder) ToPostRequestInformation(ctx context.Context, body Social_accountsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/user/social_accounts", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -134,6 +150,7 @@ func (m *Social_accountsRequestBuilder) ToPostRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Social_accountsRequestBuilder when successful
 func (m *Social_accountsRequestBuilder) WithUrl(rawUrl string)(*Social_accountsRequestBuilder) {
     return NewSocial_accountsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

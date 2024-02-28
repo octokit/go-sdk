@@ -31,6 +31,9 @@ func NewMarketplace_purchasesRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewMarketplace_purchasesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the active subscriptions for the authenticated user.
+// returns a []UserMarketplacePurchaseable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/apps/marketplace#list-subscriptions-for-the-authenticated-user
@@ -56,10 +59,12 @@ func (m *Marketplace_purchasesRequestBuilder) Get(ctx context.Context, requestCo
     return val, nil
 }
 // Stubbed the stubbed property
+// returns a *Marketplace_purchasesStubbedRequestBuilder when successful
 func (m *Marketplace_purchasesRequestBuilder) Stubbed()(*Marketplace_purchasesStubbedRequestBuilder) {
     return NewMarketplace_purchasesStubbedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists the active subscriptions for the authenticated user.
+// returns a *RequestInformation when successful
 func (m *Marketplace_purchasesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[Marketplace_purchasesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -67,6 +72,7 @@ func (m *Marketplace_purchasesRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *Marketplace_purchasesRequestBuilder when successful
 func (m *Marketplace_purchasesRequestBuilder) WithUrl(rawUrl string)(*Marketplace_purchasesRequestBuilder) {
     return NewMarketplace_purchasesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

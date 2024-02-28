@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RateLimitOverview_resources 
 type RateLimitOverview_resources struct {
     // The actions_runner_registration property
     actions_runner_registration RateLimitable
@@ -29,7 +28,7 @@ type RateLimitOverview_resources struct {
     // The source_import property
     source_import RateLimitable
 }
-// NewRateLimitOverview_resources instantiates a new rateLimitOverview_resources and sets the default values.
+// NewRateLimitOverview_resources instantiates a new RateLimitOverview_resources and sets the default values.
 func NewRateLimitOverview_resources()(*RateLimitOverview_resources) {
     m := &RateLimitOverview_resources{
     }
@@ -37,34 +36,42 @@ func NewRateLimitOverview_resources()(*RateLimitOverview_resources) {
     return m
 }
 // CreateRateLimitOverview_resourcesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRateLimitOverview_resourcesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRateLimitOverview_resources(), nil
 }
 // GetActionsRunnerRegistration gets the actions_runner_registration property value. The actions_runner_registration property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetActionsRunnerRegistration()(RateLimitable) {
     return m.actions_runner_registration
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RateLimitOverview_resources) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCodeScanningUpload gets the code_scanning_upload property value. The code_scanning_upload property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetCodeScanningUpload()(RateLimitable) {
     return m.code_scanning_upload
 }
 // GetCodeSearch gets the code_search property value. The code_search property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetCodeSearch()(RateLimitable) {
     return m.code_search
 }
 // GetCore gets the core property value. The core property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetCore()(RateLimitable) {
     return m.core
 }
 // GetDependencySnapshots gets the dependency_snapshots property value. The dependency_snapshots property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetDependencySnapshots()(RateLimitable) {
     return m.dependency_snapshots
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RateLimitOverview_resources) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions_runner_registration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -170,22 +177,27 @@ func (m *RateLimitOverview_resources) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetGraphql gets the graphql property value. The graphql property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetGraphql()(RateLimitable) {
     return m.graphql
 }
 // GetIntegrationManifest gets the integration_manifest property value. The integration_manifest property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetIntegrationManifest()(RateLimitable) {
     return m.integration_manifest
 }
 // GetScim gets the scim property value. The scim property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetScim()(RateLimitable) {
     return m.scim
 }
 // GetSearch gets the search property value. The search property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetSearch()(RateLimitable) {
     return m.search
 }
 // GetSourceImport gets the source_import property value. The source_import property
+// returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetSourceImport()(RateLimitable) {
     return m.source_import
 }
@@ -303,7 +315,6 @@ func (m *RateLimitOverview_resources) SetSearch(value RateLimitable)() {
 func (m *RateLimitOverview_resources) SetSourceImport(value RateLimitable)() {
     m.source_import = value
 }
-// RateLimitOverview_resourcesable 
 type RateLimitOverview_resourcesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

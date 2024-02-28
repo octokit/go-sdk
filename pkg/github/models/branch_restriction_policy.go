@@ -23,7 +23,7 @@ type BranchRestrictionPolicy struct {
     // The users_url property
     users_url *string
 }
-// NewBranchRestrictionPolicy instantiates a new branchRestrictionPolicy and sets the default values.
+// NewBranchRestrictionPolicy instantiates a new BranchRestrictionPolicy and sets the default values.
 func NewBranchRestrictionPolicy()(*BranchRestrictionPolicy) {
     m := &BranchRestrictionPolicy{
     }
@@ -31,22 +31,27 @@ func NewBranchRestrictionPolicy()(*BranchRestrictionPolicy) {
     return m
 }
 // CreateBranchRestrictionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchRestrictionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchRestrictionPolicy(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchRestrictionPolicy) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. The apps property
+// returns a []BranchRestrictionPolicy_appsable when successful
 func (m *BranchRestrictionPolicy) GetApps()([]BranchRestrictionPolicy_appsable) {
     return m.apps
 }
 // GetAppsUrl gets the apps_url property value. The apps_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy) GetAppsUrl()(*string) {
     return m.apps_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchRestrictionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,22 +145,27 @@ func (m *BranchRestrictionPolicy) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetTeams gets the teams property value. The teams property
+// returns a []BranchRestrictionPolicy_teamsable when successful
 func (m *BranchRestrictionPolicy) GetTeams()([]BranchRestrictionPolicy_teamsable) {
     return m.teams
 }
 // GetTeamsUrl gets the teams_url property value. The teams_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy) GetUrl()(*string) {
     return m.url
 }
 // GetUsers gets the users property value. The users property
+// returns a []BranchRestrictionPolicy_usersable when successful
 func (m *BranchRestrictionPolicy) GetUsers()([]BranchRestrictionPolicy_usersable) {
     return m.users
 }
 // GetUsersUrl gets the users_url property value. The users_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy) GetUsersUrl()(*string) {
     return m.users_url
 }
@@ -261,7 +271,6 @@ func (m *BranchRestrictionPolicy) SetUsers(value []BranchRestrictionPolicy_users
 func (m *BranchRestrictionPolicy) SetUsersUrl(value *string)() {
     m.users_url = value
 }
-// BranchRestrictionPolicyable 
 type BranchRestrictionPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

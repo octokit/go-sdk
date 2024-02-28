@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Event_payload_pages 
 type Event_payload_pages struct {
     // The action property
     action *string
@@ -21,7 +20,7 @@ type Event_payload_pages struct {
     // The title property
     title *string
 }
-// NewEvent_payload_pages instantiates a new event_payload_pages and sets the default values.
+// NewEvent_payload_pages instantiates a new Event_payload_pages and sets the default values.
 func NewEvent_payload_pages()(*Event_payload_pages) {
     m := &Event_payload_pages{
     }
@@ -29,18 +28,22 @@ func NewEvent_payload_pages()(*Event_payload_pages) {
     return m
 }
 // CreateEvent_payload_pagesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEvent_payload_pagesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEvent_payload_pages(), nil
 }
 // GetAction gets the action property value. The action property
+// returns a *string when successful
 func (m *Event_payload_pages) GetAction()(*string) {
     return m.action
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Event_payload_pages) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Event_payload_pages) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,22 +109,27 @@ func (m *Event_payload_pages) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Event_payload_pages) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetPageName gets the page_name property value. The page_name property
+// returns a *string when successful
 func (m *Event_payload_pages) GetPageName()(*string) {
     return m.page_name
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *Event_payload_pages) GetSha()(*string) {
     return m.sha
 }
 // GetSummary gets the summary property value. The summary property
+// returns a *string when successful
 func (m *Event_payload_pages) GetSummary()(*string) {
     return m.summary
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *Event_payload_pages) GetTitle()(*string) {
     return m.title
 }
@@ -199,7 +207,6 @@ func (m *Event_payload_pages) SetSummary(value *string)() {
 func (m *Event_payload_pages) SetTitle(value *string)() {
     m.title = value
 }
-// Event_payload_pagesable 
 type Event_payload_pagesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package reactions
 import (
     "errors"
 )
-// 
 type GetContentQueryParameterType int
 
 const (

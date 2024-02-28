@@ -24,7 +24,7 @@ type ThreadSubscription struct {
     // The url property
     url *string
 }
-// NewThreadSubscription instantiates a new threadSubscription and sets the default values.
+// NewThreadSubscription instantiates a new ThreadSubscription and sets the default values.
 func NewThreadSubscription()(*ThreadSubscription) {
     m := &ThreadSubscription{
     }
@@ -32,18 +32,22 @@ func NewThreadSubscription()(*ThreadSubscription) {
     return m
 }
 // CreateThreadSubscriptionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThreadSubscriptionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThreadSubscription(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ThreadSubscription) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *ThreadSubscription) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ThreadSubscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -119,26 +123,32 @@ func (m *ThreadSubscription) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetIgnored gets the ignored property value. The ignored property
+// returns a *bool when successful
 func (m *ThreadSubscription) GetIgnored()(*bool) {
     return m.ignored
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *ThreadSubscription) GetReason()(*string) {
     return m.reason
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *ThreadSubscription) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetSubscribed gets the subscribed property value. The subscribed property
+// returns a *bool when successful
 func (m *ThreadSubscription) GetSubscribed()(*bool) {
     return m.subscribed
 }
 // GetThreadUrl gets the thread_url property value. The thread_url property
+// returns a *string when successful
 func (m *ThreadSubscription) GetThreadUrl()(*string) {
     return m.thread_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ThreadSubscription) GetUrl()(*string) {
     return m.url
 }
@@ -226,7 +236,6 @@ func (m *ThreadSubscription) SetThreadUrl(value *string)() {
 func (m *ThreadSubscription) SetUrl(value *string)() {
     m.url = value
 }
-// ThreadSubscriptionable 
 type ThreadSubscriptionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

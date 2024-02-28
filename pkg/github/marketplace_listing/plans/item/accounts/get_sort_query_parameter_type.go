@@ -2,7 +2,6 @@ package accounts
 import (
     "errors"
 )
-// 
 type GetSortQueryParameterType int
 
 const (

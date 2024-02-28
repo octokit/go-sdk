@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type SecurityAndAnalysis_secret_scanning_push_protection_status int
 
 const (

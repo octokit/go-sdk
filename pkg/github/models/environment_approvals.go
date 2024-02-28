@@ -17,7 +17,7 @@ type EnvironmentApprovals struct {
     // A GitHub user.
     user SimpleUserable
 }
-// NewEnvironmentApprovals instantiates a new environmentApprovals and sets the default values.
+// NewEnvironmentApprovals instantiates a new EnvironmentApprovals and sets the default values.
 func NewEnvironmentApprovals()(*EnvironmentApprovals) {
     m := &EnvironmentApprovals{
     }
@@ -25,22 +25,27 @@ func NewEnvironmentApprovals()(*EnvironmentApprovals) {
     return m
 }
 // CreateEnvironmentApprovalsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateEnvironmentApprovalsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnvironmentApprovals(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *EnvironmentApprovals) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. The comment submitted with the deployment review
+// returns a *string when successful
 func (m *EnvironmentApprovals) GetComment()(*string) {
     return m.comment
 }
 // GetEnvironments gets the environments property value. The list of environments that were approved or rejected
+// returns a []EnvironmentApprovals_environmentsable when successful
 func (m *EnvironmentApprovals) GetEnvironments()([]EnvironmentApprovals_environmentsable) {
     return m.environments
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnvironmentApprovals) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -92,10 +97,12 @@ func (m *EnvironmentApprovals) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetState gets the state property value. Whether deployment to the environment(s) was approved or rejected or pending (with comments)
+// returns a *EnvironmentApprovals_state when successful
 func (m *EnvironmentApprovals) GetState()(*EnvironmentApprovals_state) {
     return m.state
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *EnvironmentApprovals) GetUser()(SimpleUserable) {
     return m.user
 }
@@ -160,7 +167,6 @@ func (m *EnvironmentApprovals) SetState(value *EnvironmentApprovals_state)() {
 func (m *EnvironmentApprovals) SetUser(value SimpleUserable)() {
     m.user = value
 }
-// EnvironmentApprovalsable 
 type EnvironmentApprovalsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

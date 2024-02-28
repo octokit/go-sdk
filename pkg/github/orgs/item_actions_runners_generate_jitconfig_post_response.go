@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemActionsRunnersGenerateJitconfigPostResponse 
 type ItemActionsRunnersGenerateJitconfigPostResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,18 +21,22 @@ func NewItemActionsRunnersGenerateJitconfigPostResponse()(*ItemActionsRunnersGen
     return m
 }
 // CreateItemActionsRunnersGenerateJitconfigPostResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemActionsRunnersGenerateJitconfigPostResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemActionsRunnersGenerateJitconfigPostResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemActionsRunnersGenerateJitconfigPostResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEncodedJitConfig gets the encoded_jit_config property value. The base64 encoded runner configuration.
+// returns a *string when successful
 func (m *ItemActionsRunnersGenerateJitconfigPostResponse) GetEncodedJitConfig()(*string) {
     return m.encoded_jit_config
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemActionsRunnersGenerateJitconfigPostResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["encoded_jit_config"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,6 +62,7 @@ func (m *ItemActionsRunnersGenerateJitconfigPostResponse) GetFieldDeserializers(
     return res
 }
 // GetRunner gets the runner property value. A self hosted runner
+// returns a Runnerable when successful
 func (m *ItemActionsRunnersGenerateJitconfigPostResponse) GetRunner()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Runnerable) {
     return m.runner
 }
@@ -96,7 +100,6 @@ func (m *ItemActionsRunnersGenerateJitconfigPostResponse) SetEncodedJitConfig(va
 func (m *ItemActionsRunnersGenerateJitconfigPostResponse) SetRunner(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Runnerable)() {
     m.runner = value
 }
-// ItemActionsRunnersGenerateJitconfigPostResponseable 
 type ItemActionsRunnersGenerateJitconfigPostResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

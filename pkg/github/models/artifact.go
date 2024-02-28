@@ -32,7 +32,7 @@ type Artifact struct {
     // The workflow_run property
     workflow_run Artifact_workflow_runable
 }
-// NewArtifact instantiates a new artifact and sets the default values.
+// NewArtifact instantiates a new Artifact and sets the default values.
 func NewArtifact()(*Artifact) {
     m := &Artifact{
     }
@@ -40,30 +40,37 @@ func NewArtifact()(*Artifact) {
     return m
 }
 // CreateArtifactFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateArtifactFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewArtifact(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Artifact) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchiveDownloadUrl gets the archive_download_url property value. The archive_download_url property
+// returns a *string when successful
 func (m *Artifact) GetArchiveDownloadUrl()(*string) {
     return m.archive_download_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Artifact) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetExpired gets the expired property value. Whether or not the artifact has expired.
+// returns a *bool when successful
 func (m *Artifact) GetExpired()(*bool) {
     return m.expired
 }
 // GetExpiresAt gets the expires_at property value. The expires_at property
+// returns a *Time when successful
 func (m *Artifact) GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expires_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Artifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archive_download_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -179,30 +186,37 @@ func (m *Artifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Artifact) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the artifact.
+// returns a *string when successful
 func (m *Artifact) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Artifact) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSizeInBytes gets the size_in_bytes property value. The size in bytes of the artifact.
+// returns a *int32 when successful
 func (m *Artifact) GetSizeInBytes()(*int32) {
     return m.size_in_bytes
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Artifact) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Artifact) GetUrl()(*string) {
     return m.url
 }
 // GetWorkflowRun gets the workflow_run property value. The workflow_run property
+// returns a Artifact_workflow_runable when successful
 func (m *Artifact) GetWorkflowRun()(Artifact_workflow_runable) {
     return m.workflow_run
 }
@@ -330,7 +344,6 @@ func (m *Artifact) SetUrl(value *string)() {
 func (m *Artifact) SetWorkflowRun(value Artifact_workflow_runable)() {
     m.workflow_run = value
 }
-// Artifactable 
 type Artifactable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -2,7 +2,6 @@ package clones
 import (
     "errors"
 )
-// 
 type GetPerQueryParameterType int
 
 const (

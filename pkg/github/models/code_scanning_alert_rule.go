@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodeScanningAlertRule 
 type CodeScanningAlertRule struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -27,7 +26,7 @@ type CodeScanningAlertRule struct {
     // A set of tags applicable for the rule.
     tags []string
 }
-// NewCodeScanningAlertRule instantiates a new codeScanningAlertRule and sets the default values.
+// NewCodeScanningAlertRule instantiates a new CodeScanningAlertRule and sets the default values.
 func NewCodeScanningAlertRule()(*CodeScanningAlertRule) {
     m := &CodeScanningAlertRule{
     }
@@ -35,18 +34,22 @@ func NewCodeScanningAlertRule()(*CodeScanningAlertRule) {
     return m
 }
 // CreateCodeScanningAlertRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningAlertRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningAlertRule(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningAlertRule) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A short description of the rule used to detect the alert.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningAlertRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -148,34 +151,42 @@ func (m *CodeScanningAlertRule) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFullDescription gets the full_description property value. description of the rule used to detect the alert.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetFullDescription()(*string) {
     return m.full_description
 }
 // GetHelp gets the help property value. Detailed documentation for the rule as GitHub Flavored Markdown.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetHelp()(*string) {
     return m.help
 }
 // GetHelpUri gets the help_uri property value. A link to the documentation for the rule used to detect the alert.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetHelpUri()(*string) {
     return m.help_uri
 }
 // GetId gets the id property value. A unique identifier for the rule used to detect the alert.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetId()(*string) {
     return m.id
 }
 // GetName gets the name property value. The name of the rule used to detect the alert.
+// returns a *string when successful
 func (m *CodeScanningAlertRule) GetName()(*string) {
     return m.name
 }
 // GetSecuritySeverityLevel gets the security_severity_level property value. The security severity of the alert.
+// returns a *CodeScanningAlertRule_security_severity_level when successful
 func (m *CodeScanningAlertRule) GetSecuritySeverityLevel()(*CodeScanningAlertRule_security_severity_level) {
     return m.security_severity_level
 }
 // GetSeverity gets the severity property value. The severity of the alert.
+// returns a *CodeScanningAlertRule_severity when successful
 func (m *CodeScanningAlertRule) GetSeverity()(*CodeScanningAlertRule_severity) {
     return m.severity
 }
 // GetTags gets the tags property value. A set of tags applicable for the rule.
+// returns a []string when successful
 func (m *CodeScanningAlertRule) GetTags()([]string) {
     return m.tags
 }
@@ -285,7 +296,6 @@ func (m *CodeScanningAlertRule) SetSeverity(value *CodeScanningAlertRule_severit
 func (m *CodeScanningAlertRule) SetTags(value []string)() {
     m.tags = value
 }
-// CodeScanningAlertRuleable 
 type CodeScanningAlertRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

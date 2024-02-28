@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MarketplacePurchase_marketplace_pending_change 
 type MarketplacePurchase_marketplace_pending_change struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type MarketplacePurchase_marketplace_pending_change struct {
     // The unit_count property
     unit_count *int32
 }
-// NewMarketplacePurchase_marketplace_pending_change instantiates a new marketplacePurchase_marketplace_pending_change and sets the default values.
+// NewMarketplacePurchase_marketplace_pending_change instantiates a new MarketplacePurchase_marketplace_pending_change and sets the default values.
 func NewMarketplacePurchase_marketplace_pending_change()(*MarketplacePurchase_marketplace_pending_change) {
     m := &MarketplacePurchase_marketplace_pending_change{
     }
@@ -27,18 +26,22 @@ func NewMarketplacePurchase_marketplace_pending_change()(*MarketplacePurchase_ma
     return m
 }
 // CreateMarketplacePurchase_marketplace_pending_changeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarketplacePurchase_marketplace_pending_changeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarketplacePurchase_marketplace_pending_change(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEffectiveDate gets the effective_date property value. The effective_date property
+// returns a *string when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetEffectiveDate()(*string) {
     return m.effective_date
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["effective_date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +97,22 @@ func (m *MarketplacePurchase_marketplace_pending_change) GetFieldDeserializers()
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetId()(*int32) {
     return m.id
 }
 // GetIsInstalled gets the is_installed property value. The is_installed property
+// returns a *bool when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetIsInstalled()(*bool) {
     return m.is_installed
 }
 // GetPlan gets the plan property value. Marketplace Listing Plan
+// returns a MarketplaceListingPlanable when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetPlan()(MarketplaceListingPlanable) {
     return m.plan
 }
 // GetUnitCount gets the unit_count property value. The unit_count property
+// returns a *int32 when successful
 func (m *MarketplacePurchase_marketplace_pending_change) GetUnitCount()(*int32) {
     return m.unit_count
 }
@@ -173,7 +180,6 @@ func (m *MarketplacePurchase_marketplace_pending_change) SetPlan(value Marketpla
 func (m *MarketplacePurchase_marketplace_pending_change) SetUnitCount(value *int32)() {
     m.unit_count = value
 }
-// MarketplacePurchase_marketplace_pending_changeable 
 type MarketplacePurchase_marketplace_pending_changeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

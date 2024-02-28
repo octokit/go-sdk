@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemDependabotSecretsGetResponse 
 type ItemItemDependabotSecretsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,14 +21,17 @@ func NewItemItemDependabotSecretsGetResponse()(*ItemItemDependabotSecretsGetResp
     return m
 }
 // CreateItemItemDependabotSecretsGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemDependabotSecretsGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemDependabotSecretsGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemDependabotSecretsGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemDependabotSecretsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,10 +63,12 @@ func (m *ItemItemDependabotSecretsGetResponse) GetFieldDeserializers()(map[strin
     return res
 }
 // GetSecrets gets the secrets property value. The secrets property
+// returns a []DependabotSecretable when successful
 func (m *ItemItemDependabotSecretsGetResponse) GetSecrets()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DependabotSecretable) {
     return m.secrets
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *ItemItemDependabotSecretsGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -108,7 +112,6 @@ func (m *ItemItemDependabotSecretsGetResponse) SetSecrets(value []i59ea7d99994c6
 func (m *ItemItemDependabotSecretsGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// ItemItemDependabotSecretsGetResponseable 
 type ItemItemDependabotSecretsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

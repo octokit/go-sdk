@@ -36,7 +36,7 @@ type Hook struct {
     // The url property
     url *string
 }
-// NewHook instantiates a new hook and sets the default values.
+// NewHook instantiates a new Hook and sets the default values.
 func NewHook()(*Hook) {
     m := &Hook{
     }
@@ -44,34 +44,42 @@ func NewHook()(*Hook) {
     return m
 }
 // CreateHookFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHookFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHook(), nil
 }
 // GetActive gets the active property value. Determines whether the hook is actually triggered on pushes.
+// returns a *bool when successful
 func (m *Hook) GetActive()(*bool) {
     return m.active
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Hook) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfig gets the config property value. Configuration object of the webhook
+// returns a WebhookConfigable when successful
 func (m *Hook) GetConfig()(WebhookConfigable) {
     return m.config
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Hook) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDeliveriesUrl gets the deliveries_url property value. The deliveries_url property
+// returns a *string when successful
 func (m *Hook) GetDeliveriesUrl()(*string) {
     return m.deliveries_url
 }
 // GetEvents gets the events property value. Determines what events the hook is triggered for. Default: ['push'].
+// returns a []string when successful
 func (m *Hook) GetEvents()([]string) {
     return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Hook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -213,34 +221,42 @@ func (m *Hook) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetId gets the id property value. Unique identifier of the webhook.
+// returns a *int32 when successful
 func (m *Hook) GetId()(*int32) {
     return m.id
 }
 // GetLastResponse gets the last_response property value. The last_response property
+// returns a HookResponseable when successful
 func (m *Hook) GetLastResponse()(HookResponseable) {
     return m.last_response
 }
 // GetName gets the name property value. The name of a valid service, use 'web' for a webhook.
+// returns a *string when successful
 func (m *Hook) GetName()(*string) {
     return m.name
 }
 // GetPingUrl gets the ping_url property value. The ping_url property
+// returns a *string when successful
 func (m *Hook) GetPingUrl()(*string) {
     return m.ping_url
 }
 // GetTestUrl gets the test_url property value. The test_url property
+// returns a *string when successful
 func (m *Hook) GetTestUrl()(*string) {
     return m.test_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *Hook) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Hook) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Hook) GetUrl()(*string) {
     return m.url
 }
@@ -388,7 +404,6 @@ func (m *Hook) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a1639
 func (m *Hook) SetUrl(value *string)() {
     m.url = value
 }
-// Hookable 
 type Hookable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

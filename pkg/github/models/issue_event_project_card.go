@@ -21,7 +21,7 @@ type IssueEventProjectCard struct {
     // The url property
     url *string
 }
-// NewIssueEventProjectCard instantiates a new issueEventProjectCard and sets the default values.
+// NewIssueEventProjectCard instantiates a new IssueEventProjectCard and sets the default values.
 func NewIssueEventProjectCard()(*IssueEventProjectCard) {
     m := &IssueEventProjectCard{
     }
@@ -29,18 +29,22 @@ func NewIssueEventProjectCard()(*IssueEventProjectCard) {
     return m
 }
 // CreateIssueEventProjectCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateIssueEventProjectCardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIssueEventProjectCard(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *IssueEventProjectCard) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColumnName gets the column_name property value. The column_name property
+// returns a *string when successful
 func (m *IssueEventProjectCard) GetColumnName()(*string) {
     return m.column_name
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IssueEventProjectCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["column_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,22 +110,27 @@ func (m *IssueEventProjectCard) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *IssueEventProjectCard) GetId()(*int32) {
     return m.id
 }
 // GetPreviousColumnName gets the previous_column_name property value. The previous_column_name property
+// returns a *string when successful
 func (m *IssueEventProjectCard) GetPreviousColumnName()(*string) {
     return m.previous_column_name
 }
 // GetProjectId gets the project_id property value. The project_id property
+// returns a *int32 when successful
 func (m *IssueEventProjectCard) GetProjectId()(*int32) {
     return m.project_id
 }
 // GetProjectUrl gets the project_url property value. The project_url property
+// returns a *string when successful
 func (m *IssueEventProjectCard) GetProjectUrl()(*string) {
     return m.project_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *IssueEventProjectCard) GetUrl()(*string) {
     return m.url
 }
@@ -199,7 +208,6 @@ func (m *IssueEventProjectCard) SetProjectUrl(value *string)() {
 func (m *IssueEventProjectCard) SetUrl(value *string)() {
     m.url = value
 }
-// IssueEventProjectCardable 
 type IssueEventProjectCardable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

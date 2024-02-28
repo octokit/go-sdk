@@ -42,7 +42,7 @@ type TopicSearchResultItem struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewTopicSearchResultItem instantiates a new topicSearchResultItem and sets the default values.
+// NewTopicSearchResultItem instantiates a new TopicSearchResultItem and sets the default values.
 func NewTopicSearchResultItem()(*TopicSearchResultItem) {
     m := &TopicSearchResultItem{
     }
@@ -50,42 +50,52 @@ func NewTopicSearchResultItem()(*TopicSearchResultItem) {
     return m
 }
 // CreateTopicSearchResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTopicSearchResultItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTopicSearchResultItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TopicSearchResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAliases gets the aliases property value. The aliases property
+// returns a []TopicSearchResultItem_aliasesable when successful
 func (m *TopicSearchResultItem) GetAliases()([]TopicSearchResultItem_aliasesable) {
     return m.aliases
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TopicSearchResultItem) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCreatedBy gets the created_by property value. The created_by property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetCreatedBy()(*string) {
     return m.created_by
 }
 // GetCurated gets the curated property value. The curated property
+// returns a *bool when successful
 func (m *TopicSearchResultItem) GetCurated()(*bool) {
     return m.curated
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetDescription()(*string) {
     return m.description
 }
 // GetDisplayName gets the display_name property value. The display_name property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetDisplayName()(*string) {
     return m.display_name
 }
 // GetFeatured gets the featured property value. The featured property
+// returns a *bool when successful
 func (m *TopicSearchResultItem) GetFeatured()(*bool) {
     return m.featured
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TopicSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["aliases"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -269,38 +279,47 @@ func (m *TopicSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetLogoUrl gets the logo_url property value. The logo_url property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetLogoUrl()(*string) {
     return m.logo_url
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetName()(*string) {
     return m.name
 }
 // GetRelated gets the related property value. The related property
+// returns a []TopicSearchResultItem_relatedable when successful
 func (m *TopicSearchResultItem) GetRelated()([]TopicSearchResultItem_relatedable) {
     return m.related
 }
 // GetReleased gets the released property value. The released property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetReleased()(*string) {
     return m.released
 }
 // GetRepositoryCount gets the repository_count property value. The repository_count property
+// returns a *int32 when successful
 func (m *TopicSearchResultItem) GetRepositoryCount()(*int32) {
     return m.repository_count
 }
 // GetScore gets the score property value. The score property
+// returns a *float64 when successful
 func (m *TopicSearchResultItem) GetScore()(*float64) {
     return m.score
 }
 // GetShortDescription gets the short_description property value. The short_description property
+// returns a *string when successful
 func (m *TopicSearchResultItem) GetShortDescription()(*string) {
     return m.short_description
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
+// returns a []Topicsable when successful
 func (m *TopicSearchResultItem) GetTextMatches()([]Topicsable) {
     return m.text_matches
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TopicSearchResultItem) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -496,7 +515,6 @@ func (m *TopicSearchResultItem) SetTextMatches(value []Topicsable)() {
 func (m *TopicSearchResultItem) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// TopicSearchResultItemable 
 type TopicSearchResultItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

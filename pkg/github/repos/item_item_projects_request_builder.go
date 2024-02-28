@@ -20,20 +20,26 @@ type ItemItemProjectsRequestBuilderGetQueryParameters struct {
     // Indicates the state of the projects to return.
     State *iedf64ed44a0011ca62087b788afaa0899b92df0467761a33f17befb5c6646f39.GetStateQueryParameterType `uriparametername:"state"`
 }
-// NewItemItemProjectsRequestBuilderInternal instantiates a new ProjectsRequestBuilder and sets the default values.
+// NewItemItemProjectsRequestBuilderInternal instantiates a new ItemItemProjectsRequestBuilder and sets the default values.
 func NewItemItemProjectsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemProjectsRequestBuilder) {
     m := &ItemItemProjectsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/projects{?page*,per_page*,state*}", pathParameters),
     }
     return m
 }
-// NewItemItemProjectsRequestBuilder instantiates a new ProjectsRequestBuilder and sets the default values.
+// NewItemItemProjectsRequestBuilder instantiates a new ItemItemProjectsRequestBuilder and sets the default values.
 func NewItemItemProjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemProjectsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemProjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+// returns a []Projectable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 410 status code
+// returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/projects#list-repository-projects
@@ -62,6 +68,12 @@ func (m *ItemItemProjectsRequestBuilder) Get(ctx context.Context, requestConfigu
     return val, nil
 }
 // Post creates a repository project board. Returns a `410 Gone` status if projects are disabled in the repository or if the repository does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+// returns a Projectable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 410 status code
+// returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/projects/projects#create-a-repository-project
@@ -87,6 +99,7 @@ func (m *ItemItemProjectsRequestBuilder) Post(ctx context.Context, body ItemItem
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Projectable), nil
 }
 // ToGetRequestInformation lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+// returns a *RequestInformation when successful
 func (m *ItemItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemProjectsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -94,8 +107,9 @@ func (m *ItemItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a repository project board. Returns a `410 Gone` status if projects are disabled in the repository or if the repository does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+// returns a *RequestInformation when successful
 func (m *ItemItemProjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemProjectsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/projects", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -105,6 +119,7 @@ func (m *ItemItemProjectsRequestBuilder) ToPostRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemProjectsRequestBuilder when successful
 func (m *ItemItemProjectsRequestBuilder) WithUrl(rawUrl string)(*ItemItemProjectsRequestBuilder) {
     return NewItemItemProjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

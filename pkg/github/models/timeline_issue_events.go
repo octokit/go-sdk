@@ -4,60 +4,61 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TimelineIssueEvents composed type wrapper for classes addedToProjectIssueEvent, convertedNoteToIssueIssueEvent, demilestonedIssueEvent, labeledIssueEvent, lockedIssueEvent, milestonedIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, renamedIssueEvent, reviewDismissedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, stateChangeIssueEvent, timelineAssignedIssueEvent, timelineCommentEvent, timelineCommitCommentedEvent, timelineCommittedEvent, timelineCrossReferencedEvent, timelineLineCommentedEvent, timelineReviewedEvent, timelineUnassignedIssueEvent, unlabeledIssueEvent
+// TimelineIssueEvents composed type wrapper for classes AddedToProjectIssueEventable, ConvertedNoteToIssueIssueEventable, DemilestonedIssueEventable, LabeledIssueEventable, LockedIssueEventable, MilestonedIssueEventable, MovedColumnInProjectIssueEventable, RemovedFromProjectIssueEventable, RenamedIssueEventable, ReviewDismissedIssueEventable, ReviewRequestedIssueEventable, ReviewRequestRemovedIssueEventable, StateChangeIssueEventable, TimelineAssignedIssueEventable, TimelineCommentEventable, TimelineCommitCommentedEventable, TimelineCommittedEventable, TimelineCrossReferencedEventable, TimelineLineCommentedEventable, TimelineReviewedEventable, TimelineUnassignedIssueEventable, UnlabeledIssueEventable
 type TimelineIssueEvents struct {
-    // Composed type representation for type addedToProjectIssueEvent
+    // Composed type representation for type AddedToProjectIssueEventable
     addedToProjectIssueEvent AddedToProjectIssueEventable
-    // Composed type representation for type convertedNoteToIssueIssueEvent
+    // Composed type representation for type ConvertedNoteToIssueIssueEventable
     convertedNoteToIssueIssueEvent ConvertedNoteToIssueIssueEventable
-    // Composed type representation for type demilestonedIssueEvent
+    // Composed type representation for type DemilestonedIssueEventable
     demilestonedIssueEvent DemilestonedIssueEventable
-    // Composed type representation for type labeledIssueEvent
+    // Composed type representation for type LabeledIssueEventable
     labeledIssueEvent LabeledIssueEventable
-    // Composed type representation for type lockedIssueEvent
+    // Composed type representation for type LockedIssueEventable
     lockedIssueEvent LockedIssueEventable
-    // Composed type representation for type milestonedIssueEvent
+    // Composed type representation for type MilestonedIssueEventable
     milestonedIssueEvent MilestonedIssueEventable
-    // Composed type representation for type movedColumnInProjectIssueEvent
+    // Composed type representation for type MovedColumnInProjectIssueEventable
     movedColumnInProjectIssueEvent MovedColumnInProjectIssueEventable
-    // Composed type representation for type removedFromProjectIssueEvent
+    // Composed type representation for type RemovedFromProjectIssueEventable
     removedFromProjectIssueEvent RemovedFromProjectIssueEventable
-    // Composed type representation for type renamedIssueEvent
+    // Composed type representation for type RenamedIssueEventable
     renamedIssueEvent RenamedIssueEventable
-    // Composed type representation for type reviewDismissedIssueEvent
+    // Composed type representation for type ReviewDismissedIssueEventable
     reviewDismissedIssueEvent ReviewDismissedIssueEventable
-    // Composed type representation for type reviewRequestedIssueEvent
+    // Composed type representation for type ReviewRequestedIssueEventable
     reviewRequestedIssueEvent ReviewRequestedIssueEventable
-    // Composed type representation for type reviewRequestRemovedIssueEvent
+    // Composed type representation for type ReviewRequestRemovedIssueEventable
     reviewRequestRemovedIssueEvent ReviewRequestRemovedIssueEventable
-    // Composed type representation for type stateChangeIssueEvent
+    // Composed type representation for type StateChangeIssueEventable
     stateChangeIssueEvent StateChangeIssueEventable
-    // Composed type representation for type timelineAssignedIssueEvent
+    // Composed type representation for type TimelineAssignedIssueEventable
     timelineAssignedIssueEvent TimelineAssignedIssueEventable
-    // Composed type representation for type timelineCommentEvent
+    // Composed type representation for type TimelineCommentEventable
     timelineCommentEvent TimelineCommentEventable
-    // Composed type representation for type timelineCommitCommentedEvent
+    // Composed type representation for type TimelineCommitCommentedEventable
     timelineCommitCommentedEvent TimelineCommitCommentedEventable
-    // Composed type representation for type timelineCommittedEvent
+    // Composed type representation for type TimelineCommittedEventable
     timelineCommittedEvent TimelineCommittedEventable
-    // Composed type representation for type timelineCrossReferencedEvent
+    // Composed type representation for type TimelineCrossReferencedEventable
     timelineCrossReferencedEvent TimelineCrossReferencedEventable
-    // Composed type representation for type timelineLineCommentedEvent
+    // Composed type representation for type TimelineLineCommentedEventable
     timelineLineCommentedEvent TimelineLineCommentedEventable
-    // Composed type representation for type timelineReviewedEvent
+    // Composed type representation for type TimelineReviewedEventable
     timelineReviewedEvent TimelineReviewedEventable
-    // Composed type representation for type timelineUnassignedIssueEvent
+    // Composed type representation for type TimelineUnassignedIssueEventable
     timelineUnassignedIssueEvent TimelineUnassignedIssueEventable
-    // Composed type representation for type unlabeledIssueEvent
+    // Composed type representation for type UnlabeledIssueEventable
     unlabeledIssueEvent UnlabeledIssueEventable
 }
-// NewTimelineIssueEvents instantiates a new timelineIssueEvents and sets the default values.
+// NewTimelineIssueEvents instantiates a new TimelineIssueEvents and sets the default values.
 func NewTimelineIssueEvents()(*TimelineIssueEvents) {
     m := &TimelineIssueEvents{
     }
     return m
 }
 // CreateTimelineIssueEventsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineIssueEventsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewTimelineIssueEvents()
     if parseNode != nil {
@@ -219,99 +220,123 @@ func CreateTimelineIssueEventsFromDiscriminatorValue(parseNode i878a80d2330e89d2
     }
     return result, nil
 }
-// GetAddedToProjectIssueEvent gets the addedToProjectIssueEvent property value. Composed type representation for type addedToProjectIssueEvent
+// GetAddedToProjectIssueEvent gets the addedToProjectIssueEvent property value. Composed type representation for type AddedToProjectIssueEventable
+// returns a AddedToProjectIssueEventable when successful
 func (m *TimelineIssueEvents) GetAddedToProjectIssueEvent()(AddedToProjectIssueEventable) {
     return m.addedToProjectIssueEvent
 }
-// GetConvertedNoteToIssueIssueEvent gets the convertedNoteToIssueIssueEvent property value. Composed type representation for type convertedNoteToIssueIssueEvent
+// GetConvertedNoteToIssueIssueEvent gets the convertedNoteToIssueIssueEvent property value. Composed type representation for type ConvertedNoteToIssueIssueEventable
+// returns a ConvertedNoteToIssueIssueEventable when successful
 func (m *TimelineIssueEvents) GetConvertedNoteToIssueIssueEvent()(ConvertedNoteToIssueIssueEventable) {
     return m.convertedNoteToIssueIssueEvent
 }
-// GetDemilestonedIssueEvent gets the demilestonedIssueEvent property value. Composed type representation for type demilestonedIssueEvent
+// GetDemilestonedIssueEvent gets the demilestonedIssueEvent property value. Composed type representation for type DemilestonedIssueEventable
+// returns a DemilestonedIssueEventable when successful
 func (m *TimelineIssueEvents) GetDemilestonedIssueEvent()(DemilestonedIssueEventable) {
     return m.demilestonedIssueEvent
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineIssueEvents) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *TimelineIssueEvents) GetIsComposedType()(bool) {
     return true
 }
-// GetLabeledIssueEvent gets the labeledIssueEvent property value. Composed type representation for type labeledIssueEvent
+// GetLabeledIssueEvent gets the labeledIssueEvent property value. Composed type representation for type LabeledIssueEventable
+// returns a LabeledIssueEventable when successful
 func (m *TimelineIssueEvents) GetLabeledIssueEvent()(LabeledIssueEventable) {
     return m.labeledIssueEvent
 }
-// GetLockedIssueEvent gets the lockedIssueEvent property value. Composed type representation for type lockedIssueEvent
+// GetLockedIssueEvent gets the lockedIssueEvent property value. Composed type representation for type LockedIssueEventable
+// returns a LockedIssueEventable when successful
 func (m *TimelineIssueEvents) GetLockedIssueEvent()(LockedIssueEventable) {
     return m.lockedIssueEvent
 }
-// GetMilestonedIssueEvent gets the milestonedIssueEvent property value. Composed type representation for type milestonedIssueEvent
+// GetMilestonedIssueEvent gets the milestonedIssueEvent property value. Composed type representation for type MilestonedIssueEventable
+// returns a MilestonedIssueEventable when successful
 func (m *TimelineIssueEvents) GetMilestonedIssueEvent()(MilestonedIssueEventable) {
     return m.milestonedIssueEvent
 }
-// GetMovedColumnInProjectIssueEvent gets the movedColumnInProjectIssueEvent property value. Composed type representation for type movedColumnInProjectIssueEvent
+// GetMovedColumnInProjectIssueEvent gets the movedColumnInProjectIssueEvent property value. Composed type representation for type MovedColumnInProjectIssueEventable
+// returns a MovedColumnInProjectIssueEventable when successful
 func (m *TimelineIssueEvents) GetMovedColumnInProjectIssueEvent()(MovedColumnInProjectIssueEventable) {
     return m.movedColumnInProjectIssueEvent
 }
-// GetRemovedFromProjectIssueEvent gets the removedFromProjectIssueEvent property value. Composed type representation for type removedFromProjectIssueEvent
+// GetRemovedFromProjectIssueEvent gets the removedFromProjectIssueEvent property value. Composed type representation for type RemovedFromProjectIssueEventable
+// returns a RemovedFromProjectIssueEventable when successful
 func (m *TimelineIssueEvents) GetRemovedFromProjectIssueEvent()(RemovedFromProjectIssueEventable) {
     return m.removedFromProjectIssueEvent
 }
-// GetRenamedIssueEvent gets the renamedIssueEvent property value. Composed type representation for type renamedIssueEvent
+// GetRenamedIssueEvent gets the renamedIssueEvent property value. Composed type representation for type RenamedIssueEventable
+// returns a RenamedIssueEventable when successful
 func (m *TimelineIssueEvents) GetRenamedIssueEvent()(RenamedIssueEventable) {
     return m.renamedIssueEvent
 }
-// GetReviewDismissedIssueEvent gets the reviewDismissedIssueEvent property value. Composed type representation for type reviewDismissedIssueEvent
+// GetReviewDismissedIssueEvent gets the reviewDismissedIssueEvent property value. Composed type representation for type ReviewDismissedIssueEventable
+// returns a ReviewDismissedIssueEventable when successful
 func (m *TimelineIssueEvents) GetReviewDismissedIssueEvent()(ReviewDismissedIssueEventable) {
     return m.reviewDismissedIssueEvent
 }
-// GetReviewRequestedIssueEvent gets the reviewRequestedIssueEvent property value. Composed type representation for type reviewRequestedIssueEvent
+// GetReviewRequestedIssueEvent gets the reviewRequestedIssueEvent property value. Composed type representation for type ReviewRequestedIssueEventable
+// returns a ReviewRequestedIssueEventable when successful
 func (m *TimelineIssueEvents) GetReviewRequestedIssueEvent()(ReviewRequestedIssueEventable) {
     return m.reviewRequestedIssueEvent
 }
-// GetReviewRequestRemovedIssueEvent gets the reviewRequestRemovedIssueEvent property value. Composed type representation for type reviewRequestRemovedIssueEvent
+// GetReviewRequestRemovedIssueEvent gets the reviewRequestRemovedIssueEvent property value. Composed type representation for type ReviewRequestRemovedIssueEventable
+// returns a ReviewRequestRemovedIssueEventable when successful
 func (m *TimelineIssueEvents) GetReviewRequestRemovedIssueEvent()(ReviewRequestRemovedIssueEventable) {
     return m.reviewRequestRemovedIssueEvent
 }
-// GetStateChangeIssueEvent gets the stateChangeIssueEvent property value. Composed type representation for type stateChangeIssueEvent
+// GetStateChangeIssueEvent gets the stateChangeIssueEvent property value. Composed type representation for type StateChangeIssueEventable
+// returns a StateChangeIssueEventable when successful
 func (m *TimelineIssueEvents) GetStateChangeIssueEvent()(StateChangeIssueEventable) {
     return m.stateChangeIssueEvent
 }
-// GetTimelineAssignedIssueEvent gets the timelineAssignedIssueEvent property value. Composed type representation for type timelineAssignedIssueEvent
+// GetTimelineAssignedIssueEvent gets the timelineAssignedIssueEvent property value. Composed type representation for type TimelineAssignedIssueEventable
+// returns a TimelineAssignedIssueEventable when successful
 func (m *TimelineIssueEvents) GetTimelineAssignedIssueEvent()(TimelineAssignedIssueEventable) {
     return m.timelineAssignedIssueEvent
 }
-// GetTimelineCommentEvent gets the timelineCommentEvent property value. Composed type representation for type timelineCommentEvent
+// GetTimelineCommentEvent gets the timelineCommentEvent property value. Composed type representation for type TimelineCommentEventable
+// returns a TimelineCommentEventable when successful
 func (m *TimelineIssueEvents) GetTimelineCommentEvent()(TimelineCommentEventable) {
     return m.timelineCommentEvent
 }
-// GetTimelineCommitCommentedEvent gets the timelineCommitCommentedEvent property value. Composed type representation for type timelineCommitCommentedEvent
+// GetTimelineCommitCommentedEvent gets the timelineCommitCommentedEvent property value. Composed type representation for type TimelineCommitCommentedEventable
+// returns a TimelineCommitCommentedEventable when successful
 func (m *TimelineIssueEvents) GetTimelineCommitCommentedEvent()(TimelineCommitCommentedEventable) {
     return m.timelineCommitCommentedEvent
 }
-// GetTimelineCommittedEvent gets the timelineCommittedEvent property value. Composed type representation for type timelineCommittedEvent
+// GetTimelineCommittedEvent gets the timelineCommittedEvent property value. Composed type representation for type TimelineCommittedEventable
+// returns a TimelineCommittedEventable when successful
 func (m *TimelineIssueEvents) GetTimelineCommittedEvent()(TimelineCommittedEventable) {
     return m.timelineCommittedEvent
 }
-// GetTimelineCrossReferencedEvent gets the timelineCrossReferencedEvent property value. Composed type representation for type timelineCrossReferencedEvent
+// GetTimelineCrossReferencedEvent gets the timelineCrossReferencedEvent property value. Composed type representation for type TimelineCrossReferencedEventable
+// returns a TimelineCrossReferencedEventable when successful
 func (m *TimelineIssueEvents) GetTimelineCrossReferencedEvent()(TimelineCrossReferencedEventable) {
     return m.timelineCrossReferencedEvent
 }
-// GetTimelineLineCommentedEvent gets the timelineLineCommentedEvent property value. Composed type representation for type timelineLineCommentedEvent
+// GetTimelineLineCommentedEvent gets the timelineLineCommentedEvent property value. Composed type representation for type TimelineLineCommentedEventable
+// returns a TimelineLineCommentedEventable when successful
 func (m *TimelineIssueEvents) GetTimelineLineCommentedEvent()(TimelineLineCommentedEventable) {
     return m.timelineLineCommentedEvent
 }
-// GetTimelineReviewedEvent gets the timelineReviewedEvent property value. Composed type representation for type timelineReviewedEvent
+// GetTimelineReviewedEvent gets the timelineReviewedEvent property value. Composed type representation for type TimelineReviewedEventable
+// returns a TimelineReviewedEventable when successful
 func (m *TimelineIssueEvents) GetTimelineReviewedEvent()(TimelineReviewedEventable) {
     return m.timelineReviewedEvent
 }
-// GetTimelineUnassignedIssueEvent gets the timelineUnassignedIssueEvent property value. Composed type representation for type timelineUnassignedIssueEvent
+// GetTimelineUnassignedIssueEvent gets the timelineUnassignedIssueEvent property value. Composed type representation for type TimelineUnassignedIssueEventable
+// returns a TimelineUnassignedIssueEventable when successful
 func (m *TimelineIssueEvents) GetTimelineUnassignedIssueEvent()(TimelineUnassignedIssueEventable) {
     return m.timelineUnassignedIssueEvent
 }
-// GetUnlabeledIssueEvent gets the unlabeledIssueEvent property value. Composed type representation for type unlabeledIssueEvent
+// GetUnlabeledIssueEvent gets the unlabeledIssueEvent property value. Composed type representation for type UnlabeledIssueEventable
+// returns a UnlabeledIssueEventable when successful
 func (m *TimelineIssueEvents) GetUnlabeledIssueEvent()(UnlabeledIssueEventable) {
     return m.unlabeledIssueEvent
 }
@@ -430,95 +455,94 @@ func (m *TimelineIssueEvents) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAddedToProjectIssueEvent sets the addedToProjectIssueEvent property value. Composed type representation for type addedToProjectIssueEvent
+// SetAddedToProjectIssueEvent sets the addedToProjectIssueEvent property value. Composed type representation for type AddedToProjectIssueEventable
 func (m *TimelineIssueEvents) SetAddedToProjectIssueEvent(value AddedToProjectIssueEventable)() {
     m.addedToProjectIssueEvent = value
 }
-// SetConvertedNoteToIssueIssueEvent sets the convertedNoteToIssueIssueEvent property value. Composed type representation for type convertedNoteToIssueIssueEvent
+// SetConvertedNoteToIssueIssueEvent sets the convertedNoteToIssueIssueEvent property value. Composed type representation for type ConvertedNoteToIssueIssueEventable
 func (m *TimelineIssueEvents) SetConvertedNoteToIssueIssueEvent(value ConvertedNoteToIssueIssueEventable)() {
     m.convertedNoteToIssueIssueEvent = value
 }
-// SetDemilestonedIssueEvent sets the demilestonedIssueEvent property value. Composed type representation for type demilestonedIssueEvent
+// SetDemilestonedIssueEvent sets the demilestonedIssueEvent property value. Composed type representation for type DemilestonedIssueEventable
 func (m *TimelineIssueEvents) SetDemilestonedIssueEvent(value DemilestonedIssueEventable)() {
     m.demilestonedIssueEvent = value
 }
-// SetLabeledIssueEvent sets the labeledIssueEvent property value. Composed type representation for type labeledIssueEvent
+// SetLabeledIssueEvent sets the labeledIssueEvent property value. Composed type representation for type LabeledIssueEventable
 func (m *TimelineIssueEvents) SetLabeledIssueEvent(value LabeledIssueEventable)() {
     m.labeledIssueEvent = value
 }
-// SetLockedIssueEvent sets the lockedIssueEvent property value. Composed type representation for type lockedIssueEvent
+// SetLockedIssueEvent sets the lockedIssueEvent property value. Composed type representation for type LockedIssueEventable
 func (m *TimelineIssueEvents) SetLockedIssueEvent(value LockedIssueEventable)() {
     m.lockedIssueEvent = value
 }
-// SetMilestonedIssueEvent sets the milestonedIssueEvent property value. Composed type representation for type milestonedIssueEvent
+// SetMilestonedIssueEvent sets the milestonedIssueEvent property value. Composed type representation for type MilestonedIssueEventable
 func (m *TimelineIssueEvents) SetMilestonedIssueEvent(value MilestonedIssueEventable)() {
     m.milestonedIssueEvent = value
 }
-// SetMovedColumnInProjectIssueEvent sets the movedColumnInProjectIssueEvent property value. Composed type representation for type movedColumnInProjectIssueEvent
+// SetMovedColumnInProjectIssueEvent sets the movedColumnInProjectIssueEvent property value. Composed type representation for type MovedColumnInProjectIssueEventable
 func (m *TimelineIssueEvents) SetMovedColumnInProjectIssueEvent(value MovedColumnInProjectIssueEventable)() {
     m.movedColumnInProjectIssueEvent = value
 }
-// SetRemovedFromProjectIssueEvent sets the removedFromProjectIssueEvent property value. Composed type representation for type removedFromProjectIssueEvent
+// SetRemovedFromProjectIssueEvent sets the removedFromProjectIssueEvent property value. Composed type representation for type RemovedFromProjectIssueEventable
 func (m *TimelineIssueEvents) SetRemovedFromProjectIssueEvent(value RemovedFromProjectIssueEventable)() {
     m.removedFromProjectIssueEvent = value
 }
-// SetRenamedIssueEvent sets the renamedIssueEvent property value. Composed type representation for type renamedIssueEvent
+// SetRenamedIssueEvent sets the renamedIssueEvent property value. Composed type representation for type RenamedIssueEventable
 func (m *TimelineIssueEvents) SetRenamedIssueEvent(value RenamedIssueEventable)() {
     m.renamedIssueEvent = value
 }
-// SetReviewDismissedIssueEvent sets the reviewDismissedIssueEvent property value. Composed type representation for type reviewDismissedIssueEvent
+// SetReviewDismissedIssueEvent sets the reviewDismissedIssueEvent property value. Composed type representation for type ReviewDismissedIssueEventable
 func (m *TimelineIssueEvents) SetReviewDismissedIssueEvent(value ReviewDismissedIssueEventable)() {
     m.reviewDismissedIssueEvent = value
 }
-// SetReviewRequestedIssueEvent sets the reviewRequestedIssueEvent property value. Composed type representation for type reviewRequestedIssueEvent
+// SetReviewRequestedIssueEvent sets the reviewRequestedIssueEvent property value. Composed type representation for type ReviewRequestedIssueEventable
 func (m *TimelineIssueEvents) SetReviewRequestedIssueEvent(value ReviewRequestedIssueEventable)() {
     m.reviewRequestedIssueEvent = value
 }
-// SetReviewRequestRemovedIssueEvent sets the reviewRequestRemovedIssueEvent property value. Composed type representation for type reviewRequestRemovedIssueEvent
+// SetReviewRequestRemovedIssueEvent sets the reviewRequestRemovedIssueEvent property value. Composed type representation for type ReviewRequestRemovedIssueEventable
 func (m *TimelineIssueEvents) SetReviewRequestRemovedIssueEvent(value ReviewRequestRemovedIssueEventable)() {
     m.reviewRequestRemovedIssueEvent = value
 }
-// SetStateChangeIssueEvent sets the stateChangeIssueEvent property value. Composed type representation for type stateChangeIssueEvent
+// SetStateChangeIssueEvent sets the stateChangeIssueEvent property value. Composed type representation for type StateChangeIssueEventable
 func (m *TimelineIssueEvents) SetStateChangeIssueEvent(value StateChangeIssueEventable)() {
     m.stateChangeIssueEvent = value
 }
-// SetTimelineAssignedIssueEvent sets the timelineAssignedIssueEvent property value. Composed type representation for type timelineAssignedIssueEvent
+// SetTimelineAssignedIssueEvent sets the timelineAssignedIssueEvent property value. Composed type representation for type TimelineAssignedIssueEventable
 func (m *TimelineIssueEvents) SetTimelineAssignedIssueEvent(value TimelineAssignedIssueEventable)() {
     m.timelineAssignedIssueEvent = value
 }
-// SetTimelineCommentEvent sets the timelineCommentEvent property value. Composed type representation for type timelineCommentEvent
+// SetTimelineCommentEvent sets the timelineCommentEvent property value. Composed type representation for type TimelineCommentEventable
 func (m *TimelineIssueEvents) SetTimelineCommentEvent(value TimelineCommentEventable)() {
     m.timelineCommentEvent = value
 }
-// SetTimelineCommitCommentedEvent sets the timelineCommitCommentedEvent property value. Composed type representation for type timelineCommitCommentedEvent
+// SetTimelineCommitCommentedEvent sets the timelineCommitCommentedEvent property value. Composed type representation for type TimelineCommitCommentedEventable
 func (m *TimelineIssueEvents) SetTimelineCommitCommentedEvent(value TimelineCommitCommentedEventable)() {
     m.timelineCommitCommentedEvent = value
 }
-// SetTimelineCommittedEvent sets the timelineCommittedEvent property value. Composed type representation for type timelineCommittedEvent
+// SetTimelineCommittedEvent sets the timelineCommittedEvent property value. Composed type representation for type TimelineCommittedEventable
 func (m *TimelineIssueEvents) SetTimelineCommittedEvent(value TimelineCommittedEventable)() {
     m.timelineCommittedEvent = value
 }
-// SetTimelineCrossReferencedEvent sets the timelineCrossReferencedEvent property value. Composed type representation for type timelineCrossReferencedEvent
+// SetTimelineCrossReferencedEvent sets the timelineCrossReferencedEvent property value. Composed type representation for type TimelineCrossReferencedEventable
 func (m *TimelineIssueEvents) SetTimelineCrossReferencedEvent(value TimelineCrossReferencedEventable)() {
     m.timelineCrossReferencedEvent = value
 }
-// SetTimelineLineCommentedEvent sets the timelineLineCommentedEvent property value. Composed type representation for type timelineLineCommentedEvent
+// SetTimelineLineCommentedEvent sets the timelineLineCommentedEvent property value. Composed type representation for type TimelineLineCommentedEventable
 func (m *TimelineIssueEvents) SetTimelineLineCommentedEvent(value TimelineLineCommentedEventable)() {
     m.timelineLineCommentedEvent = value
 }
-// SetTimelineReviewedEvent sets the timelineReviewedEvent property value. Composed type representation for type timelineReviewedEvent
+// SetTimelineReviewedEvent sets the timelineReviewedEvent property value. Composed type representation for type TimelineReviewedEventable
 func (m *TimelineIssueEvents) SetTimelineReviewedEvent(value TimelineReviewedEventable)() {
     m.timelineReviewedEvent = value
 }
-// SetTimelineUnassignedIssueEvent sets the timelineUnassignedIssueEvent property value. Composed type representation for type timelineUnassignedIssueEvent
+// SetTimelineUnassignedIssueEvent sets the timelineUnassignedIssueEvent property value. Composed type representation for type TimelineUnassignedIssueEventable
 func (m *TimelineIssueEvents) SetTimelineUnassignedIssueEvent(value TimelineUnassignedIssueEventable)() {
     m.timelineUnassignedIssueEvent = value
 }
-// SetUnlabeledIssueEvent sets the unlabeledIssueEvent property value. Composed type representation for type unlabeledIssueEvent
+// SetUnlabeledIssueEvent sets the unlabeledIssueEvent property value. Composed type representation for type UnlabeledIssueEventable
 func (m *TimelineIssueEvents) SetUnlabeledIssueEvent(value UnlabeledIssueEventable)() {
     m.unlabeledIssueEvent = value
 }
-// TimelineIssueEventsable 
 type TimelineIssueEventsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddedToProjectIssueEvent()(AddedToProjectIssueEventable)

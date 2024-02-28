@@ -31,7 +31,7 @@ type TimelineCommittedEvent struct {
     // The verification property
     verification TimelineCommittedEvent_verificationable
 }
-// NewTimelineCommittedEvent instantiates a new timelineCommittedEvent and sets the default values.
+// NewTimelineCommittedEvent instantiates a new TimelineCommittedEvent and sets the default values.
 func NewTimelineCommittedEvent()(*TimelineCommittedEvent) {
     m := &TimelineCommittedEvent{
     }
@@ -39,26 +39,32 @@ func NewTimelineCommittedEvent()(*TimelineCommittedEvent) {
     return m
 }
 // CreateTimelineCommittedEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineCommittedEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineCommittedEvent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineCommittedEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. Identifying information for the git-user
+// returns a TimelineCommittedEvent_authorable when successful
 func (m *TimelineCommittedEvent) GetAuthor()(TimelineCommittedEvent_authorable) {
     return m.author
 }
 // GetCommitter gets the committer property value. Identifying information for the git-user
+// returns a TimelineCommittedEvent_committerable when successful
 func (m *TimelineCommittedEvent) GetCommitter()(TimelineCommittedEvent_committerable) {
     return m.committer
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineCommittedEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -180,34 +186,42 @@ func (m *TimelineCommittedEvent) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetMessage gets the message property value. Message describing the purpose of the commit
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetMessage()(*string) {
     return m.message
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetNodeId()(*string) {
     return m.node_id
 }
 // GetParents gets the parents property value. The parents property
+// returns a []TimelineCommittedEvent_parentsable when successful
 func (m *TimelineCommittedEvent) GetParents()([]TimelineCommittedEvent_parentsable) {
     return m.parents
 }
 // GetSha gets the sha property value. SHA for the commit
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetSha()(*string) {
     return m.sha
 }
 // GetTree gets the tree property value. The tree property
+// returns a TimelineCommittedEvent_treeable when successful
 func (m *TimelineCommittedEvent) GetTree()(TimelineCommittedEvent_treeable) {
     return m.tree
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TimelineCommittedEvent) GetUrl()(*string) {
     return m.url
 }
 // GetVerification gets the verification property value. The verification property
+// returns a TimelineCommittedEvent_verificationable when successful
 func (m *TimelineCommittedEvent) GetVerification()(TimelineCommittedEvent_verificationable) {
     return m.verification
 }
@@ -341,7 +355,6 @@ func (m *TimelineCommittedEvent) SetUrl(value *string)() {
 func (m *TimelineCommittedEvent) SetVerification(value TimelineCommittedEvent_verificationable)() {
     m.verification = value
 }
-// TimelineCommittedEventable 
 type TimelineCommittedEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DependencyGraphDiff 
 type DependencyGraphDiff struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,7 +28,7 @@ type DependencyGraphDiff struct {
     // The vulnerabilities property
     vulnerabilities []DependencyGraphDiff_vulnerabilitiesable
 }
-// NewDependencyGraphDiff instantiates a new dependencyGraphDiff and sets the default values.
+// NewDependencyGraphDiff instantiates a new DependencyGraphDiff and sets the default values.
 func NewDependencyGraphDiff()(*DependencyGraphDiff) {
     m := &DependencyGraphDiff{
     }
@@ -37,22 +36,27 @@ func NewDependencyGraphDiff()(*DependencyGraphDiff) {
     return m
 }
 // CreateDependencyGraphDiffFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependencyGraphDiffFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependencyGraphDiff(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DependencyGraphDiff) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChangeType gets the change_type property value. The change_type property
+// returns a *DependencyGraphDiff_change_type when successful
 func (m *DependencyGraphDiff) GetChangeType()(*DependencyGraphDiff_change_type) {
     return m.change_type
 }
 // GetEcosystem gets the ecosystem property value. The ecosystem property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetEcosystem()(*string) {
     return m.ecosystem
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependencyGraphDiff) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["change_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,34 +168,42 @@ func (m *DependencyGraphDiff) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetLicense gets the license property value. The license property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetLicense()(*string) {
     return m.license
 }
 // GetManifest gets the manifest property value. The manifest property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetManifest()(*string) {
     return m.manifest
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetName()(*string) {
     return m.name
 }
 // GetPackageUrl gets the package_url property value. The package_url property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetPackageUrl()(*string) {
     return m.package_url
 }
 // GetScope gets the scope property value. Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
+// returns a *DependencyGraphDiff_scope when successful
 func (m *DependencyGraphDiff) GetScope()(*DependencyGraphDiff_scope) {
     return m.scope
 }
 // GetSourceRepositoryUrl gets the source_repository_url property value. The source_repository_url property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetSourceRepositoryUrl()(*string) {
     return m.source_repository_url
 }
 // GetVersion gets the version property value. The version property
+// returns a *string when successful
 func (m *DependencyGraphDiff) GetVersion()(*string) {
     return m.version
 }
 // GetVulnerabilities gets the vulnerabilities property value. The vulnerabilities property
+// returns a []DependencyGraphDiff_vulnerabilitiesable when successful
 func (m *DependencyGraphDiff) GetVulnerabilities()([]DependencyGraphDiff_vulnerabilitiesable) {
     return m.vulnerabilities
 }
@@ -317,7 +329,6 @@ func (m *DependencyGraphDiff) SetVersion(value *string)() {
 func (m *DependencyGraphDiff) SetVulnerabilities(value []DependencyGraphDiff_vulnerabilitiesable)() {
     m.vulnerabilities = value
 }
-// DependencyGraphDiffable 
 type DependencyGraphDiffable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

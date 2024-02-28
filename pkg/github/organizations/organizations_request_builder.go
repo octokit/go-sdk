@@ -31,6 +31,7 @@ func NewOrganizationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewOrganizationsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all organizations, in the order that they were created on GitHub.**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
+// returns a []OrganizationSimpleable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/orgs#list-organizations
@@ -52,6 +53,7 @@ func (m *OrganizationsRequestBuilder) Get(ctx context.Context, requestConfigurat
     return val, nil
 }
 // ToGetRequestInformation lists all organizations, in the order that they were created on GitHub.**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
+// returns a *RequestInformation when successful
 func (m *OrganizationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[OrganizationsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -59,6 +61,7 @@ func (m *OrganizationsRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *OrganizationsRequestBuilder when successful
 func (m *OrganizationsRequestBuilder) WithUrl(rawUrl string)(*OrganizationsRequestBuilder) {
     return NewOrganizationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

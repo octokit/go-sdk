@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPersonalAccessTokenRequestsPostRequestBody 
 type ItemPersonalAccessTokenRequestsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,14 +20,17 @@ func NewItemPersonalAccessTokenRequestsPostRequestBody()(*ItemPersonalAccessToke
     return m
 }
 // CreateItemPersonalAccessTokenRequestsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPersonalAccessTokenRequestsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPersonalAccessTokenRequestsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemPersonalAccessTokenRequestsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPersonalAccessTokenRequestsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["pat_request_ids"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -60,10 +62,12 @@ func (m *ItemPersonalAccessTokenRequestsPostRequestBody) GetFieldDeserializers()
     return res
 }
 // GetPatRequestIds gets the pat_request_ids property value. Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
+// returns a []int32 when successful
 func (m *ItemPersonalAccessTokenRequestsPostRequestBody) GetPatRequestIds()([]int32) {
     return m.pat_request_ids
 }
 // GetReason gets the reason property value. Reason for approving or denying the requests. Max 1024 characters.
+// returns a *string when successful
 func (m *ItemPersonalAccessTokenRequestsPostRequestBody) GetReason()(*string) {
     return m.reason
 }
@@ -101,7 +105,6 @@ func (m *ItemPersonalAccessTokenRequestsPostRequestBody) SetPatRequestIds(value 
 func (m *ItemPersonalAccessTokenRequestsPostRequestBody) SetReason(value *string)() {
     m.reason = value
 }
-// ItemPersonalAccessTokenRequestsPostRequestBodyable 
 type ItemPersonalAccessTokenRequestsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -13,7 +13,7 @@ type PullRequestReviewRequest struct {
     // The users property
     users []SimpleUserable
 }
-// NewPullRequestReviewRequest instantiates a new pullRequestReviewRequest and sets the default values.
+// NewPullRequestReviewRequest instantiates a new PullRequestReviewRequest and sets the default values.
 func NewPullRequestReviewRequest()(*PullRequestReviewRequest) {
     m := &PullRequestReviewRequest{
     }
@@ -21,14 +21,17 @@ func NewPullRequestReviewRequest()(*PullRequestReviewRequest) {
     return m
 }
 // CreatePullRequestReviewRequestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestReviewRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequestReviewRequest(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequestReviewRequest) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequestReviewRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["teams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,10 +69,12 @@ func (m *PullRequestReviewRequest) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetTeams gets the teams property value. The teams property
+// returns a []Teamable when successful
 func (m *PullRequestReviewRequest) GetTeams()([]Teamable) {
     return m.teams
 }
 // GetUsers gets the users property value. The users property
+// returns a []SimpleUserable when successful
 func (m *PullRequestReviewRequest) GetUsers()([]SimpleUserable) {
     return m.users
 }
@@ -119,7 +124,6 @@ func (m *PullRequestReviewRequest) SetTeams(value []Teamable)() {
 func (m *PullRequestReviewRequest) SetUsers(value []SimpleUserable)() {
     m.users = value
 }
-// PullRequestReviewRequestable 
 type PullRequestReviewRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

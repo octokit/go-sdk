@@ -21,7 +21,7 @@ type RunnerApplication struct {
     // A short lived bearer token used to download the runner, if needed.
     temp_download_token *string
 }
-// NewRunnerApplication instantiates a new runnerApplication and sets the default values.
+// NewRunnerApplication instantiates a new RunnerApplication and sets the default values.
 func NewRunnerApplication()(*RunnerApplication) {
     m := &RunnerApplication{
     }
@@ -29,22 +29,27 @@ func NewRunnerApplication()(*RunnerApplication) {
     return m
 }
 // CreateRunnerApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRunnerApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRunnerApplication(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RunnerApplication) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchitecture gets the architecture property value. The architecture property
+// returns a *string when successful
 func (m *RunnerApplication) GetArchitecture()(*string) {
     return m.architecture
 }
 // GetDownloadUrl gets the download_url property value. The download_url property
+// returns a *string when successful
 func (m *RunnerApplication) GetDownloadUrl()(*string) {
     return m.download_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RunnerApplication) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["architecture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -110,18 +115,22 @@ func (m *RunnerApplication) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFilename gets the filename property value. The filename property
+// returns a *string when successful
 func (m *RunnerApplication) GetFilename()(*string) {
     return m.filename
 }
 // GetOs gets the os property value. The os property
+// returns a *string when successful
 func (m *RunnerApplication) GetOs()(*string) {
     return m.os
 }
 // GetSha256Checksum gets the sha256_checksum property value. The sha256_checksum property
+// returns a *string when successful
 func (m *RunnerApplication) GetSha256Checksum()(*string) {
     return m.sha256_checksum
 }
 // GetTempDownloadToken gets the temp_download_token property value. A short lived bearer token used to download the runner, if needed.
+// returns a *string when successful
 func (m *RunnerApplication) GetTempDownloadToken()(*string) {
     return m.temp_download_token
 }
@@ -199,7 +208,6 @@ func (m *RunnerApplication) SetSha256Checksum(value *string)() {
 func (m *RunnerApplication) SetTempDownloadToken(value *string)() {
     m.temp_download_token = value
 }
-// RunnerApplicationable 
 type RunnerApplicationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

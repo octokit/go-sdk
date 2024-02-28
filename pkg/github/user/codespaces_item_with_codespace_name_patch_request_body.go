@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodespacesItemWithCodespace_namePatchRequestBody 
 type CodespacesItemWithCodespace_namePatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,18 +22,22 @@ func NewCodespacesItemWithCodespace_namePatchRequestBody()(*CodespacesItemWithCo
     return m
 }
 // CreateCodespacesItemWithCodespace_namePatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespacesItemWithCodespace_namePatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespacesItemWithCodespace_namePatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDisplayName gets the display_name property value. Display name for this codespace
+// returns a *string when successful
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetDisplayName()(*string) {
     return m.display_name
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["display_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,10 +79,12 @@ func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetFieldDeserializers
     return res
 }
 // GetMachine gets the machine property value. A valid machine to transition this codespace to.
+// returns a *string when successful
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetMachine()(*string) {
     return m.machine
 }
 // GetRecentFolders gets the recent_folders property value. Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
+// returns a []string when successful
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) GetRecentFolders()([]string) {
     return m.recent_folders
 }
@@ -127,7 +132,6 @@ func (m *CodespacesItemWithCodespace_namePatchRequestBody) SetMachine(value *str
 func (m *CodespacesItemWithCodespace_namePatchRequestBody) SetRecentFolders(value []string)() {
     m.recent_folders = value
 }
-// CodespacesItemWithCodespace_namePatchRequestBodyable 
 type CodespacesItemWithCodespace_namePatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -42,7 +42,7 @@ type NullableMilestone struct {
     // The url property
     url *string
 }
-// NewNullableMilestone instantiates a new nullableMilestone and sets the default values.
+// NewNullableMilestone instantiates a new NullableMilestone and sets the default values.
 func NewNullableMilestone()(*NullableMilestone) {
     m := &NullableMilestone{
     }
@@ -52,38 +52,47 @@ func NewNullableMilestone()(*NullableMilestone) {
     return m
 }
 // CreateNullableMilestoneFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNullableMilestoneFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNullableMilestone(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NullableMilestone) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClosedAt gets the closed_at property value. The closed_at property
+// returns a *Time when successful
 func (m *NullableMilestone) GetClosedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.closed_at
 }
 // GetClosedIssues gets the closed_issues property value. The closed_issues property
+// returns a *int32 when successful
 func (m *NullableMilestone) GetClosedIssues()(*int32) {
     return m.closed_issues
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *NullableMilestone) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *NullableMilestone) GetCreator()(NullableSimpleUserable) {
     return m.creator
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *NullableMilestone) GetDescription()(*string) {
     return m.description
 }
 // GetDueOn gets the due_on property value. The due_on property
+// returns a *Time when successful
 func (m *NullableMilestone) GetDueOn()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.due_on
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NullableMilestone) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["closed_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -249,42 +258,52 @@ func (m *NullableMilestone) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *NullableMilestone) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *NullableMilestone) GetId()(*int32) {
     return m.id
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *NullableMilestone) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *NullableMilestone) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. The number of the milestone.
+// returns a *int32 when successful
 func (m *NullableMilestone) GetNumber()(*int32) {
     return m.number
 }
 // GetOpenIssues gets the open_issues property value. The open_issues property
+// returns a *int32 when successful
 func (m *NullableMilestone) GetOpenIssues()(*int32) {
     return m.open_issues
 }
 // GetState gets the state property value. The state of the milestone.
+// returns a *NullableMilestone_state when successful
 func (m *NullableMilestone) GetState()(*NullableMilestone_state) {
     return m.state
 }
 // GetTitle gets the title property value. The title of the milestone.
+// returns a *string when successful
 func (m *NullableMilestone) GetTitle()(*string) {
     return m.title
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *NullableMilestone) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *NullableMilestone) GetUrl()(*string) {
     return m.url
 }
@@ -463,7 +482,6 @@ func (m *NullableMilestone) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a
 func (m *NullableMilestone) SetUrl(value *string)() {
     m.url = value
 }
-// NullableMilestoneable 
 type NullableMilestoneable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

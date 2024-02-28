@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemIssuesItemAssigneesDeleteRequestBody 
 type ItemItemIssuesItemAssigneesDeleteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,18 +18,22 @@ func NewItemItemIssuesItemAssigneesDeleteRequestBody()(*ItemItemIssuesItemAssign
     return m
 }
 // CreateItemItemIssuesItemAssigneesDeleteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemIssuesItemAssigneesDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemIssuesItemAssigneesDeleteRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemIssuesItemAssigneesDeleteRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignees gets the assignees property value. Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
+// returns a []string when successful
 func (m *ItemItemIssuesItemAssigneesDeleteRequestBody) GetAssignees()([]string) {
     return m.assignees
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemIssuesItemAssigneesDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignees"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,7 +78,6 @@ func (m *ItemItemIssuesItemAssigneesDeleteRequestBody) SetAdditionalData(value m
 func (m *ItemItemIssuesItemAssigneesDeleteRequestBody) SetAssignees(value []string)() {
     m.assignees = value
 }
-// ItemItemIssuesItemAssigneesDeleteRequestBodyable 
 type ItemItemIssuesItemAssigneesDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

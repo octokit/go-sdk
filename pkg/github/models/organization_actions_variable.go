@@ -22,7 +22,7 @@ type OrganizationActionsVariable struct {
     // Visibility of a variable
     visibility *OrganizationActionsVariable_visibility
 }
-// NewOrganizationActionsVariable instantiates a new organizationActionsVariable and sets the default values.
+// NewOrganizationActionsVariable instantiates a new OrganizationActionsVariable and sets the default values.
 func NewOrganizationActionsVariable()(*OrganizationActionsVariable) {
     m := &OrganizationActionsVariable{
     }
@@ -30,18 +30,22 @@ func NewOrganizationActionsVariable()(*OrganizationActionsVariable) {
     return m
 }
 // CreateOrganizationActionsVariableFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationActionsVariableFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationActionsVariable(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationActionsVariable) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The date and time at which the variable was created, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *OrganizationActionsVariable) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationActionsVariable) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -107,22 +111,27 @@ func (m *OrganizationActionsVariable) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetName gets the name property value. The name of the variable.
+// returns a *string when successful
 func (m *OrganizationActionsVariable) GetName()(*string) {
     return m.name
 }
 // GetSelectedRepositoriesUrl gets the selected_repositories_url property value. The selected_repositories_url property
+// returns a *string when successful
 func (m *OrganizationActionsVariable) GetSelectedRepositoriesUrl()(*string) {
     return m.selected_repositories_url
 }
 // GetUpdatedAt gets the updated_at property value. The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
+// returns a *Time when successful
 func (m *OrganizationActionsVariable) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetValue gets the value property value. The value of the variable.
+// returns a *string when successful
 func (m *OrganizationActionsVariable) GetValue()(*string) {
     return m.value
 }
 // GetVisibility gets the visibility property value. Visibility of a variable
+// returns a *OrganizationActionsVariable_visibility when successful
 func (m *OrganizationActionsVariable) GetVisibility()(*OrganizationActionsVariable_visibility) {
     return m.visibility
 }
@@ -201,7 +210,6 @@ func (m *OrganizationActionsVariable) SetValue(value *string)() {
 func (m *OrganizationActionsVariable) SetVisibility(value *OrganizationActionsVariable_visibility)() {
     m.visibility = value
 }
-// OrganizationActionsVariableable 
 type OrganizationActionsVariableable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

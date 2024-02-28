@@ -23,6 +23,7 @@ type PackagesRequestBuilderGetQueryParameters struct {
     Visibility *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetVisibilityQueryParameterType `uriparametername:"visibility"`
 }
 // ByPackage_type gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item collection
+// returns a *PackagesWithPackage_typeItemRequestBuilder when successful
 func (m *PackagesRequestBuilder) ByPackage_type(package_type string)(*PackagesWithPackage_typeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -47,6 +48,7 @@ func NewPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists packages owned by the authenticated user within the user's namespace.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a []PackageEscapedable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#list-packages-for-the-authenticated-users-namespace
@@ -68,6 +70,7 @@ func (m *PackagesRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return val, nil
 }
 // ToGetRequestInformation lists packages owned by the authenticated user within the user's namespace.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a *RequestInformation when successful
 func (m *PackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[PackagesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -75,6 +78,7 @@ func (m *PackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *PackagesRequestBuilder when successful
 func (m *PackagesRequestBuilder) WithUrl(rawUrl string)(*PackagesRequestBuilder) {
     return NewPackagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

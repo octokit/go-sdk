@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequest_head_repo_license 
 type PullRequest_head_repo_license struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type PullRequest_head_repo_license struct {
     // The url property
     url *string
 }
-// NewPullRequest_head_repo_license instantiates a new pullRequest_head_repo_license and sets the default values.
+// NewPullRequest_head_repo_license instantiates a new PullRequest_head_repo_license and sets the default values.
 func NewPullRequest_head_repo_license()(*PullRequest_head_repo_license) {
     m := &PullRequest_head_repo_license{
     }
@@ -27,14 +26,17 @@ func NewPullRequest_head_repo_license()(*PullRequest_head_repo_license) {
     return m
 }
 // CreatePullRequest_head_repo_licenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequest_head_repo_licenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequest_head_repo_license(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequest_head_repo_license) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequest_head_repo_license) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["key"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,22 +92,27 @@ func (m *PullRequest_head_repo_license) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetKey gets the key property value. The key property
+// returns a *string when successful
 func (m *PullRequest_head_repo_license) GetKey()(*string) {
     return m.key
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PullRequest_head_repo_license) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *PullRequest_head_repo_license) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSpdxId gets the spdx_id property value. The spdx_id property
+// returns a *string when successful
 func (m *PullRequest_head_repo_license) GetSpdxId()(*string) {
     return m.spdx_id
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PullRequest_head_repo_license) GetUrl()(*string) {
     return m.url
 }
@@ -173,7 +180,6 @@ func (m *PullRequest_head_repo_license) SetSpdxId(value *string)() {
 func (m *PullRequest_head_repo_license) SetUrl(value *string)() {
     m.url = value
 }
-// PullRequest_head_repo_licenseable 
 type PullRequest_head_repo_licenseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

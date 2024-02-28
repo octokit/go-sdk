@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemInvitationsPostRequestBody 
 type ItemInvitationsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,18 +22,22 @@ func NewItemInvitationsPostRequestBody()(*ItemInvitationsPostRequestBody) {
     return m
 }
 // CreateItemInvitationsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemInvitationsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemInvitationsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemInvitationsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. **Required unless you provide `invitee_id`**. Email address of the person you are inviting, which can be an existing GitHub user.
+// returns a *string when successful
 func (m *ItemInvitationsPostRequestBody) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemInvitationsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,10 +79,12 @@ func (m *ItemInvitationsPostRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetInviteeId gets the invitee_id property value. **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
+// returns a *int32 when successful
 func (m *ItemInvitationsPostRequestBody) GetInviteeId()(*int32) {
     return m.invitee_id
 }
 // GetTeamIds gets the team_ids property value. Specify IDs for the teams you want to invite new members to.
+// returns a []int32 when successful
 func (m *ItemInvitationsPostRequestBody) GetTeamIds()([]int32) {
     return m.team_ids
 }
@@ -127,7 +132,6 @@ func (m *ItemInvitationsPostRequestBody) SetInviteeId(value *int32)() {
 func (m *ItemInvitationsPostRequestBody) SetTeamIds(value []int32)() {
     m.team_ids = value
 }
-// ItemInvitationsPostRequestBodyable 
 type ItemInvitationsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

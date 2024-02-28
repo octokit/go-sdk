@@ -2,7 +2,6 @@ package checkruns
 import (
     "errors"
 )
-// 
 type GetFilterQueryParameterType int
 
 const (

@@ -40,7 +40,7 @@ type DeploymentStatus struct {
     // The url property
     url *string
 }
-// NewDeploymentStatus instantiates a new deploymentStatus and sets the default values.
+// NewDeploymentStatus instantiates a new DeploymentStatus and sets the default values.
 func NewDeploymentStatus()(*DeploymentStatus) {
     m := &DeploymentStatus{
     }
@@ -48,38 +48,47 @@ func NewDeploymentStatus()(*DeploymentStatus) {
     return m
 }
 // CreateDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentStatus(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeploymentStatus) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *DeploymentStatus) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *DeploymentStatus) GetCreator()(NullableSimpleUserable) {
     return m.creator
 }
 // GetDeploymentUrl gets the deployment_url property value. The deployment_url property
+// returns a *string when successful
 func (m *DeploymentStatus) GetDeploymentUrl()(*string) {
     return m.deployment_url
 }
 // GetDescription gets the description property value. A short description of the status.
+// returns a *string when successful
 func (m *DeploymentStatus) GetDescription()(*string) {
     return m.description
 }
 // GetEnvironment gets the environment property value. The environment of the deployment that the status is for.
+// returns a *string when successful
 func (m *DeploymentStatus) GetEnvironment()(*string) {
     return m.environment
 }
 // GetEnvironmentUrl gets the environment_url property value. The URL for accessing your environment.
+// returns a *string when successful
 func (m *DeploymentStatus) GetEnvironmentUrl()(*string) {
     return m.environment_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -235,38 +244,47 @@ func (m *DeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *DeploymentStatus) GetId()(*int32) {
     return m.id
 }
 // GetLogUrl gets the log_url property value. The URL to associate with this status.
+// returns a *string when successful
 func (m *DeploymentStatus) GetLogUrl()(*string) {
     return m.log_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *DeploymentStatus) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *DeploymentStatus) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *DeploymentStatus) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetState gets the state property value. The state of the status.
+// returns a *DeploymentStatus_state when successful
 func (m *DeploymentStatus) GetState()(*DeploymentStatus_state) {
     return m.state
 }
 // GetTargetUrl gets the target_url property value. Deprecated: the URL to associate with this status.
+// returns a *string when successful
 func (m *DeploymentStatus) GetTargetUrl()(*string) {
     return m.target_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *DeploymentStatus) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *DeploymentStatus) GetUrl()(*string) {
     return m.url
 }
@@ -435,7 +453,6 @@ func (m *DeploymentStatus) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *DeploymentStatus) SetUrl(value *string)() {
     m.url = value
 }
-// DeploymentStatusable 
 type DeploymentStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

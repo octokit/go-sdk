@@ -27,7 +27,7 @@ type Thread struct {
     // The url property
     url *string
 }
-// NewThread instantiates a new thread and sets the default values.
+// NewThread instantiates a new Thread and sets the default values.
 func NewThread()(*Thread) {
     m := &Thread{
     }
@@ -35,14 +35,17 @@ func NewThread()(*Thread) {
     return m
 }
 // CreateThreadFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateThreadFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewThread(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Thread) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Thread) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -138,38 +141,47 @@ func (m *Thread) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *string when successful
 func (m *Thread) GetId()(*string) {
     return m.id
 }
 // GetLastReadAt gets the last_read_at property value. The last_read_at property
+// returns a *string when successful
 func (m *Thread) GetLastReadAt()(*string) {
     return m.last_read_at
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *Thread) GetReason()(*string) {
     return m.reason
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *Thread) GetRepository()(MinimalRepositoryable) {
     return m.repository
 }
 // GetSubject gets the subject property value. The subject property
+// returns a Thread_subjectable when successful
 func (m *Thread) GetSubject()(Thread_subjectable) {
     return m.subject
 }
 // GetSubscriptionUrl gets the subscription_url property value. The subscription_url property
+// returns a *string when successful
 func (m *Thread) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetUnread gets the unread property value. The unread property
+// returns a *bool when successful
 func (m *Thread) GetUnread()(*bool) {
     return m.unread
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *Thread) GetUpdatedAt()(*string) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Thread) GetUrl()(*string) {
     return m.url
 }
@@ -277,7 +289,6 @@ func (m *Thread) SetUpdatedAt(value *string)() {
 func (m *Thread) SetUrl(value *string)() {
     m.url = value
 }
-// Threadable 
 type Threadable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

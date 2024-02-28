@@ -2,7 +2,6 @@ package issues
 import (
     "errors"
 )
-// 
 type GetFilterQueryParameterType int
 
 const (

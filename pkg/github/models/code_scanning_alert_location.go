@@ -19,7 +19,7 @@ type CodeScanningAlertLocation struct {
     // The start_line property
     start_line *int32
 }
-// NewCodeScanningAlertLocation instantiates a new codeScanningAlertLocation and sets the default values.
+// NewCodeScanningAlertLocation instantiates a new CodeScanningAlertLocation and sets the default values.
 func NewCodeScanningAlertLocation()(*CodeScanningAlertLocation) {
     m := &CodeScanningAlertLocation{
     }
@@ -27,22 +27,27 @@ func NewCodeScanningAlertLocation()(*CodeScanningAlertLocation) {
     return m
 }
 // CreateCodeScanningAlertLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeScanningAlertLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeScanningAlertLocation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeScanningAlertLocation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEndColumn gets the end_column property value. The end_column property
+// returns a *int32 when successful
 func (m *CodeScanningAlertLocation) GetEndColumn()(*int32) {
     return m.end_column
 }
 // GetEndLine gets the end_line property value. The end_line property
+// returns a *int32 when successful
 func (m *CodeScanningAlertLocation) GetEndLine()(*int32) {
     return m.end_line
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeScanningAlertLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["end_column"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -98,14 +103,17 @@ func (m *CodeScanningAlertLocation) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *CodeScanningAlertLocation) GetPath()(*string) {
     return m.path
 }
 // GetStartColumn gets the start_column property value. The start_column property
+// returns a *int32 when successful
 func (m *CodeScanningAlertLocation) GetStartColumn()(*int32) {
     return m.start_column
 }
 // GetStartLine gets the start_line property value. The start_line property
+// returns a *int32 when successful
 func (m *CodeScanningAlertLocation) GetStartLine()(*int32) {
     return m.start_line
 }
@@ -173,7 +181,6 @@ func (m *CodeScanningAlertLocation) SetStartColumn(value *int32)() {
 func (m *CodeScanningAlertLocation) SetStartLine(value *int32)() {
     m.start_line = value
 }
-// CodeScanningAlertLocationable 
 type CodeScanningAlertLocationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -48,7 +48,7 @@ type ClassroomAssignment struct {
     // Whether it's a group assignment or individual assignment.
     typeEscaped *ClassroomAssignment_type
 }
-// NewClassroomAssignment instantiates a new classroomAssignment and sets the default values.
+// NewClassroomAssignment instantiates a new ClassroomAssignment and sets the default values.
 func NewClassroomAssignment()(*ClassroomAssignment) {
     m := &ClassroomAssignment{
     }
@@ -56,34 +56,42 @@ func NewClassroomAssignment()(*ClassroomAssignment) {
     return m
 }
 // CreateClassroomAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateClassroomAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassroomAssignment(), nil
 }
 // GetAccepted gets the accepted property value. The number of students that have accepted the assignment.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetAccepted()(*int32) {
     return m.accepted
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ClassroomAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClassroom gets the classroom property value. A GitHub Classroom classroom
+// returns a Classroomable when successful
 func (m *ClassroomAssignment) GetClassroom()(Classroomable) {
     return m.classroom
 }
 // GetDeadline gets the deadline property value. The time at which the assignment is due.
+// returns a *Time when successful
 func (m *ClassroomAssignment) GetDeadline()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deadline
 }
 // GetEditor gets the editor property value. The selected editor for the assignment.
+// returns a *string when successful
 func (m *ClassroomAssignment) GetEditor()(*string) {
     return m.editor
 }
 // GetFeedbackPullRequestsEnabled gets the feedback_pull_requests_enabled property value. Whether feedback pull request will be created when a student accepts the assignment.
+// returns a *bool when successful
 func (m *ClassroomAssignment) GetFeedbackPullRequestsEnabled()(*bool) {
     return m.feedback_pull_requests_enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClassroomAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["accepted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -279,58 +287,72 @@ func (m *ClassroomAssignment) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetId gets the id property value. Unique identifier of the repository.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetId()(*int32) {
     return m.id
 }
 // GetInvitationsEnabled gets the invitations_enabled property value. Whether the invitation link is enabled. Visiting an enabled invitation link will accept the assignment.
+// returns a *bool when successful
 func (m *ClassroomAssignment) GetInvitationsEnabled()(*bool) {
     return m.invitations_enabled
 }
 // GetInviteLink gets the invite_link property value. The link that a student can use to accept the assignment.
+// returns a *string when successful
 func (m *ClassroomAssignment) GetInviteLink()(*string) {
     return m.invite_link
 }
 // GetLanguage gets the language property value. The programming language used in the assignment.
+// returns a *string when successful
 func (m *ClassroomAssignment) GetLanguage()(*string) {
     return m.language
 }
 // GetMaxMembers gets the max_members property value. The maximum allowable members per team.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetMaxMembers()(*int32) {
     return m.max_members
 }
 // GetMaxTeams gets the max_teams property value. The maximum allowable teams for the assignment.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetMaxTeams()(*int32) {
     return m.max_teams
 }
 // GetPassing gets the passing property value. The number of students that have passed the assignment.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetPassing()(*int32) {
     return m.passing
 }
 // GetPublicRepo gets the public_repo property value. Whether an accepted assignment creates a public repository.
+// returns a *bool when successful
 func (m *ClassroomAssignment) GetPublicRepo()(*bool) {
     return m.public_repo
 }
 // GetSlug gets the slug property value. Sluggified name of the assignment.
+// returns a *string when successful
 func (m *ClassroomAssignment) GetSlug()(*string) {
     return m.slug
 }
 // GetStarterCodeRepository gets the starter_code_repository property value. A GitHub repository view for Classroom
+// returns a SimpleClassroomRepositoryable when successful
 func (m *ClassroomAssignment) GetStarterCodeRepository()(SimpleClassroomRepositoryable) {
     return m.starter_code_repository
 }
 // GetStudentsAreRepoAdmins gets the students_are_repo_admins property value. Whether students are admins on created repository when a student accepts the assignment.
+// returns a *bool when successful
 func (m *ClassroomAssignment) GetStudentsAreRepoAdmins()(*bool) {
     return m.students_are_repo_admins
 }
 // GetSubmitted gets the submitted property value. The number of students that have submitted the assignment.
+// returns a *int32 when successful
 func (m *ClassroomAssignment) GetSubmitted()(*int32) {
     return m.submitted
 }
 // GetTitle gets the title property value. Assignment title.
+// returns a *string when successful
 func (m *ClassroomAssignment) GetTitle()(*string) {
     return m.title
 }
 // GetTypeEscaped gets the type property value. Whether it's a group assignment or individual assignment.
+// returns a *ClassroomAssignment_type when successful
 func (m *ClassroomAssignment) GetTypeEscaped()(*ClassroomAssignment_type) {
     return m.typeEscaped
 }
@@ -539,7 +561,6 @@ func (m *ClassroomAssignment) SetTitle(value *string)() {
 func (m *ClassroomAssignment) SetTypeEscaped(value *ClassroomAssignment_type)() {
     m.typeEscaped = value
 }
-// ClassroomAssignmentable 
 type ClassroomAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

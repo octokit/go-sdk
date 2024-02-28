@@ -36,7 +36,7 @@ type TeamDiscussionComment struct {
     // The url property
     url *string
 }
-// NewTeamDiscussionComment instantiates a new teamDiscussionComment and sets the default values.
+// NewTeamDiscussionComment instantiates a new TeamDiscussionComment and sets the default values.
 func NewTeamDiscussionComment()(*TeamDiscussionComment) {
     m := &TeamDiscussionComment{
     }
@@ -44,38 +44,47 @@ func NewTeamDiscussionComment()(*TeamDiscussionComment) {
     return m
 }
 // CreateTeamDiscussionCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamDiscussionCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamDiscussionComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamDiscussionComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *TeamDiscussionComment) GetAuthor()(NullableSimpleUserable) {
     return m.author
 }
 // GetBody gets the body property value. The main text of the comment.
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetBody()(*string) {
     return m.body
 }
 // GetBodyHtml gets the body_html property value. The body_html property
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetBodyHtml()(*string) {
     return m.body_html
 }
 // GetBodyVersion gets the body_version property value. The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetBodyVersion()(*string) {
     return m.body_version
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TeamDiscussionComment) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDiscussionUrl gets the discussion_url property value. The discussion_url property
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetDiscussionUrl()(*string) {
     return m.discussion_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamDiscussionComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -211,30 +220,37 @@ func (m *TeamDiscussionComment) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetLastEditedAt gets the last_edited_at property value. The last_edited_at property
+// returns a *Time when successful
 func (m *TeamDiscussionComment) GetLastEditedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_edited_at
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. The unique sequence number of a team discussion comment.
+// returns a *int32 when successful
 func (m *TeamDiscussionComment) GetNumber()(*int32) {
     return m.number
 }
 // GetReactions gets the reactions property value. The reactions property
+// returns a ReactionRollupable when successful
 func (m *TeamDiscussionComment) GetReactions()(ReactionRollupable) {
     return m.reactions
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TeamDiscussionComment) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TeamDiscussionComment) GetUrl()(*string) {
     return m.url
 }
@@ -382,7 +398,6 @@ func (m *TeamDiscussionComment) SetUpdatedAt(value *i336074805fc853987abe6f7fe3a
 func (m *TeamDiscussionComment) SetUrl(value *string)() {
     m.url = value
 }
-// TeamDiscussionCommentable 
 type TeamDiscussionCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

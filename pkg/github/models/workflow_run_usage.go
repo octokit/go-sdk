@@ -13,7 +13,7 @@ type WorkflowRunUsage struct {
     // The run_duration_ms property
     run_duration_ms *int32
 }
-// NewWorkflowRunUsage instantiates a new workflowRunUsage and sets the default values.
+// NewWorkflowRunUsage instantiates a new WorkflowRunUsage and sets the default values.
 func NewWorkflowRunUsage()(*WorkflowRunUsage) {
     m := &WorkflowRunUsage{
     }
@@ -21,18 +21,22 @@ func NewWorkflowRunUsage()(*WorkflowRunUsage) {
     return m
 }
 // CreateWorkflowRunUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowRunUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflowRunUsage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *WorkflowRunUsage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillable gets the billable property value. The billable property
+// returns a WorkflowRunUsage_billableable when successful
 func (m *WorkflowRunUsage) GetBillable()(WorkflowRunUsage_billableable) {
     return m.billable
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkflowRunUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *WorkflowRunUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetRunDurationMs gets the run_duration_ms property value. The run_duration_ms property
+// returns a *int32 when successful
 func (m *WorkflowRunUsage) GetRunDurationMs()(*int32) {
     return m.run_duration_ms
 }
@@ -95,7 +100,6 @@ func (m *WorkflowRunUsage) SetBillable(value WorkflowRunUsage_billableable)() {
 func (m *WorkflowRunUsage) SetRunDurationMs(value *int32)() {
     m.run_duration_ms = value
 }
-// WorkflowRunUsageable 
 type WorkflowRunUsageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

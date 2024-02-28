@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PackageVersion_metadata 
 type PackageVersion_metadata struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type PackageVersion_metadata struct {
     // The package_type property
     package_type *PackageVersion_metadata_package_type
 }
-// NewPackageVersion_metadata instantiates a new packageVersion_metadata and sets the default values.
+// NewPackageVersion_metadata instantiates a new PackageVersion_metadata and sets the default values.
 func NewPackageVersion_metadata()(*PackageVersion_metadata) {
     m := &PackageVersion_metadata{
     }
@@ -23,22 +22,27 @@ func NewPackageVersion_metadata()(*PackageVersion_metadata) {
     return m
 }
 // CreatePackageVersion_metadataFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePackageVersion_metadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPackageVersion_metadata(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PackageVersion_metadata) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContainer gets the container property value. The container property
+// returns a PackageVersion_metadata_containerable when successful
 func (m *PackageVersion_metadata) GetContainer()(PackageVersion_metadata_containerable) {
     return m.container
 }
 // GetDocker gets the docker property value. The docker property
+// returns a PackageVersion_metadata_dockerable when successful
 func (m *PackageVersion_metadata) GetDocker()(PackageVersion_metadata_dockerable) {
     return m.docker
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PackageVersion_metadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["container"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *PackageVersion_metadata) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetPackageType gets the package_type property value. The package_type property
+// returns a *PackageVersion_metadata_package_type when successful
 func (m *PackageVersion_metadata) GetPackageType()(*PackageVersion_metadata_package_type) {
     return m.package_type
 }
@@ -122,7 +127,6 @@ func (m *PackageVersion_metadata) SetDocker(value PackageVersion_metadata_docker
 func (m *PackageVersion_metadata) SetPackageType(value *PackageVersion_metadata_package_type)() {
     m.package_type = value
 }
-// PackageVersion_metadataable 
 type PackageVersion_metadataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

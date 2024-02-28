@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ReviewCustomGatesStateRequired 
 type ReviewCustomGatesStateRequired struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type ReviewCustomGatesStateRequired struct {
     // Whether to approve or reject deployment to the specified environments.
     state *ReviewCustomGatesStateRequired_state
 }
-// NewReviewCustomGatesStateRequired instantiates a new reviewCustomGatesStateRequired and sets the default values.
+// NewReviewCustomGatesStateRequired instantiates a new ReviewCustomGatesStateRequired and sets the default values.
 func NewReviewCustomGatesStateRequired()(*ReviewCustomGatesStateRequired) {
     m := &ReviewCustomGatesStateRequired{
     }
@@ -23,22 +22,27 @@ func NewReviewCustomGatesStateRequired()(*ReviewCustomGatesStateRequired) {
     return m
 }
 // CreateReviewCustomGatesStateRequiredFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReviewCustomGatesStateRequiredFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReviewCustomGatesStateRequired(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReviewCustomGatesStateRequired) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetComment gets the comment property value. Optional comment to include with the review.
+// returns a *string when successful
 func (m *ReviewCustomGatesStateRequired) GetComment()(*string) {
     return m.comment
 }
 // GetEnvironmentName gets the environment_name property value. The name of the environment to approve or reject.
+// returns a *string when successful
 func (m *ReviewCustomGatesStateRequired) GetEnvironmentName()(*string) {
     return m.environment_name
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReviewCustomGatesStateRequired) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *ReviewCustomGatesStateRequired) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetState gets the state property value. Whether to approve or reject deployment to the specified environments.
+// returns a *ReviewCustomGatesStateRequired_state when successful
 func (m *ReviewCustomGatesStateRequired) GetState()(*ReviewCustomGatesStateRequired_state) {
     return m.state
 }
@@ -122,7 +127,6 @@ func (m *ReviewCustomGatesStateRequired) SetEnvironmentName(value *string)() {
 func (m *ReviewCustomGatesStateRequired) SetState(value *ReviewCustomGatesStateRequired_state)() {
     m.state = value
 }
-// ReviewCustomGatesStateRequiredable 
 type ReviewCustomGatesStateRequiredable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

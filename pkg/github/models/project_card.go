@@ -36,7 +36,7 @@ type ProjectCard struct {
     // The url property
     url *string
 }
-// NewProjectCard instantiates a new projectCard and sets the default values.
+// NewProjectCard instantiates a new ProjectCard and sets the default values.
 func NewProjectCard()(*ProjectCard) {
     m := &ProjectCard{
     }
@@ -44,38 +44,47 @@ func NewProjectCard()(*ProjectCard) {
     return m
 }
 // CreateProjectCardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProjectCardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProjectCard(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ProjectCard) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchived gets the archived property value. Whether or not the card is archived
+// returns a *bool when successful
 func (m *ProjectCard) GetArchived()(*bool) {
     return m.archived
 }
 // GetColumnName gets the column_name property value. The column_name property
+// returns a *string when successful
 func (m *ProjectCard) GetColumnName()(*string) {
     return m.column_name
 }
 // GetColumnUrl gets the column_url property value. The column_url property
+// returns a *string when successful
 func (m *ProjectCard) GetColumnUrl()(*string) {
     return m.column_url
 }
 // GetContentUrl gets the content_url property value. The content_url property
+// returns a *string when successful
 func (m *ProjectCard) GetContentUrl()(*string) {
     return m.content_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *ProjectCard) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *ProjectCard) GetCreator()(NullableSimpleUserable) {
     return m.creator
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProjectCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -211,30 +220,37 @@ func (m *ProjectCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetId gets the id property value. The project card's ID
+// returns a *int32 when successful
 func (m *ProjectCard) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *ProjectCard) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNote gets the note property value. The note property
+// returns a *string when successful
 func (m *ProjectCard) GetNote()(*string) {
     return m.note
 }
 // GetProjectId gets the project_id property value. The project_id property
+// returns a *string when successful
 func (m *ProjectCard) GetProjectId()(*string) {
     return m.project_id
 }
 // GetProjectUrl gets the project_url property value. The project_url property
+// returns a *string when successful
 func (m *ProjectCard) GetProjectUrl()(*string) {
     return m.project_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *ProjectCard) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ProjectCard) GetUrl()(*string) {
     return m.url
 }
@@ -382,7 +398,6 @@ func (m *ProjectCard) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f30
 func (m *ProjectCard) SetUrl(value *string)() {
     m.url = value
 }
-// ProjectCardable 
 type ProjectCardable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

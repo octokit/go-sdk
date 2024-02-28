@@ -26,7 +26,7 @@ type Activity struct {
     // The time when the activity occurred.
     timestamp *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewActivity instantiates a new activity and sets the default values.
+// NewActivity instantiates a new Activity and sets the default values.
 func NewActivity()(*Activity) {
     m := &Activity{
     }
@@ -34,30 +34,37 @@ func NewActivity()(*Activity) {
     return m
 }
 // CreateActivityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivity(), nil
 }
 // GetActivityType gets the activity_type property value. The type of the activity that was performed.
+// returns a *Activity_activity_type when successful
 func (m *Activity) GetActivityType()(*Activity_activity_type) {
     return m.activity_type
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Activity) GetActor()(NullableSimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Activity) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAfter gets the after property value. The SHA of the commit after the activity.
+// returns a *string when successful
 func (m *Activity) GetAfter()(*string) {
     return m.after
 }
 // GetBefore gets the before property value. The SHA of the commit before the activity.
+// returns a *string when successful
 func (m *Activity) GetBefore()(*string) {
     return m.before
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Activity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["activity_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -143,18 +150,22 @@ func (m *Activity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Activity) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Activity) GetNodeId()(*string) {
     return m.node_id
 }
 // GetRef gets the ref property value. The full Git reference, formatted as `refs/heads/<branch name>`.
+// returns a *string when successful
 func (m *Activity) GetRef()(*string) {
     return m.ref
 }
 // GetTimestamp gets the timestamp property value. The time when the activity occurred.
+// returns a *Time when successful
 func (m *Activity) GetTimestamp()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.timestamp
 }
@@ -253,7 +264,6 @@ func (m *Activity) SetRef(value *string)() {
 func (m *Activity) SetTimestamp(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.timestamp = value
 }
-// Activityable 
 type Activityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,20 +10,23 @@ import (
 type ItemActionsRunnersGenerateJitconfigRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal instantiates a new GenerateJitconfigRequestBuilder and sets the default values.
+// NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal instantiates a new ItemActionsRunnersGenerateJitconfigRequestBuilder and sets the default values.
 func NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsRunnersGenerateJitconfigRequestBuilder) {
     m := &ItemActionsRunnersGenerateJitconfigRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/generate-jitconfig", pathParameters),
     }
     return m
 }
-// NewItemActionsRunnersGenerateJitconfigRequestBuilder instantiates a new GenerateJitconfigRequestBuilder and sets the default values.
+// NewItemActionsRunnersGenerateJitconfigRequestBuilder instantiates a new ItemActionsRunnersGenerateJitconfigRequestBuilder and sets the default values.
 func NewItemActionsRunnersGenerateJitconfigRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemActionsRunnersGenerateJitconfigRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemActionsRunnersGenerateJitconfigRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the organization.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a ItemActionsRunnersGenerateJitconfigPostResponseable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization
@@ -46,6 +49,7 @@ func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) Post(ctx context.Con
     return res.(ItemActionsRunnersGenerateJitconfigPostResponseable), nil
 }
 // ToPostRequestInformation generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the organization.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemActionsRunnersGenerateJitconfigPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -57,6 +61,7 @@ func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemActionsRunnersGenerateJitconfigRequestBuilder when successful
 func (m *ItemActionsRunnersGenerateJitconfigRequestBuilder) WithUrl(rawUrl string)(*ItemActionsRunnersGenerateJitconfigRequestBuilder) {
     return NewItemActionsRunnersGenerateJitconfigRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

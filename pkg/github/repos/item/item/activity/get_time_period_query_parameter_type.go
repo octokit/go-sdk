@@ -2,7 +2,6 @@ package activity
 import (
     "errors"
 )
-// 
 type GetTime_periodQueryParameterType int
 
 const (

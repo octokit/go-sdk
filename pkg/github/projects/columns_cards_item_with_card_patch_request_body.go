@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnsCardsItemWithCard_PatchRequestBody 
 type ColumnsCardsItemWithCard_PatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,18 +20,22 @@ func NewColumnsCardsItemWithCard_PatchRequestBody()(*ColumnsCardsItemWithCard_Pa
     return m
 }
 // CreateColumnsCardsItemWithCard_PatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateColumnsCardsItemWithCard_PatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewColumnsCardsItemWithCard_PatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ColumnsCardsItemWithCard_PatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchived gets the archived property value. Whether or not the card is archived
+// returns a *bool when successful
 func (m *ColumnsCardsItemWithCard_PatchRequestBody) GetArchived()(*bool) {
     return m.archived
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ColumnsCardsItemWithCard_PatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *ColumnsCardsItemWithCard_PatchRequestBody) GetFieldDeserializers()(map[
     return res
 }
 // GetNote gets the note property value. The project card's note
+// returns a *string when successful
 func (m *ColumnsCardsItemWithCard_PatchRequestBody) GetNote()(*string) {
     return m.note
 }
@@ -95,7 +99,6 @@ func (m *ColumnsCardsItemWithCard_PatchRequestBody) SetArchived(value *bool)() {
 func (m *ColumnsCardsItemWithCard_PatchRequestBody) SetNote(value *string)() {
     m.note = value
 }
-// ColumnsCardsItemWithCard_PatchRequestBodyable 
 type ColumnsCardsItemWithCard_PatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

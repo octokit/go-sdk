@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemInstallationsGetResponse 
 type ItemInstallationsGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,14 +21,17 @@ func NewItemInstallationsGetResponse()(*ItemInstallationsGetResponse) {
     return m
 }
 // CreateItemInstallationsGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemInstallationsGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemInstallationsGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemInstallationsGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemInstallationsGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["installations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -61,10 +63,12 @@ func (m *ItemInstallationsGetResponse) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetInstallations gets the installations property value. The installations property
+// returns a []Installationable when successful
 func (m *ItemInstallationsGetResponse) GetInstallations()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Installationable) {
     return m.installations
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *ItemInstallationsGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -108,7 +112,6 @@ func (m *ItemInstallationsGetResponse) SetInstallations(value []i59ea7d99994c6a4
 func (m *ItemInstallationsGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// ItemInstallationsGetResponseable 
 type ItemInstallationsGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

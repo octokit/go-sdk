@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CombinedBillingUsage 
 type CombinedBillingUsage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type CombinedBillingUsage struct {
     // Estimated sum of free and paid storage space (GB) used in billing cycle.
     estimated_storage_for_month *int32
 }
-// NewCombinedBillingUsage instantiates a new combinedBillingUsage and sets the default values.
+// NewCombinedBillingUsage instantiates a new CombinedBillingUsage and sets the default values.
 func NewCombinedBillingUsage()(*CombinedBillingUsage) {
     m := &CombinedBillingUsage{
     }
@@ -23,26 +22,32 @@ func NewCombinedBillingUsage()(*CombinedBillingUsage) {
     return m
 }
 // CreateCombinedBillingUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCombinedBillingUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCombinedBillingUsage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CombinedBillingUsage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDaysLeftInBillingCycle gets the days_left_in_billing_cycle property value. Numbers of days left in billing cycle.
+// returns a *int32 when successful
 func (m *CombinedBillingUsage) GetDaysLeftInBillingCycle()(*int32) {
     return m.days_left_in_billing_cycle
 }
 // GetEstimatedPaidStorageForMonth gets the estimated_paid_storage_for_month property value. Estimated storage space (GB) used in billing cycle.
+// returns a *int32 when successful
 func (m *CombinedBillingUsage) GetEstimatedPaidStorageForMonth()(*int32) {
     return m.estimated_paid_storage_for_month
 }
 // GetEstimatedStorageForMonth gets the estimated_storage_for_month property value. Estimated sum of free and paid storage space (GB) used in billing cycle.
+// returns a *int32 when successful
 func (m *CombinedBillingUsage) GetEstimatedStorageForMonth()(*int32) {
     return m.estimated_storage_for_month
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CombinedBillingUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["days_left_in_billing_cycle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -121,7 +126,6 @@ func (m *CombinedBillingUsage) SetEstimatedPaidStorageForMonth(value *int32)() {
 func (m *CombinedBillingUsage) SetEstimatedStorageForMonth(value *int32)() {
     m.estimated_storage_for_month = value
 }
-// CombinedBillingUsageable 
 type CombinedBillingUsageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

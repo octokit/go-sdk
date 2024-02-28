@@ -38,7 +38,7 @@ type HookDelivery struct {
     // The URL target of the delivery.
     url *string
 }
-// NewHookDelivery instantiates a new hookDelivery and sets the default values.
+// NewHookDelivery instantiates a new HookDelivery and sets the default values.
 func NewHookDelivery()(*HookDelivery) {
     m := &HookDelivery{
     }
@@ -46,30 +46,37 @@ func NewHookDelivery()(*HookDelivery) {
     return m
 }
 // CreateHookDeliveryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHookDeliveryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHookDelivery(), nil
 }
 // GetAction gets the action property value. The type of activity for the event that triggered the delivery.
+// returns a *string when successful
 func (m *HookDelivery) GetAction()(*string) {
     return m.action
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *HookDelivery) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDeliveredAt gets the delivered_at property value. Time when the delivery was delivered.
+// returns a *Time when successful
 func (m *HookDelivery) GetDeliveredAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.delivered_at
 }
 // GetDuration gets the duration property value. Time spent delivering.
+// returns a *float64 when successful
 func (m *HookDelivery) GetDuration()(*float64) {
     return m.duration
 }
 // GetEvent gets the event property value. The event that triggered the delivery.
+// returns a *string when successful
 func (m *HookDelivery) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HookDelivery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -215,42 +222,52 @@ func (m *HookDelivery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetGuid gets the guid property value. Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).
+// returns a *string when successful
 func (m *HookDelivery) GetGuid()(*string) {
     return m.guid
 }
 // GetId gets the id property value. Unique identifier of the delivery.
+// returns a *int32 when successful
 func (m *HookDelivery) GetId()(*int32) {
     return m.id
 }
 // GetInstallationId gets the installation_id property value. The id of the GitHub App installation associated with this event.
+// returns a *int32 when successful
 func (m *HookDelivery) GetInstallationId()(*int32) {
     return m.installation_id
 }
 // GetRedelivery gets the redelivery property value. Whether the delivery is a redelivery.
+// returns a *bool when successful
 func (m *HookDelivery) GetRedelivery()(*bool) {
     return m.redelivery
 }
 // GetRepositoryId gets the repository_id property value. The id of the repository associated with this event.
+// returns a *int32 when successful
 func (m *HookDelivery) GetRepositoryId()(*int32) {
     return m.repository_id
 }
 // GetRequest gets the request property value. The request property
+// returns a HookDelivery_requestable when successful
 func (m *HookDelivery) GetRequest()(HookDelivery_requestable) {
     return m.request
 }
 // GetResponse gets the response property value. The response property
+// returns a HookDelivery_responseable when successful
 func (m *HookDelivery) GetResponse()(HookDelivery_responseable) {
     return m.response
 }
 // GetStatus gets the status property value. Description of the status of the attempted delivery
+// returns a *string when successful
 func (m *HookDelivery) GetStatus()(*string) {
     return m.status
 }
 // GetStatusCode gets the status_code property value. Status code received when delivery was made.
+// returns a *int32 when successful
 func (m *HookDelivery) GetStatusCode()(*int32) {
     return m.status_code
 }
 // GetUrl gets the url property value. The URL target of the delivery.
+// returns a *string when successful
 func (m *HookDelivery) GetUrl()(*string) {
     return m.url
 }
@@ -408,7 +425,6 @@ func (m *HookDelivery) SetStatusCode(value *int32)() {
 func (m *HookDelivery) SetUrl(value *string)() {
     m.url = value
 }
-// HookDeliveryable 
 type HookDeliveryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

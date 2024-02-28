@@ -18,6 +18,7 @@ type ItemFollowingRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByTarget_user gets an item from the github.com/octokit/go-sdk/pkg/github/.users.item.following.item collection
+// returns a *ItemFollowingWithTarget_userItemRequestBuilder when successful
 func (m *ItemFollowingRequestBuilder) ByTarget_user(target_user string)(*ItemFollowingWithTarget_userItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,20 +29,21 @@ func (m *ItemFollowingRequestBuilder) ByTarget_user(target_user string)(*ItemFol
     }
     return NewItemFollowingWithTarget_userItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemFollowingRequestBuilderInternal instantiates a new FollowingRequestBuilder and sets the default values.
+// NewItemFollowingRequestBuilderInternal instantiates a new ItemFollowingRequestBuilder and sets the default values.
 func NewItemFollowingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowingRequestBuilder) {
     m := &ItemFollowingRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{username}/following{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemFollowingRequestBuilder instantiates a new FollowingRequestBuilder and sets the default values.
+// NewItemFollowingRequestBuilder instantiates a new ItemFollowingRequestBuilder and sets the default values.
 func NewItemFollowingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemFollowingRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemFollowingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the people who the specified user follows.
+// returns a []SimpleUserable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/followers#list-the-people-a-user-follows
@@ -63,6 +65,7 @@ func (m *ItemFollowingRequestBuilder) Get(ctx context.Context, requestConfigurat
     return val, nil
 }
 // ToGetRequestInformation lists the people who the specified user follows.
+// returns a *RequestInformation when successful
 func (m *ItemFollowingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemFollowingRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +73,7 @@ func (m *ItemFollowingRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemFollowingRequestBuilder when successful
 func (m *ItemFollowingRequestBuilder) WithUrl(rawUrl string)(*ItemFollowingRequestBuilder) {
     return NewItemFollowingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

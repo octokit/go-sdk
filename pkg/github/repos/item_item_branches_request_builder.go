@@ -20,6 +20,7 @@ type ItemItemBranchesRequestBuilderGetQueryParameters struct {
     Protected *bool `uriparametername:"protected"`
 }
 // ByBranch gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.branches.item collection
+// returns a *ItemItemBranchesWithBranchItemRequestBuilder when successful
 func (m *ItemItemBranchesRequestBuilder) ByBranch(branch string)(*ItemItemBranchesWithBranchItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -30,20 +31,22 @@ func (m *ItemItemBranchesRequestBuilder) ByBranch(branch string)(*ItemItemBranch
     }
     return NewItemItemBranchesWithBranchItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemBranchesRequestBuilderInternal instantiates a new BranchesRequestBuilder and sets the default values.
+// NewItemItemBranchesRequestBuilderInternal instantiates a new ItemItemBranchesRequestBuilder and sets the default values.
 func NewItemItemBranchesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesRequestBuilder) {
     m := &ItemItemBranchesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches{?page*,per_page*,protected*}", pathParameters),
     }
     return m
 }
-// NewItemItemBranchesRequestBuilder instantiates a new BranchesRequestBuilder and sets the default values.
+// NewItemItemBranchesRequestBuilder instantiates a new ItemItemBranchesRequestBuilder and sets the default values.
 func NewItemItemBranchesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemBranchesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list branches
+// returns a []ShortBranchable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branches#list-branches
@@ -67,6 +70,7 @@ func (m *ItemItemBranchesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return val, nil
 }
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemBranchesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -74,6 +78,7 @@ func (m *ItemItemBranchesRequestBuilder) ToGetRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemBranchesRequestBuilder when successful
 func (m *ItemItemBranchesRequestBuilder) WithUrl(rawUrl string)(*ItemItemBranchesRequestBuilder) {
     return NewItemItemBranchesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

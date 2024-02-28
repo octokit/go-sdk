@@ -18,6 +18,7 @@ type ItemItemAssigneesRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByAssignee gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.assignees.item collection
+// returns a *ItemItemAssigneesWithAssigneeItemRequestBuilder when successful
 func (m *ItemItemAssigneesRequestBuilder) ByAssignee(assignee string)(*ItemItemAssigneesWithAssigneeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,20 +29,22 @@ func (m *ItemItemAssigneesRequestBuilder) ByAssignee(assignee string)(*ItemItemA
     }
     return NewItemItemAssigneesWithAssigneeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemAssigneesRequestBuilderInternal instantiates a new AssigneesRequestBuilder and sets the default values.
+// NewItemItemAssigneesRequestBuilderInternal instantiates a new ItemItemAssigneesRequestBuilder and sets the default values.
 func NewItemItemAssigneesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemAssigneesRequestBuilder) {
     m := &ItemItemAssigneesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/assignees{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemAssigneesRequestBuilder instantiates a new AssigneesRequestBuilder and sets the default values.
+// NewItemItemAssigneesRequestBuilder instantiates a new ItemItemAssigneesRequestBuilder and sets the default values.
 func NewItemItemAssigneesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemAssigneesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemAssigneesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
+// returns a []SimpleUserable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/assignees#list-assignees
@@ -66,6 +69,7 @@ func (m *ItemItemAssigneesRequestBuilder) Get(ctx context.Context, requestConfig
     return val, nil
 }
 // ToGetRequestInformation lists the [available assignees](https://docs.github.com/articles/assigning-issues-and-pull-requests-to-other-github-users/) for issues in a repository.
+// returns a *RequestInformation when successful
 func (m *ItemItemAssigneesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemAssigneesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -73,6 +77,7 @@ func (m *ItemItemAssigneesRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemAssigneesRequestBuilder when successful
 func (m *ItemItemAssigneesRequestBuilder) WithUrl(rawUrl string)(*ItemItemAssigneesRequestBuilder) {
     return NewItemItemAssigneesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

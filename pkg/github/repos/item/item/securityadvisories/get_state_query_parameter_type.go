@@ -2,7 +2,6 @@ package securityadvisories
 import (
     "errors"
 )
-// 
 type GetStateQueryParameterType int
 
 const (

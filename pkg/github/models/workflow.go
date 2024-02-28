@@ -32,7 +32,7 @@ type Workflow struct {
     // The url property
     url *string
 }
-// NewWorkflow instantiates a new workflow and sets the default values.
+// NewWorkflow instantiates a new Workflow and sets the default values.
 func NewWorkflow()(*Workflow) {
     m := &Workflow{
     }
@@ -40,26 +40,32 @@ func NewWorkflow()(*Workflow) {
     return m
 }
 // CreateWorkflowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWorkflowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkflow(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Workflow) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBadgeUrl gets the badge_url property value. The badge_url property
+// returns a *string when successful
 func (m *Workflow) GetBadgeUrl()(*string) {
     return m.badge_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Workflow) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDeletedAt gets the deleted_at property value. The deleted_at property
+// returns a *Time when successful
 func (m *Workflow) GetDeletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deleted_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["badge_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -175,34 +181,42 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Workflow) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Workflow) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *Workflow) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Workflow) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *Workflow) GetPath()(*string) {
     return m.path
 }
 // GetState gets the state property value. The state property
+// returns a *Workflow_state when successful
 func (m *Workflow) GetState()(*Workflow_state) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Workflow) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Workflow) GetUrl()(*string) {
     return m.url
 }
@@ -331,7 +345,6 @@ func (m *Workflow) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a
 func (m *Workflow) SetUrl(value *string)() {
     m.url = value
 }
-// Workflowable 
 type Workflowable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

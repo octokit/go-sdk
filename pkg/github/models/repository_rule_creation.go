@@ -11,7 +11,7 @@ type RepositoryRuleCreation struct {
     // The type property
     typeEscaped *RepositoryRuleCreation_type
 }
-// NewRepositoryRuleCreation instantiates a new repositoryRuleCreation and sets the default values.
+// NewRepositoryRuleCreation instantiates a new RepositoryRuleCreation and sets the default values.
 func NewRepositoryRuleCreation()(*RepositoryRuleCreation) {
     m := &RepositoryRuleCreation{
     }
@@ -19,14 +19,17 @@ func NewRepositoryRuleCreation()(*RepositoryRuleCreation) {
     return m
 }
 // CreateRepositoryRuleCreationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleCreationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleCreation(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleCreation) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleCreation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *RepositoryRuleCreation) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleCreation_type when successful
 func (m *RepositoryRuleCreation) GetTypeEscaped()(*RepositoryRuleCreation_type) {
     return m.typeEscaped
 }
@@ -70,7 +74,6 @@ func (m *RepositoryRuleCreation) SetAdditionalData(value map[string]any)() {
 func (m *RepositoryRuleCreation) SetTypeEscaped(value *RepositoryRuleCreation_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleCreationable 
 type RepositoryRuleCreationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

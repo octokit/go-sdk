@@ -22,6 +22,7 @@ func NewWithRepository_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewWithRepository_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Environments the environments property
+// returns a *ItemEnvironmentsRequestBuilder when successful
 func (m *WithRepository_ItemRequestBuilder) Environments()(*ItemEnvironmentsRequestBuilder) {
     return NewItemEnvironmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

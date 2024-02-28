@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemGitTagsPostRequestBody 
 type ItemItemGitTagsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,14 +24,17 @@ func NewItemItemGitTagsPostRequestBody()(*ItemItemGitTagsPostRequestBody) {
     return m
 }
 // CreateItemItemGitTagsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemGitTagsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemGitTagsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemGitTagsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemGitTagsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +80,22 @@ func (m *ItemItemGitTagsPostRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetMessage gets the message property value. The tag message.
+// returns a *string when successful
 func (m *ItemItemGitTagsPostRequestBody) GetMessage()(*string) {
     return m.message
 }
 // GetObject gets the object property value. The SHA of the git object this is tagging.
+// returns a *string when successful
 func (m *ItemItemGitTagsPostRequestBody) GetObject()(*string) {
     return m.object
 }
 // GetTag gets the tag property value. The tag's name. This is typically a version (e.g., "v0.0.1").
+// returns a *string when successful
 func (m *ItemItemGitTagsPostRequestBody) GetTag()(*string) {
     return m.tag
 }
 // GetTagger gets the tagger property value. An object with information about the individual creating the tag.
+// returns a ItemItemGitTagsPostRequestBody_taggerable when successful
 func (m *ItemItemGitTagsPostRequestBody) GetTagger()(ItemItemGitTagsPostRequestBody_taggerable) {
     return m.tagger
 }
@@ -147,7 +153,6 @@ func (m *ItemItemGitTagsPostRequestBody) SetTag(value *string)() {
 func (m *ItemItemGitTagsPostRequestBody) SetTagger(value ItemItemGitTagsPostRequestBody_taggerable)() {
     m.tagger = value
 }
-// ItemItemGitTagsPostRequestBodyable 
 type ItemItemGitTagsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

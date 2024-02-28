@@ -17,20 +17,23 @@ type ItemItemEventsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// NewItemItemEventsRequestBuilderInternal instantiates a new EventsRequestBuilder and sets the default values.
+// NewItemItemEventsRequestBuilderInternal instantiates a new ItemItemEventsRequestBuilder and sets the default values.
 func NewItemItemEventsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEventsRequestBuilder) {
     m := &ItemItemEventsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemEventsRequestBuilder instantiates a new EventsRequestBuilder and sets the default values.
+// NewItemItemEventsRequestBuilder instantiates a new ItemItemEventsRequestBuilder and sets the default values.
 func NewItemItemEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEventsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list public events for a network of repositories
+// returns a []Eventable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/activity/events#list-public-events-for-a-network-of-repositories
@@ -55,6 +58,7 @@ func (m *ItemItemEventsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return val, nil
 }
+// returns a *RequestInformation when successful
 func (m *ItemItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemEventsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -62,6 +66,7 @@ func (m *ItemItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemEventsRequestBuilder when successful
 func (m *ItemItemEventsRequestBuilder) WithUrl(rawUrl string)(*ItemItemEventsRequestBuilder) {
     return NewItemItemEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

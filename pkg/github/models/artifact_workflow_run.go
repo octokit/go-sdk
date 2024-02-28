@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Artifact_workflow_run 
 type Artifact_workflow_run struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type Artifact_workflow_run struct {
     // The repository_id property
     repository_id *int32
 }
-// NewArtifact_workflow_run instantiates a new artifact_workflow_run and sets the default values.
+// NewArtifact_workflow_run instantiates a new Artifact_workflow_run and sets the default values.
 func NewArtifact_workflow_run()(*Artifact_workflow_run) {
     m := &Artifact_workflow_run{
     }
@@ -27,14 +26,17 @@ func NewArtifact_workflow_run()(*Artifact_workflow_run) {
     return m
 }
 // CreateArtifact_workflow_runFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateArtifact_workflow_runFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewArtifact_workflow_run(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Artifact_workflow_run) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Artifact_workflow_run) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["head_branch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,22 +92,27 @@ func (m *Artifact_workflow_run) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHeadBranch gets the head_branch property value. The head_branch property
+// returns a *string when successful
 func (m *Artifact_workflow_run) GetHeadBranch()(*string) {
     return m.head_branch
 }
 // GetHeadRepositoryId gets the head_repository_id property value. The head_repository_id property
+// returns a *int32 when successful
 func (m *Artifact_workflow_run) GetHeadRepositoryId()(*int32) {
     return m.head_repository_id
 }
 // GetHeadSha gets the head_sha property value. The head_sha property
+// returns a *string when successful
 func (m *Artifact_workflow_run) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Artifact_workflow_run) GetId()(*int32) {
     return m.id
 }
 // GetRepositoryId gets the repository_id property value. The repository_id property
+// returns a *int32 when successful
 func (m *Artifact_workflow_run) GetRepositoryId()(*int32) {
     return m.repository_id
 }
@@ -173,7 +180,6 @@ func (m *Artifact_workflow_run) SetId(value *int32)() {
 func (m *Artifact_workflow_run) SetRepositoryId(value *int32)() {
     m.repository_id = value
 }
-// Artifact_workflow_runable 
 type Artifact_workflow_runable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

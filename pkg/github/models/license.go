@@ -35,7 +35,7 @@ type License struct {
     // The url property
     url *string
 }
-// NewLicense instantiates a new license and sets the default values.
+// NewLicense instantiates a new License and sets the default values.
 func NewLicense()(*License) {
     m := &License{
     }
@@ -43,30 +43,37 @@ func NewLicense()(*License) {
     return m
 }
 // CreateLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLicense(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *License) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *License) GetBody()(*string) {
     return m.body
 }
 // GetConditions gets the conditions property value. The conditions property
+// returns a []string when successful
 func (m *License) GetConditions()([]string) {
     return m.conditions
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *License) GetDescription()(*string) {
     return m.description
 }
 // GetFeatured gets the featured property value. The featured property
+// returns a *bool when successful
 func (m *License) GetFeatured()(*bool) {
     return m.featured
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *License) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -220,38 +227,47 @@ func (m *License) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *License) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetImplementation gets the implementation property value. The implementation property
+// returns a *string when successful
 func (m *License) GetImplementation()(*string) {
     return m.implementation
 }
 // GetKey gets the key property value. The key property
+// returns a *string when successful
 func (m *License) GetKey()(*string) {
     return m.key
 }
 // GetLimitations gets the limitations property value. The limitations property
+// returns a []string when successful
 func (m *License) GetLimitations()([]string) {
     return m.limitations
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *License) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *License) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a []string when successful
 func (m *License) GetPermissions()([]string) {
     return m.permissions
 }
 // GetSpdxId gets the spdx_id property value. The spdx_id property
+// returns a *string when successful
 func (m *License) GetSpdxId()(*string) {
     return m.spdx_id
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *License) GetUrl()(*string) {
     return m.url
 }
@@ -399,7 +415,6 @@ func (m *License) SetSpdxId(value *string)() {
 func (m *License) SetUrl(value *string)() {
     m.url = value
 }
-// Licenseable 
 type Licenseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

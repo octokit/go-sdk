@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryAdvisory_identifiers 
 type RepositoryAdvisory_identifiers struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type RepositoryAdvisory_identifiers struct {
     // The identifier value.
     value *string
 }
-// NewRepositoryAdvisory_identifiers instantiates a new repositoryAdvisory_identifiers and sets the default values.
+// NewRepositoryAdvisory_identifiers instantiates a new RepositoryAdvisory_identifiers and sets the default values.
 func NewRepositoryAdvisory_identifiers()(*RepositoryAdvisory_identifiers) {
     m := &RepositoryAdvisory_identifiers{
     }
@@ -21,14 +20,17 @@ func NewRepositoryAdvisory_identifiers()(*RepositoryAdvisory_identifiers) {
     return m
 }
 // CreateRepositoryAdvisory_identifiersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisory_identifiersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisory_identifiers(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryAdvisory_identifiers) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisory_identifiers) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *RepositoryAdvisory_identifiers) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetTypeEscaped gets the type property value. The type of identifier.
+// returns a *RepositoryAdvisory_identifiers_type when successful
 func (m *RepositoryAdvisory_identifiers) GetTypeEscaped()(*RepositoryAdvisory_identifiers_type) {
     return m.typeEscaped
 }
 // GetValue gets the value property value. The identifier value.
+// returns a *string when successful
 func (m *RepositoryAdvisory_identifiers) GetValue()(*string) {
     return m.value
 }
@@ -96,7 +100,6 @@ func (m *RepositoryAdvisory_identifiers) SetTypeEscaped(value *RepositoryAdvisor
 func (m *RepositoryAdvisory_identifiers) SetValue(value *string)() {
     m.value = value
 }
-// RepositoryAdvisory_identifiersable 
 type RepositoryAdvisory_identifiersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

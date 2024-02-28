@@ -11,24 +11,25 @@ import (
 type ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppsDeleteRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1, string
+// AppsDeleteRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able, string
 type AppsDeleteRequestBody struct {
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
     appsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
     // Composed type representation for type string
     appsDeleteRequestBodyString *string
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
     // Composed type representation for type string
     string *string
 }
-// NewAppsDeleteRequestBody instantiates a new appsDeleteRequestBody and sets the default values.
+// NewAppsDeleteRequestBody instantiates a new AppsDeleteRequestBody and sets the default values.
 func NewAppsDeleteRequestBody()(*AppsDeleteRequestBody) {
     m := &AppsDeleteRequestBody{
     }
     return m
 }
 // CreateAppsDeleteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppsDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewAppsDeleteRequestBody()
     if parseNode != nil {
@@ -58,27 +59,33 @@ func CreateAppsDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
     }
     return result, nil
 }
-// GetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+// GetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able when successful
 func (m *AppsDeleteRequestBody) GetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able) {
     return m.appsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
 }
 // GetAppsDeleteRequestBodyString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsDeleteRequestBody) GetAppsDeleteRequestBodyString()(*string) {
     return m.appsDeleteRequestBodyString
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppsDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *AppsDeleteRequestBody) GetIsComposedType()(bool) {
     return true
 }
-// GetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+// GetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able when successful
 func (m *AppsDeleteRequestBody) GetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsDeleteRequestBody) GetString()(*string) {
     return m.string
 }
@@ -107,7 +114,7 @@ func (m *AppsDeleteRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+// SetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
 func (m *AppsDeleteRequestBody) SetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able)() {
     m.appsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 = value
 }
@@ -115,7 +122,7 @@ func (m *AppsDeleteRequestBody) SetAppsDeleteRequestBodyItemItemBranchesItemProt
 func (m *AppsDeleteRequestBody) SetAppsDeleteRequestBodyString(value *string)() {
     m.appsDeleteRequestBodyString = value
 }
-// SetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1
+// SetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able
 func (m *AppsDeleteRequestBody) SetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1 = value
 }
@@ -123,24 +130,25 @@ func (m *AppsDeleteRequestBody) SetItemItemBranchesItemProtectionRestrictionsApp
 func (m *AppsDeleteRequestBody) SetString(value *string)() {
     m.string = value
 }
-// AppsPostRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1, string
+// AppsPostRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able, string
 type AppsPostRequestBody struct {
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
     appsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
     // Composed type representation for type string
     appsPostRequestBodyString *string
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
     // Composed type representation for type string
     string *string
 }
-// NewAppsPostRequestBody instantiates a new appsPostRequestBody and sets the default values.
+// NewAppsPostRequestBody instantiates a new AppsPostRequestBody and sets the default values.
 func NewAppsPostRequestBody()(*AppsPostRequestBody) {
     m := &AppsPostRequestBody{
     }
     return m
 }
 // CreateAppsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewAppsPostRequestBody()
     if parseNode != nil {
@@ -170,27 +178,33 @@ func CreateAppsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d2
     }
     return result, nil
 }
-// GetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+// GetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able when successful
 func (m *AppsPostRequestBody) GetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able) {
     return m.appsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
 }
 // GetAppsPostRequestBodyString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsPostRequestBody) GetAppsPostRequestBodyString()(*string) {
     return m.appsPostRequestBodyString
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *AppsPostRequestBody) GetIsComposedType()(bool) {
     return true
 }
-// GetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+// GetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able when successful
 func (m *AppsPostRequestBody) GetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsPostRequestBody) GetString()(*string) {
     return m.string
 }
@@ -219,7 +233,7 @@ func (m *AppsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+// SetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
 func (m *AppsPostRequestBody) SetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able)() {
     m.appsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 = value
 }
@@ -227,7 +241,7 @@ func (m *AppsPostRequestBody) SetAppsPostRequestBodyItemItemBranchesItemProtecti
 func (m *AppsPostRequestBody) SetAppsPostRequestBodyString(value *string)() {
     m.appsPostRequestBodyString = value
 }
-// SetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1
+// SetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able
 func (m *AppsPostRequestBody) SetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1 = value
 }
@@ -235,24 +249,25 @@ func (m *AppsPostRequestBody) SetItemItemBranchesItemProtectionRestrictionsAppsP
 func (m *AppsPostRequestBody) SetString(value *string)() {
     m.string = value
 }
-// AppsPutRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1, string
+// AppsPutRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able, string
 type AppsPutRequestBody struct {
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
     appsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
     // Composed type representation for type string
     appsPutRequestBodyString *string
-    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+    // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
     // Composed type representation for type string
     string *string
 }
-// NewAppsPutRequestBody instantiates a new appsPutRequestBody and sets the default values.
+// NewAppsPutRequestBody instantiates a new AppsPutRequestBody and sets the default values.
 func NewAppsPutRequestBody()(*AppsPutRequestBody) {
     m := &AppsPutRequestBody{
     }
     return m
 }
 // CreateAppsPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewAppsPutRequestBody()
     if parseNode != nil {
@@ -282,27 +297,33 @@ func CreateAppsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return result, nil
 }
-// GetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+// GetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able when successful
 func (m *AppsPutRequestBody) GetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able) {
     return m.appsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
 }
 // GetAppsPutRequestBodyString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsPutRequestBody) GetAppsPutRequestBodyString()(*string) {
     return m.appsPutRequestBodyString
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppsPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *AppsPutRequestBody) GetIsComposedType()(bool) {
     return true
 }
-// GetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+// GetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
+// returns a ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able when successful
 func (m *AppsPutRequestBody) GetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *AppsPutRequestBody) GetString()(*string) {
     return m.string
 }
@@ -331,7 +352,7 @@ func (m *AppsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+// SetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
 func (m *AppsPutRequestBody) SetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able)() {
     m.appsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 = value
 }
@@ -339,7 +360,7 @@ func (m *AppsPutRequestBody) SetAppsPutRequestBodyItemItemBranchesItemProtection
 func (m *AppsPutRequestBody) SetAppsPutRequestBodyString(value *string)() {
     m.appsPutRequestBodyString = value
 }
-// SetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1
+// SetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able
 func (m *AppsPutRequestBody) SetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 = value
 }
@@ -347,7 +368,6 @@ func (m *AppsPutRequestBody) SetItemItemBranchesItemProtectionRestrictionsAppsPu
 func (m *AppsPutRequestBody) SetString(value *string)() {
     m.string = value
 }
-// AppsDeleteRequestBodyable 
 type AppsDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able)
@@ -359,7 +379,6 @@ type AppsDeleteRequestBodyable interface {
     SetItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsDeleteRequestBodyMember1able)()
     SetString(value *string)()
 }
-// AppsPostRequestBodyable 
 type AppsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppsPostRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able)
@@ -371,7 +390,6 @@ type AppsPostRequestBodyable interface {
     SetItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPostRequestBodyMember1able)()
     SetString(value *string)()
 }
-// AppsPutRequestBodyable 
 type AppsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppsPutRequestBodyItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able)
@@ -383,20 +401,22 @@ type AppsPutRequestBodyable interface {
     SetItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able)()
     SetString(value *string)()
 }
-// NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilderInternal instantiates a new AppsRequestBuilder and sets the default values.
+// NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilderInternal instantiates a new ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder and sets the default values.
 func NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) {
     m := &ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/restrictions/apps", pathParameters),
     }
     return m
 }
-// NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder instantiates a new AppsRequestBuilder and sets the default values.
+// NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder instantiates a new ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder and sets the default values.
 func NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a []Integrationable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#remove-app-access-restrictions
@@ -421,6 +441,8 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) Delete(ct
     return val, nil
 }
 // Get protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a []Integrationable when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch
@@ -445,6 +467,8 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) Get(ctx c
     return val, nil
 }
 // Post protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a []Integrationable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#add-app-access-restrictions
@@ -469,6 +493,8 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) Post(ctx 
     return val, nil
 }
 // Put protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a []Integrationable when successful
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/branches/branch-protection#set-app-access-restrictions
@@ -493,6 +519,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) Put(ctx c
     return val, nil
 }
 // ToDeleteRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, body AppsDeleteRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -504,6 +531,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToDeleteR
     return requestInfo, nil
 }
 // ToGetRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -511,6 +539,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPostRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AppsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -522,6 +551,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // ToPutRequestInformation protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
+// returns a *RequestInformation when successful
 func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToPutRequestInformation(ctx context.Context, body AppsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -533,6 +563,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) ToPutRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder when successful
 func (m *ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) WithUrl(rawUrl string)(*ItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder) {
     return NewItemItemBranchesItemProtectionRestrictionsAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

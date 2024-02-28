@@ -4,23 +4,23 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// WebhookConfigInsecureSsl composed type wrapper for classes double, string
+// WebhookConfigInsecureSsl composed type wrapper for classes float64, string
 type WebhookConfigInsecureSsl struct {
-    // Composed type representation for type double
+    // Composed type representation for type float64
     double *float64
     // Composed type representation for type string
     string *string
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble *float64
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble0 *float64
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble1 *float64
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble2 *float64
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble3 *float64
-    // Composed type representation for type double
+    // Composed type representation for type float64
     webhookConfigInsecureSslDouble4 *float64
     // Composed type representation for type string
     webhookConfigInsecureSslString *string
@@ -35,13 +35,14 @@ type WebhookConfigInsecureSsl struct {
     // Composed type representation for type string
     webhookConfigInsecureSslString4 *string
 }
-// NewWebhookConfigInsecureSsl instantiates a new webhookConfigInsecureSsl and sets the default values.
+// NewWebhookConfigInsecureSsl instantiates a new WebhookConfigInsecureSsl and sets the default values.
 func NewWebhookConfigInsecureSsl()(*WebhookConfigInsecureSsl) {
     m := &WebhookConfigInsecureSsl{
     }
     return m
 }
 // CreateWebhookConfigInsecureSslFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateWebhookConfigInsecureSslFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewWebhookConfigInsecureSsl()
     if parseNode != nil {
@@ -131,67 +132,83 @@ func CreateWebhookConfigInsecureSslFromDiscriminatorValue(parseNode i878a80d2330
     }
     return result, nil
 }
-// GetDouble gets the double property value. Composed type representation for type double
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetDouble()(*float64) {
     return m.double
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WebhookConfigInsecureSsl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *WebhookConfigInsecureSsl) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetString()(*string) {
     return m.string
 }
-// GetWebhookConfigInsecureSslDouble gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble()(*float64) {
     return m.webhookConfigInsecureSslDouble
 }
-// GetWebhookConfigInsecureSslDouble0 gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble0 gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble0()(*float64) {
     return m.webhookConfigInsecureSslDouble0
 }
-// GetWebhookConfigInsecureSslDouble1 gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble1 gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble1()(*float64) {
     return m.webhookConfigInsecureSslDouble1
 }
-// GetWebhookConfigInsecureSslDouble2 gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble2 gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble2()(*float64) {
     return m.webhookConfigInsecureSslDouble2
 }
-// GetWebhookConfigInsecureSslDouble3 gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble3 gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble3()(*float64) {
     return m.webhookConfigInsecureSslDouble3
 }
-// GetWebhookConfigInsecureSslDouble4 gets the double property value. Composed type representation for type double
+// GetWebhookConfigInsecureSslDouble4 gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslDouble4()(*float64) {
     return m.webhookConfigInsecureSslDouble4
 }
 // GetWebhookConfigInsecureSslString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString()(*string) {
     return m.webhookConfigInsecureSslString
 }
 // GetWebhookConfigInsecureSslString0 gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString0()(*string) {
     return m.webhookConfigInsecureSslString0
 }
 // GetWebhookConfigInsecureSslString1 gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString1()(*string) {
     return m.webhookConfigInsecureSslString1
 }
 // GetWebhookConfigInsecureSslString2 gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString2()(*string) {
     return m.webhookConfigInsecureSslString2
 }
 // GetWebhookConfigInsecureSslString3 gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString3()(*string) {
     return m.webhookConfigInsecureSslString3
 }
 // GetWebhookConfigInsecureSslString4 gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *WebhookConfigInsecureSsl) GetWebhookConfigInsecureSslString4()(*string) {
     return m.webhookConfigInsecureSslString4
 }
@@ -270,7 +287,7 @@ func (m *WebhookConfigInsecureSsl) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetDouble sets the double property value. Composed type representation for type double
+// SetDouble sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetDouble(value *float64)() {
     m.double = value
 }
@@ -278,27 +295,27 @@ func (m *WebhookConfigInsecureSsl) SetDouble(value *float64)() {
 func (m *WebhookConfigInsecureSsl) SetString(value *string)() {
     m.string = value
 }
-// SetWebhookConfigInsecureSslDouble sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble(value *float64)() {
     m.webhookConfigInsecureSslDouble = value
 }
-// SetWebhookConfigInsecureSslDouble0 sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble0 sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble0(value *float64)() {
     m.webhookConfigInsecureSslDouble0 = value
 }
-// SetWebhookConfigInsecureSslDouble1 sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble1 sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble1(value *float64)() {
     m.webhookConfigInsecureSslDouble1 = value
 }
-// SetWebhookConfigInsecureSslDouble2 sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble2 sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble2(value *float64)() {
     m.webhookConfigInsecureSslDouble2 = value
 }
-// SetWebhookConfigInsecureSslDouble3 sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble3 sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble3(value *float64)() {
     m.webhookConfigInsecureSslDouble3 = value
 }
-// SetWebhookConfigInsecureSslDouble4 sets the double property value. Composed type representation for type double
+// SetWebhookConfigInsecureSslDouble4 sets the double property value. Composed type representation for type float64
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslDouble4(value *float64)() {
     m.webhookConfigInsecureSslDouble4 = value
 }
@@ -326,7 +343,6 @@ func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString3(value *str
 func (m *WebhookConfigInsecureSsl) SetWebhookConfigInsecureSslString4(value *string)() {
     m.webhookConfigInsecureSslString4 = value
 }
-// WebhookConfigInsecureSslable 
 type WebhookConfigInsecureSslable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDouble()(*float64)

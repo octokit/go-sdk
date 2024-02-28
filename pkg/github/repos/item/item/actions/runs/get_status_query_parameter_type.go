@@ -2,7 +2,6 @@ package runs
 import (
     "errors"
 )
-// 
 type GetStatusQueryParameterType int
 
 const (

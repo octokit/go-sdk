@@ -9,6 +9,7 @@ type ItemItemTarballRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByRef gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.tarball.item collection
+// returns a *ItemItemTarballWithRefItemRequestBuilder when successful
 func (m *ItemItemTarballRequestBuilder) ByRef(ref string)(*ItemItemTarballWithRefItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,14 +20,14 @@ func (m *ItemItemTarballRequestBuilder) ByRef(ref string)(*ItemItemTarballWithRe
     }
     return NewItemItemTarballWithRefItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemTarballRequestBuilderInternal instantiates a new TarballRequestBuilder and sets the default values.
+// NewItemItemTarballRequestBuilderInternal instantiates a new ItemItemTarballRequestBuilder and sets the default values.
 func NewItemItemTarballRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTarballRequestBuilder) {
     m := &ItemItemTarballRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/tarball", pathParameters),
     }
     return m
 }
-// NewItemItemTarballRequestBuilder instantiates a new TarballRequestBuilder and sets the default values.
+// NewItemItemTarballRequestBuilder instantiates a new ItemItemTarballRequestBuilder and sets the default values.
 func NewItemItemTarballRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTarballRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BranchRestrictionPolicy_users 
 type BranchRestrictionPolicy_users struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -45,7 +44,7 @@ type BranchRestrictionPolicy_users struct {
     // The url property
     url *string
 }
-// NewBranchRestrictionPolicy_users instantiates a new branchRestrictionPolicy_users and sets the default values.
+// NewBranchRestrictionPolicy_users instantiates a new BranchRestrictionPolicy_users and sets the default values.
 func NewBranchRestrictionPolicy_users()(*BranchRestrictionPolicy_users) {
     m := &BranchRestrictionPolicy_users{
     }
@@ -53,22 +52,27 @@ func NewBranchRestrictionPolicy_users()(*BranchRestrictionPolicy_users) {
     return m
 }
 // CreateBranchRestrictionPolicy_usersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchRestrictionPolicy_usersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchRestrictionPolicy_users(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchRestrictionPolicy_users) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetAvatarUrl()(*string) {
     return m.avatar_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchRestrictionPolicy_users) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -254,66 +258,82 @@ func (m *BranchRestrictionPolicy_users) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetFollowersUrl()(*string) {
     return m.followers_url
 }
 // GetFollowingUrl gets the following_url property value. The following_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetFollowingUrl()(*string) {
     return m.following_url
 }
 // GetGistsUrl gets the gists_url property value. The gists_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetGravatarId gets the gravatar_id property value. The gravatar_id property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetGravatarId()(*string) {
     return m.gravatar_id
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *BranchRestrictionPolicy_users) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetLogin()(*string) {
     return m.login
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetOrganizationsUrl()(*string) {
     return m.organizations_url
 }
 // GetReceivedEventsUrl gets the received_events_url property value. The received_events_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetReceivedEventsUrl()(*string) {
     return m.received_events_url
 }
 // GetReposUrl gets the repos_url property value. The repos_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetReposUrl()(*string) {
     return m.repos_url
 }
 // GetSiteAdmin gets the site_admin property value. The site_admin property
+// returns a *bool when successful
 func (m *BranchRestrictionPolicy_users) GetSiteAdmin()(*bool) {
     return m.site_admin
 }
 // GetStarredUrl gets the starred_url property value. The starred_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetStarredUrl()(*string) {
     return m.starred_url
 }
 // GetSubscriptionsUrl gets the subscriptions_url property value. The subscriptions_url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *BranchRestrictionPolicy_users) GetUrl()(*string) {
     return m.url
 }
@@ -511,7 +531,6 @@ func (m *BranchRestrictionPolicy_users) SetTypeEscaped(value *string)() {
 func (m *BranchRestrictionPolicy_users) SetUrl(value *string)() {
     m.url = value
 }
-// BranchRestrictionPolicy_usersable 
 type BranchRestrictionPolicy_usersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

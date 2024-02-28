@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// CodeGetResponse 
 type CodeGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,14 +23,17 @@ func NewCodeGetResponse()(*CodeGetResponse) {
     return m
 }
 // CreateCodeGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["incomplete_results"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -73,14 +75,17 @@ func (m *CodeGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetIncompleteResults gets the incomplete_results property value. The incomplete_results property
+// returns a *bool when successful
 func (m *CodeGetResponse) GetIncompleteResults()(*bool) {
     return m.incomplete_results
 }
 // GetItems gets the items property value. The items property
+// returns a []CodeSearchResultItemable when successful
 func (m *CodeGetResponse) GetItems()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeSearchResultItemable) {
     return m.items
 }
 // GetTotalCount gets the total_count property value. The total_count property
+// returns a *int32 when successful
 func (m *CodeGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -134,7 +139,6 @@ func (m *CodeGetResponse) SetItems(value []i59ea7d99994c6a4bb9ef742ed717844297d0
 func (m *CodeGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// CodeGetResponseable 
 type CodeGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

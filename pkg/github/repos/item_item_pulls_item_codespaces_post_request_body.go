@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemCodespacesPostRequestBody 
 type ItemItemPullsItemCodespacesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -35,26 +34,32 @@ func NewItemItemPullsItemCodespacesPostRequestBody()(*ItemItemPullsItemCodespace
     return m
 }
 // CreateItemItemPullsItemCodespacesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemCodespacesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemCodespacesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClientIp gets the client_ip property value. IP for location auto-detection when proxying a request
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetClientIp()(*string) {
     return m.client_ip
 }
 // GetDevcontainerPath gets the devcontainer_path property value. Path to devcontainer.json config to use for this codespace
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetDevcontainerPath()(*string) {
     return m.devcontainer_path
 }
 // GetDisplayName gets the display_name property value. Display name for this codespace
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetDisplayName()(*string) {
     return m.display_name
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["client_ip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -150,26 +155,32 @@ func (m *ItemItemPullsItemCodespacesPostRequestBody) GetFieldDeserializers()(map
     return res
 }
 // GetIdleTimeoutMinutes gets the idle_timeout_minutes property value. Time in minutes before codespace stops from inactivity
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetIdleTimeoutMinutes()(*int32) {
     return m.idle_timeout_minutes
 }
 // GetLocation gets the location property value. The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetLocation()(*string) {
     return m.location
 }
 // GetMachine gets the machine property value. Machine type to use for this codespace
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetMachine()(*string) {
     return m.machine
 }
 // GetMultiRepoPermissionsOptOut gets the multi_repo_permissions_opt_out property value. Whether to authorize requested permissions from devcontainer.json
+// returns a *bool when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetMultiRepoPermissionsOptOut()(*bool) {
     return m.multi_repo_permissions_opt_out
 }
 // GetRetentionPeriodMinutes gets the retention_period_minutes property value. Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+// returns a *int32 when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetRetentionPeriodMinutes()(*int32) {
     return m.retention_period_minutes
 }
 // GetWorkingDirectory gets the working_directory property value. Working directory for this codespace
+// returns a *string when successful
 func (m *ItemItemPullsItemCodespacesPostRequestBody) GetWorkingDirectory()(*string) {
     return m.working_directory
 }
@@ -277,7 +288,6 @@ func (m *ItemItemPullsItemCodespacesPostRequestBody) SetRetentionPeriodMinutes(v
 func (m *ItemItemPullsItemCodespacesPostRequestBody) SetWorkingDirectory(value *string)() {
     m.working_directory = value
 }
-// ItemItemPullsItemCodespacesPostRequestBodyable 
 type ItemItemPullsItemCodespacesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

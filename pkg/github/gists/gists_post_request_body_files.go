@@ -9,7 +9,7 @@ type GistsPostRequestBody_files struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
 }
-// NewGistsPostRequestBody_files instantiates a new gistsPostRequestBody_files and sets the default values.
+// NewGistsPostRequestBody_files instantiates a new GistsPostRequestBody_files and sets the default values.
 func NewGistsPostRequestBody_files()(*GistsPostRequestBody_files) {
     m := &GistsPostRequestBody_files{
     }
@@ -17,14 +17,17 @@ func NewGistsPostRequestBody_files()(*GistsPostRequestBody_files) {
     return m
 }
 // CreateGistsPostRequestBody_filesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGistsPostRequestBody_filesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGistsPostRequestBody_files(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GistsPostRequestBody_files) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GistsPostRequestBody_files) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     return res
@@ -43,7 +46,6 @@ func (m *GistsPostRequestBody_files) Serialize(writer i878a80d2330e89d26896388a3
 func (m *GistsPostRequestBody_files) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// GistsPostRequestBody_filesable 
 type GistsPostRequestBody_filesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

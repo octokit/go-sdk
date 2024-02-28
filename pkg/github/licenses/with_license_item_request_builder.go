@@ -24,6 +24,9 @@ func NewWithLicenseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     return NewWithLicenseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
+// returns a Licenseable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/licenses/licenses#get-a-license
@@ -46,6 +49,7 @@ func (m *WithLicenseItemRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Licenseable), nil
 }
 // ToGetRequestInformation gets information about a specific license. For more information, see "[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)."
+// returns a *RequestInformation when successful
 func (m *WithLicenseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -53,6 +57,7 @@ func (m *WithLicenseItemRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WithLicenseItemRequestBuilder when successful
 func (m *WithLicenseItemRequestBuilder) WithUrl(rawUrl string)(*WithLicenseItemRequestBuilder) {
     return NewWithLicenseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemActionsRunsItemRerunPostRequestBody 
 type ItemItemActionsRunsItemRerunPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,18 +18,22 @@ func NewItemItemActionsRunsItemRerunPostRequestBody()(*ItemItemActionsRunsItemRe
     return m
 }
 // CreateItemItemActionsRunsItemRerunPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemActionsRunsItemRerunPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemActionsRunsItemRerunPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemActionsRunsItemRerunPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnableDebugLogging gets the enable_debug_logging property value. Whether to enable debug logging for the re-run.
+// returns a *bool when successful
 func (m *ItemItemActionsRunsItemRerunPostRequestBody) GetEnableDebugLogging()(*bool) {
     return m.enable_debug_logging
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemActionsRunsItemRerunPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enable_debug_logging"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +72,6 @@ func (m *ItemItemActionsRunsItemRerunPostRequestBody) SetAdditionalData(value ma
 func (m *ItemItemActionsRunsItemRerunPostRequestBody) SetEnableDebugLogging(value *bool)() {
     m.enable_debug_logging = value
 }
-// ItemItemActionsRunsItemRerunPostRequestBodyable 
 type ItemItemActionsRunsItemRerunPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

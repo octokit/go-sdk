@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ConvertedNoteToIssueIssueEvent_project_card 
 type ConvertedNoteToIssueIssueEvent_project_card struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,7 +20,7 @@ type ConvertedNoteToIssueIssueEvent_project_card struct {
     // The url property
     url *string
 }
-// NewConvertedNoteToIssueIssueEvent_project_card instantiates a new convertedNoteToIssueIssueEvent_project_card and sets the default values.
+// NewConvertedNoteToIssueIssueEvent_project_card instantiates a new ConvertedNoteToIssueIssueEvent_project_card and sets the default values.
 func NewConvertedNoteToIssueIssueEvent_project_card()(*ConvertedNoteToIssueIssueEvent_project_card) {
     m := &ConvertedNoteToIssueIssueEvent_project_card{
     }
@@ -29,18 +28,22 @@ func NewConvertedNoteToIssueIssueEvent_project_card()(*ConvertedNoteToIssueIssue
     return m
 }
 // CreateConvertedNoteToIssueIssueEvent_project_cardFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateConvertedNoteToIssueIssueEvent_project_cardFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConvertedNoteToIssueIssueEvent_project_card(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColumnName gets the column_name property value. The column_name property
+// returns a *string when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetColumnName()(*string) {
     return m.column_name
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["column_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -106,22 +109,27 @@ func (m *ConvertedNoteToIssueIssueEvent_project_card) GetFieldDeserializers()(ma
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetId()(*int32) {
     return m.id
 }
 // GetPreviousColumnName gets the previous_column_name property value. The previous_column_name property
+// returns a *string when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetPreviousColumnName()(*string) {
     return m.previous_column_name
 }
 // GetProjectId gets the project_id property value. The project_id property
+// returns a *int32 when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetProjectId()(*int32) {
     return m.project_id
 }
 // GetProjectUrl gets the project_url property value. The project_url property
+// returns a *string when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetProjectUrl()(*string) {
     return m.project_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ConvertedNoteToIssueIssueEvent_project_card) GetUrl()(*string) {
     return m.url
 }
@@ -199,7 +207,6 @@ func (m *ConvertedNoteToIssueIssueEvent_project_card) SetProjectUrl(value *strin
 func (m *ConvertedNoteToIssueIssueEvent_project_card) SetUrl(value *string)() {
     m.url = value
 }
-// ConvertedNoteToIssueIssueEvent_project_cardable 
 type ConvertedNoteToIssueIssueEvent_project_cardable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

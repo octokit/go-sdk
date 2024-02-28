@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type DependencyGraphDiff_change_type int
 
 const (

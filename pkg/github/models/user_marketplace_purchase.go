@@ -26,7 +26,7 @@ type UserMarketplacePurchase struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewUserMarketplacePurchase instantiates a new userMarketplacePurchase and sets the default values.
+// NewUserMarketplacePurchase instantiates a new UserMarketplacePurchase and sets the default values.
 func NewUserMarketplacePurchase()(*UserMarketplacePurchase) {
     m := &UserMarketplacePurchase{
     }
@@ -34,22 +34,27 @@ func NewUserMarketplacePurchase()(*UserMarketplacePurchase) {
     return m
 }
 // CreateUserMarketplacePurchaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateUserMarketplacePurchaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserMarketplacePurchase(), nil
 }
 // GetAccount gets the account property value. The account property
+// returns a MarketplaceAccountable when successful
 func (m *UserMarketplacePurchase) GetAccount()(MarketplaceAccountable) {
     return m.account
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *UserMarketplacePurchase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillingCycle gets the billing_cycle property value. The billing_cycle property
+// returns a *string when successful
 func (m *UserMarketplacePurchase) GetBillingCycle()(*string) {
     return m.billing_cycle
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserMarketplacePurchase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["account"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -135,26 +140,32 @@ func (m *UserMarketplacePurchase) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetFreeTrialEndsOn gets the free_trial_ends_on property value. The free_trial_ends_on property
+// returns a *Time when successful
 func (m *UserMarketplacePurchase) GetFreeTrialEndsOn()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.free_trial_ends_on
 }
 // GetNextBillingDate gets the next_billing_date property value. The next_billing_date property
+// returns a *Time when successful
 func (m *UserMarketplacePurchase) GetNextBillingDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.next_billing_date
 }
 // GetOnFreeTrial gets the on_free_trial property value. The on_free_trial property
+// returns a *bool when successful
 func (m *UserMarketplacePurchase) GetOnFreeTrial()(*bool) {
     return m.on_free_trial
 }
 // GetPlan gets the plan property value. Marketplace Listing Plan
+// returns a MarketplaceListingPlanable when successful
 func (m *UserMarketplacePurchase) GetPlan()(MarketplaceListingPlanable) {
     return m.plan
 }
 // GetUnitCount gets the unit_count property value. The unit_count property
+// returns a *int32 when successful
 func (m *UserMarketplacePurchase) GetUnitCount()(*int32) {
     return m.unit_count
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *UserMarketplacePurchase) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -252,7 +263,6 @@ func (m *UserMarketplacePurchase) SetUnitCount(value *int32)() {
 func (m *UserMarketplacePurchase) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// UserMarketplacePurchaseable 
 type UserMarketplacePurchaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

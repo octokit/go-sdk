@@ -13,7 +13,7 @@ type OidcCustomSubRepo struct {
     // Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
     use_default *bool
 }
-// NewOidcCustomSubRepo instantiates a new oidcCustomSubRepo and sets the default values.
+// NewOidcCustomSubRepo instantiates a new OidcCustomSubRepo and sets the default values.
 func NewOidcCustomSubRepo()(*OidcCustomSubRepo) {
     m := &OidcCustomSubRepo{
     }
@@ -21,14 +21,17 @@ func NewOidcCustomSubRepo()(*OidcCustomSubRepo) {
     return m
 }
 // CreateOidcCustomSubRepoFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOidcCustomSubRepoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOidcCustomSubRepo(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OidcCustomSubRepo) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OidcCustomSubRepo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["include_claim_keys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -60,10 +63,12 @@ func (m *OidcCustomSubRepo) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetIncludeClaimKeys gets the include_claim_keys property value. Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+// returns a []string when successful
 func (m *OidcCustomSubRepo) GetIncludeClaimKeys()([]string) {
     return m.include_claim_keys
 }
 // GetUseDefault gets the use_default property value. Whether to use the default template or not. If `true`, the `include_claim_keys` field is ignored.
+// returns a *bool when successful
 func (m *OidcCustomSubRepo) GetUseDefault()(*bool) {
     return m.use_default
 }
@@ -101,7 +106,6 @@ func (m *OidcCustomSubRepo) SetIncludeClaimKeys(value []string)() {
 func (m *OidcCustomSubRepo) SetUseDefault(value *bool)() {
     m.use_default = value
 }
-// OidcCustomSubRepoable 
 type OidcCustomSubRepoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

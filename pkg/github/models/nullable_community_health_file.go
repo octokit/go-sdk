@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// NullableCommunityHealthFile 
 type NullableCommunityHealthFile struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type NullableCommunityHealthFile struct {
     // The url property
     url *string
 }
-// NewNullableCommunityHealthFile instantiates a new nullableCommunityHealthFile and sets the default values.
+// NewNullableCommunityHealthFile instantiates a new NullableCommunityHealthFile and sets the default values.
 func NewNullableCommunityHealthFile()(*NullableCommunityHealthFile) {
     m := &NullableCommunityHealthFile{
     }
@@ -21,14 +20,17 @@ func NewNullableCommunityHealthFile()(*NullableCommunityHealthFile) {
     return m
 }
 // CreateNullableCommunityHealthFileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateNullableCommunityHealthFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNullableCommunityHealthFile(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *NullableCommunityHealthFile) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NullableCommunityHealthFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["html_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *NullableCommunityHealthFile) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *NullableCommunityHealthFile) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *NullableCommunityHealthFile) GetUrl()(*string) {
     return m.url
 }
@@ -95,7 +99,6 @@ func (m *NullableCommunityHealthFile) SetHtmlUrl(value *string)() {
 func (m *NullableCommunityHealthFile) SetUrl(value *string)() {
     m.url = value
 }
-// NullableCommunityHealthFileable 
 type NullableCommunityHealthFileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -21,7 +21,7 @@ type ProtectedBranchRequiredStatusCheck struct {
     // The url property
     url *string
 }
-// NewProtectedBranchRequiredStatusCheck instantiates a new protectedBranchRequiredStatusCheck and sets the default values.
+// NewProtectedBranchRequiredStatusCheck instantiates a new ProtectedBranchRequiredStatusCheck and sets the default values.
 func NewProtectedBranchRequiredStatusCheck()(*ProtectedBranchRequiredStatusCheck) {
     m := &ProtectedBranchRequiredStatusCheck{
     }
@@ -29,30 +29,37 @@ func NewProtectedBranchRequiredStatusCheck()(*ProtectedBranchRequiredStatusCheck
     return m
 }
 // CreateProtectedBranchRequiredStatusCheckFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectedBranchRequiredStatusCheckFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectedBranchRequiredStatusCheck(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChecks gets the checks property value. The checks property
+// returns a []ProtectedBranchRequiredStatusCheck_checksable when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetChecks()([]ProtectedBranchRequiredStatusCheck_checksable) {
     return m.checks
 }
 // GetContexts gets the contexts property value. The contexts property
+// returns a []string when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetContexts()([]string) {
     return m.contexts
 }
 // GetContextsUrl gets the contexts_url property value. The contexts_url property
+// returns a *string when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetContextsUrl()(*string) {
     return m.contexts_url
 }
 // GetEnforcementLevel gets the enforcement_level property value. The enforcement_level property
+// returns a *string when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetEnforcementLevel()(*string) {
     return m.enforcement_level
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,10 +137,12 @@ func (m *ProtectedBranchRequiredStatusCheck) GetFieldDeserializers()(map[string]
     return res
 }
 // GetStrict gets the strict property value. The strict property
+// returns a *bool when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetStrict()(*bool) {
     return m.strict
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ProtectedBranchRequiredStatusCheck) GetUrl()(*string) {
     return m.url
 }
@@ -217,7 +226,6 @@ func (m *ProtectedBranchRequiredStatusCheck) SetStrict(value *bool)() {
 func (m *ProtectedBranchRequiredStatusCheck) SetUrl(value *string)() {
     m.url = value
 }
-// ProtectedBranchRequiredStatusCheckable 
 type ProtectedBranchRequiredStatusCheckable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

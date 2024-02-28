@@ -17,6 +17,7 @@ type ItemItemDependabotSecretsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.dependabot.secrets.item collection
+// returns a *ItemItemDependabotSecretsWithSecret_nameItemRequestBuilder when successful
 func (m *ItemItemDependabotSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemItemDependabotSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -27,20 +28,21 @@ func (m *ItemItemDependabotSecretsRequestBuilder) BySecret_name(secret_name stri
     }
     return NewItemItemDependabotSecretsWithSecret_nameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemDependabotSecretsRequestBuilderInternal instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemItemDependabotSecretsRequestBuilderInternal instantiates a new ItemItemDependabotSecretsRequestBuilder and sets the default values.
 func NewItemItemDependabotSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotSecretsRequestBuilder) {
     m := &ItemItemDependabotSecretsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemDependabotSecretsRequestBuilder instantiates a new SecretsRequestBuilder and sets the default values.
+// NewItemItemDependabotSecretsRequestBuilder instantiates a new ItemItemDependabotSecretsRequestBuilder and sets the default values.
 func NewItemItemDependabotSecretsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotSecretsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemDependabotSecretsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all secrets available in a repository without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a ItemItemDependabotSecretsGetResponseable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/dependabot/secrets#list-repository-secrets
@@ -59,10 +61,12 @@ func (m *ItemItemDependabotSecretsRequestBuilder) Get(ctx context.Context, reque
     return res.(ItemItemDependabotSecretsGetResponseable), nil
 }
 // PublicKey the publicKey property
+// returns a *ItemItemDependabotSecretsPublicKeyRequestBuilder when successful
 func (m *ItemItemDependabotSecretsRequestBuilder) PublicKey()(*ItemItemDependabotSecretsPublicKeyRequestBuilder) {
     return NewItemItemDependabotSecretsPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists all secrets available in a repository without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemItemDependabotSecretsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemDependabotSecretsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +74,7 @@ func (m *ItemItemDependabotSecretsRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemDependabotSecretsRequestBuilder when successful
 func (m *ItemItemDependabotSecretsRequestBuilder) WithUrl(rawUrl string)(*ItemItemDependabotSecretsRequestBuilder) {
     return NewItemItemDependabotSecretsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

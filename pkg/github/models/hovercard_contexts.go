@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Hovercard_contexts 
 type Hovercard_contexts struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type Hovercard_contexts struct {
     // The octicon property
     octicon *string
 }
-// NewHovercard_contexts instantiates a new hovercard_contexts and sets the default values.
+// NewHovercard_contexts instantiates a new Hovercard_contexts and sets the default values.
 func NewHovercard_contexts()(*Hovercard_contexts) {
     m := &Hovercard_contexts{
     }
@@ -21,14 +20,17 @@ func NewHovercard_contexts()(*Hovercard_contexts) {
     return m
 }
 // CreateHovercard_contextsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHovercard_contextsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHovercard_contexts(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Hovercard_contexts) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Hovercard_contexts) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *Hovercard_contexts) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *Hovercard_contexts) GetMessage()(*string) {
     return m.message
 }
 // GetOcticon gets the octicon property value. The octicon property
+// returns a *string when successful
 func (m *Hovercard_contexts) GetOcticon()(*string) {
     return m.octicon
 }
@@ -95,7 +99,6 @@ func (m *Hovercard_contexts) SetMessage(value *string)() {
 func (m *Hovercard_contexts) SetOcticon(value *string)() {
     m.octicon = value
 }
-// Hovercard_contextsable 
 type Hovercard_contextsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemWithOrgPatchRequestBody 
 type ItemWithOrgPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -71,50 +70,62 @@ func NewItemWithOrgPatchRequestBody()(*ItemWithOrgPatchRequestBody) {
     return m
 }
 // CreateItemWithOrgPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemWithOrgPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemWithOrgPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemWithOrgPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdvancedSecurityEnabledForNewRepositories gets the advanced_security_enabled_for_new_repositories property value. Whether GitHub Advanced Security is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetAdvancedSecurityEnabledForNewRepositories()(*bool) {
     return m.advanced_security_enabled_for_new_repositories
 }
 // GetBillingEmail gets the billing_email property value. Billing email address. This address is not publicized.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetBillingEmail()(*string) {
     return m.billing_email
 }
 // GetBlog gets the blog property value. The blog property
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetBlog()(*string) {
     return m.blog
 }
 // GetCompany gets the company property value. The company name.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetCompany()(*string) {
     return m.company
 }
 // GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. Whether Dependabot alerts is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetDependabotAlertsEnabledForNewRepositories()(*bool) {
     return m.dependabot_alerts_enabled_for_new_repositories
 }
 // GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. Whether Dependabot security updates is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool) {
     return m.dependabot_security_updates_enabled_for_new_repositories
 }
 // GetDependencyGraphEnabledForNewRepositories gets the dependency_graph_enabled_for_new_repositories property value. Whether dependency graph is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetDependencyGraphEnabledForNewRepositories()(*bool) {
     return m.dependency_graph_enabled_for_new_repositories
 }
 // GetDescription gets the description property value. The description of the company.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetEmail gets the email property value. The publicly visible email address.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemWithOrgPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["advanced_security_enabled_for_new_repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -390,74 +401,92 @@ func (m *ItemWithOrgPatchRequestBody) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetHasOrganizationProjects gets the has_organization_projects property value. Whether an organization can use organization projects.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetHasOrganizationProjects()(*bool) {
     return m.has_organization_projects
 }
 // GetHasRepositoryProjects gets the has_repository_projects property value. Whether repositories that belong to the organization can use repository projects.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetHasRepositoryProjects()(*bool) {
     return m.has_repository_projects
 }
 // GetLocation gets the location property value. The location.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetLocation()(*string) {
     return m.location
 }
 // GetMembersCanCreateInternalRepositories gets the members_can_create_internal_repositories property value. Whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreateInternalRepositories()(*bool) {
     return m.members_can_create_internal_repositories
 }
 // GetMembersCanCreatePages gets the members_can_create_pages property value. Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreatePages()(*bool) {
     return m.members_can_create_pages
 }
 // GetMembersCanCreatePrivatePages gets the members_can_create_private_pages property value. Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreatePrivatePages()(*bool) {
     return m.members_can_create_private_pages
 }
 // GetMembersCanCreatePrivateRepositories gets the members_can_create_private_repositories property value. Whether organization members can create private repositories, which are visible to organization members with permission. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreatePrivateRepositories()(*bool) {
     return m.members_can_create_private_repositories
 }
 // GetMembersCanCreatePublicPages gets the members_can_create_public_pages property value. Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreatePublicPages()(*bool) {
     return m.members_can_create_public_pages
 }
 // GetMembersCanCreatePublicRepositories gets the members_can_create_public_repositories property value. Whether organization members can create public repositories, which are visible to anyone. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreatePublicRepositories()(*bool) {
     return m.members_can_create_public_repositories
 }
 // GetMembersCanCreateRepositories gets the members_can_create_repositories property value. Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanCreateRepositories()(*bool) {
     return m.members_can_create_repositories
 }
 // GetMembersCanForkPrivateRepositories gets the members_can_fork_private_repositories property value. Whether organization members can fork private organization repositories.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetMembersCanForkPrivateRepositories()(*bool) {
     return m.members_can_fork_private_repositories
 }
 // GetName gets the name property value. The shorthand name of the company.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetName()(*string) {
     return m.name
 }
 // GetSecretScanningEnabledForNewRepositories gets the secret_scanning_enabled_for_new_repositories property value. Whether secret scanning is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetSecretScanningEnabledForNewRepositories()(*bool) {
     return m.secret_scanning_enabled_for_new_repositories
 }
 // GetSecretScanningPushProtectionCustomLink gets the secret_scanning_push_protection_custom_link property value. If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetSecretScanningPushProtectionCustomLink()(*string) {
     return m.secret_scanning_push_protection_custom_link
 }
 // GetSecretScanningPushProtectionCustomLinkEnabled gets the secret_scanning_push_protection_custom_link_enabled property value. Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetSecretScanningPushProtectionCustomLinkEnabled()(*bool) {
     return m.secret_scanning_push_protection_custom_link_enabled
 }
 // GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. Whether secret scanning push protection is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetSecretScanningPushProtectionEnabledForNewRepositories()(*bool) {
     return m.secret_scanning_push_protection_enabled_for_new_repositories
 }
 // GetTwitterUsername gets the twitter_username property value. The Twitter username of the company.
+// returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetTwitterUsername()(*string) {
     return m.twitter_username
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.
+// returns a *bool when successful
 func (m *ItemWithOrgPatchRequestBody) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -745,7 +774,6 @@ func (m *ItemWithOrgPatchRequestBody) SetTwitterUsername(value *string)() {
 func (m *ItemWithOrgPatchRequestBody) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// ItemWithOrgPatchRequestBodyable 
 type ItemWithOrgPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

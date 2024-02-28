@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemWithPull_numberPatchRequestBody 
 type ItemItemPullsItemWithPull_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,22 +24,27 @@ func NewItemItemPullsItemWithPull_numberPatchRequestBody()(*ItemItemPullsItemWit
     return m
 }
 // CreateItemItemPullsItemWithPull_numberPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemWithPull_numberPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemWithPull_numberPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBase gets the base property value. The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository.
+// returns a *string when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetBase()(*string) {
     return m.base
 }
 // GetBody gets the body property value. The contents of the pull request.
+// returns a *string when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["base"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,10 +90,12 @@ func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetFieldDeserializers
     return res
 }
 // GetMaintainerCanModify gets the maintainer_can_modify property value. Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+// returns a *bool when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetMaintainerCanModify()(*bool) {
     return m.maintainer_can_modify
 }
 // GetTitle gets the title property value. The title of the pull request.
+// returns a *string when successful
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) GetTitle()(*string) {
     return m.title
 }
@@ -147,7 +153,6 @@ func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) SetMaintainerCanModif
 func (m *ItemItemPullsItemWithPull_numberPatchRequestBody) SetTitle(value *string)() {
     m.title = value
 }
-// ItemItemPullsItemWithPull_numberPatchRequestBodyable 
 type ItemItemPullsItemWithPull_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

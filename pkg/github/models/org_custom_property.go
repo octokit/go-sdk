@@ -23,7 +23,7 @@ type OrgCustomProperty struct {
     // Who can edit the values of the property
     values_editable_by *OrgCustomProperty_values_editable_by
 }
-// NewOrgCustomProperty instantiates a new orgCustomProperty and sets the default values.
+// NewOrgCustomProperty instantiates a new OrgCustomProperty and sets the default values.
 func NewOrgCustomProperty()(*OrgCustomProperty) {
     m := &OrgCustomProperty{
     }
@@ -31,26 +31,32 @@ func NewOrgCustomProperty()(*OrgCustomProperty) {
     return m
 }
 // CreateOrgCustomPropertyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrgCustomPropertyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrgCustomProperty(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrgCustomProperty) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedValues gets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
+// returns a []string when successful
 func (m *OrgCustomProperty) GetAllowedValues()([]string) {
     return m.allowed_values
 }
 // GetDefaultValue gets the default_value property value. Default value of the property
+// returns a *string when successful
 func (m *OrgCustomProperty) GetDefaultValue()(*string) {
     return m.default_value
 }
 // GetDescription gets the description property value. Short description of the property
+// returns a *string when successful
 func (m *OrgCustomProperty) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrgCustomProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowed_values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -132,18 +138,22 @@ func (m *OrgCustomProperty) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetPropertyName gets the property_name property value. The name of the property
+// returns a *string when successful
 func (m *OrgCustomProperty) GetPropertyName()(*string) {
     return m.property_name
 }
 // GetRequired gets the required property value. Whether the property is required.
+// returns a *bool when successful
 func (m *OrgCustomProperty) GetRequired()(*bool) {
     return m.required
 }
 // GetValuesEditableBy gets the values_editable_by property value. Who can edit the values of the property
+// returns a *OrgCustomProperty_values_editable_by when successful
 func (m *OrgCustomProperty) GetValuesEditableBy()(*OrgCustomProperty_values_editable_by) {
     return m.values_editable_by
 }
 // GetValueType gets the value_type property value. The type of the value for the property
+// returns a *OrgCustomProperty_value_type when successful
 func (m *OrgCustomProperty) GetValueType()(*OrgCustomProperty_value_type) {
     return m.value_type
 }
@@ -233,7 +243,6 @@ func (m *OrgCustomProperty) SetValuesEditableBy(value *OrgCustomProperty_values_
 func (m *OrgCustomProperty) SetValueType(value *OrgCustomProperty_value_type)() {
     m.value_type = value
 }
-// OrgCustomPropertyable 
 type OrgCustomPropertyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

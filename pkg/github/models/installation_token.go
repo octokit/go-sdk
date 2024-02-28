@@ -25,7 +25,7 @@ type InstallationToken struct {
     // The token property
     token *string
 }
-// NewInstallationToken instantiates a new installationToken and sets the default values.
+// NewInstallationToken instantiates a new InstallationToken and sets the default values.
 func NewInstallationToken()(*InstallationToken) {
     m := &InstallationToken{
     }
@@ -33,18 +33,22 @@ func NewInstallationToken()(*InstallationToken) {
     return m
 }
 // CreateInstallationTokenFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInstallationTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInstallationToken(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InstallationToken) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiresAt gets the expires_at property value. The expires_at property
+// returns a *string when successful
 func (m *InstallationToken) GetExpiresAt()(*string) {
     return m.expires_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InstallationToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expires_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -142,30 +146,37 @@ func (m *InstallationToken) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetHasMultipleSingleFiles gets the has_multiple_single_files property value. The has_multiple_single_files property
+// returns a *bool when successful
 func (m *InstallationToken) GetHasMultipleSingleFiles()(*bool) {
     return m.has_multiple_single_files
 }
 // GetPermissions gets the permissions property value. The permissions granted to the user access token.
+// returns a AppPermissionsable when successful
 func (m *InstallationToken) GetPermissions()(AppPermissionsable) {
     return m.permissions
 }
 // GetRepositories gets the repositories property value. The repositories property
+// returns a []Repositoryable when successful
 func (m *InstallationToken) GetRepositories()([]Repositoryable) {
     return m.repositories
 }
 // GetRepositorySelection gets the repository_selection property value. The repository_selection property
+// returns a *InstallationToken_repository_selection when successful
 func (m *InstallationToken) GetRepositorySelection()(*InstallationToken_repository_selection) {
     return m.repository_selection
 }
 // GetSingleFile gets the single_file property value. The single_file property
+// returns a *string when successful
 func (m *InstallationToken) GetSingleFile()(*string) {
     return m.single_file
 }
 // GetSingleFilePaths gets the single_file_paths property value. The single_file_paths property
+// returns a []string when successful
 func (m *InstallationToken) GetSingleFilePaths()([]string) {
     return m.single_file_paths
 }
 // GetToken gets the token property value. The token property
+// returns a *string when successful
 func (m *InstallationToken) GetToken()(*string) {
     return m.token
 }
@@ -270,7 +281,6 @@ func (m *InstallationToken) SetSingleFilePaths(value []string)() {
 func (m *InstallationToken) SetToken(value *string)() {
     m.token = value
 }
-// InstallationTokenable 
 type InstallationTokenable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

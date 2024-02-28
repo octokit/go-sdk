@@ -10,6 +10,7 @@ type ItemItemActionsJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByJob_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.jobs.item collection
+// returns a *ItemItemActionsJobsWithJob_ItemRequestBuilder when successful
 func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id int32)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -18,14 +19,14 @@ func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id int32)(*ItemItemActi
     urlTplParams["job_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(job_id), 10)
     return NewItemItemActionsJobsWithJob_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemActionsJobsRequestBuilderInternal instantiates a new JobsRequestBuilder and sets the default values.
+// NewItemItemActionsJobsRequestBuilderInternal instantiates a new ItemItemActionsJobsRequestBuilder and sets the default values.
 func NewItemItemActionsJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsJobsRequestBuilder) {
     m := &ItemItemActionsJobsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs", pathParameters),
     }
     return m
 }
-// NewItemItemActionsJobsRequestBuilder instantiates a new JobsRequestBuilder and sets the default values.
+// NewItemItemActionsJobsRequestBuilder instantiates a new ItemItemActionsJobsRequestBuilder and sets the default values.
 func NewItemItemActionsJobsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsJobsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl

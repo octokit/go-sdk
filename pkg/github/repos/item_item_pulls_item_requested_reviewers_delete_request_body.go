@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemRequested_reviewersDeleteRequestBody 
 type ItemItemPullsItemRequested_reviewersDeleteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,14 +20,17 @@ func NewItemItemPullsItemRequested_reviewersDeleteRequestBody()(*ItemItemPullsIt
     return m
 }
 // CreateItemItemPullsItemRequested_reviewersDeleteRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemRequested_reviewersDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemRequested_reviewersDeleteRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["reviewers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,10 +68,12 @@ func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) GetFieldDeserial
     return res
 }
 // GetReviewers gets the reviewers property value. An array of user `login`s that will be removed.
+// returns a []string when successful
 func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) GetReviewers()([]string) {
     return m.reviewers
 }
 // GetTeamReviewers gets the team_reviewers property value. An array of team `slug`s that will be removed.
+// returns a []string when successful
 func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) GetTeamReviewers()([]string) {
     return m.team_reviewers
 }
@@ -107,7 +111,6 @@ func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) SetReviewers(val
 func (m *ItemItemPullsItemRequested_reviewersDeleteRequestBody) SetTeamReviewers(value []string)() {
     m.team_reviewers = value
 }
-// ItemItemPullsItemRequested_reviewersDeleteRequestBodyable 
 type ItemItemPullsItemRequested_reviewersDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

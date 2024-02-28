@@ -10,6 +10,7 @@ type ColumnsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByColumn_id gets an item from the github.com/octokit/go-sdk/pkg/github/.projects.columns.item collection
+// returns a *ColumnsWithColumn_ItemRequestBuilder when successful
 func (m *ColumnsRequestBuilder) ByColumn_id(column_id int32)(*ColumnsWithColumn_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -19,6 +20,7 @@ func (m *ColumnsRequestBuilder) ByColumn_id(column_id int32)(*ColumnsWithColumn_
     return NewColumnsWithColumn_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Cards the cards property
+// returns a *ColumnsCardsRequestBuilder when successful
 func (m *ColumnsRequestBuilder) Cards()(*ColumnsCardsRequestBuilder) {
     return NewColumnsCardsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

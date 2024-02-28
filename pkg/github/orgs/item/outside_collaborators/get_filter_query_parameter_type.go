@@ -2,7 +2,6 @@ package outside_collaborators
 import (
     "errors"
 )
-// 
 type GetFilterQueryParameterType int
 
 const (

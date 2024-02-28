@@ -23,7 +23,7 @@ type Blob struct {
     // The url property
     url *string
 }
-// NewBlob instantiates a new blob and sets the default values.
+// NewBlob instantiates a new Blob and sets the default values.
 func NewBlob()(*Blob) {
     m := &Blob{
     }
@@ -31,22 +31,27 @@ func NewBlob()(*Blob) {
     return m
 }
 // CreateBlobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBlobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBlob(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Blob) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContent gets the content property value. The content property
+// returns a *string when successful
 func (m *Blob) GetContent()(*string) {
     return m.content
 }
 // GetEncoding gets the encoding property value. The encoding property
+// returns a *string when successful
 func (m *Blob) GetEncoding()(*string) {
     return m.encoding
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Blob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -122,22 +127,27 @@ func (m *Blob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     return res
 }
 // GetHighlightedContent gets the highlighted_content property value. The highlighted_content property
+// returns a *string when successful
 func (m *Blob) GetHighlightedContent()(*string) {
     return m.highlighted_content
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Blob) GetNodeId()(*string) {
     return m.node_id
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *Blob) GetSha()(*string) {
     return m.sha
 }
 // GetSize gets the size property value. The size property
+// returns a *int32 when successful
 func (m *Blob) GetSize()(*int32) {
     return m.size
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Blob) GetUrl()(*string) {
     return m.url
 }
@@ -225,7 +235,6 @@ func (m *Blob) SetSize(value *int32)() {
 func (m *Blob) SetUrl(value *string)() {
     m.url = value
 }
-// Blobable 
 type Blobable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

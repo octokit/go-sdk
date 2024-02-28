@@ -35,7 +35,7 @@ type ProtectedBranch struct {
     // The url property
     url *string
 }
-// NewProtectedBranch instantiates a new protectedBranch and sets the default values.
+// NewProtectedBranch instantiates a new ProtectedBranch and sets the default values.
 func NewProtectedBranch()(*ProtectedBranch) {
     m := &ProtectedBranch{
     }
@@ -43,34 +43,42 @@ func NewProtectedBranch()(*ProtectedBranch) {
     return m
 }
 // CreateProtectedBranchFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateProtectedBranchFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectedBranch(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ProtectedBranch) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowDeletions gets the allow_deletions property value. The allow_deletions property
+// returns a ProtectedBranch_allow_deletionsable when successful
 func (m *ProtectedBranch) GetAllowDeletions()(ProtectedBranch_allow_deletionsable) {
     return m.allow_deletions
 }
 // GetAllowForcePushes gets the allow_force_pushes property value. The allow_force_pushes property
+// returns a ProtectedBranch_allow_force_pushesable when successful
 func (m *ProtectedBranch) GetAllowForcePushes()(ProtectedBranch_allow_force_pushesable) {
     return m.allow_force_pushes
 }
 // GetAllowForkSyncing gets the allow_fork_syncing property value. Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+// returns a ProtectedBranch_allow_fork_syncingable when successful
 func (m *ProtectedBranch) GetAllowForkSyncing()(ProtectedBranch_allow_fork_syncingable) {
     return m.allow_fork_syncing
 }
 // GetBlockCreations gets the block_creations property value. The block_creations property
+// returns a ProtectedBranch_block_creationsable when successful
 func (m *ProtectedBranch) GetBlockCreations()(ProtectedBranch_block_creationsable) {
     return m.block_creations
 }
 // GetEnforceAdmins gets the enforce_admins property value. The enforce_admins property
+// returns a ProtectedBranch_enforce_adminsable when successful
 func (m *ProtectedBranch) GetEnforceAdmins()(ProtectedBranch_enforce_adminsable) {
     return m.enforce_admins
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectedBranch) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_deletions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -206,34 +214,42 @@ func (m *ProtectedBranch) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetLockBranch gets the lock_branch property value. Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+// returns a ProtectedBranch_lock_branchable when successful
 func (m *ProtectedBranch) GetLockBranch()(ProtectedBranch_lock_branchable) {
     return m.lock_branch
 }
 // GetRequiredConversationResolution gets the required_conversation_resolution property value. The required_conversation_resolution property
+// returns a ProtectedBranch_required_conversation_resolutionable when successful
 func (m *ProtectedBranch) GetRequiredConversationResolution()(ProtectedBranch_required_conversation_resolutionable) {
     return m.required_conversation_resolution
 }
 // GetRequiredLinearHistory gets the required_linear_history property value. The required_linear_history property
+// returns a ProtectedBranch_required_linear_historyable when successful
 func (m *ProtectedBranch) GetRequiredLinearHistory()(ProtectedBranch_required_linear_historyable) {
     return m.required_linear_history
 }
 // GetRequiredPullRequestReviews gets the required_pull_request_reviews property value. The required_pull_request_reviews property
+// returns a ProtectedBranch_required_pull_request_reviewsable when successful
 func (m *ProtectedBranch) GetRequiredPullRequestReviews()(ProtectedBranch_required_pull_request_reviewsable) {
     return m.required_pull_request_reviews
 }
 // GetRequiredSignatures gets the required_signatures property value. The required_signatures property
+// returns a ProtectedBranch_required_signaturesable when successful
 func (m *ProtectedBranch) GetRequiredSignatures()(ProtectedBranch_required_signaturesable) {
     return m.required_signatures
 }
 // GetRequiredStatusChecks gets the required_status_checks property value. Status Check Policy
+// returns a StatusCheckPolicyable when successful
 func (m *ProtectedBranch) GetRequiredStatusChecks()(StatusCheckPolicyable) {
     return m.required_status_checks
 }
 // GetRestrictions gets the restrictions property value. Branch Restriction Policy
+// returns a BranchRestrictionPolicyable when successful
 func (m *ProtectedBranch) GetRestrictions()(BranchRestrictionPolicyable) {
     return m.restrictions
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *ProtectedBranch) GetUrl()(*string) {
     return m.url
 }
@@ -381,7 +397,6 @@ func (m *ProtectedBranch) SetRestrictions(value BranchRestrictionPolicyable)() {
 func (m *ProtectedBranch) SetUrl(value *string)() {
     m.url = value
 }
-// ProtectedBranchable 
 type ProtectedBranchable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

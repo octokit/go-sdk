@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ContributorActivity_weeks 
 type ContributorActivity_weeks struct {
     // The a property
     a *int32
@@ -17,7 +16,7 @@ type ContributorActivity_weeks struct {
     // The w property
     w *int32
 }
-// NewContributorActivity_weeks instantiates a new contributorActivity_weeks and sets the default values.
+// NewContributorActivity_weeks instantiates a new ContributorActivity_weeks and sets the default values.
 func NewContributorActivity_weeks()(*ContributorActivity_weeks) {
     m := &ContributorActivity_weeks{
     }
@@ -25,26 +24,32 @@ func NewContributorActivity_weeks()(*ContributorActivity_weeks) {
     return m
 }
 // CreateContributorActivity_weeksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContributorActivity_weeksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContributorActivity_weeks(), nil
 }
 // GetA gets the a property value. The a property
+// returns a *int32 when successful
 func (m *ContributorActivity_weeks) GetA()(*int32) {
     return m.a
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContributorActivity_weeks) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetC gets the c property value. The c property
+// returns a *int32 when successful
 func (m *ContributorActivity_weeks) GetC()(*int32) {
     return m.c
 }
 // GetD gets the d property value. The d property
+// returns a *int32 when successful
 func (m *ContributorActivity_weeks) GetD()(*int32) {
     return m.d
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContributorActivity_weeks) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["a"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,6 +95,7 @@ func (m *ContributorActivity_weeks) GetFieldDeserializers()(map[string]func(i878
     return res
 }
 // GetW gets the w property value. The w property
+// returns a *int32 when successful
 func (m *ContributorActivity_weeks) GetW()(*int32) {
     return m.w
 }
@@ -147,7 +153,6 @@ func (m *ContributorActivity_weeks) SetD(value *int32)() {
 func (m *ContributorActivity_weeks) SetW(value *int32)() {
     m.w = value
 }
-// ContributorActivity_weeksable 
 type ContributorActivity_weeksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

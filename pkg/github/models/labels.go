@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Labels 
 type Labels struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type Labels struct {
     // The property property
     property *string
 }
-// NewLabels instantiates a new labels and sets the default values.
+// NewLabels instantiates a new Labels and sets the default values.
 func NewLabels()(*Labels) {
     m := &Labels{
     }
@@ -27,14 +26,17 @@ func NewLabels()(*Labels) {
     return m
 }
 // CreateLabelsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateLabelsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLabels(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Labels) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Labels) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fragment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,22 +98,27 @@ func (m *Labels) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetFragment gets the fragment property value. The fragment property
+// returns a *string when successful
 func (m *Labels) GetFragment()(*string) {
     return m.fragment
 }
 // GetMatches gets the matches property value. The matches property
+// returns a []Labels_matchesable when successful
 func (m *Labels) GetMatches()([]Labels_matchesable) {
     return m.matches
 }
 // GetObjectType gets the object_type property value. The object_type property
+// returns a *string when successful
 func (m *Labels) GetObjectType()(*string) {
     return m.object_type
 }
 // GetObjectUrl gets the object_url property value. The object_url property
+// returns a *string when successful
 func (m *Labels) GetObjectUrl()(*string) {
     return m.object_url
 }
 // GetProperty gets the property property value. The property property
+// returns a *string when successful
 func (m *Labels) GetProperty()(*string) {
     return m.property
 }
@@ -185,7 +192,6 @@ func (m *Labels) SetObjectUrl(value *string)() {
 func (m *Labels) SetProperty(value *string)() {
     m.property = value
 }
-// Labelsable 
 type Labelsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

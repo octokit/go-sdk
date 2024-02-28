@@ -40,45 +40,54 @@ type DependabotAlertWithRepository struct {
     // The REST API URL of the alert resource.
     url *string
 }
-// NewDependabotAlertWithRepository instantiates a new dependabotAlertWithRepository and sets the default values.
+// NewDependabotAlertWithRepository instantiates a new DependabotAlertWithRepository and sets the default values.
 func NewDependabotAlertWithRepository()(*DependabotAlertWithRepository) {
     m := &DependabotAlertWithRepository{
     }
     return m
 }
 // CreateDependabotAlertWithRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependabotAlertWithRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependabotAlertWithRepository(), nil
 }
 // GetAutoDismissedAt gets the auto_dismissed_at property value. The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertWithRepository) GetAutoDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.auto_dismissed_at
 }
 // GetCreatedAt gets the created_at property value. The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertWithRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDependency gets the dependency property value. Details for the vulnerable dependency.
+// returns a DependabotAlertWithRepository_dependencyable when successful
 func (m *DependabotAlertWithRepository) GetDependency()(DependabotAlertWithRepository_dependencyable) {
     return m.dependency
 }
 // GetDismissedAt gets the dismissed_at property value. The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertWithRepository) GetDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.dismissed_at
 }
 // GetDismissedBy gets the dismissed_by property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *DependabotAlertWithRepository) GetDismissedBy()(NullableSimpleUserable) {
     return m.dismissed_by
 }
 // GetDismissedComment gets the dismissed_comment property value. An optional comment associated with the alert's dismissal.
+// returns a *string when successful
 func (m *DependabotAlertWithRepository) GetDismissedComment()(*string) {
     return m.dismissed_comment
 }
 // GetDismissedReason gets the dismissed_reason property value. The reason that the alert was dismissed.
+// returns a *DependabotAlertWithRepository_dismissed_reason when successful
 func (m *DependabotAlertWithRepository) GetDismissedReason()(*DependabotAlertWithRepository_dismissed_reason) {
     return m.dismissed_reason
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependabotAlertWithRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["auto_dismissed_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -244,38 +253,47 @@ func (m *DependabotAlertWithRepository) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetFixedAt gets the fixed_at property value. The time that the alert was no longer detected and was considered fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertWithRepository) GetFixedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.fixed_at
 }
 // GetHtmlUrl gets the html_url property value. The GitHub URL of the alert resource.
+// returns a *string when successful
 func (m *DependabotAlertWithRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetNumber gets the number property value. The security alert number.
+// returns a *int32 when successful
 func (m *DependabotAlertWithRepository) GetNumber()(*int32) {
     return m.number
 }
 // GetRepository gets the repository property value. A GitHub repository.
+// returns a SimpleRepositoryable when successful
 func (m *DependabotAlertWithRepository) GetRepository()(SimpleRepositoryable) {
     return m.repository
 }
 // GetSecurityAdvisory gets the security_advisory property value. Details for the GitHub Security Advisory.
+// returns a DependabotAlertSecurityAdvisoryable when successful
 func (m *DependabotAlertWithRepository) GetSecurityAdvisory()(DependabotAlertSecurityAdvisoryable) {
     return m.security_advisory
 }
 // GetSecurityVulnerability gets the security_vulnerability property value. Details pertaining to one vulnerable version range for the advisory.
+// returns a DependabotAlertSecurityVulnerabilityable when successful
 func (m *DependabotAlertWithRepository) GetSecurityVulnerability()(DependabotAlertSecurityVulnerabilityable) {
     return m.security_vulnerability
 }
 // GetState gets the state property value. The state of the Dependabot alert.
+// returns a *DependabotAlertWithRepository_state when successful
 func (m *DependabotAlertWithRepository) GetState()(*DependabotAlertWithRepository_state) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. The time that the alert was last updated in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+// returns a *Time when successful
 func (m *DependabotAlertWithRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The REST API URL of the alert resource.
+// returns a *string when successful
 func (m *DependabotAlertWithRepository) GetUrl()(*string) {
     return m.url
 }
@@ -372,7 +390,6 @@ func (m *DependabotAlertWithRepository) SetUpdatedAt(value *i336074805fc853987ab
 func (m *DependabotAlertWithRepository) SetUrl(value *string)() {
     m.url = value
 }
-// DependabotAlertWithRepositoryable 
 type DependabotAlertWithRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAutoDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)

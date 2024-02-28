@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DependencyGraphSpdxSbom_sbom 
 type DependencyGraphSpdxSbom_sbom struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,7 +24,7 @@ type DependencyGraphSpdxSbom_sbom struct {
     // The version of the SPDX specification that this document conforms to.
     spdxVersion *string
 }
-// NewDependencyGraphSpdxSbom_sbom instantiates a new dependencyGraphSpdxSbom_sbom and sets the default values.
+// NewDependencyGraphSpdxSbom_sbom instantiates a new DependencyGraphSpdxSbom_sbom and sets the default values.
 func NewDependencyGraphSpdxSbom_sbom()(*DependencyGraphSpdxSbom_sbom) {
     m := &DependencyGraphSpdxSbom_sbom{
     }
@@ -33,30 +32,37 @@ func NewDependencyGraphSpdxSbom_sbom()(*DependencyGraphSpdxSbom_sbom) {
     return m
 }
 // CreateDependencyGraphSpdxSbom_sbomFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependencyGraphSpdxSbom_sbomFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependencyGraphSpdxSbom_sbom(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreationInfo gets the creationInfo property value. The creationInfo property
+// returns a DependencyGraphSpdxSbom_sbom_creationInfoable when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetCreationInfo()(DependencyGraphSpdxSbom_sbom_creationInfoable) {
     return m.creationInfo
 }
 // GetDataLicense gets the dataLicense property value. The license under which the SPDX document is licensed.
+// returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetDataLicense()(*string) {
     return m.dataLicense
 }
 // GetDocumentDescribes gets the documentDescribes property value. The name of the repository that the SPDX document describes.
+// returns a []string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetDocumentDescribes()([]string) {
     return m.documentDescribes
 }
 // GetDocumentNamespace gets the documentNamespace property value. The namespace for the SPDX document.
+// returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetDocumentNamespace()(*string) {
     return m.documentNamespace
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["creationInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -154,18 +160,22 @@ func (m *DependencyGraphSpdxSbom_sbom) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetName gets the name property value. The name of the SPDX document.
+// returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetName()(*string) {
     return m.name
 }
 // GetPackages gets the packages property value. The packages property
+// returns a []DependencyGraphSpdxSbom_sbom_packagesable when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetPackages()([]DependencyGraphSpdxSbom_sbom_packagesable) {
     return m.packages
 }
 // GetSPDXID gets the SPDXID property value. The SPDX identifier for the SPDX document.
+// returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetSPDXID()(*string) {
     return m.sPDXID
 }
 // GetSpdxVersion gets the spdxVersion property value. The version of the SPDX specification that this document conforms to.
+// returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom) GetSpdxVersion()(*string) {
     return m.spdxVersion
 }
@@ -269,7 +279,6 @@ func (m *DependencyGraphSpdxSbom_sbom) SetSPDXID(value *string)() {
 func (m *DependencyGraphSpdxSbom_sbom) SetSpdxVersion(value *string)() {
     m.spdxVersion = value
 }
-// DependencyGraphSpdxSbom_sbomable 
 type DependencyGraphSpdxSbom_sbomable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

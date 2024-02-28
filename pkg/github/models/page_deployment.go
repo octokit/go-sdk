@@ -17,20 +17,21 @@ type PageDeployment struct {
     // The URI to monitor GitHub Pages deployment status.
     status_url *string
 }
-// PageDeployment_PageDeployment_id composed type wrapper for classes integer, string
+// PageDeployment_PageDeployment_id composed type wrapper for classes int32, string
 type PageDeployment_PageDeployment_id struct {
-    // Composed type representation for type integer
+    // Composed type representation for type int32
     integer *int32
     // Composed type representation for type string
     string *string
 }
-// NewPageDeployment_PageDeployment_id instantiates a new pageDeployment_id and sets the default values.
+// NewPageDeployment_PageDeployment_id instantiates a new PageDeployment_PageDeployment_id and sets the default values.
 func NewPageDeployment_PageDeployment_id()(*PageDeployment_PageDeployment_id) {
     m := &PageDeployment_PageDeployment_id{
     }
     return m
 }
 // CreatePageDeployment_PageDeployment_idFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePageDeployment_PageDeployment_idFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewPageDeployment_PageDeployment_id()
     if parseNode != nil {
@@ -61,18 +62,22 @@ func CreatePageDeployment_PageDeployment_idFromDiscriminatorValue(parseNode i878
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PageDeployment_PageDeployment_id) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
-// GetInteger gets the integer property value. Composed type representation for type integer
+// GetInteger gets the integer property value. Composed type representation for type int32
+// returns a *int32 when successful
 func (m *PageDeployment_PageDeployment_id) GetInteger()(*int32) {
     return m.integer
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *PageDeployment_PageDeployment_id) GetIsComposedType()(bool) {
     return true
 }
 // GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
 func (m *PageDeployment_PageDeployment_id) GetString()(*string) {
     return m.string
 }
@@ -91,7 +96,7 @@ func (m *PageDeployment_PageDeployment_id) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetInteger sets the integer property value. Composed type representation for type integer
+// SetInteger sets the integer property value. Composed type representation for type int32
 func (m *PageDeployment_PageDeployment_id) SetInteger(value *int32)() {
     m.integer = value
 }
@@ -99,7 +104,6 @@ func (m *PageDeployment_PageDeployment_id) SetInteger(value *int32)() {
 func (m *PageDeployment_PageDeployment_id) SetString(value *string)() {
     m.string = value
 }
-// PageDeployment_PageDeployment_idable 
 type PageDeployment_PageDeployment_idable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteger()(*int32)
@@ -107,7 +111,7 @@ type PageDeployment_PageDeployment_idable interface {
     SetInteger(value *int32)()
     SetString(value *string)()
 }
-// NewPageDeployment instantiates a new pageDeployment and sets the default values.
+// NewPageDeployment instantiates a new PageDeployment and sets the default values.
 func NewPageDeployment()(*PageDeployment) {
     m := &PageDeployment{
     }
@@ -115,14 +119,17 @@ func NewPageDeployment()(*PageDeployment) {
     return m
 }
 // CreatePageDeploymentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePageDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPageDeployment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PageDeployment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PageDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -168,18 +175,22 @@ func (m *PageDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetId gets the id property value. The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+// returns a PageDeployment_PageDeployment_idable when successful
 func (m *PageDeployment) GetId()(PageDeployment_PageDeployment_idable) {
     return m.id
 }
 // GetPageUrl gets the page_url property value. The URI to the deployed GitHub Pages.
+// returns a *string when successful
 func (m *PageDeployment) GetPageUrl()(*string) {
     return m.page_url
 }
 // GetPreviewUrl gets the preview_url property value. The URI to the deployed GitHub Pages preview.
+// returns a *string when successful
 func (m *PageDeployment) GetPreviewUrl()(*string) {
     return m.preview_url
 }
 // GetStatusUrl gets the status_url property value. The URI to monitor GitHub Pages deployment status.
+// returns a *string when successful
 func (m *PageDeployment) GetStatusUrl()(*string) {
     return m.status_url
 }
@@ -237,7 +248,6 @@ func (m *PageDeployment) SetPreviewUrl(value *string)() {
 func (m *PageDeployment) SetStatusUrl(value *string)() {
     m.status_url = value
 }
-// PageDeploymentable 
 type PageDeploymentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

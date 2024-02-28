@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryAdvisoryCreate_vulnerabilities 
 type RepositoryAdvisoryCreate_vulnerabilities struct {
     // The name of the package affected by the vulnerability.
     packageEscaped RepositoryAdvisoryCreate_vulnerabilities_packageable
@@ -15,17 +14,19 @@ type RepositoryAdvisoryCreate_vulnerabilities struct {
     // The range of the package versions affected by the vulnerability.
     vulnerable_version_range *string
 }
-// NewRepositoryAdvisoryCreate_vulnerabilities instantiates a new repositoryAdvisoryCreate_vulnerabilities and sets the default values.
+// NewRepositoryAdvisoryCreate_vulnerabilities instantiates a new RepositoryAdvisoryCreate_vulnerabilities and sets the default values.
 func NewRepositoryAdvisoryCreate_vulnerabilities()(*RepositoryAdvisoryCreate_vulnerabilities) {
     m := &RepositoryAdvisoryCreate_vulnerabilities{
     }
     return m
 }
 // CreateRepositoryAdvisoryCreate_vulnerabilitiesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryCreate_vulnerabilitiesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryCreate_vulnerabilities(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryCreate_vulnerabilities) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -77,18 +78,22 @@ func (m *RepositoryAdvisoryCreate_vulnerabilities) GetFieldDeserializers()(map[s
     return res
 }
 // GetPackageEscaped gets the package property value. The name of the package affected by the vulnerability.
+// returns a RepositoryAdvisoryCreate_vulnerabilities_packageable when successful
 func (m *RepositoryAdvisoryCreate_vulnerabilities) GetPackageEscaped()(RepositoryAdvisoryCreate_vulnerabilities_packageable) {
     return m.packageEscaped
 }
 // GetPatchedVersions gets the patched_versions property value. The package version(s) that resolve the vulnerability.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate_vulnerabilities) GetPatchedVersions()(*string) {
     return m.patched_versions
 }
 // GetVulnerableFunctions gets the vulnerable_functions property value. The functions in the package that are affected.
+// returns a []string when successful
 func (m *RepositoryAdvisoryCreate_vulnerabilities) GetVulnerableFunctions()([]string) {
     return m.vulnerable_functions
 }
 // GetVulnerableVersionRange gets the vulnerable_version_range property value. The range of the package versions affected by the vulnerability.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate_vulnerabilities) GetVulnerableVersionRange()(*string) {
     return m.vulnerable_version_range
 }
@@ -136,7 +141,6 @@ func (m *RepositoryAdvisoryCreate_vulnerabilities) SetVulnerableFunctions(value 
 func (m *RepositoryAdvisoryCreate_vulnerabilities) SetVulnerableVersionRange(value *string)() {
     m.vulnerable_version_range = value
 }
-// RepositoryAdvisoryCreate_vulnerabilitiesable 
 type RepositoryAdvisoryCreate_vulnerabilitiesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPackageEscaped()(RepositoryAdvisoryCreate_vulnerabilities_packageable)

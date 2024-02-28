@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type MergedUpstream_merge_type int
 
 const (

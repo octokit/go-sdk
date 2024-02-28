@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type PackageVersion_metadata_package_type int
 
 const (

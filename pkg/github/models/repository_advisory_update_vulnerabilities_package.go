@@ -13,7 +13,7 @@ type RepositoryAdvisoryUpdate_vulnerabilities_package struct {
     // The unique package name within its ecosystem.
     name *string
 }
-// NewRepositoryAdvisoryUpdate_vulnerabilities_package instantiates a new repositoryAdvisoryUpdate_vulnerabilities_package and sets the default values.
+// NewRepositoryAdvisoryUpdate_vulnerabilities_package instantiates a new RepositoryAdvisoryUpdate_vulnerabilities_package and sets the default values.
 func NewRepositoryAdvisoryUpdate_vulnerabilities_package()(*RepositoryAdvisoryUpdate_vulnerabilities_package) {
     m := &RepositoryAdvisoryUpdate_vulnerabilities_package{
     }
@@ -21,18 +21,22 @@ func NewRepositoryAdvisoryUpdate_vulnerabilities_package()(*RepositoryAdvisoryUp
     return m
 }
 // CreateRepositoryAdvisoryUpdate_vulnerabilities_packageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryUpdate_vulnerabilities_packageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryUpdate_vulnerabilities_package(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEcosystem gets the ecosystem property value. The package's language or package management ecosystem.
+// returns a *SecurityAdvisoryEcosystems when successful
 func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) GetEcosystem()(*SecurityAdvisoryEcosystems) {
     return m.ecosystem
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["ecosystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) GetFieldDeserializers
     return res
 }
 // GetName gets the name property value. The unique package name within its ecosystem.
+// returns a *string when successful
 func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) GetName()(*string) {
     return m.name
 }
@@ -96,7 +101,6 @@ func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) SetEcosystem(value *S
 func (m *RepositoryAdvisoryUpdate_vulnerabilities_package) SetName(value *string)() {
     m.name = value
 }
-// RepositoryAdvisoryUpdate_vulnerabilities_packageable 
 type RepositoryAdvisoryUpdate_vulnerabilities_packageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

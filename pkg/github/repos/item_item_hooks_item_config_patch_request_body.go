@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemHooksItemConfigPatchRequestBody 
 type ItemItemHooksItemConfigPatchRequestBody struct {
     // The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
     content_type *string
@@ -23,14 +22,17 @@ func NewItemItemHooksItemConfigPatchRequestBody()(*ItemItemHooksItemConfigPatchR
     return m
 }
 // CreateItemItemHooksItemConfigPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemHooksItemConfigPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemHooksItemConfigPatchRequestBody(), nil
 }
 // GetContentType gets the content_type property value. The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.
+// returns a *string when successful
 func (m *ItemItemHooksItemConfigPatchRequestBody) GetContentType()(*string) {
     return m.content_type
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemHooksItemConfigPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["content_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,14 +78,17 @@ func (m *ItemItemHooksItemConfigPatchRequestBody) GetFieldDeserializers()(map[st
     return res
 }
 // GetInsecureSsl gets the insecure_ssl property value. The insecure_ssl property
+// returns a WebhookConfigInsecureSslable when successful
 func (m *ItemItemHooksItemConfigPatchRequestBody) GetInsecureSsl()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigInsecureSslable) {
     return m.insecure_ssl
 }
 // GetSecret gets the secret property value. If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).
+// returns a *string when successful
 func (m *ItemItemHooksItemConfigPatchRequestBody) GetSecret()(*string) {
     return m.secret
 }
 // GetUrl gets the url property value. The URL to which the payloads will be delivered.
+// returns a *string when successful
 func (m *ItemItemHooksItemConfigPatchRequestBody) GetUrl()(*string) {
     return m.url
 }
@@ -131,7 +136,6 @@ func (m *ItemItemHooksItemConfigPatchRequestBody) SetSecret(value *string)() {
 func (m *ItemItemHooksItemConfigPatchRequestBody) SetUrl(value *string)() {
     m.url = value
 }
-// ItemItemHooksItemConfigPatchRequestBodyable 
 type ItemItemHooksItemConfigPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentType()(*string)

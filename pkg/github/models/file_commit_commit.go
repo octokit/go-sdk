@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// FileCommit_commit 
 type FileCommit_commit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -29,7 +28,7 @@ type FileCommit_commit struct {
     // The verification property
     verification FileCommit_commit_verificationable
 }
-// NewFileCommit_commit instantiates a new fileCommit_commit and sets the default values.
+// NewFileCommit_commit instantiates a new FileCommit_commit and sets the default values.
 func NewFileCommit_commit()(*FileCommit_commit) {
     m := &FileCommit_commit{
     }
@@ -37,22 +36,27 @@ func NewFileCommit_commit()(*FileCommit_commit) {
     return m
 }
 // CreateFileCommit_commitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateFileCommit_commitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileCommit_commit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *FileCommit_commit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. The author property
+// returns a FileCommit_commit_authorable when successful
 func (m *FileCommit_commit) GetAuthor()(FileCommit_commit_authorable) {
     return m.author
 }
 // GetCommitter gets the committer property value. The committer property
+// returns a FileCommit_commit_committerable when successful
 func (m *FileCommit_commit) GetCommitter()(FileCommit_commit_committerable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileCommit_commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -164,34 +168,42 @@ func (m *FileCommit_commit) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *FileCommit_commit) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *FileCommit_commit) GetMessage()(*string) {
     return m.message
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *FileCommit_commit) GetNodeId()(*string) {
     return m.node_id
 }
 // GetParents gets the parents property value. The parents property
+// returns a []FileCommit_commit_parentsable when successful
 func (m *FileCommit_commit) GetParents()([]FileCommit_commit_parentsable) {
     return m.parents
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *FileCommit_commit) GetSha()(*string) {
     return m.sha
 }
 // GetTree gets the tree property value. The tree property
+// returns a FileCommit_commit_treeable when successful
 func (m *FileCommit_commit) GetTree()(FileCommit_commit_treeable) {
     return m.tree
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *FileCommit_commit) GetUrl()(*string) {
     return m.url
 }
 // GetVerification gets the verification property value. The verification property
+// returns a FileCommit_commit_verificationable when successful
 func (m *FileCommit_commit) GetVerification()(FileCommit_commit_verificationable) {
     return m.verification
 }
@@ -315,7 +327,6 @@ func (m *FileCommit_commit) SetUrl(value *string)() {
 func (m *FileCommit_commit) SetVerification(value FileCommit_commit_verificationable)() {
     m.verification = value
 }
-// FileCommit_commitable 
 type FileCommit_commitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

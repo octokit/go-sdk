@@ -6,7 +6,7 @@ import (
 type WithEnablementPostRequestBody_query_suite int
 
 const (
-    DEFAULTESCAPED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE WithEnablementPostRequestBody_query_suite = iota
+    DEFAULT_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE WithEnablementPostRequestBody_query_suite = iota
     EXTENDED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
 )
 
@@ -14,10 +14,10 @@ func (i WithEnablementPostRequestBody_query_suite) String() string {
     return []string{"default", "extended"}[i]
 }
 func ParseWithEnablementPostRequestBody_query_suite(v string) (any, error) {
-    result := DEFAULTESCAPED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
+    result := DEFAULT_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
     switch v {
         case "default":
-            result = DEFAULTESCAPED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
+            result = DEFAULT_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
         case "extended":
             result = EXTENDED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
         default:

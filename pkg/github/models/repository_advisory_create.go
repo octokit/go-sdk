@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryAdvisoryCreate 
 type RepositoryAdvisoryCreate struct {
     // A list of users receiving credit for their participation in the security advisory.
     credits []RepositoryAdvisoryCreate_creditsable
@@ -25,37 +24,44 @@ type RepositoryAdvisoryCreate struct {
     // A product affected by the vulnerability detailed in a repository security advisory.
     vulnerabilities []RepositoryAdvisoryCreate_vulnerabilitiesable
 }
-// NewRepositoryAdvisoryCreate instantiates a new repositoryAdvisoryCreate and sets the default values.
+// NewRepositoryAdvisoryCreate instantiates a new RepositoryAdvisoryCreate and sets the default values.
 func NewRepositoryAdvisoryCreate()(*RepositoryAdvisoryCreate) {
     m := &RepositoryAdvisoryCreate{
     }
     return m
 }
 // CreateRepositoryAdvisoryCreateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryAdvisoryCreateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryAdvisoryCreate(), nil
 }
 // GetCredits gets the credits property value. A list of users receiving credit for their participation in the security advisory.
+// returns a []RepositoryAdvisoryCreate_creditsable when successful
 func (m *RepositoryAdvisoryCreate) GetCredits()([]RepositoryAdvisoryCreate_creditsable) {
     return m.credits
 }
 // GetCveId gets the cve_id property value. The Common Vulnerabilities and Exposures (CVE) ID.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate) GetCveId()(*string) {
     return m.cve_id
 }
 // GetCvssVectorString gets the cvss_vector_string property value. The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate) GetCvssVectorString()(*string) {
     return m.cvss_vector_string
 }
 // GetCweIds gets the cwe_ids property value. A list of Common Weakness Enumeration (CWE) IDs.
+// returns a []string when successful
 func (m *RepositoryAdvisoryCreate) GetCweIds()([]string) {
     return m.cwe_ids
 }
 // GetDescription gets the description property value. A detailed description of what the advisory impacts.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryAdvisoryCreate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["credits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -169,18 +175,22 @@ func (m *RepositoryAdvisoryCreate) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetSeverity gets the severity property value. The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+// returns a *RepositoryAdvisoryCreate_severity when successful
 func (m *RepositoryAdvisoryCreate) GetSeverity()(*RepositoryAdvisoryCreate_severity) {
     return m.severity
 }
 // GetStartPrivateFork gets the start_private_fork property value. Whether to create a temporary private fork of the repository to collaborate on a fix.
+// returns a *bool when successful
 func (m *RepositoryAdvisoryCreate) GetStartPrivateFork()(*bool) {
     return m.start_private_fork
 }
 // GetSummary gets the summary property value. A short summary of the advisory.
+// returns a *string when successful
 func (m *RepositoryAdvisoryCreate) GetSummary()(*string) {
     return m.summary
 }
 // GetVulnerabilities gets the vulnerabilities property value. A product affected by the vulnerability detailed in a repository security advisory.
+// returns a []RepositoryAdvisoryCreate_vulnerabilitiesable when successful
 func (m *RepositoryAdvisoryCreate) GetVulnerabilities()([]RepositoryAdvisoryCreate_vulnerabilitiesable) {
     return m.vulnerabilities
 }
@@ -291,7 +301,6 @@ func (m *RepositoryAdvisoryCreate) SetSummary(value *string)() {
 func (m *RepositoryAdvisoryCreate) SetVulnerabilities(value []RepositoryAdvisoryCreate_vulnerabilitiesable)() {
     m.vulnerabilities = value
 }
-// RepositoryAdvisoryCreateable 
 type RepositoryAdvisoryCreateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCredits()([]RepositoryAdvisoryCreate_creditsable)

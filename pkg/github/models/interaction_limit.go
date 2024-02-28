@@ -13,7 +13,7 @@ type InteractionLimit struct {
     // The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
     limit *InteractionGroup
 }
-// NewInteractionLimit instantiates a new interactionLimit and sets the default values.
+// NewInteractionLimit instantiates a new InteractionLimit and sets the default values.
 func NewInteractionLimit()(*InteractionLimit) {
     m := &InteractionLimit{
     }
@@ -21,18 +21,22 @@ func NewInteractionLimit()(*InteractionLimit) {
     return m
 }
 // CreateInteractionLimitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInteractionLimitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInteractionLimit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InteractionLimit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiry gets the expiry property value. The duration of the interaction restriction. Default: `one_day`.
+// returns a *InteractionExpiry when successful
 func (m *InteractionLimit) GetExpiry()(*InteractionExpiry) {
     return m.expiry
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InteractionLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expiry"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *InteractionLimit) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetLimit gets the limit property value. The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
+// returns a *InteractionGroup when successful
 func (m *InteractionLimit) GetLimit()(*InteractionGroup) {
     return m.limit
 }
@@ -97,7 +102,6 @@ func (m *InteractionLimit) SetExpiry(value *InteractionExpiry)() {
 func (m *InteractionLimit) SetLimit(value *InteractionGroup)() {
     m.limit = value
 }
-// InteractionLimitable 
 type InteractionLimitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

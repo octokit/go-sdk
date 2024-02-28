@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ColumnsCardsItemMoves403Error_errors 
 type ColumnsCardsItemMoves403Error_errors struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,22 +24,27 @@ func NewColumnsCardsItemMoves403Error_errors()(*ColumnsCardsItemMoves403Error_er
     return m
 }
 // CreateColumnsCardsItemMoves403Error_errorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateColumnsCardsItemMoves403Error_errorsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewColumnsCardsItemMoves403Error_errors(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCode gets the code property value. The code property
+// returns a *string when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetCode()(*string) {
     return m.code
 }
 // GetField gets the field property value. The field property
+// returns a *string when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetField()(*string) {
     return m.field
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["code"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -86,10 +90,12 @@ func (m *ColumnsCardsItemMoves403Error_errors) GetFieldDeserializers()(map[strin
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetMessage()(*string) {
     return m.message
 }
 // GetResource gets the resource property value. The resource property
+// returns a *string when successful
 func (m *ColumnsCardsItemMoves403Error_errors) GetResource()(*string) {
     return m.resource
 }
@@ -147,7 +153,6 @@ func (m *ColumnsCardsItemMoves403Error_errors) SetMessage(value *string)() {
 func (m *ColumnsCardsItemMoves403Error_errors) SetResource(value *string)() {
     m.resource = value
 }
-// ColumnsCardsItemMoves403Error_errorsable 
 type ColumnsCardsItemMoves403Error_errorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -21,18 +21,22 @@ func NewItemItemContentsItemWithPathDeleteRequestBody_committer()(*ItemItemConte
     return m
 }
 // CreateItemItemContentsItemWithPathDeleteRequestBody_committerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemContentsItemWithPathDeleteRequestBody_committerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemContentsItemWithPathDeleteRequestBody_committer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email of the author (or committer) of the commit
+// returns a *string when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) GetFieldDeseri
     return res
 }
 // GetName gets the name property value. The name of the author (or committer) of the commit
+// returns a *string when successful
 func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) SetEmail(value
 func (m *ItemItemContentsItemWithPathDeleteRequestBody_committer) SetName(value *string)() {
     m.name = value
 }
-// ItemItemContentsItemWithPathDeleteRequestBody_committerable 
 type ItemItemContentsItemWithPathDeleteRequestBody_committerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

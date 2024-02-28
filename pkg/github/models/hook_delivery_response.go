@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HookDelivery_response 
 type HookDelivery_response struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type HookDelivery_response struct {
     // The response payload received.
     payload *string
 }
-// NewHookDelivery_response instantiates a new hookDelivery_response and sets the default values.
+// NewHookDelivery_response instantiates a new HookDelivery_response and sets the default values.
 func NewHookDelivery_response()(*HookDelivery_response) {
     m := &HookDelivery_response{
     }
@@ -21,14 +20,17 @@ func NewHookDelivery_response()(*HookDelivery_response) {
     return m
 }
 // CreateHookDelivery_responseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateHookDelivery_responseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHookDelivery_response(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *HookDelivery_response) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HookDelivery_response) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["headers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *HookDelivery_response) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetHeaders gets the headers property value. The response headers received when the delivery was made.
+// returns a HookDelivery_response_headersable when successful
 func (m *HookDelivery_response) GetHeaders()(HookDelivery_response_headersable) {
     return m.headers
 }
 // GetPayload gets the payload property value. The response payload received.
+// returns a *string when successful
 func (m *HookDelivery_response) GetPayload()(*string) {
     return m.payload
 }
@@ -95,7 +99,6 @@ func (m *HookDelivery_response) SetHeaders(value HookDelivery_response_headersab
 func (m *HookDelivery_response) SetPayload(value *string)() {
     m.payload = value
 }
-// HookDelivery_responseable 
 type HookDelivery_responseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

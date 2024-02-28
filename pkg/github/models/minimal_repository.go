@@ -184,7 +184,7 @@ type MinimalRepository struct {
     // The web_commit_signoff_required property
     web_commit_signoff_required *bool
 }
-// NewMinimalRepository instantiates a new minimalRepository and sets the default values.
+// NewMinimalRepository instantiates a new MinimalRepository and sets the default values.
 func NewMinimalRepository()(*MinimalRepository) {
     m := &MinimalRepository{
     }
@@ -192,102 +192,127 @@ func NewMinimalRepository()(*MinimalRepository) {
     return m
 }
 // CreateMinimalRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMinimalRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMinimalRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MinimalRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowForking gets the allow_forking property value. The allow_forking property
+// returns a *bool when successful
 func (m *MinimalRepository) GetAllowForking()(*bool) {
     return m.allow_forking
 }
 // GetArchived gets the archived property value. The archived property
+// returns a *bool when successful
 func (m *MinimalRepository) GetArchived()(*bool) {
     return m.archived
 }
 // GetArchiveUrl gets the archive_url property value. The archive_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetAssigneesUrl gets the assignees_url property value. The assignees_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetAssigneesUrl()(*string) {
     return m.assignees_url
 }
 // GetBlobsUrl gets the blobs_url property value. The blobs_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetBlobsUrl()(*string) {
     return m.blobs_url
 }
 // GetBranchesUrl gets the branches_url property value. The branches_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetBranchesUrl()(*string) {
     return m.branches_url
 }
 // GetCloneUrl gets the clone_url property value. The clone_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetCloneUrl()(*string) {
     return m.clone_url
 }
 // GetCodeOfConduct gets the code_of_conduct property value. Code Of Conduct
+// returns a CodeOfConductable when successful
 func (m *MinimalRepository) GetCodeOfConduct()(CodeOfConductable) {
     return m.code_of_conduct
 }
 // GetCollaboratorsUrl gets the collaborators_url property value. The collaborators_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetCollaboratorsUrl()(*string) {
     return m.collaborators_url
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommitsUrl gets the commits_url property value. The commits_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetCommitsUrl()(*string) {
     return m.commits_url
 }
 // GetCompareUrl gets the compare_url property value. The compare_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetCompareUrl()(*string) {
     return m.compare_url
 }
 // GetContentsUrl gets the contents_url property value. The contents_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetContentsUrl()(*string) {
     return m.contents_url
 }
 // GetContributorsUrl gets the contributors_url property value. The contributors_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetContributorsUrl()(*string) {
     return m.contributors_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *MinimalRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDefaultBranch gets the default_branch property value. The default_branch property
+// returns a *string when successful
 func (m *MinimalRepository) GetDefaultBranch()(*string) {
     return m.default_branch
 }
 // GetDeleteBranchOnMerge gets the delete_branch_on_merge property value. The delete_branch_on_merge property
+// returns a *bool when successful
 func (m *MinimalRepository) GetDeleteBranchOnMerge()(*bool) {
     return m.delete_branch_on_merge
 }
 // GetDeploymentsUrl gets the deployments_url property value. The deployments_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetDeploymentsUrl()(*string) {
     return m.deployments_url
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *MinimalRepository) GetDescription()(*string) {
     return m.description
 }
 // GetDisabled gets the disabled property value. The disabled property
+// returns a *bool when successful
 func (m *MinimalRepository) GetDisabled()(*bool) {
     return m.disabled
 }
 // GetDownloadsUrl gets the downloads_url property value. The downloads_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetDownloadsUrl()(*string) {
     return m.downloads_url
 }
 // GetEventsUrl gets the events_url property value. The events_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetEventsUrl()(*string) {
     return m.events_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MinimalRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_forking"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -1169,262 +1194,327 @@ func (m *MinimalRepository) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetFork gets the fork property value. The fork property
+// returns a *bool when successful
 func (m *MinimalRepository) GetFork()(*bool) {
     return m.fork
 }
 // GetForks gets the forks property value. The forks property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetForks()(*int32) {
     return m.forks
 }
 // GetForksCount gets the forks_count property value. The forks_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetForksCount()(*int32) {
     return m.forks_count
 }
 // GetForksUrl gets the forks_url property value. The forks_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetForksUrl()(*string) {
     return m.forks_url
 }
 // GetFullName gets the full_name property value. The full_name property
+// returns a *string when successful
 func (m *MinimalRepository) GetFullName()(*string) {
     return m.full_name
 }
 // GetGitCommitsUrl gets the git_commits_url property value. The git_commits_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetGitCommitsUrl()(*string) {
     return m.git_commits_url
 }
 // GetGitRefsUrl gets the git_refs_url property value. The git_refs_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetGitRefsUrl()(*string) {
     return m.git_refs_url
 }
 // GetGitTagsUrl gets the git_tags_url property value. The git_tags_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetGitTagsUrl()(*string) {
     return m.git_tags_url
 }
 // GetGitUrl gets the git_url property value. The git_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetGitUrl()(*string) {
     return m.git_url
 }
 // GetHasDiscussions gets the has_discussions property value. The has_discussions property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasDiscussions()(*bool) {
     return m.has_discussions
 }
 // GetHasDownloads gets the has_downloads property value. The has_downloads property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasDownloads()(*bool) {
     return m.has_downloads
 }
 // GetHasIssues gets the has_issues property value. The has_issues property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasIssues()(*bool) {
     return m.has_issues
 }
 // GetHasPages gets the has_pages property value. The has_pages property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasPages()(*bool) {
     return m.has_pages
 }
 // GetHasProjects gets the has_projects property value. The has_projects property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasProjects()(*bool) {
     return m.has_projects
 }
 // GetHasWiki gets the has_wiki property value. The has_wiki property
+// returns a *bool when successful
 func (m *MinimalRepository) GetHasWiki()(*bool) {
     return m.has_wiki
 }
 // GetHomepage gets the homepage property value. The homepage property
+// returns a *string when successful
 func (m *MinimalRepository) GetHomepage()(*string) {
     return m.homepage
 }
 // GetHooksUrl gets the hooks_url property value. The hooks_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetHooksUrl()(*string) {
     return m.hooks_url
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetId()(*int32) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. The issue_comment_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetIssueCommentUrl()(*string) {
     return m.issue_comment_url
 }
 // GetIssueEventsUrl gets the issue_events_url property value. The issue_events_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetIssueEventsUrl()(*string) {
     return m.issue_events_url
 }
 // GetIssuesUrl gets the issues_url property value. The issues_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetIssuesUrl()(*string) {
     return m.issues_url
 }
 // GetIsTemplate gets the is_template property value. The is_template property
+// returns a *bool when successful
 func (m *MinimalRepository) GetIsTemplate()(*bool) {
     return m.is_template
 }
 // GetKeysUrl gets the keys_url property value. The keys_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetKeysUrl()(*string) {
     return m.keys_url
 }
 // GetLabelsUrl gets the labels_url property value. The labels_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetLabelsUrl()(*string) {
     return m.labels_url
 }
 // GetLanguage gets the language property value. The language property
+// returns a *string when successful
 func (m *MinimalRepository) GetLanguage()(*string) {
     return m.language
 }
 // GetLanguagesUrl gets the languages_url property value. The languages_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetLanguagesUrl()(*string) {
     return m.languages_url
 }
 // GetLicense gets the license property value. The license property
+// returns a MinimalRepository_licenseable when successful
 func (m *MinimalRepository) GetLicense()(MinimalRepository_licenseable) {
     return m.license
 }
 // GetMergesUrl gets the merges_url property value. The merges_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetMergesUrl()(*string) {
     return m.merges_url
 }
 // GetMilestonesUrl gets the milestones_url property value. The milestones_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetMilestonesUrl()(*string) {
     return m.milestones_url
 }
 // GetMirrorUrl gets the mirror_url property value. The mirror_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetMirrorUrl()(*string) {
     return m.mirror_url
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *MinimalRepository) GetName()(*string) {
     return m.name
 }
 // GetNetworkCount gets the network_count property value. The network_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetNetworkCount()(*int32) {
     return m.network_count
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *MinimalRepository) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationsUrl gets the notifications_url property value. The notifications_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetNotificationsUrl()(*string) {
     return m.notifications_url
 }
 // GetOpenIssues gets the open_issues property value. The open_issues property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetOpenIssues()(*int32) {
     return m.open_issues
 }
 // GetOpenIssuesCount gets the open_issues_count property value. The open_issues_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetOpenIssuesCount()(*int32) {
     return m.open_issues_count
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *MinimalRepository) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a MinimalRepository_permissionsable when successful
 func (m *MinimalRepository) GetPermissions()(MinimalRepository_permissionsable) {
     return m.permissions
 }
 // GetPrivate gets the private property value. The private property
+// returns a *bool when successful
 func (m *MinimalRepository) GetPrivate()(*bool) {
     return m.private
 }
 // GetPullsUrl gets the pulls_url property value. The pulls_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetPushedAt gets the pushed_at property value. The pushed_at property
+// returns a *Time when successful
 func (m *MinimalRepository) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pushed_at
 }
 // GetReleasesUrl gets the releases_url property value. The releases_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetReleasesUrl()(*string) {
     return m.releases_url
 }
 // GetRoleName gets the role_name property value. The role_name property
+// returns a *string when successful
 func (m *MinimalRepository) GetRoleName()(*string) {
     return m.role_name
 }
 // GetSecurityAndAnalysis gets the security_and_analysis property value. The security_and_analysis property
+// returns a SecurityAndAnalysisable when successful
 func (m *MinimalRepository) GetSecurityAndAnalysis()(SecurityAndAnalysisable) {
     return m.security_and_analysis
 }
 // GetSize gets the size property value. The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
+// returns a *int32 when successful
 func (m *MinimalRepository) GetSize()(*int32) {
     return m.size
 }
 // GetSshUrl gets the ssh_url property value. The ssh_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetSshUrl()(*string) {
     return m.ssh_url
 }
 // GetStargazersCount gets the stargazers_count property value. The stargazers_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetStargazersCount()(*int32) {
     return m.stargazers_count
 }
 // GetStargazersUrl gets the stargazers_url property value. The stargazers_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetStargazersUrl()(*string) {
     return m.stargazers_url
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetSubscribersCount gets the subscribers_count property value. The subscribers_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetSubscribersCount()(*int32) {
     return m.subscribers_count
 }
 // GetSubscribersUrl gets the subscribers_url property value. The subscribers_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetSubscribersUrl()(*string) {
     return m.subscribers_url
 }
 // GetSubscriptionUrl gets the subscription_url property value. The subscription_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetSubscriptionUrl()(*string) {
     return m.subscription_url
 }
 // GetSvnUrl gets the svn_url property value. The svn_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetSvnUrl()(*string) {
     return m.svn_url
 }
 // GetTagsUrl gets the tags_url property value. The tags_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetTagsUrl()(*string) {
     return m.tags_url
 }
 // GetTeamsUrl gets the teams_url property value. The teams_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetTeamsUrl()(*string) {
     return m.teams_url
 }
 // GetTempCloneToken gets the temp_clone_token property value. The temp_clone_token property
+// returns a *string when successful
 func (m *MinimalRepository) GetTempCloneToken()(*string) {
     return m.temp_clone_token
 }
 // GetTopics gets the topics property value. The topics property
+// returns a []string when successful
 func (m *MinimalRepository) GetTopics()([]string) {
     return m.topics
 }
 // GetTreesUrl gets the trees_url property value. The trees_url property
+// returns a *string when successful
 func (m *MinimalRepository) GetTreesUrl()(*string) {
     return m.trees_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *MinimalRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *MinimalRepository) GetUrl()(*string) {
     return m.url
 }
 // GetVisibility gets the visibility property value. The visibility property
+// returns a *string when successful
 func (m *MinimalRepository) GetVisibility()(*string) {
     return m.visibility
 }
 // GetWatchers gets the watchers property value. The watchers property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetWatchers()(*int32) {
     return m.watchers
 }
 // GetWatchersCount gets the watchers_count property value. The watchers_count property
+// returns a *int32 when successful
 func (m *MinimalRepository) GetWatchersCount()(*int32) {
     return m.watchers_count
 }
 // GetWebCommitSignoffRequired gets the web_commit_signoff_required property value. The web_commit_signoff_required property
+// returns a *bool when successful
 func (m *MinimalRepository) GetWebCommitSignoffRequired()(*bool) {
     return m.web_commit_signoff_required
 }
@@ -2312,7 +2402,6 @@ func (m *MinimalRepository) SetWatchersCount(value *int32)() {
 func (m *MinimalRepository) SetWebCommitSignoffRequired(value *bool)() {
     m.web_commit_signoff_required = value
 }
-// MinimalRepositoryable 
 type MinimalRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

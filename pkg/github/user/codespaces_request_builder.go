@@ -11,24 +11,25 @@ import (
 type CodespacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CodespacesPostRequestBody composed type wrapper for classes CodespacesPostRequestBodyMember1, CodespacesPostRequestBodyMember2
+// CodespacesPostRequestBody composed type wrapper for classes CodespacesPostRequestBodyMember1able, CodespacesPostRequestBodyMember2able
 type CodespacesPostRequestBody struct {
-    // Composed type representation for type CodespacesPostRequestBodyMember1
+    // Composed type representation for type CodespacesPostRequestBodyMember1able
     codespacesPostRequestBodyCodespacesPostRequestBodyMember1 CodespacesPostRequestBodyMember1able
-    // Composed type representation for type CodespacesPostRequestBodyMember2
+    // Composed type representation for type CodespacesPostRequestBodyMember2able
     codespacesPostRequestBodyCodespacesPostRequestBodyMember2 CodespacesPostRequestBodyMember2able
-    // Composed type representation for type CodespacesPostRequestBodyMember1
+    // Composed type representation for type CodespacesPostRequestBodyMember1able
     codespacesPostRequestBodyMember1 CodespacesPostRequestBodyMember1able
-    // Composed type representation for type CodespacesPostRequestBodyMember2
+    // Composed type representation for type CodespacesPostRequestBodyMember2able
     codespacesPostRequestBodyMember2 CodespacesPostRequestBodyMember2able
 }
-// NewCodespacesPostRequestBody instantiates a new codespacesPostRequestBody and sets the default values.
+// NewCodespacesPostRequestBody instantiates a new CodespacesPostRequestBody and sets the default values.
 func NewCodespacesPostRequestBody()(*CodespacesPostRequestBody) {
     m := &CodespacesPostRequestBody{
     }
     return m
 }
 // CreateCodespacesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespacesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewCodespacesPostRequestBody()
     if parseNode != nil {
@@ -47,27 +48,33 @@ func CreateCodespacesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d233
     }
     return result, nil
 }
-// GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1 gets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1
+// GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1 gets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1able
+// returns a CodespacesPostRequestBodyMember1able when successful
 func (m *CodespacesPostRequestBody) GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1()(CodespacesPostRequestBodyMember1able) {
     return m.codespacesPostRequestBodyCodespacesPostRequestBodyMember1
 }
-// GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2 gets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2
+// GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2 gets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2able
+// returns a CodespacesPostRequestBodyMember2able when successful
 func (m *CodespacesPostRequestBody) GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2()(CodespacesPostRequestBodyMember2able) {
     return m.codespacesPostRequestBodyCodespacesPostRequestBodyMember2
 }
-// GetCodespacesPostRequestBodyMember1 gets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1
+// GetCodespacesPostRequestBodyMember1 gets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1able
+// returns a CodespacesPostRequestBodyMember1able when successful
 func (m *CodespacesPostRequestBody) GetCodespacesPostRequestBodyMember1()(CodespacesPostRequestBodyMember1able) {
     return m.codespacesPostRequestBodyMember1
 }
-// GetCodespacesPostRequestBodyMember2 gets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2
+// GetCodespacesPostRequestBodyMember2 gets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2able
+// returns a CodespacesPostRequestBodyMember2able when successful
 func (m *CodespacesPostRequestBody) GetCodespacesPostRequestBodyMember2()(CodespacesPostRequestBodyMember2able) {
     return m.codespacesPostRequestBodyMember2
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespacesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *CodespacesPostRequestBody) GetIsComposedType()(bool) {
     return true
 }
@@ -96,19 +103,19 @@ func (m *CodespacesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1 sets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1
+// SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1 sets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1able
 func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1(value CodespacesPostRequestBodyMember1able)() {
     m.codespacesPostRequestBodyCodespacesPostRequestBodyMember1 = value
 }
-// SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2 sets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2
+// SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2 sets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2able
 func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyCodespacesPostRequestBodyMember2(value CodespacesPostRequestBodyMember2able)() {
     m.codespacesPostRequestBodyCodespacesPostRequestBodyMember2 = value
 }
-// SetCodespacesPostRequestBodyMember1 sets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1
+// SetCodespacesPostRequestBodyMember1 sets the CodespacesPostRequestBodyMember1 property value. Composed type representation for type CodespacesPostRequestBodyMember1able
 func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyMember1(value CodespacesPostRequestBodyMember1able)() {
     m.codespacesPostRequestBodyMember1 = value
 }
-// SetCodespacesPostRequestBodyMember2 sets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2
+// SetCodespacesPostRequestBodyMember2 sets the CodespacesPostRequestBodyMember2 property value. Composed type representation for type CodespacesPostRequestBodyMember2able
 func (m *CodespacesPostRequestBody) SetCodespacesPostRequestBodyMember2(value CodespacesPostRequestBodyMember2able)() {
     m.codespacesPostRequestBodyMember2 = value
 }
@@ -121,7 +128,6 @@ type CodespacesRequestBuilderGetQueryParameters struct {
     // ID of the Repository to filter on
     Repository_id *int32 `uriparametername:"repository_id"`
 }
-// CodespacesPostRequestBodyable 
 type CodespacesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCodespacesPostRequestBodyCodespacesPostRequestBodyMember1()(CodespacesPostRequestBodyMember1able)
@@ -134,6 +140,7 @@ type CodespacesPostRequestBodyable interface {
     SetCodespacesPostRequestBodyMember2(value CodespacesPostRequestBodyMember2able)()
 }
 // ByCodespace_name gets an item from the github.com/octokit/go-sdk/pkg/github/.user.codespaces.item collection
+// returns a *CodespacesWithCodespace_nameItemRequestBuilder when successful
 func (m *CodespacesRequestBuilder) ByCodespace_name(codespace_name string)(*CodespacesWithCodespace_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -158,6 +165,11 @@ func NewCodespacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewCodespacesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the authenticated user's codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+// returns a CodespacesGetResponseable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#list-codespaces-for-the-authenticated-user
@@ -182,6 +194,11 @@ func (m *CodespacesRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(CodespacesGetResponseable), nil
 }
 // Post creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+// returns a Codespaceable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a Codespace503Error error when the service returns a 503 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-for-the-authenticated-user
@@ -206,10 +223,12 @@ func (m *CodespacesRequestBuilder) Post(ctx context.Context, body CodespacesPost
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Codespaceable), nil
 }
 // Secrets the secrets property
+// returns a *CodespacesSecretsRequestBuilder when successful
 func (m *CodespacesRequestBuilder) Secrets()(*CodespacesSecretsRequestBuilder) {
     return NewCodespacesSecretsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation lists the authenticated user's codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *CodespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[CodespacesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -217,8 +236,9 @@ func (m *CodespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *CodespacesRequestBuilder) ToPostRequestInformation(ctx context.Context, body CodespacesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/user/codespaces", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -228,6 +248,7 @@ func (m *CodespacesRequestBuilder) ToPostRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CodespacesRequestBuilder when successful
 func (m *CodespacesRequestBuilder) WithUrl(rawUrl string)(*CodespacesRequestBuilder) {
     return NewCodespacesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

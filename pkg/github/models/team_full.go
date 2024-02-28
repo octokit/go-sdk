@@ -48,7 +48,7 @@ type TeamFull struct {
     // URL for the team
     url *string
 }
-// NewTeamFull instantiates a new teamFull and sets the default values.
+// NewTeamFull instantiates a new TeamFull and sets the default values.
 func NewTeamFull()(*TeamFull) {
     m := &TeamFull{
     }
@@ -56,22 +56,27 @@ func NewTeamFull()(*TeamFull) {
     return m
 }
 // CreateTeamFullFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamFullFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamFull(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamFull) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TeamFull) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *TeamFull) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamFull) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -267,70 +272,87 @@ func (m *TeamFull) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TeamFull) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the team
+// returns a *int32 when successful
 func (m *TeamFull) GetId()(*int32) {
     return m.id
 }
 // GetLdapDn gets the ldap_dn property value. Distinguished Name (DN) that team maps to within LDAP environment
+// returns a *string when successful
 func (m *TeamFull) GetLdapDn()(*string) {
     return m.ldap_dn
 }
 // GetMembersCount gets the members_count property value. The members_count property
+// returns a *int32 when successful
 func (m *TeamFull) GetMembersCount()(*int32) {
     return m.members_count
 }
 // GetMembersUrl gets the members_url property value. The members_url property
+// returns a *string when successful
 func (m *TeamFull) GetMembersUrl()(*string) {
     return m.members_url
 }
 // GetName gets the name property value. Name of the team
+// returns a *string when successful
 func (m *TeamFull) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TeamFull) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNotificationSetting gets the notification_setting property value. The notification setting the team has set
+// returns a *TeamFull_notification_setting when successful
 func (m *TeamFull) GetNotificationSetting()(*TeamFull_notification_setting) {
     return m.notification_setting
 }
 // GetOrganization gets the organization property value. Team Organization
+// returns a TeamOrganizationable when successful
 func (m *TeamFull) GetOrganization()(TeamOrganizationable) {
     return m.organization
 }
 // GetParent gets the parent property value. Groups of organization members that gives permissions on specified repositories.
+// returns a NullableTeamSimpleable when successful
 func (m *TeamFull) GetParent()(NullableTeamSimpleable) {
     return m.parent
 }
 // GetPermission gets the permission property value. Permission that the team will have for its repositories
+// returns a *string when successful
 func (m *TeamFull) GetPermission()(*string) {
     return m.permission
 }
 // GetPrivacy gets the privacy property value. The level of privacy this team should have
+// returns a *TeamFull_privacy when successful
 func (m *TeamFull) GetPrivacy()(*TeamFull_privacy) {
     return m.privacy
 }
 // GetReposCount gets the repos_count property value. The repos_count property
+// returns a *int32 when successful
 func (m *TeamFull) GetReposCount()(*int32) {
     return m.repos_count
 }
 // GetRepositoriesUrl gets the repositories_url property value. The repositories_url property
+// returns a *string when successful
 func (m *TeamFull) GetRepositoriesUrl()(*string) {
     return m.repositories_url
 }
 // GetSlug gets the slug property value. The slug property
+// returns a *string when successful
 func (m *TeamFull) GetSlug()(*string) {
     return m.slug
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TeamFull) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. URL for the team
+// returns a *string when successful
 func (m *TeamFull) GetUrl()(*string) {
     return m.url
 }
@@ -540,7 +562,6 @@ func (m *TeamFull) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a
 func (m *TeamFull) SetUrl(value *string)() {
     m.url = value
 }
-// TeamFullable 
 type TeamFullable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

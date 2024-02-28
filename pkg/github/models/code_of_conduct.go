@@ -19,7 +19,7 @@ type CodeOfConduct struct {
     // The url property
     url *string
 }
-// NewCodeOfConduct instantiates a new codeOfConduct and sets the default values.
+// NewCodeOfConduct instantiates a new CodeOfConduct and sets the default values.
 func NewCodeOfConduct()(*CodeOfConduct) {
     m := &CodeOfConduct{
     }
@@ -27,18 +27,22 @@ func NewCodeOfConduct()(*CodeOfConduct) {
     return m
 }
 // CreateCodeOfConductFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeOfConductFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeOfConduct(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeOfConduct) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *CodeOfConduct) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeOfConduct) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +98,22 @@ func (m *CodeOfConduct) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CodeOfConduct) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetKey gets the key property value. The key property
+// returns a *string when successful
 func (m *CodeOfConduct) GetKey()(*string) {
     return m.key
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *CodeOfConduct) GetName()(*string) {
     return m.name
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CodeOfConduct) GetUrl()(*string) {
     return m.url
 }
@@ -173,7 +181,6 @@ func (m *CodeOfConduct) SetName(value *string)() {
 func (m *CodeOfConduct) SetUrl(value *string)() {
     m.url = value
 }
-// CodeOfConductable 
 type CodeOfConductable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -34,20 +34,21 @@ type ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters struct {
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
     Status *ia77747759b3f91e25296248277ed17f00dd8b68db982a03262ffc61b4720274c.GetStatusQueryParameterType `uriparametername:"status"`
 }
-// NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal instantiates a new RunsRequestBuilder and sets the default values.
+// NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal instantiates a new ItemItemActionsWorkflowsItemRunsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemRunsRequestBuilder) {
     m := &ItemItemActionsWorkflowsItemRunsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters),
     }
     return m
 }
-// NewItemItemActionsWorkflowsItemRunsRequestBuilder instantiates a new RunsRequestBuilder and sets the default values.
+// NewItemItemActionsWorkflowsItemRunsRequestBuilder instantiates a new ItemItemActionsWorkflowsItemRunsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemRunsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+// returns a ItemItemActionsWorkflowsItemRunsGetResponseable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow
@@ -66,6 +67,7 @@ func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) Get(ctx context.Context
     return res.(ItemItemActionsWorkflowsItemRunsGetResponseable), nil
 }
 // ToGetRequestInformation list all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+// returns a *RequestInformation when successful
 func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -73,6 +75,7 @@ func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemActionsWorkflowsItemRunsRequestBuilder when successful
 func (m *ItemItemActionsWorkflowsItemRunsRequestBuilder) WithUrl(rawUrl string)(*ItemItemActionsWorkflowsItemRunsRequestBuilder) {
     return NewItemItemActionsWorkflowsItemRunsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

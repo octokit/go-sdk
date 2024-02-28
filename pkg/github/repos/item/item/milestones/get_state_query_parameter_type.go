@@ -2,7 +2,6 @@ package milestones
 import (
     "errors"
 )
-// 
 type GetStateQueryParameterType int
 
 const (

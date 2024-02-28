@@ -29,26 +29,32 @@ func NewItemItemBranchesItemProtectionPutRequestBody_required_pull_request_revie
     return m
 }
 // CreateItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBypassPullRequestAllowances gets the bypass_pull_request_allowances property value. Allow specific users, teams, or apps to bypass pull request requirements.
+// returns a ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowancesable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetBypassPullRequestAllowances()(ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowancesable) {
     return m.bypass_pull_request_allowances
 }
 // GetDismissalRestrictions gets the dismissal_restrictions property value. Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
+// returns a ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictionsable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetDismissalRestrictions()(ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictionsable) {
     return m.dismissal_restrictions
 }
 // GetDismissStaleReviews gets the dismiss_stale_reviews property value. Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetDismissStaleReviews()(*bool) {
     return m.dismiss_stale_reviews
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bypass_pull_request_allowances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -114,14 +120,17 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_revi
     return res
 }
 // GetRequireCodeOwnerReviews gets the require_code_owner_reviews property value. Blocks merging pull requests until [code owners](https://docs.github.com/articles/about-code-owners/) review them.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetRequireCodeOwnerReviews()(*bool) {
     return m.require_code_owner_reviews
 }
 // GetRequiredApprovingReviewCount gets the required_approving_review_count property value. Specify the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers.
+// returns a *int32 when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetRequiredApprovingReviewCount()(*int32) {
     return m.required_approving_review_count
 }
 // GetRequireLastPushApproval gets the require_last_push_approval property value. Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) GetRequireLastPushApproval()(*bool) {
     return m.require_last_push_approval
 }
@@ -199,7 +208,6 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_revi
 func (m *ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviews) SetRequireLastPushApproval(value *bool)() {
     m.require_last_push_approval = value
 }
-// ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsable 
 type ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

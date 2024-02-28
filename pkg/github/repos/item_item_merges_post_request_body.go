@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemMergesPostRequestBody 
 type ItemItemMergesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,22 +22,27 @@ func NewItemItemMergesPostRequestBody()(*ItemItemMergesPostRequestBody) {
     return m
 }
 // CreateItemItemMergesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemMergesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemMergesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemMergesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBase gets the base property value. The name of the base branch that the head will be merged into.
+// returns a *string when successful
 func (m *ItemItemMergesPostRequestBody) GetBase()(*string) {
     return m.base
 }
 // GetCommitMessage gets the commit_message property value. Commit message to use for the merge commit. If omitted, a default message will be used.
+// returns a *string when successful
 func (m *ItemItemMergesPostRequestBody) GetCommitMessage()(*string) {
     return m.commit_message
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemMergesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["base"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *ItemItemMergesPostRequestBody) GetFieldDeserializers()(map[string]func(
     return res
 }
 // GetHead gets the head property value. The head to merge. This can be a branch name or a commit SHA1.
+// returns a *string when successful
 func (m *ItemItemMergesPostRequestBody) GetHead()(*string) {
     return m.head
 }
@@ -121,7 +126,6 @@ func (m *ItemItemMergesPostRequestBody) SetCommitMessage(value *string)() {
 func (m *ItemItemMergesPostRequestBody) SetHead(value *string)() {
     m.head = value
 }
-// ItemItemMergesPostRequestBodyable 
 type ItemItemMergesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

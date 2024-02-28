@@ -34,7 +34,7 @@ type RuleSuite struct {
     // Details on the evaluated rules.
     rule_evaluations []RuleSuite_rule_evaluationsable
 }
-// NewRuleSuite instantiates a new ruleSuite and sets the default values.
+// NewRuleSuite instantiates a new RuleSuite and sets the default values.
 func NewRuleSuite()(*RuleSuite) {
     m := &RuleSuite{
     }
@@ -42,34 +42,42 @@ func NewRuleSuite()(*RuleSuite) {
     return m
 }
 // CreateRuleSuiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRuleSuiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRuleSuite(), nil
 }
 // GetActorId gets the actor_id property value. The number that identifies the user.
+// returns a *int32 when successful
 func (m *RuleSuite) GetActorId()(*int32) {
     return m.actor_id
 }
 // GetActorName gets the actor_name property value. The handle for the GitHub user account.
+// returns a *string when successful
 func (m *RuleSuite) GetActorName()(*string) {
     return m.actor_name
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RuleSuite) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAfterSha gets the after_sha property value. The last commit sha in the push evaluation.
+// returns a *string when successful
 func (m *RuleSuite) GetAfterSha()(*string) {
     return m.after_sha
 }
 // GetBeforeSha gets the before_sha property value. The first commit sha before the push evaluation.
+// returns a *string when successful
 func (m *RuleSuite) GetBeforeSha()(*string) {
     return m.before_sha
 }
 // GetEvaluationResult gets the evaluation_result property value. The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+// returns a *RuleSuite_evaluation_result when successful
 func (m *RuleSuite) GetEvaluationResult()(*RuleSuite_evaluation_result) {
     return m.evaluation_result
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RuleSuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -201,30 +209,37 @@ func (m *RuleSuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetId gets the id property value. The unique identifier of the rule insight.
+// returns a *int32 when successful
 func (m *RuleSuite) GetId()(*int32) {
     return m.id
 }
 // GetPushedAt gets the pushed_at property value. The pushed_at property
+// returns a *Time when successful
 func (m *RuleSuite) GetPushedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.pushed_at
 }
 // GetRef gets the ref property value. The ref name that the evaluation ran on.
+// returns a *string when successful
 func (m *RuleSuite) GetRef()(*string) {
     return m.ref
 }
 // GetRepositoryId gets the repository_id property value. The ID of the repository associated with the rule evaluation.
+// returns a *int32 when successful
 func (m *RuleSuite) GetRepositoryId()(*int32) {
     return m.repository_id
 }
 // GetRepositoryName gets the repository_name property value. The name of the repository without the `.git` extension.
+// returns a *string when successful
 func (m *RuleSuite) GetRepositoryName()(*string) {
     return m.repository_name
 }
 // GetResult gets the result property value. The result of the rule evaluations for rules with the `active` enforcement status.
+// returns a *RuleSuite_result when successful
 func (m *RuleSuite) GetResult()(*RuleSuite_result) {
     return m.result
 }
 // GetRuleEvaluations gets the rule_evaluations property value. Details on the evaluated rules.
+// returns a []RuleSuite_rule_evaluationsable when successful
 func (m *RuleSuite) GetRuleEvaluations()([]RuleSuite_rule_evaluationsable) {
     return m.rule_evaluations
 }
@@ -370,7 +385,6 @@ func (m *RuleSuite) SetResult(value *RuleSuite_result)() {
 func (m *RuleSuite) SetRuleEvaluations(value []RuleSuite_rule_evaluationsable)() {
     m.rule_evaluations = value
 }
-// RuleSuiteable 
 type RuleSuiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

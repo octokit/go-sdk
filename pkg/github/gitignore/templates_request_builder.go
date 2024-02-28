@@ -10,6 +10,7 @@ type TemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.gitignore.templates.item collection
+// returns a *TemplatesWithNameItemRequestBuilder when successful
 func (m *TemplatesRequestBuilder) ByName(name string)(*TemplatesWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -34,6 +35,7 @@ func NewTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewTemplatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
+// returns a []string when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gitignore/gitignore#get-all-gitignore-templates
@@ -55,6 +57,7 @@ func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return val, nil
 }
 // ToGetRequestInformation list all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
+// returns a *RequestInformation when successful
 func (m *TemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -62,6 +65,7 @@ func (m *TemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TemplatesRequestBuilder when successful
 func (m *TemplatesRequestBuilder) WithUrl(rawUrl string)(*TemplatesRequestBuilder) {
     return NewTemplatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type RepositoryRuleBranchNamePattern_type int
 
 const (

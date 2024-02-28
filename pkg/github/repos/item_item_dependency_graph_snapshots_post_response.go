@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemDependencyGraphSnapshotsPostResponse 
 type ItemItemDependencyGraphSnapshotsPostResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,18 +24,22 @@ func NewItemItemDependencyGraphSnapshotsPostResponse()(*ItemItemDependencyGraphS
     return m
 }
 // CreateItemItemDependencyGraphSnapshotsPostResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemDependencyGraphSnapshotsPostResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemDependencyGraphSnapshotsPostResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The time at which the snapshot was created.
+// returns a *string when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +85,17 @@ func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetFieldDeserializers()(m
     return res
 }
 // GetId gets the id property value. ID of the created snapshot.
+// returns a *int32 when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetId()(*int32) {
     return m.id
 }
 // GetMessage gets the message property value. A message providing further details about the result, such as why the dependencies were not updated.
+// returns a *string when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetMessage()(*string) {
     return m.message
 }
 // GetResult gets the result property value. Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
+// returns a *string when successful
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) GetResult()(*string) {
     return m.result
 }
@@ -147,7 +153,6 @@ func (m *ItemItemDependencyGraphSnapshotsPostResponse) SetMessage(value *string)
 func (m *ItemItemDependencyGraphSnapshotsPostResponse) SetResult(value *string)() {
     m.result = value
 }
-// ItemItemDependencyGraphSnapshotsPostResponseable 
 type ItemItemDependencyGraphSnapshotsPostResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

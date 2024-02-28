@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// TeamOrganization_plan 
 type TeamOrganization_plan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type TeamOrganization_plan struct {
     // The space property
     space *int32
 }
-// NewTeamOrganization_plan instantiates a new teamOrganization_plan and sets the default values.
+// NewTeamOrganization_plan instantiates a new TeamOrganization_plan and sets the default values.
 func NewTeamOrganization_plan()(*TeamOrganization_plan) {
     m := &TeamOrganization_plan{
     }
@@ -27,14 +26,17 @@ func NewTeamOrganization_plan()(*TeamOrganization_plan) {
     return m
 }
 // CreateTeamOrganization_planFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamOrganization_planFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamOrganization_plan(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamOrganization_plan) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamOrganization_plan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["filled_seats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -90,22 +92,27 @@ func (m *TeamOrganization_plan) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetFilledSeats gets the filled_seats property value. The filled_seats property
+// returns a *int32 when successful
 func (m *TeamOrganization_plan) GetFilledSeats()(*int32) {
     return m.filled_seats
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *TeamOrganization_plan) GetName()(*string) {
     return m.name
 }
 // GetPrivateRepos gets the private_repos property value. The private_repos property
+// returns a *int32 when successful
 func (m *TeamOrganization_plan) GetPrivateRepos()(*int32) {
     return m.private_repos
 }
 // GetSeats gets the seats property value. The seats property
+// returns a *int32 when successful
 func (m *TeamOrganization_plan) GetSeats()(*int32) {
     return m.seats
 }
 // GetSpace gets the space property value. The space property
+// returns a *int32 when successful
 func (m *TeamOrganization_plan) GetSpace()(*int32) {
     return m.space
 }
@@ -173,7 +180,6 @@ func (m *TeamOrganization_plan) SetSeats(value *int32)() {
 func (m *TeamOrganization_plan) SetSpace(value *int32)() {
     m.space = value
 }
-// TeamOrganization_planable 
 type TeamOrganization_planable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

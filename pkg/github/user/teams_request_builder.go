@@ -31,6 +31,9 @@ func NewTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewTeamsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all of the teams across all of the organizations to which the authenticateduser belongs.OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint.When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
+// returns a []TeamFullable when successful
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/teams/teams#list-teams-for-the-authenticated-user
@@ -56,6 +59,7 @@ func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2a
     return val, nil
 }
 // ToGetRequestInformation list all of the teams across all of the organizations to which the authenticateduser belongs.OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint.When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
+// returns a *RequestInformation when successful
 func (m *TeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[TeamsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -63,6 +67,7 @@ func (m *TeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamsRequestBuilder when successful
 func (m *TeamsRequestBuilder) WithUrl(rawUrl string)(*TeamsRequestBuilder) {
     return NewTeamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -25,6 +25,8 @@ func NewVersionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewVersionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get all supported GitHub API versions.
+// returns a []DateOnly when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/meta/meta#get-all-api-versions
@@ -49,6 +51,7 @@ func (m *VersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return val, nil
 }
 // ToGetRequestInformation get all supported GitHub API versions.
+// returns a *RequestInformation when successful
 func (m *VersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -56,6 +59,7 @@ func (m *VersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *VersionsRequestBuilder when successful
 func (m *VersionsRequestBuilder) WithUrl(rawUrl string)(*VersionsRequestBuilder) {
     return NewVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

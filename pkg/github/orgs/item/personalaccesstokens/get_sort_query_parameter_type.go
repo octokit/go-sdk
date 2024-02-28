@@ -2,7 +2,6 @@ package personalaccesstokens
 import (
     "errors"
 )
-// 
 type GetSortQueryParameterType int
 
 const (

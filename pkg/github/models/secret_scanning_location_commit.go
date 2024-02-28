@@ -27,7 +27,7 @@ type SecretScanningLocationCommit struct {
     // Line number at which the secret starts in the file
     start_line *float64
 }
-// NewSecretScanningLocationCommit instantiates a new secretScanningLocationCommit and sets the default values.
+// NewSecretScanningLocationCommit instantiates a new SecretScanningLocationCommit and sets the default values.
 func NewSecretScanningLocationCommit()(*SecretScanningLocationCommit) {
     m := &SecretScanningLocationCommit{
     }
@@ -35,38 +35,47 @@ func NewSecretScanningLocationCommit()(*SecretScanningLocationCommit) {
     return m
 }
 // CreateSecretScanningLocationCommitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecretScanningLocationCommitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecretScanningLocationCommit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecretScanningLocationCommit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBlobSha gets the blob_sha property value. SHA-1 hash ID of the associated blob
+// returns a *string when successful
 func (m *SecretScanningLocationCommit) GetBlobSha()(*string) {
     return m.blob_sha
 }
 // GetBlobUrl gets the blob_url property value. The API URL to get the associated blob resource
+// returns a *string when successful
 func (m *SecretScanningLocationCommit) GetBlobUrl()(*string) {
     return m.blob_url
 }
 // GetCommitSha gets the commit_sha property value. SHA-1 hash ID of the associated commit
+// returns a *string when successful
 func (m *SecretScanningLocationCommit) GetCommitSha()(*string) {
     return m.commit_sha
 }
 // GetCommitUrl gets the commit_url property value. The API URL to get the associated commit resource
+// returns a *string when successful
 func (m *SecretScanningLocationCommit) GetCommitUrl()(*string) {
     return m.commit_url
 }
 // GetEndColumn gets the end_column property value. The column at which the secret ends within the end line when the file is interpreted as 8BIT ASCII
+// returns a *float64 when successful
 func (m *SecretScanningLocationCommit) GetEndColumn()(*float64) {
     return m.end_column
 }
 // GetEndLine gets the end_line property value. Line number at which the secret ends in the file
+// returns a *float64 when successful
 func (m *SecretScanningLocationCommit) GetEndLine()(*float64) {
     return m.end_line
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecretScanningLocationCommit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["blob_sha"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -162,14 +171,17 @@ func (m *SecretScanningLocationCommit) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetPath gets the path property value. The file path in the repository
+// returns a *string when successful
 func (m *SecretScanningLocationCommit) GetPath()(*string) {
     return m.path
 }
 // GetStartColumn gets the start_column property value. The column at which the secret starts within the start line when the file is interpreted as 8BIT ASCII
+// returns a *float64 when successful
 func (m *SecretScanningLocationCommit) GetStartColumn()(*float64) {
     return m.start_column
 }
 // GetStartLine gets the start_line property value. Line number at which the secret starts in the file
+// returns a *float64 when successful
 func (m *SecretScanningLocationCommit) GetStartLine()(*float64) {
     return m.start_line
 }
@@ -277,7 +289,6 @@ func (m *SecretScanningLocationCommit) SetStartColumn(value *float64)() {
 func (m *SecretScanningLocationCommit) SetStartLine(value *float64)() {
     m.start_line = value
 }
-// SecretScanningLocationCommitable 
 type SecretScanningLocationCommitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

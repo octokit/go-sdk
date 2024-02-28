@@ -9,6 +9,7 @@ type StubbedRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // Accounts the accounts property
+// returns a *StubbedAccountsRequestBuilder when successful
 func (m *StubbedRequestBuilder) Accounts()(*StubbedAccountsRequestBuilder) {
     return NewStubbedAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
@@ -26,6 +27,7 @@ func NewStubbedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewStubbedRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Plans the plans property
+// returns a *StubbedPlansRequestBuilder when successful
 func (m *StubbedRequestBuilder) Plans()(*StubbedPlansRequestBuilder) {
     return NewStubbedPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

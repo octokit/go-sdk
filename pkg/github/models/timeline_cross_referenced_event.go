@@ -20,7 +20,7 @@ type TimelineCrossReferencedEvent struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewTimelineCrossReferencedEvent instantiates a new timelineCrossReferencedEvent and sets the default values.
+// NewTimelineCrossReferencedEvent instantiates a new TimelineCrossReferencedEvent and sets the default values.
 func NewTimelineCrossReferencedEvent()(*TimelineCrossReferencedEvent) {
     m := &TimelineCrossReferencedEvent{
     }
@@ -28,26 +28,32 @@ func NewTimelineCrossReferencedEvent()(*TimelineCrossReferencedEvent) {
     return m
 }
 // CreateTimelineCrossReferencedEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineCrossReferencedEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineCrossReferencedEvent(), nil
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineCrossReferencedEvent) GetActor()(SimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineCrossReferencedEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *TimelineCrossReferencedEvent) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *TimelineCrossReferencedEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineCrossReferencedEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -103,10 +109,12 @@ func (m *TimelineCrossReferencedEvent) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetSource gets the source property value. The source property
+// returns a TimelineCrossReferencedEvent_sourceable when successful
 func (m *TimelineCrossReferencedEvent) GetSource()(TimelineCrossReferencedEvent_sourceable) {
     return m.source
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *TimelineCrossReferencedEvent) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -174,7 +182,6 @@ func (m *TimelineCrossReferencedEvent) SetSource(value TimelineCrossReferencedEv
 func (m *TimelineCrossReferencedEvent) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// TimelineCrossReferencedEventable 
 type TimelineCrossReferencedEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

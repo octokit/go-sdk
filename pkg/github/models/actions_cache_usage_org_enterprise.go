@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ActionsCacheUsageOrgEnterprise 
 type ActionsCacheUsageOrgEnterprise struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type ActionsCacheUsageOrgEnterprise struct {
     // The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
     total_active_caches_size_in_bytes *int32
 }
-// NewActionsCacheUsageOrgEnterprise instantiates a new actionsCacheUsageOrgEnterprise and sets the default values.
+// NewActionsCacheUsageOrgEnterprise instantiates a new ActionsCacheUsageOrgEnterprise and sets the default values.
 func NewActionsCacheUsageOrgEnterprise()(*ActionsCacheUsageOrgEnterprise) {
     m := &ActionsCacheUsageOrgEnterprise{
     }
@@ -21,14 +20,17 @@ func NewActionsCacheUsageOrgEnterprise()(*ActionsCacheUsageOrgEnterprise) {
     return m
 }
 // CreateActionsCacheUsageOrgEnterpriseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateActionsCacheUsageOrgEnterpriseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActionsCacheUsageOrgEnterprise(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ActionsCacheUsageOrgEnterprise) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ActionsCacheUsageOrgEnterprise) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["total_active_caches_count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +56,12 @@ func (m *ActionsCacheUsageOrgEnterprise) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetTotalActiveCachesCount gets the total_active_caches_count property value. The count of active caches across all repositories of an enterprise or an organization.
+// returns a *int32 when successful
 func (m *ActionsCacheUsageOrgEnterprise) GetTotalActiveCachesCount()(*int32) {
     return m.total_active_caches_count
 }
 // GetTotalActiveCachesSizeInBytes gets the total_active_caches_size_in_bytes property value. The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
+// returns a *int32 when successful
 func (m *ActionsCacheUsageOrgEnterprise) GetTotalActiveCachesSizeInBytes()(*int32) {
     return m.total_active_caches_size_in_bytes
 }
@@ -95,7 +99,6 @@ func (m *ActionsCacheUsageOrgEnterprise) SetTotalActiveCachesCount(value *int32)
 func (m *ActionsCacheUsageOrgEnterprise) SetTotalActiveCachesSizeInBytes(value *int32)() {
     m.total_active_caches_size_in_bytes = value
 }
-// ActionsCacheUsageOrgEnterpriseable 
 type ActionsCacheUsageOrgEnterpriseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

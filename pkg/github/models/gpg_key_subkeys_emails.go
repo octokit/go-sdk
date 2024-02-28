@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GpgKey_subkeys_emails 
 type GpgKey_subkeys_emails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type GpgKey_subkeys_emails struct {
     // The verified property
     verified *bool
 }
-// NewGpgKey_subkeys_emails instantiates a new gpgKey_subkeys_emails and sets the default values.
+// NewGpgKey_subkeys_emails instantiates a new GpgKey_subkeys_emails and sets the default values.
 func NewGpgKey_subkeys_emails()(*GpgKey_subkeys_emails) {
     m := &GpgKey_subkeys_emails{
     }
@@ -21,18 +20,22 @@ func NewGpgKey_subkeys_emails()(*GpgKey_subkeys_emails) {
     return m
 }
 // CreateGpgKey_subkeys_emailsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGpgKey_subkeys_emailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGpgKey_subkeys_emails(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GpgKey_subkeys_emails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *GpgKey_subkeys_emails) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GpgKey_subkeys_emails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *GpgKey_subkeys_emails) GetFieldDeserializers()(map[string]func(i878a80d
     return res
 }
 // GetVerified gets the verified property value. The verified property
+// returns a *bool when successful
 func (m *GpgKey_subkeys_emails) GetVerified()(*bool) {
     return m.verified
 }
@@ -95,7 +99,6 @@ func (m *GpgKey_subkeys_emails) SetEmail(value *string)() {
 func (m *GpgKey_subkeys_emails) SetVerified(value *bool)() {
     m.verified = value
 }
-// GpgKey_subkeys_emailsable 
 type GpgKey_subkeys_emailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

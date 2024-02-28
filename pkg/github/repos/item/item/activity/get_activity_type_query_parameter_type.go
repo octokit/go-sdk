@@ -2,7 +2,6 @@ package activity
 import (
     "errors"
 )
-// 
 type GetActivity_typeQueryParameterType int
 
 const (

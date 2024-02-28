@@ -15,7 +15,7 @@ type ViewTraffic struct {
     // The views property
     views []Trafficable
 }
-// NewViewTraffic instantiates a new viewTraffic and sets the default values.
+// NewViewTraffic instantiates a new ViewTraffic and sets the default values.
 func NewViewTraffic()(*ViewTraffic) {
     m := &ViewTraffic{
     }
@@ -23,18 +23,22 @@ func NewViewTraffic()(*ViewTraffic) {
     return m
 }
 // CreateViewTrafficFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateViewTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewViewTraffic(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ViewTraffic) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCount gets the count property value. The count property
+// returns a *int32 when successful
 func (m *ViewTraffic) GetCount()(*int32) {
     return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ViewTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,10 +80,12 @@ func (m *ViewTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetUniques gets the uniques property value. The uniques property
+// returns a *int32 when successful
 func (m *ViewTraffic) GetUniques()(*int32) {
     return m.uniques
 }
 // GetViews gets the views property value. The views property
+// returns a []Trafficable when successful
 func (m *ViewTraffic) GetViews()([]Trafficable) {
     return m.views
 }
@@ -133,7 +139,6 @@ func (m *ViewTraffic) SetUniques(value *int32)() {
 func (m *ViewTraffic) SetViews(value []Trafficable)() {
     m.views = value
 }
-// ViewTrafficable 
 type ViewTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

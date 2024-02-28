@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemBranchesItemProtectionPutRequestBody 
 type ItemItemBranchesItemProtectionPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -39,34 +38,42 @@ func NewItemItemBranchesItemProtectionPutRequestBody()(*ItemItemBranchesItemProt
     return m
 }
 // CreateItemItemBranchesItemProtectionPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemBranchesItemProtectionPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemBranchesItemProtectionPutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowDeletions gets the allow_deletions property value. Allows deletion of the protected branch by anyone with write access to the repository. Set to `false` to prevent deletion of the protected branch. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetAllowDeletions()(*bool) {
     return m.allow_deletions
 }
 // GetAllowForcePushes gets the allow_force_pushes property value. Permits force pushes to the protected branch by anyone with write access to the repository. Set to `true` to allow force pushes. Set to `false` or `null` to block force pushes. Default: `false`. For more information, see "[Enabling force pushes to a protected branch](https://docs.github.com/github/administering-a-repository/enabling-force-pushes-to-a-protected-branch)" in the GitHub Help documentation."
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetAllowForcePushes()(*bool) {
     return m.allow_force_pushes
 }
 // GetAllowForkSyncing gets the allow_fork_syncing property value. Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetAllowForkSyncing()(*bool) {
     return m.allow_fork_syncing
 }
 // GetBlockCreations gets the block_creations property value. If set to `true`, the `restrictions` branch protection settings which limits who can push will also block pushes which create new branches, unless the push is initiated by a user, team, or app which has the ability to push. Set to `true` to restrict new branch creation. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetBlockCreations()(*bool) {
     return m.block_creations
 }
 // GetEnforceAdmins gets the enforce_admins property value. Enforce all configured restrictions for administrators. Set to `true` to enforce required status checks for repository administrators. Set to `null` to disable.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetEnforceAdmins()(*bool) {
     return m.enforce_admins
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_deletions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -182,26 +189,32 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody) GetFieldDeserializers()(m
     return res
 }
 // GetLockBranch gets the lock_branch property value. Whether to set the branch as read-only. If this is true, users will not be able to push to the branch. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetLockBranch()(*bool) {
     return m.lock_branch
 }
 // GetRequiredConversationResolution gets the required_conversation_resolution property value. Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to `false` to disable. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetRequiredConversationResolution()(*bool) {
     return m.required_conversation_resolution
 }
 // GetRequiredLinearHistory gets the required_linear_history property value. Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to `true` to enforce a linear commit history. Set to `false` to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: `false`. For more information, see "[Requiring a linear commit history](https://docs.github.com/github/administering-a-repository/requiring-a-linear-commit-history)" in the GitHub Help documentation.
+// returns a *bool when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetRequiredLinearHistory()(*bool) {
     return m.required_linear_history
 }
 // GetRequiredPullRequestReviews gets the required_pull_request_reviews property value. Require at least one approving review on a pull request, before merging. Set to `null` to disable.
+// returns a ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetRequiredPullRequestReviews()(ItemItemBranchesItemProtectionPutRequestBody_required_pull_request_reviewsable) {
     return m.required_pull_request_reviews
 }
 // GetRequiredStatusChecks gets the required_status_checks property value. Require status checks to pass before merging. Set to `null` to disable.
+// returns a ItemItemBranchesItemProtectionPutRequestBody_required_status_checksable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetRequiredStatusChecks()(ItemItemBranchesItemProtectionPutRequestBody_required_status_checksable) {
     return m.required_status_checks
 }
 // GetRestrictions gets the restrictions property value. Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
+// returns a ItemItemBranchesItemProtectionPutRequestBody_restrictionsable when successful
 func (m *ItemItemBranchesItemProtectionPutRequestBody) GetRestrictions()(ItemItemBranchesItemProtectionPutRequestBody_restrictionsable) {
     return m.restrictions
 }
@@ -329,7 +342,6 @@ func (m *ItemItemBranchesItemProtectionPutRequestBody) SetRequiredStatusChecks(v
 func (m *ItemItemBranchesItemProtectionPutRequestBody) SetRestrictions(value ItemItemBranchesItemProtectionPutRequestBody_restrictionsable)() {
     m.restrictions = value
 }
-// ItemItemBranchesItemProtectionPutRequestBodyable 
 type ItemItemBranchesItemProtectionPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

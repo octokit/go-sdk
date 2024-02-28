@@ -38,20 +38,21 @@ type RepositoryRuleset struct {
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// RepositoryRuleset_RepositoryRuleset_conditions composed type wrapper for classes orgRulesetConditions, repositoryRulesetConditions
+// RepositoryRuleset_RepositoryRuleset_conditions composed type wrapper for classes OrgRulesetConditionsable, RepositoryRulesetConditionsable
 type RepositoryRuleset_RepositoryRuleset_conditions struct {
-    // Composed type representation for type orgRulesetConditions
+    // Composed type representation for type OrgRulesetConditionsable
     orgRulesetConditions OrgRulesetConditionsable
-    // Composed type representation for type repositoryRulesetConditions
+    // Composed type representation for type RepositoryRulesetConditionsable
     repositoryRulesetConditions RepositoryRulesetConditionsable
 }
-// NewRepositoryRuleset_RepositoryRuleset_conditions instantiates a new repositoryRuleset_conditions and sets the default values.
+// NewRepositoryRuleset_RepositoryRuleset_conditions instantiates a new RepositoryRuleset_RepositoryRuleset_conditions and sets the default values.
 func NewRepositoryRuleset_RepositoryRuleset_conditions()(*RepositoryRuleset_RepositoryRuleset_conditions) {
     m := &RepositoryRuleset_RepositoryRuleset_conditions{
     }
     return m
 }
 // CreateRepositoryRuleset_RepositoryRuleset_conditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleset_RepositoryRuleset_conditionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewRepositoryRuleset_RepositoryRuleset_conditions()
     if parseNode != nil {
@@ -74,18 +75,22 @@ func CreateRepositoryRuleset_RepositoryRuleset_conditionsFromDiscriminatorValue(
     return result, nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
 // GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) GetIsComposedType()(bool) {
     return true
 }
-// GetOrgRulesetConditions gets the orgRulesetConditions property value. Composed type representation for type orgRulesetConditions
+// GetOrgRulesetConditions gets the orgRulesetConditions property value. Composed type representation for type OrgRulesetConditionsable
+// returns a OrgRulesetConditionsable when successful
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) GetOrgRulesetConditions()(OrgRulesetConditionsable) {
     return m.orgRulesetConditions
 }
-// GetRepositoryRulesetConditions gets the repositoryRulesetConditions property value. Composed type representation for type repositoryRulesetConditions
+// GetRepositoryRulesetConditions gets the repositoryRulesetConditions property value. Composed type representation for type RepositoryRulesetConditionsable
+// returns a RepositoryRulesetConditionsable when successful
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) GetRepositoryRulesetConditions()(RepositoryRulesetConditionsable) {
     return m.repositoryRulesetConditions
 }
@@ -104,15 +109,14 @@ func (m *RepositoryRuleset_RepositoryRuleset_conditions) Serialize(writer i878a8
     }
     return nil
 }
-// SetOrgRulesetConditions sets the orgRulesetConditions property value. Composed type representation for type orgRulesetConditions
+// SetOrgRulesetConditions sets the orgRulesetConditions property value. Composed type representation for type OrgRulesetConditionsable
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) SetOrgRulesetConditions(value OrgRulesetConditionsable)() {
     m.orgRulesetConditions = value
 }
-// SetRepositoryRulesetConditions sets the repositoryRulesetConditions property value. Composed type representation for type repositoryRulesetConditions
+// SetRepositoryRulesetConditions sets the repositoryRulesetConditions property value. Composed type representation for type RepositoryRulesetConditionsable
 func (m *RepositoryRuleset_RepositoryRuleset_conditions) SetRepositoryRulesetConditions(value RepositoryRulesetConditionsable)() {
     m.repositoryRulesetConditions = value
 }
-// RepositoryRuleset_RepositoryRuleset_conditionsable 
 type RepositoryRuleset_RepositoryRuleset_conditionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetOrgRulesetConditions()(OrgRulesetConditionsable)
@@ -120,7 +124,7 @@ type RepositoryRuleset_RepositoryRuleset_conditionsable interface {
     SetOrgRulesetConditions(value OrgRulesetConditionsable)()
     SetRepositoryRulesetConditions(value RepositoryRulesetConditionsable)()
 }
-// NewRepositoryRuleset instantiates a new repositoryRuleset and sets the default values.
+// NewRepositoryRuleset instantiates a new RepositoryRuleset and sets the default values.
 func NewRepositoryRuleset()(*RepositoryRuleset) {
     m := &RepositoryRuleset{
     }
@@ -128,34 +132,42 @@ func NewRepositoryRuleset()(*RepositoryRuleset) {
     return m
 }
 // CreateRepositoryRulesetFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRulesetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleset(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleset) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBypassActors gets the bypass_actors property value. The actors that can bypass the rules in this ruleset
+// returns a []RepositoryRulesetBypassActorable when successful
 func (m *RepositoryRuleset) GetBypassActors()([]RepositoryRulesetBypassActorable) {
     return m.bypass_actors
 }
 // GetConditions gets the conditions property value. The conditions property
+// returns a RepositoryRuleset_RepositoryRuleset_conditionsable when successful
 func (m *RepositoryRuleset) GetConditions()(RepositoryRuleset_RepositoryRuleset_conditionsable) {
     return m.conditions
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *RepositoryRuleset) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetCurrentUserCanBypass gets the current_user_can_bypass property value. The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
+// returns a *RepositoryRuleset_current_user_can_bypass when successful
 func (m *RepositoryRuleset) GetCurrentUserCanBypass()(*RepositoryRuleset_current_user_can_bypass) {
     return m.current_user_can_bypass
 }
 // GetEnforcement gets the enforcement property value. The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
+// returns a *RepositoryRuleEnforcement when successful
 func (m *RepositoryRuleset) GetEnforcement()(*RepositoryRuleEnforcement) {
     return m.enforcement
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleset) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -313,38 +325,47 @@ func (m *RepositoryRuleset) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetId gets the id property value. The ID of the ruleset
+// returns a *int32 when successful
 func (m *RepositoryRuleset) GetId()(*int32) {
     return m.id
 }
 // GetLinks gets the _links property value. The _links property
+// returns a RepositoryRuleset__linksable when successful
 func (m *RepositoryRuleset) GetLinks()(RepositoryRuleset__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name of the ruleset
+// returns a *string when successful
 func (m *RepositoryRuleset) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *RepositoryRuleset) GetNodeId()(*string) {
     return m.node_id
 }
 // GetRules gets the rules property value. The rules property
+// returns a []RepositoryRuleable when successful
 func (m *RepositoryRuleset) GetRules()([]RepositoryRuleable) {
     return m.rules
 }
 // GetSource gets the source property value. The name of the source
+// returns a *string when successful
 func (m *RepositoryRuleset) GetSource()(*string) {
     return m.source
 }
 // GetSourceType gets the source_type property value. The type of the source of the ruleset
+// returns a *RepositoryRuleset_source_type when successful
 func (m *RepositoryRuleset) GetSourceType()(*RepositoryRuleset_source_type) {
     return m.source_type
 }
 // GetTarget gets the target property value. The target of the ruleset
+// returns a *RepositoryRuleset_target when successful
 func (m *RepositoryRuleset) GetTarget()(*RepositoryRuleset_target) {
     return m.target
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *RepositoryRuleset) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -518,7 +539,6 @@ func (m *RepositoryRuleset) SetTarget(value *RepositoryRuleset_target)() {
 func (m *RepositoryRuleset) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// RepositoryRulesetable 
 type RepositoryRulesetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

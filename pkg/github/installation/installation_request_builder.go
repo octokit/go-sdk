@@ -22,10 +22,12 @@ func NewInstallationRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Repositories the repositories property
+// returns a *RepositoriesRequestBuilder when successful
 func (m *InstallationRequestBuilder) Repositories()(*RepositoriesRequestBuilder) {
     return NewRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Token the token property
+// returns a *TokenRequestBuilder when successful
 func (m *InstallationRequestBuilder) Token()(*TokenRequestBuilder) {
     return NewTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

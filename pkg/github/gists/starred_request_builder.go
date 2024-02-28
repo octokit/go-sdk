@@ -34,6 +34,9 @@ func NewStarredRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     return NewStarredRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list the authenticated user's starred gists:
+// returns a []BaseGistable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/gists/gists#list-starred-gists
@@ -59,6 +62,7 @@ func (m *StarredRequestBuilder) Get(ctx context.Context, requestConfiguration *i
     return val, nil
 }
 // ToGetRequestInformation list the authenticated user's starred gists:
+// returns a *RequestInformation when successful
 func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[StarredRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -66,6 +70,7 @@ func (m *StarredRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *StarredRequestBuilder when successful
 func (m *StarredRequestBuilder) WithUrl(rawUrl string)(*StarredRequestBuilder) {
     return NewStarredRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

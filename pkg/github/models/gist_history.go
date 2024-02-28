@@ -20,7 +20,7 @@ type GistHistory struct {
     // The version property
     version *string
 }
-// NewGistHistory instantiates a new gistHistory and sets the default values.
+// NewGistHistory instantiates a new GistHistory and sets the default values.
 func NewGistHistory()(*GistHistory) {
     m := &GistHistory{
     }
@@ -28,22 +28,27 @@ func NewGistHistory()(*GistHistory) {
     return m
 }
 // CreateGistHistoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGistHistoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGistHistory(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GistHistory) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetChangeStatus gets the change_status property value. The change_status property
+// returns a GistHistory_change_statusable when successful
 func (m *GistHistory) GetChangeStatus()(GistHistory_change_statusable) {
     return m.change_status
 }
 // GetCommittedAt gets the committed_at property value. The committed_at property
+// returns a *Time when successful
 func (m *GistHistory) GetCommittedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.committed_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GistHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["change_status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -99,14 +104,17 @@ func (m *GistHistory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GistHistory) GetUrl()(*string) {
     return m.url
 }
 // GetUser gets the user property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *GistHistory) GetUser()(NullableSimpleUserable) {
     return m.user
 }
 // GetVersion gets the version property value. The version property
+// returns a *string when successful
 func (m *GistHistory) GetVersion()(*string) {
     return m.version
 }
@@ -174,7 +182,6 @@ func (m *GistHistory) SetUser(value NullableSimpleUserable)() {
 func (m *GistHistory) SetVersion(value *string)() {
     m.version = value
 }
-// GistHistoryable 
 type GistHistoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

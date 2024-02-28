@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemStatusesItemWithShaPostRequestBody 
 type ItemItemStatusesItemWithShaPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,22 +24,27 @@ func NewItemItemStatusesItemWithShaPostRequestBody()(*ItemItemStatusesItemWithSh
     return m
 }
 // CreateItemItemStatusesItemWithShaPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemStatusesItemWithShaPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemStatusesItemWithShaPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemStatusesItemWithShaPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetContext gets the context property value. A string label to differentiate this status from the status of other systems. This field is case-insensitive.
+// returns a *string when successful
 func (m *ItemItemStatusesItemWithShaPostRequestBody) GetContext()(*string) {
     return m.context
 }
 // GetDescription gets the description property value. A short description of the status.
+// returns a *string when successful
 func (m *ItemItemStatusesItemWithShaPostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemStatusesItemWithShaPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["context"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -76,6 +80,7 @@ func (m *ItemItemStatusesItemWithShaPostRequestBody) GetFieldDeserializers()(map
     return res
 }
 // GetTargetUrl gets the target_url property value. The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.  For example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:  `http://ci.example.com/user/repo/build/sha`
+// returns a *string when successful
 func (m *ItemItemStatusesItemWithShaPostRequestBody) GetTargetUrl()(*string) {
     return m.target_url
 }
@@ -123,7 +128,6 @@ func (m *ItemItemStatusesItemWithShaPostRequestBody) SetDescription(value *strin
 func (m *ItemItemStatusesItemWithShaPostRequestBody) SetTargetUrl(value *string)() {
     m.target_url = value
 }
-// ItemItemStatusesItemWithShaPostRequestBodyable 
 type ItemItemStatusesItemWithShaPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

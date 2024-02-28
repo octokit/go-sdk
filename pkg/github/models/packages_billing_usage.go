@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PackagesBillingUsage 
 type PackagesBillingUsage struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type PackagesBillingUsage struct {
     // Total paid storage space (GB) for GitHuub Packages.
     total_paid_gigabytes_bandwidth_used *int32
 }
-// NewPackagesBillingUsage instantiates a new packagesBillingUsage and sets the default values.
+// NewPackagesBillingUsage instantiates a new PackagesBillingUsage and sets the default values.
 func NewPackagesBillingUsage()(*PackagesBillingUsage) {
     m := &PackagesBillingUsage{
     }
@@ -23,14 +22,17 @@ func NewPackagesBillingUsage()(*PackagesBillingUsage) {
     return m
 }
 // CreatePackagesBillingUsageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePackagesBillingUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPackagesBillingUsage(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PackagesBillingUsage) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PackagesBillingUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["included_gigabytes_bandwidth"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *PackagesBillingUsage) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetIncludedGigabytesBandwidth gets the included_gigabytes_bandwidth property value. Free storage space (GB) for GitHub Packages.
+// returns a *int32 when successful
 func (m *PackagesBillingUsage) GetIncludedGigabytesBandwidth()(*int32) {
     return m.included_gigabytes_bandwidth
 }
 // GetTotalGigabytesBandwidthUsed gets the total_gigabytes_bandwidth_used property value. Sum of the free and paid storage space (GB) for GitHuub Packages.
+// returns a *int32 when successful
 func (m *PackagesBillingUsage) GetTotalGigabytesBandwidthUsed()(*int32) {
     return m.total_gigabytes_bandwidth_used
 }
 // GetTotalPaidGigabytesBandwidthUsed gets the total_paid_gigabytes_bandwidth_used property value. Total paid storage space (GB) for GitHuub Packages.
+// returns a *int32 when successful
 func (m *PackagesBillingUsage) GetTotalPaidGigabytesBandwidthUsed()(*int32) {
     return m.total_paid_gigabytes_bandwidth_used
 }
@@ -121,7 +126,6 @@ func (m *PackagesBillingUsage) SetTotalGigabytesBandwidthUsed(value *int32)() {
 func (m *PackagesBillingUsage) SetTotalPaidGigabytesBandwidthUsed(value *int32)() {
     m.total_paid_gigabytes_bandwidth_used = value
 }
-// PackagesBillingUsageable 
 type PackagesBillingUsageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

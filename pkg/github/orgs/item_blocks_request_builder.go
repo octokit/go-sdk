@@ -18,6 +18,7 @@ type ItemBlocksRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.blocks.item collection
+// returns a *ItemBlocksWithUsernameItemRequestBuilder when successful
 func (m *ItemBlocksRequestBuilder) ByUsername(username string)(*ItemBlocksWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -28,20 +29,21 @@ func (m *ItemBlocksRequestBuilder) ByUsername(username string)(*ItemBlocksWithUs
     }
     return NewItemBlocksWithUsernameItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemBlocksRequestBuilderInternal instantiates a new BlocksRequestBuilder and sets the default values.
+// NewItemBlocksRequestBuilderInternal instantiates a new ItemBlocksRequestBuilder and sets the default values.
 func NewItemBlocksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBlocksRequestBuilder) {
     m := &ItemBlocksRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/blocks{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemBlocksRequestBuilder instantiates a new BlocksRequestBuilder and sets the default values.
+// NewItemBlocksRequestBuilder instantiates a new ItemBlocksRequestBuilder and sets the default values.
 func NewItemBlocksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBlocksRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemBlocksRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list the users blocked by an organization.
+// returns a []SimpleUserable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/blocking#list-users-blocked-by-an-organization
@@ -63,6 +65,7 @@ func (m *ItemBlocksRequestBuilder) Get(ctx context.Context, requestConfiguration
     return val, nil
 }
 // ToGetRequestInformation list the users blocked by an organization.
+// returns a *RequestInformation when successful
 func (m *ItemBlocksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemBlocksRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +73,7 @@ func (m *ItemBlocksRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemBlocksRequestBuilder when successful
 func (m *ItemBlocksRequestBuilder) WithUrl(rawUrl string)(*ItemBlocksRequestBuilder) {
     return NewItemBlocksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

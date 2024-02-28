@@ -41,7 +41,7 @@ type TeamProject struct {
     // The url property
     url *string
 }
-// NewTeamProject instantiates a new teamProject and sets the default values.
+// NewTeamProject instantiates a new TeamProject and sets the default values.
 func NewTeamProject()(*TeamProject) {
     m := &TeamProject{
     }
@@ -49,30 +49,37 @@ func NewTeamProject()(*TeamProject) {
     return m
 }
 // CreateTeamProjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTeamProjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamProject(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TeamProject) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The body property
+// returns a *string when successful
 func (m *TeamProject) GetBody()(*string) {
     return m.body
 }
 // GetColumnsUrl gets the columns_url property value. The columns_url property
+// returns a *string when successful
 func (m *TeamProject) GetColumnsUrl()(*string) {
     return m.columns_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *TeamProject) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetCreator gets the creator property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TeamProject) GetCreator()(SimpleUserable) {
     return m.creator
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamProject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -238,50 +245,62 @@ func (m *TeamProject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *TeamProject) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *TeamProject) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *TeamProject) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TeamProject) GetNodeId()(*string) {
     return m.node_id
 }
 // GetNumber gets the number property value. The number property
+// returns a *int32 when successful
 func (m *TeamProject) GetNumber()(*int32) {
     return m.number
 }
 // GetOrganizationPermission gets the organization_permission property value. The organization permission for this project. Only present when owner is an organization.
+// returns a *string when successful
 func (m *TeamProject) GetOrganizationPermission()(*string) {
     return m.organization_permission
 }
 // GetOwnerUrl gets the owner_url property value. The owner_url property
+// returns a *string when successful
 func (m *TeamProject) GetOwnerUrl()(*string) {
     return m.owner_url
 }
 // GetPermissions gets the permissions property value. The permissions property
+// returns a TeamProject_permissionsable when successful
 func (m *TeamProject) GetPermissions()(TeamProject_permissionsable) {
     return m.permissions
 }
 // GetPrivate gets the private property value. Whether the project is private or not. Only present when owner is an organization.
+// returns a *bool when successful
 func (m *TeamProject) GetPrivate()(*bool) {
     return m.private
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *TeamProject) GetState()(*string) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *TeamProject) GetUpdatedAt()(*string) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TeamProject) GetUrl()(*string) {
     return m.url
 }
@@ -459,7 +478,6 @@ func (m *TeamProject) SetUpdatedAt(value *string)() {
 func (m *TeamProject) SetUrl(value *string)() {
     m.url = value
 }
-// TeamProjectable 
 type TeamProjectable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

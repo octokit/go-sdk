@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemCopilotBillingSelected_usersPostRequestBody 
 type ItemCopilotBillingSelected_usersPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,14 +18,17 @@ func NewItemCopilotBillingSelected_usersPostRequestBody()(*ItemCopilotBillingSel
     return m
 }
 // CreateItemCopilotBillingSelected_usersPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemCopilotBillingSelected_usersPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCopilotBillingSelected_usersPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemCopilotBillingSelected_usersPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemCopilotBillingSelected_usersPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["selected_usernames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +50,7 @@ func (m *ItemCopilotBillingSelected_usersPostRequestBody) GetFieldDeserializers(
     return res
 }
 // GetSelectedUsernames gets the selected_usernames property value. The usernames of the organization members to be granted access to GitHub Copilot.
+// returns a []string when successful
 func (m *ItemCopilotBillingSelected_usersPostRequestBody) GetSelectedUsernames()([]string) {
     return m.selected_usernames
 }
@@ -75,7 +78,6 @@ func (m *ItemCopilotBillingSelected_usersPostRequestBody) SetAdditionalData(valu
 func (m *ItemCopilotBillingSelected_usersPostRequestBody) SetSelectedUsernames(value []string)() {
     m.selected_usernames = value
 }
-// ItemCopilotBillingSelected_usersPostRequestBodyable 
 type ItemCopilotBillingSelected_usersPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

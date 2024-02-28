@@ -17,7 +17,7 @@ type GitRef struct {
     // The url property
     url *string
 }
-// NewGitRef instantiates a new gitRef and sets the default values.
+// NewGitRef instantiates a new GitRef and sets the default values.
 func NewGitRef()(*GitRef) {
     m := &GitRef{
     }
@@ -25,14 +25,17 @@ func NewGitRef()(*GitRef) {
     return m
 }
 // CreateGitRefFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitRefFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitRef(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitRef) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitRef) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["node_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *GitRef) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *GitRef) GetNodeId()(*string) {
     return m.node_id
 }
 // GetObject gets the object property value. The object property
+// returns a GitRef_objectable when successful
 func (m *GitRef) GetObject()(GitRef_objectable) {
     return m.object
 }
 // GetRef gets the ref property value. The ref property
+// returns a *string when successful
 func (m *GitRef) GetRef()(*string) {
     return m.ref
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GitRef) GetUrl()(*string) {
     return m.url
 }
@@ -147,7 +154,6 @@ func (m *GitRef) SetRef(value *string)() {
 func (m *GitRef) SetUrl(value *string)() {
     m.url = value
 }
-// GitRefable 
 type GitRefable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,20 +17,25 @@ type ItemCopilotBillingSeatsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// NewItemCopilotBillingSeatsRequestBuilderInternal instantiates a new SeatsRequestBuilder and sets the default values.
+// NewItemCopilotBillingSeatsRequestBuilderInternal instantiates a new ItemCopilotBillingSeatsRequestBuilder and sets the default values.
 func NewItemCopilotBillingSeatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCopilotBillingSeatsRequestBuilder) {
     m := &ItemCopilotBillingSeatsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemCopilotBillingSeatsRequestBuilder instantiates a new SeatsRequestBuilder and sets the default values.
+// NewItemCopilotBillingSeatsRequestBuilder instantiates a new ItemCopilotBillingSeatsRequestBuilder and sets the default values.
 func NewItemCopilotBillingSeatsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCopilotBillingSeatsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemCopilotBillingSeatsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a ItemCopilotBillingSeatsGetResponseable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization
@@ -55,6 +60,7 @@ func (m *ItemCopilotBillingSeatsRequestBuilder) Get(ctx context.Context, request
     return res.(ItemCopilotBillingSeatsGetResponseable), nil
 }
 // ToGetRequestInformation **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemCopilotBillingSeatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCopilotBillingSeatsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -62,6 +68,7 @@ func (m *ItemCopilotBillingSeatsRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemCopilotBillingSeatsRequestBuilder when successful
 func (m *ItemCopilotBillingSeatsRequestBuilder) WithUrl(rawUrl string)(*ItemCopilotBillingSeatsRequestBuilder) {
     return NewItemCopilotBillingSeatsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemReleasesGenerateNotesPostRequestBody 
 type ItemItemReleasesGenerateNotesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,18 +24,22 @@ func NewItemItemReleasesGenerateNotesPostRequestBody()(*ItemItemReleasesGenerate
     return m
 }
 // CreateItemItemReleasesGenerateNotesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemReleasesGenerateNotesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemReleasesGenerateNotesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfigurationFilePath gets the configuration_file_path property value. Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
+// returns a *string when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetConfigurationFilePath()(*string) {
     return m.configuration_file_path
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["configuration_file_path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +85,17 @@ func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetFieldDeserializers()(m
     return res
 }
 // GetPreviousTagName gets the previous_tag_name property value. The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
+// returns a *string when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetPreviousTagName()(*string) {
     return m.previous_tag_name
 }
 // GetTagName gets the tag_name property value. The tag name for the release. This can be an existing tag or a new one.
+// returns a *string when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetTagName()(*string) {
     return m.tag_name
 }
 // GetTargetCommitish gets the target_commitish property value. Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.
+// returns a *string when successful
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) GetTargetCommitish()(*string) {
     return m.target_commitish
 }
@@ -147,7 +153,6 @@ func (m *ItemItemReleasesGenerateNotesPostRequestBody) SetTagName(value *string)
 func (m *ItemItemReleasesGenerateNotesPostRequestBody) SetTargetCommitish(value *string)() {
     m.target_commitish = value
 }
-// ItemItemReleasesGenerateNotesPostRequestBodyable 
 type ItemItemReleasesGenerateNotesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -56,7 +56,7 @@ type Job struct {
     // The name of the workflow.
     workflow_name *string
 }
-// NewJob instantiates a new job and sets the default values.
+// NewJob instantiates a new Job and sets the default values.
 func NewJob()(*Job) {
     m := &Job{
     }
@@ -64,30 +64,37 @@ func NewJob()(*Job) {
     return m
 }
 // CreateJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewJob(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Job) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCheckRunUrl gets the check_run_url property value. The check_run_url property
+// returns a *string when successful
 func (m *Job) GetCheckRunUrl()(*string) {
     return m.check_run_url
 }
 // GetCompletedAt gets the completed_at property value. The time that the job finished, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Job) GetCompletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completed_at
 }
 // GetConclusion gets the conclusion property value. The outcome of the job.
+// returns a *Job_conclusion when successful
 func (m *Job) GetConclusion()(*Job_conclusion) {
     return m.conclusion
 }
 // GetCreatedAt gets the created_at property value. The time that the job created, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Job) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Job) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["check_run_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -335,78 +342,97 @@ func (m *Job) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetHeadBranch gets the head_branch property value. The name of the current branch.
+// returns a *string when successful
 func (m *Job) GetHeadBranch()(*string) {
     return m.head_branch
 }
 // GetHeadSha gets the head_sha property value. The SHA of the commit that is being run.
+// returns a *string when successful
 func (m *Job) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *Job) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id of the job.
+// returns a *int32 when successful
 func (m *Job) GetId()(*int32) {
     return m.id
 }
 // GetLabels gets the labels property value. Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.
+// returns a []string when successful
 func (m *Job) GetLabels()([]string) {
     return m.labels
 }
 // GetName gets the name property value. The name of the job.
+// returns a *string when successful
 func (m *Job) GetName()(*string) {
     return m.name
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Job) GetNodeId()(*string) {
     return m.node_id
 }
 // GetRunAttempt gets the run_attempt property value. Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.
+// returns a *int32 when successful
 func (m *Job) GetRunAttempt()(*int32) {
     return m.run_attempt
 }
 // GetRunId gets the run_id property value. The id of the associated workflow run.
+// returns a *int32 when successful
 func (m *Job) GetRunId()(*int32) {
     return m.run_id
 }
 // GetRunnerGroupId gets the runner_group_id property value. The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
+// returns a *int32 when successful
 func (m *Job) GetRunnerGroupId()(*int32) {
     return m.runner_group_id
 }
 // GetRunnerGroupName gets the runner_group_name property value. The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
+// returns a *string when successful
 func (m *Job) GetRunnerGroupName()(*string) {
     return m.runner_group_name
 }
 // GetRunnerId gets the runner_id property value. The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
+// returns a *int32 when successful
 func (m *Job) GetRunnerId()(*int32) {
     return m.runner_id
 }
 // GetRunnerName gets the runner_name property value. The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)
+// returns a *string when successful
 func (m *Job) GetRunnerName()(*string) {
     return m.runner_name
 }
 // GetRunUrl gets the run_url property value. The run_url property
+// returns a *string when successful
 func (m *Job) GetRunUrl()(*string) {
     return m.run_url
 }
 // GetStartedAt gets the started_at property value. The time that the job started, in ISO 8601 format.
+// returns a *Time when successful
 func (m *Job) GetStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.started_at
 }
 // GetStatus gets the status property value. The phase of the lifecycle that the job is currently in.
+// returns a *Job_status when successful
 func (m *Job) GetStatus()(*Job_status) {
     return m.status
 }
 // GetSteps gets the steps property value. Steps in this job.
+// returns a []Job_stepsable when successful
 func (m *Job) GetSteps()([]Job_stepsable) {
     return m.steps
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Job) GetUrl()(*string) {
     return m.url
 }
 // GetWorkflowName gets the workflow_name property value. The name of the workflow.
+// returns a *string when successful
 func (m *Job) GetWorkflowName()(*string) {
     return m.workflow_name
 }
@@ -662,7 +688,6 @@ func (m *Job) SetUrl(value *string)() {
 func (m *Job) SetWorkflowName(value *string)() {
     m.workflow_name = value
 }
-// Jobable 
 type Jobable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

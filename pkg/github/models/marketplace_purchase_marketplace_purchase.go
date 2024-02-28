@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MarketplacePurchase_marketplace_purchase 
 type MarketplacePurchase_marketplace_purchase struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,7 +24,7 @@ type MarketplacePurchase_marketplace_purchase struct {
     // The updated_at property
     updated_at *string
 }
-// NewMarketplacePurchase_marketplace_purchase instantiates a new marketplacePurchase_marketplace_purchase and sets the default values.
+// NewMarketplacePurchase_marketplace_purchase instantiates a new MarketplacePurchase_marketplace_purchase and sets the default values.
 func NewMarketplacePurchase_marketplace_purchase()(*MarketplacePurchase_marketplace_purchase) {
     m := &MarketplacePurchase_marketplace_purchase{
     }
@@ -33,18 +32,22 @@ func NewMarketplacePurchase_marketplace_purchase()(*MarketplacePurchase_marketpl
     return m
 }
 // CreateMarketplacePurchase_marketplace_purchaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarketplacePurchase_marketplace_purchaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarketplacePurchase_marketplace_purchase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillingCycle gets the billing_cycle property value. The billing_cycle property
+// returns a *string when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetBillingCycle()(*string) {
     return m.billing_cycle
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billing_cycle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,30 +133,37 @@ func (m *MarketplacePurchase_marketplace_purchase) GetFieldDeserializers()(map[s
     return res
 }
 // GetFreeTrialEndsOn gets the free_trial_ends_on property value. The free_trial_ends_on property
+// returns a *string when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetFreeTrialEndsOn()(*string) {
     return m.free_trial_ends_on
 }
 // GetIsInstalled gets the is_installed property value. The is_installed property
+// returns a *bool when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetIsInstalled()(*bool) {
     return m.is_installed
 }
 // GetNextBillingDate gets the next_billing_date property value. The next_billing_date property
+// returns a *string when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetNextBillingDate()(*string) {
     return m.next_billing_date
 }
 // GetOnFreeTrial gets the on_free_trial property value. The on_free_trial property
+// returns a *bool when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetOnFreeTrial()(*bool) {
     return m.on_free_trial
 }
 // GetPlan gets the plan property value. Marketplace Listing Plan
+// returns a MarketplaceListingPlanable when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetPlan()(MarketplaceListingPlanable) {
     return m.plan
 }
 // GetUnitCount gets the unit_count property value. The unit_count property
+// returns a *int32 when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetUnitCount()(*int32) {
     return m.unit_count
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *string when successful
 func (m *MarketplacePurchase_marketplace_purchase) GetUpdatedAt()(*string) {
     return m.updated_at
 }
@@ -251,7 +261,6 @@ func (m *MarketplacePurchase_marketplace_purchase) SetUnitCount(value *int32)() 
 func (m *MarketplacePurchase_marketplace_purchase) SetUpdatedAt(value *string)() {
     m.updated_at = value
 }
-// MarketplacePurchase_marketplace_purchaseable 
 type MarketplacePurchase_marketplace_purchaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

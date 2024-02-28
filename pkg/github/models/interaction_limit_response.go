@@ -16,7 +16,7 @@ type InteractionLimitResponse struct {
     // The origin property
     origin *string
 }
-// NewInteractionLimitResponse instantiates a new interactionLimitResponse and sets the default values.
+// NewInteractionLimitResponse instantiates a new InteractionLimitResponse and sets the default values.
 func NewInteractionLimitResponse()(*InteractionLimitResponse) {
     m := &InteractionLimitResponse{
     }
@@ -24,18 +24,22 @@ func NewInteractionLimitResponse()(*InteractionLimitResponse) {
     return m
 }
 // CreateInteractionLimitResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateInteractionLimitResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInteractionLimitResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *InteractionLimitResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetExpiresAt gets the expires_at property value. The expires_at property
+// returns a *Time when successful
 func (m *InteractionLimitResponse) GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.expires_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InteractionLimitResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["expires_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -71,10 +75,12 @@ func (m *InteractionLimitResponse) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetLimit gets the limit property value. The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
+// returns a *InteractionGroup when successful
 func (m *InteractionLimitResponse) GetLimit()(*InteractionGroup) {
     return m.limit
 }
 // GetOrigin gets the origin property value. The origin property
+// returns a *string when successful
 func (m *InteractionLimitResponse) GetOrigin()(*string) {
     return m.origin
 }
@@ -123,7 +129,6 @@ func (m *InteractionLimitResponse) SetLimit(value *InteractionGroup)() {
 func (m *InteractionLimitResponse) SetOrigin(value *string)() {
     m.origin = value
 }
-// InteractionLimitResponseable 
 type InteractionLimitResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

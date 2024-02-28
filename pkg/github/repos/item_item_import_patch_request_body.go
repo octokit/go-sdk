@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemImportPatchRequestBody 
 type ItemItemImportPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,14 +22,17 @@ func NewItemItemImportPatchRequestBody()(*ItemItemImportPatchRequestBody) {
     return m
 }
 // CreateItemItemImportPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemImportPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemImportPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemImportPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemImportPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["tfvc_project"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *ItemItemImportPatchRequestBody) GetFieldDeserializers()(map[string]func
     return res
 }
 // GetTfvcProject gets the tfvc_project property value. For a tfvc import, the name of the project that is being imported.
+// returns a *string when successful
 func (m *ItemItemImportPatchRequestBody) GetTfvcProject()(*string) {
     return m.tfvc_project
 }
 // GetVcsPassword gets the vcs_password property value. The password to provide to the originating repository.
+// returns a *string when successful
 func (m *ItemItemImportPatchRequestBody) GetVcsPassword()(*string) {
     return m.vcs_password
 }
 // GetVcsUsername gets the vcs_username property value. The username to provide to the originating repository.
+// returns a *string when successful
 func (m *ItemItemImportPatchRequestBody) GetVcsUsername()(*string) {
     return m.vcs_username
 }
@@ -121,7 +126,6 @@ func (m *ItemItemImportPatchRequestBody) SetVcsPassword(value *string)() {
 func (m *ItemItemImportPatchRequestBody) SetVcsUsername(value *string)() {
     m.vcs_username = value
 }
-// ItemItemImportPatchRequestBodyable 
 type ItemItemImportPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -105,7 +105,7 @@ type AppPermissions struct {
     // The level of permission to grant the access token to update GitHub Actions workflow files.
     workflows *AppPermissions_workflows
 }
-// NewAppPermissions instantiates a new appPermissions and sets the default values.
+// NewAppPermissions instantiates a new AppPermissions and sets the default values.
 func NewAppPermissions()(*AppPermissions) {
     m := &AppPermissions{
     }
@@ -113,50 +113,62 @@ func NewAppPermissions()(*AppPermissions) {
     return m
 }
 // CreateAppPermissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAppPermissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppPermissions(), nil
 }
 // GetActions gets the actions property value. The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
+// returns a *AppPermissions_actions when successful
 func (m *AppPermissions) GetActions()(*AppPermissions_actions) {
     return m.actions
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *AppPermissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdministration gets the administration property value. The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
+// returns a *AppPermissions_administration when successful
 func (m *AppPermissions) GetAdministration()(*AppPermissions_administration) {
     return m.administration
 }
 // GetChecks gets the checks property value. The level of permission to grant the access token for checks on code.
+// returns a *AppPermissions_checks when successful
 func (m *AppPermissions) GetChecks()(*AppPermissions_checks) {
     return m.checks
 }
 // GetCodespaces gets the codespaces property value. The level of permission to grant the access token to create, edit, delete, and list Codespaces.
+// returns a *AppPermissions_codespaces when successful
 func (m *AppPermissions) GetCodespaces()(*AppPermissions_codespaces) {
     return m.codespaces
 }
 // GetContents gets the contents property value. The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+// returns a *AppPermissions_contents when successful
 func (m *AppPermissions) GetContents()(*AppPermissions_contents) {
     return m.contents
 }
 // GetDependabotSecrets gets the dependabot_secrets property value. The leve of permission to grant the access token to manage Dependabot secrets.
+// returns a *AppPermissions_dependabot_secrets when successful
 func (m *AppPermissions) GetDependabotSecrets()(*AppPermissions_dependabot_secrets) {
     return m.dependabot_secrets
 }
 // GetDeployments gets the deployments property value. The level of permission to grant the access token for deployments and deployment statuses.
+// returns a *AppPermissions_deployments when successful
 func (m *AppPermissions) GetDeployments()(*AppPermissions_deployments) {
     return m.deployments
 }
 // GetEmailAddresses gets the email_addresses property value. The level of permission to grant the access token to manage the email addresses belonging to a user.
+// returns a *AppPermissions_email_addresses when successful
 func (m *AppPermissions) GetEmailAddresses()(*AppPermissions_email_addresses) {
     return m.email_addresses
 }
 // GetEnvironments gets the environments property value. The level of permission to grant the access token for managing repository environments.
+// returns a *AppPermissions_environments when successful
 func (m *AppPermissions) GetEnvironments()(*AppPermissions_environments) {
     return m.environments
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -642,158 +654,197 @@ func (m *AppPermissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetFollowers gets the followers property value. The level of permission to grant the access token to manage the followers belonging to a user.
+// returns a *AppPermissions_followers when successful
 func (m *AppPermissions) GetFollowers()(*AppPermissions_followers) {
     return m.followers
 }
 // GetGitSshKeys gets the git_ssh_keys property value. The level of permission to grant the access token to manage git SSH keys.
+// returns a *AppPermissions_git_ssh_keys when successful
 func (m *AppPermissions) GetGitSshKeys()(*AppPermissions_git_ssh_keys) {
     return m.git_ssh_keys
 }
 // GetGpgKeys gets the gpg_keys property value. The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+// returns a *AppPermissions_gpg_keys when successful
 func (m *AppPermissions) GetGpgKeys()(*AppPermissions_gpg_keys) {
     return m.gpg_keys
 }
 // GetInteractionLimits gets the interaction_limits property value. The level of permission to grant the access token to view and manage interaction limits on a repository.
+// returns a *AppPermissions_interaction_limits when successful
 func (m *AppPermissions) GetInteractionLimits()(*AppPermissions_interaction_limits) {
     return m.interaction_limits
 }
 // GetIssues gets the issues property value. The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
+// returns a *AppPermissions_issues when successful
 func (m *AppPermissions) GetIssues()(*AppPermissions_issues) {
     return m.issues
 }
 // GetMembers gets the members property value. The level of permission to grant the access token for organization teams and members.
+// returns a *AppPermissions_members when successful
 func (m *AppPermissions) GetMembers()(*AppPermissions_members) {
     return m.members
 }
 // GetMetadata gets the metadata property value. The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
+// returns a *AppPermissions_metadata when successful
 func (m *AppPermissions) GetMetadata()(*AppPermissions_metadata) {
     return m.metadata
 }
 // GetOrganizationAdministration gets the organization_administration property value. The level of permission to grant the access token to manage access to an organization.
+// returns a *AppPermissions_organization_administration when successful
 func (m *AppPermissions) GetOrganizationAdministration()(*AppPermissions_organization_administration) {
     return m.organization_administration
 }
 // GetOrganizationAnnouncementBanners gets the organization_announcement_banners property value. The level of permission to grant the access token to view and manage announcement banners for an organization.
+// returns a *AppPermissions_organization_announcement_banners when successful
 func (m *AppPermissions) GetOrganizationAnnouncementBanners()(*AppPermissions_organization_announcement_banners) {
     return m.organization_announcement_banners
 }
 // GetOrganizationCopilotSeatManagement gets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+// returns a *AppPermissions_organization_copilot_seat_management when successful
 func (m *AppPermissions) GetOrganizationCopilotSeatManagement()(*AppPermissions_organization_copilot_seat_management) {
     return m.organization_copilot_seat_management
 }
 // GetOrganizationCustomOrgRoles gets the organization_custom_org_roles property value. The level of permission to grant the access token for custom organization roles management.
+// returns a *AppPermissions_organization_custom_org_roles when successful
 func (m *AppPermissions) GetOrganizationCustomOrgRoles()(*AppPermissions_organization_custom_org_roles) {
     return m.organization_custom_org_roles
 }
 // GetOrganizationCustomProperties gets the organization_custom_properties property value. The level of permission to grant the access token for custom property management.
+// returns a *AppPermissions_organization_custom_properties when successful
 func (m *AppPermissions) GetOrganizationCustomProperties()(*AppPermissions_organization_custom_properties) {
     return m.organization_custom_properties
 }
 // GetOrganizationCustomRoles gets the organization_custom_roles property value. The level of permission to grant the access token for custom repository roles management.
+// returns a *AppPermissions_organization_custom_roles when successful
 func (m *AppPermissions) GetOrganizationCustomRoles()(*AppPermissions_organization_custom_roles) {
     return m.organization_custom_roles
 }
 // GetOrganizationEvents gets the organization_events property value. The level of permission to grant the access token to view events triggered by an activity in an organization.
+// returns a *AppPermissions_organization_events when successful
 func (m *AppPermissions) GetOrganizationEvents()(*AppPermissions_organization_events) {
     return m.organization_events
 }
 // GetOrganizationHooks gets the organization_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for an organization.
+// returns a *AppPermissions_organization_hooks when successful
 func (m *AppPermissions) GetOrganizationHooks()(*AppPermissions_organization_hooks) {
     return m.organization_hooks
 }
 // GetOrganizationPackages gets the organization_packages property value. The level of permission to grant the access token for organization packages published to GitHub Packages.
+// returns a *AppPermissions_organization_packages when successful
 func (m *AppPermissions) GetOrganizationPackages()(*AppPermissions_organization_packages) {
     return m.organization_packages
 }
 // GetOrganizationPersonalAccessTokenRequests gets the organization_personal_access_token_requests property value. The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
+// returns a *AppPermissions_organization_personal_access_token_requests when successful
 func (m *AppPermissions) GetOrganizationPersonalAccessTokenRequests()(*AppPermissions_organization_personal_access_token_requests) {
     return m.organization_personal_access_token_requests
 }
 // GetOrganizationPersonalAccessTokens gets the organization_personal_access_tokens property value. The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
+// returns a *AppPermissions_organization_personal_access_tokens when successful
 func (m *AppPermissions) GetOrganizationPersonalAccessTokens()(*AppPermissions_organization_personal_access_tokens) {
     return m.organization_personal_access_tokens
 }
 // GetOrganizationPlan gets the organization_plan property value. The level of permission to grant the access token for viewing an organization's plan.
+// returns a *AppPermissions_organization_plan when successful
 func (m *AppPermissions) GetOrganizationPlan()(*AppPermissions_organization_plan) {
     return m.organization_plan
 }
 // GetOrganizationProjects gets the organization_projects property value. The level of permission to grant the access token to manage organization projects and projects beta (where available).
+// returns a *AppPermissions_organization_projects when successful
 func (m *AppPermissions) GetOrganizationProjects()(*AppPermissions_organization_projects) {
     return m.organization_projects
 }
 // GetOrganizationSecrets gets the organization_secrets property value. The level of permission to grant the access token to manage organization secrets.
+// returns a *AppPermissions_organization_secrets when successful
 func (m *AppPermissions) GetOrganizationSecrets()(*AppPermissions_organization_secrets) {
     return m.organization_secrets
 }
 // GetOrganizationSelfHostedRunners gets the organization_self_hosted_runners property value. The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
+// returns a *AppPermissions_organization_self_hosted_runners when successful
 func (m *AppPermissions) GetOrganizationSelfHostedRunners()(*AppPermissions_organization_self_hosted_runners) {
     return m.organization_self_hosted_runners
 }
 // GetOrganizationUserBlocking gets the organization_user_blocking property value. The level of permission to grant the access token to view and manage users blocked by the organization.
+// returns a *AppPermissions_organization_user_blocking when successful
 func (m *AppPermissions) GetOrganizationUserBlocking()(*AppPermissions_organization_user_blocking) {
     return m.organization_user_blocking
 }
 // GetPackages gets the packages property value. The level of permission to grant the access token for packages published to GitHub Packages.
+// returns a *AppPermissions_packages when successful
 func (m *AppPermissions) GetPackages()(*AppPermissions_packages) {
     return m.packages
 }
 // GetPages gets the pages property value. The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
+// returns a *AppPermissions_pages when successful
 func (m *AppPermissions) GetPages()(*AppPermissions_pages) {
     return m.pages
 }
 // GetProfile gets the profile property value. The level of permission to grant the access token to manage the profile settings belonging to a user.
+// returns a *AppPermissions_profile when successful
 func (m *AppPermissions) GetProfile()(*AppPermissions_profile) {
     return m.profile
 }
 // GetPullRequests gets the pull_requests property value. The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+// returns a *AppPermissions_pull_requests when successful
 func (m *AppPermissions) GetPullRequests()(*AppPermissions_pull_requests) {
     return m.pull_requests
 }
 // GetRepositoryCustomProperties gets the repository_custom_properties property value. The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
+// returns a *AppPermissions_repository_custom_properties when successful
 func (m *AppPermissions) GetRepositoryCustomProperties()(*AppPermissions_repository_custom_properties) {
     return m.repository_custom_properties
 }
 // GetRepositoryHooks gets the repository_hooks property value. The level of permission to grant the access token to manage the post-receive hooks for a repository.
+// returns a *AppPermissions_repository_hooks when successful
 func (m *AppPermissions) GetRepositoryHooks()(*AppPermissions_repository_hooks) {
     return m.repository_hooks
 }
 // GetRepositoryProjects gets the repository_projects property value. The level of permission to grant the access token to manage repository projects, columns, and cards.
+// returns a *AppPermissions_repository_projects when successful
 func (m *AppPermissions) GetRepositoryProjects()(*AppPermissions_repository_projects) {
     return m.repository_projects
 }
 // GetSecrets gets the secrets property value. The level of permission to grant the access token to manage repository secrets.
+// returns a *AppPermissions_secrets when successful
 func (m *AppPermissions) GetSecrets()(*AppPermissions_secrets) {
     return m.secrets
 }
 // GetSecretScanningAlerts gets the secret_scanning_alerts property value. The level of permission to grant the access token to view and manage secret scanning alerts.
+// returns a *AppPermissions_secret_scanning_alerts when successful
 func (m *AppPermissions) GetSecretScanningAlerts()(*AppPermissions_secret_scanning_alerts) {
     return m.secret_scanning_alerts
 }
 // GetSecurityEvents gets the security_events property value. The level of permission to grant the access token to view and manage security events like code scanning alerts.
+// returns a *AppPermissions_security_events when successful
 func (m *AppPermissions) GetSecurityEvents()(*AppPermissions_security_events) {
     return m.security_events
 }
 // GetSingleFile gets the single_file property value. The level of permission to grant the access token to manage just a single file.
+// returns a *AppPermissions_single_file when successful
 func (m *AppPermissions) GetSingleFile()(*AppPermissions_single_file) {
     return m.single_file
 }
 // GetStarring gets the starring property value. The level of permission to grant the access token to list and manage repositories a user is starring.
+// returns a *AppPermissions_starring when successful
 func (m *AppPermissions) GetStarring()(*AppPermissions_starring) {
     return m.starring
 }
 // GetStatuses gets the statuses property value. The level of permission to grant the access token for commit statuses.
+// returns a *AppPermissions_statuses when successful
 func (m *AppPermissions) GetStatuses()(*AppPermissions_statuses) {
     return m.statuses
 }
 // GetTeamDiscussions gets the team_discussions property value. The level of permission to grant the access token to manage team discussions and related comments.
+// returns a *AppPermissions_team_discussions when successful
 func (m *AppPermissions) GetTeamDiscussions()(*AppPermissions_team_discussions) {
     return m.team_discussions
 }
 // GetVulnerabilityAlerts gets the vulnerability_alerts property value. The level of permission to grant the access token to manage Dependabot alerts.
+// returns a *AppPermissions_vulnerability_alerts when successful
 func (m *AppPermissions) GetVulnerabilityAlerts()(*AppPermissions_vulnerability_alerts) {
     return m.vulnerability_alerts
 }
 // GetWorkflows gets the workflows property value. The level of permission to grant the access token to update GitHub Actions workflow files.
+// returns a *AppPermissions_workflows when successful
 func (m *AppPermissions) GetWorkflows()(*AppPermissions_workflows) {
     return m.workflows
 }
@@ -1339,7 +1390,6 @@ func (m *AppPermissions) SetVulnerabilityAlerts(value *AppPermissions_vulnerabil
 func (m *AppPermissions) SetWorkflows(value *AppPermissions_workflows)() {
     m.workflows = value
 }
-// AppPermissionsable 
 type AppPermissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -21,6 +21,7 @@ type MembershipsOrgsRequestBuilderGetQueryParameters struct {
     State *i6248a706a395d319f3e66611fac0b2654fe48b61e0e7152b109cc83e1d984972.GetStateQueryParameterType `uriparametername:"state"`
 }
 // ByOrg gets an item from the github.com/octokit/go-sdk/pkg/github/.user.memberships.orgs.item collection
+// returns a *MembershipsOrgsWithOrgItemRequestBuilder when successful
 func (m *MembershipsOrgsRequestBuilder) ByOrg(org string)(*MembershipsOrgsWithOrgItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -31,20 +32,24 @@ func (m *MembershipsOrgsRequestBuilder) ByOrg(org string)(*MembershipsOrgsWithOr
     }
     return NewMembershipsOrgsWithOrgItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewMembershipsOrgsRequestBuilderInternal instantiates a new OrgsRequestBuilder and sets the default values.
+// NewMembershipsOrgsRequestBuilderInternal instantiates a new MembershipsOrgsRequestBuilder and sets the default values.
 func NewMembershipsOrgsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembershipsOrgsRequestBuilder) {
     m := &MembershipsOrgsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/memberships/orgs{?page*,per_page*,state*}", pathParameters),
     }
     return m
 }
-// NewMembershipsOrgsRequestBuilder instantiates a new OrgsRequestBuilder and sets the default values.
+// NewMembershipsOrgsRequestBuilder instantiates a new MembershipsOrgsRequestBuilder and sets the default values.
 func NewMembershipsOrgsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MembershipsOrgsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewMembershipsOrgsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists all of the authenticated user's organization memberships.
+// returns a []OrgMembershipable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/members#list-organization-memberships-for-the-authenticated-user
@@ -71,6 +76,7 @@ func (m *MembershipsOrgsRequestBuilder) Get(ctx context.Context, requestConfigur
     return val, nil
 }
 // ToGetRequestInformation lists all of the authenticated user's organization memberships.
+// returns a *RequestInformation when successful
 func (m *MembershipsOrgsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[MembershipsOrgsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -78,6 +84,7 @@ func (m *MembershipsOrgsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *MembershipsOrgsRequestBuilder when successful
 func (m *MembershipsOrgsRequestBuilder) WithUrl(rawUrl string)(*MembershipsOrgsRequestBuilder) {
     return NewMembershipsOrgsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

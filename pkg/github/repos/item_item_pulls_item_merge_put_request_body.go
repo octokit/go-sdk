@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemMergePutRequestBody 
 type ItemItemPullsItemMergePutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,22 +22,27 @@ func NewItemItemPullsItemMergePutRequestBody()(*ItemItemPullsItemMergePutRequest
     return m
 }
 // CreateItemItemPullsItemMergePutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemMergePutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemMergePutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemMergePutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommitMessage gets the commit_message property value. Extra detail to append to automatic commit message.
+// returns a *string when successful
 func (m *ItemItemPullsItemMergePutRequestBody) GetCommitMessage()(*string) {
     return m.commit_message
 }
 // GetCommitTitle gets the commit_title property value. Title for the automatic commit message.
+// returns a *string when successful
 func (m *ItemItemPullsItemMergePutRequestBody) GetCommitTitle()(*string) {
     return m.commit_title
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemMergePutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit_message"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +78,7 @@ func (m *ItemItemPullsItemMergePutRequestBody) GetFieldDeserializers()(map[strin
     return res
 }
 // GetSha gets the sha property value. SHA that pull request head must match to allow merge.
+// returns a *string when successful
 func (m *ItemItemPullsItemMergePutRequestBody) GetSha()(*string) {
     return m.sha
 }
@@ -121,7 +126,6 @@ func (m *ItemItemPullsItemMergePutRequestBody) SetCommitTitle(value *string)() {
 func (m *ItemItemPullsItemMergePutRequestBody) SetSha(value *string)() {
     m.sha = value
 }
-// ItemItemPullsItemMergePutRequestBodyable 
 type ItemItemPullsItemMergePutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

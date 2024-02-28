@@ -2,7 +2,6 @@ package invitations
 import (
     "errors"
 )
-// 
 type GetRoleQueryParameterType int
 
 const (

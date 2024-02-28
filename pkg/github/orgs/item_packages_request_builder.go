@@ -23,6 +23,7 @@ type ItemPackagesRequestBuilderGetQueryParameters struct {
     Visibility *i54a313bac026cb0feec5bbef0f57abc11427cc4e5752056265b05087fd0d9089.GetVisibilityQueryParameterType `uriparametername:"visibility"`
 }
 // ByPackage_type gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.packages.item collection
+// returns a *ItemPackagesWithPackage_typeItemRequestBuilder when successful
 func (m *ItemPackagesRequestBuilder) ByPackage_type(package_type string)(*ItemPackagesWithPackage_typeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -33,20 +34,23 @@ func (m *ItemPackagesRequestBuilder) ByPackage_type(package_type string)(*ItemPa
     }
     return NewItemPackagesWithPackage_typeItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemPackagesRequestBuilderInternal instantiates a new PackagesRequestBuilder and sets the default values.
+// NewItemPackagesRequestBuilderInternal instantiates a new ItemPackagesRequestBuilder and sets the default values.
 func NewItemPackagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPackagesRequestBuilder) {
     m := &ItemPackagesRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/packages?package_type={package_type}{&page*,per_page*,visibility*}", pathParameters),
     }
     return m
 }
-// NewItemPackagesRequestBuilder instantiates a new PackagesRequestBuilder and sets the default values.
+// NewItemPackagesRequestBuilder instantiates a new ItemPackagesRequestBuilder and sets the default values.
 func NewItemPackagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPackagesRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPackagesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists packages in an organization readable by the user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a []PackageEscapedable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/packages/packages#list-packages-for-an-organization
@@ -72,6 +76,7 @@ func (m *ItemPackagesRequestBuilder) Get(ctx context.Context, requestConfigurati
     return val, nil
 }
 // ToGetRequestInformation lists packages in an organization readable by the user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages)."
+// returns a *RequestInformation when successful
 func (m *ItemPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemPackagesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -79,6 +84,7 @@ func (m *ItemPackagesRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPackagesRequestBuilder when successful
 func (m *ItemPackagesRequestBuilder) WithUrl(rawUrl string)(*ItemPackagesRequestBuilder) {
     return NewItemPackagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

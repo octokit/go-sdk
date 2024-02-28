@@ -2,7 +2,6 @@ package item
 import (
     "errors"
 )
-// 
 type WithCheck_run_PatchRequestBodyMember2_status int
 
 const (

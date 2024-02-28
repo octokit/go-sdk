@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody 
 type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,26 +24,32 @@ func NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody()(*ItemPr
     return m
 }
 // CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowedValues gets the allowed_values property value. An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
+// returns a []string when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetAllowedValues()([]string) {
     return m.allowed_values
 }
 // GetDefaultValue gets the default_value property value. Default value of the property
+// returns a *string when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetDefaultValue()(*string) {
     return m.default_value
 }
 // GetDescription gets the description property value. Short description of the property
+// returns a *string when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowed_values"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -96,6 +101,7 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetFiel
     return res
 }
 // GetRequired gets the required property value. Whether the property is required.
+// returns a *bool when successful
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetRequired()(*bool) {
     return m.required
 }
@@ -153,7 +159,6 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetDesc
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetRequired(value *bool)() {
     m.required = value
 }
-// ItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyable 
 type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

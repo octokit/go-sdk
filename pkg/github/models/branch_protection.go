@@ -41,7 +41,7 @@ type BranchProtection struct {
     // The url property
     url *string
 }
-// NewBranchProtection instantiates a new branchProtection and sets the default values.
+// NewBranchProtection instantiates a new BranchProtection and sets the default values.
 func NewBranchProtection()(*BranchProtection) {
     m := &BranchProtection{
     }
@@ -49,38 +49,47 @@ func NewBranchProtection()(*BranchProtection) {
     return m
 }
 // CreateBranchProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchProtection(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchProtection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAllowDeletions gets the allow_deletions property value. The allow_deletions property
+// returns a BranchProtection_allow_deletionsable when successful
 func (m *BranchProtection) GetAllowDeletions()(BranchProtection_allow_deletionsable) {
     return m.allow_deletions
 }
 // GetAllowForcePushes gets the allow_force_pushes property value. The allow_force_pushes property
+// returns a BranchProtection_allow_force_pushesable when successful
 func (m *BranchProtection) GetAllowForcePushes()(BranchProtection_allow_force_pushesable) {
     return m.allow_force_pushes
 }
 // GetAllowForkSyncing gets the allow_fork_syncing property value. Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+// returns a BranchProtection_allow_fork_syncingable when successful
 func (m *BranchProtection) GetAllowForkSyncing()(BranchProtection_allow_fork_syncingable) {
     return m.allow_fork_syncing
 }
 // GetBlockCreations gets the block_creations property value. The block_creations property
+// returns a BranchProtection_block_creationsable when successful
 func (m *BranchProtection) GetBlockCreations()(BranchProtection_block_creationsable) {
     return m.block_creations
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *BranchProtection) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetEnforceAdmins gets the enforce_admins property value. Protected Branch Admin Enforced
+// returns a ProtectedBranchAdminEnforcedable when successful
 func (m *BranchProtection) GetEnforceAdmins()(ProtectedBranchAdminEnforcedable) {
     return m.enforce_admins
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allow_deletions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -246,42 +255,52 @@ func (m *BranchProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetLockBranch gets the lock_branch property value. Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+// returns a BranchProtection_lock_branchable when successful
 func (m *BranchProtection) GetLockBranch()(BranchProtection_lock_branchable) {
     return m.lock_branch
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *BranchProtection) GetName()(*string) {
     return m.name
 }
 // GetProtectionUrl gets the protection_url property value. The protection_url property
+// returns a *string when successful
 func (m *BranchProtection) GetProtectionUrl()(*string) {
     return m.protection_url
 }
 // GetRequiredConversationResolution gets the required_conversation_resolution property value. The required_conversation_resolution property
+// returns a BranchProtection_required_conversation_resolutionable when successful
 func (m *BranchProtection) GetRequiredConversationResolution()(BranchProtection_required_conversation_resolutionable) {
     return m.required_conversation_resolution
 }
 // GetRequiredLinearHistory gets the required_linear_history property value. The required_linear_history property
+// returns a BranchProtection_required_linear_historyable when successful
 func (m *BranchProtection) GetRequiredLinearHistory()(BranchProtection_required_linear_historyable) {
     return m.required_linear_history
 }
 // GetRequiredPullRequestReviews gets the required_pull_request_reviews property value. Protected Branch Pull Request Review
+// returns a ProtectedBranchPullRequestReviewable when successful
 func (m *BranchProtection) GetRequiredPullRequestReviews()(ProtectedBranchPullRequestReviewable) {
     return m.required_pull_request_reviews
 }
 // GetRequiredSignatures gets the required_signatures property value. The required_signatures property
+// returns a BranchProtection_required_signaturesable when successful
 func (m *BranchProtection) GetRequiredSignatures()(BranchProtection_required_signaturesable) {
     return m.required_signatures
 }
 // GetRequiredStatusChecks gets the required_status_checks property value. Protected Branch Required Status Check
+// returns a ProtectedBranchRequiredStatusCheckable when successful
 func (m *BranchProtection) GetRequiredStatusChecks()(ProtectedBranchRequiredStatusCheckable) {
     return m.required_status_checks
 }
 // GetRestrictions gets the restrictions property value. Branch Restriction Policy
+// returns a BranchRestrictionPolicyable when successful
 func (m *BranchProtection) GetRestrictions()(BranchRestrictionPolicyable) {
     return m.restrictions
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *BranchProtection) GetUrl()(*string) {
     return m.url
 }
@@ -459,7 +478,6 @@ func (m *BranchProtection) SetRestrictions(value BranchRestrictionPolicyable)() 
 func (m *BranchProtection) SetUrl(value *string)() {
     m.url = value
 }
-// BranchProtectionable 
 type BranchProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -24,7 +24,7 @@ type OrganizationRole struct {
     // The date and time the role was last updated.
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
-// NewOrganizationRole instantiates a new organizationRole and sets the default values.
+// NewOrganizationRole instantiates a new OrganizationRole and sets the default values.
 func NewOrganizationRole()(*OrganizationRole) {
     m := &OrganizationRole{
     }
@@ -32,22 +32,27 @@ func NewOrganizationRole()(*OrganizationRole) {
     return m
 }
 // CreateOrganizationRoleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrganizationRoleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrganizationRole(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrganizationRole) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The date and time the role was created.
+// returns a *Time when successful
 func (m *OrganizationRole) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. A short description about who this role is for or what permissions it grants.
+// returns a *string when successful
 func (m *OrganizationRole) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -129,22 +134,27 @@ func (m *OrganizationRole) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. The unique identifier of the role.
+// returns a *int32 when successful
 func (m *OrganizationRole) GetId()(*int32) {
     return m.id
 }
 // GetName gets the name property value. The name of the role.
+// returns a *string when successful
 func (m *OrganizationRole) GetName()(*string) {
     return m.name
 }
 // GetOrganization gets the organization property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *OrganizationRole) GetOrganization()(NullableSimpleUserable) {
     return m.organization
 }
 // GetPermissions gets the permissions property value. A list of permissions included in this role.
+// returns a []string when successful
 func (m *OrganizationRole) GetPermissions()([]string) {
     return m.permissions
 }
 // GetUpdatedAt gets the updated_at property value. The date and time the role was last updated.
+// returns a *Time when successful
 func (m *OrganizationRole) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
@@ -232,7 +242,6 @@ func (m *OrganizationRole) SetPermissions(value []string)() {
 func (m *OrganizationRole) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }
-// OrganizationRoleable 
 type OrganizationRoleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

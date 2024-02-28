@@ -17,7 +17,7 @@ type GitTree struct {
     // The url property
     url *string
 }
-// NewGitTree instantiates a new gitTree and sets the default values.
+// NewGitTree instantiates a new GitTree and sets the default values.
 func NewGitTree()(*GitTree) {
     m := &GitTree{
     }
@@ -25,14 +25,17 @@ func NewGitTree()(*GitTree) {
     return m
 }
 // CreateGitTreeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitTreeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitTree(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitTree) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitTree) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["sha"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,18 +87,22 @@ func (m *GitTree) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     return res
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *GitTree) GetSha()(*string) {
     return m.sha
 }
 // GetTree gets the tree property value. Objects specifying a tree structure
+// returns a []GitTree_treeable when successful
 func (m *GitTree) GetTree()([]GitTree_treeable) {
     return m.tree
 }
 // GetTruncated gets the truncated property value. The truncated property
+// returns a *bool when successful
 func (m *GitTree) GetTruncated()(*bool) {
     return m.truncated
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *GitTree) GetUrl()(*string) {
     return m.url
 }
@@ -159,7 +166,6 @@ func (m *GitTree) SetTruncated(value *bool)() {
 func (m *GitTree) SetUrl(value *string)() {
     m.url = value
 }
-// GitTreeable 
 type GitTreeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

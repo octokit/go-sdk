@@ -13,7 +13,7 @@ type RepositoryRuleCommitterEmailPattern struct {
     // The type property
     typeEscaped *RepositoryRuleCommitterEmailPattern_type
 }
-// NewRepositoryRuleCommitterEmailPattern instantiates a new repositoryRuleCommitterEmailPattern and sets the default values.
+// NewRepositoryRuleCommitterEmailPattern instantiates a new RepositoryRuleCommitterEmailPattern and sets the default values.
 func NewRepositoryRuleCommitterEmailPattern()(*RepositoryRuleCommitterEmailPattern) {
     m := &RepositoryRuleCommitterEmailPattern{
     }
@@ -21,14 +21,17 @@ func NewRepositoryRuleCommitterEmailPattern()(*RepositoryRuleCommitterEmailPatte
     return m
 }
 // CreateRepositoryRuleCommitterEmailPatternFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleCommitterEmailPatternFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleCommitterEmailPattern(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleCommitterEmailPattern) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleCommitterEmailPattern) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *RepositoryRuleCommitterEmailPattern) GetFieldDeserializers()(map[string
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
+// returns a RepositoryRuleCommitterEmailPattern_parametersable when successful
 func (m *RepositoryRuleCommitterEmailPattern) GetParameters()(RepositoryRuleCommitterEmailPattern_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *RepositoryRuleCommitterEmailPattern_type when successful
 func (m *RepositoryRuleCommitterEmailPattern) GetTypeEscaped()(*RepositoryRuleCommitterEmailPattern_type) {
     return m.typeEscaped
 }
@@ -96,7 +101,6 @@ func (m *RepositoryRuleCommitterEmailPattern) SetParameters(value RepositoryRule
 func (m *RepositoryRuleCommitterEmailPattern) SetTypeEscaped(value *RepositoryRuleCommitterEmailPattern_type)() {
     m.typeEscaped = value
 }
-// RepositoryRuleCommitterEmailPatternable 
 type RepositoryRuleCommitterEmailPatternable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

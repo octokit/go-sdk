@@ -4,14 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CheckSuitePreference_preferences 
 type CheckSuitePreference_preferences struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The auto_trigger_checks property
     auto_trigger_checks []CheckSuitePreference_preferences_auto_trigger_checksable
 }
-// NewCheckSuitePreference_preferences instantiates a new checkSuitePreference_preferences and sets the default values.
+// NewCheckSuitePreference_preferences instantiates a new CheckSuitePreference_preferences and sets the default values.
 func NewCheckSuitePreference_preferences()(*CheckSuitePreference_preferences) {
     m := &CheckSuitePreference_preferences{
     }
@@ -19,18 +18,22 @@ func NewCheckSuitePreference_preferences()(*CheckSuitePreference_preferences) {
     return m
 }
 // CreateCheckSuitePreference_preferencesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckSuitePreference_preferencesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckSuitePreference_preferences(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckSuitePreference_preferences) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAutoTriggerChecks gets the auto_trigger_checks property value. The auto_trigger_checks property
+// returns a []CheckSuitePreference_preferences_auto_trigger_checksable when successful
 func (m *CheckSuitePreference_preferences) GetAutoTriggerChecks()([]CheckSuitePreference_preferences_auto_trigger_checksable) {
     return m.auto_trigger_checks
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckSuitePreference_preferences) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["auto_trigger_checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -81,7 +84,6 @@ func (m *CheckSuitePreference_preferences) SetAdditionalData(value map[string]an
 func (m *CheckSuitePreference_preferences) SetAutoTriggerChecks(value []CheckSuitePreference_preferences_auto_trigger_checksable)() {
     m.auto_trigger_checks = value
 }
-// CheckSuitePreference_preferencesable 
 type CheckSuitePreference_preferencesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

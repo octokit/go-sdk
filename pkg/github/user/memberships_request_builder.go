@@ -22,6 +22,7 @@ func NewMembershipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewMembershipsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Orgs the orgs property
+// returns a *MembershipsOrgsRequestBuilder when successful
 func (m *MembershipsRequestBuilder) Orgs()(*MembershipsOrgsRequestBuilder) {
     return NewMembershipsOrgsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

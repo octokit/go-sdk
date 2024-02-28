@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemPullsItemReviewsPostRequestBody_comments 
 type ItemItemPullsItemReviewsPostRequestBody_comments struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -31,18 +30,22 @@ func NewItemItemPullsItemReviewsPostRequestBody_comments()(*ItemItemPullsItemRev
     return m
 }
 // CreateItemItemPullsItemReviewsPostRequestBody_commentsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPullsItemReviewsPostRequestBody_commentsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPullsItemReviewsPostRequestBody_comments(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. Text of the review comment.
+// returns a *string when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,26 +121,32 @@ func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetFieldDeserializers
     return res
 }
 // GetLine gets the line property value. The line property
+// returns a *int32 when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetLine()(*int32) {
     return m.line
 }
 // GetPath gets the path property value. The relative path to the file that necessitates a review comment.
+// returns a *string when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+// returns a *int32 when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetPosition()(*int32) {
     return m.position
 }
 // GetSide gets the side property value. The side property
+// returns a *string when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetSide()(*string) {
     return m.side
 }
 // GetStartLine gets the start_line property value. The start_line property
+// returns a *int32 when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetStartLine()(*int32) {
     return m.start_line
 }
 // GetStartSide gets the start_side property value. The start_side property
+// returns a *string when successful
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) GetStartSide()(*string) {
     return m.start_side
 }
@@ -225,7 +234,6 @@ func (m *ItemItemPullsItemReviewsPostRequestBody_comments) SetStartLine(value *i
 func (m *ItemItemPullsItemReviewsPostRequestBody_comments) SetStartSide(value *string)() {
     m.start_side = value
 }
-// ItemItemPullsItemReviewsPostRequestBody_commentsable 
 type ItemItemPullsItemReviewsPostRequestBody_commentsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

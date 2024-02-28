@@ -17,7 +17,7 @@ type ContentTraffic struct {
     // The uniques property
     uniques *int32
 }
-// NewContentTraffic instantiates a new contentTraffic and sets the default values.
+// NewContentTraffic instantiates a new ContentTraffic and sets the default values.
 func NewContentTraffic()(*ContentTraffic) {
     m := &ContentTraffic{
     }
@@ -25,18 +25,22 @@ func NewContentTraffic()(*ContentTraffic) {
     return m
 }
 // CreateContentTrafficFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateContentTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewContentTraffic(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ContentTraffic) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCount gets the count property value. The count property
+// returns a *int32 when successful
 func (m *ContentTraffic) GetCount()(*int32) {
     return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ContentTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["count"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +86,17 @@ func (m *ContentTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetPath gets the path property value. The path property
+// returns a *string when successful
 func (m *ContentTraffic) GetPath()(*string) {
     return m.path
 }
 // GetTitle gets the title property value. The title property
+// returns a *string when successful
 func (m *ContentTraffic) GetTitle()(*string) {
     return m.title
 }
 // GetUniques gets the uniques property value. The uniques property
+// returns a *int32 when successful
 func (m *ContentTraffic) GetUniques()(*int32) {
     return m.uniques
 }
@@ -147,7 +154,6 @@ func (m *ContentTraffic) SetTitle(value *string)() {
 func (m *ContentTraffic) SetUniques(value *int32)() {
     m.uniques = value
 }
-// ContentTrafficable 
 type ContentTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

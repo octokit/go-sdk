@@ -15,7 +15,7 @@ type RepositoryRulesetBypassActor struct {
     // When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
     bypass_mode *RepositoryRulesetBypassActor_bypass_mode
 }
-// NewRepositoryRulesetBypassActor instantiates a new repositoryRulesetBypassActor and sets the default values.
+// NewRepositoryRulesetBypassActor instantiates a new RepositoryRulesetBypassActor and sets the default values.
 func NewRepositoryRulesetBypassActor()(*RepositoryRulesetBypassActor) {
     m := &RepositoryRulesetBypassActor{
     }
@@ -23,26 +23,32 @@ func NewRepositoryRulesetBypassActor()(*RepositoryRulesetBypassActor) {
     return m
 }
 // CreateRepositoryRulesetBypassActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRulesetBypassActorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRulesetBypassActor(), nil
 }
 // GetActorId gets the actor_id property value. The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`.
+// returns a *int32 when successful
 func (m *RepositoryRulesetBypassActor) GetActorId()(*int32) {
     return m.actor_id
 }
 // GetActorType gets the actor_type property value. The type of actor that can bypass a ruleset
+// returns a *RepositoryRulesetBypassActor_actor_type when successful
 func (m *RepositoryRulesetBypassActor) GetActorType()(*RepositoryRulesetBypassActor_actor_type) {
     return m.actor_type
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRulesetBypassActor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBypassMode gets the bypass_mode property value. When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
+// returns a *RepositoryRulesetBypassActor_bypass_mode when successful
 func (m *RepositoryRulesetBypassActor) GetBypassMode()(*RepositoryRulesetBypassActor_bypass_mode) {
     return m.bypass_mode
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRulesetBypassActor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -123,7 +129,6 @@ func (m *RepositoryRulesetBypassActor) SetAdditionalData(value map[string]any)()
 func (m *RepositoryRulesetBypassActor) SetBypassMode(value *RepositoryRulesetBypassActor_bypass_mode)() {
     m.bypass_mode = value
 }
-// RepositoryRulesetBypassActorable 
 type RepositoryRulesetBypassActorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

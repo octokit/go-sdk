@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// GistSimple403Error_block 
 type GistSimple403Error_block struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type GistSimple403Error_block struct {
     // The reason property
     reason *string
 }
-// NewGistSimple403Error_block instantiates a new gistSimple403Error_block and sets the default values.
+// NewGistSimple403Error_block instantiates a new GistSimple403Error_block and sets the default values.
 func NewGistSimple403Error_block()(*GistSimple403Error_block) {
     m := &GistSimple403Error_block{
     }
@@ -23,18 +22,22 @@ func NewGistSimple403Error_block()(*GistSimple403Error_block) {
     return m
 }
 // CreateGistSimple403Error_blockFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGistSimple403Error_blockFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGistSimple403Error_block(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GistSimple403Error_block) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *GistSimple403Error_block) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GistSimple403Error_block) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +73,12 @@ func (m *GistSimple403Error_block) GetFieldDeserializers()(map[string]func(i878a
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *GistSimple403Error_block) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetReason gets the reason property value. The reason property
+// returns a *string when successful
 func (m *GistSimple403Error_block) GetReason()(*string) {
     return m.reason
 }
@@ -121,7 +126,6 @@ func (m *GistSimple403Error_block) SetHtmlUrl(value *string)() {
 func (m *GistSimple403Error_block) SetReason(value *string)() {
     m.reason = value
 }
-// GistSimple403Error_blockable 
 type GistSimple403Error_blockable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

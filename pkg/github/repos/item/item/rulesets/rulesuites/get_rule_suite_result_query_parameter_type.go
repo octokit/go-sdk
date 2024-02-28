@@ -2,7 +2,6 @@ package rulesuites
 import (
     "errors"
 )
-// 
 type GetRule_suite_resultQueryParameterType int
 
 const (

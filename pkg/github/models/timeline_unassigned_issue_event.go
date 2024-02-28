@@ -29,7 +29,7 @@ type TimelineUnassignedIssueEvent struct {
     // The url property
     url *string
 }
-// NewTimelineUnassignedIssueEvent instantiates a new timelineUnassignedIssueEvent and sets the default values.
+// NewTimelineUnassignedIssueEvent instantiates a new TimelineUnassignedIssueEvent and sets the default values.
 func NewTimelineUnassignedIssueEvent()(*TimelineUnassignedIssueEvent) {
     m := &TimelineUnassignedIssueEvent{
     }
@@ -37,38 +37,47 @@ func NewTimelineUnassignedIssueEvent()(*TimelineUnassignedIssueEvent) {
     return m
 }
 // CreateTimelineUnassignedIssueEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateTimelineUnassignedIssueEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimelineUnassignedIssueEvent(), nil
 }
 // GetActor gets the actor property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineUnassignedIssueEvent) GetActor()(SimpleUserable) {
     return m.actor
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *TimelineUnassignedIssueEvent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAssignee gets the assignee property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *TimelineUnassignedIssueEvent) GetAssignee()(SimpleUserable) {
     return m.assignee
 }
 // GetCommitId gets the commit_id property value. The commit_id property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetCommitId()(*string) {
     return m.commit_id
 }
 // GetCommitUrl gets the commit_url property value. The commit_url property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetCommitUrl()(*string) {
     return m.commit_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetCreatedAt()(*string) {
     return m.created_at
 }
 // GetEvent gets the event property value. The event property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetEvent()(*string) {
     return m.event
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TimelineUnassignedIssueEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["actor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -174,18 +183,22 @@ func (m *TimelineUnassignedIssueEvent) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *TimelineUnassignedIssueEvent) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *TimelineUnassignedIssueEvent) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *TimelineUnassignedIssueEvent) GetUrl()(*string) {
     return m.url
 }
@@ -303,7 +316,6 @@ func (m *TimelineUnassignedIssueEvent) SetPerformedViaGithubApp(value NullableIn
 func (m *TimelineUnassignedIssueEvent) SetUrl(value *string)() {
     m.url = value
 }
-// TimelineUnassignedIssueEventable 
 type TimelineUnassignedIssueEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

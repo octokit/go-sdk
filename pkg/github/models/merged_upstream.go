@@ -15,7 +15,7 @@ type MergedUpstream struct {
     // The message property
     message *string
 }
-// NewMergedUpstream instantiates a new mergedUpstream and sets the default values.
+// NewMergedUpstream instantiates a new MergedUpstream and sets the default values.
 func NewMergedUpstream()(*MergedUpstream) {
     m := &MergedUpstream{
     }
@@ -23,18 +23,22 @@ func NewMergedUpstream()(*MergedUpstream) {
     return m
 }
 // CreateMergedUpstreamFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMergedUpstreamFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMergedUpstream(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MergedUpstream) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBaseBranch gets the base_branch property value. The base_branch property
+// returns a *string when successful
 func (m *MergedUpstream) GetBaseBranch()(*string) {
     return m.base_branch
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MergedUpstream) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["base_branch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +74,12 @@ func (m *MergedUpstream) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetMergeType gets the merge_type property value. The merge_type property
+// returns a *MergedUpstream_merge_type when successful
 func (m *MergedUpstream) GetMergeType()(*MergedUpstream_merge_type) {
     return m.merge_type
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *MergedUpstream) GetMessage()(*string) {
     return m.message
 }
@@ -122,7 +128,6 @@ func (m *MergedUpstream) SetMergeType(value *MergedUpstream_merge_type)() {
 func (m *MergedUpstream) SetMessage(value *string)() {
     m.message = value
 }
-// MergedUpstreamable 
 type MergedUpstreamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

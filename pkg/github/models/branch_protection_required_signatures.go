@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// BranchProtection_required_signatures 
 type BranchProtection_required_signatures struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -13,7 +12,7 @@ type BranchProtection_required_signatures struct {
     // The url property
     url *string
 }
-// NewBranchProtection_required_signatures instantiates a new branchProtection_required_signatures and sets the default values.
+// NewBranchProtection_required_signatures instantiates a new BranchProtection_required_signatures and sets the default values.
 func NewBranchProtection_required_signatures()(*BranchProtection_required_signatures) {
     m := &BranchProtection_required_signatures{
     }
@@ -21,18 +20,22 @@ func NewBranchProtection_required_signatures()(*BranchProtection_required_signat
     return m
 }
 // CreateBranchProtection_required_signaturesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchProtection_required_signaturesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchProtection_required_signatures(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchProtection_required_signatures) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
 func (m *BranchProtection_required_signatures) GetEnabled()(*bool) {
     return m.enabled
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchProtection_required_signatures) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +61,7 @@ func (m *BranchProtection_required_signatures) GetFieldDeserializers()(map[strin
     return res
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *BranchProtection_required_signatures) GetUrl()(*string) {
     return m.url
 }
@@ -95,7 +99,6 @@ func (m *BranchProtection_required_signatures) SetEnabled(value *bool)() {
 func (m *BranchProtection_required_signatures) SetUrl(value *string)() {
     m.url = value
 }
-// BranchProtection_required_signaturesable 
 type BranchProtection_required_signaturesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

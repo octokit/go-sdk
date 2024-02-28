@@ -46,7 +46,7 @@ type Migration struct {
     // The url property
     url *string
 }
-// NewMigration instantiates a new migration and sets the default values.
+// NewMigration instantiates a new Migration and sets the default values.
 func NewMigration()(*Migration) {
     m := &Migration{
     }
@@ -54,46 +54,57 @@ func NewMigration()(*Migration) {
     return m
 }
 // CreateMigrationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMigrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMigration(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Migration) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetArchiveUrl gets the archive_url property value. The archive_url property
+// returns a *string when successful
 func (m *Migration) GetArchiveUrl()(*string) {
     return m.archive_url
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *Migration) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetExclude gets the exclude property value. Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
+// returns a []string when successful
 func (m *Migration) GetExclude()([]string) {
     return m.exclude
 }
 // GetExcludeAttachments gets the exclude_attachments property value. The exclude_attachments property
+// returns a *bool when successful
 func (m *Migration) GetExcludeAttachments()(*bool) {
     return m.exclude_attachments
 }
 // GetExcludeGitData gets the exclude_git_data property value. The exclude_git_data property
+// returns a *bool when successful
 func (m *Migration) GetExcludeGitData()(*bool) {
     return m.exclude_git_data
 }
 // GetExcludeMetadata gets the exclude_metadata property value. The exclude_metadata property
+// returns a *bool when successful
 func (m *Migration) GetExcludeMetadata()(*bool) {
     return m.exclude_metadata
 }
 // GetExcludeOwnerProjects gets the exclude_owner_projects property value. The exclude_owner_projects property
+// returns a *bool when successful
 func (m *Migration) GetExcludeOwnerProjects()(*bool) {
     return m.exclude_owner_projects
 }
 // GetExcludeReleases gets the exclude_releases property value. The exclude_releases property
+// returns a *bool when successful
 func (m *Migration) GetExcludeReleases()(*bool) {
     return m.exclude_releases
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Migration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["archive_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -291,42 +302,52 @@ func (m *Migration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     return res
 }
 // GetGuid gets the guid property value. The guid property
+// returns a *string when successful
 func (m *Migration) GetGuid()(*string) {
     return m.guid
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Migration) GetId()(*int32) {
     return m.id
 }
 // GetLockRepositories gets the lock_repositories property value. The lock_repositories property
+// returns a *bool when successful
 func (m *Migration) GetLockRepositories()(*bool) {
     return m.lock_repositories
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *Migration) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrgMetadataOnly gets the org_metadata_only property value. The org_metadata_only property
+// returns a *bool when successful
 func (m *Migration) GetOrgMetadataOnly()(*bool) {
     return m.org_metadata_only
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *Migration) GetOwner()(NullableSimpleUserable) {
     return m.owner
 }
 // GetRepositories gets the repositories property value. The repositories included in the migration. Only returned for export migrations.
+// returns a []Repositoryable when successful
 func (m *Migration) GetRepositories()([]Repositoryable) {
     return m.repositories
 }
 // GetState gets the state property value. The state property
+// returns a *string when successful
 func (m *Migration) GetState()(*string) {
     return m.state
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *Migration) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Migration) GetUrl()(*string) {
     return m.url
 }
@@ -530,7 +551,6 @@ func (m *Migration) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077
 func (m *Migration) SetUrl(value *string)() {
     m.url = value
 }
-// Migrationable 
 type Migrationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

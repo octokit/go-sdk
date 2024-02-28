@@ -17,7 +17,7 @@ type Autolink struct {
     // A template for the target URL that is generated if a key was found.
     url_template *string
 }
-// NewAutolink instantiates a new autolink and sets the default values.
+// NewAutolink instantiates a new Autolink and sets the default values.
 func NewAutolink()(*Autolink) {
     m := &Autolink{
     }
@@ -25,14 +25,17 @@ func NewAutolink()(*Autolink) {
     return m
 }
 // CreateAutolinkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateAutolinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAutolink(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Autolink) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Autolink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *Autolink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *Autolink) GetId()(*int32) {
     return m.id
 }
 // GetIsAlphanumeric gets the is_alphanumeric property value. Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.
+// returns a *bool when successful
 func (m *Autolink) GetIsAlphanumeric()(*bool) {
     return m.is_alphanumeric
 }
 // GetKeyPrefix gets the key_prefix property value. The prefix of a key that is linkified.
+// returns a *string when successful
 func (m *Autolink) GetKeyPrefix()(*string) {
     return m.key_prefix
 }
 // GetUrlTemplate gets the url_template property value. A template for the target URL that is generated if a key was found.
+// returns a *string when successful
 func (m *Autolink) GetUrlTemplate()(*string) {
     return m.url_template
 }
@@ -147,7 +154,6 @@ func (m *Autolink) SetKeyPrefix(value *string)() {
 func (m *Autolink) SetUrlTemplate(value *string)() {
     m.url_template = value
 }
-// Autolinkable 
 type Autolinkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -9,6 +9,7 @@ type ReposRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // ByReposId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item collection
+// returns a *ReposItemRequestBuilder when successful
 func (m *ReposRequestBuilder) ByReposId(reposId string)(*ReposItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {

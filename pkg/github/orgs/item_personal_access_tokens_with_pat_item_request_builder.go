@@ -10,20 +10,24 @@ import (
 type ItemPersonalAccessTokensWithPat_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemPersonalAccessTokensWithPat_ItemRequestBuilderInternal instantiates a new WithPat_ItemRequestBuilder and sets the default values.
+// NewItemPersonalAccessTokensWithPat_ItemRequestBuilderInternal instantiates a new ItemPersonalAccessTokensWithPat_ItemRequestBuilder and sets the default values.
 func NewItemPersonalAccessTokensWithPat_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPersonalAccessTokensWithPat_ItemRequestBuilder) {
     m := &ItemPersonalAccessTokensWithPat_ItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}", pathParameters),
     }
     return m
 }
-// NewItemPersonalAccessTokensWithPat_ItemRequestBuilder instantiates a new WithPat_ItemRequestBuilder and sets the default values.
+// NewItemPersonalAccessTokensWithPat_ItemRequestBuilder instantiates a new ItemPersonalAccessTokensWithPat_ItemRequestBuilder and sets the default values.
 func NewItemPersonalAccessTokensWithPat_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPersonalAccessTokensWithPat_ItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemPersonalAccessTokensWithPat_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token's existing access. Limited to revoking a token's existing access.Only GitHub Apps can use this endpoint.
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
+// returns a BasicError error when the service returns a 500 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/personal-access-tokens#update-the-access-a-fine-grained-personal-access-token-has-to-organization-resources
@@ -45,10 +49,12 @@ func (m *ItemPersonalAccessTokensWithPat_ItemRequestBuilder) Post(ctx context.Co
     return nil
 }
 // Repositories the repositories property
+// returns a *ItemPersonalAccessTokensItemRepositoriesRequestBuilder when successful
 func (m *ItemPersonalAccessTokensWithPat_ItemRequestBuilder) Repositories()(*ItemPersonalAccessTokensItemRepositoriesRequestBuilder) {
     return NewItemPersonalAccessTokensItemRepositoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPostRequestInformation updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token's existing access. Limited to revoking a token's existing access.Only GitHub Apps can use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemPersonalAccessTokensWithPat_ItemRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPersonalAccessTokensItemWithPat_PostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -60,6 +66,7 @@ func (m *ItemPersonalAccessTokensWithPat_ItemRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemPersonalAccessTokensWithPat_ItemRequestBuilder when successful
 func (m *ItemPersonalAccessTokensWithPat_ItemRequestBuilder) WithUrl(rawUrl string)(*ItemPersonalAccessTokensWithPat_ItemRequestBuilder) {
     return NewItemPersonalAccessTokensWithPat_ItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

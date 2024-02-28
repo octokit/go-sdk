@@ -48,7 +48,7 @@ type CheckSuite struct {
     // The url property
     url *string
 }
-// NewCheckSuite instantiates a new checkSuite and sets the default values.
+// NewCheckSuite instantiates a new CheckSuite and sets the default values.
 func NewCheckSuite()(*CheckSuite) {
     m := &CheckSuite{
     }
@@ -56,38 +56,47 @@ func NewCheckSuite()(*CheckSuite) {
     return m
 }
 // CreateCheckSuiteFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCheckSuiteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCheckSuite(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CheckSuite) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAfter gets the after property value. The after property
+// returns a *string when successful
 func (m *CheckSuite) GetAfter()(*string) {
     return m.after
 }
 // GetApp gets the app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *CheckSuite) GetApp()(NullableIntegrationable) {
     return m.app
 }
 // GetBefore gets the before property value. The before property
+// returns a *string when successful
 func (m *CheckSuite) GetBefore()(*string) {
     return m.before
 }
 // GetCheckRunsUrl gets the check_runs_url property value. The check_runs_url property
+// returns a *string when successful
 func (m *CheckSuite) GetCheckRunsUrl()(*string) {
     return m.check_runs_url
 }
 // GetConclusion gets the conclusion property value. The conclusion property
+// returns a *CheckSuite_conclusion when successful
 func (m *CheckSuite) GetConclusion()(*CheckSuite_conclusion) {
     return m.conclusion
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *CheckSuite) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CheckSuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["after"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -289,54 +298,67 @@ func (m *CheckSuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetHeadBranch gets the head_branch property value. The head_branch property
+// returns a *string when successful
 func (m *CheckSuite) GetHeadBranch()(*string) {
     return m.head_branch
 }
 // GetHeadCommit gets the head_commit property value. A commit.
+// returns a SimpleCommitable when successful
 func (m *CheckSuite) GetHeadCommit()(SimpleCommitable) {
     return m.head_commit
 }
 // GetHeadSha gets the head_sha property value. The SHA of the head commit that is being checked.
+// returns a *string when successful
 func (m *CheckSuite) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *CheckSuite) GetId()(*int32) {
     return m.id
 }
 // GetLatestCheckRunsCount gets the latest_check_runs_count property value. The latest_check_runs_count property
+// returns a *int32 when successful
 func (m *CheckSuite) GetLatestCheckRunsCount()(*int32) {
     return m.latest_check_runs_count
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *CheckSuite) GetNodeId()(*string) {
     return m.node_id
 }
 // GetPullRequests gets the pull_requests property value. The pull_requests property
+// returns a []PullRequestMinimalable when successful
 func (m *CheckSuite) GetPullRequests()([]PullRequestMinimalable) {
     return m.pull_requests
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *CheckSuite) GetRepository()(MinimalRepositoryable) {
     return m.repository
 }
 // GetRerequestable gets the rerequestable property value. The rerequestable property
+// returns a *bool when successful
 func (m *CheckSuite) GetRerequestable()(*bool) {
     return m.rerequestable
 }
 // GetRunsRerequestable gets the runs_rerequestable property value. The runs_rerequestable property
+// returns a *bool when successful
 func (m *CheckSuite) GetRunsRerequestable()(*bool) {
     return m.runs_rerequestable
 }
 // GetStatus gets the status property value. The status property
+// returns a *CheckSuite_status when successful
 func (m *CheckSuite) GetStatus()(*CheckSuite_status) {
     return m.status
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *CheckSuite) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CheckSuite) GetUrl()(*string) {
     return m.url
 }
@@ -552,7 +574,6 @@ func (m *CheckSuite) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *CheckSuite) SetUrl(value *string)() {
     m.url = value
 }
-// CheckSuiteable 
 type CheckSuiteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

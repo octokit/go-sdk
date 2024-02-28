@@ -72,7 +72,7 @@ type CodespaceWithFullRepository struct {
     // URL to access this codespace on the web.
     web_url *string
 }
-// NewCodespaceWithFullRepository instantiates a new codespaceWithFullRepository and sets the default values.
+// NewCodespaceWithFullRepository instantiates a new CodespaceWithFullRepository and sets the default values.
 func NewCodespaceWithFullRepository()(*CodespaceWithFullRepository) {
     m := &CodespaceWithFullRepository{
     }
@@ -80,34 +80,42 @@ func NewCodespaceWithFullRepository()(*CodespaceWithFullRepository) {
     return m
 }
 // CreateCodespaceWithFullRepositoryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodespaceWithFullRepositoryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodespaceWithFullRepository(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodespaceWithFullRepository) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBillableOwner gets the billable_owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *CodespaceWithFullRepository) GetBillableOwner()(SimpleUserable) {
     return m.billable_owner
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *CodespaceWithFullRepository) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDevcontainerPath gets the devcontainer_path property value. Path to devcontainer.json from repo root used to create Codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetDevcontainerPath()(*string) {
     return m.devcontainer_path
 }
 // GetDisplayName gets the display_name property value. Display name for this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetDisplayName()(*string) {
     return m.display_name
 }
 // GetEnvironmentId gets the environment_id property value. UUID identifying this codespace's environment.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetEnvironmentId()(*string) {
     return m.environment_id
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodespaceWithFullRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["billable_owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -429,106 +437,132 @@ func (m *CodespaceWithFullRepository) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetGitStatus gets the git_status property value. Details about the codespace's git repository.
+// returns a CodespaceWithFullRepository_git_statusable when successful
 func (m *CodespaceWithFullRepository) GetGitStatus()(CodespaceWithFullRepository_git_statusable) {
     return m.git_status
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *CodespaceWithFullRepository) GetId()(*int32) {
     return m.id
 }
 // GetIdleTimeoutMinutes gets the idle_timeout_minutes property value. The number of minutes of inactivity after which this codespace will be automatically stopped.
+// returns a *int32 when successful
 func (m *CodespaceWithFullRepository) GetIdleTimeoutMinutes()(*int32) {
     return m.idle_timeout_minutes
 }
 // GetIdleTimeoutNotice gets the idle_timeout_notice property value. Text to show user when codespace idle timeout minutes has been overriden by an organization policy
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetIdleTimeoutNotice()(*string) {
     return m.idle_timeout_notice
 }
 // GetLastUsedAt gets the last_used_at property value. Last known time this codespace was started.
+// returns a *Time when successful
 func (m *CodespaceWithFullRepository) GetLastUsedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.last_used_at
 }
 // GetLocation gets the location property value. The initally assigned location of a new codespace.
+// returns a *CodespaceWithFullRepository_location when successful
 func (m *CodespaceWithFullRepository) GetLocation()(*CodespaceWithFullRepository_location) {
     return m.location
 }
 // GetMachine gets the machine property value. A description of the machine powering a codespace.
+// returns a NullableCodespaceMachineable when successful
 func (m *CodespaceWithFullRepository) GetMachine()(NullableCodespaceMachineable) {
     return m.machine
 }
 // GetMachinesUrl gets the machines_url property value. API URL to access available alternate machine types for this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetMachinesUrl()(*string) {
     return m.machines_url
 }
 // GetName gets the name property value. Automatically generated name of this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetName()(*string) {
     return m.name
 }
 // GetOwner gets the owner property value. A GitHub user.
+// returns a SimpleUserable when successful
 func (m *CodespaceWithFullRepository) GetOwner()(SimpleUserable) {
     return m.owner
 }
 // GetPendingOperation gets the pending_operation property value. Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
+// returns a *bool when successful
 func (m *CodespaceWithFullRepository) GetPendingOperation()(*bool) {
     return m.pending_operation
 }
 // GetPendingOperationDisabledReason gets the pending_operation_disabled_reason property value. Text to show user when codespace is disabled by a pending operation
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetPendingOperationDisabledReason()(*string) {
     return m.pending_operation_disabled_reason
 }
 // GetPrebuild gets the prebuild property value. Whether the codespace was created from a prebuild.
+// returns a *bool when successful
 func (m *CodespaceWithFullRepository) GetPrebuild()(*bool) {
     return m.prebuild
 }
 // GetPublishUrl gets the publish_url property value. API URL to publish this codespace to a new repository.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetPublishUrl()(*string) {
     return m.publish_url
 }
 // GetPullsUrl gets the pulls_url property value. API URL for the Pull Request associated with this codespace, if any.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetPullsUrl()(*string) {
     return m.pulls_url
 }
 // GetRecentFolders gets the recent_folders property value. The recent_folders property
+// returns a []string when successful
 func (m *CodespaceWithFullRepository) GetRecentFolders()([]string) {
     return m.recent_folders
 }
 // GetRepository gets the repository property value. Full Repository
+// returns a FullRepositoryable when successful
 func (m *CodespaceWithFullRepository) GetRepository()(FullRepositoryable) {
     return m.repository
 }
 // GetRetentionExpiresAt gets the retention_expires_at property value. When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
+// returns a *Time when successful
 func (m *CodespaceWithFullRepository) GetRetentionExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.retention_expires_at
 }
 // GetRetentionPeriodMinutes gets the retention_period_minutes property value. Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+// returns a *int32 when successful
 func (m *CodespaceWithFullRepository) GetRetentionPeriodMinutes()(*int32) {
     return m.retention_period_minutes
 }
 // GetRuntimeConstraints gets the runtime_constraints property value. The runtime_constraints property
+// returns a CodespaceWithFullRepository_runtime_constraintsable when successful
 func (m *CodespaceWithFullRepository) GetRuntimeConstraints()(CodespaceWithFullRepository_runtime_constraintsable) {
     return m.runtime_constraints
 }
 // GetStartUrl gets the start_url property value. API URL to start this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetStartUrl()(*string) {
     return m.start_url
 }
 // GetState gets the state property value. State of this codespace.
+// returns a *CodespaceWithFullRepository_state when successful
 func (m *CodespaceWithFullRepository) GetState()(*CodespaceWithFullRepository_state) {
     return m.state
 }
 // GetStopUrl gets the stop_url property value. API URL to stop this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetStopUrl()(*string) {
     return m.stop_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *CodespaceWithFullRepository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. API URL for this codespace.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetUrl()(*string) {
     return m.url
 }
 // GetWebUrl gets the web_url property value. URL to access this codespace on the web.
+// returns a *string when successful
 func (m *CodespaceWithFullRepository) GetWebUrl()(*string) {
     return m.web_url
 }
@@ -858,7 +892,6 @@ func (m *CodespaceWithFullRepository) SetUrl(value *string)() {
 func (m *CodespaceWithFullRepository) SetWebUrl(value *string)() {
     m.web_url = value
 }
-// CodespaceWithFullRepositoryable 
 type CodespaceWithFullRepositoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

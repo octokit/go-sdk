@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// MarketplaceAccount 
 type MarketplaceAccount struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,7 +22,7 @@ type MarketplaceAccount struct {
     // The url property
     url *string
 }
-// NewMarketplaceAccount instantiates a new marketplaceAccount and sets the default values.
+// NewMarketplaceAccount instantiates a new MarketplaceAccount and sets the default values.
 func NewMarketplaceAccount()(*MarketplaceAccount) {
     m := &MarketplaceAccount{
     }
@@ -31,18 +30,22 @@ func NewMarketplaceAccount()(*MarketplaceAccount) {
     return m
 }
 // CreateMarketplaceAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarketplaceAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarketplaceAccount(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarketplaceAccount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarketplaceAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,26 +121,32 @@ func (m *MarketplaceAccount) GetFieldDeserializers()(map[string]func(i878a80d233
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *MarketplaceAccount) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetLogin()(*string) {
     return m.login
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOrganizationBillingEmail gets the organization_billing_email property value. The organization_billing_email property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetOrganizationBillingEmail()(*string) {
     return m.organization_billing_email
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *MarketplaceAccount) GetUrl()(*string) {
     return m.url
 }
@@ -225,7 +234,6 @@ func (m *MarketplaceAccount) SetTypeEscaped(value *string)() {
 func (m *MarketplaceAccount) SetUrl(value *string)() {
     m.url = value
 }
-// MarketplaceAccountable 
 type MarketplaceAccountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

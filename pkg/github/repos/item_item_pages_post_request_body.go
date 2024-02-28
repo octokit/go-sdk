@@ -19,14 +19,17 @@ func NewItemItemPagesPostRequestBody()(*ItemItemPagesPostRequestBody) {
     return m
 }
 // CreateItemItemPagesPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemPagesPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemPagesPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemPagesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemPagesPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *ItemItemPagesPostRequestBody) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetSource gets the source property value. The source branch and directory used to publish your Pages site.
+// returns a ItemItemPagesPostRequestBody_sourceable when successful
 func (m *ItemItemPagesPostRequestBody) GetSource()(ItemItemPagesPostRequestBody_sourceable) {
     return m.source
 }
@@ -69,7 +73,6 @@ func (m *ItemItemPagesPostRequestBody) SetAdditionalData(value map[string]any)()
 func (m *ItemItemPagesPostRequestBody) SetSource(value ItemItemPagesPostRequestBody_sourceable)() {
     m.source = value
 }
-// ItemItemPagesPostRequestBodyable 
 type ItemItemPagesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

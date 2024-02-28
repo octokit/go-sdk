@@ -13,7 +13,7 @@ type ReleaseNotesContent struct {
     // The generated name of the release
     name *string
 }
-// NewReleaseNotesContent instantiates a new releaseNotesContent and sets the default values.
+// NewReleaseNotesContent instantiates a new ReleaseNotesContent and sets the default values.
 func NewReleaseNotesContent()(*ReleaseNotesContent) {
     m := &ReleaseNotesContent{
     }
@@ -21,18 +21,22 @@ func NewReleaseNotesContent()(*ReleaseNotesContent) {
     return m
 }
 // CreateReleaseNotesContentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateReleaseNotesContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewReleaseNotesContent(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ReleaseNotesContent) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The generated body describing the contents of the release supporting markdown formatting
+// returns a *string when successful
 func (m *ReleaseNotesContent) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReleaseNotesContent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -58,6 +62,7 @@ func (m *ReleaseNotesContent) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetName gets the name property value. The generated name of the release
+// returns a *string when successful
 func (m *ReleaseNotesContent) GetName()(*string) {
     return m.name
 }
@@ -95,7 +100,6 @@ func (m *ReleaseNotesContent) SetBody(value *string)() {
 func (m *ReleaseNotesContent) SetName(value *string)() {
     m.name = value
 }
-// ReleaseNotesContentable 
 type ReleaseNotesContentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

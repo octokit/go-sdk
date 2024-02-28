@@ -15,7 +15,7 @@ type BranchShort struct {
     // The protected property
     protected *bool
 }
-// NewBranchShort instantiates a new branchShort and sets the default values.
+// NewBranchShort instantiates a new BranchShort and sets the default values.
 func NewBranchShort()(*BranchShort) {
     m := &BranchShort{
     }
@@ -23,18 +23,22 @@ func NewBranchShort()(*BranchShort) {
     return m
 }
 // CreateBranchShortFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchShortFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchShort(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchShort) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommit gets the commit property value. The commit property
+// returns a BranchShort_commitable when successful
 func (m *BranchShort) GetCommit()(BranchShort_commitable) {
     return m.commit
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchShort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["commit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -70,10 +74,12 @@ func (m *BranchShort) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *BranchShort) GetName()(*string) {
     return m.name
 }
 // GetProtected gets the protected property value. The protected property
+// returns a *bool when successful
 func (m *BranchShort) GetProtected()(*bool) {
     return m.protected
 }
@@ -121,7 +127,6 @@ func (m *BranchShort) SetName(value *string)() {
 func (m *BranchShort) SetProtected(value *bool)() {
     m.protected = value
 }
-// BranchShortable 
 type BranchShortable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

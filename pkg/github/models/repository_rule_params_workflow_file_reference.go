@@ -17,7 +17,7 @@ type RepositoryRuleParamsWorkflowFileReference struct {
     // The commit SHA of the workflow file to use
     sha *string
 }
-// NewRepositoryRuleParamsWorkflowFileReference instantiates a new repositoryRuleParamsWorkflowFileReference and sets the default values.
+// NewRepositoryRuleParamsWorkflowFileReference instantiates a new RepositoryRuleParamsWorkflowFileReference and sets the default values.
 func NewRepositoryRuleParamsWorkflowFileReference()(*RepositoryRuleParamsWorkflowFileReference) {
     m := &RepositoryRuleParamsWorkflowFileReference{
     }
@@ -25,14 +25,17 @@ func NewRepositoryRuleParamsWorkflowFileReference()(*RepositoryRuleParamsWorkflo
     return m
 }
 // CreateRepositoryRuleParamsWorkflowFileReferenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepositoryRuleParamsWorkflowFileReferenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepositoryRuleParamsWorkflowFileReference(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["path"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *RepositoryRuleParamsWorkflowFileReference) GetFieldDeserializers()(map[
     return res
 }
 // GetPath gets the path property value. The path to the workflow file
+// returns a *string when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetPath()(*string) {
     return m.path
 }
 // GetRef gets the ref property value. The ref (branch or tag) of the workflow file to use
+// returns a *string when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetRef()(*string) {
     return m.ref
 }
 // GetRepositoryId gets the repository_id property value. The ID of the repository where the workflow is defined
+// returns a *int32 when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetRepositoryId()(*int32) {
     return m.repository_id
 }
 // GetSha gets the sha property value. The commit SHA of the workflow file to use
+// returns a *string when successful
 func (m *RepositoryRuleParamsWorkflowFileReference) GetSha()(*string) {
     return m.sha
 }
@@ -147,7 +154,6 @@ func (m *RepositoryRuleParamsWorkflowFileReference) SetRepositoryId(value *int32
 func (m *RepositoryRuleParamsWorkflowFileReference) SetSha(value *string)() {
     m.sha = value
 }
-// RepositoryRuleParamsWorkflowFileReferenceable 
 type RepositoryRuleParamsWorkflowFileReferenceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

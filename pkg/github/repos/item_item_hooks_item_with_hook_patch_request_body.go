@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemHooksItemWithHook_PatchRequestBody 
 type ItemItemHooksItemWithHook_PatchRequestBody struct {
     // Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
     active *bool
@@ -28,30 +27,37 @@ func NewItemItemHooksItemWithHook_PatchRequestBody()(*ItemItemHooksItemWithHook_
     return m
 }
 // CreateItemItemHooksItemWithHook_PatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemHooksItemWithHook_PatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemHooksItemWithHook_PatchRequestBody(), nil
 }
 // GetActive gets the active property value. Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
+// returns a *bool when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetActive()(*bool) {
     return m.active
 }
 // GetAddEvents gets the add_events property value. Determines a list of events to be added to the list of events that the Hook triggers for.
+// returns a []string when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetAddEvents()([]string) {
     return m.add_events
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetConfig gets the config property value. Configuration object of the webhook
+// returns a WebhookConfigable when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetConfig()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.WebhookConfigable) {
     return m.config
 }
 // GetEvents gets the events property value. Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
+// returns a []string when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetEvents()([]string) {
     return m.events
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["active"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -125,6 +131,7 @@ func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetFieldDeserializers()(map
     return res
 }
 // GetRemoveEvents gets the remove_events property value. Determines a list of events to be removed from the list of events that the Hook triggers for.
+// returns a []string when successful
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) GetRemoveEvents()([]string) {
     return m.remove_events
 }
@@ -192,7 +199,6 @@ func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetEvents(value []string)()
 func (m *ItemItemHooksItemWithHook_PatchRequestBody) SetRemoveEvents(value []string)() {
     m.remove_events = value
 }
-// ItemItemHooksItemWithHook_PatchRequestBodyable 
 type ItemItemHooksItemWithHook_PatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

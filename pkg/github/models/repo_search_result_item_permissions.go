@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepoSearchResultItem_permissions 
 type RepoSearchResultItem_permissions struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,7 +18,7 @@ type RepoSearchResultItem_permissions struct {
     // The triage property
     triage *bool
 }
-// NewRepoSearchResultItem_permissions instantiates a new repoSearchResultItem_permissions and sets the default values.
+// NewRepoSearchResultItem_permissions instantiates a new RepoSearchResultItem_permissions and sets the default values.
 func NewRepoSearchResultItem_permissions()(*RepoSearchResultItem_permissions) {
     m := &RepoSearchResultItem_permissions{
     }
@@ -27,18 +26,22 @@ func NewRepoSearchResultItem_permissions()(*RepoSearchResultItem_permissions) {
     return m
 }
 // CreateRepoSearchResultItem_permissionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateRepoSearchResultItem_permissionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRepoSearchResultItem_permissions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *RepoSearchResultItem_permissions) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAdmin gets the admin property value. The admin property
+// returns a *bool when successful
 func (m *RepoSearchResultItem_permissions) GetAdmin()(*bool) {
     return m.admin
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RepoSearchResultItem_permissions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["admin"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +97,22 @@ func (m *RepoSearchResultItem_permissions) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetMaintain gets the maintain property value. The maintain property
+// returns a *bool when successful
 func (m *RepoSearchResultItem_permissions) GetMaintain()(*bool) {
     return m.maintain
 }
 // GetPull gets the pull property value. The pull property
+// returns a *bool when successful
 func (m *RepoSearchResultItem_permissions) GetPull()(*bool) {
     return m.pull
 }
 // GetPush gets the push property value. The push property
+// returns a *bool when successful
 func (m *RepoSearchResultItem_permissions) GetPush()(*bool) {
     return m.push
 }
 // GetTriage gets the triage property value. The triage property
+// returns a *bool when successful
 func (m *RepoSearchResultItem_permissions) GetTriage()(*bool) {
     return m.triage
 }
@@ -173,7 +180,6 @@ func (m *RepoSearchResultItem_permissions) SetPush(value *bool)() {
 func (m *RepoSearchResultItem_permissions) SetTriage(value *bool)() {
     m.triage = value
 }
-// RepoSearchResultItem_permissionsable 
 type RepoSearchResultItem_permissionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

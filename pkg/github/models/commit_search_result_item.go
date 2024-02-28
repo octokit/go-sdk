@@ -33,7 +33,7 @@ type CommitSearchResultItem struct {
     // The url property
     url *string
 }
-// NewCommitSearchResultItem instantiates a new commitSearchResultItem and sets the default values.
+// NewCommitSearchResultItem instantiates a new CommitSearchResultItem and sets the default values.
 func NewCommitSearchResultItem()(*CommitSearchResultItem) {
     m := &CommitSearchResultItem{
     }
@@ -41,30 +41,37 @@ func NewCommitSearchResultItem()(*CommitSearchResultItem) {
     return m
 }
 // CreateCommitSearchResultItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommitSearchResultItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommitSearchResultItem(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CommitSearchResultItem) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
 func (m *CommitSearchResultItem) GetAuthor()(NullableSimpleUserable) {
     return m.author
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
+// returns a *string when successful
 func (m *CommitSearchResultItem) GetCommentsUrl()(*string) {
     return m.comments_url
 }
 // GetCommit gets the commit property value. The commit property
+// returns a CommitSearchResultItem_commitable when successful
 func (m *CommitSearchResultItem) GetCommit()(CommitSearchResultItem_commitable) {
     return m.commit
 }
 // GetCommitter gets the committer property value. Metaproperties for Git author/committer information.
+// returns a NullableGitUserable when successful
 func (m *CommitSearchResultItem) GetCommitter()(NullableGitUserable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CommitSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -202,34 +209,42 @@ func (m *CommitSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CommitSearchResultItem) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *CommitSearchResultItem) GetNodeId()(*string) {
     return m.node_id
 }
 // GetParents gets the parents property value. The parents property
+// returns a []CommitSearchResultItem_parentsable when successful
 func (m *CommitSearchResultItem) GetParents()([]CommitSearchResultItem_parentsable) {
     return m.parents
 }
 // GetRepository gets the repository property value. Minimal Repository
+// returns a MinimalRepositoryable when successful
 func (m *CommitSearchResultItem) GetRepository()(MinimalRepositoryable) {
     return m.repository
 }
 // GetScore gets the score property value. The score property
+// returns a *float64 when successful
 func (m *CommitSearchResultItem) GetScore()(*float64) {
     return m.score
 }
 // GetSha gets the sha property value. The sha property
+// returns a *string when successful
 func (m *CommitSearchResultItem) GetSha()(*string) {
     return m.sha
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
+// returns a []Commitsable when successful
 func (m *CommitSearchResultItem) GetTextMatches()([]Commitsable) {
     return m.text_matches
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CommitSearchResultItem) GetUrl()(*string) {
     return m.url
 }
@@ -379,7 +394,6 @@ func (m *CommitSearchResultItem) SetTextMatches(value []Commitsable)() {
 func (m *CommitSearchResultItem) SetUrl(value *string)() {
     m.url = value
 }
-// CommitSearchResultItemable 
 type CommitSearchResultItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

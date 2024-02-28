@@ -13,17 +13,19 @@ type Snapshot_detector struct {
     // The version of the detector used.
     version *string
 }
-// NewSnapshot_detector instantiates a new snapshot_detector and sets the default values.
+// NewSnapshot_detector instantiates a new Snapshot_detector and sets the default values.
 func NewSnapshot_detector()(*Snapshot_detector) {
     m := &Snapshot_detector{
     }
     return m
 }
 // CreateSnapshot_detectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSnapshot_detectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSnapshot_detector(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Snapshot_detector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -59,14 +61,17 @@ func (m *Snapshot_detector) GetFieldDeserializers()(map[string]func(i878a80d2330
     return res
 }
 // GetName gets the name property value. The name of the detector used.
+// returns a *string when successful
 func (m *Snapshot_detector) GetName()(*string) {
     return m.name
 }
 // GetUrl gets the url property value. The url of the detector used.
+// returns a *string when successful
 func (m *Snapshot_detector) GetUrl()(*string) {
     return m.url
 }
 // GetVersion gets the version property value. The version of the detector used.
+// returns a *string when successful
 func (m *Snapshot_detector) GetVersion()(*string) {
     return m.version
 }
@@ -104,7 +109,6 @@ func (m *Snapshot_detector) SetUrl(value *string)() {
 func (m *Snapshot_detector) SetVersion(value *string)() {
     m.version = value
 }
-// Snapshot_detectorable 
 type Snapshot_detectorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetName()(*string)

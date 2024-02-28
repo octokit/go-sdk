@@ -10,20 +10,21 @@ import (
 type ItemMigrationsItemArchiveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemMigrationsItemArchiveRequestBuilderInternal instantiates a new ArchiveRequestBuilder and sets the default values.
+// NewItemMigrationsItemArchiveRequestBuilderInternal instantiates a new ItemMigrationsItemArchiveRequestBuilder and sets the default values.
 func NewItemMigrationsItemArchiveRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsItemArchiveRequestBuilder) {
     m := &ItemMigrationsItemArchiveRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/migrations/{migration_id}/archive", pathParameters),
     }
     return m
 }
-// NewItemMigrationsItemArchiveRequestBuilder instantiates a new ArchiveRequestBuilder and sets the default values.
+// NewItemMigrationsItemArchiveRequestBuilder instantiates a new ItemMigrationsItemArchiveRequestBuilder and sets the default values.
 func NewItemMigrationsItemArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMigrationsItemArchiveRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemMigrationsItemArchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a previous migration archive. Migration archives are automatically deleted after seven days.
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/orgs#delete-an-organization-migration-archive
@@ -42,6 +43,8 @@ func (m *ItemMigrationsItemArchiveRequestBuilder) Delete(ctx context.Context, re
     return nil
 }
 // Get fetches the URL to a migration archive.
+// returns a []byte when successful
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/migrations/orgs#download-an-organization-migration-archive
@@ -63,6 +66,7 @@ func (m *ItemMigrationsItemArchiveRequestBuilder) Get(ctx context.Context, reque
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation deletes a previous migration archive. Migration archives are automatically deleted after seven days.
+// returns a *RequestInformation when successful
 func (m *ItemMigrationsItemArchiveRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -70,6 +74,7 @@ func (m *ItemMigrationsItemArchiveRequestBuilder) ToDeleteRequestInformation(ctx
     return requestInfo, nil
 }
 // ToGetRequestInformation fetches the URL to a migration archive.
+// returns a *RequestInformation when successful
 func (m *ItemMigrationsItemArchiveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -77,6 +82,7 @@ func (m *ItemMigrationsItemArchiveRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemMigrationsItemArchiveRequestBuilder when successful
 func (m *ItemMigrationsItemArchiveRequestBuilder) WithUrl(rawUrl string)(*ItemMigrationsItemArchiveRequestBuilder) {
     return NewItemMigrationsItemArchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

@@ -19,6 +19,7 @@ type KeysRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByKey_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.keys.item collection
+// returns a *KeysWithKey_ItemRequestBuilder when successful
 func (m *KeysRequestBuilder) ByKey_id(key_id int32)(*KeysWithKey_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -41,6 +42,10 @@ func NewKeysRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
     return NewKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists the public SSH keys for the authenticated user's GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
+// returns a []Keyable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/keys#list-public-ssh-keys-for-the-authenticated-user
@@ -67,6 +72,11 @@ func (m *KeysRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae
     return val, nil
 }
 // Post adds a public SSH key to the authenticated user's GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
+// returns a Keyable when successful
+// returns a BasicError error when the service returns a 401 status code
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
+// returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/users/keys#create-a-public-ssh-key-for-the-authenticated-user
@@ -91,6 +101,7 @@ func (m *KeysRequestBuilder) Post(ctx context.Context, body KeysPostRequestBodya
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Keyable), nil
 }
 // ToGetRequestInformation lists the public SSH keys for the authenticated user's GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *KeysRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[KeysRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -98,8 +109,9 @@ func (m *KeysRequestBuilder) ToGetRequestInformation(ctx context.Context, reques
     return requestInfo, nil
 }
 // ToPostRequestInformation adds a public SSH key to the authenticated user's GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *KeysRequestBuilder) ToPostRequestInformation(ctx context.Context, body KeysPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/user/keys", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
@@ -109,6 +121,7 @@ func (m *KeysRequestBuilder) ToPostRequestInformation(ctx context.Context, body 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *KeysRequestBuilder when successful
 func (m *KeysRequestBuilder) WithUrl(rawUrl string)(*KeysRequestBuilder) {
     return NewKeysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

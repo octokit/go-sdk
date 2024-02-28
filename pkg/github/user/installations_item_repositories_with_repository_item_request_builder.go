@@ -10,20 +10,22 @@ import (
 type InstallationsItemRepositoriesWithRepository_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilderInternal instantiates a new WithRepository_ItemRequestBuilder and sets the default values.
+// NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilderInternal instantiates a new InstallationsItemRepositoriesWithRepository_ItemRequestBuilder and sets the default values.
 func NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) {
     m := &InstallationsItemRepositoriesWithRepository_ItemRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/user/installations/{installation_id}/repositories/{repository_id}", pathParameters),
     }
     return m
 }
-// NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilder instantiates a new WithRepository_ItemRequestBuilder and sets the default values.
+// NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilder instantiates a new InstallationsItemRepositoriesWithRepository_ItemRequestBuilder and sets the default values.
 func NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/apps/installations#remove-a-repository-from-an-app-installation
@@ -43,6 +45,8 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) Delete(
     return nil
 }
 // Put add a single repository to an installation. The authenticated user must have admin access to the repository.
+// returns a BasicError error when the service returns a 403 status code
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/apps/installations#add-a-repository-to-an-app-installation
@@ -62,6 +66,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) Put(ctx
     return nil
 }
 // ToDeleteRequestInformation remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
+// returns a *RequestInformation when successful
 func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -69,6 +74,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToPutRequestInformation add a single repository to an installation. The authenticated user must have admin access to the repository.
+// returns a *RequestInformation when successful
 func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -76,6 +82,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToPutRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder when successful
 func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) WithUrl(rawUrl string)(*InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) {
     return NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

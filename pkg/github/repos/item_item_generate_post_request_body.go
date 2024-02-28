@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemGeneratePostRequestBody 
 type ItemItemGeneratePostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -27,18 +26,22 @@ func NewItemItemGeneratePostRequestBody()(*ItemItemGeneratePostRequestBody) {
     return m
 }
 // CreateItemItemGeneratePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemGeneratePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemGeneratePostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemGeneratePostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDescription gets the description property value. A short description of the new repository.
+// returns a *string when successful
 func (m *ItemItemGeneratePostRequestBody) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemGeneratePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -94,18 +97,22 @@ func (m *ItemItemGeneratePostRequestBody) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetIncludeAllBranches gets the include_all_branches property value. Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.
+// returns a *bool when successful
 func (m *ItemItemGeneratePostRequestBody) GetIncludeAllBranches()(*bool) {
     return m.include_all_branches
 }
 // GetName gets the name property value. The name of the new repository.
+// returns a *string when successful
 func (m *ItemItemGeneratePostRequestBody) GetName()(*string) {
     return m.name
 }
 // GetOwner gets the owner property value. The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
+// returns a *string when successful
 func (m *ItemItemGeneratePostRequestBody) GetOwner()(*string) {
     return m.owner
 }
 // GetPrivate gets the private property value. Either `true` to create a new private repository or `false` to create a new public one.
+// returns a *bool when successful
 func (m *ItemItemGeneratePostRequestBody) GetPrivate()(*bool) {
     return m.private
 }
@@ -173,7 +180,6 @@ func (m *ItemItemGeneratePostRequestBody) SetOwner(value *string)() {
 func (m *ItemItemGeneratePostRequestBody) SetPrivate(value *bool)() {
     m.private = value
 }
-// ItemItemGeneratePostRequestBodyable 
 type ItemItemGeneratePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

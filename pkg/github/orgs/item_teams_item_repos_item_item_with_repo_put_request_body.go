@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemTeamsItemReposItemItemWithRepoPutRequestBody 
 type ItemTeamsItemReposItemItemWithRepoPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -21,14 +20,17 @@ func NewItemTeamsItemReposItemItemWithRepoPutRequestBody()(*ItemTeamsItemReposIt
     return m
 }
 // CreateItemTeamsItemReposItemItemWithRepoPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemTeamsItemReposItemItemWithRepoPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemTeamsItemReposItemItemWithRepoPutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -44,6 +46,7 @@ func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) GetFieldDeserializers
     return res
 }
 // GetPermission gets the permission property value. The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
+// returns a *string when successful
 func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) GetPermission()(*string) {
     return m.permission
 }
@@ -71,7 +74,6 @@ func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) SetAdditionalData(val
 func (m *ItemTeamsItemReposItemItemWithRepoPutRequestBody) SetPermission(value *string)() {
     m.permission = value
 }
-// ItemTeamsItemReposItemItemWithRepoPutRequestBodyable 
 type ItemTeamsItemReposItemItemWithRepoPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse 
 type ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -22,18 +21,22 @@ func NewItemItemEnvironmentsItemDeployment_protection_rulesGetResponse()(*ItemIt
     return m
 }
 // CreateItemItemEnvironmentsItemDeployment_protection_rulesGetResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemEnvironmentsItemDeployment_protection_rulesGetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemEnvironmentsItemDeployment_protection_rulesGetResponse(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCustomDeploymentProtectionRules gets the custom_deployment_protection_rules property value. The custom_deployment_protection_rules property
+// returns a []DeploymentProtectionRuleable when successful
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetCustomDeploymentProtectionRules()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.DeploymentProtectionRuleable) {
     return m.custom_deployment_protection_rules
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["custom_deployment_protection_rules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -65,6 +68,7 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetFiel
     return res
 }
 // GetTotalCount gets the total_count property value. The number of enabled custom deployment protection rules for this environment
+// returns a *int32 when successful
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) GetTotalCount()(*int32) {
     return m.total_count
 }
@@ -108,7 +112,6 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetCust
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesGetResponse) SetTotalCount(value *int32)() {
     m.total_count = value
 }
-// ItemItemEnvironmentsItemDeployment_protection_rulesGetResponseable 
 type ItemItemEnvironmentsItemDeployment_protection_rulesGetResponseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

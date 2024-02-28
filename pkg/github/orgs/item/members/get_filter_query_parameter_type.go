@@ -2,7 +2,6 @@ package members
 import (
     "errors"
 )
-// 
 type GetFilterQueryParameterType int
 
 const (

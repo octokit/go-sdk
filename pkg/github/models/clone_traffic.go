@@ -15,7 +15,7 @@ type CloneTraffic struct {
     // The uniques property
     uniques *int32
 }
-// NewCloneTraffic instantiates a new cloneTraffic and sets the default values.
+// NewCloneTraffic instantiates a new CloneTraffic and sets the default values.
 func NewCloneTraffic()(*CloneTraffic) {
     m := &CloneTraffic{
     }
@@ -23,22 +23,27 @@ func NewCloneTraffic()(*CloneTraffic) {
     return m
 }
 // CreateCloneTrafficFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCloneTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloneTraffic(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CloneTraffic) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetClones gets the clones property value. The clones property
+// returns a []Trafficable when successful
 func (m *CloneTraffic) GetClones()([]Trafficable) {
     return m.clones
 }
 // GetCount gets the count property value. The count property
+// returns a *int32 when successful
 func (m *CloneTraffic) GetCount()(*int32) {
     return m.count
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloneTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["clones"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -80,6 +85,7 @@ func (m *CloneTraffic) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     return res
 }
 // GetUniques gets the uniques property value. The uniques property
+// returns a *int32 when successful
 func (m *CloneTraffic) GetUniques()(*int32) {
     return m.uniques
 }
@@ -133,7 +139,6 @@ func (m *CloneTraffic) SetCount(value *int32)() {
 func (m *CloneTraffic) SetUniques(value *int32)() {
     m.uniques = value
 }
-// CloneTrafficable 
 type CloneTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

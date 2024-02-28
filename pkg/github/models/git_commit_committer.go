@@ -16,7 +16,7 @@ type GitCommit_committer struct {
     // Name of the git user
     name *string
 }
-// NewGitCommit_committer instantiates a new gitCommit_committer and sets the default values.
+// NewGitCommit_committer instantiates a new GitCommit_committer and sets the default values.
 func NewGitCommit_committer()(*GitCommit_committer) {
     m := &GitCommit_committer{
     }
@@ -24,22 +24,27 @@ func NewGitCommit_committer()(*GitCommit_committer) {
     return m
 }
 // CreateGitCommit_committerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateGitCommit_committerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGitCommit_committer(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *GitCommit_committer) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDate gets the date property value. Timestamp of the commit
+// returns a *Time when successful
 func (m *GitCommit_committer) GetDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.date
 }
 // GetEmail gets the email property value. Git email address of the user
+// returns a *string when successful
 func (m *GitCommit_committer) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GitCommit_committer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["date"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +80,7 @@ func (m *GitCommit_committer) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetName gets the name property value. Name of the git user
+// returns a *string when successful
 func (m *GitCommit_committer) GetName()(*string) {
     return m.name
 }
@@ -122,7 +128,6 @@ func (m *GitCommit_committer) SetEmail(value *string)() {
 func (m *GitCommit_committer) SetName(value *string)() {
     m.name = value
 }
-// GitCommit_committerable 
 type GitCommit_committerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

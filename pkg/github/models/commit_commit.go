@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Commit_commit 
 type Commit_commit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,7 +22,7 @@ type Commit_commit struct {
     // The verification property
     verification Verificationable
 }
-// NewCommit_commit instantiates a new commit_commit and sets the default values.
+// NewCommit_commit instantiates a new Commit_commit and sets the default values.
 func NewCommit_commit()(*Commit_commit) {
     m := &Commit_commit{
     }
@@ -31,26 +30,32 @@ func NewCommit_commit()(*Commit_commit) {
     return m
 }
 // CreateCommit_commitFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCommit_commitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommit_commit(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *Commit_commit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetAuthor gets the author property value. Metaproperties for Git author/committer information.
+// returns a NullableGitUserable when successful
 func (m *Commit_commit) GetAuthor()(NullableGitUserable) {
     return m.author
 }
 // GetCommentCount gets the comment_count property value. The comment_count property
+// returns a *int32 when successful
 func (m *Commit_commit) GetCommentCount()(*int32) {
     return m.comment_count
 }
 // GetCommitter gets the committer property value. Metaproperties for Git author/committer information.
+// returns a NullableGitUserable when successful
 func (m *Commit_commit) GetCommitter()(NullableGitUserable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Commit_commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -126,18 +131,22 @@ func (m *Commit_commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetMessage gets the message property value. The message property
+// returns a *string when successful
 func (m *Commit_commit) GetMessage()(*string) {
     return m.message
 }
 // GetTree gets the tree property value. The tree property
+// returns a Commit_commit_treeable when successful
 func (m *Commit_commit) GetTree()(Commit_commit_treeable) {
     return m.tree
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *Commit_commit) GetUrl()(*string) {
     return m.url
 }
 // GetVerification gets the verification property value. The verification property
+// returns a Verificationable when successful
 func (m *Commit_commit) GetVerification()(Verificationable) {
     return m.verification
 }
@@ -225,7 +234,6 @@ func (m *Commit_commit) SetUrl(value *string)() {
 func (m *Commit_commit) SetVerification(value Verificationable)() {
     m.verification = value
 }
-// Commit_commitable 
 type Commit_commitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -10,20 +10,21 @@ import (
 type ItemItemPagesDeploymentsItemCancelRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// NewItemItemPagesDeploymentsItemCancelRequestBuilderInternal instantiates a new CancelRequestBuilder and sets the default values.
+// NewItemItemPagesDeploymentsItemCancelRequestBuilderInternal instantiates a new ItemItemPagesDeploymentsItemCancelRequestBuilder and sets the default values.
 func NewItemItemPagesDeploymentsItemCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPagesDeploymentsItemCancelRequestBuilder) {
     m := &ItemItemPagesDeploymentsItemCancelRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}/cancel", pathParameters),
     }
     return m
 }
-// NewItemItemPagesDeploymentsItemCancelRequestBuilder instantiates a new CancelRequestBuilder and sets the default values.
+// NewItemItemPagesDeploymentsItemCancelRequestBuilder instantiates a new ItemItemPagesDeploymentsItemCancelRequestBuilder and sets the default values.
 func NewItemItemPagesDeploymentsItemCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPagesDeploymentsItemCancelRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPagesDeploymentsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
+// returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment
@@ -42,6 +43,7 @@ func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
+// returns a *RequestInformation when successful
 func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -49,6 +51,7 @@ func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemPagesDeploymentsItemCancelRequestBuilder when successful
 func (m *ItemItemPagesDeploymentsItemCancelRequestBuilder) WithUrl(rawUrl string)(*ItemItemPagesDeploymentsItemCancelRequestBuilder) {
     return NewItemItemPagesDeploymentsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

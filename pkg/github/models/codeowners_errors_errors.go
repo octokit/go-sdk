@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CodeownersErrors_errors 
 type CodeownersErrors_errors struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -23,7 +22,7 @@ type CodeownersErrors_errors struct {
     // Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
     suggestion *string
 }
-// NewCodeownersErrors_errors instantiates a new codeownersErrors_errors and sets the default values.
+// NewCodeownersErrors_errors instantiates a new CodeownersErrors_errors and sets the default values.
 func NewCodeownersErrors_errors()(*CodeownersErrors_errors) {
     m := &CodeownersErrors_errors{
     }
@@ -31,18 +30,22 @@ func NewCodeownersErrors_errors()(*CodeownersErrors_errors) {
     return m
 }
 // CreateCodeownersErrors_errorsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeownersErrors_errorsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeownersErrors_errors(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeownersErrors_errors) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetColumn gets the column property value. The column number where this errors occurs.
+// returns a *int32 when successful
 func (m *CodeownersErrors_errors) GetColumn()(*int32) {
     return m.column
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeownersErrors_errors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["column"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -118,26 +121,32 @@ func (m *CodeownersErrors_errors) GetFieldDeserializers()(map[string]func(i878a8
     return res
 }
 // GetKind gets the kind property value. The type of error.
+// returns a *string when successful
 func (m *CodeownersErrors_errors) GetKind()(*string) {
     return m.kind
 }
 // GetLine gets the line property value. The line number where this errors occurs.
+// returns a *int32 when successful
 func (m *CodeownersErrors_errors) GetLine()(*int32) {
     return m.line
 }
 // GetMessage gets the message property value. A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).
+// returns a *string when successful
 func (m *CodeownersErrors_errors) GetMessage()(*string) {
     return m.message
 }
 // GetPath gets the path property value. The path of the file where the error occured.
+// returns a *string when successful
 func (m *CodeownersErrors_errors) GetPath()(*string) {
     return m.path
 }
 // GetSource gets the source property value. The contents of the line where the error occurs.
+// returns a *string when successful
 func (m *CodeownersErrors_errors) GetSource()(*string) {
     return m.source
 }
 // GetSuggestion gets the suggestion property value. Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.
+// returns a *string when successful
 func (m *CodeownersErrors_errors) GetSuggestion()(*string) {
     return m.suggestion
 }
@@ -225,7 +234,6 @@ func (m *CodeownersErrors_errors) SetSource(value *string)() {
 func (m *CodeownersErrors_errors) SetSuggestion(value *string)() {
     m.suggestion = value
 }
-// CodeownersErrors_errorsable 
 type CodeownersErrors_errorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

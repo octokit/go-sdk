@@ -13,7 +13,7 @@ type SocialAccount struct {
     // The url property
     url *string
 }
-// NewSocialAccount instantiates a new socialAccount and sets the default values.
+// NewSocialAccount instantiates a new SocialAccount and sets the default values.
 func NewSocialAccount()(*SocialAccount) {
     m := &SocialAccount{
     }
@@ -21,14 +21,17 @@ func NewSocialAccount()(*SocialAccount) {
     return m
 }
 // CreateSocialAccountFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSocialAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSocialAccount(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SocialAccount) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SocialAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["provider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -54,10 +57,12 @@ func (m *SocialAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     return res
 }
 // GetProvider gets the provider property value. The provider property
+// returns a *string when successful
 func (m *SocialAccount) GetProvider()(*string) {
     return m.provider
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *SocialAccount) GetUrl()(*string) {
     return m.url
 }
@@ -95,7 +100,6 @@ func (m *SocialAccount) SetProvider(value *string)() {
 func (m *SocialAccount) SetUrl(value *string)() {
     m.url = value
 }
-// SocialAccountable 
 type SocialAccountable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

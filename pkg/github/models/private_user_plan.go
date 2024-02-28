@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PrivateUser_plan 
 type PrivateUser_plan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -17,7 +16,7 @@ type PrivateUser_plan struct {
     // The space property
     space *int32
 }
-// NewPrivateUser_plan instantiates a new privateUser_plan and sets the default values.
+// NewPrivateUser_plan instantiates a new PrivateUser_plan and sets the default values.
 func NewPrivateUser_plan()(*PrivateUser_plan) {
     m := &PrivateUser_plan{
     }
@@ -25,18 +24,22 @@ func NewPrivateUser_plan()(*PrivateUser_plan) {
     return m
 }
 // CreatePrivateUser_planFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePrivateUser_planFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivateUser_plan(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PrivateUser_plan) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCollaborators gets the collaborators property value. The collaborators property
+// returns a *int32 when successful
 func (m *PrivateUser_plan) GetCollaborators()(*int32) {
     return m.collaborators
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PrivateUser_plan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["collaborators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +85,17 @@ func (m *PrivateUser_plan) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *PrivateUser_plan) GetName()(*string) {
     return m.name
 }
 // GetPrivateRepos gets the private_repos property value. The private_repos property
+// returns a *int32 when successful
 func (m *PrivateUser_plan) GetPrivateRepos()(*int32) {
     return m.private_repos
 }
 // GetSpace gets the space property value. The space property
+// returns a *int32 when successful
 func (m *PrivateUser_plan) GetSpace()(*int32) {
     return m.space
 }
@@ -147,7 +153,6 @@ func (m *PrivateUser_plan) SetPrivateRepos(value *int32)() {
 func (m *PrivateUser_plan) SetSpace(value *int32)() {
     m.space = value
 }
-// PrivateUser_planable 
 type PrivateUser_planable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

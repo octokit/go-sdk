@@ -2,7 +2,6 @@ package packages
 import (
     "errors"
 )
-// 
 type GetVisibilityQueryParameterType int
 
 const (

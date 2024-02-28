@@ -2,7 +2,6 @@ package collaborators
 import (
     "errors"
 )
-// 
 type GetPermissionQueryParameterType int
 
 const (

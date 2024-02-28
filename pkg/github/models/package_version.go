@@ -32,7 +32,7 @@ type PackageVersion struct {
     // The url property
     url *string
 }
-// NewPackageVersion instantiates a new packageVersion and sets the default values.
+// NewPackageVersion instantiates a new PackageVersion and sets the default values.
 func NewPackageVersion()(*PackageVersion) {
     m := &PackageVersion{
     }
@@ -40,26 +40,32 @@ func NewPackageVersion()(*PackageVersion) {
     return m
 }
 // CreatePackageVersionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePackageVersionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPackageVersion(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PackageVersion) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *PackageVersion) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDeletedAt gets the deleted_at property value. The deleted_at property
+// returns a *Time when successful
 func (m *PackageVersion) GetDeletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.deleted_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *PackageVersion) GetDescription()(*string) {
     return m.description
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PackageVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -175,34 +181,42 @@ func (m *PackageVersion) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *PackageVersion) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the package version.
+// returns a *int32 when successful
 func (m *PackageVersion) GetId()(*int32) {
     return m.id
 }
 // GetLicense gets the license property value. The license property
+// returns a *string when successful
 func (m *PackageVersion) GetLicense()(*string) {
     return m.license
 }
 // GetMetadata gets the metadata property value. The metadata property
+// returns a PackageVersion_metadataable when successful
 func (m *PackageVersion) GetMetadata()(PackageVersion_metadataable) {
     return m.metadata
 }
 // GetName gets the name property value. The name of the package version.
+// returns a *string when successful
 func (m *PackageVersion) GetName()(*string) {
     return m.name
 }
 // GetPackageHtmlUrl gets the package_html_url property value. The package_html_url property
+// returns a *string when successful
 func (m *PackageVersion) GetPackageHtmlUrl()(*string) {
     return m.package_html_url
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *PackageVersion) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *PackageVersion) GetUrl()(*string) {
     return m.url
 }
@@ -330,7 +344,6 @@ func (m *PackageVersion) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6
 func (m *PackageVersion) SetUrl(value *string)() {
     m.url = value
 }
-// PackageVersionable 
 type PackageVersionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

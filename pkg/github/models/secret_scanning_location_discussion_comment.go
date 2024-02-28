@@ -11,7 +11,7 @@ type SecretScanningLocationDiscussionComment struct {
     // The API URL to get the discussion comment where the secret was detected.
     discussion_comment_url *string
 }
-// NewSecretScanningLocationDiscussionComment instantiates a new secretScanningLocationDiscussionComment and sets the default values.
+// NewSecretScanningLocationDiscussionComment instantiates a new SecretScanningLocationDiscussionComment and sets the default values.
 func NewSecretScanningLocationDiscussionComment()(*SecretScanningLocationDiscussionComment) {
     m := &SecretScanningLocationDiscussionComment{
     }
@@ -19,18 +19,22 @@ func NewSecretScanningLocationDiscussionComment()(*SecretScanningLocationDiscuss
     return m
 }
 // CreateSecretScanningLocationDiscussionCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateSecretScanningLocationDiscussionCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecretScanningLocationDiscussionComment(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *SecretScanningLocationDiscussionComment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDiscussionCommentUrl gets the discussion_comment_url property value. The API URL to get the discussion comment where the secret was detected.
+// returns a *string when successful
 func (m *SecretScanningLocationDiscussionComment) GetDiscussionCommentUrl()(*string) {
     return m.discussion_comment_url
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SecretScanningLocationDiscussionComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["discussion_comment_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -69,7 +73,6 @@ func (m *SecretScanningLocationDiscussionComment) SetAdditionalData(value map[st
 func (m *SecretScanningLocationDiscussionComment) SetDiscussionCommentUrl(value *string)() {
     m.discussion_comment_url = value
 }
-// SecretScanningLocationDiscussionCommentable 
 type SecretScanningLocationDiscussionCommentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

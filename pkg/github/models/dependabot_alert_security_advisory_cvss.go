@@ -11,17 +11,19 @@ type DependabotAlertSecurityAdvisory_cvss struct {
     // The full CVSS vector string for the advisory.
     vector_string *string
 }
-// NewDependabotAlertSecurityAdvisory_cvss instantiates a new dependabotAlertSecurityAdvisory_cvss and sets the default values.
+// NewDependabotAlertSecurityAdvisory_cvss instantiates a new DependabotAlertSecurityAdvisory_cvss and sets the default values.
 func NewDependabotAlertSecurityAdvisory_cvss()(*DependabotAlertSecurityAdvisory_cvss) {
     m := &DependabotAlertSecurityAdvisory_cvss{
     }
     return m
 }
 // CreateDependabotAlertSecurityAdvisory_cvssFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDependabotAlertSecurityAdvisory_cvssFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDependabotAlertSecurityAdvisory_cvss(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependabotAlertSecurityAdvisory_cvss) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["score"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -47,10 +49,12 @@ func (m *DependabotAlertSecurityAdvisory_cvss) GetFieldDeserializers()(map[strin
     return res
 }
 // GetScore gets the score property value. The overall CVSS score of the advisory.
+// returns a *float64 when successful
 func (m *DependabotAlertSecurityAdvisory_cvss) GetScore()(*float64) {
     return m.score
 }
 // GetVectorString gets the vector_string property value. The full CVSS vector string for the advisory.
+// returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory_cvss) GetVectorString()(*string) {
     return m.vector_string
 }
@@ -66,7 +70,6 @@ func (m *DependabotAlertSecurityAdvisory_cvss) SetScore(value *float64)() {
 func (m *DependabotAlertSecurityAdvisory_cvss) SetVectorString(value *string)() {
     m.vector_string = value
 }
-// DependabotAlertSecurityAdvisory_cvssable 
 type DependabotAlertSecurityAdvisory_cvssable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetScore()(*float64)

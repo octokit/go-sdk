@@ -2,7 +2,6 @@ package models
 import (
     "errors"
 )
-// 
 type CheckSuite_status int
 
 const (

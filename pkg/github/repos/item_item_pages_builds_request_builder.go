@@ -19,6 +19,7 @@ type ItemItemPagesBuildsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByBuild_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pages.builds.item collection
+// returns a *ItemItemPagesBuildsWithBuild_ItemRequestBuilder when successful
 func (m *ItemItemPagesBuildsRequestBuilder) ByBuild_id(build_id int32)(*ItemItemPagesBuildsWithBuild_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
@@ -27,20 +28,21 @@ func (m *ItemItemPagesBuildsRequestBuilder) ByBuild_id(build_id int32)(*ItemItem
     urlTplParams["build_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(build_id), 10)
     return NewItemItemPagesBuildsWithBuild_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// NewItemItemPagesBuildsRequestBuilderInternal instantiates a new BuildsRequestBuilder and sets the default values.
+// NewItemItemPagesBuildsRequestBuilderInternal instantiates a new ItemItemPagesBuildsRequestBuilder and sets the default values.
 func NewItemItemPagesBuildsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPagesBuildsRequestBuilder) {
     m := &ItemItemPagesBuildsRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/builds{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemPagesBuildsRequestBuilder instantiates a new BuildsRequestBuilder and sets the default values.
+// NewItemItemPagesBuildsRequestBuilder instantiates a new ItemItemPagesBuildsRequestBuilder and sets the default values.
 func NewItemItemPagesBuildsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPagesBuildsRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPagesBuildsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get lists builts of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a []PageBuildable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pages/pages#list-apiname-pages-builds
@@ -62,10 +64,12 @@ func (m *ItemItemPagesBuildsRequestBuilder) Get(ctx context.Context, requestConf
     return val, nil
 }
 // Latest the latest property
+// returns a *ItemItemPagesBuildsLatestRequestBuilder when successful
 func (m *ItemItemPagesBuildsRequestBuilder) Latest()(*ItemItemPagesBuildsLatestRequestBuilder) {
     return NewItemItemPagesBuildsLatestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post you can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
+// returns a PageBuildStatusable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/pages/pages#request-a-apiname-pages-build
@@ -84,6 +88,7 @@ func (m *ItemItemPagesBuildsRequestBuilder) Post(ctx context.Context, requestCon
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PageBuildStatusable), nil
 }
 // ToGetRequestInformation lists builts of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+// returns a *RequestInformation when successful
 func (m *ItemItemPagesBuildsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemPagesBuildsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -91,13 +96,15 @@ func (m *ItemItemPagesBuildsRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // ToPostRequestInformation you can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
+// returns a *RequestInformation when successful
 func (m *ItemItemPagesBuildsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/builds", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemPagesBuildsRequestBuilder when successful
 func (m *ItemItemPagesBuildsRequestBuilder) WithUrl(rawUrl string)(*ItemItemPagesBuildsRequestBuilder) {
     return NewItemItemPagesBuildsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

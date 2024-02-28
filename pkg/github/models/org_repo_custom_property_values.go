@@ -17,7 +17,7 @@ type OrgRepoCustomPropertyValues struct {
     // The repository_name property
     repository_name *string
 }
-// NewOrgRepoCustomPropertyValues instantiates a new orgRepoCustomPropertyValues and sets the default values.
+// NewOrgRepoCustomPropertyValues instantiates a new OrgRepoCustomPropertyValues and sets the default values.
 func NewOrgRepoCustomPropertyValues()(*OrgRepoCustomPropertyValues) {
     m := &OrgRepoCustomPropertyValues{
     }
@@ -25,14 +25,17 @@ func NewOrgRepoCustomPropertyValues()(*OrgRepoCustomPropertyValues) {
     return m
 }
 // CreateOrgRepoCustomPropertyValuesFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateOrgRepoCustomPropertyValuesFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOrgRepoCustomPropertyValues(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *OrgRepoCustomPropertyValues) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrgRepoCustomPropertyValues) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -84,18 +87,22 @@ func (m *OrgRepoCustomPropertyValues) GetFieldDeserializers()(map[string]func(i8
     return res
 }
 // GetProperties gets the properties property value. List of custom property names and associated values
+// returns a []CustomPropertyValueable when successful
 func (m *OrgRepoCustomPropertyValues) GetProperties()([]CustomPropertyValueable) {
     return m.properties
 }
 // GetRepositoryFullName gets the repository_full_name property value. The repository_full_name property
+// returns a *string when successful
 func (m *OrgRepoCustomPropertyValues) GetRepositoryFullName()(*string) {
     return m.repository_full_name
 }
 // GetRepositoryId gets the repository_id property value. The repository_id property
+// returns a *int32 when successful
 func (m *OrgRepoCustomPropertyValues) GetRepositoryId()(*int32) {
     return m.repository_id
 }
 // GetRepositoryName gets the repository_name property value. The repository_name property
+// returns a *string when successful
 func (m *OrgRepoCustomPropertyValues) GetRepositoryName()(*string) {
     return m.repository_name
 }
@@ -159,7 +166,6 @@ func (m *OrgRepoCustomPropertyValues) SetRepositoryId(value *int32)() {
 func (m *OrgRepoCustomPropertyValues) SetRepositoryName(value *string)() {
     m.repository_name = value
 }
-// OrgRepoCustomPropertyValuesable 
 type OrgRepoCustomPropertyValuesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -17,7 +17,7 @@ type CodeOfConductSimple struct {
     // The url property
     url *string
 }
-// NewCodeOfConductSimple instantiates a new codeOfConductSimple and sets the default values.
+// NewCodeOfConductSimple instantiates a new CodeOfConductSimple and sets the default values.
 func NewCodeOfConductSimple()(*CodeOfConductSimple) {
     m := &CodeOfConductSimple{
     }
@@ -25,14 +25,17 @@ func NewCodeOfConductSimple()(*CodeOfConductSimple) {
     return m
 }
 // CreateCodeOfConductSimpleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateCodeOfConductSimpleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCodeOfConductSimple(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *CodeOfConductSimple) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeOfConductSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["html_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -78,18 +81,22 @@ func (m *CodeOfConductSimple) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
+// returns a *string when successful
 func (m *CodeOfConductSimple) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetKey gets the key property value. The key property
+// returns a *string when successful
 func (m *CodeOfConductSimple) GetKey()(*string) {
     return m.key
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *CodeOfConductSimple) GetName()(*string) {
     return m.name
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *CodeOfConductSimple) GetUrl()(*string) {
     return m.url
 }
@@ -147,7 +154,6 @@ func (m *CodeOfConductSimple) SetName(value *string)() {
 func (m *CodeOfConductSimple) SetUrl(value *string)() {
     m.url = value
 }
-// CodeOfConductSimpleable 
 type CodeOfConductSimpleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

@@ -25,7 +25,7 @@ type MarketplacePurchase struct {
     // The url property
     url *string
 }
-// NewMarketplacePurchase instantiates a new marketplacePurchase and sets the default values.
+// NewMarketplacePurchase instantiates a new MarketplacePurchase and sets the default values.
 func NewMarketplacePurchase()(*MarketplacePurchase) {
     m := &MarketplacePurchase{
     }
@@ -33,18 +33,22 @@ func NewMarketplacePurchase()(*MarketplacePurchase) {
     return m
 }
 // CreateMarketplacePurchaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateMarketplacePurchaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMarketplacePurchase(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *MarketplacePurchase) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetEmail gets the email property value. The email property
+// returns a *string when successful
 func (m *MarketplacePurchase) GetEmail()(*string) {
     return m.email
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MarketplacePurchase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,30 +134,37 @@ func (m *MarketplacePurchase) GetFieldDeserializers()(map[string]func(i878a80d23
     return res
 }
 // GetId gets the id property value. The id property
+// returns a *int32 when successful
 func (m *MarketplacePurchase) GetId()(*int32) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
+// returns a *string when successful
 func (m *MarketplacePurchase) GetLogin()(*string) {
     return m.login
 }
 // GetMarketplacePendingChange gets the marketplace_pending_change property value. The marketplace_pending_change property
+// returns a MarketplacePurchase_marketplace_pending_changeable when successful
 func (m *MarketplacePurchase) GetMarketplacePendingChange()(MarketplacePurchase_marketplace_pending_changeable) {
     return m.marketplace_pending_change
 }
 // GetMarketplacePurchase gets the marketplace_purchase property value. The marketplace_purchase property
+// returns a MarketplacePurchase_marketplace_purchaseable when successful
 func (m *MarketplacePurchase) GetMarketplacePurchase()(MarketplacePurchase_marketplace_purchaseable) {
     return m.marketplace_purchase
 }
 // GetOrganizationBillingEmail gets the organization_billing_email property value. The organization_billing_email property
+// returns a *string when successful
 func (m *MarketplacePurchase) GetOrganizationBillingEmail()(*string) {
     return m.organization_billing_email
 }
 // GetTypeEscaped gets the type property value. The type property
+// returns a *string when successful
 func (m *MarketplacePurchase) GetTypeEscaped()(*string) {
     return m.typeEscaped
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *MarketplacePurchase) GetUrl()(*string) {
     return m.url
 }
@@ -251,7 +262,6 @@ func (m *MarketplacePurchase) SetTypeEscaped(value *string)() {
 func (m *MarketplacePurchase) SetUrl(value *string)() {
     m.url = value
 }
-// MarketplacePurchaseable 
 type MarketplacePurchaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

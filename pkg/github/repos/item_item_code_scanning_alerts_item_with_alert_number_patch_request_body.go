@@ -5,7 +5,6 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody 
 type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -24,22 +23,27 @@ func NewItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody()(*ItemIt
     return m
 }
 // CreateItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetDismissedComment gets the dismissed_comment property value. The dismissal comment associated with the dismissal of the alert.
+// returns a *string when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDismissedComment()(*string) {
     return m.dismissed_comment
 }
 // GetDismissedReason gets the dismissed_reason property value. **Required when the state is dismissed.** The reason for dismissing or closing the alert.
+// returns a *CodeScanningAlertDismissedReason when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDismissedReason()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertDismissedReason) {
     return m.dismissed_reason
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["dismissed_comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -75,6 +79,7 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetFiel
     return res
 }
 // GetState gets the state property value. Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
+// returns a *CodeScanningAlertSetState when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetState()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSetState) {
     return m.state
 }
@@ -124,7 +129,6 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetDism
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetState(value *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSetState)() {
     m.state = value
 }
-// ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyable 
 type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

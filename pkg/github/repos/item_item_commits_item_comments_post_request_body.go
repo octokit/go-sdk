@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemCommitsItemCommentsPostRequestBody 
 type ItemItemCommitsItemCommentsPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -25,18 +24,22 @@ func NewItemItemCommitsItemCommentsPostRequestBody()(*ItemItemCommitsItemComment
     return m
 }
 // CreateItemItemCommitsItemCommentsPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemCommitsItemCommentsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemCommitsItemCommentsPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetBody gets the body property value. The contents of the comment.
+// returns a *string when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetBody()(*string) {
     return m.body
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -82,14 +85,17 @@ func (m *ItemItemCommitsItemCommentsPostRequestBody) GetFieldDeserializers()(map
     return res
 }
 // GetLine gets the line property value. **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+// returns a *int32 when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetLine()(*int32) {
     return m.line
 }
 // GetPath gets the path property value. Relative path of the file to comment on.
+// returns a *string when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetPath()(*string) {
     return m.path
 }
 // GetPosition gets the position property value. Line index in the diff to comment on.
+// returns a *int32 when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetPosition()(*int32) {
     return m.position
 }
@@ -147,7 +153,6 @@ func (m *ItemItemCommitsItemCommentsPostRequestBody) SetPath(value *string)() {
 func (m *ItemItemCommitsItemCommentsPostRequestBody) SetPosition(value *int32)() {
     m.position = value
 }
-// ItemItemCommitsItemCommentsPostRequestBodyable 
 type ItemItemCommitsItemCommentsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

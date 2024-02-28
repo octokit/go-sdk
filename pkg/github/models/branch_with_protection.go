@@ -25,7 +25,7 @@ type BranchWithProtection struct {
     // The required_approving_review_count property
     required_approving_review_count *int32
 }
-// NewBranchWithProtection instantiates a new branchWithProtection and sets the default values.
+// NewBranchWithProtection instantiates a new BranchWithProtection and sets the default values.
 func NewBranchWithProtection()(*BranchWithProtection) {
     m := &BranchWithProtection{
     }
@@ -33,18 +33,22 @@ func NewBranchWithProtection()(*BranchWithProtection) {
     return m
 }
 // CreateBranchWithProtectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateBranchWithProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBranchWithProtection(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *BranchWithProtection) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCommit gets the commit property value. Commit
+// returns a Commitable when successful
 func (m *BranchWithProtection) GetCommit()(Commitable) {
     return m.commit
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchWithProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["_links"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -130,30 +134,37 @@ func (m *BranchWithProtection) GetFieldDeserializers()(map[string]func(i878a80d2
     return res
 }
 // GetLinks gets the _links property value. The _links property
+// returns a BranchWithProtection__linksable when successful
 func (m *BranchWithProtection) GetLinks()(BranchWithProtection__linksable) {
     return m._links
 }
 // GetName gets the name property value. The name property
+// returns a *string when successful
 func (m *BranchWithProtection) GetName()(*string) {
     return m.name
 }
 // GetPattern gets the pattern property value. The pattern property
+// returns a *string when successful
 func (m *BranchWithProtection) GetPattern()(*string) {
     return m.pattern
 }
 // GetProtected gets the protected property value. The protected property
+// returns a *bool when successful
 func (m *BranchWithProtection) GetProtected()(*bool) {
     return m.protected
 }
 // GetProtection gets the protection property value. Branch Protection
+// returns a BranchProtectionable when successful
 func (m *BranchWithProtection) GetProtection()(BranchProtectionable) {
     return m.protection
 }
 // GetProtectionUrl gets the protection_url property value. The protection_url property
+// returns a *string when successful
 func (m *BranchWithProtection) GetProtectionUrl()(*string) {
     return m.protection_url
 }
 // GetRequiredApprovingReviewCount gets the required_approving_review_count property value. The required_approving_review_count property
+// returns a *int32 when successful
 func (m *BranchWithProtection) GetRequiredApprovingReviewCount()(*int32) {
     return m.required_approving_review_count
 }
@@ -251,7 +262,6 @@ func (m *BranchWithProtection) SetProtectionUrl(value *string)() {
 func (m *BranchWithProtection) SetRequiredApprovingReviewCount(value *int32)() {
     m.required_approving_review_count = value
 }
-// BranchWithProtectionable 
 type BranchWithProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

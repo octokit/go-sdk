@@ -19,14 +19,17 @@ func NewItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security()(
     return m
 }
 // CreateItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -42,6 +45,7 @@ func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) 
     return res
 }
 // GetStatus gets the status property value. Can be `enabled` or `disabled`.
+// returns a *string when successful
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) GetStatus()(*string) {
     return m.status
 }
@@ -69,7 +73,6 @@ func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) 
 func (m *ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_security) SetStatus(value *string)() {
     m.status = value
 }
-// ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityable 
 type ItemItemOwnerPatchRequestBody_security_and_analysis_advanced_securityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

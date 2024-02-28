@@ -38,7 +38,7 @@ type DeploymentSimple struct {
     // The url property
     url *string
 }
-// NewDeploymentSimple instantiates a new deploymentSimple and sets the default values.
+// NewDeploymentSimple instantiates a new DeploymentSimple and sets the default values.
 func NewDeploymentSimple()(*DeploymentSimple) {
     m := &DeploymentSimple{
     }
@@ -46,26 +46,32 @@ func NewDeploymentSimple()(*DeploymentSimple) {
     return m
 }
 // CreateDeploymentSimpleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateDeploymentSimpleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeploymentSimple(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *DeploymentSimple) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetCreatedAt gets the created_at property value. The created_at property
+// returns a *Time when successful
 func (m *DeploymentSimple) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
 // GetDescription gets the description property value. The description property
+// returns a *string when successful
 func (m *DeploymentSimple) GetDescription()(*string) {
     return m.description
 }
 // GetEnvironment gets the environment property value. Name for the target deployment environment.
+// returns a *string when successful
 func (m *DeploymentSimple) GetEnvironment()(*string) {
     return m.environment
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeploymentSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -211,46 +217,57 @@ func (m *DeploymentSimple) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. Unique identifier of the deployment
+// returns a *int32 when successful
 func (m *DeploymentSimple) GetId()(*int32) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
+// returns a *string when successful
 func (m *DeploymentSimple) GetNodeId()(*string) {
     return m.node_id
 }
 // GetOriginalEnvironment gets the original_environment property value. The original_environment property
+// returns a *string when successful
 func (m *DeploymentSimple) GetOriginalEnvironment()(*string) {
     return m.original_environment
 }
 // GetPerformedViaGithubApp gets the performed_via_github_app property value. GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+// returns a NullableIntegrationable when successful
 func (m *DeploymentSimple) GetPerformedViaGithubApp()(NullableIntegrationable) {
     return m.performed_via_github_app
 }
 // GetProductionEnvironment gets the production_environment property value. Specifies if the given environment is one that end-users directly interact with. Default: false.
+// returns a *bool when successful
 func (m *DeploymentSimple) GetProductionEnvironment()(*bool) {
     return m.production_environment
 }
 // GetRepositoryUrl gets the repository_url property value. The repository_url property
+// returns a *string when successful
 func (m *DeploymentSimple) GetRepositoryUrl()(*string) {
     return m.repository_url
 }
 // GetStatusesUrl gets the statuses_url property value. The statuses_url property
+// returns a *string when successful
 func (m *DeploymentSimple) GetStatusesUrl()(*string) {
     return m.statuses_url
 }
 // GetTask gets the task property value. Parameter to specify a task to execute
+// returns a *string when successful
 func (m *DeploymentSimple) GetTask()(*string) {
     return m.task
 }
 // GetTransientEnvironment gets the transient_environment property value. Specifies if the given environment is will no longer exist at some point in the future. Default: false.
+// returns a *bool when successful
 func (m *DeploymentSimple) GetTransientEnvironment()(*bool) {
     return m.transient_environment
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
+// returns a *Time when successful
 func (m *DeploymentSimple) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
 }
 // GetUrl gets the url property value. The url property
+// returns a *string when successful
 func (m *DeploymentSimple) GetUrl()(*string) {
     return m.url
 }
@@ -408,7 +425,6 @@ func (m *DeploymentSimple) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *DeploymentSimple) SetUrl(value *string)() {
     m.url = value
 }
-// DeploymentSimpleable 
 type DeploymentSimpleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

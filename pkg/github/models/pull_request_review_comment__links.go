@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// PullRequestReviewComment__links 
 type PullRequestReviewComment__links struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -15,7 +14,7 @@ type PullRequestReviewComment__links struct {
     // The self property
     self PullRequestReviewComment__links_selfable
 }
-// NewPullRequestReviewComment__links instantiates a new pullRequestReviewComment__links and sets the default values.
+// NewPullRequestReviewComment__links instantiates a new PullRequestReviewComment__links and sets the default values.
 func NewPullRequestReviewComment__links()(*PullRequestReviewComment__links) {
     m := &PullRequestReviewComment__links{
     }
@@ -23,14 +22,17 @@ func NewPullRequestReviewComment__links()(*PullRequestReviewComment__links) {
     return m
 }
 // CreatePullRequestReviewComment__linksFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreatePullRequestReviewComment__linksFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPullRequestReviewComment__links(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *PullRequestReviewComment__links) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PullRequestReviewComment__links) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["html"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -66,14 +68,17 @@ func (m *PullRequestReviewComment__links) GetFieldDeserializers()(map[string]fun
     return res
 }
 // GetHtml gets the html property value. The html property
+// returns a PullRequestReviewComment__links_htmlable when successful
 func (m *PullRequestReviewComment__links) GetHtml()(PullRequestReviewComment__links_htmlable) {
     return m.html
 }
 // GetPullRequest gets the pull_request property value. The pull_request property
+// returns a PullRequestReviewComment__links_pull_requestable when successful
 func (m *PullRequestReviewComment__links) GetPullRequest()(PullRequestReviewComment__links_pull_requestable) {
     return m.pull_request
 }
 // GetSelf gets the self property value. The self property
+// returns a PullRequestReviewComment__links_selfable when successful
 func (m *PullRequestReviewComment__links) GetSelf()(PullRequestReviewComment__links_selfable) {
     return m.self
 }
@@ -121,7 +126,6 @@ func (m *PullRequestReviewComment__links) SetPullRequest(value PullRequestReview
 func (m *PullRequestReviewComment__links) SetSelf(value PullRequestReviewComment__links_selfable)() {
     m.self = value
 }
-// PullRequestReviewComment__linksable 
 type PullRequestReviewComment__linksable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

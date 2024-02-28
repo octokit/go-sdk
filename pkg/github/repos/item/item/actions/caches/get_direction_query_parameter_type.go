@@ -2,7 +2,6 @@ package caches
 import (
     "errors"
 )
-// 
 type GetDirectionQueryParameterType int
 
 const (

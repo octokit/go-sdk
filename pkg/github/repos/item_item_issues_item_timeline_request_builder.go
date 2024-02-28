@@ -17,20 +17,23 @@ type ItemItemIssuesItemTimelineRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// NewItemItemIssuesItemTimelineRequestBuilderInternal instantiates a new TimelineRequestBuilder and sets the default values.
+// NewItemItemIssuesItemTimelineRequestBuilderInternal instantiates a new ItemItemIssuesItemTimelineRequestBuilder and sets the default values.
 func NewItemItemIssuesItemTimelineRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemTimelineRequestBuilder) {
     m := &ItemItemIssuesItemTimelineRequestBuilder{
         BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/timeline{?page*,per_page*}", pathParameters),
     }
     return m
 }
-// NewItemItemIssuesItemTimelineRequestBuilder instantiates a new TimelineRequestBuilder and sets the default values.
+// NewItemItemIssuesItemTimelineRequestBuilder instantiates a new ItemItemIssuesItemTimelineRequestBuilder and sets the default values.
 func NewItemItemIssuesItemTimelineRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemTimelineRequestBuilder) {
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemIssuesItemTimelineRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get list all timeline events for an issue.
+// returns a []TimelineIssueEventsable when successful
+// returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 410 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/issues/timeline#list-timeline-events-for-an-issue
@@ -56,6 +59,7 @@ func (m *ItemItemIssuesItemTimelineRequestBuilder) Get(ctx context.Context, requ
     return val, nil
 }
 // ToGetRequestInformation list all timeline events for an issue.
+// returns a *RequestInformation when successful
 func (m *ItemItemIssuesItemTimelineRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemIssuesItemTimelineRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
@@ -63,6 +67,7 @@ func (m *ItemItemIssuesItemTimelineRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemItemIssuesItemTimelineRequestBuilder when successful
 func (m *ItemItemIssuesItemTimelineRequestBuilder) WithUrl(rawUrl string)(*ItemItemIssuesItemTimelineRequestBuilder) {
     return NewItemItemIssuesItemTimelineRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }

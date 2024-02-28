@@ -2,7 +2,6 @@ package checkruns
 import (
     "errors"
 )
-// 
 type CheckRunsPostRequestBodyMember2_status int
 
 const (

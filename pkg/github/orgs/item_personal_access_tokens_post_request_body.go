@@ -4,7 +4,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemPersonalAccessTokensPostRequestBody 
 type ItemPersonalAccessTokensPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
@@ -19,14 +18,17 @@ func NewItemPersonalAccessTokensPostRequestBody()(*ItemPersonalAccessTokensPostR
     return m
 }
 // CreateItemPersonalAccessTokensPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
 func CreateItemPersonalAccessTokensPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemPersonalAccessTokensPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
 func (m *ItemPersonalAccessTokensPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemPersonalAccessTokensPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["pat_ids"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -48,6 +50,7 @@ func (m *ItemPersonalAccessTokensPostRequestBody) GetFieldDeserializers()(map[st
     return res
 }
 // GetPatIds gets the pat_ids property value. The IDs of the fine-grained personal access tokens.
+// returns a []int32 when successful
 func (m *ItemPersonalAccessTokensPostRequestBody) GetPatIds()([]int32) {
     return m.pat_ids
 }
@@ -75,7 +78,6 @@ func (m *ItemPersonalAccessTokensPostRequestBody) SetAdditionalData(value map[st
 func (m *ItemPersonalAccessTokensPostRequestBody) SetPatIds(value []int32)() {
     m.pat_ids = value
 }
-// ItemPersonalAccessTokensPostRequestBodyable 
 type ItemPersonalAccessTokensPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
