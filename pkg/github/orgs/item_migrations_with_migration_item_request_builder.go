@@ -4,6 +4,7 @@ import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
+    i399c3da064b81c83d30565b554a09039c3bc9dc0590affc1306cb54f75cd8e0d "github.com/octokit/go-sdk/pkg/github/orgs/item/migrations/item"
 )
 
 // ItemMigrationsWithMigration_ItemRequestBuilder builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}
@@ -13,7 +14,7 @@ type ItemMigrationsWithMigration_ItemRequestBuilder struct {
 // ItemMigrationsWithMigration_ItemRequestBuilderGetQueryParameters fetches the status of a migration.The `state` of a migration can be one of the following values:*   `pending`, which means the migration hasn't started yet.*   `exporting`, which means the migration is in progress.*   `exported`, which means the migration finished successfully.*   `failed`, which means the migration failed.
 type ItemMigrationsWithMigration_ItemRequestBuilderGetQueryParameters struct {
     // Exclude attributes from the API response to improve performance
-    Exclude []string `uriparametername:"exclude"`
+    Exclude []i399c3da064b81c83d30565b554a09039c3bc9dc0590affc1306cb54f75cd8e0d.GetExcludeQueryParameterType `uriparametername:"exclude"`
 }
 // Archive the archive property
 // returns a *ItemMigrationsItemArchiveRequestBuilder when successful

@@ -7,7 +7,7 @@ import (
     ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48 "github.com/octokit/go-sdk/pkg/github/repos/item/item/collaborators"
 )
 
-// ItemItemCollaboratorsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\collaborators
+// ItemItemCollaboratorsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\collaborators
 type ItemItemCollaboratorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -37,7 +37,7 @@ func (m *ItemItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemI
 // NewItemItemCollaboratorsRequestBuilderInternal instantiates a new ItemItemCollaboratorsRequestBuilder and sets the default values.
 func NewItemItemCollaboratorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCollaboratorsRequestBuilder) {
     m := &ItemItemCollaboratorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/collaborators{?affiliation*,page*,per_page*,permission*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/collaborators{?affiliation*,page*,per_page*,permission*}", pathParameters),
     }
     return m
 }

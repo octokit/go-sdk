@@ -6,14 +6,14 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemLanguagesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\languages
+// ItemItemLanguagesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\languages
 type ItemItemLanguagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemLanguagesRequestBuilderInternal instantiates a new ItemItemLanguagesRequestBuilder and sets the default values.
 func NewItemItemLanguagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemLanguagesRequestBuilder) {
     m := &ItemItemLanguagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/languages", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/languages", pathParameters),
     }
     return m
 }

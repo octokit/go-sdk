@@ -6,7 +6,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsWorkflowsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\workflows
+// ItemItemActionsWorkflowsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows
 type ItemItemActionsWorkflowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -30,7 +30,7 @@ func (m *ItemItemActionsWorkflowsRequestBuilder) ByWorkflow_id(workflow_id int32
 // NewItemItemActionsWorkflowsRequestBuilderInternal instantiates a new ItemItemActionsWorkflowsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsRequestBuilder) {
     m := &ItemItemActionsWorkflowsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows{?page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows{?page*,per_page*}", pathParameters),
     }
     return m
 }

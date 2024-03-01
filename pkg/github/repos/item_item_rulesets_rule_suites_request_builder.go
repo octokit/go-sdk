@@ -8,7 +8,7 @@ import (
     i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043 "github.com/octokit/go-sdk/pkg/github/repos/item/item/rulesets/rulesuites"
 )
 
-// ItemItemRulesetsRuleSuitesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rulesets\rule-suites
+// ItemItemRulesetsRuleSuitesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets\rule-suites
 type ItemItemRulesetsRuleSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -40,7 +40,7 @@ func (m *ItemItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id
 // NewItemItemRulesetsRuleSuitesRequestBuilderInternal instantiates a new ItemItemRulesetsRuleSuitesRequestBuilder and sets the default values.
 func NewItemItemRulesetsRuleSuitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsRuleSuitesRequestBuilder) {
     m := &ItemItemRulesetsRuleSuitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters),
     }
     return m
 }

@@ -6,7 +6,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pages\deployments\{pages_deployment_id}
+// ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}
 type ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -18,7 +18,7 @@ func (m *ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder) Cancel
 // NewItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilderInternal instantiates a new ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder and sets the default values.
 func NewItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder) {
     m := &ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pages/deployments/{pages_deployment_id}", pathParameters),
     }
     return m
 }

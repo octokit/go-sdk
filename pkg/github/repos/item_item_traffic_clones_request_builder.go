@@ -7,7 +7,7 @@ import (
     i1d0f28263915d5f59d46016ea25888da94f489536a9769cb5698c30da42ce737 "github.com/octokit/go-sdk/pkg/github/repos/item/item/traffic/clones"
 )
 
-// ItemItemTrafficClonesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\traffic\clones
+// ItemItemTrafficClonesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic\clones
 type ItemItemTrafficClonesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -19,7 +19,7 @@ type ItemItemTrafficClonesRequestBuilderGetQueryParameters struct {
 // NewItemItemTrafficClonesRequestBuilderInternal instantiates a new ItemItemTrafficClonesRequestBuilder and sets the default values.
 func NewItemItemTrafficClonesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTrafficClonesRequestBuilder) {
     m := &ItemItemTrafficClonesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/traffic/clones{?per*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic/clones{?per*}", pathParameters),
     }
     return m
 }

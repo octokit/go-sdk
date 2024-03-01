@@ -6,14 +6,14 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemPropertiesValuesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\properties\values
+// ItemItemPropertiesValuesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\properties\values
 type ItemItemPropertiesValuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemPropertiesValuesRequestBuilderInternal instantiates a new ItemItemPropertiesValuesRequestBuilder and sets the default values.
 func NewItemItemPropertiesValuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemPropertiesValuesRequestBuilder) {
     m := &ItemItemPropertiesValuesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/properties/values", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/properties/values", pathParameters),
     }
     return m
 }

@@ -8,7 +8,7 @@ import (
     ic8ccce7f7df3354ee09c704fd2c3c7a95354f442dcd3fefc8778b101a690d643 "github.com/octokit/go-sdk/pkg/github/repos/item/item/codescanning/analyses"
 )
 
-// ItemItemCodeScanningAnalysesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\code-scanning\analyses
+// ItemItemCodeScanningAnalysesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\analyses
 type ItemItemCodeScanningAnalysesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -44,7 +44,7 @@ func (m *ItemItemCodeScanningAnalysesRequestBuilder) ByAnalysis_id(analysis_id i
 // NewItemItemCodeScanningAnalysesRequestBuilderInternal instantiates a new ItemItemCodeScanningAnalysesRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAnalysesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAnalysesRequestBuilder) {
     m := &ItemItemCodeScanningAnalysesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", pathParameters),
     }
     return m
 }

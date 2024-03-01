@@ -5,14 +5,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemStatsPunch_cardRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\stats\punch_card
+// ItemItemStatsPunch_cardRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\punch_card
 type ItemItemStatsPunch_cardRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemStatsPunch_cardRequestBuilderInternal instantiates a new ItemItemStatsPunch_cardRequestBuilder and sets the default values.
 func NewItemItemStatsPunch_cardRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemStatsPunch_cardRequestBuilder) {
     m := &ItemItemStatsPunch_cardRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stats/punch_card", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/stats/punch_card", pathParameters),
     }
     return m
 }

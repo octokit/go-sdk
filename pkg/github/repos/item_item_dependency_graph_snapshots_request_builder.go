@@ -6,14 +6,14 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemDependencyGraphSnapshotsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependency-graph\snapshots
+// ItemItemDependencyGraphSnapshotsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\snapshots
 type ItemItemDependencyGraphSnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemDependencyGraphSnapshotsRequestBuilderInternal instantiates a new ItemItemDependencyGraphSnapshotsRequestBuilder and sets the default values.
 func NewItemItemDependencyGraphSnapshotsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependencyGraphSnapshotsRequestBuilder) {
     m := &ItemItemDependencyGraphSnapshotsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/snapshots", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/snapshots", pathParameters),
     }
     return m
 }

@@ -6,14 +6,14 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemCommunityProfileRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\community\profile
+// ItemItemCommunityProfileRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\community\profile
 type ItemItemCommunityProfileRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemCommunityProfileRequestBuilderInternal instantiates a new ItemItemCommunityProfileRequestBuilder and sets the default values.
 func NewItemItemCommunityProfileRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommunityProfileRequestBuilder) {
     m := &ItemItemCommunityProfileRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/community/profile", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/community/profile", pathParameters),
     }
     return m
 }

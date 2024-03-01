@@ -8,7 +8,7 @@ import (
     i4239b9a99f590fb557f6cee5c0b7a464cc1a12da753e0582e737b6a06899504e "github.com/octokit/go-sdk/pkg/github/repos/item/item/dependabot/alerts"
 )
 
-// ItemItemDependabotAlertsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependabot\alerts
+// ItemItemDependabotAlertsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependabot\alerts
 type ItemItemDependabotAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -58,7 +58,7 @@ func (m *ItemItemDependabotAlertsRequestBuilder) ByAlert_number(alert_number int
 // NewItemItemDependabotAlertsRequestBuilderInternal instantiates a new ItemItemDependabotAlertsRequestBuilder and sets the default values.
 func NewItemItemDependabotAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependabotAlertsRequestBuilder) {
     m := &ItemItemDependabotAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,manifest*,package*,page*,per_page*,scope*,severity*,sort*,state*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,manifest*,package*,page*,per_page*,scope*,severity*,sort*,state*}", pathParameters),
     }
     return m
 }

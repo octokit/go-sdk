@@ -6,7 +6,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemRulesetsWithRuleset_ItemRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rulesets\{ruleset_id}
+// ItemItemRulesetsWithRuleset_ItemRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets\{ruleset_id}
 type ItemItemRulesetsWithRuleset_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -18,7 +18,7 @@ type ItemItemRulesetsWithRuleset_ItemRequestBuilderGetQueryParameters struct {
 // NewItemItemRulesetsWithRuleset_ItemRequestBuilderInternal instantiates a new ItemItemRulesetsWithRuleset_ItemRequestBuilder and sets the default values.
 func NewItemItemRulesetsWithRuleset_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemRulesetsWithRuleset_ItemRequestBuilder) {
     m := &ItemItemRulesetsWithRuleset_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/{ruleset_id}{?includes_parents*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/{ruleset_id}{?includes_parents*}", pathParameters),
     }
     return m
 }
@@ -102,7 +102,7 @@ func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) Put(ctx context.Context
 // ToDeleteRequestInformation delete a ruleset for a repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/{ruleset_id}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/{ruleset_id}", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
@@ -118,7 +118,7 @@ func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) ToGetRequestInformation
 // ToPutRequestInformation update a ruleset for a repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemRulesetsItemWithRuleset_PutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/{ruleset_id}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/{ruleset_id}", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)

@@ -5,6 +5,7 @@ import (
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
+    i010f80164593e67edac379301caa66f6c3b0369d2d666ed5683626e52e3f25fb "github.com/octokit/go-sdk/pkg/github/orgs/item/migrations"
 )
 
 // ItemMigrationsRequestBuilder builds and executes requests for operations under \orgs\{org}\migrations
@@ -14,7 +15,7 @@ type ItemMigrationsRequestBuilder struct {
 // ItemMigrationsRequestBuilderGetQueryParameters lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
 type ItemMigrationsRequestBuilderGetQueryParameters struct {
     // Exclude attributes from the API response to improve performance
-    Exclude []string `uriparametername:"exclude"`
+    Exclude []i010f80164593e67edac379301caa66f6c3b0369d2d666ed5683626e52e3f25fb.GetExcludeQueryParameterType `uriparametername:"exclude"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."

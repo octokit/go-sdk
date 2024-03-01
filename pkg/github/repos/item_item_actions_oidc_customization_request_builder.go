@@ -4,14 +4,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsOidcCustomizationRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\oidc\customization
+// ItemItemActionsOidcCustomizationRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\oidc\customization
 type ItemItemActionsOidcCustomizationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemActionsOidcCustomizationRequestBuilderInternal instantiates a new ItemItemActionsOidcCustomizationRequestBuilder and sets the default values.
 func NewItemItemActionsOidcCustomizationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsOidcCustomizationRequestBuilder) {
     m := &ItemItemActionsOidcCustomizationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/oidc/customization", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/oidc/customization", pathParameters),
     }
     return m
 }

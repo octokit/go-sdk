@@ -4,7 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemDependencyGraphRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependency-graph
+// ItemItemDependencyGraphRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph
 type ItemItemDependencyGraphRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -16,7 +16,7 @@ func (m *ItemItemDependencyGraphRequestBuilder) Compare()(*ItemItemDependencyGra
 // NewItemItemDependencyGraphRequestBuilderInternal instantiates a new ItemItemDependencyGraphRequestBuilder and sets the default values.
 func NewItemItemDependencyGraphRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemDependencyGraphRequestBuilder) {
     m := &ItemItemDependencyGraphRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph", pathParameters),
     }
     return m
 }
