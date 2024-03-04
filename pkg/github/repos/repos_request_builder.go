@@ -8,17 +8,17 @@ import (
 type ReposRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByReposId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item collection
-// returns a *ReposItemRequestBuilder when successful
-func (m *ReposRequestBuilder) ByReposId(reposId string)(*ReposItemRequestBuilder) {
+// ByOwnerId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item collection
+// returns a *OwnerItemRequestBuilder when successful
+func (m *ReposRequestBuilder) ByOwnerId(ownerId string)(*OwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if reposId != "" {
-        urlTplParams["repos%2Did"] = reposId
+    if ownerId != "" {
+        urlTplParams["owner%2Did"] = ownerId
     }
-    return NewReposItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewOwnerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewReposRequestBuilderInternal instantiates a new ReposRequestBuilder and sets the default values.
 func NewReposRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReposRequestBuilder) {

@@ -7,7 +7,7 @@ import (
     ia77747759b3f91e25296248277ed17f00dd8b68db982a03262ffc61b4720274c "github.com/octokit/go-sdk/pkg/github/repos/item/item/actions/workflows/item/runs"
 )
 
-// ItemItemActionsWorkflowsItemRunsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\workflows\{workflow_id}\runs
+// ItemItemActionsWorkflowsItemRunsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\runs
 type ItemItemActionsWorkflowsItemRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -37,7 +37,7 @@ type ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters struct {
 // NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal instantiates a new ItemItemActionsWorkflowsItemRunsRequestBuilder and sets the default values.
 func NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsWorkflowsItemRunsRequestBuilder) {
     m := &ItemItemActionsWorkflowsItemRunsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters),
     }
     return m
 }

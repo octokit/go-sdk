@@ -6,14 +6,14 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemInvitationsWithInvitation_ItemRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\invitations\{invitation_id}
+// ItemItemInvitationsWithInvitation_ItemRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\invitations\{invitation_id}
 type ItemItemInvitationsWithInvitation_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemInvitationsWithInvitation_ItemRequestBuilderInternal instantiates a new ItemItemInvitationsWithInvitation_ItemRequestBuilder and sets the default values.
 func NewItemItemInvitationsWithInvitation_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemInvitationsWithInvitation_ItemRequestBuilder) {
     m := &ItemItemInvitationsWithInvitation_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/invitations/{invitation_id}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/invitations/{invitation_id}", pathParameters),
     }
     return m
 }

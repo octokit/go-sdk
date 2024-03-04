@@ -5,14 +5,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\reactions\{reaction_id}
+// ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\reactions\{reaction_id}
 type ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemIssuesItemReactionsWithReaction_ItemRequestBuilderInternal instantiates a new ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder and sets the default values.
 func NewItemItemIssuesItemReactionsWithReaction_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder) {
     m := &ItemItemIssuesItemReactionsWithReaction_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/reactions/{reaction_id}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/reactions/{reaction_id}", pathParameters),
     }
     return m
 }

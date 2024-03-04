@@ -8,7 +8,7 @@ import (
     id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd "github.com/octokit/go-sdk/pkg/github/repos/item/item/codescanning/alerts"
 )
 
-// ItemItemCodeScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\code-scanning\alerts
+// ItemItemCodeScanningAlertsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\alerts
 type ItemItemCodeScanningAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -46,7 +46,7 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number i
 // NewItemItemCodeScanningAlertsRequestBuilderInternal instantiates a new ItemItemCodeScanningAlertsRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAlertsRequestBuilder) {
     m := &ItemItemCodeScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?direction*,page*,per_page*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/alerts{?direction*,page*,per_page*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
     }
     return m
 }

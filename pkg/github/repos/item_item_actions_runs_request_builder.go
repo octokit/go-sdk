@@ -8,7 +8,7 @@ import (
     ib50fd1a31f59a50cad835d1bac105bcca1f781f781bbe17e66a476cfdf7485c8 "github.com/octokit/go-sdk/pkg/github/repos/item/item/actions/runs"
 )
 
-// ItemItemActionsRunsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs
+// ItemItemActionsRunsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs
 type ItemItemActionsRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -48,7 +48,7 @@ func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id int32)(*ItemItemActi
 // NewItemItemActionsRunsRequestBuilderInternal instantiates a new ItemItemActionsRunsRequestBuilder and sets the default values.
 func NewItemItemActionsRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsRequestBuilder) {
     m := &ItemItemActionsRunsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters),
     }
     return m
 }

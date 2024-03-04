@@ -7,7 +7,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemCommitsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\commits
+// ItemItemCommitsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits
 type ItemItemCommitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -30,22 +30,22 @@ type ItemItemCommitsRequestBuilderGetQueryParameters struct {
     // Only commits before this date will be returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Until *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"until"`
 }
-// ByCommitsId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.commits.item collection
-// returns a *ItemItemCommitsCommitsItemRequestBuilder when successful
-func (m *ItemItemCommitsRequestBuilder) ByCommitsId(commitsId string)(*ItemItemCommitsCommitsItemRequestBuilder) {
+// ByCommit_shaId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.commits.item collection
+// returns a *ItemItemCommitsCommit_shaItemRequestBuilder when successful
+func (m *ItemItemCommitsRequestBuilder) ByCommit_shaId(commit_shaId string)(*ItemItemCommitsCommit_shaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if commitsId != "" {
-        urlTplParams["commits%2Did"] = commitsId
+    if commit_shaId != "" {
+        urlTplParams["commit_sha%2Did"] = commit_shaId
     }
-    return NewItemItemCommitsCommitsItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewItemItemCommitsCommit_shaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemCommitsRequestBuilderInternal instantiates a new ItemItemCommitsRequestBuilder and sets the default values.
 func NewItemItemCommitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommitsRequestBuilder) {
     m := &ItemItemCommitsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/commits{?author*,committer*,page*,path*,per_page*,sha*,since*,until*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/commits{?author*,committer*,page*,path*,per_page*,sha*,since*,until*}", pathParameters),
     }
     return m
 }

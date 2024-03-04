@@ -6,7 +6,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemTopicsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\topics
+// ItemItemTopicsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\topics
 type ItemItemTopicsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -20,7 +20,7 @@ type ItemItemTopicsRequestBuilderGetQueryParameters struct {
 // NewItemItemTopicsRequestBuilderInternal instantiates a new ItemItemTopicsRequestBuilder and sets the default values.
 func NewItemItemTopicsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemTopicsRequestBuilder) {
     m := &ItemItemTopicsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/topics{?page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/topics{?page*,per_page*}", pathParameters),
     }
     return m
 }
@@ -87,7 +87,7 @@ func (m *ItemItemTopicsRequestBuilder) ToGetRequestInformation(ctx context.Conte
 }
 // returns a *RequestInformation when successful
 func (m *ItemItemTopicsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemTopicsPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/topics", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/topics", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)

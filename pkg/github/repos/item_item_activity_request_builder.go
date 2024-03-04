@@ -7,7 +7,7 @@ import (
     ia4d3c00087c8cd3d0487630fd16ea548b5ca8c46c90d4b6d272efa6624a02bb6 "github.com/octokit/go-sdk/pkg/github/repos/item/item/activity"
 )
 
-// ItemItemActivityRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\activity
+// ItemItemActivityRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\activity
 type ItemItemActivityRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -33,7 +33,7 @@ type ItemItemActivityRequestBuilderGetQueryParameters struct {
 // NewItemItemActivityRequestBuilderInternal instantiates a new ItemItemActivityRequestBuilder and sets the default values.
 func NewItemItemActivityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActivityRequestBuilder) {
     m := &ItemItemActivityRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/activity{?activity_type*,actor*,after*,before*,direction*,per_page*,ref*,time_period*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/activity{?activity_type*,actor*,after*,before*,direction*,per_page*,ref*,time_period*}", pathParameters),
     }
     return m
 }

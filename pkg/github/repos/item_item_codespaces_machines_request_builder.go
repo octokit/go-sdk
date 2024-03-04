@@ -6,7 +6,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemCodespacesMachinesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\codespaces\machines
+// ItemItemCodespacesMachinesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\machines
 type ItemItemCodespacesMachinesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -22,7 +22,7 @@ type ItemItemCodespacesMachinesRequestBuilderGetQueryParameters struct {
 // NewItemItemCodespacesMachinesRequestBuilderInternal instantiates a new ItemItemCodespacesMachinesRequestBuilder and sets the default values.
 func NewItemItemCodespacesMachinesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodespacesMachinesRequestBuilder) {
     m := &ItemItemCodespacesMachinesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/machines{?client_ip*,location*,ref*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/machines{?client_ip*,location*,ref*}", pathParameters),
     }
     return m
 }

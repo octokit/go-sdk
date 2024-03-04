@@ -6,7 +6,7 @@ import (
     i08b4bf52b4de47221f213f980c03d04a2d7557c63c7158cc63f99ebaac398e57 "github.com/octokit/go-sdk/pkg/github/repos/item/item/actions/runs/item/jobs"
 )
 
-// ItemItemActionsRunsItemJobsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs\{run_id}\jobs
+// ItemItemActionsRunsItemJobsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\jobs
 type ItemItemActionsRunsItemJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -22,7 +22,7 @@ type ItemItemActionsRunsItemJobsRequestBuilderGetQueryParameters struct {
 // NewItemItemActionsRunsItemJobsRequestBuilderInternal instantiates a new ItemItemActionsRunsItemJobsRequestBuilder and sets the default values.
 func NewItemItemActionsRunsItemJobsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunsItemJobsRequestBuilder) {
     m := &ItemItemActionsRunsItemJobsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/jobs{?filter*,page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/jobs{?filter*,page*,per_page*}", pathParameters),
     }
     return m
 }

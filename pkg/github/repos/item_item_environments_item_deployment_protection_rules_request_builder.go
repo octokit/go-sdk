@@ -7,7 +7,7 @@ import (
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
-// ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments\{environment_name}\deployment_protection_rules
+// ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment_protection_rules
 type ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -29,7 +29,7 @@ func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ByPr
 // NewItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderInternal instantiates a new ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder and sets the default values.
 func NewItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) {
     m := &ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/environments/{environment_name}/deployment_protection_rules", pathParameters),
     }
     return m
 }

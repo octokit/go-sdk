@@ -6,7 +6,7 @@ import (
     i81721daf4afe64f77b2b79b27ec44ce9325b9e20e6f9737c000fdcbda4772f33 "github.com/octokit/go-sdk/pkg/github/repos/item/item/checksuites/item/checkruns"
 )
 
-// ItemItemCheckSuitesItemCheckRunsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\check-suites\{check_suite_id}\check-runs
+// ItemItemCheckSuitesItemCheckRunsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}\check-runs
 type ItemItemCheckSuitesItemCheckRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -26,7 +26,7 @@ type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters struct {
 // NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal instantiates a new ItemItemCheckSuitesItemCheckRunsRequestBuilder and sets the default values.
 func NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCheckSuitesItemCheckRunsRequestBuilder) {
     m := &ItemItemCheckSuitesItemCheckRunsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites/{check_suite_id}/check-runs{?check_name*,filter*,page*,per_page*,status*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/check-suites/{check_suite_id}/check-runs{?check_name*,filter*,page*,per_page*,status*}", pathParameters),
     }
     return m
 }

@@ -8,7 +8,7 @@ import (
     i1ebd97b17bc9aa912e6d52ba66eb2fba73070ddd43b0bc79944e735e3a7ba7c7 "github.com/octokit/go-sdk/pkg/github/repos/item/item/milestones"
 )
 
-// ItemItemMilestonesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\milestones
+// ItemItemMilestonesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\milestones
 type ItemItemMilestonesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -38,7 +38,7 @@ func (m *ItemItemMilestonesRequestBuilder) ByMilestone_number(milestone_number i
 // NewItemItemMilestonesRequestBuilderInternal instantiates a new ItemItemMilestonesRequestBuilder and sets the default values.
 func NewItemItemMilestonesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemMilestonesRequestBuilder) {
     m := &ItemItemMilestonesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones{?direction*,page*,per_page*,sort*,state*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/milestones{?direction*,page*,per_page*,sort*,state*}", pathParameters),
     }
     return m
 }
@@ -110,7 +110,7 @@ func (m *ItemItemMilestonesRequestBuilder) ToGetRequestInformation(ctx context.C
 // ToPostRequestInformation creates a milestone.
 // returns a *RequestInformation when successful
 func (m *ItemItemMilestonesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemMilestonesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/milestones", m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)

@@ -5,7 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCodespacesSecretsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\codespaces\secrets
+// ItemItemCodespacesSecretsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\secrets
 type ItemItemCodespacesSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -31,7 +31,7 @@ func (m *ItemItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name stri
 // NewItemItemCodespacesSecretsRequestBuilderInternal instantiates a new ItemItemCodespacesSecretsRequestBuilder and sets the default values.
 func NewItemItemCodespacesSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodespacesSecretsRequestBuilder) {
     m := &ItemItemCodespacesSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/secrets{?page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

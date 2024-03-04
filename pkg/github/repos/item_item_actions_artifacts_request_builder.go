@@ -6,7 +6,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsArtifactsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\artifacts
+// ItemItemActionsArtifactsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\artifacts
 type ItemItemActionsArtifactsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -32,7 +32,7 @@ func (m *ItemItemActionsArtifactsRequestBuilder) ByArtifact_id(artifact_id int32
 // NewItemItemActionsArtifactsRequestBuilderInternal instantiates a new ItemItemActionsArtifactsRequestBuilder and sets the default values.
 func NewItemItemActionsArtifactsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsArtifactsRequestBuilder) {
     m := &ItemItemActionsArtifactsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/artifacts{?name*,page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/artifacts{?name*,page*,per_page*}", pathParameters),
     }
     return m
 }

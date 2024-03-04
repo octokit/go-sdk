@@ -4,7 +4,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCodeScanningRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\code-scanning
+// ItemItemCodeScanningRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning
 type ItemItemCodeScanningRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -26,7 +26,7 @@ func (m *ItemItemCodeScanningRequestBuilder) Codeql()(*ItemItemCodeScanningCodeq
 // NewItemItemCodeScanningRequestBuilderInternal instantiates a new ItemItemCodeScanningRequestBuilder and sets the default values.
 func NewItemItemCodeScanningRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningRequestBuilder) {
     m := &ItemItemCodeScanningRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning", pathParameters),
     }
     return m
 }

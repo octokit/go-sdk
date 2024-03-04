@@ -5,14 +5,14 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemZipballWithRefItemRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\zipball\{ref}
+// ItemItemZipballWithRefItemRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\zipball\{ref}
 type ItemItemZipballWithRefItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 // NewItemItemZipballWithRefItemRequestBuilderInternal instantiates a new ItemItemZipballWithRefItemRequestBuilder and sets the default values.
 func NewItemItemZipballWithRefItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemZipballWithRefItemRequestBuilder) {
     m := &ItemItemZipballWithRefItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/zipball/{ref}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/zipball/{ref}", pathParameters),
     }
     return m
 }

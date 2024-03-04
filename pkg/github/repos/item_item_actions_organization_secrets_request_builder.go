@@ -5,7 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsOrganizationSecretsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\organization-secrets
+// ItemItemActionsOrganizationSecretsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\organization-secrets
 type ItemItemActionsOrganizationSecretsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -19,7 +19,7 @@ type ItemItemActionsOrganizationSecretsRequestBuilderGetQueryParameters struct {
 // NewItemItemActionsOrganizationSecretsRequestBuilderInternal instantiates a new ItemItemActionsOrganizationSecretsRequestBuilder and sets the default values.
 func NewItemItemActionsOrganizationSecretsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsOrganizationSecretsRequestBuilder) {
     m := &ItemItemActionsOrganizationSecretsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/organization-secrets{?page*,per_page*}", pathParameters),
     }
     return m
 }

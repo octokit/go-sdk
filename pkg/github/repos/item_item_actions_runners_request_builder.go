@@ -6,7 +6,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemActionsRunnersRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runners
+// ItemItemActionsRunnersRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners
 type ItemItemActionsRunnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -32,7 +32,7 @@ func (m *ItemItemActionsRunnersRequestBuilder) ByRunner_id(runner_id int32)(*Ite
 // NewItemItemActionsRunnersRequestBuilderInternal instantiates a new ItemItemActionsRunnersRequestBuilder and sets the default values.
 func NewItemItemActionsRunnersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemActionsRunnersRequestBuilder) {
     m := &ItemItemActionsRunnersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runners{?name*,page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runners{?name*,page*,per_page*}", pathParameters),
     }
     return m
 }

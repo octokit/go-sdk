@@ -5,7 +5,7 @@ import (
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
 )
 
-// ItemItemCommitsItemCheckSuitesRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\commits\{commits-id}\check-suites
+// ItemItemCommitsItemCheckSuitesRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}\check-suites
 type ItemItemCommitsItemCheckSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -23,7 +23,7 @@ type ItemItemCommitsItemCheckSuitesRequestBuilderGetQueryParameters struct {
 // NewItemItemCommitsItemCheckSuitesRequestBuilderInternal instantiates a new ItemItemCommitsItemCheckSuitesRequestBuilder and sets the default values.
 func NewItemItemCommitsItemCheckSuitesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCommitsItemCheckSuitesRequestBuilder) {
     m := &ItemItemCommitsItemCheckSuitesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/commits/{commits%2Did}/check-suites{?app_id*,check_name*,page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/commits/{commit_sha%2Did}/check-suites{?app_id*,check_name*,page*,per_page*}", pathParameters),
     }
     return m
 }

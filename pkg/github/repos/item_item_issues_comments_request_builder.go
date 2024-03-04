@@ -9,7 +9,7 @@ import (
     if9fe7687d66ccbe48e81b41eb88b87988bd006a467b7e33a09cc95d9ac51aa3f "github.com/octokit/go-sdk/pkg/github/repos/item/item/issues/comments"
 )
 
-// ItemItemIssuesCommentsRequestBuilder builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\comments
+// ItemItemIssuesCommentsRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\comments
 type ItemItemIssuesCommentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -39,7 +39,7 @@ func (m *ItemItemIssuesCommentsRequestBuilder) ByComment_id(comment_id int32)(*I
 // NewItemItemIssuesCommentsRequestBuilderInternal instantiates a new ItemItemIssuesCommentsRequestBuilder and sets the default values.
 func NewItemItemIssuesCommentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemIssuesCommentsRequestBuilder) {
     m := &ItemItemIssuesCommentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/comments{?direction*,page*,per_page*,since*,sort*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/comments{?direction*,page*,per_page*,since*,sort*}", pathParameters),
     }
     return m
 }
