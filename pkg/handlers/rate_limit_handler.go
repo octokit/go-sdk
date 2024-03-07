@@ -41,8 +41,6 @@ func (options *RateLimitHandlerOptions) GetKey() abs.RequestOptionKey {
 	return rateLimitKeyValue
 }
 
-// TODO(kfcampbell): should this return an iota or something that makes it clear whether it's
-// a primary or secondary rate limit we hit?
 func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
 	// TODO(kfcampbell): validate this method
 	return func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
@@ -93,7 +91,6 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 	return resp, nil
 }
 
-// TODO(kfcampbell): helper method to wait and retry requests after a specified period of time
 func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiotaHttp.Pipeline, middlewareIndex int,
 	options rateLimitHandlerOptionsInt, rateLimitType RateLimitType, request *netHttp.Request, resp *netHttp.Response) (*netHttp.Response, error) {
 
@@ -101,7 +98,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 		fmt.Printf("<<<<<<< Abuse detection mechanism triggered, sleeping for %s before retrying\n", resp.Header.Get("Retry-After"))
 		retryAfterDuration, err := parseSecondaryRate(resp)
 		if err != nil {
-			return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
+			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
 		}
 		time.Sleep(*retryAfterDuration)
 		return handler.Intercept(pipeline, middlewareIndex, request)
@@ -109,8 +106,21 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 
 	if rateLimitType == Primary {
 		fmt.Printf("<<<<<<< Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), resp.Header.Get("Retry-After"))
+		retryAfterDuration, err := parsePrimaryRate(resp)
+		if err != nil {
+			return nil, fmt.Errorf("failed to parse retry-after header into duration (primary rate limit): %v", err)
+		}
+		time.Sleep(*retryAfterDuration)
+		return handler.Intercept(pipeline, middlewareIndex, request)
 	}
-	panic("not implemented")
+	return handler.retryRequest(ctx, pipeline, middlewareIndex, options, rateLimitType, request, resp)
+}
+
+func parsePrimaryRate(r *netHttp.Response) (*time.Duration, error) {
+	if v := r.Header.Get("Retry-After"); v != "" {
+		return parseRetryAfter(v)
+	}
+	return nil, fmt.Errorf("no Retry-After value found")
 }
 
 // code stolen from https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go#L1096
@@ -122,17 +132,12 @@ func parseSecondaryRate(r *netHttp.Response) (*time.Duration, error) {
 	// an integer which represents the number of seconds that one should
 	// wait before resuming making requests.
 	if v := r.Header.Get("Retry-After"); v != "" {
-		retryAfterSeconds, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
-		if err != nil {
-			return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
-		}
-		retryAfter := time.Duration(retryAfterSeconds) * time.Second
-		return &retryAfter, nil
+		return parseRetryAfter(v)
 	}
 
 	// According to GitHub support, endpoints might return x-ratelimit-reset instead,
 	// as an integer which represents the number of seconds since epoch UTC,
-	// represting the time to resume making requests.
+	// representing the time to resume making requests.
 	if v := r.Header.Get("X-RateLimit-Reset"); v != "" {
 		secondsSinceEpoch, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
 		if err != nil {
@@ -143,4 +148,17 @@ func parseSecondaryRate(r *netHttp.Response) (*time.Duration, error) {
 	}
 
 	return nil, nil
+}
+
+func parseRetryAfter(retryAfterValue string) (*time.Duration, error) {
+	if retryAfterValue == "" {
+		return nil, fmt.Errorf("could not parse emtpy RetryAfter string")
+	}
+
+	retryAfterSeconds, err := strconv.ParseInt(retryAfterValue, 10, 64) // Error handling is noop.
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
+	}
+	retryAfter := time.Duration(retryAfterSeconds) * time.Second
+	return &retryAfter, nil
 }
