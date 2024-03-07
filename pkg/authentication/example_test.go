@@ -71,7 +71,7 @@ func ExampleApiClient_Octocat() {
 	//                  :~==~==~==~==~~
 }
 
-func Example_RateLimitHandler() {
+func ExampleApiClient_Octocat_rateLimitHandler() {
 	rateLimitHandler := handlers.NewRateLimitHandler()
 	middlewares := kiotaHttp.GetDefaultMiddlewares()
 	middlewares = append(middlewares, rateLimitHandler)
