@@ -218,19 +218,10 @@ func Example_HttpClientForRateLimiting() {
 }
 
 func Example_RateLimitHandler() {
-	options := make([]abstractions.RequestOption, 0)
-
-	rateLimitHandlerOption := &handlers.RateLimitHandlerOptions{
-		ReadDelay:        0 * time.Second,
-		WriteDelay:       1 * time.Second,
-		ParallelRequests: false,
-	}
-
-	retryHandlerOption := &kiotaHttp.RetryHandlerOptions{
-		MaxRetries: 3,
-	}
-	options = append(options, retryHandlerOption)
-	options = append(options, rateLimitHandlerOption)
+	rateLimitHandler := handlers.NewRateLimitHandler()
+	middlewares := kiotaHttp.GetDefaultMiddlewares()
+	middlewares = append(middlewares, rateLimitHandler)
+	netHttpClient := kiotaHttp.GetDefaultClient(middlewares...)
 
 	tokenProvider := auth.NewTokenProvider(
 		// to create an authenticated provider, uncomment the below line and pass in your token
@@ -238,7 +229,8 @@ func Example_RateLimitHandler() {
 		auth.WithUserAgent("octokit/go-sdk.example-functions"),
 	)
 
-	adapter, err := kiotaHttp.NewNetHttpRequestAdapter(tokenProvider)
+	adapter, err := kiotaHttp.NewNetHttpRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(tokenProvider, nil, nil, netHttpClient)
+	// adapter, err := kiotaHttp.NewNetHttpRequestAdapter(tokenProvider)
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
@@ -256,7 +248,7 @@ func Example_RateLimitHandler() {
 			S: &s,
 		},
 		Headers: headers,
-		Options: options,
+		// Options: options,
 	}
 
 	cat, err := client.Octocat().Get(context.Background(), octocatRequestConfig)
