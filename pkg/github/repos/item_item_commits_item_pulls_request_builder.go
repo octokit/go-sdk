@@ -32,6 +32,7 @@ func NewItemItemCommitsItemPullsRequestBuilder(rawUrl string, requestAdapter i2a
 }
 // Get lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, will only return open pull requests associated with the commit.To list the open or merged pull requests associated with a branch, you can set the `commit_sha` parameter to the branch name.
 // returns a []PullRequestSimpleable when successful
+// returns a BasicError error when the service returns a 409 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/commits/commits#list-pull-requests-associated-with-a-commit
@@ -40,7 +41,10 @@ func (m *ItemItemCommitsItemPullsRequestBuilder) Get(ctx context.Context, reques
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreatePullRequestSimpleFromDiscriminatorValue, nil)
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "409": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreatePullRequestSimpleFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
