@@ -3,6 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
+	"log"
 	netHttp "net/http"
 	"strconv"
 	"time"
@@ -90,7 +91,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 	options rateLimitHandlerOptionsInt, rateLimitType RateLimitType, request *netHttp.Request, resp *netHttp.Response) (*netHttp.Response, error) {
 
 	if rateLimitType == Secondary {
-		fmt.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", resp.Header.Get("Retry-After"))
+		log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", resp.Header.Get("Retry-After"))
 		retryAfterDuration, err := parseSecondaryRate(resp)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
@@ -100,7 +101,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 	}
 
 	if rateLimitType == Primary {
-		fmt.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), resp.Header.Get("Retry-After"))
+		log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), resp.Header.Get("Retry-After"))
 		retryAfterDuration, err := parsePrimaryRate(resp)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (primary rate limit): %v", err)
