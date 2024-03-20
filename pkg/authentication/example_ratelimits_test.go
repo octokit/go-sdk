@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"os"
+	"sync"
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	http "github.com/microsoft/kiota-http-go"
@@ -31,35 +32,67 @@ func ExampleApiClient_User_rateLimits() {
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
-	// adapter.SetBaseUrl("https://kfcampbell.some-enterprise-instance.github.com")
+	// adapter.SetBaseUrl("http://api.github.localhost")
 
 	client := github.NewApiClient(adapter)
+	requestCountMutex := &sync.Mutex{}
+	requestCount := 0
 
-	viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-	var page int32 = 0
-	queryParams := &user.ReposRequestBuilderGetQueryParameters{
-		Visibility: &viz,
-		Page:       &page,
-	}
-	requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
-		QueryParameters: queryParams,
-	}
+	// errs := make(chan error)
 
-	// page through all repos
-	repos, err := client.User().Repos().Get(context.Background(), requestConfig)
-	if err != nil {
-		log.Fatalf("error getting repositories: %v", err)
-	}
+	for {
+		var wg sync.WaitGroup
+		// try batching 10 requests at the same time to start
+		for i := 0; i < 10; i++ {
+			wg.Add(1)
+			go func() {
+				viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
+				var page int32 = 0
+				queryParams := &user.ReposRequestBuilderGetQueryParameters{
+					Visibility: &viz,
+					Page:       &page,
+				}
+				requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
+					QueryParameters: queryParams,
+				}
+				repos, err := client.User().Repos().Get(context.Background(), requestConfig)
+				if err != nil {
+					log.Fatalf("error getting repositories: %v", err)
+				}
+				requestCountMutex.Lock()
+				requestCount++
+				requestCountMutex.Unlock()
 
-	for len(repos) > 0 && err == nil {
-		log.Printf("Repositories:\n")
-		for _, repo := range repos {
-			log.Printf("%v\n", *repo.GetFullName())
+				for len(repos) > 0 && err == nil {
+					log.Printf("Repositories:\n")
+					for _, repo := range repos {
+						log.Printf("%v\n", *repo.GetFullName())
+					}
+					page++
+					queryParams.Page = &page
+					requestConfig.QueryParameters = queryParams
+					repos, err = client.User().Repos().Get(context.Background(), requestConfig)
+					requestCountMutex.Lock()
+					requestCount++
+					log.Printf("requestCount: %v\n", requestCount)
+					requestCountMutex.Unlock()
+				}
+				if len(repos) == 0 && err == nil {
+					page = 0
+					queryParams.Page = &page
+				}
+			}()
 		}
-		page++
-		queryParams.Page = &page
-		requestConfig.QueryParameters = queryParams
-		repos, err = client.User().Repos().Get(context.Background(), requestConfig)
 	}
+
+	// go func() {
+	// 	wg.Wait()
+	// 	close(errs)
+	// }
+	// select {
+	// case err := <-errs:
+	// 	log.Printf("error: %v", err)
+	// }
+
 	// Output:
 }
