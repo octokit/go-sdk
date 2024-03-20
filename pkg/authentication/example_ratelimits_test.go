@@ -32,13 +32,13 @@ func ExampleApiClient_User_rateLimits() {
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
-	// adapter.SetBaseUrl("http://api.github.localhost")
+	adapter.SetBaseUrl("http://api.github.localhost")
 
 	client := github.NewApiClient(adapter)
 	requestCountMutex := &sync.Mutex{}
 	requestCount := 0
 
-	// errs := make(chan error)
+	errs := make(chan error)
 
 	for {
 		var wg sync.WaitGroup
@@ -57,6 +57,7 @@ func ExampleApiClient_User_rateLimits() {
 				}
 				repos, err := client.User().Repos().Get(context.Background(), requestConfig)
 				if err != nil {
+					errs <- err
 					log.Fatalf("error getting repositories: %v", err)
 				}
 				requestCountMutex.Lock()
@@ -80,19 +81,18 @@ func ExampleApiClient_User_rateLimits() {
 				if len(repos) == 0 && err == nil {
 					page = 0
 					queryParams.Page = &page
+					defer wg.Done()
 				}
 			}()
 		}
+	go func() {
+		wg.Wait()
+		close(errs)
+	}()
+	select {
+	case err := <-errs:
+		log.Printf("error: %v", err)
 	}
-
-	// go func() {
-	// 	wg.Wait()
-	// 	close(errs)
-	// }
-	// select {
-	// case err := <-errs:
-	// 	log.Printf("error: %v", err)
-	// }
-
+	}
 	// Output:
 }
