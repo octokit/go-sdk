@@ -12,7 +12,7 @@ type SecretScanningLocation struct {
     // The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
     typeEscaped *SecretScanningLocation_type
 }
-// SecretScanningLocation_SecretScanningLocation_details composed type wrapper for classes SecretScanningLocationCommitable, SecretScanningLocationDiscussionBodyable, SecretScanningLocationDiscussionCommentable, SecretScanningLocationDiscussionTitleable, SecretScanningLocationIssueBodyable, SecretScanningLocationIssueCommentable, SecretScanningLocationIssueTitleable, SecretScanningLocationPullRequestBodyable, SecretScanningLocationPullRequestCommentable, SecretScanningLocationPullRequestReviewable, SecretScanningLocationPullRequestReviewCommentable, SecretScanningLocationPullRequestTitleable
+// SecretScanningLocation_SecretScanningLocation_details composed type wrapper for classes SecretScanningLocationCommitable, SecretScanningLocationDiscussionBodyable, SecretScanningLocationDiscussionCommentable, SecretScanningLocationDiscussionTitleable, SecretScanningLocationIssueBodyable, SecretScanningLocationIssueCommentable, SecretScanningLocationIssueTitleable, SecretScanningLocationPullRequestBodyable, SecretScanningLocationPullRequestCommentable, SecretScanningLocationPullRequestReviewable, SecretScanningLocationPullRequestReviewCommentable, SecretScanningLocationPullRequestTitleable, SecretScanningLocationWikiCommitable
 type SecretScanningLocation_SecretScanningLocation_details struct {
     // Composed type representation for type SecretScanningLocationCommitable
     secretScanningLocationCommit SecretScanningLocationCommitable
@@ -38,6 +38,8 @@ type SecretScanningLocation_SecretScanningLocation_details struct {
     secretScanningLocationPullRequestReviewComment SecretScanningLocationPullRequestReviewCommentable
     // Composed type representation for type SecretScanningLocationPullRequestTitleable
     secretScanningLocationPullRequestTitle SecretScanningLocationPullRequestTitleable
+    // Composed type representation for type SecretScanningLocationWikiCommitable
+    secretScanningLocationWikiCommit SecretScanningLocationWikiCommitable
 }
 // NewSecretScanningLocation_SecretScanningLocation_details instantiates a new SecretScanningLocation_SecretScanningLocation_details and sets the default values.
 func NewSecretScanningLocation_SecretScanningLocation_details()(*SecretScanningLocation_SecretScanningLocation_details) {
@@ -135,6 +137,11 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScannin
 func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationPullRequestTitle()(SecretScanningLocationPullRequestTitleable) {
     return m.secretScanningLocationPullRequestTitle
 }
+// GetSecretScanningLocationWikiCommit gets the secretScanningLocationWikiCommit property value. Composed type representation for type SecretScanningLocationWikiCommitable
+// returns a SecretScanningLocationWikiCommitable when successful
+func (m *SecretScanningLocation_SecretScanningLocation_details) GetSecretScanningLocationWikiCommit()(SecretScanningLocationWikiCommitable) {
+    return m.secretScanningLocationWikiCommit
+}
 // Serialize serializes information the current object
 func (m *SecretScanningLocation_SecretScanningLocation_details) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetSecretScanningLocationCommit() != nil {
@@ -197,6 +204,11 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) Serialize(writer
         if err != nil {
             return err
         }
+    } else if m.GetSecretScanningLocationWikiCommit() != nil {
+        err := writer.WriteObjectValue("", m.GetSecretScanningLocationWikiCommit())
+        if err != nil {
+            return err
+        }
     }
     return nil
 }
@@ -248,6 +260,10 @@ func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScannin
 func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationPullRequestTitle(value SecretScanningLocationPullRequestTitleable)() {
     m.secretScanningLocationPullRequestTitle = value
 }
+// SetSecretScanningLocationWikiCommit sets the secretScanningLocationWikiCommit property value. Composed type representation for type SecretScanningLocationWikiCommitable
+func (m *SecretScanningLocation_SecretScanningLocation_details) SetSecretScanningLocationWikiCommit(value SecretScanningLocationWikiCommitable)() {
+    m.secretScanningLocationWikiCommit = value
+}
 type SecretScanningLocation_SecretScanningLocation_detailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetSecretScanningLocationCommit()(SecretScanningLocationCommitable)
@@ -262,6 +278,7 @@ type SecretScanningLocation_SecretScanningLocation_detailsable interface {
     GetSecretScanningLocationPullRequestReview()(SecretScanningLocationPullRequestReviewable)
     GetSecretScanningLocationPullRequestReviewComment()(SecretScanningLocationPullRequestReviewCommentable)
     GetSecretScanningLocationPullRequestTitle()(SecretScanningLocationPullRequestTitleable)
+    GetSecretScanningLocationWikiCommit()(SecretScanningLocationWikiCommitable)
     SetSecretScanningLocationCommit(value SecretScanningLocationCommitable)()
     SetSecretScanningLocationDiscussionBody(value SecretScanningLocationDiscussionBodyable)()
     SetSecretScanningLocationDiscussionComment(value SecretScanningLocationDiscussionCommentable)()
@@ -274,6 +291,7 @@ type SecretScanningLocation_SecretScanningLocation_detailsable interface {
     SetSecretScanningLocationPullRequestReview(value SecretScanningLocationPullRequestReviewable)()
     SetSecretScanningLocationPullRequestReviewComment(value SecretScanningLocationPullRequestReviewCommentable)()
     SetSecretScanningLocationPullRequestTitle(value SecretScanningLocationPullRequestTitleable)()
+    SetSecretScanningLocationWikiCommit(value SecretScanningLocationWikiCommitable)()
 }
 // NewSecretScanningLocation instantiates a new SecretScanningLocation and sets the default values.
 func NewSecretScanningLocation()(*SecretScanningLocation) {
