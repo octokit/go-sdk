@@ -34,6 +34,7 @@ type Root struct {
     // The gists_url property
     gists_url *string
     // The hub_url property
+    // Deprecated: 
     hub_url *string
     // The issue_search_url property
     issue_search_url *string
@@ -493,6 +494,7 @@ func (m *Root) GetGistsUrl()(*string) {
     return m.gists_url
 }
 // GetHubUrl gets the hub_url property value. The hub_url property
+// Deprecated: 
 // returns a *string when successful
 func (m *Root) GetHubUrl()(*string) {
     return m.hub_url
@@ -857,6 +859,7 @@ func (m *Root) SetGistsUrl(value *string)() {
     m.gists_url = value
 }
 // SetHubUrl sets the hub_url property value. The hub_url property
+// Deprecated: 
 func (m *Root) SetHubUrl(value *string)() {
     m.hub_url = value
 }
