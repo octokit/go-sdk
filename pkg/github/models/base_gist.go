@@ -21,12 +21,16 @@ type BaseGist struct {
     description *string
     // The files property
     files BaseGist_filesable
+    // The forks property
+    forks i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable
     // The forks_url property
     forks_url *string
     // The git_pull_url property
     git_pull_url *string
     // The git_push_url property
     git_push_url *string
+    // The history property
+    history i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable
     // The html_url property
     html_url *string
     // The id property
@@ -152,6 +156,16 @@ func (m *BaseGist) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["forks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetForks(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
+        }
+        return nil
+    }
     res["forks_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -179,6 +193,16 @@ func (m *BaseGist) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetGitPushUrl(val)
+        }
+        return nil
+    }
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHistory(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -279,6 +303,11 @@ func (m *BaseGist) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
 func (m *BaseGist) GetFiles()(BaseGist_filesable) {
     return m.files
 }
+// GetForks gets the forks property value. The forks property
+// returns a UntypedNodeable when successful
+func (m *BaseGist) GetForks()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
+    return m.forks
+}
 // GetForksUrl gets the forks_url property value. The forks_url property
 // returns a *string when successful
 func (m *BaseGist) GetForksUrl()(*string) {
@@ -293,6 +322,11 @@ func (m *BaseGist) GetGitPullUrl()(*string) {
 // returns a *string when successful
 func (m *BaseGist) GetGitPushUrl()(*string) {
     return m.git_push_url
+}
+// GetHistory gets the history property value. The history property
+// returns a UntypedNodeable when successful
+func (m *BaseGist) GetHistory()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
+    return m.history
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
 // returns a *string when successful
@@ -378,6 +412,12 @@ func (m *BaseGist) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err := writer.WriteObjectValue("forks", m.GetForks())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("forks_url", m.GetForksUrl())
         if err != nil {
             return err
@@ -391,6 +431,12 @@ func (m *BaseGist) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err := writer.WriteStringValue("git_push_url", m.GetGitPushUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("history", m.GetHistory())
         if err != nil {
             return err
         }
@@ -485,6 +531,10 @@ func (m *BaseGist) SetDescription(value *string)() {
 func (m *BaseGist) SetFiles(value BaseGist_filesable)() {
     m.files = value
 }
+// SetForks sets the forks property value. The forks property
+func (m *BaseGist) SetForks(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
+    m.forks = value
+}
 // SetForksUrl sets the forks_url property value. The forks_url property
 func (m *BaseGist) SetForksUrl(value *string)() {
     m.forks_url = value
@@ -496,6 +546,10 @@ func (m *BaseGist) SetGitPullUrl(value *string)() {
 // SetGitPushUrl sets the git_push_url property value. The git_push_url property
 func (m *BaseGist) SetGitPushUrl(value *string)() {
     m.git_push_url = value
+}
+// SetHistory sets the history property value. The history property
+func (m *BaseGist) SetHistory(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
+    m.history = value
 }
 // SetHtmlUrl sets the html_url property value. The html_url property
 func (m *BaseGist) SetHtmlUrl(value *string)() {
@@ -542,9 +596,11 @@ type BaseGistable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetFiles()(BaseGist_filesable)
+    GetForks()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetForksUrl()(*string)
     GetGitPullUrl()(*string)
     GetGitPushUrl()(*string)
+    GetHistory()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetHtmlUrl()(*string)
     GetId()(*string)
     GetNodeId()(*string)
@@ -560,9 +616,11 @@ type BaseGistable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetFiles(value BaseGist_filesable)()
+    SetForks(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetForksUrl(value *string)()
     SetGitPullUrl(value *string)()
     SetGitPushUrl(value *string)()
+    SetHistory(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetHtmlUrl(value *string)()
     SetId(value *string)()
     SetNodeId(value *string)()
