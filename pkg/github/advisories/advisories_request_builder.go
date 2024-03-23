@@ -25,7 +25,7 @@ type AdvisoriesRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
     Direction *GetDirectionQueryParameterType `uriparametername:"direction"`
     // If specified, only advisories for these ecosystems will be returned.
-    Ecosystem *GetEcosystemQueryParameterType `uriparametername:"ecosystem"`
+    Ecosystem *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SecurityAdvisoryEcosystems `uriparametername:"ecosystem"`
     // If specified, only advisories with this GHSA (GitHub Security Advisory) identifier will be returned.
     Ghsa_id *string `uriparametername:"ghsa_id"`
     // Whether to only return advisories that have been withdrawn.
