@@ -37,9 +37,9 @@ func ExampleApiClient_User_rateLimits() {
 	client := github.NewApiClient(adapter)
 	errGroup := &errgroup.Group{}
 	for i := 0; i < 10000; i++ {
+		unCapturedIndex := i
 		errGroup.Go(func() error {
 			viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-			unCapturedIndex := i
 			var page int32 = int32(unCapturedIndex)
 			queryParams := &user.ReposRequestBuilderGetQueryParameters{
 				Visibility: &viz,
