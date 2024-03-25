@@ -54,11 +54,6 @@ func ExampleApiClient_User_rateLimits() {
 				return err
 			}
 
-			// for _, repo := range repos {
-			// 	log.Printf("Repositories:\n")
-			// 	log.Printf("%v\n", *repo.GetFullName())
-			// }
-
 			for len(repos) > 0 && err == nil {
 				log.Printf("Repositories:\n")
 				for _, repo := range repos {
