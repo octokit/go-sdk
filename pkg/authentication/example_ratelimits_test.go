@@ -4,7 +4,6 @@ import (
 	"context"
 	"log"
 	"os"
-	"sync"
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	http "github.com/microsoft/kiota-http-go"
@@ -33,18 +32,15 @@ func ExampleApiClient_User_rateLimits() {
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
-	// adapter.SetBaseUrl("http://api.github.localhost")
+	adapter.SetBaseUrl("http://api.github.localhost:1024")
 
 	client := github.NewApiClient(adapter)
-	requestCountMutex := &sync.Mutex{}
-	requestCount := 0
-
 	errGroup := &errgroup.Group{}
-	// try batching 10 requests at the same time to start
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 10000; i++ {
 		errGroup.Go(func() error {
 			viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-			var page int32 = int32(i)
+			unCapturedIndex := i
+			var page int32 = int32(unCapturedIndex)
 			queryParams := &user.ReposRequestBuilderGetQueryParameters{
 				Visibility: &viz,
 				Page:       &page,
@@ -57,36 +53,33 @@ func ExampleApiClient_User_rateLimits() {
 				log.Fatalf("error getting repositories: %v", err)
 				return err
 			}
-			requestCountMutex.Lock()
-			requestCount++
-			log.Printf("requestCount: %v\n", requestCount)
-			requestCountMutex.Unlock()
+
+			// for _, repo := range repos {
+			// 	log.Printf("Repositories:\n")
+			// 	log.Printf("%v\n", *repo.GetFullName())
+			// }
 
 			for len(repos) > 0 && err == nil {
 				log.Printf("Repositories:\n")
 				for _, repo := range repos {
 					log.Printf("%v\n", *repo.GetFullName())
 				}
-				// page++
-				// queryParams.Page = &page
-				// requestConfig.QueryParameters = queryParams
-				// repos, err = client.User().Repos().Get(context.Background(), requestConfig)
-				// requestCountMutex.Lock()
-				// requestCount++
-				// log.Printf("requestCount: %v\n", requestCount)
-				// requestCountMutex.Unlock()
+				page++
+				queryParams.Page = &page
+				requestConfig.QueryParameters = queryParams
+				repos, err = client.User().Repos().Get(context.Background(), requestConfig)
 			}
-			// if len(repos) == 0 && err == nil {
-			// 	page = 0
-			// 	queryParams.Page = &page
-			// }
+			if len(repos) == 0 && err == nil {
+				page = 0
+				queryParams.Page = &page
+			}
 			return nil
 		})
-		if err := errGroup.Wait(); err != nil {
-			log.Fatalf("error from errgroup getting repositories: %v", err)
-		} else {
-			log.Printf("ran into no errors. requestCount: %v\n", requestCount)
-		}
+	}
+	if err := errGroup.Wait(); err != nil {
+		log.Fatalf("error from errgroup getting repositories: %v", err)
+	} else {
+		log.Printf("ran into no errors.")
 	}
 	// Output:
 }
