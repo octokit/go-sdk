@@ -6,7 +6,6 @@ import (
 	"os"
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
-	http "github.com/microsoft/kiota-http-go"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
@@ -28,7 +27,7 @@ func ExampleApiClient_User_rateLimits() {
 		auth.WithUserAgent("octokit/go-sdk.example-functions"),
 	)
 
-	adapter, err := http.NewNetHttpRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(tokenProvider, nil, nil, netHttpClient)
+	adapter, err := kiotaHttp.NewNetHttpRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(tokenProvider, nil, nil, netHttpClient)
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
