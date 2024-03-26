@@ -16,7 +16,7 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-// Work in progress script to trigger rate limits and then stop execution.
+// Work in progress script to trigger rate limits
 func ExampleApiClient_User_rateLimits() {
 	rateLimitHandler := handlers.NewRateLimitHandler()
 	middlewares := kiotaHttp.GetDefaultMiddlewares()
@@ -37,13 +37,10 @@ func ExampleApiClient_User_rateLimits() {
 	client := github.NewApiClient(adapter)
 	errGroup := &errgroup.Group{}
 	for i := 0; i < 10000; i++ {
-		unCapturedIndex := i
 		errGroup.Go(func() error {
 			viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-			var page int32 = int32(unCapturedIndex)
 			queryParams := &user.ReposRequestBuilderGetQueryParameters{
 				Visibility: &viz,
-				Page:       &page,
 			}
 			requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
 				QueryParameters: queryParams,
@@ -59,14 +56,6 @@ func ExampleApiClient_User_rateLimits() {
 				for _, repo := range repos {
 					log.Printf("%v\n", *repo.GetFullName())
 				}
-				page++
-				queryParams.Page = &page
-				requestConfig.QueryParameters = queryParams
-				repos, err = client.User().Repos().Get(context.Background(), requestConfig)
-			}
-			if len(repos) == 0 && err == nil {
-				page = 0
-				queryParams.Page = &page
 			}
 			return nil
 		})

@@ -92,7 +92,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 
 	if rateLimitType == Secondary {
 		log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", resp.Header.Get("Retry-After"))
-		retryAfterDuration, err := parseSecondaryRate(resp)
+		retryAfterDuration, err := parseRateLimit(resp)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
 		}
@@ -102,7 +102,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 
 	if rateLimitType == Primary {
 		log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), resp.Header.Get("Retry-After"))
-		retryAfterDuration, err := parsePrimaryRate(resp)
+		retryAfterDuration, err := parseRateLimit(resp)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (primary rate limit): %v", err)
 		}
@@ -113,17 +113,31 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 }
 
 func parsePrimaryRate(r *netHttp.Response) (*time.Duration, error) {
-	if v := r.Header.Get("Retry-After"); v != "" {
-		return parseRetryAfter(v)
+	// parse x-ratelimit-reset header instead of retry-after
+	// x-ratelimit-reset is a unix timestamp instead of seconds to wait
+	if v := r.Header.Get("X-RateLimit-Reset"); v != "" {
+		secondsSinceEpoch, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
+		if err != nil {
+			return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
+		}
+		retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
+		return &retryAfter, nil
 	}
-	return nil, fmt.Errorf("no Retry-After value found")
+	return nil, fmt.Errorf("no X-RateLimit-Reset value found")
+
+	// if v := r.Header.Get("Retry-After"); v != "" {
+	// 	return parseRetryAfter(v)
+	// }
+	// return nil, fmt.Errorf("no Retry-After value found")
 }
 
 // code stolen from https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go#L1096
 // TODO(kfcampbell): validate/give credit/import appropriately if possible
-// parseSecondaryRate parses the secondary rate related headers,
+// parseRateLimit parses the secondary rate related headers,
 // and returns the time to retry after.
-func parseSecondaryRate(r *netHttp.Response) (*time.Duration, error) {
+func parseRateLimit(r *netHttp.Response) (*time.Duration, error) {
+	// Retry-After corresponds to secondary rate limits and x-ratelimit-reset to primary rate limits.
+
 	// According to GitHub support, the "Retry-After" header value will be
 	// an integer which represents the number of seconds that one should
 	// wait before resuming making requests.
