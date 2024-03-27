@@ -43,6 +43,7 @@ func (options *RateLimitHandlerOptions) GetKey() abs.RequestOptionKey {
 func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
 	// TODO(kfcampbell): validate this method
 	return func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
+		log.Printf("x-ratelimit-remaining: %s\n", resp.Header.Get("x-ratelimit-remaining"))
 		if resp.StatusCode != 429 && resp.StatusCode != 403 {
 			return None
 		}
@@ -112,25 +113,6 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 		return handler.Intercept(pipeline, middlewareIndex, request)
 	}
 	return handler.retryRequest(ctx, pipeline, middlewareIndex, options, rateLimitType, request, resp)
-}
-
-func parsePrimaryRate(r *netHttp.Response) (*time.Duration, error) {
-	// parse x-ratelimit-reset header instead of retry-after
-	// x-ratelimit-reset is a unix timestamp instead of seconds to wait
-	if v := r.Header.Get("X-RateLimit-Reset"); v != "" {
-		secondsSinceEpoch, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
-		if err != nil {
-			return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
-		}
-		retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
-		return &retryAfter, nil
-	}
-	return nil, fmt.Errorf("no X-RateLimit-Reset value found")
-
-	// if v := r.Header.Get("Retry-After"); v != "" {
-	// 	return parseRetryAfter(v)
-	// }
-	// return nil, fmt.Errorf("no Retry-After value found")
 }
 
 // code stolen from https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go#L1096

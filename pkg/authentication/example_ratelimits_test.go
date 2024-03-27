@@ -35,7 +35,7 @@ func ExampleApiClient_User_rateLimits() {
 
 	client := github.NewApiClient(adapter)
 	errGroup := &errgroup.Group{}
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 10000; i++ {
 		errGroup.Go(func() error {
 			viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
 			queryParams := &user.ReposRequestBuilderGetQueryParameters{
@@ -44,18 +44,18 @@ func ExampleApiClient_User_rateLimits() {
 			requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
 				QueryParameters: queryParams,
 			}
-			repos, err := client.User().Repos().Get(context.Background(), requestConfig)
+			_, err := client.User().Repos().Get(context.Background(), requestConfig)
 			if err != nil {
 				log.Fatalf("error getting repositories: %v", err)
 				return err
 			}
 
-			if len(repos) > 0 {
-				log.Printf("Repositories:\n")
-				for _, repo := range repos {
-					log.Printf("%v\n", *repo.GetFullName())
-				}
-			}
+			// if len(repos) > 0 {
+			// 	log.Printf("Repositories:\n")
+			// 	for _, repo := range repos {
+			// 		log.Printf("%v\n", *repo.GetFullName())
+			// 	}
+			// }
 			return nil
 		})
 	}
