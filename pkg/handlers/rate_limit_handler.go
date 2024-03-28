@@ -43,7 +43,9 @@ func (options *RateLimitHandlerOptions) GetKey() abs.RequestOptionKey {
 func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
 	// TODO(kfcampbell): validate this method
 	return func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
-		log.Printf("x-ratelimit-remaining: %s\n", resp.Header.Get("x-ratelimit-remaining"))
+		if resp.Header.Get("x-ratelimit-remaining") != "" {
+			log.Printf("x-ratelimit-remaining: %s\n", resp.Header.Get("x-ratelimit-remaining"))
+		}
 		if resp.StatusCode != 429 && resp.StatusCode != 403 {
 			return None
 		}
@@ -96,6 +98,9 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
 		}
+		if *retryAfterDuration < 0 {
+			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
+		}
 		log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", *retryAfterDuration)
 		time.Sleep(*retryAfterDuration)
 		log.Printf("Retrying request after secondary rate limit sleep\n")
@@ -108,6 +113,9 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (primary rate limit): %v", err)
 		}
 		log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), *retryAfterDuration)
+		if *retryAfterDuration < 0 {
+			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
+		}
 		time.Sleep(*retryAfterDuration)
 		log.Printf("Retrying request after primary rate limit sleep\n")
 		return handler.Intercept(pipeline, middlewareIndex, request)
@@ -154,5 +162,8 @@ func parseRetryAfter(retryAfterValue string) (*time.Duration, error) {
 		return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
 	}
 	retryAfter := time.Duration(retryAfterSeconds) * time.Second
+	if retryAfter < 0 {
+		return nil, fmt.Errorf("retry-after duration is negative: %s, retryAfterValue: %s", retryAfter, retryAfterValue)
+	}
 	return &retryAfter, nil
 }
