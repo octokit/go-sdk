@@ -6,7 +6,7 @@ import (
 	"log"
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
-	http "github.com/microsoft/kiota-http-go"
+	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
 	"github.com/octokit/go-sdk/pkg/github/octocat"
@@ -20,7 +20,7 @@ func ExampleApiClient_Octocat() {
 		// auth.WithAuthorizationToken("ghp_your_token"),
 		auth.WithUserAgent("octokit/go-sdk.example-functions"),
 	)
-	adapter, err := http.NewNetHttpRequestAdapter(tokenProvider)
+	adapter, err := kiotaHttp.NewNetHttpRequestAdapter(tokenProvider)
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
