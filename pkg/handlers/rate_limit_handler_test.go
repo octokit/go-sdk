@@ -3,9 +3,35 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+	"net/http/httptest"
+	"sync"
 	"testing"
 	"time"
 )
+
+type NoopPipeline struct {
+	client *http.Client
+}
+
+func (pipeline *NoopPipeline) Next(req *http.Request, middlewareIndex int) (*http.Response, error) {
+	return pipeline.client.Do(req)
+}
+func newNoopPipeline() *NoopPipeline {
+	return &NoopPipeline{
+		client: getDefaultClientWithoutMiddleware(),
+	}
+}
+
+// used for internal unit testing
+func getDefaultClientWithoutMiddleware() *http.Client {
+	// the default client doesn't come with any other settings than making a new one does, and using the default client impacts behavior for non-kiota requests
+	return &http.Client{
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+		Timeout: time.Second * 100,
+	}
+}
 
 // paired with 200 status code
 var happyPathTestHeaders = `{
@@ -320,6 +346,57 @@ func TestParseRetryAfterNegativeValue(t *testing.T) {
 	result, err := parseRetryAfter(retryAfterValue)
 	if err == nil {
 		t.Errorf("Expected error, got %v", result)
+	}
+}
+
+func TestInterceptRateLimitHappyPath(t *testing.T) {
+	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_, _ = w.Write([]byte("test 200 response"))
+		w.WriteHeader(200)
+	}))
+	defer func() { testServer.Close() }()
+
+	handler := NewRateLimitHandler()
+	req, err := http.NewRequest("GET", testServer.URL, nil)
+	if err != nil {
+		t.Errorf("Failed to create request: %v", err)
+	}
+	resp, err := handler.Intercept(newNoopPipeline(), 0, req)
+	if err != nil {
+		t.Errorf("Expected no error, got %v", err)
+	}
+	if resp.StatusCode != 200 {
+		t.Errorf("Expected status code 200, got %v", resp.StatusCode)
+	}
+}
+
+func TestInterceptRateLimitSecondaryRateLimit(t *testing.T) {
+	initialRateLimit := sync.Once{}
+	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		initialRateLimit.Do(func() {
+			// since it's a test, only sleep 5 seconds before returning the secondary rate limit response
+			// in the interest of time
+			w.Header().Set("Retry-After", "5")
+			w.WriteHeader(403)
+			_, _ = w.Write([]byte("test secondary rate limit 403 response"))
+		})
+
+		w.WriteHeader(200)
+		_, _ = w.Write([]byte("test secondary rate limit 200 response"))
+	}))
+	defer func() { testServer.Close() }()
+
+	handler := NewRateLimitHandler()
+	req, err := http.NewRequest("GET", testServer.URL, nil)
+	if err != nil {
+		t.Errorf("Failed to create request: %v", err)
+	}
+	resp, err := handler.Intercept(newNoopPipeline(), 0, req)
+	if err != nil {
+		t.Errorf("Expected no error, got %v", err)
+	}
+	if resp.StatusCode != 200 {
+		t.Errorf("Expected status code 200, got %v", resp.StatusCode)
 	}
 }
 
