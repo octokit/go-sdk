@@ -299,6 +299,30 @@ func TestIsRateLimitedSecondaryRateLimit(t *testing.T) {
 	}
 }
 
+func TestParseRetryAfterBlankString(t *testing.T) {
+	retryAfterValue := ""
+	result, err := parseRetryAfter(retryAfterValue)
+	if err == nil {
+		t.Errorf("Expected error, got %v", result)
+	}
+}
+
+func TestParseRetryAfterInvalidString(t *testing.T) {
+	retryAfterValue := "xxx_invalid_string_xxx"
+	result, err := parseRetryAfter(retryAfterValue)
+	if err == nil {
+		t.Errorf("Expected error, got %v", result)
+	}
+}
+
+func TestParseRetryAfterNegativeValue(t *testing.T) {
+	retryAfterValue := "-1"
+	result, err := parseRetryAfter(retryAfterValue)
+	if err == nil {
+		t.Errorf("Expected error, got %v", result)
+	}
+}
+
 // setupHeaderMap is a utility function that takes in a JSON string of headers and
 // a status code and returns a hydrated http.Response object.
 func setupHeaderMap(headers string, statusCode int) (*http.Response, error) {
