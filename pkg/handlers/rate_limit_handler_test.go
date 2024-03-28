@@ -257,6 +257,48 @@ func TestParseRateLimitSecondaryRateLimit(t *testing.T) {
 	}
 }
 
+func TestIsRateLimitedHappyPath(t *testing.T) {
+	resp, err := setupHeaderMap(happyPathTestHeaders, 200)
+	if err != nil {
+		t.Errorf("Failed to set up headers: %v", err)
+	}
+
+	handler := NewRateLimitHandler()
+
+	rateLimit := handler.options.IsRateLimited()(nil, resp)
+	if rateLimit != None {
+		t.Errorf("Expected no rate limit, got %v", rateLimit)
+	}
+}
+
+func TestIsRateLimitedPrimaryRateLimit(t *testing.T) {
+	resp, err := setupHeaderMap(primaryRateLimitHeaders, 403)
+	if err != nil {
+		t.Errorf("Failed to set up headers: %v", err)
+	}
+
+	handler := NewRateLimitHandler()
+
+	rateLimit := handler.options.IsRateLimited()(nil, resp)
+	if rateLimit != Primary {
+		t.Errorf("Expected primary rate limit, got %v", rateLimit)
+	}
+}
+
+func TestIsRateLimitedSecondaryRateLimit(t *testing.T) {
+	resp, err := setupHeaderMap(secondaryRateLimitHeaders, 403)
+	if err != nil {
+		t.Errorf("Failed to set up headers: %v", err)
+	}
+
+	handler := NewRateLimitHandler()
+
+	rateLimit := handler.options.IsRateLimited()(nil, resp)
+	if rateLimit != Secondary {
+		t.Errorf("Expected secondary rate limit, got %v", rateLimit)
+	}
+}
+
 // setupHeaderMap is a utility function that takes in a JSON string of headers and
 // a status code and returns a hydrated http.Response object.
 func setupHeaderMap(headers string, statusCode int) (*http.Response, error) {

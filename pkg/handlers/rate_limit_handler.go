@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"log"
 	netHttp "net/http"
@@ -27,6 +28,8 @@ const (
 	Secondary
 )
 
+// TODO(kfcampbell): should IsRateLimited be a method on RateLimitHandlerOptions? it feels like this could be
+// better expressed on the handler itself
 type rateLimitHandlerOptionsInt interface {
 	abs.RequestOption
 	IsRateLimited() func(req *netHttp.Request, res *netHttp.Response) RateLimitType
@@ -41,21 +44,15 @@ func (options *RateLimitHandlerOptions) GetKey() abs.RequestOptionKey {
 }
 
 func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
-	// TODO(kfcampbell): validate this method
 	return func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
-		if resp.Header.Get("x-ratelimit-remaining") != "" {
-			log.Printf("x-ratelimit-remaining: %s\n", resp.Header.Get("x-ratelimit-remaining"))
-		}
 		if resp.StatusCode != 429 && resp.StatusCode != 403 {
 			return None
 		}
 
-		// abuse (secondary) rate limit situation
 		if resp.Header.Get("Retry-After") != "" && resp.Header.Get("x-ratelimit-remaining") != "0" {
-			return Secondary
+			return Secondary // secondary rate limits are abuse limits
 		}
 
-		// primary rate limit situation
 		if resp.Header.Get("x-ratelimit-remaining") == "0" {
 			return Primary
 		}
@@ -78,6 +75,14 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 		return resp, err
 	}
 
+	// temp: json-stringify response and save it to a temp file
+	respJson, err := json.Marshal(resp.Header)
+	if err != nil {
+		log.Printf("failed to marshal response: %v", err)
+	} else {
+		log.Printf("response: %s", string(respJson))
+	}
+
 	rateLimit := handler.options.IsRateLimited()(request, resp)
 
 	if rateLimit == Primary || rateLimit == Secondary {
@@ -93,7 +98,7 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiotaHttp.Pipeline, middlewareIndex int,
 	options rateLimitHandlerOptionsInt, rateLimitType RateLimitType, request *netHttp.Request, resp *netHttp.Response) (*netHttp.Response, error) {
 
-	if rateLimitType == Secondary {
+	if rateLimitType == Secondary || rateLimitType == Primary {
 		retryAfterDuration, err := parseRateLimit(resp)
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
@@ -101,25 +106,16 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 		if *retryAfterDuration < 0 {
 			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
 		}
-		log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", *retryAfterDuration)
+		if rateLimitType == Secondary {
+			log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", *retryAfterDuration)
+		} else if rateLimitType == Primary {
+			log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), *retryAfterDuration)
+		}
 		time.Sleep(*retryAfterDuration)
-		log.Printf("Retrying request after secondary rate limit sleep\n")
+		log.Printf("Retrying request after rate limit sleep\n")
 		return handler.Intercept(pipeline, middlewareIndex, request)
 	}
 
-	if rateLimitType == Primary {
-		retryAfterDuration, err := parseRateLimit(resp)
-		if err != nil {
-			return nil, fmt.Errorf("failed to parse retry-after header into duration (primary rate limit): %v", err)
-		}
-		log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), *retryAfterDuration)
-		if *retryAfterDuration < 0 {
-			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
-		}
-		time.Sleep(*retryAfterDuration)
-		log.Printf("Retrying request after primary rate limit sleep\n")
-		return handler.Intercept(pipeline, middlewareIndex, request)
-	}
 	return handler.retryRequest(ctx, pipeline, middlewareIndex, options, rateLimitType, request, resp)
 }
 
