@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
 	"sync"
@@ -9,6 +10,9 @@ import (
 	"time"
 )
 
+// NoopPipeline code for testing taken from our friends at Kiota:
+// see https://github.com/microsoft/kiota-http-go/blob/main/retry_handler_test.go#L15-L26
+// for the original source.
 type NoopPipeline struct {
 	client *http.Client
 }
@@ -370,12 +374,44 @@ func TestInterceptRateLimitHappyPath(t *testing.T) {
 	}
 }
 
+func TestInterceptRateLimitPrimaryRateLimit(t *testing.T) {
+	initialRateLimit := sync.Once{}
+	// since it's a test, only sleep 5 seconds before returning the
+	// primary rate limit response in the interest of time
+	resetTime := time.Now().Add(5 * time.Second).Unix()
+	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		initialRateLimit.Do(func() {
+			w.Header().Set("X-Ratelimit-Remaining", "0")
+			w.Header().Set("X-Ratelimit-Reset", fmt.Sprintf("%d", resetTime))
+			w.WriteHeader(403)
+			_, _ = w.Write([]byte("test primary rate limit 403 response"))
+		})
+
+		w.WriteHeader(200)
+		_, _ = w.Write([]byte("test primary rate limit 200 response"))
+	}))
+	defer func() { testServer.Close() }()
+
+	handler := NewRateLimitHandler()
+	req, err := http.NewRequest("GET", testServer.URL, nil)
+	if err != nil {
+		t.Errorf("Failed to create request: %v", err)
+	}
+	resp, err := handler.Intercept(newNoopPipeline(), 0, req)
+	if err != nil {
+		t.Errorf("Expected no error, got %v", err)
+	}
+	if resp.StatusCode != 200 {
+		t.Errorf("Expected status code 200, got %v", resp.StatusCode)
+	}
+}
+
 func TestInterceptRateLimitSecondaryRateLimit(t *testing.T) {
 	initialRateLimit := sync.Once{}
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		initialRateLimit.Do(func() {
-			// since it's a test, only sleep 5 seconds before returning the secondary rate limit response
-			// in the interest of time
+			// since it's a test, only sleep 5 seconds before returning the
+			// secondary rate limit response in the interest of time
 			w.Header().Set("Retry-After", "5")
 			w.WriteHeader(403)
 			_, _ = w.Write([]byte("test secondary rate limit 403 response"))

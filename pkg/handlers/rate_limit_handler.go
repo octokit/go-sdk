@@ -103,7 +103,7 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 	if rateLimitType == Secondary || rateLimitType == Primary {
 		retryAfterDuration, err := parseRateLimit(resp)
 		if err != nil {
-			return nil, fmt.Errorf("failed to parse retry-after header into duration (secondary rate limit): %v", err)
+			return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
 		}
 		if *retryAfterDuration < 0 {
 			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
