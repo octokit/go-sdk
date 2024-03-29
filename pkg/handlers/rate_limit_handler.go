@@ -74,14 +74,6 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 		return resp, err
 	}
 
-	// temp: json-stringify and log response headers so they may be saved and captured
-	// respJson, err := json.Marshal(resp.Header)
-	if err != nil {
-		log.Printf("failed to marshal response: %v", err)
-	} else {
-		// log.Printf("response: %s", string(respJson))
-	}
-
 	rateLimit := handler.options.IsRateLimited()(request, resp)
 
 	if rateLimit == Primary || rateLimit == Secondary {
@@ -119,8 +111,8 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 }
 
 // code stolen from https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go#L1096
-// TODO(kfcampbell): validate/give credit/import appropriately if possible
-// parseRateLimit parses the secondary rate related headers,
+// TODO(kfcampbell): give credit/import appropriately if possible
+// parseRateLimit parses the rate related headers,
 // and returns the time to retry after.
 func parseRateLimit(r *netHttp.Response) (*time.Duration, error) {
 	// Retry-After corresponds to secondary rate limits and x-ratelimit-reset to primary rate limits.
@@ -140,6 +132,8 @@ func parseRateLimit(r *netHttp.Response) (*time.Duration, error) {
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
 		}
+		// TODO(kfcampbell): this can be negative if this time is in the past.
+		// should we throw an error here to remain consistent?
 		retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
 		return &retryAfter, nil
 	}
