@@ -11,3 +11,7 @@ const APIVersionKey = "X-GitHub-Api-Version"
 
 // TODO(kfcampbell): get the version from the generated code somehow
 const APIVersionValue = "2022-11-28"
+
+const XRateLimitRemainingKey = "X-Ratelimit-Remaining"
+const XRateLimitResetKey = "X-Ratelimit-Reset"
+const RetryAfterKey = "Retry-After"

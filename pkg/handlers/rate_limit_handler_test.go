@@ -8,6 +8,8 @@ import (
 	"sync"
 	"testing"
 	"time"
+
+	"github.com/octokit/go-sdk/pkg/headers"
 )
 
 // NoopPipeline code for testing taken from our friends at Kiota:
@@ -381,8 +383,8 @@ func TestInterceptRateLimitPrimaryRateLimit(t *testing.T) {
 	resetTime := time.Now().Add(5 * time.Second).Unix()
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		initialRateLimit.Do(func() {
-			w.Header().Set("X-Ratelimit-Remaining", "0")
-			w.Header().Set("X-Ratelimit-Reset", fmt.Sprintf("%d", resetTime))
+			w.Header().Set(headers.XRateLimitRemainingKey, "0")
+			w.Header().Set(headers.XRateLimitResetKey, fmt.Sprintf("%d", resetTime))
 			w.WriteHeader(403)
 			_, _ = w.Write([]byte("test primary rate limit 403 response"))
 		})
@@ -412,7 +414,7 @@ func TestInterceptRateLimitSecondaryRateLimit(t *testing.T) {
 		initialRateLimit.Do(func() {
 			// since it's a test, only sleep 5 seconds before returning the
 			// secondary rate limit response in the interest of time
-			w.Header().Set("Retry-After", "5")
+			w.Header().Set(headers.RetryAfterKey, "5")
 			w.WriteHeader(403)
 			_, _ = w.Write([]byte("test secondary rate limit 403 response"))
 		})

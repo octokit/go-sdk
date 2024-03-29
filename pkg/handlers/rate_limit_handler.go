@@ -10,6 +10,7 @@ import (
 
 	abs "github.com/microsoft/kiota-abstractions-go"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
+	"github.com/octokit/go-sdk/pkg/headers"
 )
 
 type RateLimitHandler struct {
@@ -48,11 +49,11 @@ func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Reques
 			return None
 		}
 
-		if resp.Header.Get("Retry-After") != "" {
+		if resp.Header.Get(headers.RetryAfterKey) != "" {
 			return Secondary // secondary rate limits are abuse limits
 		}
 
-		if resp.Header.Get("X-Ratelimit-Remaining") == "0" {
+		if resp.Header.Get(headers.XRateLimitRemainingKey) == "0" {
 			return Primary
 		}
 
@@ -120,14 +121,14 @@ func parseRateLimit(r *netHttp.Response) (*time.Duration, error) {
 	// According to GitHub support, the "Retry-After" header value will be
 	// an integer which represents the number of seconds that one should
 	// wait before resuming making requests.
-	if v := r.Header.Get("Retry-After"); v != "" {
+	if v := r.Header.Get(headers.RetryAfterKey); v != "" {
 		return parseRetryAfter(v)
 	}
 
 	// According to GitHub support, endpoints might return x-ratelimit-reset instead,
 	// as an integer which represents the number of seconds since epoch UTC,
 	// representing the time to resume making requests.
-	if v := r.Header.Get("X-RateLimit-Reset"); v != "" {
+	if v := r.Header.Get(headers.XRateLimitResetKey); v != "" {
 		secondsSinceEpoch, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
 		if err != nil {
 			return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
