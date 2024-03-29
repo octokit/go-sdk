@@ -39,6 +39,7 @@ func NewItemItemGitTreesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // returns a GitTreeable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
+// returns a BasicError error when the service returns a 409 status code
 // returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
@@ -51,6 +52,7 @@ func (m *ItemItemGitTreesRequestBuilder) Post(ctx context.Context, body ItemItem
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
+        "409": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateGitTreeFromDiscriminatorValue, errorMapping)

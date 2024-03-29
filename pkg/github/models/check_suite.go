@@ -41,7 +41,7 @@ type CheckSuite struct {
     rerequestable *bool
     // The runs_rerequestable property
     runs_rerequestable *bool
-    // The status property
+    // The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
     status *CheckSuite_status
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -347,7 +347,7 @@ func (m *CheckSuite) GetRerequestable()(*bool) {
 func (m *CheckSuite) GetRunsRerequestable()(*bool) {
     return m.runs_rerequestable
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 // returns a *CheckSuite_status when successful
 func (m *CheckSuite) GetStatus()(*CheckSuite_status) {
     return m.status
@@ -562,7 +562,7 @@ func (m *CheckSuite) SetRerequestable(value *bool)() {
 func (m *CheckSuite) SetRunsRerequestable(value *bool)() {
     m.runs_rerequestable = value
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 func (m *CheckSuite) SetStatus(value *CheckSuite_status)() {
     m.status = value
 }

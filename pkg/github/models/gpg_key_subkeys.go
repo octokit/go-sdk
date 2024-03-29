@@ -33,6 +33,8 @@ type GpgKey_subkeys struct {
     raw_key *string
     // The revoked property
     revoked *bool
+    // The subkeys property
+    subkeys i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable
 }
 // NewGpgKey_subkeys instantiates a new GpgKey_subkeys and sets the default values.
 func NewGpgKey_subkeys()(*GpgKey_subkeys) {
@@ -226,6 +228,16 @@ func (m *GpgKey_subkeys) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["subkeys"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubkeys(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. The id property
@@ -257,6 +269,11 @@ func (m *GpgKey_subkeys) GetRawKey()(*string) {
 // returns a *bool when successful
 func (m *GpgKey_subkeys) GetRevoked()(*bool) {
     return m.revoked
+}
+// GetSubkeys gets the subkeys property value. The subkeys property
+// returns a UntypedNodeable when successful
+func (m *GpgKey_subkeys) GetSubkeys()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
+    return m.subkeys
 }
 // Serialize serializes information the current object
 func (m *GpgKey_subkeys) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -345,6 +362,12 @@ func (m *GpgKey_subkeys) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteObjectValue("subkeys", m.GetSubkeys())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -408,6 +431,10 @@ func (m *GpgKey_subkeys) SetRawKey(value *string)() {
 func (m *GpgKey_subkeys) SetRevoked(value *bool)() {
     m.revoked = value
 }
+// SetSubkeys sets the subkeys property value. The subkeys property
+func (m *GpgKey_subkeys) SetSubkeys(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
+    m.subkeys = value
+}
 type GpgKey_subkeysable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -424,6 +451,7 @@ type GpgKey_subkeysable interface {
     GetPublicKey()(*string)
     GetRawKey()(*string)
     GetRevoked()(*bool)
+    GetSubkeys()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     SetCanCertify(value *bool)()
     SetCanEncryptComms(value *bool)()
     SetCanEncryptStorage(value *bool)()
@@ -437,4 +465,5 @@ type GpgKey_subkeysable interface {
     SetPublicKey(value *string)()
     SetRawKey(value *string)()
     SetRevoked(value *bool)()
+    SetSubkeys(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
 }

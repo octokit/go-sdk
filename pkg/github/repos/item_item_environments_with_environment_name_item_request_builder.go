@@ -90,6 +90,11 @@ func (m *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) Put(ctx con
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Environmentable), nil
 }
+// Secrets the secrets property
+// returns a *ItemItemEnvironmentsItemSecretsRequestBuilder when successful
+func (m *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) Secrets()(*ItemItemEnvironmentsItemSecretsRequestBuilder) {
+    return NewItemItemEnvironmentsItemSecretsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation oAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -116,6 +121,11 @@ func (m *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) ToPutReques
         return nil, err
     }
     return requestInfo, nil
+}
+// Variables the variables property
+// returns a *ItemItemEnvironmentsItemVariablesRequestBuilder when successful
+func (m *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder) Variables()(*ItemItemEnvironmentsItemVariablesRequestBuilder) {
+    return NewItemItemEnvironmentsItemVariablesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemItemEnvironmentsWithEnvironment_nameItemRequestBuilder when successful

@@ -10,10 +10,12 @@ const (
     IN_PROGRESS_JOB_STATUS
     COMPLETED_JOB_STATUS
     WAITING_JOB_STATUS
+    REQUESTED_JOB_STATUS
+    PENDING_JOB_STATUS
 )
 
 func (i Job_status) String() string {
-    return []string{"queued", "in_progress", "completed", "waiting"}[i]
+    return []string{"queued", "in_progress", "completed", "waiting", "requested", "pending"}[i]
 }
 func ParseJob_status(v string) (any, error) {
     result := QUEUED_JOB_STATUS
@@ -26,6 +28,10 @@ func ParseJob_status(v string) (any, error) {
             result = COMPLETED_JOB_STATUS
         case "waiting":
             result = WAITING_JOB_STATUS
+        case "requested":
+            result = REQUESTED_JOB_STATUS
+        case "pending":
+            result = PENDING_JOB_STATUS
         default:
             return 0, errors.New("Unknown Job_status value: " + v)
     }

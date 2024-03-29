@@ -11,7 +11,7 @@ import (
 type ItemHooksItemDeliveriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHooksItemDeliveriesRequestBuilderGetQueryParameters returns a list of webhook deliveries for a webhook configured in an organization.
+// ItemHooksItemDeliveriesRequestBuilderGetQueryParameters returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 type ItemHooksItemDeliveriesRequestBuilderGetQueryParameters struct {
     // Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.
     Cursor *string `uriparametername:"cursor"`
@@ -42,7 +42,7 @@ func NewItemHooksItemDeliveriesRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemHooksItemDeliveriesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns a list of webhook deliveries for a webhook configured in an organization.
+// Get returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 // returns a []HookDeliveryItemable when successful
 // returns a BasicError error when the service returns a 400 status code
 // returns a ValidationError error when the service returns a 422 status code
@@ -70,7 +70,7 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) Get(ctx context.Context, request
     }
     return val, nil
 }
-// ToGetRequestInformation returns a list of webhook deliveries for a webhook configured in an organization.
+// ToGetRequestInformation returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 // returns a *RequestInformation when successful
 func (m *ItemHooksItemDeliveriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemHooksItemDeliveriesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

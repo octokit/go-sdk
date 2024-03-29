@@ -31,7 +31,7 @@ type ItemItemActionsWorkflowsItemRunsRequestBuilderGetQueryParameters struct {
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
-    // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.
+    // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
     Status *ia77747759b3f91e25296248277ed17f00dd8b68db982a03262ffc61b4720274c.GetStatusQueryParameterType `uriparametername:"status"`
 }
 // NewItemItemActionsWorkflowsItemRunsRequestBuilderInternal instantiates a new ItemItemActionsWorkflowsItemRunsRequestBuilder and sets the default values.

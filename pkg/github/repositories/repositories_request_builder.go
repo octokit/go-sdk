@@ -2,7 +2,6 @@ package repositories
 
 import (
     "context"
-    i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
@@ -15,16 +14,6 @@ type RepositoriesRequestBuilder struct {
 type RepositoriesRequestBuilderGetQueryParameters struct {
     // A repository ID. Only return repositories with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
-}
-// ByRepository_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repositories.item collection
-// returns a *WithRepository_ItemRequestBuilder when successful
-func (m *RepositoriesRequestBuilder) ByRepository_id(repository_id int32)(*WithRepository_ItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    urlTplParams["repository_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(repository_id), 10)
-    return NewWithRepository_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRepositoriesRequestBuilderInternal instantiates a new RepositoriesRequestBuilder and sets the default values.
 func NewRepositoriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RepositoriesRequestBuilder) {

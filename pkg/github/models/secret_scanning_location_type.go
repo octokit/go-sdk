@@ -7,6 +7,7 @@ type SecretScanningLocation_type int
 
 const (
     COMMIT_SECRETSCANNINGLOCATION_TYPE SecretScanningLocation_type = iota
+    WIKI_COMMIT_SECRETSCANNINGLOCATION_TYPE
     ISSUE_TITLE_SECRETSCANNINGLOCATION_TYPE
     ISSUE_BODY_SECRETSCANNINGLOCATION_TYPE
     ISSUE_COMMENT_SECRETSCANNINGLOCATION_TYPE
@@ -21,13 +22,15 @@ const (
 )
 
 func (i SecretScanningLocation_type) String() string {
-    return []string{"commit", "issue_title", "issue_body", "issue_comment", "discussion_title", "discussion_body", "discussion_comment", "pull_request_title", "pull_request_body", "pull_request_comment", "pull_request_review", "pull_request_review_comment"}[i]
+    return []string{"commit", "wiki_commit", "issue_title", "issue_body", "issue_comment", "discussion_title", "discussion_body", "discussion_comment", "pull_request_title", "pull_request_body", "pull_request_comment", "pull_request_review", "pull_request_review_comment"}[i]
 }
 func ParseSecretScanningLocation_type(v string) (any, error) {
     result := COMMIT_SECRETSCANNINGLOCATION_TYPE
     switch v {
         case "commit":
             result = COMMIT_SECRETSCANNINGLOCATION_TYPE
+        case "wiki_commit":
+            result = WIKI_COMMIT_SECRETSCANNINGLOCATION_TYPE
         case "issue_title":
             result = ISSUE_TITLE_SECRETSCANNINGLOCATION_TYPE
         case "issue_body":

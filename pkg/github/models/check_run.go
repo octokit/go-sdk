@@ -39,7 +39,7 @@ type CheckRun struct {
     pull_requests []PullRequestMinimalable
     // The started_at property
     started_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The phase of the lifecycle that the check is currently in.
+    // The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
     status *CheckRun_status
     // The url property
     url *string
@@ -318,7 +318,7 @@ func (m *CheckRun) GetPullRequests()([]PullRequestMinimalable) {
 func (m *CheckRun) GetStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.started_at
 }
-// GetStatus gets the status property value. The phase of the lifecycle that the check is currently in.
+// GetStatus gets the status property value. The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
 // returns a *CheckRun_status when successful
 func (m *CheckRun) GetStatus()(*CheckRun_status) {
     return m.status
@@ -512,7 +512,7 @@ func (m *CheckRun) SetPullRequests(value []PullRequestMinimalable)() {
 func (m *CheckRun) SetStartedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.started_at = value
 }
-// SetStatus sets the status property value. The phase of the lifecycle that the check is currently in.
+// SetStatus sets the status property value. The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
 func (m *CheckRun) SetStatus(value *CheckRun_status)() {
     m.status = value
 }
