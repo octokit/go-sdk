@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"log"
 	netHttp "net/http"
@@ -49,13 +48,11 @@ func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Reques
 			return None
 		}
 
-		// TODO(kfcampbell): i don't think that secondary rate limits actually come with
-		// x-ratelimit-remaining headers; additional validation is required here
-		if resp.Header.Get("Retry-After") != "" /*&& resp.Header.Get("x-ratelimit-remaining") != "0"*/ {
+		if resp.Header.Get("Retry-After") != "" {
 			return Secondary // secondary rate limits are abuse limits
 		}
 
-		if resp.Header.Get("x-ratelimit-remaining") == "0" {
+		if resp.Header.Get("X-Ratelimit-Remaining") == "0" {
 			return Primary
 		}
 
@@ -78,11 +75,11 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 	}
 
 	// temp: json-stringify and log response headers so they may be saved and captured
-	respJson, err := json.Marshal(resp.Header)
+	// respJson, err := json.Marshal(resp.Header)
 	if err != nil {
 		log.Printf("failed to marshal response: %v", err)
 	} else {
-		log.Printf("response: %s", string(respJson))
+		// log.Printf("response: %s", string(respJson))
 	}
 
 	rateLimit := handler.options.IsRateLimited()(request, resp)

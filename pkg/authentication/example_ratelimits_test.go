@@ -31,41 +31,41 @@ func ExampleApiClient_User_rateLimits() {
 	if err != nil {
 		log.Fatalf("Error creating request adapter: %v", err)
 	}
-	adapter.SetBaseUrl("http://api.github.localhost:1024")
+	// adapter.SetBaseUrl("http://api.github.localhost:1024")
 
 	client := github.NewApiClient(adapter)
 	errGroup := &errgroup.Group{}
-	for i := 0; i < 120; i++ {
+	for i := 0; i < 1200; i++ {
 		errGroup.Go(func() error {
 			viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-			inspectionOption := kiotaHttp.NewHeadersInspectionOptions()
-			inspectionOption.InspectResponseHeaders = true
+			// inspectionOption := kiotaHttp.NewHeadersInspectionOptions()
+			// inspectionOption.InspectResponseHeaders = true
 			queryParams := &user.ReposRequestBuilderGetQueryParameters{
 				Visibility: &viz,
 			}
-			options := make([]abstractions.RequestOption, 0)
-			options = append(options, inspectionOption)
+			// options := make([]abstractions.RequestOption, 0)
+			// options = append(options, inspectionOption)
 			requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
 				QueryParameters: queryParams,
-				Options:         options,
+				// Options:         options,
 			}
-			_, err := client.User().Repos().Get(context.Background(), requestConfig)
+			repos, err := client.User().Repos().Get(context.Background(), requestConfig)
 			if err != nil {
 				log.Fatalf("error getting repositories: %v", err)
 				return err
 			}
 
 			// link headers are used for pagination
-			if len(inspectionOption.ResponseHeaders.Get("link")) > 0 {
-				log.Printf("link headers: %v", inspectionOption.ResponseHeaders.Get("link"))
-			}
-
-			// if len(repos) > 0 {
-			// 	log.Printf("Repositories:\n")
-			// 	for _, repo := range repos {
-			// 		log.Printf("%v\n", *repo.GetFullName())
-			// 	}
+			// if len(inspectionOption.ResponseHeaders.Get("link")) > 0 {
+			// log.Printf("link headers: %v", inspectionOption.ResponseHeaders.Get("link"))
 			// }
+
+			if len(repos) > 0 {
+				log.Printf("Repositories:\n")
+				for _, repo := range repos {
+					log.Printf("%v\n", *repo.GetFullName())
+				}
+			}
 			return nil
 		})
 	}
