@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	abstractions "github.com/microsoft/kiota-abstractions-go"
+	abs "github.com/microsoft/kiota-abstractions-go"
 	"github.com/octokit/go-sdk/pkg"
 )
 
@@ -31,8 +31,8 @@ func main() {
 		log.Fatalf("error creating client: %v", err)
 	}
 
-	queryParams := &abstractions.DefaultQueryParameters{}
-	requestConfig := &abstractions.RequestConfiguration[abstractions.DefaultQueryParameters]{
+	queryParams := &abs.DefaultQueryParameters{}
+	requestConfig := &abs.RequestConfiguration[abs.DefaultQueryParameters]{
 		QueryParameters: queryParams,
 	}
 	zen, err := client.Zen().Get(context.Background(), requestConfig)
