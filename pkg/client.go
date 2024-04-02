@@ -11,7 +11,7 @@ import (
 )
 
 // NewApiClient is a convenience constructor to create a new instance of a
-// *github.ApiClient with the provided option functions.
+// Client (wrapper of *github.ApiClient) with the provided option functions.
 // By default, it includes a rate limiting middleware.
 func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	options := GetDefaultClientOptions()

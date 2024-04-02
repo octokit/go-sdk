@@ -12,11 +12,6 @@ import (
 )
 
 func main() {
-	// as a consumer, how do i want to use the default API client and constructor?
-	// tenets:
-	// - minimal chaining
-	// - functional options
-	// - defaults include rate-limiting middleware and other sensible values (included without specification)
 	client, err := pkg.NewApiClient(
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),

@@ -22,8 +22,7 @@ type RateLimitHandler struct {
 // RateLimitHandlerOptions is a struct that holds options for the RateLimitHandler.
 // In the future, this could hold different strategies for handling rate limits:
 // e.g. exponential backoff, jitter, throttling, etc.
-type RateLimitHandlerOptions struct {
-}
+type RateLimitHandlerOptions struct{}
 
 // rateLimitHandlerOptions (lowercase, private) that RateLimitHandlerOptions
 // (uppercase, public) implements.
