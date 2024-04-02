@@ -13,13 +13,27 @@ import (
 	"github.com/octokit/go-sdk/pkg/headers"
 )
 
+// RateLimitHandler is a middleware that detects primary and secondary rate
+// limits and retries requests after the appropriate time when necessary.
 type RateLimitHandler struct {
 	options RateLimitHandlerOptions
 }
 
+// RateLimitHandlerOptions is a struct that holds options for the RateLimitHandler.
+// In the future, this could hold different strategies for handling rate limits:
+// e.g. exponential backoff, jitter, throttling, etc.
 type RateLimitHandlerOptions struct {
 }
 
+// rateLimitHandlerOptions (lowercase, private) that RateLimitHandlerOptions
+// (uppercase, public) implements.
+type rateLimitHandlerOptions interface {
+	abs.RequestOption
+	IsRateLimited() func(req *netHttp.Request, res *netHttp.Response) RateLimitType
+}
+
+// RateLimitType is an enum that represents either None, Primary,
+// or Secondary rate limiting
 type RateLimitType int
 
 const (
@@ -28,21 +42,18 @@ const (
 	Secondary
 )
 
-// TODO(kfcampbell): should IsRateLimited be a method on RateLimitHandlerOptions? it feels like this could be
-// better expressed on the handler itself
-type rateLimitHandlerOptionsInt interface {
-	abs.RequestOption
-	IsRateLimited() func(req *netHttp.Request, res *netHttp.Response) RateLimitType
-}
-
 var rateLimitKeyValue = abs.RequestOptionKey{
 	Key: "RateLimitHandler",
 }
 
+// GetKey returns the unique RateLimitHandler key, used by Kiota to store
+// request options.
 func (options *RateLimitHandlerOptions) GetKey() abs.RequestOptionKey {
 	return rateLimitKeyValue
 }
 
+// IsRateLimited returns a function that determines if an HTTP response was
+// rate-limited, and if so, what type of rate limit was hit.
 func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
 	return func(req *netHttp.Request, resp *netHttp.Response) RateLimitType {
 		if resp.StatusCode != 429 && resp.StatusCode != 403 {
@@ -61,14 +72,13 @@ func (options *RateLimitHandlerOptions) IsRateLimited() func(req *netHttp.Reques
 	}
 }
 
+// NewRateLimitHandler creates a new RateLimitHandler with default options.
 func NewRateLimitHandler() *RateLimitHandler {
-	return NewRateLimitHandlerWithOptions(RateLimitHandlerOptions{})
+	return &RateLimitHandler{}
 }
 
-func NewRateLimitHandlerWithOptions(options RateLimitHandlerOptions) *RateLimitHandler {
-	return &RateLimitHandler{options: options}
-}
-
+// Intercept tries a request. If the response shows it was rate-limited, it
+// retries the request after the appropriate period of time.
 func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewareIndex int, request *netHttp.Request) (*netHttp.Response, error) {
 	resp, err := pipeline.Next(request, middlewareIndex)
 	if err != nil {
@@ -78,7 +88,7 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 	rateLimit := handler.options.IsRateLimited()(request, resp)
 
 	if rateLimit == Primary || rateLimit == Secondary {
-		reqOption, ok := request.Context().Value(rateLimitKeyValue).(rateLimitHandlerOptionsInt)
+		reqOption, ok := request.Context().Value(rateLimitKeyValue).(rateLimitHandlerOptions)
 		if !ok {
 			reqOption = &handler.options
 		}
@@ -87,8 +97,9 @@ func (handler RateLimitHandler) Intercept(pipeline kiotaHttp.Pipeline, middlewar
 	return resp, nil
 }
 
+// retryRequest retries a request if it has been rate-limited.
 func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiotaHttp.Pipeline, middlewareIndex int,
-	options rateLimitHandlerOptionsInt, rateLimitType RateLimitType, request *netHttp.Request, resp *netHttp.Response) (*netHttp.Response, error) {
+	options rateLimitHandlerOptions, rateLimitType RateLimitType, request *netHttp.Request, resp *netHttp.Response) (*netHttp.Response, error) {
 
 	if rateLimitType == Secondary || rateLimitType == Primary {
 		retryAfterDuration, err := parseRateLimit(resp)
@@ -96,12 +107,12 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 			return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
 		}
 		if *retryAfterDuration < 0 {
-			log.Printf("retry-after duration is negative: %s", *retryAfterDuration)
+			log.Printf("retry-after duration is negative: %s; sleeping until next request will be a no-op", *retryAfterDuration)
 		}
 		if rateLimitType == Secondary {
 			log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", *retryAfterDuration)
 		} else if rateLimitType == Primary {
-			log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get("x-ratelimit-limit"), *retryAfterDuration)
+			log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get(headers.XRateLimitResetKey), *retryAfterDuration)
 		}
 		time.Sleep(*retryAfterDuration)
 		log.Printf("Retrying request after rate limit sleep\n")
@@ -111,43 +122,42 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 	return handler.retryRequest(ctx, pipeline, middlewareIndex, options, rateLimitType, request, resp)
 }
 
-// code stolen from https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go#L1096
-// TODO(kfcampbell): give credit/import appropriately if possible
-// parseRateLimit parses the rate related headers,
-// and returns the time to retry after.
+// parseRateLimit parses rate-limit related headers and returns an appropriate
+// time.Duration to retry the request after based on the header information.
+// Much of this code was taken from the google/go-github library:
+// see https://github.com/google/go-github/blob/0e3ab5807f0e9bc6ea690f1b49e94b78259f3681/github/github.go
+// Note that "Retry-After" headers correspond to secondary rate limits and
+// "x-ratelimit-reset" headers to primary rate limits.
+// Docs for rate limit headers:
+// https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api?apiVersion=2022-11-28#handle-rate-limit-errors-appropriately
 func parseRateLimit(r *netHttp.Response) (*time.Duration, error) {
-	// Retry-After corresponds to secondary rate limits and x-ratelimit-reset to primary rate limits.
 
-	// According to GitHub support, the "Retry-After" header value will be
-	// an integer which represents the number of seconds that one should
-	// wait before resuming making requests.
+	// "If the retry-after response header is present, you should not retry
+	// your request until after that many seconds has elapsed."
+	// (see docs link above)
 	if v := r.Header.Get(headers.RetryAfterKey); v != "" {
 		return parseRetryAfter(v)
 	}
 
-	// According to GitHub support, endpoints might return x-ratelimit-reset instead,
-	// as an integer which represents the number of seconds since epoch UTC,
-	// representing the time to resume making requests.
+	// "If the x-ratelimit-remaining header is 0, you should not make another
+	// request until after the time specified by the x-ratelimit-reset
+	// header. The x-ratelimit-reset header is in UTC epoch seconds.""
+	// (see docs link above)
 	if v := r.Header.Get(headers.XRateLimitResetKey); v != "" {
-		secondsSinceEpoch, err := strconv.ParseInt(v, 10, 64) // Error handling is noop.
-		if err != nil {
-			return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
-		}
-		// TODO(kfcampbell): this can be negative if this time is in the past.
-		// should we throw an error here to remain consistent?
-		retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
-		return &retryAfter, nil
+		return parseXRateLimitReset(v)
 	}
 
 	return nil, nil
 }
 
+// parseRetryAfter parses the "Retry-After" header used for secondary
+// rate limits.
 func parseRetryAfter(retryAfterValue string) (*time.Duration, error) {
 	if retryAfterValue == "" {
 		return nil, fmt.Errorf("could not parse emtpy RetryAfter string")
 	}
 
-	retryAfterSeconds, err := strconv.ParseInt(retryAfterValue, 10, 64) // Error handling is noop.
+	retryAfterSeconds, err := strconv.ParseInt(retryAfterValue, 10, 64)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
 	}
@@ -155,5 +165,18 @@ func parseRetryAfter(retryAfterValue string) (*time.Duration, error) {
 	if retryAfter < 0 {
 		return nil, fmt.Errorf("retry-after duration is negative: %s, retryAfterValue: %s", retryAfter, retryAfterValue)
 	}
+	return &retryAfter, nil
+}
+
+// parseXRateLimitReset parses the "x-ratelimit-reset" header used for primary
+// rate limits
+func parseXRateLimitReset(rateLimitResetValue string) (*time.Duration, error) {
+	secondsSinceEpoch, err := strconv.ParseInt(rateLimitResetValue, 10, 64)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
+	}
+	// TODO(kfcampbell): this can be negative if this time is in the past.
+	// should we throw an error here to remain consistent?
+	retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
 	return &retryAfter, nil
 }
