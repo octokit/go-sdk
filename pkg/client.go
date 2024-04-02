@@ -20,9 +20,12 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	}
 
 	rateLimitHandler := handlers.NewRateLimitHandler()
-	middlewares := kiotaHttp.GetDefaultMiddlewares()
+	middlewares := options.Middleware
 	middlewares = append(middlewares, rateLimitHandler)
 	netHttpClient := kiotaHttp.GetDefaultClient(middlewares...)
+	if options.RequestTimeout != 0 {
+		netHttpClient.Timeout = options.RequestTimeout
+	}
 
 	tokenProviderOptions := []auth.TokenProviderOption{
 		auth.WithAPIVersion(options.APIVersion),
@@ -37,6 +40,9 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	adapter, err := kiotaHttp.NewNetHttpRequestAdapterWithParseNodeFactoryAndSerializationWriterFactoryAndHttpClient(tokenProvider, nil, nil, netHttpClient)
 	if err != nil {
 		return nil, fmt.Errorf("failed to create request adapter: %v", err)
+	}
+	if options.BaseURL != "" {
+		adapter.SetBaseUrl(options.BaseURL)
 	}
 
 	client := github.NewApiClient(adapter)

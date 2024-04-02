@@ -111,7 +111,8 @@ func (handler RateLimitHandler) retryRequest(ctx context.Context, pipeline kiota
 		if rateLimitType == Secondary {
 			log.Printf("Abuse detection mechanism (secondary rate limit) triggered, sleeping for %s before retrying\n", *retryAfterDuration)
 		} else if rateLimitType == Primary {
-			log.Printf("Primary rate limit %s reached, sleeping for %s before retrying\n", resp.Header.Get(headers.XRateLimitResetKey), *retryAfterDuration)
+			log.Printf("Primary rate limit (reset: %s) reached, sleeping for %s before retrying\n", resp.Header.Get(headers.XRateLimitResetKey), *retryAfterDuration)
+			log.Printf("Rate limit information: %s: %s, %s: %s, %s: %s\n", headers.XRateLimitLimitKey, resp.Header.Get(headers.XRateLimitLimitKey), headers.XRateLimitUsedKey, resp.Header.Get(headers.XRateLimitUsedKey), headers.XRateLimitResourceKey, resp.Header.Get(headers.XRateLimitResourceKey))
 		}
 		time.Sleep(*retryAfterDuration)
 		log.Printf("Retrying request after rate limit sleep\n")
