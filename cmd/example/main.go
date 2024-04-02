@@ -20,7 +20,6 @@ func main() {
 	client, err := pkg.NewApiClient(
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),
-		pkg.WithRateLimitingMiddleware(),
 		pkg.WithBaseUrl("https://api.github.com"),
 		pkg.WithAuthorizationToken(os.Getenv("GITHUB_TOKEN")),
 	)

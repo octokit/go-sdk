@@ -10,6 +10,9 @@ import (
 	"github.com/octokit/go-sdk/pkg/handlers"
 )
 
+// NewApiClient is a convenience constructor to create a new instance of a
+// *github.ApiClient with the provided option functions.
+// By default, it includes a rate limiting middleware.
 func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	options := GetDefaultClientOptions()
 	for _, optionFunc := range optionFuncs {
@@ -53,7 +56,7 @@ type Client struct {
 // the netHttpClient, the middleware, and the adapter. If we can possibly override it, it should
 // be in this struct.
 // In the constructor, when helper functions apply options, they'll be applied to this struct.
-// Then later in the constructor when the chain of objects are put together, all configuration
+// Then later in the constructor when that chain of objects is put together, all configuration
 // will be drawn from this (hydrated) struct.
 type ClientOptions struct {
 	UserAgent      string
@@ -77,41 +80,36 @@ func GetDefaultClientOptions() *ClientOptions {
 // ClientOptionFunc provides a functional pattern for client configuration
 type ClientOptionFunc func(*ClientOptions)
 
-// example of an auth token provider option
+// WithUserAgent configures the client with the given user agent string.
 func WithUserAgent(userAgent string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.UserAgent = userAgent
 	}
 }
 
-// example of a netHttpClient option
+// WithRequestTimeout configures the client with the given request timeout.
 func WithRequestTimeout(timeout time.Duration) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.RequestTimeout = timeout
 	}
 }
 
-// example of a middleware option
-func WithRateLimitingMiddleware() ClientOptionFunc {
-	return func(c *ClientOptions) {
-		rateLimitHandler := handlers.NewRateLimitHandler()
-		c.Middleware = append(c.Middleware, rateLimitHandler)
-	}
-}
-
-// example of an adapter option
+// WithBaseUrl configures the client with the given base URL.
 func WithBaseUrl(baseURL string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.BaseURL = baseURL
 	}
 }
 
+// WithAuthorizationToken configures the client with the given
+// Personal Authorization Token.
 func WithAuthorizationToken(token string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.Token = token
 	}
 }
 
+// WithAPIVersion configures the client with the given API version.
 func WithAPIVersion(version string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.APIVersion = version
