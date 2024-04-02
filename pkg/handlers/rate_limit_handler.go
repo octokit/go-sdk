@@ -162,9 +162,6 @@ func parseRetryAfter(retryAfterValue string) (*time.Duration, error) {
 		return nil, fmt.Errorf("failed to parse retry-after header into duration: %v", err)
 	}
 	retryAfter := time.Duration(retryAfterSeconds) * time.Second
-	if retryAfter < 0 {
-		return nil, fmt.Errorf("retry-after duration is negative: %s, retryAfterValue: %s", retryAfter, retryAfterValue)
-	}
 	return &retryAfter, nil
 }
 
@@ -175,8 +172,6 @@ func parseXRateLimitReset(rateLimitResetValue string) (*time.Duration, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse x-ratelimit-reset header into duration: %v", err)
 	}
-	// TODO(kfcampbell): this can be negative if this time is in the past.
-	// should we throw an error here to remain consistent?
 	retryAfter := time.Until(time.Unix(secondsSinceEpoch, 0))
 	return &retryAfter, nil
 }

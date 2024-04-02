@@ -12,7 +12,7 @@ import (
 	"github.com/octokit/go-sdk/pkg/headers"
 )
 
-// NoopPipeline code for testing taken from our friends at Kiota:
+// NoopPipeline code for testing taken from our colleagues at Kiota:
 // see https://github.com/microsoft/kiota-http-go/blob/main/retry_handler_test.go#L15-L26
 // for the original source.
 type NoopPipeline struct {
@@ -22,6 +22,7 @@ type NoopPipeline struct {
 func (pipeline *NoopPipeline) Next(req *http.Request, middlewareIndex int) (*http.Response, error) {
 	return pipeline.client.Do(req)
 }
+
 func newNoopPipeline() *NoopPipeline {
 	return &NoopPipeline{
 		client: getDefaultClientWithoutMiddleware(),
@@ -347,9 +348,9 @@ func TestParseRetryAfterInvalidString(t *testing.T) {
 	}
 }
 
-func TestParseRetryAfterNegativeValue(t *testing.T) {
-	retryAfterValue := "-1"
-	result, err := parseRetryAfter(retryAfterValue)
+func TestParseXRateLimitResetInvalidString(t *testing.T) {
+	xRateLimitResetValue := "xxx_invalid_string_xxx"
+	result, err := parseXRateLimitReset(xRateLimitResetValue)
 	if err == nil {
 		t.Errorf("Expected error, got %v", result)
 	}
