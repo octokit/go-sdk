@@ -10,11 +10,82 @@ type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody struct {
     // An ordered list of the allowed values of the property.The property can have up to 200 allowed values.
     allowed_values []string
     // Default value of the property
-    default_value *string
+    default_value ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable
     // Short description of the property
     description *string
     // Whether the property is required.
     required *bool
+}
+// ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value composed type wrapper for classes string
+type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value struct {
+    // Composed type representation for type string
+    string *string
+}
+// NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value instantiates a new ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value and sets the default values.
+func NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value()(*ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) {
+    m := &ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value{
+    }
+    return m
+}
+// CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetIsComposedType()(bool) {
+    return true
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetString()(*string) {
+    return m.string
+}
+// Serialize serializes information the current object
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) SetString(value *string)() {
+    m.string = value
+}
+type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetString()(*string)
+    SetString(value *string)()
 }
 // NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody instantiates a new ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody and sets the default values.
 func NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody()(*ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) {
@@ -39,8 +110,8 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetAllo
     return m.allowed_values
 }
 // GetDefaultValue gets the default_value property value. Default value of the property
-// returns a *string when successful
-func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetDefaultValue()(*string) {
+// returns a ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetDefaultValue()(ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable) {
     return m.default_value
 }
 // GetDescription gets the description property value. Short description of the property
@@ -69,12 +140,12 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) GetFiel
         return nil
     }
     res["default_value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetObjectValue(CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDefaultValue(val)
+            m.SetDefaultValue(val.(ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable))
         }
         return nil
     }
@@ -114,7 +185,7 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) Seriali
         }
     }
     {
-        err := writer.WriteStringValue("default_value", m.GetDefaultValue())
+        err := writer.WriteObjectValue("default_value", m.GetDefaultValue())
         if err != nil {
             return err
         }
@@ -148,7 +219,7 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetAllo
     m.allowed_values = value
 }
 // SetDefaultValue sets the default_value property value. Default value of the property
-func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetDefaultValue(value *string)() {
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) SetDefaultValue(value ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable)() {
     m.default_value = value
 }
 // SetDescription sets the description property value. Short description of the property
@@ -163,11 +234,11 @@ type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBodyable interfac
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowedValues()([]string)
-    GetDefaultValue()(*string)
+    GetDefaultValue()(ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable)
     GetDescription()(*string)
     GetRequired()(*bool)
     SetAllowedValues(value []string)()
-    SetDefaultValue(value *string)()
+    SetDefaultValue(value ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable)()
     SetDescription(value *string)()
     SetRequired(value *bool)()
 }
