@@ -21,7 +21,7 @@ type ItemWithOrgPatchRequestBody struct {
     dependabot_security_updates_enabled_for_new_repositories *bool
     // Whether dependency graph is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
     dependency_graph_enabled_for_new_repositories *bool
-    // The description of the company.
+    // The description of the company. The maximum size is 160 characters.
     description *string
     // The publicly visible email address.
     email *string
@@ -114,7 +114,7 @@ func (m *ItemWithOrgPatchRequestBody) GetDependabotSecurityUpdatesEnabledForNewR
 func (m *ItemWithOrgPatchRequestBody) GetDependencyGraphEnabledForNewRepositories()(*bool) {
     return m.dependency_graph_enabled_for_new_repositories
 }
-// GetDescription gets the description property value. The description of the company.
+// GetDescription gets the description property value. The description of the company. The maximum size is 160 characters.
 // returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetDescription()(*string) {
     return m.description
@@ -694,7 +694,7 @@ func (m *ItemWithOrgPatchRequestBody) SetDependabotSecurityUpdatesEnabledForNewR
 func (m *ItemWithOrgPatchRequestBody) SetDependencyGraphEnabledForNewRepositories(value *bool)() {
     m.dependency_graph_enabled_for_new_repositories = value
 }
-// SetDescription sets the description property value. The description of the company.
+// SetDescription sets the description property value. The description of the company. The maximum size is 160 characters.
 func (m *ItemWithOrgPatchRequestBody) SetDescription(value *string)() {
     m.description = value
 }
