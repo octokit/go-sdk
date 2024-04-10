@@ -11,3 +11,13 @@ const APIVersionKey = "X-GitHub-Api-Version"
 
 // TODO(kfcampbell): get the version from the generated code somehow
 const APIVersionValue = "2022-11-28"
+
+// documentation on rate limit headers is available here:
+// https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?apiVersion=2022-11-28#checking-the-status-of-your-rate-limit
+const XRateLimitRemainingKey = "X-Ratelimit-Remaining"
+const XRateLimitResetKey = "X-Ratelimit-Reset"
+const RetryAfterKey = "Retry-After"
+
+const XRateLimitLimitKey = "X-Ratelimit-Limit"
+const XRateLimitUsedKey = "X-Ratelimit-Used"
+const XRateLimitResourceKey = "X-Ratelimit-Resource"
