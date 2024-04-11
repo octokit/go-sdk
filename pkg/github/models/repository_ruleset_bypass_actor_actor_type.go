@@ -6,26 +6,26 @@ import (
 type RepositoryRulesetBypassActor_actor_type int
 
 const (
-    REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE RepositoryRulesetBypassActor_actor_type = iota
-    TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
-    INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+    INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE RepositoryRulesetBypassActor_actor_type = iota
     ORGANIZATIONADMIN_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+    REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+    TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
 )
 
 func (i RepositoryRulesetBypassActor_actor_type) String() string {
-    return []string{"RepositoryRole", "Team", "Integration", "OrganizationAdmin"}[i]
+    return []string{"Integration", "OrganizationAdmin", "RepositoryRole", "Team"}[i]
 }
 func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
-    result := REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+    result := INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
     switch v {
-        case "RepositoryRole":
-            result = REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
-        case "Team":
-            result = TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         case "Integration":
             result = INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         case "OrganizationAdmin":
             result = ORGANIZATIONADMIN_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+        case "RepositoryRole":
+            result = REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+        case "Team":
+            result = TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         default:
             return 0, errors.New("Unknown RepositoryRulesetBypassActor_actor_type value: " + v)
     }
