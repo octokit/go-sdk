@@ -2,7 +2,7 @@
   "descriptionHash": "7F0740EB8A3E332A77B750DA0E30F52D23DA5545436E104CA82F726B5F496D768A3B9648963ECA5F1707CC55238A59AD4B3ED861C5D15C1593BAC554E330DFCC",
   "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.14.0-preview.202404110001",
+  "kiotaVersion": "1.14.0-preview.202404180001",
   "clientClassName": "ApiClient",
   "clientNamespaceName": "github.com/octokit/go-sdk/pkg/github/",
   "language": "Go",
