@@ -46,7 +46,7 @@ type GlobalAdvisory struct {
     // The API URL for the advisory.
     url *string
     // The products and respective version ranges affected by the advisory.
-    vulnerabilities []GlobalAdvisory_vulnerabilitiesable
+    vulnerabilities []Vulnerabilityable
     // The date and time of when the advisory was withdrawn, in ISO 8601 format.
     withdrawn_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -305,15 +305,15 @@ func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["vulnerabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateGlobalAdvisory_vulnerabilitiesFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateVulnerabilityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]GlobalAdvisory_vulnerabilitiesable, len(val))
+            res := make([]Vulnerabilityable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(GlobalAdvisory_vulnerabilitiesable)
+                    res[i] = v.(Vulnerabilityable)
                 }
             }
             m.SetVulnerabilities(res)
@@ -403,8 +403,8 @@ func (m *GlobalAdvisory) GetUrl()(*string) {
     return m.url
 }
 // GetVulnerabilities gets the vulnerabilities property value. The products and respective version ranges affected by the advisory.
-// returns a []GlobalAdvisory_vulnerabilitiesable when successful
-func (m *GlobalAdvisory) GetVulnerabilities()([]GlobalAdvisory_vulnerabilitiesable) {
+// returns a []Vulnerabilityable when successful
+func (m *GlobalAdvisory) GetVulnerabilities()([]Vulnerabilityable) {
     return m.vulnerabilities
 }
 // GetWithdrawnAt gets the withdrawn_at property value. The date and time of when the advisory was withdrawn, in ISO 8601 format.
@@ -554,7 +554,7 @@ func (m *GlobalAdvisory) SetUrl(value *string)() {
     m.url = value
 }
 // SetVulnerabilities sets the vulnerabilities property value. The products and respective version ranges affected by the advisory.
-func (m *GlobalAdvisory) SetVulnerabilities(value []GlobalAdvisory_vulnerabilitiesable)() {
+func (m *GlobalAdvisory) SetVulnerabilities(value []Vulnerabilityable)() {
     m.vulnerabilities = value
 }
 // SetWithdrawnAt sets the withdrawn_at property value. The date and time of when the advisory was withdrawn, in ISO 8601 format.
@@ -582,7 +582,7 @@ type GlobalAdvisoryable interface {
     GetTypeEscaped()(*GlobalAdvisory_type)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
-    GetVulnerabilities()([]GlobalAdvisory_vulnerabilitiesable)
+    GetVulnerabilities()([]Vulnerabilityable)
     GetWithdrawnAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCredits(value []GlobalAdvisory_creditsable)()
     SetCveId(value *string)()
@@ -603,6 +603,6 @@ type GlobalAdvisoryable interface {
     SetTypeEscaped(value *GlobalAdvisory_type)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUrl(value *string)()
-    SetVulnerabilities(value []GlobalAdvisory_vulnerabilitiesable)()
+    SetVulnerabilities(value []Vulnerabilityable)()
     SetWithdrawnAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }
