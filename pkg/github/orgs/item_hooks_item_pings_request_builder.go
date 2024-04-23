@@ -23,7 +23,7 @@ func NewItemHooksItemPingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewItemHooksItemPingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post this will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+// Post this will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
@@ -42,7 +42,7 @@ func (m *ItemHooksItemPingsRequestBuilder) Post(ctx context.Context, requestConf
     }
     return nil
 }
-// ToPostRequestInformation this will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+// ToPostRequestInformation this will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
 // returns a *RequestInformation when successful
 func (m *ItemHooksItemPingsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
