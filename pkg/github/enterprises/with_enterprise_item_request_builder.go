@@ -21,6 +21,11 @@ func NewWithEnterpriseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewWithEnterpriseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Copilot the copilot property
+// returns a *ItemCopilotRequestBuilder when successful
+func (m *WithEnterpriseItemRequestBuilder) Copilot()(*ItemCopilotRequestBuilder) {
+    return NewItemCopilotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Dependabot the dependabot property
 // returns a *ItemDependabotRequestBuilder when successful
 func (m *WithEnterpriseItemRequestBuilder) Dependabot()(*ItemDependabotRequestBuilder) {
