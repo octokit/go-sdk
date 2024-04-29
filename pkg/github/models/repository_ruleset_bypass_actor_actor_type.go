@@ -2,7 +2,7 @@ package models
 import (
     "errors"
 )
-// The type of actor that can bypass a ruleset
+// The type of actor that can bypass a ruleset.
 type RepositoryRulesetBypassActor_actor_type int
 
 const (
@@ -10,10 +10,11 @@ const (
     ORGANIZATIONADMIN_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
     REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
     TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+    DEPLOYKEY_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
 )
 
 func (i RepositoryRulesetBypassActor_actor_type) String() string {
-    return []string{"Integration", "OrganizationAdmin", "RepositoryRole", "Team"}[i]
+    return []string{"Integration", "OrganizationAdmin", "RepositoryRole", "Team", "DeployKey"}[i]
 }
 func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
     result := INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
@@ -26,6 +27,8 @@ func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
             result = REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         case "Team":
             result = TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
+        case "DeployKey":
+            result = DEPLOYKEY_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         default:
             return 0, errors.New("Unknown RepositoryRulesetBypassActor_actor_type value: " + v)
     }
