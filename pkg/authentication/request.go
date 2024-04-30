@@ -12,13 +12,17 @@ type Request struct {
 	*abs.RequestInformation
 }
 
-// WithAuthorization sets the Authorization header to the given token,
+// WithTokenAuthentication sets the Authorization header to the given token,
 // prepended by the AuthType
-func (r *Request) WithAuthorization(token string) {
+func (r *Request) WithTokenAuthentication(token string) {
 	if r.Headers.ContainsKey(headers.AuthorizationKey) {
 		r.Headers.Remove(headers.AuthorizationKey)
 	}
 	r.Headers.Add(headers.AuthorizationKey, fmt.Sprintf("%v %v", headers.AuthType, token))
+}
+
+func (r *Request) WithGitHubAppAuthentication(pemFile []byte, appID string) {
+	// TODO(kfcampbell): do something useful here
 }
 
 // WithUserAgent allows the caller to set the User-Agent string for each request

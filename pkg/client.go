@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/bradleyfalzon/ghinstallation"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
@@ -23,16 +24,27 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	middlewares := options.Middleware
 	middlewares = append(middlewares, rateLimitHandler)
 	netHttpClient := kiotaHttp.GetDefaultClient(middlewares...)
+
 	if options.RequestTimeout != 0 {
 		netHttpClient.Timeout = options.RequestTimeout
+	}
+
+	if options.GitHubAppID != 0 && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
+		existingTransport := netHttpClient.Transport
+		appTransport, err := ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+		if err != nil {
+			return nil, fmt.Errorf("failed to create transport from GitHub App: %v", err)
+		}
+		netHttpClient.Transport = appTransport
 	}
 
 	tokenProviderOptions := []auth.TokenProviderOption{
 		auth.WithAPIVersion(options.APIVersion),
 		auth.WithUserAgent(options.UserAgent),
 	}
-	if options.Token != "" {
-		tokenProviderOptions = append(tokenProviderOptions, auth.WithAuthorizationToken(options.Token))
+
+	if options.Token != "" && (options.GitHubAppID == 0 && options.GitHubAppInstallationID == 0 && options.GitHubAppPemFilePath == "") {
+		tokenProviderOptions = append(tokenProviderOptions, auth.WithTokenAuthentication(options.Token))
 	}
 
 	tokenProvider := auth.NewTokenProvider(tokenProviderOptions...)
@@ -70,7 +82,16 @@ type ClientOptions struct {
 	RequestTimeout time.Duration
 	Middleware     []kiotaHttp.Middleware
 	BaseURL        string
-	Token          string
+
+	// Token should be left blank if GitHub App auth or an unauthenticated client is desired.
+	Token string
+
+	// GitHubAppPemFilePath should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppPemFilePath string
+	// GitHubAppID should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppID int64
+	// GitHubAppInstallationID should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppInstallationID int64
 }
 
 // GetDefaultClientOptions returns a new instance of ClientOptions with default values.
@@ -119,5 +140,13 @@ func WithAuthorizationToken(token string) ClientOptionFunc {
 func WithAPIVersion(version string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.APIVersion = version
+	}
+}
+
+func WithGitHubAppAuthentication(GitHubAppPemFilePath string, GitHubAppID int64, GitHubAppInstallationID int64) ClientOptionFunc {
+	return func(c *ClientOptions) {
+		c.GitHubAppPemFilePath = GitHubAppPemFilePath
+		c.GitHubAppID = GitHubAppID
+		c.GitHubAppInstallationID = GitHubAppInstallationID
 	}
 }

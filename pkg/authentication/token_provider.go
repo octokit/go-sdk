@@ -12,10 +12,16 @@ type TokenProvider struct {
 
 type TokenProviderOption func(*TokenProvider, *Request)
 
-// WithAuthorizationToken sets the AuthorizationToken for each request to the given token.
-func WithAuthorizationToken(token string) TokenProviderOption {
+// WithTokenAuthentication sets the AuthorizationToken for each request to the given token.
+func WithTokenAuthentication(token string) TokenProviderOption {
 	return func(t *TokenProvider, r *Request) {
-		r.WithAuthorization(token)
+		r.WithTokenAuthentication(token)
+	}
+}
+
+func WithGitHubApp(pemFile []byte, appID string) TokenProviderOption {
+	return func(t *TokenProvider, r *Request) {
+		r.WithGitHubAppAuthentication(pemFile, appID)
 	}
 }
 
