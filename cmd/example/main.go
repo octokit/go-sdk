@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	abstractions "github.com/microsoft/kiota-abstractions-go"
+	abs "github.com/microsoft/kiota-abstractions-go"
 	"github.com/octokit/go-sdk/pkg"
 	"github.com/octokit/go-sdk/pkg/github/installation"
 )
@@ -26,7 +26,7 @@ func main() {
 	}
 
 	queryParams := &installation.RepositoriesRequestBuilderGetQueryParameters{}
-	requestConfig := &abstractions.RequestConfiguration[installation.RepositoriesRequestBuilderGetQueryParameters]{
+	requestConfig := &abs.RequestConfiguration[installation.RepositoriesRequestBuilderGetQueryParameters]{
 		QueryParameters: queryParams,
 	}
 	repos, err := client.Installation().Repositories().Get(context.Background(), requestConfig)

@@ -33,6 +33,7 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 		netHttpClient.Timeout = options.RequestTimeout
 	}
 
+	// Configure GitHub App authentication if required fields are provided
 	if options.GitHubAppID != 0 && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
 		existingTransport := netHttpClient.Transport
 		appTransport, err := ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
@@ -42,8 +43,8 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 		netHttpClient.Transport = appTransport
 	}
 
-	// middleware must be applied after App transport is set, otherwise App token will
-	// fail to be renewed
+	// Middleware must be applied after App transport is set, otherwise App token will fail to be
+	// renewed with a 400 Bad Request error (even though the request is identical to a successful one.)
 	finalTransport := kiotaHttp.NewCustomTransportWithParentTransport(netHttpClient.Transport, middlewares...)
 	netHttpClient.Transport = finalTransport
 
@@ -52,6 +53,7 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 		auth.WithUserAgent(options.UserAgent),
 	}
 
+	// If a PAT is provided and GitHub App information is not, configure token authentication
 	if options.Token != "" && (options.GitHubAppID == 0 && options.GitHubAppInstallationID == 0 && options.GitHubAppPemFilePath == "") {
 		tokenProviderOptions = append(tokenProviderOptions, auth.WithTokenAuthentication(options.Token))
 	}
