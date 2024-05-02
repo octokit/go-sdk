@@ -2,9 +2,10 @@ package pkg
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 
-	"github.com/bradleyfalzon/ghinstallation"
+	"github.com/bradleyfalzon/ghinstallation/v2"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
@@ -23,7 +24,10 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	rateLimitHandler := handlers.NewRateLimitHandler()
 	middlewares := options.Middleware
 	middlewares = append(middlewares, rateLimitHandler)
-	netHttpClient := kiotaHttp.GetDefaultClient(middlewares...)
+	defaultTransport := kiotaHttp.GetDefaultTransport()
+	netHttpClient := &http.Client{
+		Transport: defaultTransport,
+	}
 
 	if options.RequestTimeout != 0 {
 		netHttpClient.Timeout = options.RequestTimeout
@@ -37,6 +41,11 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 		}
 		netHttpClient.Transport = appTransport
 	}
+
+	// middleware must be applied after App transport is set, otherwise App token will
+	// fail to be renewed
+	finalTransport := kiotaHttp.NewCustomTransportWithParentTransport(netHttpClient.Transport, middlewares...)
+	netHttpClient.Transport = finalTransport
 
 	tokenProviderOptions := []auth.TokenProviderOption{
 		auth.WithAPIVersion(options.APIVersion),

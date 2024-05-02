@@ -22,7 +22,7 @@ func (r *Request) WithTokenAuthentication(token string) {
 }
 
 func (r *Request) WithGitHubAppAuthentication(pemFile []byte, appID string) {
-	// TODO(kfcampbell): do something useful here
+	// TODO(kfcampbell): can we do something useful here? otherwise possibly remove
 }
 
 // WithUserAgent allows the caller to set the User-Agent string for each request

@@ -7,8 +7,7 @@ import (
 
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	"github.com/octokit/go-sdk/pkg"
-	"github.com/octokit/go-sdk/pkg/github/user"
-	"github.com/octokit/go-sdk/pkg/github/user/repos"
+	"github.com/octokit/go-sdk/pkg/github/installation"
 )
 
 func main() {
@@ -26,34 +25,19 @@ func main() {
 		log.Fatalf("error creating client: %v", err)
 	}
 
-	viz := repos.ALL_GETVISIBILITYQUERYPARAMETERTYPE
-	queryParams := &user.ReposRequestBuilderGetQueryParameters{
-		Visibility: &viz,
-	}
-	requestConfig := &abstractions.RequestConfiguration[user.ReposRequestBuilderGetQueryParameters]{
+	queryParams := &installation.RepositoriesRequestBuilderGetQueryParameters{}
+	requestConfig := &abstractions.RequestConfiguration[installation.RepositoriesRequestBuilderGetQueryParameters]{
 		QueryParameters: queryParams,
 	}
-	repos, err := client.User().Repos().Get(context.Background(), requestConfig)
+	repos, err := client.Installation().Repositories().Get(context.Background(), requestConfig)
 	if err != nil {
 		log.Fatalf("error getting repositories: %v", err)
-		// return err
 	}
 
-	if len(repos) > 0 {
+	if len(repos.GetRepositories()) > 0 {
 		log.Printf("Repositories:\n")
-		for _, repo := range repos {
+		for _, repo := range repos.GetRepositories() {
 			log.Printf("%v\n", *repo.GetFullName())
 		}
 	}
-
-	// queryParams := &abs.DefaultQueryParameters{}
-	// requestConfig := &abs.RequestConfiguration[abs.DefaultQueryParameters]{
-	// 	QueryParameters: queryParams,
-	// }
-	// zen, err := client.Zen().Get(context.Background(), requestConfig)
-	// if err != nil {
-	// 	fmt.Printf("error getting Zen: %v\n", err)
-	// 	return
-	// }
-	// fmt.Printf("%v\n", *zen)
 }
