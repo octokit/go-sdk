@@ -19,12 +19,6 @@ func WithTokenAuthentication(token string) TokenProviderOption {
 	}
 }
 
-func WithGitHubApp(pemFile []byte, appID string) TokenProviderOption {
-	return func(t *TokenProvider, r *Request) {
-		r.WithGitHubAppAuthentication(pemFile, appID)
-	}
-}
-
 // WithDefaultUserAgent sets the User-Agent string sent for requests to the default
 // for this SDK.
 func WithDefaultUserAgent() TokenProviderOption {

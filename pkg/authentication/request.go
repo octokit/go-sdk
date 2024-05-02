@@ -21,10 +21,6 @@ func (r *Request) WithTokenAuthentication(token string) {
 	r.Headers.Add(headers.AuthorizationKey, fmt.Sprintf("%v %v", headers.AuthType, token))
 }
 
-func (r *Request) WithGitHubAppAuthentication(pemFile []byte, appID string) {
-	// TODO(kfcampbell): can we do something useful here? otherwise possibly remove
-}
-
 // WithUserAgent allows the caller to set the User-Agent string for each request
 func (r *Request) WithUserAgent(userAgent string) {
 	if r.Headers.ContainsKey(headers.UserAgentKey) {
