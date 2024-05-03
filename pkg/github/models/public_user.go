@@ -51,6 +51,8 @@ type PublicUser struct {
     name *string
     // The node_id property
     node_id *string
+    // The notification_email property
+    notification_email *string
     // The organizations_url property
     organizations_url *string
     // The owned_private_repos property
@@ -366,6 +368,16 @@ func (m *PublicUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["notification_email"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotificationEmail(val)
+        }
+        return nil
+    }
     res["organizations_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -603,6 +615,11 @@ func (m *PublicUser) GetName()(*string) {
 func (m *PublicUser) GetNodeId()(*string) {
     return m.node_id
 }
+// GetNotificationEmail gets the notification_email property value. The notification_email property
+// returns a *string when successful
+func (m *PublicUser) GetNotificationEmail()(*string) {
+    return m.notification_email
+}
 // GetOrganizationsUrl gets the organizations_url property value. The organizations_url property
 // returns a *string when successful
 func (m *PublicUser) GetOrganizationsUrl()(*string) {
@@ -823,6 +840,12 @@ func (m *PublicUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err := writer.WriteStringValue("notification_email", m.GetNotificationEmail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("organizations_url", m.GetOrganizationsUrl())
         if err != nil {
             return err
@@ -1014,6 +1037,10 @@ func (m *PublicUser) SetName(value *string)() {
 func (m *PublicUser) SetNodeId(value *string)() {
     m.node_id = value
 }
+// SetNotificationEmail sets the notification_email property value. The notification_email property
+func (m *PublicUser) SetNotificationEmail(value *string)() {
+    m.notification_email = value
+}
 // SetOrganizationsUrl sets the organizations_url property value. The organizations_url property
 func (m *PublicUser) SetOrganizationsUrl(value *string)() {
     m.organizations_url = value
@@ -1106,6 +1133,7 @@ type PublicUserable interface {
     GetLogin()(*string)
     GetName()(*string)
     GetNodeId()(*string)
+    GetNotificationEmail()(*string)
     GetOrganizationsUrl()(*string)
     GetOwnedPrivateRepos()(*int32)
     GetPlan()(PublicUser_planable)
@@ -1145,6 +1173,7 @@ type PublicUserable interface {
     SetLogin(value *string)()
     SetName(value *string)()
     SetNodeId(value *string)()
+    SetNotificationEmail(value *string)()
     SetOrganizationsUrl(value *string)()
     SetOwnedPrivateRepos(value *int32)()
     SetPlan(value PublicUser_planable)()
