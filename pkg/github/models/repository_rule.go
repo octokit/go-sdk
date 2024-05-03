@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRule composed type wrapper for classes File_extension_restrictionable, File_path_restrictionable, Max_file_path_lengthable, Max_file_sizeable, RepositoryRuleBranchNamePatternable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
+// RepositoryRule composed type wrapper for classes File_extension_restrictionable, File_path_restrictionable, Max_file_path_lengthable, Max_file_sizeable, RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
 type RepositoryRule struct {
     // Composed type representation for type File_extension_restrictionable
     file_extension_restriction File_extension_restrictionable
@@ -16,6 +16,8 @@ type RepositoryRule struct {
     max_file_size Max_file_sizeable
     // Composed type representation for type RepositoryRuleBranchNamePatternable
     repositoryRuleBranchNamePattern RepositoryRuleBranchNamePatternable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleCodeScanning RepositoryRuleCodeScanningable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
     repositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPatternable
     // Composed type representation for type RepositoryRuleCommitMessagePatternable
@@ -70,6 +72,14 @@ type RepositoryRule struct {
     repositoryRuleRepositoryRuleBranchNamePattern1 RepositoryRuleBranchNamePatternable
     // Composed type representation for type RepositoryRuleBranchNamePatternable
     repositoryRuleRepositoryRuleBranchNamePattern2 RepositoryRuleBranchNamePatternable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning0 RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning1 RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning2 RepositoryRuleCodeScanningable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
     repositoryRuleRepositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPatternable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
@@ -258,6 +268,11 @@ func (m *RepositoryRule) GetMaxFileSize()(Max_file_sizeable) {
 func (m *RepositoryRule) GetRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable) {
     return m.repositoryRuleBranchNamePattern
 }
+// GetRepositoryRuleCodeScanning gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleCodeScanning
+}
 // GetRepositoryRuleCommitAuthorEmailPattern gets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 // returns a RepositoryRuleCommitAuthorEmailPatternable when successful
 func (m *RepositoryRule) GetRepositoryRuleCommitAuthorEmailPattern()(RepositoryRuleCommitAuthorEmailPatternable) {
@@ -392,6 +407,26 @@ func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleBranchNamePattern1()(Rep
 // returns a RepositoryRuleBranchNamePatternable when successful
 func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleBranchNamePattern2()(RepositoryRuleBranchNamePatternable) {
     return m.repositoryRuleRepositoryRuleBranchNamePattern2
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning0 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning0()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning0
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning1 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning1()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning1
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning2 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning2()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning2
 }
 // GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern gets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 // returns a RepositoryRuleCommitAuthorEmailPatternable when successful
@@ -735,6 +770,11 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         if err != nil {
             return err
         }
+    } else if m.GetRepositoryRuleCodeScanning() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleCodeScanning())
+        if err != nil {
+            return err
+        }
     } else if m.GetRepositoryRuleCommitAuthorEmailPattern() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleCommitAuthorEmailPattern())
         if err != nil {
@@ -867,6 +907,26 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     } else if m.GetRepositoryRuleRepositoryRuleBranchNamePattern2() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleBranchNamePattern2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning2())
         if err != nil {
             return err
         }
@@ -1208,6 +1268,10 @@ func (m *RepositoryRule) SetMaxFileSize(value Max_file_sizeable)() {
 func (m *RepositoryRule) SetRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)() {
     m.repositoryRuleBranchNamePattern = value
 }
+// SetRepositoryRuleCodeScanning sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleCodeScanning = value
+}
 // SetRepositoryRuleCommitAuthorEmailPattern sets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 func (m *RepositoryRule) SetRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)() {
     m.repositoryRuleCommitAuthorEmailPattern = value
@@ -1315,6 +1379,22 @@ func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleBranchNamePattern1(value
 // SetRepositoryRuleRepositoryRuleBranchNamePattern2 sets the repositoryRuleBranchNamePattern property value. Composed type representation for type RepositoryRuleBranchNamePatternable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleBranchNamePattern2(value RepositoryRuleBranchNamePatternable)() {
     m.repositoryRuleRepositoryRuleBranchNamePattern2 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning0 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning0(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning0 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning1 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning1(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning1 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning2 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning2(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning2 = value
 }
 // SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern sets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)() {
@@ -1575,6 +1655,7 @@ type RepositoryRuleable interface {
     GetMaxFilePathLength()(Max_file_path_lengthable)
     GetMaxFileSize()(Max_file_sizeable)
     GetRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable)
+    GetRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable)
     GetRepositoryRuleCommitAuthorEmailPattern()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleCommitMessagePattern()(RepositoryRuleCommitMessagePatternable)
     GetRepositoryRuleCommitterEmailPattern()(RepositoryRuleCommitterEmailPatternable)
@@ -1602,6 +1683,10 @@ type RepositoryRuleable interface {
     GetRepositoryRuleRepositoryRuleBranchNamePattern0()(RepositoryRuleBranchNamePatternable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern1()(RepositoryRuleBranchNamePatternable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern2()(RepositoryRuleBranchNamePatternable)
+    GetRepositoryRuleRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning0()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning1()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning2()(RepositoryRuleCodeScanningable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern0()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern1()(RepositoryRuleCommitAuthorEmailPatternable)
@@ -1670,6 +1755,7 @@ type RepositoryRuleable interface {
     SetMaxFilePathLength(value Max_file_path_lengthable)()
     SetMaxFileSize(value Max_file_sizeable)()
     SetRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)()
+    SetRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)()
     SetRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleCommitMessagePattern(value RepositoryRuleCommitMessagePatternable)()
     SetRepositoryRuleCommitterEmailPattern(value RepositoryRuleCommitterEmailPatternable)()
@@ -1697,6 +1783,10 @@ type RepositoryRuleable interface {
     SetRepositoryRuleRepositoryRuleBranchNamePattern0(value RepositoryRuleBranchNamePatternable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern1(value RepositoryRuleBranchNamePatternable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern2(value RepositoryRuleBranchNamePatternable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning0(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning1(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning2(value RepositoryRuleCodeScanningable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern0(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern1(value RepositoryRuleCommitAuthorEmailPatternable)()
