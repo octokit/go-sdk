@@ -1,7 +1,4 @@
 package invitations
-import (
-    "errors"
-)
 type GetInvitation_sourceQueryParameterType int
 
 const (
@@ -23,7 +20,7 @@ func ParseGetInvitation_sourceQueryParameterType(v string) (any, error) {
         case "scim":
             result = SCIM_GETINVITATION_SOURCEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetInvitation_sourceQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

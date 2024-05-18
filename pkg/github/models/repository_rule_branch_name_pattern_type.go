@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleBranchNamePattern_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleBranchNamePattern_type(v string) (any, error) {
         case "branch_name_pattern":
             result = BRANCH_NAME_PATTERN_REPOSITORYRULEBRANCHNAMEPATTERN_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleBranchNamePattern_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

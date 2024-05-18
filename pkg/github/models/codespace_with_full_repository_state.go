@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // State of this codespace.
 type CodespaceWithFullRepository_state int
 
@@ -66,7 +63,7 @@ func ParseCodespaceWithFullRepository_state(v string) (any, error) {
         case "Rebuilding":
             result = REBUILDING_CODESPACEWITHFULLREPOSITORY_STATE
         default:
-            return 0, errors.New("Unknown CodespaceWithFullRepository_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

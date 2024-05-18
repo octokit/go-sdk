@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
 type AppPermissions_administration int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_administration(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ADMINISTRATION
         default:
-            return 0, errors.New("Unknown AppPermissions_administration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

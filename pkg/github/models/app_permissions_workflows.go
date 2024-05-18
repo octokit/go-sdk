@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to update GitHub Actions workflow files.
 type AppPermissions_workflows int
 
@@ -18,7 +15,7 @@ func ParseAppPermissions_workflows(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_WORKFLOWS
         default:
-            return 0, errors.New("Unknown AppPermissions_workflows value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

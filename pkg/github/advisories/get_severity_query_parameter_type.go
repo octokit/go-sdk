@@ -1,7 +1,4 @@
 package advisories
-import (
-    "errors"
-)
 type GetSeverityQueryParameterType int
 
 const (
@@ -29,7 +26,7 @@ func ParseGetSeverityQueryParameterType(v string) (any, error) {
         case "critical":
             result = CRITICAL_GETSEVERITYQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetSeverityQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

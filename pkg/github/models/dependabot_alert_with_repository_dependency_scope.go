@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The execution scope of the vulnerable dependency.
 type DependabotAlertWithRepository_dependency_scope int
 
@@ -21,7 +18,7 @@ func ParseDependabotAlertWithRepository_dependency_scope(v string) (any, error) 
         case "runtime":
             result = RUNTIME_DEPENDABOTALERTWITHREPOSITORY_DEPENDENCY_SCOPE
         default:
-            return 0, errors.New("Unknown DependabotAlertWithRepository_dependency_scope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

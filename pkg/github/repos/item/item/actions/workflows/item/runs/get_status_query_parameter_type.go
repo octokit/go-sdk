@@ -1,7 +1,4 @@
 package runs
-import (
-    "errors"
-)
 type GetStatusQueryParameterType int
 
 const (
@@ -56,7 +53,7 @@ func ParseGetStatusQueryParameterType(v string) (any, error) {
         case "pending":
             result = PENDING_GETSTATUSQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetStatusQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

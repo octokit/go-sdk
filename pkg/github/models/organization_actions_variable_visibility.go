@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Visibility of a variable
 type OrganizationActionsVariable_visibility int
 
@@ -24,7 +21,7 @@ func ParseOrganizationActionsVariable_visibility(v string) (any, error) {
         case "selected":
             result = SELECTED_ORGANIZATIONACTIONSVARIABLE_VISIBILITY
         default:
-            return 0, errors.New("Unknown OrganizationActionsVariable_visibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

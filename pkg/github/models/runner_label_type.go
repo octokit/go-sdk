@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of label. Read-only labels are applied automatically when the runner is configured.
 type RunnerLabel_type int
 
@@ -21,7 +18,7 @@ func ParseRunnerLabel_type(v string) (any, error) {
         case "custom":
             result = CUSTOM_RUNNERLABEL_TYPE
         default:
-            return 0, errors.New("Unknown RunnerLabel_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The duration of the interaction restriction. Default: `one_day`.
 type InteractionExpiry int
 
@@ -30,7 +27,7 @@ func ParseInteractionExpiry(v string) (any, error) {
         case "six_months":
             result = SIX_MONTHS_INTERACTIONEXPIRY
         default:
-            return 0, errors.New("Unknown InteractionExpiry value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

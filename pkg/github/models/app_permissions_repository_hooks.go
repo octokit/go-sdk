@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to manage the post-receive hooks for a repository.
 type AppPermissions_repository_hooks int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_repository_hooks(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_REPOSITORY_HOOKS
         default:
-            return 0, errors.New("Unknown AppPermissions_repository_hooks value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

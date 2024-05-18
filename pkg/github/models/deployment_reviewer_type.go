@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of reviewer.
 type DeploymentReviewerType int
 
@@ -21,7 +18,7 @@ func ParseDeploymentReviewerType(v string) (any, error) {
         case "Team":
             result = TEAM_DEPLOYMENTREVIEWERTYPE
         default:
-            return 0, errors.New("Unknown DeploymentReviewerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to view and manage interaction limits on a repository.
 type AppPermissions_interaction_limits int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_interaction_limits(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_INTERACTION_LIMITS
         default:
-            return 0, errors.New("Unknown AppPermissions_interaction_limits value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

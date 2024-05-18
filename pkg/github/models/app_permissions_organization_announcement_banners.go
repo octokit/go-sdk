@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to view and manage announcement banners for an organization.
 type AppPermissions_organization_announcement_banners int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_organization_announcement_banners(v string) (any, error
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_ANNOUNCEMENT_BANNERS
         default:
-            return 0, errors.New("Unknown AppPermissions_organization_announcement_banners value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

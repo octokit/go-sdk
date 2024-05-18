@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The current status of the deployment.
 type PagesDeploymentStatus_status int
 
@@ -48,7 +45,7 @@ func ParsePagesDeploymentStatus_status(v string) (any, error) {
         case "succeed":
             result = SUCCEED_PAGESDEPLOYMENTSTATUS_STATUS
         default:
-            return 0, errors.New("Unknown PagesDeploymentStatus_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

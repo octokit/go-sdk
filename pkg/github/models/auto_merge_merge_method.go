@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The merge method to use.
 type AutoMerge_merge_method int
 
@@ -24,7 +21,7 @@ func ParseAutoMerge_merge_method(v string) (any, error) {
         case "rebase":
             result = REBASE_AUTOMERGE_MERGE_METHOD
         default:
-            return 0, errors.New("Unknown AutoMerge_merge_method value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

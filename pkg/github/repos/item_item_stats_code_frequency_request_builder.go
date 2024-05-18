@@ -3,6 +3,7 @@ package repos
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ItemItemStatsCode_frequencyRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\code_frequency
@@ -23,26 +24,23 @@ func NewItemItemStatsCode_frequencyRequestBuilder(rawUrl string, requestAdapter 
     return NewItemItemStatsCode_frequencyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
-// returns a []int32 when successful
+// returns a UntypedNodeable when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity
-func (m *ItemItemStatsCode_frequencyRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]int32, error) {
+func (m *ItemItemStatsCode_frequencyRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitiveCollection(ctx, requestInfo, "int32", nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]int32, len(res))
-    for i, v := range res {
-        if v != nil {
-            val[i] = *(v.(*int32))
-        }
+    if res == nil {
+        return nil, nil
     }
-    return val, nil
+    return res.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable), nil
 }
 // ToGetRequestInformation returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
 // returns a *RequestInformation when successful

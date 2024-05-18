@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The phase of the lifecycle that the job is currently in.
 type Job_steps_status int
 
@@ -24,7 +21,7 @@ func ParseJob_steps_status(v string) (any, error) {
         case "completed":
             result = COMPLETED_JOB_STEPS_STATUS
         default:
-            return 0, errors.New("Unknown Job_steps_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

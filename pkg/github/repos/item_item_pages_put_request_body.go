@@ -7,7 +7,7 @@ import (
 type ItemItemPagesPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
+    // Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
     cname *string
     // Specify whether HTTPS should be enforced for the repository.
     https_enforced *bool
@@ -115,7 +115,7 @@ func CreateItemItemPagesPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2
 func (m *ItemItemPagesPutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCname gets the cname property value. Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
+// GetCname gets the cname property value. Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
 // returns a *string when successful
 func (m *ItemItemPagesPutRequestBody) GetCname()(*string) {
     return m.cname
@@ -198,7 +198,7 @@ func (m *ItemItemPagesPutRequestBody) Serialize(writer i878a80d2330e89d26896388a
 func (m *ItemItemPagesPutRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCname sets the cname property value. Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/)."
+// SetCname sets the cname property value. Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site)."
 func (m *ItemItemPagesPutRequestBody) SetCname(value *string)() {
     m.cname = value
 }

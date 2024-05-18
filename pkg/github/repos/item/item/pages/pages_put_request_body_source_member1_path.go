@@ -1,7 +1,4 @@
 package pages
-import (
-    "errors"
-)
 // The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
 type PagesPutRequestBody_sourceMember1_path int
 
@@ -21,7 +18,7 @@ func ParsePagesPutRequestBody_sourceMember1_path(v string) (any, error) {
         case "/docs":
             result = DOCS_PAGESPUTREQUESTBODY_SOURCEMEMBER1_PATH
         default:
-            return 0, errors.New("Unknown PagesPutRequestBody_sourceMember1_path value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
