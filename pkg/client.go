@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/bradleyfalzon/ghinstallation/v2"
+	"github.com/kfcampbell/ghinstallation"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
