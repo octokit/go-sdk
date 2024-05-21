@@ -33,7 +33,7 @@ type RepositoryRuleset struct {
     source *string
     // The type of the source of the ruleset
     source_type *RepositoryRuleset_source_type
-    // The target of the ruleset
+    // The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
     target *RepositoryRuleset_target
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -359,7 +359,7 @@ func (m *RepositoryRuleset) GetSource()(*string) {
 func (m *RepositoryRuleset) GetSourceType()(*RepositoryRuleset_source_type) {
     return m.source_type
 }
-// GetTarget gets the target property value. The target of the ruleset
+// GetTarget gets the target property value. The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
 // returns a *RepositoryRuleset_target when successful
 func (m *RepositoryRuleset) GetTarget()(*RepositoryRuleset_target) {
     return m.target
@@ -531,7 +531,7 @@ func (m *RepositoryRuleset) SetSource(value *string)() {
 func (m *RepositoryRuleset) SetSourceType(value *RepositoryRuleset_source_type)() {
     m.source_type = value
 }
-// SetTarget sets the target property value. The target of the ruleset
+// SetTarget sets the target property value. The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
 func (m *RepositoryRuleset) SetTarget(value *RepositoryRuleset_target)() {
     m.target = value
 }

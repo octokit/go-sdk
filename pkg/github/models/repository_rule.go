@@ -4,10 +4,20 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRule composed type wrapper for classes RepositoryRuleBranchNamePatternable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
+// RepositoryRule composed type wrapper for classes File_extension_restrictionable, File_path_restrictionable, Max_file_path_lengthable, Max_file_sizeable, RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
 type RepositoryRule struct {
+    // Composed type representation for type File_extension_restrictionable
+    file_extension_restriction File_extension_restrictionable
+    // Composed type representation for type File_path_restrictionable
+    file_path_restriction File_path_restrictionable
+    // Composed type representation for type Max_file_path_lengthable
+    max_file_path_length Max_file_path_lengthable
+    // Composed type representation for type Max_file_sizeable
+    max_file_size Max_file_sizeable
     // Composed type representation for type RepositoryRuleBranchNamePatternable
     repositoryRuleBranchNamePattern RepositoryRuleBranchNamePatternable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleCodeScanning RepositoryRuleCodeScanningable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
     repositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPatternable
     // Composed type representation for type RepositoryRuleCommitMessagePatternable
@@ -18,6 +28,38 @@ type RepositoryRule struct {
     repositoryRuleCreation RepositoryRuleCreationable
     // Composed type representation for type RepositoryRuleDeletionable
     repositoryRuleDeletion RepositoryRuleDeletionable
+    // Composed type representation for type File_extension_restrictionable
+    repositoryRuleFile_extension_restriction File_extension_restrictionable
+    // Composed type representation for type File_extension_restrictionable
+    repositoryRuleFile_extension_restriction0 File_extension_restrictionable
+    // Composed type representation for type File_extension_restrictionable
+    repositoryRuleFile_extension_restriction1 File_extension_restrictionable
+    // Composed type representation for type File_extension_restrictionable
+    repositoryRuleFile_extension_restriction2 File_extension_restrictionable
+    // Composed type representation for type File_path_restrictionable
+    repositoryRuleFile_path_restriction File_path_restrictionable
+    // Composed type representation for type File_path_restrictionable
+    repositoryRuleFile_path_restriction0 File_path_restrictionable
+    // Composed type representation for type File_path_restrictionable
+    repositoryRuleFile_path_restriction1 File_path_restrictionable
+    // Composed type representation for type File_path_restrictionable
+    repositoryRuleFile_path_restriction2 File_path_restrictionable
+    // Composed type representation for type Max_file_path_lengthable
+    repositoryRuleMax_file_path_length Max_file_path_lengthable
+    // Composed type representation for type Max_file_path_lengthable
+    repositoryRuleMax_file_path_length0 Max_file_path_lengthable
+    // Composed type representation for type Max_file_path_lengthable
+    repositoryRuleMax_file_path_length1 Max_file_path_lengthable
+    // Composed type representation for type Max_file_path_lengthable
+    repositoryRuleMax_file_path_length2 Max_file_path_lengthable
+    // Composed type representation for type Max_file_sizeable
+    repositoryRuleMax_file_size Max_file_sizeable
+    // Composed type representation for type Max_file_sizeable
+    repositoryRuleMax_file_size0 Max_file_sizeable
+    // Composed type representation for type Max_file_sizeable
+    repositoryRuleMax_file_size1 Max_file_sizeable
+    // Composed type representation for type Max_file_sizeable
+    repositoryRuleMax_file_size2 Max_file_sizeable
     // Composed type representation for type RepositoryRuleNonFastForwardable
     repositoryRuleNonFastForward RepositoryRuleNonFastForwardable
     // Composed type representation for type RepositoryRulePullRequestable
@@ -30,6 +72,14 @@ type RepositoryRule struct {
     repositoryRuleRepositoryRuleBranchNamePattern1 RepositoryRuleBranchNamePatternable
     // Composed type representation for type RepositoryRuleBranchNamePatternable
     repositoryRuleRepositoryRuleBranchNamePattern2 RepositoryRuleBranchNamePatternable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning0 RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning1 RepositoryRuleCodeScanningable
+    // Composed type representation for type RepositoryRuleCodeScanningable
+    repositoryRuleRepositoryRuleCodeScanning2 RepositoryRuleCodeScanningable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
     repositoryRuleRepositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPatternable
     // Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
@@ -188,15 +238,40 @@ func CreateRepositoryRuleFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 func (m *RepositoryRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
 }
+// GetFileExtensionRestriction gets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+// returns a File_extension_restrictionable when successful
+func (m *RepositoryRule) GetFileExtensionRestriction()(File_extension_restrictionable) {
+    return m.file_extension_restriction
+}
+// GetFilePathRestriction gets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+// returns a File_path_restrictionable when successful
+func (m *RepositoryRule) GetFilePathRestriction()(File_path_restrictionable) {
+    return m.file_path_restriction
+}
 // GetIsComposedType determines if the current object is a wrapper around a composed type
 // returns a bool when successful
 func (m *RepositoryRule) GetIsComposedType()(bool) {
     return true
 }
+// GetMaxFilePathLength gets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+// returns a Max_file_path_lengthable when successful
+func (m *RepositoryRule) GetMaxFilePathLength()(Max_file_path_lengthable) {
+    return m.max_file_path_length
+}
+// GetMaxFileSize gets the max_file_size property value. Composed type representation for type Max_file_sizeable
+// returns a Max_file_sizeable when successful
+func (m *RepositoryRule) GetMaxFileSize()(Max_file_sizeable) {
+    return m.max_file_size
+}
 // GetRepositoryRuleBranchNamePattern gets the repositoryRuleBranchNamePattern property value. Composed type representation for type RepositoryRuleBranchNamePatternable
 // returns a RepositoryRuleBranchNamePatternable when successful
 func (m *RepositoryRule) GetRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable) {
     return m.repositoryRuleBranchNamePattern
+}
+// GetRepositoryRuleCodeScanning gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleCodeScanning
 }
 // GetRepositoryRuleCommitAuthorEmailPattern gets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 // returns a RepositoryRuleCommitAuthorEmailPatternable when successful
@@ -222,6 +297,86 @@ func (m *RepositoryRule) GetRepositoryRuleCreation()(RepositoryRuleCreationable)
 // returns a RepositoryRuleDeletionable when successful
 func (m *RepositoryRule) GetRepositoryRuleDeletion()(RepositoryRuleDeletionable) {
     return m.repositoryRuleDeletion
+}
+// GetRepositoryRuleFileExtensionRestriction gets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+// returns a File_extension_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFileExtensionRestriction()(File_extension_restrictionable) {
+    return m.repositoryRuleFile_extension_restriction
+}
+// GetRepositoryRuleFileExtensionRestriction0 gets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+// returns a File_extension_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFileExtensionRestriction0()(File_extension_restrictionable) {
+    return m.repositoryRuleFile_extension_restriction0
+}
+// GetRepositoryRuleFileExtensionRestriction1 gets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+// returns a File_extension_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFileExtensionRestriction1()(File_extension_restrictionable) {
+    return m.repositoryRuleFile_extension_restriction1
+}
+// GetRepositoryRuleFileExtensionRestriction2 gets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+// returns a File_extension_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFileExtensionRestriction2()(File_extension_restrictionable) {
+    return m.repositoryRuleFile_extension_restriction2
+}
+// GetRepositoryRuleFilePathRestriction gets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+// returns a File_path_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFilePathRestriction()(File_path_restrictionable) {
+    return m.repositoryRuleFile_path_restriction
+}
+// GetRepositoryRuleFilePathRestriction0 gets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+// returns a File_path_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFilePathRestriction0()(File_path_restrictionable) {
+    return m.repositoryRuleFile_path_restriction0
+}
+// GetRepositoryRuleFilePathRestriction1 gets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+// returns a File_path_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFilePathRestriction1()(File_path_restrictionable) {
+    return m.repositoryRuleFile_path_restriction1
+}
+// GetRepositoryRuleFilePathRestriction2 gets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+// returns a File_path_restrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFilePathRestriction2()(File_path_restrictionable) {
+    return m.repositoryRuleFile_path_restriction2
+}
+// GetRepositoryRuleMaxFilePathLength gets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+// returns a Max_file_path_lengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFilePathLength()(Max_file_path_lengthable) {
+    return m.repositoryRuleMax_file_path_length
+}
+// GetRepositoryRuleMaxFilePathLength0 gets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+// returns a Max_file_path_lengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFilePathLength0()(Max_file_path_lengthable) {
+    return m.repositoryRuleMax_file_path_length0
+}
+// GetRepositoryRuleMaxFilePathLength1 gets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+// returns a Max_file_path_lengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFilePathLength1()(Max_file_path_lengthable) {
+    return m.repositoryRuleMax_file_path_length1
+}
+// GetRepositoryRuleMaxFilePathLength2 gets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+// returns a Max_file_path_lengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFilePathLength2()(Max_file_path_lengthable) {
+    return m.repositoryRuleMax_file_path_length2
+}
+// GetRepositoryRuleMaxFileSize gets the max_file_size property value. Composed type representation for type Max_file_sizeable
+// returns a Max_file_sizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFileSize()(Max_file_sizeable) {
+    return m.repositoryRuleMax_file_size
+}
+// GetRepositoryRuleMaxFileSize0 gets the max_file_size property value. Composed type representation for type Max_file_sizeable
+// returns a Max_file_sizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFileSize0()(Max_file_sizeable) {
+    return m.repositoryRuleMax_file_size0
+}
+// GetRepositoryRuleMaxFileSize1 gets the max_file_size property value. Composed type representation for type Max_file_sizeable
+// returns a Max_file_sizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFileSize1()(Max_file_sizeable) {
+    return m.repositoryRuleMax_file_size1
+}
+// GetRepositoryRuleMaxFileSize2 gets the max_file_size property value. Composed type representation for type Max_file_sizeable
+// returns a Max_file_sizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFileSize2()(Max_file_sizeable) {
+    return m.repositoryRuleMax_file_size2
 }
 // GetRepositoryRuleNonFastForward gets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 // returns a RepositoryRuleNonFastForwardable when successful
@@ -252,6 +407,26 @@ func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleBranchNamePattern1()(Rep
 // returns a RepositoryRuleBranchNamePatternable when successful
 func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleBranchNamePattern2()(RepositoryRuleBranchNamePatternable) {
     return m.repositoryRuleRepositoryRuleBranchNamePattern2
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning0 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning0()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning0
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning1 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning1()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning1
+}
+// GetRepositoryRuleRepositoryRuleCodeScanning2 gets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+// returns a RepositoryRuleCodeScanningable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleCodeScanning2()(RepositoryRuleCodeScanningable) {
+    return m.repositoryRuleRepositoryRuleCodeScanning2
 }
 // GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern gets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 // returns a RepositoryRuleCommitAuthorEmailPatternable when successful
@@ -570,8 +745,33 @@ func (m *RepositoryRule) GetRepositoryRuleWorkflows()(RepositoryRuleWorkflowsabl
 }
 // Serialize serializes information the current object
 func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetRepositoryRuleBranchNamePattern() != nil {
+    if m.GetFileExtensionRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetFileExtensionRestriction())
+        if err != nil {
+            return err
+        }
+    } else if m.GetFilePathRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetFilePathRestriction())
+        if err != nil {
+            return err
+        }
+    } else if m.GetMaxFilePathLength() != nil {
+        err := writer.WriteObjectValue("", m.GetMaxFilePathLength())
+        if err != nil {
+            return err
+        }
+    } else if m.GetMaxFileSize() != nil {
+        err := writer.WriteObjectValue("", m.GetMaxFileSize())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleBranchNamePattern() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleBranchNamePattern())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleCodeScanning() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleCodeScanning())
         if err != nil {
             return err
         }
@@ -597,6 +797,86 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     } else if m.GetRepositoryRuleDeletion() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleDeletion())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFileExtensionRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFileExtensionRestriction())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFileExtensionRestriction0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFileExtensionRestriction0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFileExtensionRestriction1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFileExtensionRestriction1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFileExtensionRestriction2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFileExtensionRestriction2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFilePathRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFilePathRestriction())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFilePathRestriction0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFilePathRestriction0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFilePathRestriction1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFilePathRestriction1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleFilePathRestriction2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFilePathRestriction2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFilePathLength() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFilePathLength())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFilePathLength0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFilePathLength0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFilePathLength1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFilePathLength1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFilePathLength2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFilePathLength2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFileSize() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFileSize())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFileSize0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFileSize0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFileSize1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFileSize1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleMaxFileSize2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFileSize2())
         if err != nil {
             return err
         }
@@ -627,6 +907,26 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     } else if m.GetRepositoryRuleRepositoryRuleBranchNamePattern2() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleBranchNamePattern2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleCodeScanning2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleCodeScanning2())
         if err != nil {
             return err
         }
@@ -948,9 +1248,29 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
+// SetFileExtensionRestriction sets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+func (m *RepositoryRule) SetFileExtensionRestriction(value File_extension_restrictionable)() {
+    m.file_extension_restriction = value
+}
+// SetFilePathRestriction sets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+func (m *RepositoryRule) SetFilePathRestriction(value File_path_restrictionable)() {
+    m.file_path_restriction = value
+}
+// SetMaxFilePathLength sets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+func (m *RepositoryRule) SetMaxFilePathLength(value Max_file_path_lengthable)() {
+    m.max_file_path_length = value
+}
+// SetMaxFileSize sets the max_file_size property value. Composed type representation for type Max_file_sizeable
+func (m *RepositoryRule) SetMaxFileSize(value Max_file_sizeable)() {
+    m.max_file_size = value
+}
 // SetRepositoryRuleBranchNamePattern sets the repositoryRuleBranchNamePattern property value. Composed type representation for type RepositoryRuleBranchNamePatternable
 func (m *RepositoryRule) SetRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)() {
     m.repositoryRuleBranchNamePattern = value
+}
+// SetRepositoryRuleCodeScanning sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleCodeScanning = value
 }
 // SetRepositoryRuleCommitAuthorEmailPattern sets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 func (m *RepositoryRule) SetRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)() {
@@ -971,6 +1291,70 @@ func (m *RepositoryRule) SetRepositoryRuleCreation(value RepositoryRuleCreationa
 // SetRepositoryRuleDeletion sets the repositoryRuleDeletion property value. Composed type representation for type RepositoryRuleDeletionable
 func (m *RepositoryRule) SetRepositoryRuleDeletion(value RepositoryRuleDeletionable)() {
     m.repositoryRuleDeletion = value
+}
+// SetRepositoryRuleFileExtensionRestriction sets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFileExtensionRestriction(value File_extension_restrictionable)() {
+    m.repositoryRuleFile_extension_restriction = value
+}
+// SetRepositoryRuleFileExtensionRestriction0 sets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFileExtensionRestriction0(value File_extension_restrictionable)() {
+    m.repositoryRuleFile_extension_restriction0 = value
+}
+// SetRepositoryRuleFileExtensionRestriction1 sets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFileExtensionRestriction1(value File_extension_restrictionable)() {
+    m.repositoryRuleFile_extension_restriction1 = value
+}
+// SetRepositoryRuleFileExtensionRestriction2 sets the file_extension_restriction property value. Composed type representation for type File_extension_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFileExtensionRestriction2(value File_extension_restrictionable)() {
+    m.repositoryRuleFile_extension_restriction2 = value
+}
+// SetRepositoryRuleFilePathRestriction sets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFilePathRestriction(value File_path_restrictionable)() {
+    m.repositoryRuleFile_path_restriction = value
+}
+// SetRepositoryRuleFilePathRestriction0 sets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFilePathRestriction0(value File_path_restrictionable)() {
+    m.repositoryRuleFile_path_restriction0 = value
+}
+// SetRepositoryRuleFilePathRestriction1 sets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFilePathRestriction1(value File_path_restrictionable)() {
+    m.repositoryRuleFile_path_restriction1 = value
+}
+// SetRepositoryRuleFilePathRestriction2 sets the file_path_restriction property value. Composed type representation for type File_path_restrictionable
+func (m *RepositoryRule) SetRepositoryRuleFilePathRestriction2(value File_path_restrictionable)() {
+    m.repositoryRuleFile_path_restriction2 = value
+}
+// SetRepositoryRuleMaxFilePathLength sets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+func (m *RepositoryRule) SetRepositoryRuleMaxFilePathLength(value Max_file_path_lengthable)() {
+    m.repositoryRuleMax_file_path_length = value
+}
+// SetRepositoryRuleMaxFilePathLength0 sets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+func (m *RepositoryRule) SetRepositoryRuleMaxFilePathLength0(value Max_file_path_lengthable)() {
+    m.repositoryRuleMax_file_path_length0 = value
+}
+// SetRepositoryRuleMaxFilePathLength1 sets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+func (m *RepositoryRule) SetRepositoryRuleMaxFilePathLength1(value Max_file_path_lengthable)() {
+    m.repositoryRuleMax_file_path_length1 = value
+}
+// SetRepositoryRuleMaxFilePathLength2 sets the max_file_path_length property value. Composed type representation for type Max_file_path_lengthable
+func (m *RepositoryRule) SetRepositoryRuleMaxFilePathLength2(value Max_file_path_lengthable)() {
+    m.repositoryRuleMax_file_path_length2 = value
+}
+// SetRepositoryRuleMaxFileSize sets the max_file_size property value. Composed type representation for type Max_file_sizeable
+func (m *RepositoryRule) SetRepositoryRuleMaxFileSize(value Max_file_sizeable)() {
+    m.repositoryRuleMax_file_size = value
+}
+// SetRepositoryRuleMaxFileSize0 sets the max_file_size property value. Composed type representation for type Max_file_sizeable
+func (m *RepositoryRule) SetRepositoryRuleMaxFileSize0(value Max_file_sizeable)() {
+    m.repositoryRuleMax_file_size0 = value
+}
+// SetRepositoryRuleMaxFileSize1 sets the max_file_size property value. Composed type representation for type Max_file_sizeable
+func (m *RepositoryRule) SetRepositoryRuleMaxFileSize1(value Max_file_sizeable)() {
+    m.repositoryRuleMax_file_size1 = value
+}
+// SetRepositoryRuleMaxFileSize2 sets the max_file_size property value. Composed type representation for type Max_file_sizeable
+func (m *RepositoryRule) SetRepositoryRuleMaxFileSize2(value Max_file_sizeable)() {
+    m.repositoryRuleMax_file_size2 = value
 }
 // SetRepositoryRuleNonFastForward sets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 func (m *RepositoryRule) SetRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)() {
@@ -995,6 +1379,22 @@ func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleBranchNamePattern1(value
 // SetRepositoryRuleRepositoryRuleBranchNamePattern2 sets the repositoryRuleBranchNamePattern property value. Composed type representation for type RepositoryRuleBranchNamePatternable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleBranchNamePattern2(value RepositoryRuleBranchNamePatternable)() {
     m.repositoryRuleRepositoryRuleBranchNamePattern2 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning0 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning0(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning0 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning1 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning1(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning1 = value
+}
+// SetRepositoryRuleRepositoryRuleCodeScanning2 sets the repositoryRuleCodeScanning property value. Composed type representation for type RepositoryRuleCodeScanningable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCodeScanning2(value RepositoryRuleCodeScanningable)() {
+    m.repositoryRuleRepositoryRuleCodeScanning2 = value
 }
 // SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern sets the repositoryRuleCommitAuthorEmailPattern property value. Composed type representation for type RepositoryRuleCommitAuthorEmailPatternable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)() {
@@ -1250,18 +1650,43 @@ func (m *RepositoryRule) SetRepositoryRuleWorkflows(value RepositoryRuleWorkflow
 }
 type RepositoryRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFileExtensionRestriction()(File_extension_restrictionable)
+    GetFilePathRestriction()(File_path_restrictionable)
+    GetMaxFilePathLength()(Max_file_path_lengthable)
+    GetMaxFileSize()(Max_file_sizeable)
     GetRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable)
+    GetRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable)
     GetRepositoryRuleCommitAuthorEmailPattern()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleCommitMessagePattern()(RepositoryRuleCommitMessagePatternable)
     GetRepositoryRuleCommitterEmailPattern()(RepositoryRuleCommitterEmailPatternable)
     GetRepositoryRuleCreation()(RepositoryRuleCreationable)
     GetRepositoryRuleDeletion()(RepositoryRuleDeletionable)
+    GetRepositoryRuleFileExtensionRestriction()(File_extension_restrictionable)
+    GetRepositoryRuleFileExtensionRestriction0()(File_extension_restrictionable)
+    GetRepositoryRuleFileExtensionRestriction1()(File_extension_restrictionable)
+    GetRepositoryRuleFileExtensionRestriction2()(File_extension_restrictionable)
+    GetRepositoryRuleFilePathRestriction()(File_path_restrictionable)
+    GetRepositoryRuleFilePathRestriction0()(File_path_restrictionable)
+    GetRepositoryRuleFilePathRestriction1()(File_path_restrictionable)
+    GetRepositoryRuleFilePathRestriction2()(File_path_restrictionable)
+    GetRepositoryRuleMaxFilePathLength()(Max_file_path_lengthable)
+    GetRepositoryRuleMaxFilePathLength0()(Max_file_path_lengthable)
+    GetRepositoryRuleMaxFilePathLength1()(Max_file_path_lengthable)
+    GetRepositoryRuleMaxFilePathLength2()(Max_file_path_lengthable)
+    GetRepositoryRuleMaxFileSize()(Max_file_sizeable)
+    GetRepositoryRuleMaxFileSize0()(Max_file_sizeable)
+    GetRepositoryRuleMaxFileSize1()(Max_file_sizeable)
+    GetRepositoryRuleMaxFileSize2()(Max_file_sizeable)
     GetRepositoryRuleNonFastForward()(RepositoryRuleNonFastForwardable)
     GetRepositoryRulePullRequest()(RepositoryRulePullRequestable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern0()(RepositoryRuleBranchNamePatternable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern1()(RepositoryRuleBranchNamePatternable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern2()(RepositoryRuleBranchNamePatternable)
+    GetRepositoryRuleRepositoryRuleCodeScanning()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning0()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning1()(RepositoryRuleCodeScanningable)
+    GetRepositoryRuleRepositoryRuleCodeScanning2()(RepositoryRuleCodeScanningable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern0()(RepositoryRuleCommitAuthorEmailPatternable)
     GetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern1()(RepositoryRuleCommitAuthorEmailPatternable)
@@ -1325,18 +1750,43 @@ type RepositoryRuleable interface {
     GetRepositoryRuleTagNamePattern()(RepositoryRuleTagNamePatternable)
     GetRepositoryRuleUpdate()(RepositoryRuleUpdateable)
     GetRepositoryRuleWorkflows()(RepositoryRuleWorkflowsable)
+    SetFileExtensionRestriction(value File_extension_restrictionable)()
+    SetFilePathRestriction(value File_path_restrictionable)()
+    SetMaxFilePathLength(value Max_file_path_lengthable)()
+    SetMaxFileSize(value Max_file_sizeable)()
     SetRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)()
+    SetRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)()
     SetRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleCommitMessagePattern(value RepositoryRuleCommitMessagePatternable)()
     SetRepositoryRuleCommitterEmailPattern(value RepositoryRuleCommitterEmailPatternable)()
     SetRepositoryRuleCreation(value RepositoryRuleCreationable)()
     SetRepositoryRuleDeletion(value RepositoryRuleDeletionable)()
+    SetRepositoryRuleFileExtensionRestriction(value File_extension_restrictionable)()
+    SetRepositoryRuleFileExtensionRestriction0(value File_extension_restrictionable)()
+    SetRepositoryRuleFileExtensionRestriction1(value File_extension_restrictionable)()
+    SetRepositoryRuleFileExtensionRestriction2(value File_extension_restrictionable)()
+    SetRepositoryRuleFilePathRestriction(value File_path_restrictionable)()
+    SetRepositoryRuleFilePathRestriction0(value File_path_restrictionable)()
+    SetRepositoryRuleFilePathRestriction1(value File_path_restrictionable)()
+    SetRepositoryRuleFilePathRestriction2(value File_path_restrictionable)()
+    SetRepositoryRuleMaxFilePathLength(value Max_file_path_lengthable)()
+    SetRepositoryRuleMaxFilePathLength0(value Max_file_path_lengthable)()
+    SetRepositoryRuleMaxFilePathLength1(value Max_file_path_lengthable)()
+    SetRepositoryRuleMaxFilePathLength2(value Max_file_path_lengthable)()
+    SetRepositoryRuleMaxFileSize(value Max_file_sizeable)()
+    SetRepositoryRuleMaxFileSize0(value Max_file_sizeable)()
+    SetRepositoryRuleMaxFileSize1(value Max_file_sizeable)()
+    SetRepositoryRuleMaxFileSize2(value Max_file_sizeable)()
     SetRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)()
     SetRepositoryRulePullRequest(value RepositoryRulePullRequestable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern0(value RepositoryRuleBranchNamePatternable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern1(value RepositoryRuleBranchNamePatternable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern2(value RepositoryRuleBranchNamePatternable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning0(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning1(value RepositoryRuleCodeScanningable)()
+    SetRepositoryRuleRepositoryRuleCodeScanning2(value RepositoryRuleCodeScanningable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern0(value RepositoryRuleCommitAuthorEmailPatternable)()
     SetRepositoryRuleRepositoryRuleCommitAuthorEmailPattern1(value RepositoryRuleCommitAuthorEmailPatternable)()
