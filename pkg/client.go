@@ -34,13 +34,22 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	}
 
 	// Configure GitHub App authentication if required fields are provided
-	if options.GitHubAppID != 0 && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
+	if (options.GitHubAppID != 0 || options.GitHubAppClientID != "") && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
 		existingTransport := netHttpClient.Transport
-		appTransport, err := ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
-		if err != nil {
-			return nil, fmt.Errorf("failed to create transport from GitHub App: %v", err)
+
+		if options.GitHubAppClientID != "" {
+			appTransport, err := ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppClientID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+			if err != nil {
+				return nil, fmt.Errorf("failed to create transport from GitHub App using clientID: %v", err)
+			}
+			netHttpClient.Transport = appTransport
+		} else {
+			appTransport, err := ghinstallation.NewKeyFromFileWithAppID(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+			if err != nil {
+				return nil, fmt.Errorf("failed to create transport from GitHub App using appID: %v", err)
+			}
+			netHttpClient.Transport = appTransport
 		}
-		netHttpClient.Transport = appTransport
 	}
 
 	// Middleware must be applied after App transport is set, otherwise App token will fail to be
@@ -100,7 +109,10 @@ type ClientOptions struct {
 	// GitHubAppPemFilePath should be left blank if token auth or an unauthenticated client is desired.
 	GitHubAppPemFilePath string
 	// GitHubAppID should be left blank if token auth or an unauthenticated client is desired.
+	// Deprecated: Use GitHubAppClientID instead.
 	GitHubAppID int64
+	// GitHubAppClientID should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppClientID string
 	// GitHubAppInstallationID should be left blank if token auth or an unauthenticated client is desired.
 	GitHubAppInstallationID int64
 }
@@ -158,6 +170,14 @@ func WithGitHubAppAuthentication(GitHubAppPemFilePath string, GitHubAppID int64,
 	return func(c *ClientOptions) {
 		c.GitHubAppPemFilePath = GitHubAppPemFilePath
 		c.GitHubAppID = GitHubAppID
+		c.GitHubAppInstallationID = GitHubAppInstallationID
+	}
+}
+
+func WithGitHubAppAuthenticationClientID(GitHubAppPemFilePath string, GitHubAppClientID string, GitHubAppInstallationID int64) ClientOptionFunc {
+	return func(c *ClientOptions) {
+		c.GitHubAppPemFilePath = GitHubAppPemFilePath
+		c.GitHubAppClientID = GitHubAppClientID
 		c.GitHubAppInstallationID = GitHubAppInstallationID
 	}
 }
