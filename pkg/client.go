@@ -151,9 +151,9 @@ func WithBaseUrl(baseURL string) ClientOptionFunc {
 	}
 }
 
-// WithAuthorizationToken configures the client with the given
+// WithTokenAuthentication configures the client with the given
 // Personal Authorization Token.
-func WithAuthorizationToken(token string) ClientOptionFunc {
+func WithTokenAuthentication(token string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.Token = token
 	}

@@ -16,7 +16,7 @@ func main() {
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),
 		pkg.WithBaseUrl("https://api.github.com"),
-		pkg.WithAuthorizationToken(os.Getenv("GITHUB_TOKEN")),
+		pkg.WithTokenAuthentication(os.Getenv("GITHUB_TOKEN")),
 	)
 
 	// equally valid:

@@ -15,7 +15,7 @@ func main() {
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),
 		pkg.WithBaseUrl("https://api.github.com"),
-		// pkg.WithAuthorizationToken(os.Getenv("GITHUB_TOKEN")),
+		// pkg.WithTokenAuthentication(os.Getenv("GITHUB_TOKEN")),
 		// client ID: "Iv1.97d45f3f6f63859f"
 		// pkg.WithGitHubAppAuthenticationUsingAppID("/home/kfcampbell/github/dev/go-sdk/kfcampbell-terraform-provider.2024-04-30.private-key.pem", 131977, 20570954),
 		pkg.WithGitHubAppAuthentication("/home/kfcampbell/github/dev/go-sdk/kfcampbell-terraform-provider.2024-04-30.private-key.pem", "Iv1.97d45f3f6f63859f", 20570954),
