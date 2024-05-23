@@ -166,18 +166,22 @@ func WithAPIVersion(version string) ClientOptionFunc {
 	}
 }
 
-func WithGitHubAppAuthentication(GitHubAppPemFilePath string, GitHubAppID int64, GitHubAppInstallationID int64) ClientOptionFunc {
+// WithGitHubAppAuthenticationUsingAppID configures the client with the given GitHub App
+// auth. Deprecated: Use WithGitHubAppAuthentication instead, which takes in a clientID
+// string instead of an appID integer.
+func WithGitHubAppAuthenticationUsingAppID(pemFilePath string, appID int64, installationID int64) ClientOptionFunc {
 	return func(c *ClientOptions) {
-		c.GitHubAppPemFilePath = GitHubAppPemFilePath
-		c.GitHubAppID = GitHubAppID
-		c.GitHubAppInstallationID = GitHubAppInstallationID
+		c.GitHubAppPemFilePath = pemFilePath
+		c.GitHubAppID = appID
+		c.GitHubAppInstallationID = installationID
 	}
 }
 
-func WithGitHubAppAuthenticationClientID(GitHubAppPemFilePath string, GitHubAppClientID string, GitHubAppInstallationID int64) ClientOptionFunc {
+// WithGitHubAppAuthentication configures the client with the given GitHub App auth.
+func WithGitHubAppAuthentication(pemFilePath string, clientID string, installationID int64) ClientOptionFunc {
 	return func(c *ClientOptions) {
-		c.GitHubAppPemFilePath = GitHubAppPemFilePath
-		c.GitHubAppClientID = GitHubAppClientID
-		c.GitHubAppInstallationID = GitHubAppInstallationID
+		c.GitHubAppPemFilePath = pemFilePath
+		c.GitHubAppClientID = clientID
+		c.GitHubAppInstallationID = installationID
 	}
 }
