@@ -63,7 +63,7 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	}
 
 	// If a PAT is provided and GitHub App information is not, configure token authentication
-	if options.Token != "" && (options.GitHubAppID == 0 && options.GitHubAppInstallationID == 0 && options.GitHubAppPemFilePath == "") {
+	if options.Token != "" && (options.GitHubAppInstallationID == 0 && options.GitHubAppPemFilePath == "") {
 		tokenProviderOptions = append(tokenProviderOptions, auth.WithTokenAuthentication(options.Token))
 	}
 
