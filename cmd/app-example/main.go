@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"log"
+	"os"
+	"strconv"
 	"time"
 
 	abs "github.com/microsoft/kiota-abstractions-go"
@@ -11,14 +13,16 @@ import (
 )
 
 func main() {
+	installationID, err := strconv.ParseInt(os.Getenv("INSTALLATION_ID"), 10, 64)
+	if err != nil {
+		log.Fatalf("error parsing installation ID from string to int64: %v", err)
+	}
+
 	client, err := pkg.NewApiClient(
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),
 		pkg.WithBaseUrl("https://api.github.com"),
-		// pkg.WithTokenAuthentication(os.Getenv("GITHUB_TOKEN")),
-		// client ID: "Iv1.97d45f3f6f63859f"
-		// pkg.WithGitHubAppAuthenticationUsingAppID("/home/kfcampbell/github/dev/go-sdk/kfcampbell-terraform-provider.2024-04-30.private-key.pem", 131977, 20570954),
-		pkg.WithGitHubAppAuthentication("/home/kfcampbell/github/dev/go-sdk/kfcampbell-terraform-provider.2024-04-30.private-key.pem", "Iv1.97d45f3f6f63859f", 20570954),
+		pkg.WithGitHubAppAuthentication(os.Getenv("PATH_TO_PEM_FILE"), os.Getenv("CLIENT_ID"), installationID),
 	)
 
 	// equally valid:
