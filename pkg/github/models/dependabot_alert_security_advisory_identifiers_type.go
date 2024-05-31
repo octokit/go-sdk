@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of advisory identifier.
 type DependabotAlertSecurityAdvisory_identifiers_type int
 
@@ -21,7 +18,7 @@ func ParseDependabotAlertSecurityAdvisory_identifiers_type(v string) (any, error
         case "GHSA":
             result = GHSA_DEPENDABOTALERTSECURITYADVISORY_IDENTIFIERS_TYPE
         default:
-            return 0, errors.New("Unknown DependabotAlertSecurityAdvisory_identifiers_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

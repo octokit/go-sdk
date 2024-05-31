@@ -1,7 +1,4 @@
 package views
-import (
-    "errors"
-)
 type GetPerQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetPerQueryParameterType(v string) (any, error) {
         case "week":
             result = WEEK_GETPERQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetPerQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // **Required when the `state` is `resolved`.** The reason for resolving the alert.
 type SecretScanningAlertResolution int
 
@@ -27,7 +24,7 @@ func ParseSecretScanningAlertResolution(v string) (any, error) {
         case "used_in_tests":
             result = USED_IN_TESTS_SECRETSCANNINGALERTRESOLUTION
         default:
-            return 0, errors.New("Unknown SecretScanningAlertResolution value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

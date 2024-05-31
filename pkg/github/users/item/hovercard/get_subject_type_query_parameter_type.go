@@ -1,7 +1,4 @@
 package hovercard
-import (
-    "errors"
-)
 type GetSubject_typeQueryParameterType int
 
 const (
@@ -26,7 +23,7 @@ func ParseGetSubject_typeQueryParameterType(v string) (any, error) {
         case "pull_request":
             result = PULL_REQUEST_GETSUBJECT_TYPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetSubject_typeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

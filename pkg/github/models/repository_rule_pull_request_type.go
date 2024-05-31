@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRulePullRequest_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRulePullRequest_type(v string) (any, error) {
         case "pull_request":
             result = PULL_REQUEST_REPOSITORYRULEPULLREQUEST_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRulePullRequest_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The role to give the user in the organization. Can be one of:   * `admin` - The user will become an owner of the organization.   * `member` - The user will become a non-owner member of the organization.
 type WithUsernamePutRequestBody_role int
 
@@ -21,7 +18,7 @@ func ParseWithUsernamePutRequestBody_role(v string) (any, error) {
         case "member":
             result = MEMBER_WITHUSERNAMEPUTREQUESTBODY_ROLE
         default:
-            return 0, errors.New("Unknown WithUsernamePutRequestBody_role value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of the value for the property
 type OrgCustomProperty_value_type int
 
@@ -21,7 +18,7 @@ func ParseOrgCustomProperty_value_type(v string) (any, error) {
         case "single_select":
             result = SINGLE_SELECT_ORGCUSTOMPROPERTY_VALUE_TYPE
         default:
-            return 0, errors.New("Unknown OrgCustomProperty_value_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

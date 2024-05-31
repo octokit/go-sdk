@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
 type DependencyGraphDiff_scope int
 
@@ -24,7 +21,7 @@ func ParseDependencyGraphDiff_scope(v string) (any, error) {
         case "development":
             result = DEVELOPMENT_DEPENDENCYGRAPHDIFF_SCOPE
         default:
-            return 0, errors.New("Unknown DependencyGraphDiff_scope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

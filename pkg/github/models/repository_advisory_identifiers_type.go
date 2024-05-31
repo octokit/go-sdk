@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of identifier.
 type RepositoryAdvisory_identifiers_type int
 
@@ -21,7 +18,7 @@ func ParseRepositoryAdvisory_identifiers_type(v string) (any, error) {
         case "GHSA":
             result = GHSA_REPOSITORYADVISORY_IDENTIFIERS_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryAdvisory_identifiers_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

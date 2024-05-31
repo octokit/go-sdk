@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // Action to apply to the fine-grained personal access token.
 type WithPat_PostRequestBody_action int
 
@@ -18,7 +15,7 @@ func ParseWithPat_PostRequestBody_action(v string) (any, error) {
         case "revoke":
             result = REVOKE_WITHPAT_POSTREQUESTBODY_ACTION
         default:
-            return 0, errors.New("Unknown WithPat_PostRequestBody_action value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

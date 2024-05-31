@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleRequiredSignatures_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleRequiredSignatures_type(v string) (any, error) {
         case "required_signatures":
             result = REQUIRED_SIGNATURES_REPOSITORYRULEREQUIREDSIGNATURES_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleRequiredSignatures_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

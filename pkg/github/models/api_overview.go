@@ -8,6 +8,8 @@ import (
 type ApiOverview struct {
     // The actions property
     actions []string
+    // The actions_macos property
+    actions_macos []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The api property
@@ -54,6 +56,11 @@ func CreateApiOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 func (m *ApiOverview) GetActions()([]string) {
     return m.actions
 }
+// GetActionsMacos gets the actions_macos property value. The actions_macos property
+// returns a []string when successful
+func (m *ApiOverview) GetActionsMacos()([]string) {
+    return m.actions_macos
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
 func (m *ApiOverview) GetAdditionalData()(map[string]any) {
@@ -91,6 +98,22 @@ func (m *ApiOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetActions(res)
+        }
+        return nil
+    }
+    res["actions_macos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetActionsMacos(res)
         }
         return nil
     }
@@ -344,6 +367,12 @@ func (m *ApiOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetActionsMacos() != nil {
+        err := writer.WriteCollectionOfStringValues("actions_macos", m.GetActionsMacos())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApi() != nil {
         err := writer.WriteCollectionOfStringValues("api", m.GetApi())
         if err != nil {
@@ -434,6 +463,10 @@ func (m *ApiOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 func (m *ApiOverview) SetActions(value []string)() {
     m.actions = value
 }
+// SetActionsMacos sets the actions_macos property value. The actions_macos property
+func (m *ApiOverview) SetActionsMacos(value []string)() {
+    m.actions_macos = value
+}
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ApiOverview) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
@@ -494,6 +527,7 @@ type ApiOverviewable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActions()([]string)
+    GetActionsMacos()([]string)
     GetApi()([]string)
     GetDependabot()([]string)
     GetDomains()(ApiOverview_domainsable)
@@ -508,6 +542,7 @@ type ApiOverviewable interface {
     GetVerifiablePasswordAuthentication()(*bool)
     GetWeb()([]string)
     SetActions(value []string)()
+    SetActionsMacos(value []string)()
     SetApi(value []string)()
     SetDependabot(value []string)()
     SetDomains(value ApiOverview_domainsable)()

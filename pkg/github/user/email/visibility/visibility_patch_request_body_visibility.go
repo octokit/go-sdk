@@ -1,7 +1,4 @@
 package visibility
-import (
-    "errors"
-)
 // Denotes whether an email is publicly visible.
 type VisibilityPatchRequestBody_visibility int
 
@@ -21,7 +18,7 @@ func ParseVisibilityPatchRequestBody_visibility(v string) (any, error) {
         case "private":
             result = PRIVATE_VISIBILITYPATCHREQUESTBODY_VISIBILITY
         default:
-            return 0, errors.New("Unknown VisibilityPatchRequestBody_visibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

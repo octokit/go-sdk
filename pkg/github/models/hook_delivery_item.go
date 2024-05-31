@@ -31,6 +31,8 @@ type HookDeliveryItem struct {
     status *string
     // Status code received when delivery was made.
     status_code *int32
+    // Time when the webhook delivery was throttled.
+    throttled_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // NewHookDeliveryItem instantiates a new HookDeliveryItem and sets the default values.
 func NewHookDeliveryItem()(*HookDeliveryItem) {
@@ -183,6 +185,16 @@ func (m *HookDeliveryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["throttled_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetThrottledAt(val)
+        }
+        return nil
+    }
     return res
 }
 // GetGuid gets the guid property value. Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).
@@ -219,6 +231,11 @@ func (m *HookDeliveryItem) GetStatus()(*string) {
 // returns a *int32 when successful
 func (m *HookDeliveryItem) GetStatusCode()(*int32) {
     return m.status_code
+}
+// GetThrottledAt gets the throttled_at property value. Time when the webhook delivery was throttled.
+// returns a *Time when successful
+func (m *HookDeliveryItem) GetThrottledAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    return m.throttled_at
 }
 // Serialize serializes information the current object
 func (m *HookDeliveryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -289,6 +306,12 @@ func (m *HookDeliveryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err := writer.WriteTimeValue("throttled_at", m.GetThrottledAt())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -344,6 +367,10 @@ func (m *HookDeliveryItem) SetStatus(value *string)() {
 func (m *HookDeliveryItem) SetStatusCode(value *int32)() {
     m.status_code = value
 }
+// SetThrottledAt sets the throttled_at property value. Time when the webhook delivery was throttled.
+func (m *HookDeliveryItem) SetThrottledAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    m.throttled_at = value
+}
 type HookDeliveryItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -358,6 +385,7 @@ type HookDeliveryItemable interface {
     GetRepositoryId()(*int32)
     GetStatus()(*string)
     GetStatusCode()(*int32)
+    GetThrottledAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetAction(value *string)()
     SetDeliveredAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDuration(value *float64)()
@@ -369,4 +397,5 @@ type HookDeliveryItemable interface {
     SetRepositoryId(value *int32)()
     SetStatus(value *string)()
     SetStatusCode(value *int32)()
+    SetThrottledAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

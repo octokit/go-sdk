@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The operator to use for matching.
 type RepositoryRuleCommitterEmailPattern_parameters_operator int
 
@@ -27,7 +24,7 @@ func ParseRepositoryRuleCommitterEmailPattern_parameters_operator(v string) (any
         case "regex":
             result = REGEX_REPOSITORYRULECOMMITTEREMAILPATTERN_PARAMETERS_OPERATOR
         default:
-            return 0, errors.New("Unknown RepositoryRuleCommitterEmailPattern_parameters_operator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

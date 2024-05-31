@@ -1,7 +1,4 @@
 package alerts
-import (
-    "errors"
-)
 type GetDirectionQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetDirectionQueryParameterType(v string) (any, error) {
         case "desc":
             result = DESC_GETDIRECTIONQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetDirectionQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

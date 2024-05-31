@@ -1,7 +1,4 @@
 package migrations
-import (
-    "errors"
-)
 // Allowed values that can be passed to the exclude param.
 type MigrationsPostRequestBody_exclude int
 
@@ -18,7 +15,7 @@ func ParseMigrationsPostRequestBody_exclude(v string) (any, error) {
         case "repositories":
             result = REPOSITORIES_MIGRATIONSPOSTREQUESTBODY_EXCLUDE
         default:
-            return 0, errors.New("Unknown MigrationsPostRequestBody_exclude value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

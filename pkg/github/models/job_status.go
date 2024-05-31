@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The phase of the lifecycle that the job is currently in.
 type Job_status int
 
@@ -33,7 +30,7 @@ func ParseJob_status(v string) (any, error) {
         case "pending":
             result = PENDING_JOB_STATUS
         default:
-            return 0, errors.New("Unknown Job_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

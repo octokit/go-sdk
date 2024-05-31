@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
 type CopilotOrganizationDetails_ide_chat int
 
@@ -24,7 +21,7 @@ func ParseCopilotOrganizationDetails_ide_chat(v string) (any, error) {
         case "unconfigured":
             result = UNCONFIGURED_COPILOTORGANIZATIONDETAILS_IDE_CHAT
         default:
-            return 0, errors.New("Unknown CopilotOrganizationDetails_ide_chat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

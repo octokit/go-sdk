@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to view and manage users blocked by the organization.
 type AppPermissions_organization_user_blocking int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_organization_user_blocking(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_USER_BLOCKING
         default:
-            return 0, errors.New("Unknown AppPermissions_organization_user_blocking value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package alerts
-import (
-    "errors"
-)
 type GetScopeQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetScopeQueryParameterType(v string) (any, error) {
         case "runtime":
             result = RUNTIME_GETSCOPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetScopeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

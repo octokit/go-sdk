@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleRequiredLinearHistory_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleRequiredLinearHistory_type(v string) (any, error) {
         case "required_linear_history":
             result = REQUIRED_LINEAR_HISTORY_REPOSITORYRULEREQUIREDLINEARHISTORY_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleRequiredLinearHistory_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

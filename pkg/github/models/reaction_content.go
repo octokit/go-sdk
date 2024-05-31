@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The reaction to use
 type Reaction_content int
 
@@ -39,7 +36,7 @@ func ParseReaction_content(v string) (any, error) {
         case "eyes":
             result = EYES_REACTION_CONTENT
         default:
-            return 0, errors.New("Unknown Reaction_content value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

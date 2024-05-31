@@ -1,7 +1,4 @@
 package comments
-import (
-    "errors"
-)
 // The level at which the comment is targeted.
 type CommentsPostRequestBody_subject_type int
 
@@ -21,7 +18,7 @@ func ParseCommentsPostRequestBody_subject_type(v string) (any, error) {
         case "file":
             result = FILE_COMMENTSPOSTREQUESTBODY_SUBJECT_TYPE
         default:
-            return 0, errors.New("Unknown CommentsPostRequestBody_subject_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

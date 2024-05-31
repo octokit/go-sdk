@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
 type WithRelease_PatchRequestBody_make_latest int
 
@@ -24,7 +21,7 @@ func ParseWithRelease_PatchRequestBody_make_latest(v string) (any, error) {
         case "legacy":
             result = LEGACY_WITHRELEASE_PATCHREQUESTBODY_MAKE_LATEST
         default:
-            return 0, errors.New("Unknown WithRelease_PatchRequestBody_make_latest value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

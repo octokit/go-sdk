@@ -271,11 +271,6 @@ func (m *WithOrgItemRequestBuilder) SecurityManagers()(*ItemSecurityManagersRequ
 func (m *WithOrgItemRequestBuilder) Settings()(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Team the team property
-// returns a *ItemTeamRequestBuilder when successful
-func (m *WithOrgItemRequestBuilder) Team()(*ItemTeamRequestBuilder) {
-    return NewItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Teams the teams property
 // returns a *ItemTeamsRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Teams()(*ItemTeamsRequestBuilder) {

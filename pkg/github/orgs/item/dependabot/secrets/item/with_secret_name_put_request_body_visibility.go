@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.
 type WithSecret_namePutRequestBody_visibility int
 
@@ -24,7 +21,7 @@ func ParseWithSecret_namePutRequestBody_visibility(v string) (any, error) {
         case "selected":
             result = SELECTED_WITHSECRET_NAMEPUTREQUESTBODY_VISIBILITY
         default:
-            return 0, errors.New("Unknown WithSecret_namePutRequestBody_visibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

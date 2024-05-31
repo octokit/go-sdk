@@ -1,7 +1,4 @@
 package trees
-import (
-    "errors"
-)
 // The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
 type TreesPostRequestBody_tree_mode int
 
@@ -30,7 +27,7 @@ func ParseTreesPostRequestBody_tree_mode(v string) (any, error) {
         case "120000":
             result = ONETWOZEROZEROZEROZERO_TREESPOSTREQUESTBODY_TREE_MODE
         default:
-            return 0, errors.New("Unknown TreesPostRequestBody_tree_mode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

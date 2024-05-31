@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request's title.- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
 type PullRequestWebhook_squash_merge_commit_title int
 
@@ -21,7 +18,7 @@ func ParsePullRequestWebhook_squash_merge_commit_title(v string) (any, error) {
         case "COMMIT_OR_PR_TITLE":
             result = COMMIT_OR_PR_TITLE_PULLREQUESTWEBHOOK_SQUASH_MERGE_COMMIT_TITLE
         default:
-            return 0, errors.New("Unknown PullRequestWebhook_squash_merge_commit_title value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

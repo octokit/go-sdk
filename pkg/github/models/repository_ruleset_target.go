@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
 type RepositoryRuleset_target int
 
@@ -24,7 +21,7 @@ func ParseRepositoryRuleset_target(v string) (any, error) {
         case "push":
             result = PUSH_REPOSITORYRULESET_TARGET
         default:
-            return 0, errors.New("Unknown RepositoryRuleset_target value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

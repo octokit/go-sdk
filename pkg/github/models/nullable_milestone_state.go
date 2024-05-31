@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The state of the milestone.
 type NullableMilestone_state int
 
@@ -21,7 +18,7 @@ func ParseNullableMilestone_state(v string) (any, error) {
         case "closed":
             result = CLOSED_NULLABLEMILESTONE_STATE
         default:
-            return 0, errors.New("Unknown NullableMilestone_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
