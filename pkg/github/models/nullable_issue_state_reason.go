@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The reason for the current state
 type NullableIssue_state_reason int
 
@@ -24,7 +21,7 @@ func ParseNullableIssue_state_reason(v string) (any, error) {
         case "not_planned":
             result = NOT_PLANNED_NULLABLEISSUE_STATE_REASON
         default:
-            return 0, errors.New("Unknown NullableIssue_state_reason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

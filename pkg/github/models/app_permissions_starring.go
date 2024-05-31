@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to list and manage repositories a user is starring.
 type AppPermissions_starring int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_starring(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_STARRING
         default:
-            return 0, errors.New("Unknown AppPermissions_starring value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

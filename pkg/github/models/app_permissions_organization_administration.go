@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to manage access to an organization.
 type AppPermissions_organization_administration int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_organization_administration(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_ADMINISTRATION
         default:
-            return 0, errors.New("Unknown AppPermissions_organization_administration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

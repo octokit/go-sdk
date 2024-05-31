@@ -1,7 +1,4 @@
 package invitations
-import (
-    "errors"
-)
 type GetRoleQueryParameterType int
 
 const (
@@ -29,7 +26,7 @@ func ParseGetRoleQueryParameterType(v string) (any, error) {
         case "hiring_manager":
             result = HIRING_MANAGER_GETROLEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetRoleQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

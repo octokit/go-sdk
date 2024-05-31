@@ -1,7 +1,4 @@
 package reactions
-import (
-    "errors"
-)
 // The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
 type ReactionsPostRequestBody_content int
 
@@ -39,7 +36,7 @@ func ParseReactionsPostRequestBody_content(v string) (any, error) {
         case "eyes":
             result = EYES_REACTIONSPOSTREQUESTBODY_CONTENT
         default:
-            return 0, errors.New("Unknown ReactionsPostRequestBody_content value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

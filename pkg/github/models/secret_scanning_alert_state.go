@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
 type SecretScanningAlertState int
 
@@ -21,7 +18,7 @@ func ParseSecretScanningAlertState(v string) (any, error) {
         case "resolved":
             result = RESOLVED_SECRETSCANNINGALERTSTATE
         default:
-            return 0, errors.New("Unknown SecretScanningAlertState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

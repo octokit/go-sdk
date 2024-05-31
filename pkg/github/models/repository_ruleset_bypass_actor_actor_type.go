@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of actor that can bypass a ruleset.
 type RepositoryRulesetBypassActor_actor_type int
 
@@ -30,7 +27,7 @@ func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
         case "DeployKey":
             result = DEPLOYKEY_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRulesetBypassActor_actor_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

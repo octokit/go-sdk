@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token for checks on code.
 type AppPermissions_checks int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_checks(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_CHECKS
         default:
-            return 0, errors.New("Unknown AppPermissions_checks value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

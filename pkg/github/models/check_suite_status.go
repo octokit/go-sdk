@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
 type CheckSuite_status int
 
@@ -33,7 +30,7 @@ func ParseCheckSuite_status(v string) (any, error) {
         case "pending":
             result = PENDING_CHECKSUITE_STATUS
         default:
-            return 0, errors.New("Unknown CheckSuite_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

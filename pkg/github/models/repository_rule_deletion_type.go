@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleDeletion_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleDeletion_type(v string) (any, error) {
         case "deletion":
             result = DELETION_REPOSITORYRULEDELETION_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleDeletion_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

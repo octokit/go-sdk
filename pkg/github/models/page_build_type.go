@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The process in which the Page will be built.
 type Page_build_type int
 
@@ -21,7 +18,7 @@ func ParsePage_build_type(v string) (any, error) {
         case "workflow":
             result = WORKFLOW_PAGE_BUILD_TYPE
         default:
-            return 0, errors.New("Unknown Page_build_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

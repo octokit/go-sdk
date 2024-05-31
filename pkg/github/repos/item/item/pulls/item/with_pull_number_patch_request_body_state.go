@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // State of this Pull Request. Either `open` or `closed`.
 type WithPull_numberPatchRequestBody_state int
 
@@ -21,7 +18,7 @@ func ParseWithPull_numberPatchRequestBody_state(v string) (any, error) {
         case "closed":
             result = CLOSED_WITHPULL_NUMBERPATCHREQUESTBODY_STATE
         default:
-            return 0, errors.New("Unknown WithPull_numberPatchRequestBody_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

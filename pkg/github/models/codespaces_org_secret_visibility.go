@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of repositories in the organization that the secret is visible to
 type CodespacesOrgSecret_visibility int
 
@@ -24,7 +21,7 @@ func ParseCodespacesOrgSecret_visibility(v string) (any, error) {
         case "selected":
             result = SELECTED_CODESPACESORGSECRET_VISIBILITY
         default:
-            return 0, errors.New("Unknown CodespacesOrgSecret_visibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

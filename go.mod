@@ -5,7 +5,7 @@ go 1.21.5
 require (
 	github.com/kfcampbell/ghinstallation v0.0.6
 	github.com/microsoft/kiota-abstractions-go v1.6.0
-	github.com/microsoft/kiota-http-go v1.3.3
+	github.com/microsoft/kiota-http-go v1.4.1
 	github.com/microsoft/kiota-serialization-form-go v1.0.0
 	github.com/microsoft/kiota-serialization-json-go v1.0.7
 	github.com/microsoft/kiota-serialization-multipart-go v1.0.0

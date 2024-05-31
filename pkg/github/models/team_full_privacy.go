@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of privacy this team should have
 type TeamFull_privacy int
 
@@ -21,7 +18,7 @@ func ParseTeamFull_privacy(v string) (any, error) {
         case "secret":
             result = SECRET_TEAMFULL_PRIVACY
         default:
-            return 0, errors.New("Unknown TeamFull_privacy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

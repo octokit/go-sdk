@@ -1,7 +1,4 @@
 package repositories
-import (
-    "errors"
-)
 type GetOrderQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetOrderQueryParameterType(v string) (any, error) {
         case "asc":
             result = ASC_GETORDERQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetOrderQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

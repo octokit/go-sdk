@@ -26,3 +26,8 @@ func NewItemItemCodeScanningCodeqlRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemItemCodeScanningCodeqlRequestBuilder) Databases()(*ItemItemCodeScanningCodeqlDatabasesRequestBuilder) {
     return NewItemItemCodeScanningCodeqlDatabasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// VariantAnalyses the variantAnalyses property
+// returns a *ItemItemCodeScanningCodeqlVariantAnalysesRequestBuilder when successful
+func (m *ItemItemCodeScanningCodeqlRequestBuilder) VariantAnalyses()(*ItemItemCodeScanningCodeqlVariantAnalysesRequestBuilder) {
+    return NewItemItemCodeScanningCodeqlVariantAnalysesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

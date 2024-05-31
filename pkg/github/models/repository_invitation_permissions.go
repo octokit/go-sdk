@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The permission associated with the invitation.
 type RepositoryInvitation_permissions int
 
@@ -30,7 +27,7 @@ func ParseRepositoryInvitation_permissions(v string) (any, error) {
         case "maintain":
             result = MAINTAIN_REPOSITORYINVITATION_PERMISSIONS
         default:
-            return 0, errors.New("Unknown RepositoryInvitation_permissions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

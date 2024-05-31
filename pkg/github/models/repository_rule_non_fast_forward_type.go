@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleNonFastForward_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleNonFastForward_type(v string) (any, error) {
         case "non_fast_forward":
             result = NON_FAST_FORWARD_REPOSITORYRULENONFASTFORWARD_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleNonFastForward_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

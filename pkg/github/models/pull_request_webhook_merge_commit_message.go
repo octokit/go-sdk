@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The default value for a merge commit message.- `PR_TITLE` - default to the pull request's title.- `PR_BODY` - default to the pull request's body.- `BLANK` - default to a blank commit message.
 type PullRequestWebhook_merge_commit_message int
 
@@ -24,7 +21,7 @@ func ParsePullRequestWebhook_merge_commit_message(v string) (any, error) {
         case "BLANK":
             result = BLANK_PULLREQUESTWEBHOOK_MERGE_COMMIT_MESSAGE
         default:
-            return 0, errors.New("Unknown PullRequestWebhook_merge_commit_message value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

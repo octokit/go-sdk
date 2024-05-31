@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // Default permission level members have for organization repositories.
 type WithOrgPatchRequestBody_default_repository_permission int
 
@@ -27,7 +24,7 @@ func ParseWithOrgPatchRequestBody_default_repository_permission(v string) (any, 
         case "none":
             result = NONE_WITHORGPATCHREQUESTBODY_DEFAULT_REPOSITORY_PERMISSION
         default:
-            return 0, errors.New("Unknown WithOrgPatchRequestBody_default_repository_permission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

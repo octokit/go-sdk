@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleWorkflows_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleWorkflows_type(v string) (any, error) {
         case "workflows":
             result = WORKFLOWS_REPOSITORYRULEWORKFLOWS_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleWorkflows_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

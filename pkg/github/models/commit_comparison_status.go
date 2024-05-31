@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CommitComparison_status int
 
 const (
@@ -26,7 +23,7 @@ func ParseCommitComparison_status(v string) (any, error) {
         case "identical":
             result = IDENTICAL_COMMITCOMPARISON_STATUS
         default:
-            return 0, errors.New("Unknown CommitComparison_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

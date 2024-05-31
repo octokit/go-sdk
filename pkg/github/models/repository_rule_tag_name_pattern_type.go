@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleTagNamePattern_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleTagNamePattern_type(v string) (any, error) {
         case "tag_name_pattern":
             result = TAG_NAME_PATTERN_REPOSITORYRULETAGNAMEPATTERN_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleTagNamePattern_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
