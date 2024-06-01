@@ -1,4 +1,7 @@
 package securityadvisories
+import (
+    "errors"
+)
 type GetSortQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetSortQueryParameterType(v string) (any, error) {
         case "published":
             result = PUBLISHED_GETSORTQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetSortQueryParameterType value: " + v)
     }
     return &result, nil
 }

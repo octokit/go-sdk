@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
 type RuleSuite_evaluation_result int
 
@@ -18,7 +21,7 @@ func ParseRuleSuite_evaluation_result(v string) (any, error) {
         case "fail":
             result = FAIL_RULESUITE_EVALUATION_RESULT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RuleSuite_evaluation_result value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The role that this user should have in the team.
 type WithUsernamePutRequestBody_role int
 
@@ -18,7 +21,7 @@ func ParseWithUsernamePutRequestBody_role(v string) (any, error) {
         case "maintainer":
             result = MAINTAINER_WITHUSERNAMEPUTREQUESTBODY_ROLE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithUsernamePutRequestBody_role value: " + v)
     }
     return &result, nil
 }

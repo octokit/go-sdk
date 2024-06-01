@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The baseline permission that all organization members have on this project. Only present if owner is an organization.
 type Project_organization_permission int
 
@@ -24,7 +27,7 @@ func ParseProject_organization_permission(v string) (any, error) {
         case "none":
             result = NONE_PROJECT_ORGANIZATION_PERMISSION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Project_organization_permission value: " + v)
     }
     return &result, nil
 }

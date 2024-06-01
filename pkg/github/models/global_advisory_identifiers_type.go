@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The type of identifier.
 type GlobalAdvisory_identifiers_type int
 
@@ -18,7 +21,7 @@ func ParseGlobalAdvisory_identifiers_type(v string) (any, error) {
         case "GHSA":
             result = GHSA_GLOBALADVISORY_IDENTIFIERS_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GlobalAdvisory_identifiers_type value: " + v)
     }
     return &result, nil
 }

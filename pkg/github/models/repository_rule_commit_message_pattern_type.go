@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type RepositoryRuleCommitMessagePattern_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseRepositoryRuleCommitMessagePattern_type(v string) (any, error) {
         case "commit_message_pattern":
             result = COMMIT_MESSAGE_PATTERN_REPOSITORYRULECOMMITMESSAGEPATTERN_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleCommitMessagePattern_type value: " + v)
     }
     return &result, nil
 }

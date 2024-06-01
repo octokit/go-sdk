@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The reason for the state change. Ignored unless `state` is changed.
 type WithIssue_numberPatchRequestBody_state_reason int
 
@@ -21,7 +24,7 @@ func ParseWithIssue_numberPatchRequestBody_state_reason(v string) (any, error) {
         case "reopened":
             result = REOPENED_WITHISSUE_NUMBERPATCHREQUESTBODY_STATE_REASON
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithIssue_numberPatchRequestBody_state_reason value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package codespaces
+import (
+    "errors"
+)
 // The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
 type CodespacesPostRequestBody_geo int
 
@@ -24,7 +27,7 @@ func ParseCodespacesPostRequestBody_geo(v string) (any, error) {
         case "UsWest":
             result = USWEST_CODESPACESPOSTREQUESTBODY_GEO
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodespacesPostRequestBody_geo value: " + v)
     }
     return &result, nil
 }

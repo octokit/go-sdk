@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage just a single file.
 type AppPermissions_single_file int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_single_file(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_SINGLE_FILE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_single_file value: " + v)
     }
     return &result, nil
 }

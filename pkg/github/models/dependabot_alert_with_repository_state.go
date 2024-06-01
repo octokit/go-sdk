@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The state of the Dependabot alert.
 type DependabotAlertWithRepository_state int
 
@@ -24,7 +27,7 @@ func ParseDependabotAlertWithRepository_state(v string) (any, error) {
         case "open":
             result = OPEN_DEPENDABOTALERTWITHREPOSITORY_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DependabotAlertWithRepository_state value: " + v)
     }
     return &result, nil
 }

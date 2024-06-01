@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Code scanning default setup has been configured or not.
 type CodeScanningDefaultSetup_state int
 
@@ -18,7 +21,7 @@ func ParseCodeScanningDefaultSetup_state(v string) (any, error) {
         case "not-configured":
             result = NOTCONFIGURED_CODESCANNINGDEFAULTSETUP_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningDefaultSetup_state value: " + v)
     }
     return &result, nil
 }

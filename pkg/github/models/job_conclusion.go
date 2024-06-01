@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The outcome of the job.
 type Job_conclusion int
 
@@ -33,7 +36,7 @@ func ParseJob_conclusion(v string) (any, error) {
         case "action_required":
             result = ACTION_REQUIRED_JOB_CONCLUSION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Job_conclusion value: " + v)
     }
     return &result, nil
 }

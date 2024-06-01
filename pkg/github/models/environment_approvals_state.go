@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Whether deployment to the environment(s) was approved or rejected or pending (with comments)
 type EnvironmentApprovals_state int
 
@@ -21,7 +24,7 @@ func ParseEnvironmentApprovals_state(v string) (any, error) {
         case "pending":
             result = PENDING_ENVIRONMENTAPPROVALS_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown EnvironmentApprovals_state value: " + v)
     }
     return &result, nil
 }

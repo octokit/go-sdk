@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The side of the first line of the range for a multi-line comment.
 type ReviewComment_side int
 
@@ -18,7 +21,7 @@ func ParseReviewComment_side(v string) (any, error) {
         case "RIGHT":
             result = RIGHT_REVIEWCOMMENT_SIDE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ReviewComment_side value: " + v)
     }
     return &result, nil
 }

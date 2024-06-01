@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type ContentSubmodule_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseContentSubmodule_type(v string) (any, error) {
         case "submodule":
             result = SUBMODULE_CONTENTSUBMODULE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ContentSubmodule_type value: " + v)
     }
     return &result, nil
 }

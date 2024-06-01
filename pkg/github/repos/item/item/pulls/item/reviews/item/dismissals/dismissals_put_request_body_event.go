@@ -1,4 +1,7 @@
 package dismissals
+import (
+    "errors"
+)
 type DismissalsPutRequestBody_event int
 
 const (
@@ -14,7 +17,7 @@ func ParseDismissalsPutRequestBody_event(v string) (any, error) {
         case "DISMISS":
             result = DISMISS_DISMISSALSPUTREQUESTBODY_EVENT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DismissalsPutRequestBody_event value: " + v)
     }
     return &result, nil
 }

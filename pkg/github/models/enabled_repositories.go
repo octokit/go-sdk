@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
 type EnabledRepositories int
 
@@ -21,7 +24,7 @@ func ParseEnabledRepositories(v string) (any, error) {
         case "selected":
             result = SELECTED_ENABLEDREPOSITORIES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown EnabledRepositories value: " + v)
     }
     return &result, nil
 }

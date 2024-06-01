@@ -1,4 +1,7 @@
 package repositories
+import (
+    "errors"
+)
 type GetSortQueryParameterType int
 
 const (
@@ -23,7 +26,7 @@ func ParseGetSortQueryParameterType(v string) (any, error) {
         case "updated":
             result = UPDATED_GETSORTQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetSortQueryParameterType value: " + v)
     }
     return &result, nil
 }

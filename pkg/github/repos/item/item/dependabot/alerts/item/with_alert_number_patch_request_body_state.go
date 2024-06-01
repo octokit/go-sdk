@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The state of the Dependabot alert.A `dismissed_reason` must be provided when setting the state to `dismissed`.
 type WithAlert_numberPatchRequestBody_state int
 
@@ -18,7 +21,7 @@ func ParseWithAlert_numberPatchRequestBody_state(v string) (any, error) {
         case "open":
             result = OPEN_WITHALERT_NUMBERPATCHREQUESTBODY_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithAlert_numberPatchRequestBody_state value: " + v)
     }
     return &result, nil
 }

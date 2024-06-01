@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // State of a code scanning alert.
 type CodeScanningAlertStateQuery int
 
@@ -24,7 +27,7 @@ func ParseCodeScanningAlertStateQuery(v string) (any, error) {
         case "fixed":
             result = FIXED_CODESCANNINGALERTSTATEQUERY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningAlertStateQuery value: " + v)
     }
     return &result, nil
 }

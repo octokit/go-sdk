@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
 type RepositoryRuleEnforcement int
 
@@ -21,7 +24,7 @@ func ParseRepositoryRuleEnforcement(v string) (any, error) {
         case "evaluate":
             result = EVALUATE_REPOSITORYRULEENFORCEMENT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleEnforcement value: " + v)
     }
     return &result, nil
 }

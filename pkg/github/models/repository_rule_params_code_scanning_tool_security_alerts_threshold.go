@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see "[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels)."
 type RepositoryRuleParamsCodeScanningTool_security_alerts_threshold int
 
@@ -27,7 +30,7 @@ func ParseRepositoryRuleParamsCodeScanningTool_security_alerts_threshold(v strin
         case "all":
             result = ALL_REPOSITORYRULEPARAMSCODESCANNINGTOOL_SECURITY_ALERTS_THRESHOLD
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleParamsCodeScanningTool_security_alerts_threshold value: " + v)
     }
     return &result, nil
 }

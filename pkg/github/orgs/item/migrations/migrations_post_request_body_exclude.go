@@ -1,4 +1,7 @@
 package migrations
+import (
+    "errors"
+)
 type MigrationsPostRequestBody_exclude int
 
 const (
@@ -14,7 +17,7 @@ func ParseMigrationsPostRequestBody_exclude(v string) (any, error) {
         case "repositories":
             result = REPOSITORIES_MIGRATIONSPOSTREQUESTBODY_EXCLUDE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown MigrationsPostRequestBody_exclude value: " + v)
     }
     return &result, nil
 }

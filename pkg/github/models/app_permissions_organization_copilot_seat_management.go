@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
 type AppPermissions_organization_copilot_seat_management int
 
@@ -15,7 +18,7 @@ func ParseAppPermissions_organization_copilot_seat_management(v string) (any, er
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_COPILOT_SEAT_MANAGEMENT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_copilot_seat_management value: " + v)
     }
     return &result, nil
 }

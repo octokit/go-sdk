@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage the profile settings belonging to a user.
 type AppPermissions_profile int
 
@@ -15,7 +18,7 @@ func ParseAppPermissions_profile(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_PROFILE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_profile value: " + v)
     }
     return &result, nil
 }

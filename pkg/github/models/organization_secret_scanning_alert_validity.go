@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The token status as of the latest validity check.
 type OrganizationSecretScanningAlert_validity int
 
@@ -21,7 +24,7 @@ func ParseOrganizationSecretScanningAlert_validity(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_ORGANIZATIONSECRETSCANNINGALERT_VALIDITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown OrganizationSecretScanningAlert_validity value: " + v)
     }
     return &result, nil
 }

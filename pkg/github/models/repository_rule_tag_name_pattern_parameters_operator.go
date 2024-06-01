@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The operator to use for matching.
 type RepositoryRuleTagNamePattern_parameters_operator int
 
@@ -24,7 +27,7 @@ func ParseRepositoryRuleTagNamePattern_parameters_operator(v string) (any, error
         case "regex":
             result = REGEX_REPOSITORYRULETAGNAMEPATTERN_PARAMETERS_OPERATOR
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleTagNamePattern_parameters_operator value: " + v)
     }
     return &result, nil
 }

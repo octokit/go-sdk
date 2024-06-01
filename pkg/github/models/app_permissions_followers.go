@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage the followers belonging to a user.
 type AppPermissions_followers int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_followers(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_FOLLOWERS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_followers value: " + v)
     }
     return &result, nil
 }

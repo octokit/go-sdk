@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The severity of the advisory.
 type DependabotAlertSecurityAdvisory_severity int
 
@@ -24,7 +27,7 @@ func ParseDependabotAlertSecurityAdvisory_severity(v string) (any, error) {
         case "critical":
             result = CRITICAL_DEPENDABOTALERTSECURITYADVISORY_SEVERITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DependabotAlertSecurityAdvisory_severity value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package packages
+import (
+    "errors"
+)
 type GetVisibilityQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetVisibilityQueryParameterType(v string) (any, error) {
         case "internal":
             result = INTERNAL_GETVISIBILITYQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetVisibilityQueryParameterType value: " + v)
     }
     return &result, nil
 }

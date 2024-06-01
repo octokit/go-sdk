@@ -1,4 +1,7 @@
 package merge
+import (
+    "errors"
+)
 // The merge method to use.
 type MergePutRequestBody_merge_method int
 
@@ -21,7 +24,7 @@ func ParseMergePutRequestBody_merge_method(v string) (any, error) {
         case "rebase":
             result = REBASE_MERGEPUTREQUESTBODY_MERGE_METHOD
         default:
-            return nil, nil
+            return 0, errors.New("Unknown MergePutRequestBody_merge_method value: " + v)
     }
     return &result, nil
 }

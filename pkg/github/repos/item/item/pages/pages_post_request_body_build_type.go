@@ -1,4 +1,7 @@
 package pages
+import (
+    "errors"
+)
 // The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
 type PagesPostRequestBody_build_type int
 
@@ -18,7 +21,7 @@ func ParsePagesPostRequestBody_build_type(v string) (any, error) {
         case "workflow":
             result = WORKFLOW_PAGESPOSTREQUESTBODY_BUILD_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PagesPostRequestBody_build_type value: " + v)
     }
     return &result, nil
 }

@@ -3,7 +3,6 @@ package repos
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // ItemItemStatsPunch_cardRequestBuilder builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\punch_card
@@ -24,23 +23,26 @@ func NewItemItemStatsPunch_cardRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemItemStatsPunch_cardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get each array contains the day number, hour number, and number of commits:*   `0-6`: Sunday - Saturday*   `0-23`: Hour of day*   Number of commitsFor example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
-// returns a UntypedNodeable when successful
+// returns a []int32 when successful
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/metrics/statistics#get-the-hourly-commit-count-for-each-day
-func (m *ItemItemStatsPunch_cardRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable, error) {
+func (m *ItemItemStatsPunch_cardRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitiveCollection(ctx, requestInfo, "int32", nil)
     if err != nil {
         return nil, err
     }
-    if res == nil {
-        return nil, nil
+    val := make([]int32, len(res))
+    for i, v := range res {
+        if v != nil {
+            val[i] = *(v.(*int32))
+        }
     }
-    return res.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable), nil
+    return val, nil
 }
 // ToGetRequestInformation each array contains the day number, hour number, and number of commits:*   `0-6`: Sunday - Saturday*   `0-23`: Hour of day*   Number of commitsFor example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
 // returns a *RequestInformation when successful

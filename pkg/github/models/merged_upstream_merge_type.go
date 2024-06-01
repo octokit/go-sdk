@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type MergedUpstream_merge_type int
 
 const (
@@ -20,7 +23,7 @@ func ParseMergedUpstream_merge_type(v string) (any, error) {
         case "none":
             result = NONE_MERGEDUPSTREAM_MERGE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown MergedUpstream_merge_type value: " + v)
     }
     return &result, nil
 }

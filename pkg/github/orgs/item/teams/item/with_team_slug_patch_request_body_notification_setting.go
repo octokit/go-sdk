@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:  * `notifications_enabled` - team members receive notifications when the team is @mentioned.   * `notifications_disabled` - no one receives notifications.
 type WithTeam_slugPatchRequestBody_notification_setting int
 
@@ -18,7 +21,7 @@ func ParseWithTeam_slugPatchRequestBody_notification_setting(v string) (any, err
         case "notifications_disabled":
             result = NOTIFICATIONS_DISABLED_WITHTEAM_SLUGPATCHREQUESTBODY_NOTIFICATION_SETTING
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithTeam_slugPatchRequestBody_notification_setting value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type DiffEntry_status int
 
 const (
@@ -32,7 +35,7 @@ func ParseDiffEntry_status(v string) (any, error) {
         case "unchanged":
             result = UNCHANGED_DIFFENTRY_STATUS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DiffEntry_status value: " + v)
     }
     return &result, nil
 }

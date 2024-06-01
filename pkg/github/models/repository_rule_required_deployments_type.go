@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type RepositoryRuleRequiredDeployments_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseRepositoryRuleRequiredDeployments_type(v string) (any, error) {
         case "required_deployments":
             result = REQUIRED_DEPLOYMENTS_REPOSITORYRULEREQUIREDDEPLOYMENTS_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleRequiredDeployments_type value: " + v)
     }
     return &result, nil
 }

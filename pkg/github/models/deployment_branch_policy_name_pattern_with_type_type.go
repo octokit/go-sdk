@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Whether this rule targets a branch or tag
 type DeploymentBranchPolicyNamePatternWithType_type int
 
@@ -18,7 +21,7 @@ func ParseDeploymentBranchPolicyNamePatternWithType_type(v string) (any, error) 
         case "tag":
             result = TAG_DEPLOYMENTBRANCHPOLICYNAMEPATTERNWITHTYPE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DeploymentBranchPolicyNamePatternWithType_type value: " + v)
     }
     return &result, nil
 }

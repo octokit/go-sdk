@@ -1,4 +1,7 @@
 package teams
+import (
+    "errors"
+)
 // **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
 type TeamsPostRequestBody_permission int
 
@@ -18,7 +21,7 @@ func ParseTeamsPostRequestBody_permission(v string) (any, error) {
         case "push":
             result = PUSH_TEAMSPOSTREQUESTBODY_PERMISSION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown TeamsPostRequestBody_permission value: " + v)
     }
     return &result, nil
 }

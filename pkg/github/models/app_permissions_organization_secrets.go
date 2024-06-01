@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage organization secrets.
 type AppPermissions_organization_secrets int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_organization_secrets(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_SECRETS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_secrets value: " + v)
     }
     return &result, nil
 }

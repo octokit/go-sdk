@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // State of the release asset.
 type ReleaseAsset_state int
 
@@ -18,7 +21,7 @@ func ParseReleaseAsset_state(v string) (any, error) {
         case "open":
             result = OPEN_RELEASEASSET_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ReleaseAsset_state value: " + v)
     }
     return &result, nil
 }

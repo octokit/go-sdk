@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // State of this Pull Request. Either `open` or `closed`.
 type PullRequest_state int
 
@@ -18,7 +21,7 @@ func ParsePullRequest_state(v string) (any, error) {
         case "closed":
             result = CLOSED_PULLREQUEST_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PullRequest_state value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package milestones
+import (
+    "errors"
+)
 // The state of the milestone. Either `open` or `closed`.
 type MilestonesPostRequestBody_state int
 
@@ -18,7 +21,7 @@ func ParseMilestonesPostRequestBody_state(v string) (any, error) {
         case "closed":
             result = CLOSED_MILESTONESPOSTREQUESTBODY_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown MilestonesPostRequestBody_state value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The default value for a merge commit message.- `PR_TITLE` - default to the pull request's title.- `PR_BODY` - default to the pull request's body.- `BLANK` - default to a blank commit message.
 type NullableRepository_merge_commit_message int
 
@@ -21,7 +24,7 @@ func ParseNullableRepository_merge_commit_message(v string) (any, error) {
         case "BLANK":
             result = BLANK_NULLABLEREPOSITORY_MERGE_COMMIT_MESSAGE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown NullableRepository_merge_commit_message value: " + v)
     }
     return &result, nil
 }

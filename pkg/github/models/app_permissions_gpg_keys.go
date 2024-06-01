@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to view and manage GPG keys belonging to a user.
 type AppPermissions_gpg_keys int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_gpg_keys(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_GPG_KEYS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_gpg_keys value: " + v)
     }
     return &result, nil
 }

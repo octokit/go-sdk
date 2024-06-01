@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for custom property management.
 type AppPermissions_organization_custom_properties int
 
@@ -21,7 +24,7 @@ func ParseAppPermissions_organization_custom_properties(v string) (any, error) {
         case "admin":
             result = ADMIN_APPPERMISSIONS_ORGANIZATION_CUSTOM_PROPERTIES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_custom_properties value: " + v)
     }
     return &result, nil
 }

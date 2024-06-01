@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
 type CodespaceMachine_prebuild_availability int
 
@@ -21,7 +24,7 @@ func ParseCodespaceMachine_prebuild_availability(v string) (any, error) {
         case "in_progress":
             result = IN_PROGRESS_CODESPACEMACHINE_PREBUILD_AVAILABILITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodespaceMachine_prebuild_availability value: " + v)
     }
     return &result, nil
 }

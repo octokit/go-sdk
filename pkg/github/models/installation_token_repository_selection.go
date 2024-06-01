@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type InstallationToken_repository_selection int
 
 const (
@@ -17,7 +20,7 @@ func ParseInstallationToken_repository_selection(v string) (any, error) {
         case "selected":
             result = SELECTED_INSTALLATIONTOKEN_REPOSITORY_SELECTION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown InstallationToken_repository_selection value: " + v)
     }
     return &result, nil
 }

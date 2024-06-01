@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type Package_package_type int
 
 const (
@@ -29,7 +32,7 @@ func ParsePackage_package_type(v string) (any, error) {
         case "container":
             result = CONTAINER_PACKAGE_PACKAGE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Package_package_type value: " + v)
     }
     return &result, nil
 }

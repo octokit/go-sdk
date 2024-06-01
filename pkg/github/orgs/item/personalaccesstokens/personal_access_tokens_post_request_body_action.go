@@ -1,4 +1,7 @@
 package personalaccesstokens
+import (
+    "errors"
+)
 // Action to apply to the fine-grained personal access token.
 type PersonalAccessTokensPostRequestBody_action int
 
@@ -15,7 +18,7 @@ func ParsePersonalAccessTokensPostRequestBody_action(v string) (any, error) {
         case "revoke":
             result = REVOKE_PERSONALACCESSTOKENSPOSTREQUESTBODY_ACTION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PersonalAccessTokensPostRequestBody_action value: " + v)
     }
     return &result, nil
 }

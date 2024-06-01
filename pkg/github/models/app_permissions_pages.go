@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
 type AppPermissions_pages int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_pages(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_PAGES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_pages value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The reason that the alert was dismissed.
 type DependabotAlertWithRepository_dismissed_reason int
 
@@ -27,7 +30,7 @@ func ParseDependabotAlertWithRepository_dismissed_reason(v string) (any, error) 
         case "tolerable_risk":
             result = TOLERABLE_RISK_DEPENDABOTALERTWITHREPOSITORY_DISMISSED_REASON
         default:
-            return nil, nil
+            return 0, errors.New("Unknown DependabotAlertWithRepository_dismissed_reason value: " + v)
     }
     return &result, nil
 }

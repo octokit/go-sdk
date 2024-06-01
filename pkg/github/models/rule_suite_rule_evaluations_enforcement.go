@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The enforcement level of this rule source.
 type RuleSuite_rule_evaluations_enforcement int
 
@@ -21,7 +24,7 @@ func ParseRuleSuite_rule_evaluations_enforcement(v string) (any, error) {
         case "deleted ruleset":
             result = DELETEDRULESET_RULESUITE_RULE_EVALUATIONS_ENFORCEMENT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RuleSuite_rule_evaluations_enforcement value: " + v)
     }
     return &result, nil
 }

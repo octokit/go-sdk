@@ -1,4 +1,7 @@
 package events
+import (
+    "errors"
+)
 // The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.
 type EventsPostRequestBody_event int
 
@@ -21,7 +24,7 @@ func ParseEventsPostRequestBody_event(v string) (any, error) {
         case "COMMENT":
             result = COMMENT_EVENTSPOSTREQUESTBODY_EVENT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown EventsPostRequestBody_event value: " + v)
     }
     return &result, nil
 }

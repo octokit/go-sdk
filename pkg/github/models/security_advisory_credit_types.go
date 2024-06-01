@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The type of credit the user is receiving.
 type SecurityAdvisoryCreditTypes int
 
@@ -42,7 +45,7 @@ func ParseSecurityAdvisoryCreditTypes(v string) (any, error) {
         case "other":
             result = OTHER_SECURITYADVISORYCREDITTYPES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown SecurityAdvisoryCreditTypes value: " + v)
     }
     return &result, nil
 }

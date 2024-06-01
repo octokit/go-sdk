@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // **Required when `state` is `dismissed`.** A reason for dismissing the alert.
 type WithAlert_numberPatchRequestBody_dismissed_reason int
 
@@ -27,7 +30,7 @@ func ParseWithAlert_numberPatchRequestBody_dismissed_reason(v string) (any, erro
         case "tolerable_risk":
             result = TOLERABLE_RISK_WITHALERT_NUMBERPATCHREQUESTBODY_DISMISSED_REASON
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithAlert_numberPatchRequestBody_dismissed_reason value: " + v)
     }
     return &result, nil
 }

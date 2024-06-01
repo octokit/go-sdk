@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
 type WithInvitation_PatchRequestBody_permissions int
 
@@ -27,7 +30,7 @@ func ParseWithInvitation_PatchRequestBody_permissions(v string) (any, error) {
         case "admin":
             result = ADMIN_WITHINVITATION_PATCHREQUESTBODY_PERMISSIONS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithInvitation_PatchRequestBody_permissions value: " + v)
     }
     return &result, nil
 }

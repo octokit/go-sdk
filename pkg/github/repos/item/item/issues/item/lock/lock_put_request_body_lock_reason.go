@@ -1,4 +1,7 @@
 package lock
+import (
+    "errors"
+)
 // The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:   * `off-topic`   * `too heated`   * `resolved`   * `spam`
 type LockPutRequestBody_lock_reason int
 
@@ -24,7 +27,7 @@ func ParseLockPutRequestBody_lock_reason(v string) (any, error) {
         case "spam":
             result = SPAM_LOCKPUTREQUESTBODY_LOCK_REASON
         default:
-            return nil, nil
+            return 0, errors.New("Unknown LockPutRequestBody_lock_reason value: " + v)
     }
     return &result, nil
 }

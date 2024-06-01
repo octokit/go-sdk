@@ -1,4 +1,7 @@
 package importescaped
+import (
+    "errors"
+)
 // The type of version control system you are migrating from.
 type ImportPatchRequestBody_vcs int
 
@@ -24,7 +27,7 @@ func ParseImportPatchRequestBody_vcs(v string) (any, error) {
         case "mercurial":
             result = MERCURIAL_IMPORTPATCHREQUESTBODY_VCS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ImportPatchRequestBody_vcs value: " + v)
     }
     return &result, nil
 }

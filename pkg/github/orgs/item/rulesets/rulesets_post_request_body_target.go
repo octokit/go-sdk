@@ -1,4 +1,7 @@
 package rulesets
+import (
+    "errors"
+)
 // The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
 type RulesetsPostRequestBody_target int
 
@@ -21,7 +24,7 @@ func ParseRulesetsPostRequestBody_target(v string) (any, error) {
         case "push":
             result = PUSH_RULESETSPOSTREQUESTBODY_TARGET
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RulesetsPostRequestBody_target value: " + v)
     }
     return &result, nil
 }

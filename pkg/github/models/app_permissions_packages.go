@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for packages published to GitHub Packages.
 type AppPermissions_packages int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_packages(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_PACKAGES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_packages value: " + v)
     }
     return &result, nil
 }

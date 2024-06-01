@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for commit statuses.
 type AppPermissions_statuses int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_statuses(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_STATUSES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_statuses value: " + v)
     }
     return &result, nil
 }
