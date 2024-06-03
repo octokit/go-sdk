@@ -2,8 +2,10 @@ package pkg
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 
+	"github.com/kfcampbell/ghinstallation"
 	kiotaHttp "github.com/microsoft/kiota-http-go"
 	auth "github.com/octokit/go-sdk/pkg/authentication"
 	"github.com/octokit/go-sdk/pkg/github"
@@ -22,17 +24,46 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 	rateLimitHandler := handlers.NewRateLimitHandler()
 	middlewares := options.Middleware
 	middlewares = append(middlewares, rateLimitHandler)
-	netHttpClient := kiotaHttp.GetDefaultClient(middlewares...)
+	defaultTransport := kiotaHttp.GetDefaultTransport()
+	netHttpClient := &http.Client{
+		Transport: defaultTransport,
+	}
+
 	if options.RequestTimeout != 0 {
 		netHttpClient.Timeout = options.RequestTimeout
 	}
+
+	if (options.GitHubAppID != 0 || options.GitHubAppClientID != "") && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
+		existingTransport := netHttpClient.Transport
+		var appTransport *ghinstallation.Transport
+		var err error
+
+		if options.GitHubAppClientID != "" {
+			appTransport, err = ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppClientID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+		} else {
+			appTransport, err = ghinstallation.NewKeyFromFileWithAppID(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+		}
+
+		if err != nil {
+			return nil, fmt.Errorf("failed to create transport from GitHub App: %v", err)
+		}
+
+		netHttpClient.Transport = appTransport
+	}
+
+	// Middleware must be applied after App transport is set, otherwise App token will fail to be
+	// renewed with a 400 Bad Request error (even though the request is identical to a successful one.)
+	finalTransport := kiotaHttp.NewCustomTransportWithParentTransport(netHttpClient.Transport, middlewares...)
+	netHttpClient.Transport = finalTransport
 
 	tokenProviderOptions := []auth.TokenProviderOption{
 		auth.WithAPIVersion(options.APIVersion),
 		auth.WithUserAgent(options.UserAgent),
 	}
-	if options.Token != "" {
-		tokenProviderOptions = append(tokenProviderOptions, auth.WithAuthorizationToken(options.Token))
+
+	// If a PAT is provided and GitHub App information is not, configure token authentication
+	if options.Token != "" && (options.GitHubAppInstallationID == 0 && options.GitHubAppPemFilePath == "") {
+		tokenProviderOptions = append(tokenProviderOptions, auth.WithTokenAuthentication(options.Token))
 	}
 
 	tokenProvider := auth.NewTokenProvider(tokenProviderOptions...)
@@ -70,7 +101,19 @@ type ClientOptions struct {
 	RequestTimeout time.Duration
 	Middleware     []kiotaHttp.Middleware
 	BaseURL        string
-	Token          string
+
+	// Token should be left blank if GitHub App auth or an unauthenticated client is desired.
+	Token string
+
+	// GitHubAppPemFilePath should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppPemFilePath string
+	// GitHubAppID should be left blank if token auth or an unauthenticated client is desired.
+	// Deprecated: Use GitHubAppClientID instead.
+	GitHubAppID int64
+	// GitHubAppClientID should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppClientID string
+	// GitHubAppInstallationID should be left blank if token auth or an unauthenticated client is desired.
+	GitHubAppInstallationID int64
 }
 
 // GetDefaultClientOptions returns a new instance of ClientOptions with default values.
@@ -107,9 +150,9 @@ func WithBaseUrl(baseURL string) ClientOptionFunc {
 	}
 }
 
-// WithAuthorizationToken configures the client with the given
+// WithTokenAuthentication configures the client with the given
 // Personal Authorization Token.
-func WithAuthorizationToken(token string) ClientOptionFunc {
+func WithTokenAuthentication(token string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.Token = token
 	}
@@ -119,5 +162,25 @@ func WithAuthorizationToken(token string) ClientOptionFunc {
 func WithAPIVersion(version string) ClientOptionFunc {
 	return func(c *ClientOptions) {
 		c.APIVersion = version
+	}
+}
+
+// WithGitHubAppAuthenticationUsingAppID configures the client with the given GitHub App
+// auth. Deprecated: Use WithGitHubAppAuthentication instead, which takes in a clientID
+// string instead of an appID integer.
+func WithGitHubAppAuthenticationUsingAppID(pemFilePath string, appID int64, installationID int64) ClientOptionFunc {
+	return func(c *ClientOptions) {
+		c.GitHubAppPemFilePath = pemFilePath
+		c.GitHubAppID = appID
+		c.GitHubAppInstallationID = installationID
+	}
+}
+
+// WithGitHubAppAuthentication configures the client with the given GitHub App auth.
+func WithGitHubAppAuthentication(pemFilePath string, clientID string, installationID int64) ClientOptionFunc {
+	return func(c *ClientOptions) {
+		c.GitHubAppPemFilePath = pemFilePath
+		c.GitHubAppClientID = clientID
+		c.GitHubAppInstallationID = installationID
 	}
 }
