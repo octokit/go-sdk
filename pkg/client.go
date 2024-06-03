@@ -33,23 +33,23 @@ func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
 		netHttpClient.Timeout = options.RequestTimeout
 	}
 
-  if (options.GitHubAppID != 0 || options.GitHubAppClientID != "") && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
-      existingTransport := netHttpClient.Transport
-      var appTransport ghinstallation.Transport
-      var err error
-  
-      if options.GitHubAppClientID != "" {
-          appTransport, err = ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppClientID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
-      } else {
-          appTransport, err = ghinstallation.NewKeyFromFileWithAppID(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
-      }
-  
-      if err != nil {
-          return nil, fmt.Errorf("failed to create transport from GitHub App: %v", err)
-      }
-  
-      netHttpClient.Transport = appTransport
-  }
+	if (options.GitHubAppID != 0 || options.GitHubAppClientID != "") && options.GitHubAppInstallationID != 0 && options.GitHubAppPemFilePath != "" {
+		existingTransport := netHttpClient.Transport
+		var appTransport *ghinstallation.Transport
+		var err error
+
+		if options.GitHubAppClientID != "" {
+			appTransport, err = ghinstallation.NewKeyFromFile(existingTransport, options.GitHubAppClientID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+		} else {
+			appTransport, err = ghinstallation.NewKeyFromFileWithAppID(existingTransport, options.GitHubAppID, options.GitHubAppInstallationID, options.GitHubAppPemFilePath)
+		}
+
+		if err != nil {
+			return nil, fmt.Errorf("failed to create transport from GitHub App: %v", err)
+		}
+
+		netHttpClient.Transport = appTransport
+	}
 
 	// Middleware must be applied after App transport is set, otherwise App token will fail to be
 	// renewed with a 400 Bad Request error (even though the request is identical to a successful one.)
