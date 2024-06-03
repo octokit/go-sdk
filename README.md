@@ -8,6 +8,14 @@ See example client instantiations and requests in [example_test.go](pkg/example_
 
 ⚠️ **Note**: This SDK is not yet stable. Breaking changes may occur at any time.
 
+### Building and testing
+
+- Build the SDK: `go build ./...`
+- Test the SDK: `go test ./...`
+	- Measure test coverage by package (e.g. `authentication`): `go test -v -coverpkg=./pkg/authentication -coverprofile=auth.cov ./pkg/authentication`
+	- Test coverage may be viewed in VS Code by running the command `Go: Toggle Test Coverage In Current Package`
+	- Alternately, you may run `go tool cover -html auth.cov -o auth.html` and open the generated `auth.html` file in a browser to view test coverage
+
 ### Authentication
 
 Currently, this SDK supports both [Personal Access Tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) and [fine-grained Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens).
