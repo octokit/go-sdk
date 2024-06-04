@@ -16,7 +16,7 @@ func main() {
 		pkg.WithUserAgent("my-user-agent"),
 		pkg.WithRequestTimeout(5*time.Second),
 		pkg.WithBaseUrl("https://api.github.com"),
-		pkg.WithAuthorizationToken(os.Getenv("GITHUB_TOKEN")),
+		pkg.WithTokenAuthentication(os.Getenv("GITHUB_TOKEN")),
 	)
 
 	// equally valid:
@@ -31,8 +31,7 @@ func main() {
 	}
 	zen, err := client.Zen().Get(context.Background(), requestConfig)
 	if err != nil {
-		fmt.Printf("error getting Zen: %v\n", err)
-		return
+		log.Fatalf("error getting repositories: %v", err)
 	}
-	fmt.Printf("%v\n", *zen)
+	fmt.Printf("GitHub Zen principle: %v\n", *zen)
 }

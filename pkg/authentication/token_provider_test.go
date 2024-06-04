@@ -18,7 +18,7 @@ import (
 
 func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 	token := "help i'm trapped in a Go binary"
-	provider := authentication.NewTokenProvider(authentication.WithAuthorizationToken(token))
+	provider := authentication.NewTokenProvider(authentication.WithTokenAuthentication(token))
 
 	reqInfo := abstractions.NewRequestInformation()
 	addtlContext := make(map[string]interface{})
@@ -41,7 +41,7 @@ func TestTokenIsSetInAuthenticatedRequest(t *testing.T) {
 // TODO(kfcampbell): this code could be refactored to use table-based tests
 func TestDefaultRequestOptions(t *testing.T) {
 	token := "this is not the token you're looking for"
-	provider := authentication.NewTokenProvider(authentication.WithAuthorizationToken(token))
+	provider := authentication.NewTokenProvider(authentication.WithTokenAuthentication(token))
 	reqInfo := abstractions.NewRequestInformation()
 	addtlContext := make(map[string]interface{})
 
@@ -74,7 +74,7 @@ func TestOverwritingDefaultRequestOptions(t *testing.T) {
 	apiVersion := "i'm totally a real API version"
 	userAgent := "i'm totally a real user agent"
 	provider := authentication.NewTokenProvider(
-		authentication.WithAuthorizationToken(token),
+		authentication.WithTokenAuthentication(token),
 		authentication.WithAPIVersion(apiVersion),
 		authentication.WithUserAgent(userAgent))
 
@@ -125,7 +125,7 @@ func TestAnonymousAuthIsAllowed(t *testing.T) {
 func TestTokenSetInRequestIsNotOverwritten(t *testing.T) {
 	providerToken := "dit dit dit / dat dat dat / dit dit dit"
 	provider := authentication.NewTokenProvider(
-		authentication.WithAuthorizationToken(providerToken),
+		authentication.WithTokenAuthentication(providerToken),
 	)
 
 	requestToken := "dit dit dit dit / dit / dit dat dit dit / dit dat dat dit"
@@ -156,7 +156,7 @@ func TestHappyPathIntegration(t *testing.T) {
 	}
 
 	provider := authentication.NewTokenProvider(
-		authentication.WithAuthorizationToken(token),
+		authentication.WithTokenAuthentication(token),
 	)
 
 	adapter, err := http.NewNetHttpRequestAdapter(provider)
@@ -170,17 +170,15 @@ func TestHappyPathIntegration(t *testing.T) {
 
 	// Create a new instance of abstractions.RequestConfiguration
 	requestConfig := &abstractions.RequestConfiguration[user.EmailsRequestBuilderGetQueryParameters]{
-	Headers: headers,
+		Headers: headers,
 	}
-
-
 
 	userEmails, err := client.User().Emails().Get(context.Background(), requestConfig)
 	if err != nil {
-	log.Fatalf("%v\n", err)
+		log.Fatalf("%v\n", err)
 	}
 
 	for _, v := range userEmails {
-	fmt.Printf("%v\n", *v.GetEmail())
+		fmt.Printf("%v\n", *v.GetEmail())
 	}
 }

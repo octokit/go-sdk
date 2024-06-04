@@ -12,9 +12,9 @@ type Request struct {
 	*abs.RequestInformation
 }
 
-// WithAuthorization sets the Authorization header to the given token,
+// WithTokenAuthentication sets the Authorization header to the given token,
 // prepended by the AuthType
-func (r *Request) WithAuthorization(token string) {
+func (r *Request) WithTokenAuthentication(token string) {
 	if r.Headers.ContainsKey(headers.AuthorizationKey) {
 		r.Headers.Remove(headers.AuthorizationKey)
 	}

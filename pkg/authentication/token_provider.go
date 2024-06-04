@@ -6,16 +6,22 @@ import (
 	abs "github.com/microsoft/kiota-abstractions-go"
 )
 
+// TokenProvider may use a token to authenticate each request. It also can be
+// used to configure UserAgent strings, API Versions, and other request configuration.
+// Note that GitHub App authentication is set at the client transport level. See the
+// docs for pkg.NewApiClient for more.
 type TokenProvider struct {
 	options []TokenProviderOption
 }
 
+// TokenProviderOption provides a functional option
+// for configuring a TokenProvider.
 type TokenProviderOption func(*TokenProvider, *Request)
 
-// WithAuthorizationToken sets the AuthorizationToken for each request to the given token.
-func WithAuthorizationToken(token string) TokenProviderOption {
+// WithTokenAuthentication sets the AuthorizationToken for each request to the given token.
+func WithTokenAuthentication(token string) TokenProviderOption {
 	return func(t *TokenProvider, r *Request) {
-		r.WithAuthorization(token)
+		r.WithTokenAuthentication(token)
 	}
 }
 
@@ -55,7 +61,6 @@ func NewTokenProvider(options ...TokenProviderOption) *TokenProvider {
 	provider := &TokenProvider{
 		options: options,
 	}
-
 	return provider
 }
 
@@ -80,6 +85,5 @@ func (t *TokenProvider) AuthenticateRequest(context context.Context, request *ab
 	for _, option := range t.options {
 		option(t, reqWrapper)
 	}
-
 	return nil
 }

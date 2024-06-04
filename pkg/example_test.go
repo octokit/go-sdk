@@ -22,7 +22,7 @@ func ExampleApiClient_Octocat() {
 		pkg.WithUserAgent("octokit/go-sdk.example-functions"),
 		pkg.WithRequestTimeout(5*time.Second),
 		pkg.WithBaseUrl("https://api.github.com"),
-		pkg.WithAuthorizationToken(os.Getenv("GITHUB_TOKEN")),
+		pkg.WithTokenAuthentication(os.Getenv("GITHUB_TOKEN")),
 	)
 
 	// equally valid:
@@ -80,7 +80,7 @@ func ExampleApiClient_Octocat() {
 func ExampleApiClient_Octocat_withoutConvenienceConstructor() {
 	tokenProvider := auth.NewTokenProvider(
 		// to create an authenticated provider, uncomment the below line and pass in your token
-		// auth.WithAuthorizationToken("ghp_your_token"),
+		// auth.WithTokenAuthentication("ghp_your_token"),
 		auth.WithUserAgent("octokit/go-sdk.example-functions"),
 	)
 	adapter, err := kiotaHttp.NewNetHttpRequestAdapter(tokenProvider)
