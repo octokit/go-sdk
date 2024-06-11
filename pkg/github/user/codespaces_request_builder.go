@@ -139,7 +139,7 @@ type CodespacesPostRequestBodyable interface {
     SetCodespacesPostRequestBodyMember1(value CodespacesPostRequestBodyMember1able)()
     SetCodespacesPostRequestBodyMember2(value CodespacesPostRequestBodyMember2able)()
 }
-// ByCodespace_name gets an item from the github.com/octokit/go-sdk/pkg/github/.user.codespaces.item collection
+// ByCodespace_name gets an item from the github.com/octokit/go-sdk/pkg/github.user.codespaces.item collection
 // returns a *CodespacesWithCodespace_nameItemRequestBuilder when successful
 func (m *CodespacesRequestBuilder) ByCodespace_name(codespace_name string)(*CodespacesWithCodespace_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

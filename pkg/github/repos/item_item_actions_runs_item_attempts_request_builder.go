@@ -9,7 +9,7 @@ import (
 type ItemItemActionsRunsItemAttemptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAttempt_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item.attempts.item collection
+// ByAttempt_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.actions.runs.item.attempts.item collection
 // returns a *ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder when successful
 func (m *ItemItemActionsRunsItemAttemptsRequestBuilder) ByAttempt_number(attempt_number int32)(*ItemItemActionsRunsItemAttemptsWithAttempt_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

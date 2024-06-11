@@ -23,7 +23,7 @@ func NewItemTokenScopedRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
     urlParams["request-raw-url"] = rawUrl
     return NewItemTokenScopedRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+// Post use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.
 // returns a Authorizationable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -52,7 +52,7 @@ func (m *ItemTokenScopedRequestBuilder) Post(ctx context.Context, body ItemToken
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.Authorizationable), nil
 }
-// ToPostRequestInformation use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+// ToPostRequestInformation use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.
 // returns a *RequestInformation when successful
 func (m *ItemTokenScopedRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTokenScopedPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

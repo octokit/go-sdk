@@ -45,7 +45,7 @@ type ItemItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     // A comma-separated list of states. If specified, only alerts with these states will be returned.Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
     State *string `uriparametername:"state"`
 }
-// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.dependabot.alerts.item collection
+// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.dependabot.alerts.item collection
 // returns a *ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder when successful
 func (m *ItemItemDependabotAlertsRequestBuilder) ByAlert_number(alert_number int32)(*ItemItemDependabotAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -8,7 +8,7 @@ import (
 type ItemReposWithOwnerItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRepo gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item.repos.item.item collection
+// ByRepo gets an item from the github.com/octokit/go-sdk/pkg/github.teams.item.repos.item.item collection
 // Deprecated: 
 // returns a *ItemReposItemWithRepoItemRequestBuilder when successful
 func (m *ItemReposWithOwnerItemRequestBuilder) ByRepo(repo string)(*ItemReposItemWithRepoItemRequestBuilder) {

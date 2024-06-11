@@ -11,7 +11,7 @@ import (
 type ItemItemCheckSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCheck_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.checkSuites.item collection
+// ByCheck_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.checkSuites.item collection
 // returns a *ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder when successful
 func (m *ItemItemCheckSuitesRequestBuilder) ByCheck_suite_id(check_suite_id int32)(*ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

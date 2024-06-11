@@ -18,7 +18,7 @@ type ItemItemPagesBuildsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByBuild_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pages.builds.item collection
+// ByBuild_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pages.builds.item collection
 // returns a *ItemItemPagesBuildsWithBuild_ItemRequestBuilder when successful
 func (m *ItemItemPagesBuildsRequestBuilder) ByBuild_id(build_id int32)(*ItemItemPagesBuildsWithBuild_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

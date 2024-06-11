@@ -8,7 +8,7 @@ import (
 type ItemItemGitMatchingRefsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRef gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.git.matchingRefs.item collection
+// ByRef gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.git.matchingRefs.item collection
 // returns a *ItemItemGitMatchingRefsWithRefItemRequestBuilder when successful
 func (m *ItemItemGitMatchingRefsRequestBuilder) ByRef(ref string)(*ItemItemGitMatchingRefsWithRefItemRequestBuilder) {
     urlTplParams := make(map[string]string)

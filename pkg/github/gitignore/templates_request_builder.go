@@ -9,7 +9,7 @@ import (
 type TemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.gitignore.templates.item collection
+// ByName gets an item from the github.com/octokit/go-sdk/pkg/github.gitignore.templates.item collection
 // returns a *TemplatesWithNameItemRequestBuilder when successful
 func (m *TemplatesRequestBuilder) ByName(name string)(*TemplatesWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -16,7 +16,7 @@ type ItemItemImportAuthorsRequestBuilderGetQueryParameters struct {
     // A user ID. Only return users with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
 }
-// ByAuthor_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.import.authors.item collection
+// ByAuthor_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.import.authors.item collection
 // Deprecated: 
 // returns a *ItemItemImportAuthorsWithAuthor_ItemRequestBuilder when successful
 func (m *ItemItemImportAuthorsRequestBuilder) ByAuthor_id(author_id int32)(*ItemItemImportAuthorsWithAuthor_ItemRequestBuilder) {

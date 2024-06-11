@@ -10,7 +10,7 @@ import (
 type ItemItemIssuesItemAssigneesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAssignee gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item.assignees.item collection
+// ByAssignee gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.issues.item.assignees.item collection
 // returns a *ItemItemIssuesItemAssigneesWithAssigneeItemRequestBuilder when successful
 func (m *ItemItemIssuesItemAssigneesRequestBuilder) ByAssignee(assignee string)(*ItemItemIssuesItemAssigneesWithAssigneeItemRequestBuilder) {
     urlTplParams := make(map[string]string)

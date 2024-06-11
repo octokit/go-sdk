@@ -35,7 +35,7 @@ type ItemItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     // A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`.
     Validity *string `uriparametername:"validity"`
 }
-// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.secretScanning.alerts.item collection
+// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.secretScanning.alerts.item collection
 // returns a *ItemItemSecretScanningAlertsWithAlert_numberItemRequestBuilder when successful
 func (m *ItemItemSecretScanningAlertsRequestBuilder) ByAlert_number(alert_number int32)(*ItemItemSecretScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

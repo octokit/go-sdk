@@ -22,7 +22,7 @@ type StarredRequestBuilderGetQueryParameters struct {
     // The property to sort the results by. `created` means when the repository was starred. `updated` means when the repository was last pushed to.
     Sort *ib70b7407366e940878b2bf2a2ba5d70a3ff5c77a8b73175161353f0ca9989d8b.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github/.user.starred.item collection
+// ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github.user.starred.item collection
 // returns a *StarredWithOwnerItemRequestBuilder when successful
 func (m *StarredRequestBuilder) ByOwner(owner string)(*StarredWithOwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)

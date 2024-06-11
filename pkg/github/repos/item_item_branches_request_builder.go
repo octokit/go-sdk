@@ -19,7 +19,7 @@ type ItemItemBranchesRequestBuilderGetQueryParameters struct {
     // Setting to `true` returns only branches protected by branch protections or rulesets. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
     Protected *bool `uriparametername:"protected"`
 }
-// ByBranch gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.branches.item collection
+// ByBranch gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.branches.item collection
 // returns a *ItemItemBranchesWithBranchItemRequestBuilder when successful
 func (m *ItemItemBranchesRequestBuilder) ByBranch(branch string)(*ItemItemBranchesWithBranchItemRequestBuilder) {
     urlTplParams := make(map[string]string)

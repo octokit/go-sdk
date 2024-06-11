@@ -20,7 +20,7 @@ func (m *WithOrgItemRequestBuilder) Actions()(*ItemActionsRequestBuilder) {
 func (m *WithOrgItemRequestBuilder) Blocks()(*ItemBlocksRequestBuilder) {
     return NewItemBlocksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BySecurity_product gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.item collection
+// BySecurity_product gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.item collection
 // returns a *ItemWithSecurity_productItemRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) BySecurity_product(security_product string)(*ItemWithSecurity_productItemRequestBuilder) {
     urlTplParams := make(map[string]string)

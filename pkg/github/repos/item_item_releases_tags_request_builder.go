@@ -8,7 +8,7 @@ import (
 type ItemItemReleasesTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTag gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.releases.tags.item collection
+// ByTag gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.releases.tags.item collection
 // returns a *ItemItemReleasesTagsWithTagItemRequestBuilder when successful
 func (m *ItemItemReleasesTagsRequestBuilder) ByTag(tag string)(*ItemItemReleasesTagsWithTagItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -8,7 +8,7 @@ import (
 type OwnerItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRepoId gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item collection
+// ByRepoId gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item collection
 // returns a *ItemRepoItemRequestBuilder when successful
 func (m *OwnerItemRequestBuilder) ByRepoId(repoId string)(*ItemRepoItemRequestBuilder) {
     urlTplParams := make(map[string]string)

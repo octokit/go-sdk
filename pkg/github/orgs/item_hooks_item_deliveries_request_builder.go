@@ -19,7 +19,7 @@ type ItemHooksItemDeliveriesRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
     Redelivery *bool `uriparametername:"redelivery"`
 }
-// ByDelivery_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.hooks.item.deliveries.item collection
+// ByDelivery_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.hooks.item.deliveries.item collection
 // returns a *ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder when successful
 func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)(*ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

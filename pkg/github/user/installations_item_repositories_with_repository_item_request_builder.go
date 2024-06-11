@@ -23,7 +23,7 @@ func NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewInstallationsItemRepositoriesWithRepository_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
+// Delete remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`. This endpoint only works for PATs (classic) with the `repo` scope.
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
@@ -44,7 +44,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) Delete(
     }
     return nil
 }
-// Put add a single repository to an installation. The authenticated user must have admin access to the repository.
+// Put add a single repository to an installation. The authenticated user must have admin access to the repository.    This endpoint only works for PATs (classic) with the `repo` scope.
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
@@ -65,7 +65,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) Put(ctx
     }
     return nil
 }
-// ToDeleteRequestInformation remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
+// ToDeleteRequestInformation remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`. This endpoint only works for PATs (classic) with the `repo` scope.
 // returns a *RequestInformation when successful
 func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -73,7 +73,7 @@ func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation add a single repository to an installation. The authenticated user must have admin access to the repository.
+// ToPutRequestInformation add a single repository to an installation. The authenticated user must have admin access to the repository.    This endpoint only works for PATs (classic) with the `repo` scope.
 // returns a *RequestInformation when successful
 func (m *InstallationsItemRepositoriesWithRepository_ItemRequestBuilder) ToPutRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

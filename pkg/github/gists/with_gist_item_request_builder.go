@@ -10,7 +10,7 @@ import (
 type WithGist_ItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BySha gets an item from the github.com/octokit/go-sdk/pkg/github/.gists.item.item collection
+// BySha gets an item from the github.com/octokit/go-sdk/pkg/github.gists.item.item collection
 // returns a *ItemWithShaItemRequestBuilder when successful
 func (m *WithGist_ItemRequestBuilder) BySha(sha string)(*ItemWithShaItemRequestBuilder) {
     urlTplParams := make(map[string]string)

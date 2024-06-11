@@ -10,7 +10,7 @@ import (
 type ItemItemGitBlobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByFile_sha gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.git.blobs.item collection
+// ByFile_sha gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.git.blobs.item collection
 // returns a *ItemItemGitBlobsWithFile_shaItemRequestBuilder when successful
 func (m *ItemItemGitBlobsRequestBuilder) ByFile_sha(file_sha string)(*ItemItemGitBlobsWithFile_shaItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -22,7 +22,7 @@ type ItemMembersRequestBuilderGetQueryParameters struct {
     // Filter members returned by their role.
     Role *id17450d82944fa531d7f154d669a8b6ce833b49a25250377061627d436cc43a6.GetRoleQueryParameterType `uriparametername:"role"`
 }
-// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.members.item collection
+// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.members.item collection
 // returns a *ItemMembersWithUsernameItemRequestBuilder when successful
 func (m *ItemMembersRequestBuilder) ByUsername(username string)(*ItemMembersWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

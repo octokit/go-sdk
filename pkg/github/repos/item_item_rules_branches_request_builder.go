@@ -8,7 +8,7 @@ import (
 type ItemItemRulesBranchesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByBranch gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.rules.branches.item collection
+// ByBranch gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.rules.branches.item collection
 // returns a *ItemItemRulesBranchesWithBranchItemRequestBuilder when successful
 func (m *ItemItemRulesBranchesRequestBuilder) ByBranch(branch string)(*ItemItemRulesBranchesWithBranchItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -131,7 +131,7 @@ type CheckRunsPostRequestBodyable interface {
     SetItemItemCheckRunsPostRequestBodyMember1(value ItemItemCheckRunsPostRequestBodyMember1able)()
     SetItemItemCheckRunsPostRequestBodyMember2(value ItemItemCheckRunsPostRequestBodyMember2able)()
 }
-// ByCheck_run_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.checkRuns.item collection
+// ByCheck_run_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.checkRuns.item collection
 // returns a *ItemItemCheckRunsWithCheck_run_ItemRequestBuilder when successful
 func (m *ItemItemCheckRunsRequestBuilder) ByCheck_run_id(check_run_id int32)(*ItemItemCheckRunsWithCheck_run_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

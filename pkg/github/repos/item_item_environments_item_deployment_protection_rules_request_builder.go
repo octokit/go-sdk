@@ -16,7 +16,7 @@ type ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder struct {
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) Apps()(*ItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilder) {
     return NewItemItemEnvironmentsItemDeployment_protection_rulesAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByProtection_rule_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.environments.item.deployment_protection_rules.item collection
+// ByProtection_rule_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.environments.item.deployment_protection_rules.item collection
 // returns a *ItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilder when successful
 func (m *ItemItemEnvironmentsItemDeployment_protection_rulesRequestBuilder) ByProtection_rule_id(protection_rule_id int32)(*ItemItemEnvironmentsItemDeployment_protection_rulesWithProtection_rule_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

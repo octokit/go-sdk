@@ -25,7 +25,7 @@ type ItemItemPullsCommentsRequestBuilderGetQueryParameters struct {
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`
     Sort *ib4d397322ec768ed4fc8434d537dcd71b5e6aa74ead18e7de1d535c73d675c96.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// ByComment_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pulls.comments.item collection
+// ByComment_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pulls.comments.item collection
 // returns a *ItemItemPullsCommentsWithComment_ItemRequestBuilder when successful
 func (m *ItemItemPullsCommentsRequestBuilder) ByComment_id(comment_id int32)(*ItemItemPullsCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

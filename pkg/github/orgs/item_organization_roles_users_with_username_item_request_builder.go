@@ -10,7 +10,7 @@ import (
 type ItemOrganizationRolesUsersWithUsernameItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRole_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.organizationRoles.users.item.item collection
+// ByRole_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.organizationRoles.users.item.item collection
 // returns a *ItemOrganizationRolesUsersItemWithRole_ItemRequestBuilder when successful
 func (m *ItemOrganizationRolesUsersWithUsernameItemRequestBuilder) ByRole_id(role_id int32)(*ItemOrganizationRolesUsersItemWithRole_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

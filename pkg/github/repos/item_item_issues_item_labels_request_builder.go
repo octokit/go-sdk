@@ -490,7 +490,7 @@ type LabelsPutRequestBodyable interface {
     SetLabelsPutRequestBodyString(value *string)()
     SetString(value *string)()
 }
-// ByName gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item.labels.item collection
+// ByName gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.issues.item.labels.item collection
 // returns a *ItemItemIssuesItemLabelsWithNameItemRequestBuilder when successful
 func (m *ItemItemIssuesItemLabelsRequestBuilder) ByName(name string)(*ItemItemIssuesItemLabelsWithNameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -20,7 +20,7 @@ type ItemCollaboratorsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.projects.item.collaborators.item collection
+// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.projects.item.collaborators.item collection
 // returns a *ItemCollaboratorsWithUsernameItemRequestBuilder when successful
 func (m *ItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

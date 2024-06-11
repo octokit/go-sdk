@@ -17,7 +17,7 @@ type ItemFollowingRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByTarget_user gets an item from the github.com/octokit/go-sdk/pkg/github/.users.item.following.item collection
+// ByTarget_user gets an item from the github.com/octokit/go-sdk/pkg/github.users.item.following.item collection
 // returns a *ItemFollowingWithTarget_userItemRequestBuilder when successful
 func (m *ItemFollowingRequestBuilder) ByTarget_user(target_user string)(*ItemFollowingWithTarget_userItemRequestBuilder) {
     urlTplParams := make(map[string]string)

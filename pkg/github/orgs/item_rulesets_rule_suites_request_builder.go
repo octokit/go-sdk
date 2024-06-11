@@ -27,7 +27,7 @@ type ItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).
     Time_period *ice77a9476603b5b5bdcf7933e87c368075e96312df44ed011cd574d7f2e817b9.GetTime_periodQueryParameterType `uriparametername:"time_period"`
 }
-// ByRule_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.rulesets.ruleSuites.item collection
+// ByRule_suite_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.rulesets.ruleSuites.item collection
 // returns a *ItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder when successful
 func (m *ItemRulesetsRuleSuitesRequestBuilder) ByRule_suite_id(rule_suite_id int32)(*ItemRulesetsRuleSuitesWithRule_suite_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

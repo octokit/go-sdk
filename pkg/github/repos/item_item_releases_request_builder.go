@@ -23,7 +23,7 @@ type ItemItemReleasesRequestBuilderGetQueryParameters struct {
 func (m *ItemItemReleasesRequestBuilder) Assets()(*ItemItemReleasesAssetsRequestBuilder) {
     return NewItemItemReleasesAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByRelease_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.releases.item collection
+// ByRelease_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.releases.item collection
 // returns a *ItemItemReleasesWithRelease_ItemRequestBuilder when successful
 func (m *ItemItemReleasesRequestBuilder) ByRelease_id(release_id int32)(*ItemItemReleasesWithRelease_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

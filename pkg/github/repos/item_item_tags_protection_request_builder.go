@@ -11,7 +11,7 @@ import (
 type ItemItemTagsProtectionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTag_protection_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.tags.protection.item collection
+// ByTag_protection_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.tags.protection.item collection
 // Deprecated: 
 // returns a *ItemItemTagsProtectionWithTag_protection_ItemRequestBuilder when successful
 func (m *ItemItemTagsProtectionRequestBuilder) ByTag_protection_id(tag_protection_id int32)(*ItemItemTagsProtectionWithTag_protection_ItemRequestBuilder) {

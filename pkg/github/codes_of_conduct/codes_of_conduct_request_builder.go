@@ -10,7 +10,7 @@ import (
 type Codes_of_conductRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByKey gets an item from the github.com/octokit/go-sdk/pkg/github/.codes_of_conduct.item collection
+// ByKey gets an item from the github.com/octokit/go-sdk/pkg/github.codes_of_conduct.item collection
 // returns a *WithKeyItemRequestBuilder when successful
 func (m *Codes_of_conductRequestBuilder) ByKey(key string)(*WithKeyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
