@@ -29,7 +29,7 @@ type ItemItemPullsRequestBuilderGetQueryParameters struct {
     // Either `open`, `closed`, or `all` to filter by state.
     State *i4980f88b83fd6b3743c68ab8eff5072f163dacd27a6e92d0995ffa675b31f76d.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByPull_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pulls.item collection
+// ByPull_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pulls.item collection
 // returns a *ItemItemPullsWithPull_numberItemRequestBuilder when successful
 func (m *ItemItemPullsRequestBuilder) ByPull_number(pull_number int32)(*ItemItemPullsWithPull_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type PackageVersion_metadata_package_type int
 
 const (
@@ -29,7 +32,7 @@ func ParsePackageVersion_metadata_package_type(v string) (any, error) {
         case "container":
             result = CONTAINER_PACKAGEVERSION_METADATA_PACKAGE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PackageVersion_metadata_package_type value: " + v)
     }
     return &result, nil
 }

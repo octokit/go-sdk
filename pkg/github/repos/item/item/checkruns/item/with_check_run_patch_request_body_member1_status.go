@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 type WithCheck_run_PatchRequestBodyMember1_status int
 
 const (
@@ -14,7 +17,7 @@ func ParseWithCheck_run_PatchRequestBodyMember1_status(v string) (any, error) {
         case "completed":
             result = COMPLETED_WITHCHECK_RUN_PATCHREQUESTBODYMEMBER1_STATUS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithCheck_run_PatchRequestBodyMember1_status value: " + v)
     }
     return &result, nil
 }

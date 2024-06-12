@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // A classification of the file. For example to identify it as generated.
 type CodeScanningAlertClassification int
 
@@ -24,7 +27,7 @@ func ParseCodeScanningAlertClassification(v string) (any, error) {
         case "library":
             result = LIBRARY_CODESCANNINGALERTCLASSIFICATION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningAlertClassification value: " + v)
     }
     return &result, nil
 }

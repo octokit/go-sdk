@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The permissions policy that controls the actions and reusable workflows that are allowed to run.
 type AllowedActions int
 
@@ -21,7 +24,7 @@ func ParseAllowedActions(v string) (any, error) {
         case "selected":
             result = SELECTED_ALLOWEDACTIONS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AllowedActions value: " + v)
     }
     return &result, nil
 }

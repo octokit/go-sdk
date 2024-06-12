@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // CodeQL query suite to be used.
 type CodeScanningDefaultSetup_query_suite int
 
@@ -18,7 +21,7 @@ func ParseCodeScanningDefaultSetup_query_suite(v string) (any, error) {
         case "extended":
             result = EXTENDED_CODESCANNINGDEFAULTSETUP_QUERY_SUITE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningDefaultSetup_query_suite value: " + v)
     }
     return &result, nil
 }

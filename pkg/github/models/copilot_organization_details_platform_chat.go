@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
 type CopilotOrganizationDetails_platform_chat int
 
@@ -21,7 +24,7 @@ func ParseCopilotOrganizationDetails_platform_chat(v string) (any, error) {
         case "unconfigured":
             result = UNCONFIGURED_COPILOTORGANIZATIONDETAILS_PLATFORM_CHAT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CopilotOrganizationDetails_platform_chat value: " + v)
     }
     return &result, nil
 }

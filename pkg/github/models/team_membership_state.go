@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The state of the user's membership in the team.
 type TeamMembership_state int
 
@@ -18,7 +21,7 @@ func ParseTeamMembership_state(v string) (any, error) {
         case "pending":
             result = PENDING_TEAMMEMBERSHIP_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown TeamMembership_state value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package checkruns
+import (
+    "errors"
+)
 type GetFilterQueryParameterType int
 
 const (
@@ -17,7 +20,7 @@ func ParseGetFilterQueryParameterType(v string) (any, error) {
         case "all":
             result = ALL_GETFILTERQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetFilterQueryParameterType value: " + v)
     }
     return &result, nil
 }

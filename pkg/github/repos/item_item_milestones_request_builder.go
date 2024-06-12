@@ -25,7 +25,7 @@ type ItemItemMilestonesRequestBuilderGetQueryParameters struct {
     // The state of the milestone. Either `open`, `closed`, or `all`.
     State *i1ebd97b17bc9aa912e6d52ba66eb2fba73070ddd43b0bc79944e735e3a7ba7c7.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByMilestone_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.milestones.item collection
+// ByMilestone_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.milestones.item collection
 // returns a *ItemItemMilestonesWithMilestone_numberItemRequestBuilder when successful
 func (m *ItemItemMilestonesRequestBuilder) ByMilestone_number(milestone_number int32)(*ItemItemMilestonesWithMilestone_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

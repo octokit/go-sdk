@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Describe whether all repositories have been selected or there's a selection involved
 type NullableScopedInstallation_repository_selection int
 
@@ -18,7 +21,7 @@ func ParseNullableScopedInstallation_repository_selection(v string) (any, error)
         case "selected":
             result = SELECTED_NULLABLESCOPEDINSTALLATION_REPOSITORY_SELECTION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown NullableScopedInstallation_repository_selection value: " + v)
     }
     return &result, nil
 }

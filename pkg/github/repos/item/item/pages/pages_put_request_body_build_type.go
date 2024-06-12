@@ -1,4 +1,7 @@
 package pages
+import (
+    "errors"
+)
 // The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
 type PagesPutRequestBody_build_type int
 
@@ -18,7 +21,7 @@ func ParsePagesPutRequestBody_build_type(v string) (any, error) {
         case "workflow":
             result = WORKFLOW_PAGESPUTREQUESTBODY_BUILD_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PagesPutRequestBody_build_type value: " + v)
     }
     return &result, nil
 }

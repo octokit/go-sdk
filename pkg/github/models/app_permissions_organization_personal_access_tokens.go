@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
 type AppPermissions_organization_personal_access_tokens int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_organization_personal_access_tokens(v string) (any, err
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_PERSONAL_ACCESS_TOKENS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_personal_access_tokens value: " + v)
     }
     return &result, nil
 }

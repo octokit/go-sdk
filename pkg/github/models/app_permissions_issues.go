@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
 type AppPermissions_issues int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_issues(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ISSUES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_issues value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The severity of the advisory.
 type GlobalAdvisory_severity int
 
@@ -27,7 +30,7 @@ func ParseGlobalAdvisory_severity(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_GLOBALADVISORY_SEVERITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GlobalAdvisory_severity value: " + v)
     }
     return &result, nil
 }

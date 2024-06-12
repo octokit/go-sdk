@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for viewing an organization's plan.
 type AppPermissions_organization_plan int
 
@@ -15,7 +18,7 @@ func ParseAppPermissions_organization_plan(v string) (any, error) {
         case "read":
             result = READ_APPPERMISSIONS_ORGANIZATION_PLAN
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_plan value: " + v)
     }
     return &result, nil
 }

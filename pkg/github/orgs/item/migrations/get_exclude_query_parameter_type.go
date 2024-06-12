@@ -1,4 +1,7 @@
 package migrations
+import (
+    "errors"
+)
 // Allowed values that can be passed to the exclude param.
 type GetExcludeQueryParameterType int
 
@@ -15,7 +18,7 @@ func ParseGetExcludeQueryParameterType(v string) (any, error) {
         case "repositories":
             result = REPOSITORIES_GETEXCLUDEQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetExcludeQueryParameterType value: " + v)
     }
     return &result, nil
 }

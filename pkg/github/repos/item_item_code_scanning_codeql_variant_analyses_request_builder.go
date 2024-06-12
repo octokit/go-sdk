@@ -11,7 +11,7 @@ import (
 type ItemItemCodeScanningCodeqlVariantAnalysesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCodeql_variant_analysis_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.codeql.variantAnalyses.item collection
+// ByCodeql_variant_analysis_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.codeScanning.codeql.variantAnalyses.item collection
 // returns a *ItemItemCodeScanningCodeqlVariantAnalysesWithCodeql_variant_analysis_ItemRequestBuilder when successful
 func (m *ItemItemCodeScanningCodeqlVariantAnalysesRequestBuilder) ByCodeql_variant_analysis_id(codeql_variant_analysis_id int32)(*ItemItemCodeScanningCodeqlVariantAnalysesWithCodeql_variant_analysis_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

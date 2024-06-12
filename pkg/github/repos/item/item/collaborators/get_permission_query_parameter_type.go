@@ -1,4 +1,7 @@
 package collaborators
+import (
+    "errors"
+)
 type GetPermissionQueryParameterType int
 
 const (
@@ -26,7 +29,7 @@ func ParseGetPermissionQueryParameterType(v string) (any, error) {
         case "admin":
             result = ADMIN_GETPERMISSIONQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetPermissionQueryParameterType value: " + v)
     }
     return &result, nil
 }

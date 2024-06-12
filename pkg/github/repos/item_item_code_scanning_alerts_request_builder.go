@@ -33,7 +33,7 @@ type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     // The name of a code scanning tool. Only results by this tool will be listed. You can specify the tool by using either `tool_name` or `tool_guid`, but not both.
     Tool_name *string `uriparametername:"tool_name"`
 }
-// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.alerts.item collection
+// ByAlert_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.codeScanning.alerts.item collection
 // returns a *ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder when successful
 func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number int32)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

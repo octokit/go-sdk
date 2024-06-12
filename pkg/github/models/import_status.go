@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type Import_status int
 
 const (
@@ -59,7 +62,7 @@ func ParseImport_status(v string) (any, error) {
         case "detection_needs_auth":
             result = DETECTION_NEEDS_AUTH_IMPORT_STATUS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Import_status value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The state of the milestone. Either `open` or `closed`.
 type WithMilestone_numberPatchRequestBody_state int
 
@@ -18,7 +21,7 @@ func ParseWithMilestone_numberPatchRequestBody_state(v string) (any, error) {
         case "closed":
             result = CLOSED_WITHMILESTONE_NUMBERPATCHREQUESTBODY_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithMilestone_numberPatchRequestBody_state value: " + v)
     }
     return &result, nil
 }

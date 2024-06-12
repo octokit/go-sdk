@@ -9,7 +9,7 @@ import (
 type ItemItemActionsJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByJob_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.jobs.item collection
+// ByJob_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.actions.jobs.item collection
 // returns a *ItemItemActionsJobsWithJob_ItemRequestBuilder when successful
 func (m *ItemItemActionsJobsRequestBuilder) ByJob_id(job_id int32)(*ItemItemActionsJobsWithJob_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

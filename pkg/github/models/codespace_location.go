@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The initally assigned location of a new codespace.
 type Codespace_location int
 
@@ -24,7 +27,7 @@ func ParseCodespace_location(v string) (any, error) {
         case "WestUs2":
             result = WESTUS2_CODESPACE_LOCATION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Codespace_location value: " + v)
     }
     return &result, nil
 }

@@ -22,7 +22,7 @@ type PackagesRequestBuilderGetQueryParameters struct {
     // The selected visibility of the packages.  This parameter is optional and only filters an existing result set.The `internal` visibility is only supported for GitHub Packages registries that allow for granular permissions. For other ecosystems `internal` is synonymous with `private`.For the list of GitHub Packages registries that support granular permissions, see "[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages)."
     Visibility *ia90ad7174ccc536446ffbf323e44f93ad4e7b5bc6ecfa01a7999e03949929e86.GetVisibilityQueryParameterType `uriparametername:"visibility"`
 }
-// ByPackage_type gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item collection
+// ByPackage_type gets an item from the github.com/octokit/go-sdk/pkg/github.user.packages.item collection
 // returns a *PackagesWithPackage_typeItemRequestBuilder when successful
 func (m *PackagesRequestBuilder) ByPackage_type(package_type string)(*PackagesWithPackage_typeItemRequestBuilder) {
     urlTplParams := make(map[string]string)

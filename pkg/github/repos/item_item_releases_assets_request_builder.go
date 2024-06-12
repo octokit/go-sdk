@@ -9,7 +9,7 @@ import (
 type ItemItemReleasesAssetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAsset_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.releases.assets.item collection
+// ByAsset_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.releases.assets.item collection
 // returns a *ItemItemReleasesAssetsWithAsset_ItemRequestBuilder when successful
 func (m *ItemItemReleasesAssetsRequestBuilder) ByAsset_id(asset_id int32)(*ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

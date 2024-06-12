@@ -26,7 +26,7 @@ type ItemItemDeploymentsRequestBuilderGetQueryParameters struct {
     // The name of the task for the deployment (e.g., `deploy` or `deploy:migrations`).
     Task *string `uriparametername:"task"`
 }
-// ByDeployment_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.deployments.item collection
+// ByDeployment_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.deployments.item collection
 // returns a *ItemItemDeploymentsWithDeployment_ItemRequestBuilder when successful
 func (m *ItemItemDeploymentsRequestBuilder) ByDeployment_id(deployment_id int32)(*ItemItemDeploymentsWithDeployment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

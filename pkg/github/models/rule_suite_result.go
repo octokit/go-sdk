@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The result of the rule evaluations for rules with the `active` enforcement status.
 type RuleSuite_result int
 
@@ -21,7 +24,7 @@ func ParseRuleSuite_result(v string) (any, error) {
         case "bypass":
             result = BYPASS_RULESUITE_RESULT
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RuleSuite_result value: " + v)
     }
     return &result, nil
 }

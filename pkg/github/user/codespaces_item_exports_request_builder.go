@@ -10,7 +10,7 @@ import (
 type CodespacesItemExportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByExport_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.codespaces.item.exports.item collection
+// ByExport_id gets an item from the github.com/octokit/go-sdk/pkg/github.user.codespaces.item.exports.item collection
 // returns a *CodespacesItemExportsWithExport_ItemRequestBuilder when successful
 func (m *CodespacesItemExportsRequestBuilder) ByExport_id(export_id string)(*CodespacesItemExportsWithExport_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

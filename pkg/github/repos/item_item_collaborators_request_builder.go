@@ -22,7 +22,7 @@ type ItemItemCollaboratorsRequestBuilderGetQueryParameters struct {
     // Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.
     Permission *ief3bd7d40cba4706c2c0a30c6789d312e44d4a4ae592e9c24c47ec933ab6cd48.GetPermissionQueryParameterType `uriparametername:"permission"`
 }
-// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.collaborators.item collection
+// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.collaborators.item collection
 // returns a *ItemItemCollaboratorsWithUsernameItemRequestBuilder when successful
 func (m *ItemItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemItemCollaboratorsWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

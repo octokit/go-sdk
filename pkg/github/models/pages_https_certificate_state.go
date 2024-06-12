@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type PagesHttpsCertificate_state int
 
 const (
@@ -47,7 +50,7 @@ func ParsePagesHttpsCertificate_state(v string) (any, error) {
         case "dns_changed":
             result = DNS_CHANGED_PAGESHTTPSCERTIFICATE_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PagesHttpsCertificate_state value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The state of the advisory.
 type RepositoryAdvisoryUpdate_state int
 
@@ -21,7 +24,7 @@ func ParseRepositoryAdvisoryUpdate_state(v string) (any, error) {
         case "draft":
             result = DRAFT_REPOSITORYADVISORYUPDATE_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryAdvisoryUpdate_state value: " + v)
     }
     return &result, nil
 }

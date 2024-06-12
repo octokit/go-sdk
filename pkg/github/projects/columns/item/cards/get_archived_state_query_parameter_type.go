@@ -1,4 +1,7 @@
 package cards
+import (
+    "errors"
+)
 type GetArchived_stateQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetArchived_stateQueryParameterType(v string) (any, error) {
         case "not_archived":
             result = NOT_ARCHIVED_GETARCHIVED_STATEQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetArchived_stateQueryParameterType value: " + v)
     }
     return &result, nil
 }

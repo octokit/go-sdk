@@ -10,7 +10,7 @@ import (
 type ItemItemGitCommitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCommit_sha gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.git.commits.item collection
+// ByCommit_sha gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.git.commits.item collection
 // returns a *ItemItemGitCommitsWithCommit_shaItemRequestBuilder when successful
 func (m *ItemItemGitCommitsRequestBuilder) ByCommit_sha(commit_sha string)(*ItemItemGitCommitsWithCommit_shaItemRequestBuilder) {
     urlTplParams := make(map[string]string)

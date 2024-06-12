@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type RepositoryRuleCreation_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseRepositoryRuleCreation_type(v string) (any, error) {
         case "creation":
             result = CREATION_REPOSITORYRULECREATION_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleCreation_type value: " + v)
     }
     return &result, nil
 }

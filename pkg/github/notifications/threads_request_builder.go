@@ -9,7 +9,7 @@ import (
 type ThreadsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByThread_id gets an item from the github.com/octokit/go-sdk/pkg/github/.notifications.threads.item collection
+// ByThread_id gets an item from the github.com/octokit/go-sdk/pkg/github.notifications.threads.item collection
 // returns a *ThreadsWithThread_ItemRequestBuilder when successful
 func (m *ThreadsRequestBuilder) ByThread_id(thread_id int32)(*ThreadsWithThread_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

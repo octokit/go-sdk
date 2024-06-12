@@ -26,7 +26,7 @@ type ItemItemSecurityAdvisoriesRequestBuilderGetQueryParameters struct {
     // Filter by state of the repository advisories. Only advisories of this state will be returned.
     State *iff82c0f4e094aa05a6584f444513221550be88a33dff983b75f25640827f7406.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByGhsa_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.securityAdvisories.item collection
+// ByGhsa_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.securityAdvisories.item collection
 // returns a *ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder when successful
 func (m *ItemItemSecurityAdvisoriesRequestBuilder) ByGhsa_id(ghsa_id string)(*ItemItemSecurityAdvisoriesWithGhsa_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

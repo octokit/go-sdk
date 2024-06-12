@@ -1,4 +1,7 @@
 package variables
+import (
+    "errors"
+)
 // The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
 type VariablesPostRequestBody_visibility int
 
@@ -21,7 +24,7 @@ func ParseVariablesPostRequestBody_visibility(v string) (any, error) {
         case "selected":
             result = SELECTED_VARIABLESPOSTREQUESTBODY_VISIBILITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown VariablesPostRequestBody_visibility value: " + v)
     }
     return &result, nil
 }

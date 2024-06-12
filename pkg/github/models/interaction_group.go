@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.
 type InteractionGroup int
 
@@ -21,7 +24,7 @@ func ParseInteractionGroup(v string) (any, error) {
         case "collaborators_only":
             result = COLLABORATORS_ONLY_INTERACTIONGROUP
         default:
-            return nil, nil
+            return 0, errors.New("Unknown InteractionGroup value: " + v)
     }
     return &result, nil
 }

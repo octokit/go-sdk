@@ -11,7 +11,7 @@ import (
 type CodespacesSecretsItemRepositoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRepository_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.codespaces.secrets.item.repositories.item collection
+// ByRepository_id gets an item from the github.com/octokit/go-sdk/pkg/github.user.codespaces.secrets.item.repositories.item collection
 // returns a *CodespacesSecretsItemRepositoriesWithRepository_ItemRequestBuilder when successful
 func (m *CodespacesSecretsItemRepositoriesRequestBuilder) ByRepository_id(repository_id int32)(*CodespacesSecretsItemRepositoriesWithRepository_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

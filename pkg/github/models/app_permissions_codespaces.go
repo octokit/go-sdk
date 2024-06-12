@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to create, edit, delete, and list Codespaces.
 type AppPermissions_codespaces int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_codespaces(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_CODESPACES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_codespaces value: " + v)
     }
     return &result, nil
 }

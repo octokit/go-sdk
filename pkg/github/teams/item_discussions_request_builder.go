@@ -21,7 +21,7 @@ type ItemDiscussionsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByDiscussion_number gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item.discussions.item collection
+// ByDiscussion_number gets an item from the github.com/octokit/go-sdk/pkg/github.teams.item.discussions.item collection
 // Deprecated: 
 // returns a *ItemDiscussionsWithDiscussion_numberItemRequestBuilder when successful
 func (m *ItemDiscussionsRequestBuilder) ByDiscussion_number(discussion_number int32)(*ItemDiscussionsWithDiscussion_numberItemRequestBuilder) {

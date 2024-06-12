@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The type of the activity that was performed.
 type Activity_activity_type int
 
@@ -30,7 +33,7 @@ func ParseActivity_activity_type(v string) (any, error) {
         case "merge_queue_merge":
             result = MERGE_QUEUE_MERGE_ACTIVITY_ACTIVITY_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Activity_activity_type value: " + v)
     }
     return &result, nil
 }

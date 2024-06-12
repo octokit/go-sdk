@@ -21,7 +21,7 @@ type ItemItemIssuesCommentsItemReactionsRequestBuilderGetQueryParameters struct 
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByReaction_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.comments.item.reactions.item collection
+// ByReaction_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.issues.comments.item.reactions.item collection
 // returns a *ItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilder when successful
 func (m *ItemItemIssuesCommentsItemReactionsRequestBuilder) ByReaction_id(reaction_id int32)(*ItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

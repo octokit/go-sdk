@@ -17,7 +17,7 @@ type ItemTeamsItemReposRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.teams.item.repos.item collection
+// ByOwner gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.teams.item.repos.item collection
 // returns a *ItemTeamsItemReposWithOwnerItemRequestBuilder when successful
 func (m *ItemTeamsItemReposRequestBuilder) ByOwner(owner string)(*ItemTeamsItemReposWithOwnerItemRequestBuilder) {
     urlTplParams := make(map[string]string)

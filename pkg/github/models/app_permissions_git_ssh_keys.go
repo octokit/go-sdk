@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage git SSH keys.
 type AppPermissions_git_ssh_keys int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_git_ssh_keys(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_GIT_SSH_KEYS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_git_ssh_keys value: " + v)
     }
     return &result, nil
 }

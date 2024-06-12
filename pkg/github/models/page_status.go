@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The status of the most recent build of the Page.
 type Page_status int
 
@@ -21,7 +24,7 @@ func ParsePage_status(v string) (any, error) {
         case "errored":
             result = ERRORED_PAGE_STATUS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Page_status value: " + v)
     }
     return &result, nil
 }

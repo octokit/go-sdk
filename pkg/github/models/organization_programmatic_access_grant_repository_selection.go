@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Type of repository selection requested.
 type OrganizationProgrammaticAccessGrant_repository_selection int
 
@@ -21,7 +24,7 @@ func ParseOrganizationProgrammaticAccessGrant_repository_selection(v string) (an
         case "subset":
             result = SUBSET_ORGANIZATIONPROGRAMMATICACCESSGRANT_REPOSITORY_SELECTION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown OrganizationProgrammaticAccessGrant_repository_selection value: " + v)
     }
     return &result, nil
 }

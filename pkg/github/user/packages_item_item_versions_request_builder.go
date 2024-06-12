@@ -21,7 +21,7 @@ type PackagesItemItemVersionsRequestBuilderGetQueryParameters struct {
     // The state of the package, either active or deleted.
     State *i74b3087dddecf30253e135889419530355ad6be6bee6d9ec44ce931f8f78bc3f.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.packages.item.item.versions.item collection
+// ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github.user.packages.item.item.versions.item collection
 // returns a *PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder when successful
 func (m *PackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_version_id int32)(*PackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

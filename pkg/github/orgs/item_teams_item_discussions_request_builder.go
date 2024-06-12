@@ -23,7 +23,7 @@ type ItemTeamsItemDiscussionsRequestBuilderGetQueryParameters struct {
     // Pinned discussions only filter
     Pinned *string `uriparametername:"pinned"`
 }
-// ByDiscussion_number gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.teams.item.discussions.item collection
+// ByDiscussion_number gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.teams.item.discussions.item collection
 // returns a *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder when successful
 func (m *ItemTeamsItemDiscussionsRequestBuilder) ByDiscussion_number(discussion_number int32)(*ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

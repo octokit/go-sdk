@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type RepositoryRuleUpdate_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseRepositoryRuleUpdate_type(v string) (any, error) {
         case "update":
             result = UPDATE_REPOSITORYRULEUPDATE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleUpdate_type value: " + v)
     }
     return &result, nil
 }

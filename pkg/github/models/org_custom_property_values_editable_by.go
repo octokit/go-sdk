@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Who can edit the values of the property
 type OrgCustomProperty_values_editable_by int
 
@@ -18,7 +21,7 @@ func ParseOrgCustomProperty_values_editable_by(v string) (any, error) {
         case "org_and_repo_actors":
             result = ORG_AND_REPO_ACTORS_ORGCUSTOMPROPERTY_VALUES_EDITABLE_BY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown OrgCustomProperty_values_editable_by value: " + v)
     }
     return &result, nil
 }

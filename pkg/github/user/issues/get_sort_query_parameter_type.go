@@ -1,4 +1,7 @@
 package issues
+import (
+    "errors"
+)
 type GetSortQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetSortQueryParameterType(v string) (any, error) {
         case "comments":
             result = COMMENTS_GETSORTQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetSortQueryParameterType value: " + v)
     }
     return &result, nil
 }

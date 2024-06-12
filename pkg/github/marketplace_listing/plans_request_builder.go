@@ -18,7 +18,7 @@ type PlansRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByPlan_id gets an item from the github.com/octokit/go-sdk/pkg/github/.marketplace_listing.plans.item collection
+// ByPlan_id gets an item from the github.com/octokit/go-sdk/pkg/github.marketplace_listing.plans.item collection
 // returns a *PlansWithPlan_ItemRequestBuilder when successful
 func (m *PlansRequestBuilder) ByPlan_id(plan_id int32)(*PlansWithPlan_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

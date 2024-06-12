@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token for custom repository roles management.
 type AppPermissions_organization_custom_roles int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_organization_custom_roles(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_CUSTOM_ROLES
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_custom_roles value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
 type SecretScanningLocation_type int
 
@@ -51,7 +54,7 @@ func ParseSecretScanningLocation_type(v string) (any, error) {
         case "pull_request_review_comment":
             result = PULL_REQUEST_REVIEW_COMMENT_SECRETSCANNINGLOCATION_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown SecretScanningLocation_type value: " + v)
     }
     return &result, nil
 }

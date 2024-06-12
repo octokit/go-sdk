@@ -17,7 +17,7 @@ type UsersRequestBuilderGetQueryParameters struct {
     // A user ID. Only return users with an ID greater than this ID.
     Since *int32 `uriparametername:"since"`
 }
-// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.users.item collection
+// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.users.item collection
 // returns a *WithUsernameItemRequestBuilder when successful
 func (m *UsersRequestBuilder) ByUsername(username string)(*WithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -1,4 +1,7 @@
 package access
+import (
+    "errors"
+)
 // Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
 type AccessPutRequestBody_visibility int
 
@@ -24,7 +27,7 @@ func ParseAccessPutRequestBody_visibility(v string) (any, error) {
         case "all_members_and_outside_collaborators":
             result = ALL_MEMBERS_AND_OUTSIDE_COLLABORATORS_ACCESSPUTREQUESTBODY_VISIBILITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AccessPutRequestBody_visibility value: " + v)
     }
     return &result, nil
 }

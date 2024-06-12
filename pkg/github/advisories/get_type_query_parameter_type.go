@@ -1,4 +1,7 @@
 package advisories
+import (
+    "errors"
+)
 type GetTypeQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetTypeQueryParameterType(v string) (any, error) {
         case "unreviewed":
             result = UNREVIEWED_GETTYPEQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetTypeQueryParameterType value: " + v)
     }
     return &result, nil
 }

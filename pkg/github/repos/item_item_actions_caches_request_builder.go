@@ -34,7 +34,7 @@ type ItemItemActionsCachesRequestBuilderGetQueryParameters struct {
     // The property to sort the results by. `created_at` means when the cache was created. `last_accessed_at` means when the cache was last accessed. `size_in_bytes` is the size of the cache in bytes.
     Sort *i3a298556069ace403d8f25ad8fc9a71cfb502c817e6b3784c90f44e6250cae51.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// ByCache_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.caches.item collection
+// ByCache_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.actions.caches.item collection
 // returns a *ItemItemActionsCachesWithCache_ItemRequestBuilder when successful
 func (m *ItemItemActionsCachesRequestBuilder) ByCache_id(cache_id int32)(*ItemItemActionsCachesWithCache_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

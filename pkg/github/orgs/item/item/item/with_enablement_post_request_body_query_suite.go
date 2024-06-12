@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
 type WithEnablementPostRequestBody_query_suite int
 
@@ -18,7 +21,7 @@ func ParseWithEnablementPostRequestBody_query_suite(v string) (any, error) {
         case "extended":
             result = EXTENDED_WITHENABLEMENTPOSTREQUESTBODY_QUERY_SUITE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithEnablementPostRequestBody_query_suite value: " + v)
     }
     return &result, nil
 }

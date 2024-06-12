@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The notification setting the team has set
 type TeamFull_notification_setting int
 
@@ -18,7 +21,7 @@ func ParseTeamFull_notification_setting(v string) (any, error) {
         case "notifications_disabled":
             result = NOTIFICATIONS_DISABLED_TEAMFULL_NOTIFICATION_SETTING
         default:
-            return nil, nil
+            return 0, errors.New("Unknown TeamFull_notification_setting value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The state of the user's acceptance of the credit.
 type RepositoryAdvisoryCredit_state int
 
@@ -21,7 +24,7 @@ func ParseRepositoryAdvisoryCredit_state(v string) (any, error) {
         case "pending":
             result = PENDING_REPOSITORYADVISORYCREDIT_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryAdvisoryCredit_state value: " + v)
     }
     return &result, nil
 }

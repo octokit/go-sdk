@@ -45,7 +45,7 @@ type AdvisoriesRequestBuilderGetQueryParameters struct {
     // If specified, only return advisories that were updated on a date or date range.For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)."
     Updated *string `uriparametername:"updated"`
 }
-// ByGhsa_id gets an item from the github.com/octokit/go-sdk/pkg/github/.advisories.item collection
+// ByGhsa_id gets an item from the github.com/octokit/go-sdk/pkg/github.advisories.item collection
 // returns a *WithGhsa_ItemRequestBuilder when successful
 func (m *AdvisoriesRequestBuilder) ByGhsa_id(ghsa_id string)(*WithGhsa_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

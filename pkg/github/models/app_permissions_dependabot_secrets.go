@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The leve of permission to grant the access token to manage Dependabot secrets.
 type AppPermissions_dependabot_secrets int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_dependabot_secrets(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_DEPENDABOT_SECRETS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_dependabot_secrets value: " + v)
     }
     return &result, nil
 }

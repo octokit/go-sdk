@@ -35,7 +35,7 @@ type ItemItemActionsRunsRequestBuilderGetQueryParameters struct {
     // Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
     Status *ib50fd1a31f59a50cad835d1bac105bcca1f781f781bbe17e66a476cfdf7485c8.GetStatusQueryParameterType `uriparametername:"status"`
 }
-// ByRun_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.actions.runs.item collection
+// ByRun_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.actions.runs.item collection
 // returns a *ItemItemActionsRunsWithRun_ItemRequestBuilder when successful
 func (m *ItemItemActionsRunsRequestBuilder) ByRun_id(run_id int32)(*ItemItemActionsRunsWithRun_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

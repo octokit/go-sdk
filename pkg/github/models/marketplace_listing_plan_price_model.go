@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type MarketplaceListingPlan_price_model int
 
 const (
@@ -20,7 +23,7 @@ func ParseMarketplaceListingPlan_price_model(v string) (any, error) {
         case "PER_UNIT":
             result = PER_UNIT_MARKETPLACELISTINGPLAN_PRICE_MODEL
         default:
-            return nil, nil
+            return 0, errors.New("Unknown MarketplaceListingPlan_price_model value: " + v)
     }
     return &result, nil
 }

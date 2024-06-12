@@ -15,7 +15,7 @@ type ItemItemReadmeRequestBuilderGetQueryParameters struct {
     // The name of the commit/branch/tag. Default: the repository’s default branch.
     Ref *string `uriparametername:"ref"`
 }
-// ByDir gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.readme.item collection
+// ByDir gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.readme.item collection
 // returns a *ItemItemReadmeWithDirItemRequestBuilder when successful
 func (m *ItemItemReadmeRequestBuilder) ByDir(dir string)(*ItemItemReadmeWithDirItemRequestBuilder) {
     urlTplParams := make(map[string]string)

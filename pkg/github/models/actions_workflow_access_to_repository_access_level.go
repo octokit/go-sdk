@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
 type ActionsWorkflowAccessToRepository_access_level int
 
@@ -21,7 +24,7 @@ func ParseActionsWorkflowAccessToRepository_access_level(v string) (any, error) 
         case "organization":
             result = ORGANIZATION_ACTIONSWORKFLOWACCESSTOREPOSITORY_ACCESS_LEVEL
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ActionsWorkflowAccessToRepository_access_level value: " + v)
     }
     return &result, nil
 }

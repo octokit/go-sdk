@@ -10,7 +10,7 @@ import (
 type ItemItemCodeScanningCodeqlDatabasesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByLanguage gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.codeql.databases.item collection
+// ByLanguage gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.codeScanning.codeql.databases.item collection
 // returns a *ItemItemCodeScanningCodeqlDatabasesWithLanguageItemRequestBuilder when successful
 func (m *ItemItemCodeScanningCodeqlDatabasesRequestBuilder) ByLanguage(language string)(*ItemItemCodeScanningCodeqlDatabasesWithLanguageItemRequestBuilder) {
     urlTplParams := make(map[string]string)

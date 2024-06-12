@@ -26,7 +26,7 @@ type ItemItemPullsItemCommentsRequestBuilderGetQueryParameters struct {
     // The property to sort the results by.
     Sort *i7e815420148810f5a54942bff4de28f1f9dc6ef1e9fcbdfdb2255d0329e2272e.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// ByComment_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pulls.item.comments.item collection
+// ByComment_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pulls.item.comments.item collection
 // returns a *ItemItemPullsItemCommentsWithComment_ItemRequestBuilder when successful
 func (m *ItemItemPullsItemCommentsRequestBuilder) ByComment_id(comment_id int32)(*ItemItemPullsItemCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

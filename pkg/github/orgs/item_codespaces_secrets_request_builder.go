@@ -16,7 +16,7 @@ type ItemCodespacesSecretsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.codespaces.secrets.item collection
+// BySecret_name gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.codespaces.secrets.item collection
 // returns a *ItemCodespacesSecretsWithSecret_nameItemRequestBuilder when successful
 func (m *ItemCodespacesSecretsRequestBuilder) BySecret_name(secret_name string)(*ItemCodespacesSecretsWithSecret_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

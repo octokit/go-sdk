@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
 type CodeScanningAlertSetState int
 
@@ -18,7 +21,7 @@ func ParseCodeScanningAlertSetState(v string) (any, error) {
         case "dismissed":
             result = DISMISSED_CODESCANNINGALERTSETSTATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningAlertSetState value: " + v)
     }
     return &result, nil
 }

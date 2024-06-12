@@ -23,7 +23,7 @@ type ItemInvitationsRequestBuilderGetQueryParameters struct {
     // Filter invitations by their member role.
     Role *i2378633937c404127ad778eb05effbea7eb08f994ef028254c5d6c9a80ce3266.GetRoleQueryParameterType `uriparametername:"role"`
 }
-// ByInvitation_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.invitations.item collection
+// ByInvitation_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.invitations.item collection
 // returns a *ItemInvitationsWithInvitation_ItemRequestBuilder when successful
 func (m *ItemInvitationsRequestBuilder) ByInvitation_id(invitation_id int32)(*ItemInvitationsWithInvitation_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

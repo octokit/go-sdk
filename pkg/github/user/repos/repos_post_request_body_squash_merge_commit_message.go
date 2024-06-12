@@ -1,4 +1,7 @@
 package repos
+import (
+    "errors"
+)
 // The default value for a squash merge commit message:- `PR_BODY` - default to the pull request's body.- `COMMIT_MESSAGES` - default to the branch's commit messages.- `BLANK` - default to a blank commit message.
 type ReposPostRequestBody_squash_merge_commit_message int
 
@@ -21,7 +24,7 @@ func ParseReposPostRequestBody_squash_merge_commit_message(v string) (any, error
         case "BLANK":
             result = BLANK_REPOSPOSTREQUESTBODY_SQUASH_MERGE_COMMIT_MESSAGE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ReposPostRequestBody_squash_merge_commit_message value: " + v)
     }
     return &result, nil
 }

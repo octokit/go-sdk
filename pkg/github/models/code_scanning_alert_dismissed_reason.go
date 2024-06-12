@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // **Required when the state is dismissed.** The reason for dismissing or closing the alert.
 type CodeScanningAlertDismissedReason int
 
@@ -21,7 +24,7 @@ func ParseCodeScanningAlertDismissedReason(v string) (any, error) {
         case "used in tests":
             result = USEDINTESTS_CODESCANNINGALERTDISMISSEDREASON
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningAlertDismissedReason value: " + v)
     }
     return &result, nil
 }

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // Visibility of a secret
 type OrganizationDependabotSecret_visibility int
 
@@ -21,7 +24,7 @@ func ParseOrganizationDependabotSecret_visibility(v string) (any, error) {
         case "selected":
             result = SELECTED_ORGANIZATIONDEPENDABOTSECRET_VISIBILITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown OrganizationDependabotSecret_visibility value: " + v)
     }
     return &result, nil
 }

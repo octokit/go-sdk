@@ -8,7 +8,7 @@ import (
 type ItemMembershipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github/.teams.item.memberships.item collection
+// ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.teams.item.memberships.item collection
 // Deprecated: 
 // returns a *ItemMembershipsWithUsernameItemRequestBuilder when successful
 func (m *ItemMembershipsRequestBuilder) ByUsername(username string)(*ItemMembershipsWithUsernameItemRequestBuilder) {

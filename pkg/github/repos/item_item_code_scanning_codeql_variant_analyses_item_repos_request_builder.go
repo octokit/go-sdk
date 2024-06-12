@@ -8,7 +8,7 @@ import (
 type ItemItemCodeScanningCodeqlVariantAnalysesItemReposRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByRepo_owner gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.codeql.variantAnalyses.item.repos.item collection
+// ByRepo_owner gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.codeScanning.codeql.variantAnalyses.item.repos.item collection
 // returns a *ItemItemCodeScanningCodeqlVariantAnalysesItemReposWithRepo_ownerItemRequestBuilder when successful
 func (m *ItemItemCodeScanningCodeqlVariantAnalysesItemReposRequestBuilder) ByRepo_owner(repo_owner string)(*ItemItemCodeScanningCodeqlVariantAnalysesItemReposWithRepo_ownerItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type Workflow_state int
 
 const (
@@ -26,7 +29,7 @@ func ParseWorkflow_state(v string) (any, error) {
         case "disabled_manually":
             result = DISABLED_MANUALLY_WORKFLOW_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Workflow_state value: " + v)
     }
     return &result, nil
 }

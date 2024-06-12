@@ -1,4 +1,7 @@
 package pending_deployments
+import (
+    "errors"
+)
 // Whether to approve or reject deployment to the specified environments.
 type Pending_deploymentsPostRequestBody_state int
 
@@ -18,7 +21,7 @@ func ParsePending_deploymentsPostRequestBody_state(v string) (any, error) {
         case "rejected":
             result = REJECTED_PENDING_DEPLOYMENTSPOSTREQUESTBODY_STATE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown Pending_deploymentsPostRequestBody_state value: " + v)
     }
     return &result, nil
 }

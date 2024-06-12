@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
 type CodeScanningSarifsStatus_processing_status int
 
@@ -21,7 +24,7 @@ func ParseCodeScanningSarifsStatus_processing_status(v string) (any, error) {
         case "failed":
             result = FAILED_CODESCANNINGSARIFSSTATUS_PROCESSING_STATUS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown CodeScanningSarifsStatus_processing_status value: " + v)
     }
     return &result, nil
 }

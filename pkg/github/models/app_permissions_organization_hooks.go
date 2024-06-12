@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to manage the post-receive hooks for an organization.
 type AppPermissions_organization_hooks int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_organization_hooks(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_HOOKS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_organization_hooks value: " + v)
     }
     return &result, nil
 }

@@ -10,7 +10,7 @@ import (
 type ItemItemCodeScanningSarifsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BySarif_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.codeScanning.sarifs.item collection
+// BySarif_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.codeScanning.sarifs.item collection
 // returns a *ItemItemCodeScanningSarifsWithSarif_ItemRequestBuilder when successful
 func (m *ItemItemCodeScanningSarifsRequestBuilder) BySarif_id(sarif_id string)(*ItemItemCodeScanningSarifsWithSarif_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

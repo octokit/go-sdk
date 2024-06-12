@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
 type WithTeam_slugPatchRequestBody_permission int
 
@@ -21,7 +24,7 @@ func ParseWithTeam_slugPatchRequestBody_permission(v string) (any, error) {
         case "admin":
             result = ADMIN_WITHTEAM_SLUGPATCHREQUESTBODY_PERMISSION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithTeam_slugPatchRequestBody_permission value: " + v)
     }
     return &result, nil
 }

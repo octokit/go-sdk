@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // Action to apply to the request.
 type WithPat_request_PostRequestBody_action int
 
@@ -18,7 +21,7 @@ func ParseWithPat_request_PostRequestBody_action(v string) (any, error) {
         case "deny":
             result = DENY_WITHPAT_REQUEST_POSTREQUESTBODY_ACTION
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithPat_request_PostRequestBody_action value: " + v)
     }
     return &result, nil
 }

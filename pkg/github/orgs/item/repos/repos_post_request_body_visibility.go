@@ -1,4 +1,7 @@
 package repos
+import (
+    "errors"
+)
 // The visibility of the repository.
 type ReposPostRequestBody_visibility int
 
@@ -18,7 +21,7 @@ func ParseReposPostRequestBody_visibility(v string) (any, error) {
         case "private":
             result = PRIVATE_REPOSPOSTREQUESTBODY_VISIBILITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ReposPostRequestBody_visibility value: " + v)
     }
     return &result, nil
 }

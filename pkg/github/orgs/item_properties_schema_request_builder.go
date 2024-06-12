@@ -10,7 +10,7 @@ import (
 type ItemPropertiesSchemaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByCustom_property_name gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.properties.schema.item collection
+// ByCustom_property_name gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.properties.schema.item collection
 // returns a *ItemPropertiesSchemaWithCustom_property_nameItemRequestBuilder when successful
 func (m *ItemPropertiesSchemaRequestBuilder) ByCustom_property_name(custom_property_name string)(*ItemPropertiesSchemaWithCustom_property_nameItemRequestBuilder) {
     urlTplParams := make(map[string]string)

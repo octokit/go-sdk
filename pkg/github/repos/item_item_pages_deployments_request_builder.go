@@ -11,7 +11,7 @@ import (
 type ItemItemPagesDeploymentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByPages_deployment_id gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.pages.deployments.item collection
+// ByPages_deployment_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pages.deployments.item collection
 // returns a *ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder when successful
 func (m *ItemItemPagesDeploymentsRequestBuilder) ByPages_deployment_id(pages_deployment_id int32)(*ItemItemPagesDeploymentsWithPages_deployment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

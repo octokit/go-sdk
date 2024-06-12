@@ -1,4 +1,7 @@
 package item
+import (
+    "errors"
+)
 // The type of the value for the property
 type WithCustom_property_namePutRequestBody_value_type int
 
@@ -18,7 +21,7 @@ func ParseWithCustom_property_namePutRequestBody_value_type(v string) (any, erro
         case "single_select":
             result = SINGLE_SELECT_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown WithCustom_property_namePutRequestBody_value_type value: " + v)
     }
     return &result, nil
 }

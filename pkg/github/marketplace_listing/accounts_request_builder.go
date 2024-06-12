@@ -9,7 +9,7 @@ import (
 type AccountsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByAccount_id gets an item from the github.com/octokit/go-sdk/pkg/github/.marketplace_listing.accounts.item collection
+// ByAccount_id gets an item from the github.com/octokit/go-sdk/pkg/github.marketplace_listing.accounts.item collection
 // returns a *AccountsWithAccount_ItemRequestBuilder when successful
 func (m *AccountsRequestBuilder) ByAccount_id(account_id int32)(*AccountsWithAccount_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -10,7 +10,7 @@ import (
 type ItemItemGitTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTag_sha gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.git.tags.item collection
+// ByTag_sha gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.git.tags.item collection
 // returns a *ItemItemGitTagsWithTag_shaItemRequestBuilder when successful
 func (m *ItemItemGitTagsRequestBuilder) ByTag_sha(tag_sha string)(*ItemItemGitTagsWithTag_shaItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -8,7 +8,7 @@ import (
 type ItemItemContentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByPath gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.contents.item collection
+// ByPath gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.contents.item collection
 // returns a *ItemItemContentsWithPathItemRequestBuilder when successful
 func (m *ItemItemContentsRequestBuilder) ByPath(path string)(*ItemItemContentsWithPathItemRequestBuilder) {
     urlTplParams := make(map[string]string)

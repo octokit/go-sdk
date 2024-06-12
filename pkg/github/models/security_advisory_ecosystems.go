@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The package's language or package management ecosystem.
 type SecurityAdvisoryEcosystems int
 
@@ -51,7 +54,7 @@ func ParseSecurityAdvisoryEcosystems(v string) (any, error) {
         case "swift":
             result = SWIFT_SECURITYADVISORYECOSYSTEMS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown SecurityAdvisoryEcosystems value: " + v)
     }
     return &result, nil
 }

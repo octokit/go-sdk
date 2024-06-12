@@ -22,7 +22,7 @@ type InstallationsRequestBuilderGetQueryParameters struct {
     // Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Since *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time `uriparametername:"since"`
 }
-// ByInstallation_id gets an item from the github.com/octokit/go-sdk/pkg/github/.app.installations.item collection
+// ByInstallation_id gets an item from the github.com/octokit/go-sdk/pkg/github.app.installations.item collection
 // returns a *InstallationsWithInstallation_ItemRequestBuilder when successful
 func (m *InstallationsRequestBuilder) ByInstallation_id(installation_id int32)(*InstallationsWithInstallation_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

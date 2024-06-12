@@ -1,4 +1,7 @@
 package members
+import (
+    "errors"
+)
 type GetRoleQueryParameterType int
 
 const (
@@ -20,7 +23,7 @@ func ParseGetRoleQueryParameterType(v string) (any, error) {
         case "member":
             result = MEMBER_GETROLEQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetRoleQueryParameterType value: " + v)
     }
     return &result, nil
 }

@@ -11,7 +11,7 @@ import (
 type ItemPackagesItemItemVersionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github/.users.item.packages.item.item.versions.item collection
+// ByPackage_version_id gets an item from the github.com/octokit/go-sdk/pkg/github.users.item.packages.item.item.versions.item collection
 // returns a *ItemPackagesItemItemVersionsWithPackage_version_ItemRequestBuilder when successful
 func (m *ItemPackagesItemItemVersionsRequestBuilder) ByPackage_version_id(package_version_id int32)(*ItemPackagesItemItemVersionsWithPackage_version_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

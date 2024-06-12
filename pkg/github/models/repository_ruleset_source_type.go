@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The type of the source of the ruleset
 type RepositoryRuleset_source_type int
 
@@ -18,7 +21,7 @@ func ParseRepositoryRuleset_source_type(v string) (any, error) {
         case "Organization":
             result = ORGANIZATION_REPOSITORYRULESET_SOURCE_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryRuleset_source_type value: " + v)
     }
     return &result, nil
 }

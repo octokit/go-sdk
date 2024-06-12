@@ -8,7 +8,7 @@ import (
 type ItemOrganizationRolesTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTeam_slug gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.organizationRoles.teams.item collection
+// ByTeam_slug gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.organizationRoles.teams.item collection
 // returns a *ItemOrganizationRolesTeamsWithTeam_slugItemRequestBuilder when successful
 func (m *ItemOrganizationRolesTeamsRequestBuilder) ByTeam_slug(team_slug string)(*ItemOrganizationRolesTeamsWithTeam_slugItemRequestBuilder) {
     urlTplParams := make(map[string]string)

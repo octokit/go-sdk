@@ -1,4 +1,7 @@
 package versions
+import (
+    "errors"
+)
 type GetStateQueryParameterType int
 
 const (
@@ -17,7 +20,7 @@ func ParseGetStateQueryParameterType(v string) (any, error) {
         case "deleted":
             result = DELETED_GETSTATEQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetStateQueryParameterType value: " + v)
     }
     return &result, nil
 }

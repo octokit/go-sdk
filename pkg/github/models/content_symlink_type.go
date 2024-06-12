@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 type ContentSymlink_type int
 
 const (
@@ -14,7 +17,7 @@ func ParseContentSymlink_type(v string) (any, error) {
         case "symlink":
             result = SYMLINK_CONTENTSYMLINK_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown ContentSymlink_type value: " + v)
     }
     return &result, nil
 }

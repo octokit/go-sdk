@@ -18,7 +18,7 @@ type Gpg_keysRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// ByGpg_key_id gets an item from the github.com/octokit/go-sdk/pkg/github/.user.gpg_keys.item collection
+// ByGpg_key_id gets an item from the github.com/octokit/go-sdk/pkg/github.user.gpg_keys.item collection
 // returns a *Gpg_keysWithGpg_key_ItemRequestBuilder when successful
 func (m *Gpg_keysRequestBuilder) ByGpg_key_id(gpg_key_id int32)(*Gpg_keysWithGpg_key_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

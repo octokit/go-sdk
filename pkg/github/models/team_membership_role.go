@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The role of the user in the team.
 type TeamMembership_role int
 
@@ -18,7 +21,7 @@ func ParseTeamMembership_role(v string) (any, error) {
         case "maintainer":
             result = MAINTAINER_TEAMMEMBERSHIP_ROLE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown TeamMembership_role value: " + v)
     }
     return &result, nil
 }

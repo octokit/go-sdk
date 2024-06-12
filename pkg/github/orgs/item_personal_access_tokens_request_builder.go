@@ -34,7 +34,7 @@ type ItemPersonalAccessTokensRequestBuilderGetQueryParameters struct {
     // The property by which to sort the results.
     Sort *i3106aaea777cbd2e189aa9c11fbc93d90c3c7272c21ca15937589998ee7e5a2e.GetSortQueryParameterType `uriparametername:"sort"`
 }
-// ByPat_id gets an item from the github.com/octokit/go-sdk/pkg/github/.orgs.item.personalAccessTokens.item collection
+// ByPat_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.personalAccessTokens.item collection
 // returns a *ItemPersonalAccessTokensWithPat_ItemRequestBuilder when successful
 func (m *ItemPersonalAccessTokensRequestBuilder) ByPat_id(pat_id int32)(*ItemPersonalAccessTokensWithPat_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)

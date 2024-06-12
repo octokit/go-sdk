@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
 type RepositoryAdvisoryUpdate_severity int
 
@@ -24,7 +27,7 @@ func ParseRepositoryAdvisoryUpdate_severity(v string) (any, error) {
         case "low":
             result = LOW_REPOSITORYADVISORYUPDATE_SEVERITY
         default:
-            return nil, nil
+            return 0, errors.New("Unknown RepositoryAdvisoryUpdate_severity value: " + v)
     }
     return &result, nil
 }

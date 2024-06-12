@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level of permission to grant the access token to view and manage security events like code scanning alerts.
 type AppPermissions_security_events int
 
@@ -18,7 +21,7 @@ func ParseAppPermissions_security_events(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_SECURITY_EVENTS
         default:
-            return nil, nil
+            return 0, errors.New("Unknown AppPermissions_security_events value: " + v)
     }
     return &result, nil
 }

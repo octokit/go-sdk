@@ -20,7 +20,7 @@ type MembershipsOrgsRequestBuilderGetQueryParameters struct {
     // Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships.
     State *i6248a706a395d319f3e66611fac0b2654fe48b61e0e7152b109cc83e1d984972.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByOrg gets an item from the github.com/octokit/go-sdk/pkg/github/.user.memberships.orgs.item collection
+// ByOrg gets an item from the github.com/octokit/go-sdk/pkg/github.user.memberships.orgs.item collection
 // returns a *MembershipsOrgsWithOrgItemRequestBuilder when successful
 func (m *MembershipsOrgsRequestBuilder) ByOrg(org string)(*MembershipsOrgsWithOrgItemRequestBuilder) {
     urlTplParams := make(map[string]string)

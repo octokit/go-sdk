@@ -38,7 +38,7 @@ type ItemItemIssuesRequestBuilderGetQueryParameters struct {
     // Indicates the state of the issues to return.
     State *i787c2810dc1fca202084462fd425cb4203e935ffcb1f365e1aa1ff3aabf406d4.GetStateQueryParameterType `uriparametername:"state"`
 }
-// ByIssue_number gets an item from the github.com/octokit/go-sdk/pkg/github/.repos.item.item.issues.item collection
+// ByIssue_number gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.issues.item collection
 // returns a *ItemItemIssuesWithIssue_numberItemRequestBuilder when successful
 func (m *ItemItemIssuesRequestBuilder) ByIssue_number(issue_number int32)(*ItemItemIssuesWithIssue_numberItemRequestBuilder) {
     urlTplParams := make(map[string]string)

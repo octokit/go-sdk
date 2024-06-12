@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The level at which the comment is targeted, can be a diff line or a file.
 type PullRequestReviewComment_subject_type int
 
@@ -18,7 +21,7 @@ func ParsePullRequestReviewComment_subject_type(v string) (any, error) {
         case "file":
             result = FILE_PULLREQUESTREVIEWCOMMENT_SUBJECT_TYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PullRequestReviewComment_subject_type value: " + v)
     }
     return &result, nil
 }

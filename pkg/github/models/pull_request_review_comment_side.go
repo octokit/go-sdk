@@ -1,4 +1,7 @@
 package models
+import (
+    "errors"
+)
 // The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment
 type PullRequestReviewComment_side int
 
@@ -18,7 +21,7 @@ func ParsePullRequestReviewComment_side(v string) (any, error) {
         case "RIGHT":
             result = RIGHT_PULLREQUESTREVIEWCOMMENT_SIDE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown PullRequestReviewComment_side value: " + v)
     }
     return &result, nil
 }

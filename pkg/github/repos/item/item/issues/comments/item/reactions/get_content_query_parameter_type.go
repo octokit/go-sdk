@@ -1,4 +1,7 @@
 package reactions
+import (
+    "errors"
+)
 type GetContentQueryParameterType int
 
 const (
@@ -35,7 +38,7 @@ func ParseGetContentQueryParameterType(v string) (any, error) {
         case "eyes":
             result = EYES_GETCONTENTQUERYPARAMETERTYPE
         default:
-            return nil, nil
+            return 0, errors.New("Unknown GetContentQueryParameterType value: " + v)
     }
     return &result, nil
 }
