@@ -8,10 +8,12 @@ type WithCustom_property_namePutRequestBody_value_type int
 const (
     STRING_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE WithCustom_property_namePutRequestBody_value_type = iota
     SINGLE_SELECT_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
+    MULTI_SELECT_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
+    TRUE_FALSE_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
 )
 
 func (i WithCustom_property_namePutRequestBody_value_type) String() string {
-    return []string{"string", "single_select"}[i]
+    return []string{"string", "single_select", "multi_select", "true_false"}[i]
 }
 func ParseWithCustom_property_namePutRequestBody_value_type(v string) (any, error) {
     result := STRING_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
@@ -20,6 +22,10 @@ func ParseWithCustom_property_namePutRequestBody_value_type(v string) (any, erro
             result = STRING_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
         case "single_select":
             result = SINGLE_SELECT_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
+        case "multi_select":
+            result = MULTI_SELECT_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
+        case "true_false":
+            result = TRUE_FALSE_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
         default:
             return 0, errors.New("Unknown WithCustom_property_namePutRequestBody_value_type value: " + v)
     }
