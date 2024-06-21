@@ -37,6 +37,11 @@ func (m *WithOrgItemRequestBuilder) BySecurity_product(security_product string)(
 func (m *WithOrgItemRequestBuilder) CodeScanning()(*ItemCodeScanningRequestBuilder) {
     return NewItemCodeScanningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CodeSecurity the codeSecurity property
+// returns a *ItemCodeSecurityRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) CodeSecurity()(*ItemCodeSecurityRequestBuilder) {
+    return NewItemCodeSecurityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Codespaces the codespaces property
 // returns a *ItemCodespacesRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Codespaces()(*ItemCodespacesRequestBuilder) {
