@@ -15,6 +15,11 @@ type WithOrgItemRequestBuilder struct {
 func (m *WithOrgItemRequestBuilder) Actions()(*ItemActionsRequestBuilder) {
     return NewItemActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Attestations the attestations property
+// returns a *ItemAttestationsRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) Attestations()(*ItemAttestationsRequestBuilder) {
+    return NewItemAttestationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Blocks the blocks property
 // returns a *ItemBlocksRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Blocks()(*ItemBlocksRequestBuilder) {

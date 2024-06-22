@@ -94,6 +94,11 @@ type WithUsernameGetResponseable interface {
     SetPrivateUser(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PrivateUserable)()
     SetPublicUser(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.PublicUserable)()
 }
+// Attestations the attestations property
+// returns a *ItemAttestationsRequestBuilder when successful
+func (m *WithUsernameItemRequestBuilder) Attestations()(*ItemAttestationsRequestBuilder) {
+    return NewItemAttestationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWithUsernameItemRequestBuilderInternal instantiates a new WithUsernameItemRequestBuilder and sets the default values.
 func NewWithUsernameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WithUsernameItemRequestBuilder) {
     m := &WithUsernameItemRequestBuilder{

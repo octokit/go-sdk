@@ -25,6 +25,11 @@ func (m *ItemRepoItemRequestBuilder) Activity()(*ItemItemActivityRequestBuilder)
 func (m *ItemRepoItemRequestBuilder) Assignees()(*ItemItemAssigneesRequestBuilder) {
     return NewItemItemAssigneesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Attestations the attestations property
+// returns a *ItemItemAttestationsRequestBuilder when successful
+func (m *ItemRepoItemRequestBuilder) Attestations()(*ItemItemAttestationsRequestBuilder) {
+    return NewItemItemAttestationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Autolinks the autolinks property
 // returns a *ItemItemAutolinksRequestBuilder when successful
 func (m *ItemRepoItemRequestBuilder) Autolinks()(*ItemItemAutolinksRequestBuilder) {
