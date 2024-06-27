@@ -12,7 +12,7 @@ type PullRequestMinimal struct {
     // The head property
     head PullRequestMinimal_headable
     // The id property
-    id *int32
+    id *int64
     // The number property
     number *int32
     // The url property
@@ -65,7 +65,7 @@ func (m *PullRequestMinimal) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -102,8 +102,8 @@ func (m *PullRequestMinimal) GetHead()(PullRequestMinimal_headable) {
     return m.head
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *PullRequestMinimal) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestMinimal) GetId()(*int64) {
     return m.id
 }
 // GetNumber gets the number property value. The number property
@@ -131,7 +131,7 @@ func (m *PullRequestMinimal) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -169,7 +169,7 @@ func (m *PullRequestMinimal) SetHead(value PullRequestMinimal_headable)() {
     m.head = value
 }
 // SetId sets the id property value. The id property
-func (m *PullRequestMinimal) SetId(value *int32)() {
+func (m *PullRequestMinimal) SetId(value *int64)() {
     m.id = value
 }
 // SetNumber sets the number property value. The number property
@@ -185,12 +185,12 @@ type PullRequestMinimalable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBase()(PullRequestMinimal_baseable)
     GetHead()(PullRequestMinimal_headable)
-    GetId()(*int32)
+    GetId()(*int64)
     GetNumber()(*int32)
     GetUrl()(*string)
     SetBase(value PullRequestMinimal_baseable)()
     SetHead(value PullRequestMinimal_headable)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetNumber(value *int32)()
     SetUrl(value *string)()
 }

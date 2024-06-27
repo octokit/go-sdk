@@ -8,7 +8,7 @@ type PullRequestMinimal_base_repo struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The id property
-    id *int32
+    id *int64
     // The name property
     name *string
     // The url property
@@ -36,7 +36,7 @@ func (m *PullRequestMinimal_base_repo) GetAdditionalData()(map[string]any) {
 func (m *PullRequestMinimal_base_repo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -68,8 +68,8 @@ func (m *PullRequestMinimal_base_repo) GetFieldDeserializers()(map[string]func(i
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *PullRequestMinimal_base_repo) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestMinimal_base_repo) GetId()(*int64) {
     return m.id
 }
 // GetName gets the name property value. The name property
@@ -85,7 +85,7 @@ func (m *PullRequestMinimal_base_repo) GetUrl()(*string) {
 // Serialize serializes information the current object
 func (m *PullRequestMinimal_base_repo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -115,7 +115,7 @@ func (m *PullRequestMinimal_base_repo) SetAdditionalData(value map[string]any)()
     m.additionalData = value
 }
 // SetId sets the id property value. The id property
-func (m *PullRequestMinimal_base_repo) SetId(value *int32)() {
+func (m *PullRequestMinimal_base_repo) SetId(value *int64)() {
     m.id = value
 }
 // SetName sets the name property value. The name property
@@ -129,10 +129,10 @@ func (m *PullRequestMinimal_base_repo) SetUrl(value *string)() {
 type PullRequestMinimal_base_repoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetId()(*int32)
+    GetId()(*int64)
     GetName()(*string)
     GetUrl()(*string)
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetName(value *string)()
     SetUrl(value *string)()
 }

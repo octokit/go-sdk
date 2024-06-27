@@ -20,7 +20,7 @@ type Authorization struct {
     // The hashed_token property
     hashed_token *string
     // The id property
-    id *int32
+    id *int64
     // The installation property
     installation NullableScopedInstallationable
     // The note property
@@ -127,7 +127,7 @@ func (m *Authorization) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -245,8 +245,8 @@ func (m *Authorization) GetHashedToken()(*string) {
     return m.hashed_token
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *Authorization) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *Authorization) GetId()(*int64) {
     return m.id
 }
 // GetInstallation gets the installation property value. The installation property
@@ -327,7 +327,7 @@ func (m *Authorization) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -419,7 +419,7 @@ func (m *Authorization) SetHashedToken(value *string)() {
     m.hashed_token = value
 }
 // SetId sets the id property value. The id property
-func (m *Authorization) SetId(value *int32)() {
+func (m *Authorization) SetId(value *int64)() {
     m.id = value
 }
 // SetInstallation sets the installation property value. The installation property
@@ -466,7 +466,7 @@ type Authorizationable interface {
     GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFingerprint()(*string)
     GetHashedToken()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetInstallation()(NullableScopedInstallationable)
     GetNote()(*string)
     GetNoteUrl()(*string)
@@ -481,7 +481,7 @@ type Authorizationable interface {
     SetExpiresAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFingerprint(value *string)()
     SetHashedToken(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetInstallation(value NullableScopedInstallationable)()
     SetNote(value *string)()
     SetNoteUrl(value *string)()

@@ -14,7 +14,7 @@ type OrganizationRole struct {
     // A short description about who this role is for or what permissions it grants.
     description *string
     // The unique identifier of the role.
-    id *int32
+    id *int64
     // The name of the role.
     name *string
     // A GitHub user.
@@ -76,7 +76,7 @@ func (m *OrganizationRole) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -134,8 +134,8 @@ func (m *OrganizationRole) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. The unique identifier of the role.
-// returns a *int32 when successful
-func (m *OrganizationRole) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *OrganizationRole) GetId()(*int64) {
     return m.id
 }
 // GetName gets the name property value. The name of the role.
@@ -173,7 +173,7 @@ func (m *OrganizationRole) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -223,7 +223,7 @@ func (m *OrganizationRole) SetDescription(value *string)() {
     m.description = value
 }
 // SetId sets the id property value. The unique identifier of the role.
-func (m *OrganizationRole) SetId(value *int32)() {
+func (m *OrganizationRole) SetId(value *int64)() {
     m.id = value
 }
 // SetName sets the name property value. The name of the role.
@@ -247,14 +247,14 @@ type OrganizationRoleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetName()(*string)
     GetOrganization()(NullableSimpleUserable)
     GetPermissions()([]string)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetName(value *string)()
     SetOrganization(value NullableSimpleUserable)()
     SetPermissions(value []string)()
