@@ -28,7 +28,7 @@ type ReviewComment struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The in_reply_to_id property
     in_reply_to_id *int32
     // The line of the blob to which the comment applies. The last line of the range for a multi-line comment
@@ -48,7 +48,7 @@ type ReviewComment struct {
     // The position property
     position *int32
     // The pull_request_review_id property
-    pull_request_review_id *int32
+    pull_request_review_id *int64
     // The pull_request_url property
     pull_request_url *string
     // The reactions property
@@ -217,7 +217,7 @@ func (m *ReviewComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -317,7 +317,7 @@ func (m *ReviewComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["pull_request_review_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -414,8 +414,8 @@ func (m *ReviewComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *ReviewComment) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *ReviewComment) GetId()(*int64) {
     return m.id
 }
 // GetInReplyToId gets the in_reply_to_id property value. The in_reply_to_id property
@@ -469,8 +469,8 @@ func (m *ReviewComment) GetPosition()(*int32) {
     return m.position
 }
 // GetPullRequestReviewId gets the pull_request_review_id property value. The pull_request_review_id property
-// returns a *int32 when successful
-func (m *ReviewComment) GetPullRequestReviewId()(*int32) {
+// returns a *int64 when successful
+func (m *ReviewComment) GetPullRequestReviewId()(*int64) {
     return m.pull_request_review_id
 }
 // GetPullRequestUrl gets the pull_request_url property value. The pull_request_url property
@@ -565,7 +565,7 @@ func (m *ReviewComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -625,7 +625,7 @@ func (m *ReviewComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err := writer.WriteInt32Value("pull_request_review_id", m.GetPullRequestReviewId())
+        err := writer.WriteInt64Value("pull_request_review_id", m.GetPullRequestReviewId())
         if err != nil {
             return err
         }
@@ -731,7 +731,7 @@ func (m *ReviewComment) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *ReviewComment) SetId(value *int32)() {
+func (m *ReviewComment) SetId(value *int64)() {
     m.id = value
 }
 // SetInReplyToId sets the in_reply_to_id property value. The in_reply_to_id property
@@ -775,7 +775,7 @@ func (m *ReviewComment) SetPosition(value *int32)() {
     m.position = value
 }
 // SetPullRequestReviewId sets the pull_request_review_id property value. The pull_request_review_id property
-func (m *ReviewComment) SetPullRequestReviewId(value *int32)() {
+func (m *ReviewComment) SetPullRequestReviewId(value *int64)() {
     m.pull_request_review_id = value
 }
 // SetPullRequestUrl sets the pull_request_url property value. The pull_request_url property
@@ -821,7 +821,7 @@ type ReviewCommentable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDiffHunk()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetInReplyToId()(*int32)
     GetLine()(*int32)
     GetLinks()(ReviewComment__linksable)
@@ -832,7 +832,7 @@ type ReviewCommentable interface {
     GetOriginalStartLine()(*int32)
     GetPath()(*string)
     GetPosition()(*int32)
-    GetPullRequestReviewId()(*int32)
+    GetPullRequestReviewId()(*int64)
     GetPullRequestUrl()(*string)
     GetReactions()(ReactionRollupable)
     GetSide()(*ReviewComment_side)
@@ -849,7 +849,7 @@ type ReviewCommentable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDiffHunk(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetInReplyToId(value *int32)()
     SetLine(value *int32)()
     SetLinks(value ReviewComment__linksable)()
@@ -860,7 +860,7 @@ type ReviewCommentable interface {
     SetOriginalStartLine(value *int32)()
     SetPath(value *string)()
     SetPosition(value *int32)()
-    SetPullRequestReviewId(value *int32)()
+    SetPullRequestReviewId(value *int64)()
     SetPullRequestUrl(value *string)()
     SetReactions(value ReactionRollupable)()
     SetSide(value *ReviewComment_side)()

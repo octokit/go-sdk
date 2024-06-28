@@ -1,6 +1,6 @@
 {
-  "descriptionHash": "524B7995C3F724FBD5311CE721AFE148291ACD56B5B0A77B7A38BD87C4ABB7861406A0A812CBC457F589E9F17D1493533C0EDCA1A7CC6A587DADAB2A2E2BF9DE",
-  "descriptionLocation": "../../../../schemas/downloaded.json",
+  "descriptionHash": "E4E2AABED4BD59401902818C72E41CA2F0687B3623E90C31913C14D9C4EF622958C3E7803B45FFDD22856FE8BE14B2FB3FB3AAF72B4F479A9809E2EEF45DD55C",
+  "descriptionLocation": "../../../../../schemas/api.github.com.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.14.0",
   "clientClassName": "ApiClient",

@@ -7,6 +7,8 @@ import (
 type DependencyGraphSpdxSbom_sbom_packages struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // The copyright holders of the package, and any dates present with those notices, if available.
+    copyrightText *string
     // The location where the package can be downloaded,or NOASSERTION if this has not been determined.
     downloadLocation *string
     // The externalRefs property
@@ -43,6 +45,11 @@ func CreateDependencyGraphSpdxSbom_sbom_packagesFromDiscriminatorValue(parseNode
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetCopyrightText gets the copyrightText property value. The copyright holders of the package, and any dates present with those notices, if available.
+// returns a *string when successful
+func (m *DependencyGraphSpdxSbom_sbom_packages) GetCopyrightText()(*string) {
+    return m.copyrightText
+}
 // GetDownloadLocation gets the downloadLocation property value. The location where the package can be downloaded,or NOASSERTION if this has not been determined.
 // returns a *string when successful
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetDownloadLocation()(*string) {
@@ -57,6 +64,16 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) GetExternalRefs()([]DependencyGr
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DependencyGraphSpdxSbom_sbom_packages) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["copyrightText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCopyrightText(val)
+        }
+        return nil
+    }
     res["downloadLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -193,6 +210,12 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) GetVersionInfo()(*string) {
 // Serialize serializes information the current object
 func (m *DependencyGraphSpdxSbom_sbom_packages) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("copyrightText", m.GetCopyrightText())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("downloadLocation", m.GetDownloadLocation())
         if err != nil {
             return err
@@ -264,6 +287,10 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) Serialize(writer i878a80d2330e89
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetCopyrightText sets the copyrightText property value. The copyright holders of the package, and any dates present with those notices, if available.
+func (m *DependencyGraphSpdxSbom_sbom_packages) SetCopyrightText(value *string)() {
+    m.copyrightText = value
+}
 // SetDownloadLocation sets the downloadLocation property value. The location where the package can be downloaded,or NOASSERTION if this has not been determined.
 func (m *DependencyGraphSpdxSbom_sbom_packages) SetDownloadLocation(value *string)() {
     m.downloadLocation = value
@@ -303,6 +330,7 @@ func (m *DependencyGraphSpdxSbom_sbom_packages) SetVersionInfo(value *string)() 
 type DependencyGraphSpdxSbom_sbom_packagesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCopyrightText()(*string)
     GetDownloadLocation()(*string)
     GetExternalRefs()([]DependencyGraphSpdxSbom_sbom_packages_externalRefsable)
     GetFilesAnalyzed()(*bool)
@@ -312,6 +340,7 @@ type DependencyGraphSpdxSbom_sbom_packagesable interface {
     GetSPDXID()(*string)
     GetSupplier()(*string)
     GetVersionInfo()(*string)
+    SetCopyrightText(value *string)()
     SetDownloadLocation(value *string)()
     SetExternalRefs(value []DependencyGraphSpdxSbom_sbom_packages_externalRefsable)()
     SetFilesAnalyzed(value *bool)()

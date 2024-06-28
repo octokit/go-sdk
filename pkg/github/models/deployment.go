@@ -18,7 +18,7 @@ type Deployment struct {
     // Name for the target deployment environment.
     environment *string
     // Unique identifier of the deployment
-    id *int32
+    id *int64
     // The node_id property
     node_id *string
     // The original_environment property
@@ -128,7 +128,7 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -270,8 +270,8 @@ func (m *Deployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     return res
 }
 // GetId gets the id property value. Unique identifier of the deployment
-// returns a *int32 when successful
-func (m *Deployment) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *Deployment) GetId()(*int64) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
@@ -366,7 +366,7 @@ func (m *Deployment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -478,7 +478,7 @@ func (m *Deployment) SetEnvironment(value *string)() {
     m.environment = value
 }
 // SetId sets the id property value. Unique identifier of the deployment
-func (m *Deployment) SetId(value *int32)() {
+func (m *Deployment) SetId(value *int64)() {
     m.id = value
 }
 // SetNodeId sets the node_id property value. The node_id property
@@ -540,7 +540,7 @@ type Deploymentable interface {
     GetCreator()(NullableSimpleUserable)
     GetDescription()(*string)
     GetEnvironment()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetNodeId()(*string)
     GetOriginalEnvironment()(*string)
     GetPayload()(*string)
@@ -558,7 +558,7 @@ type Deploymentable interface {
     SetCreator(value NullableSimpleUserable)()
     SetDescription(value *string)()
     SetEnvironment(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetNodeId(value *string)()
     SetOriginalEnvironment(value *string)()
     SetPayload(value *string)()

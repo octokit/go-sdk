@@ -52,7 +52,7 @@ type PullRequest struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The issue_url property
     issue_url *string
     // The labels property
@@ -434,7 +434,7 @@ func (m *PullRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -734,8 +734,8 @@ func (m *PullRequest) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *PullRequest) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequest) GetId()(*int64) {
     return m.id
 }
 // GetIssueUrl gets the issue_url property value. The issue_url property
@@ -1003,7 +1003,7 @@ func (m *PullRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -1282,7 +1282,7 @@ func (m *PullRequest) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *PullRequest) SetId(value *int32)() {
+func (m *PullRequest) SetId(value *int64)() {
     m.id = value
 }
 // SetIssueUrl sets the issue_url property value. The issue_url property
@@ -1416,7 +1416,7 @@ type PullRequestable interface {
     GetDraft()(*bool)
     GetHead()(PullRequest_headable)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetIssueUrl()(*string)
     GetLabels()([]PullRequest_labelsable)
     GetLinks()(PullRequest__linksable)
@@ -1464,7 +1464,7 @@ type PullRequestable interface {
     SetDraft(value *bool)()
     SetHead(value PullRequest_headable)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetIssueUrl(value *string)()
     SetLabels(value []PullRequest_labelsable)()
     SetLinks(value PullRequest__linksable)()

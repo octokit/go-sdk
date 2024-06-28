@@ -28,7 +28,7 @@ type PullRequestReviewComment struct {
     // HTML URL for the pull request review comment.
     html_url *string
     // The ID of the pull request review comment.
-    id *int32
+    id *int64
     // The comment ID to reply to.
     in_reply_to_id *int32
     // The line of the blob to which the comment applies. The last line of the range for a multi-line comment
@@ -48,7 +48,7 @@ type PullRequestReviewComment struct {
     // The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
     position *int32
     // The ID of the pull request review to which the comment belongs.
-    pull_request_review_id *int32
+    pull_request_review_id *int64
     // URL for the pull request that the review comment belongs to.
     pull_request_url *string
     // The reactions property
@@ -219,7 +219,7 @@ func (m *PullRequestReviewComment) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -319,7 +319,7 @@ func (m *PullRequestReviewComment) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     res["pull_request_review_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -426,8 +426,8 @@ func (m *PullRequestReviewComment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The ID of the pull request review comment.
-// returns a *int32 when successful
-func (m *PullRequestReviewComment) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestReviewComment) GetId()(*int64) {
     return m.id
 }
 // GetInReplyToId gets the in_reply_to_id property value. The comment ID to reply to.
@@ -481,8 +481,8 @@ func (m *PullRequestReviewComment) GetPosition()(*int32) {
     return m.position
 }
 // GetPullRequestReviewId gets the pull_request_review_id property value. The ID of the pull request review to which the comment belongs.
-// returns a *int32 when successful
-func (m *PullRequestReviewComment) GetPullRequestReviewId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestReviewComment) GetPullRequestReviewId()(*int64) {
     return m.pull_request_review_id
 }
 // GetPullRequestUrl gets the pull_request_url property value. URL for the pull request that the review comment belongs to.
@@ -582,7 +582,7 @@ func (m *PullRequestReviewComment) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -642,7 +642,7 @@ func (m *PullRequestReviewComment) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
-        err := writer.WriteInt32Value("pull_request_review_id", m.GetPullRequestReviewId())
+        err := writer.WriteInt64Value("pull_request_review_id", m.GetPullRequestReviewId())
         if err != nil {
             return err
         }
@@ -755,7 +755,7 @@ func (m *PullRequestReviewComment) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The ID of the pull request review comment.
-func (m *PullRequestReviewComment) SetId(value *int32)() {
+func (m *PullRequestReviewComment) SetId(value *int64)() {
     m.id = value
 }
 // SetInReplyToId sets the in_reply_to_id property value. The comment ID to reply to.
@@ -799,7 +799,7 @@ func (m *PullRequestReviewComment) SetPosition(value *int32)() {
     m.position = value
 }
 // SetPullRequestReviewId sets the pull_request_review_id property value. The ID of the pull request review to which the comment belongs.
-func (m *PullRequestReviewComment) SetPullRequestReviewId(value *int32)() {
+func (m *PullRequestReviewComment) SetPullRequestReviewId(value *int64)() {
     m.pull_request_review_id = value
 }
 // SetPullRequestUrl sets the pull_request_url property value. URL for the pull request that the review comment belongs to.
@@ -849,7 +849,7 @@ type PullRequestReviewCommentable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDiffHunk()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetInReplyToId()(*int32)
     GetLine()(*int32)
     GetLinks()(PullRequestReviewComment__linksable)
@@ -860,7 +860,7 @@ type PullRequestReviewCommentable interface {
     GetOriginalStartLine()(*int32)
     GetPath()(*string)
     GetPosition()(*int32)
-    GetPullRequestReviewId()(*int32)
+    GetPullRequestReviewId()(*int64)
     GetPullRequestUrl()(*string)
     GetReactions()(ReactionRollupable)
     GetSide()(*PullRequestReviewComment_side)
@@ -878,7 +878,7 @@ type PullRequestReviewCommentable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDiffHunk(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetInReplyToId(value *int32)()
     SetLine(value *int32)()
     SetLinks(value PullRequestReviewComment__linksable)()
@@ -889,7 +889,7 @@ type PullRequestReviewCommentable interface {
     SetOriginalStartLine(value *int32)()
     SetPath(value *string)()
     SetPosition(value *int32)()
-    SetPullRequestReviewId(value *int32)()
+    SetPullRequestReviewId(value *int64)()
     SetPullRequestUrl(value *string)()
     SetReactions(value ReactionRollupable)()
     SetSide(value *PullRequestReviewComment_side)()

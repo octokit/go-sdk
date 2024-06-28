@@ -2,6 +2,7 @@ package user
 
 import (
     "context"
+    i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
@@ -98,6 +99,16 @@ type UserGetResponseable interface {
 // returns a *BlocksRequestBuilder when successful
 func (m *UserRequestBuilder) Blocks()(*BlocksRequestBuilder) {
     return NewBlocksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ByAccount_id gets an item from the github.com/octokit/go-sdk/pkg/github.user.item collection
+// returns a *WithAccount_ItemRequestBuilder when successful
+func (m *UserRequestBuilder) ByAccount_id(account_id int32)(*WithAccount_ItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    urlTplParams["account_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(account_id), 10)
+    return NewWithAccount_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // Codespaces the codespaces property
 // returns a *CodespacesRequestBuilder when successful

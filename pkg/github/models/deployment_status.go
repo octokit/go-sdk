@@ -22,7 +22,7 @@ type DeploymentStatus struct {
     // The URL for accessing your environment.
     environment_url *string
     // The id property
-    id *int32
+    id *int64
     // The URL to associate with this status.
     log_url *string
     // The node_id property
@@ -152,7 +152,7 @@ func (m *DeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -244,8 +244,8 @@ func (m *DeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *DeploymentStatus) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *DeploymentStatus) GetId()(*int64) {
     return m.id
 }
 // GetLogUrl gets the log_url property value. The URL to associate with this status.
@@ -327,7 +327,7 @@ func (m *DeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -418,7 +418,7 @@ func (m *DeploymentStatus) SetEnvironmentUrl(value *string)() {
     m.environment_url = value
 }
 // SetId sets the id property value. The id property
-func (m *DeploymentStatus) SetId(value *int32)() {
+func (m *DeploymentStatus) SetId(value *int64)() {
     m.id = value
 }
 // SetLogUrl sets the log_url property value. The URL to associate with this status.
@@ -462,7 +462,7 @@ type DeploymentStatusable interface {
     GetDescription()(*string)
     GetEnvironment()(*string)
     GetEnvironmentUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLogUrl()(*string)
     GetNodeId()(*string)
     GetPerformedViaGithubApp()(NullableIntegrationable)
@@ -477,7 +477,7 @@ type DeploymentStatusable interface {
     SetDescription(value *string)()
     SetEnvironment(value *string)()
     SetEnvironmentUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLogUrl(value *string)()
     SetNodeId(value *string)()
     SetPerformedViaGithubApp(value NullableIntegrationable)()

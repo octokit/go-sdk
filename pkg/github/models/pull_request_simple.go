@@ -42,7 +42,7 @@ type PullRequestSimple struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The issue_url property
     issue_url *string
     // The labels property
@@ -335,7 +335,7 @@ func (m *PullRequestSimple) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -565,8 +565,8 @@ func (m *PullRequestSimple) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *PullRequestSimple) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestSimple) GetId()(*int64) {
     return m.id
 }
 // GetIssueUrl gets the issue_url property value. The issue_url property
@@ -769,7 +769,7 @@ func (m *PullRequestSimple) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -985,7 +985,7 @@ func (m *PullRequestSimple) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *PullRequestSimple) SetId(value *int32)() {
+func (m *PullRequestSimple) SetId(value *int64)() {
     m.id = value
 }
 // SetIssueUrl sets the issue_url property value. The issue_url property
@@ -1086,7 +1086,7 @@ type PullRequestSimpleable interface {
     GetDraft()(*bool)
     GetHead()(PullRequestSimple_headable)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetIssueUrl()(*string)
     GetLabels()([]PullRequestSimple_labelsable)
     GetLinks()(PullRequestSimple__linksable)
@@ -1122,7 +1122,7 @@ type PullRequestSimpleable interface {
     SetDraft(value *bool)()
     SetHead(value PullRequestSimple_headable)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetIssueUrl(value *string)()
     SetLabels(value []PullRequestSimple_labelsable)()
     SetLinks(value PullRequestSimple__linksable)()
