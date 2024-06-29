@@ -22,7 +22,7 @@ type BranchRestrictionPolicy_users struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The login property
     login *string
     // The node_id property
@@ -146,7 +146,7 @@ func (m *BranchRestrictionPolicy_users) GetFieldDeserializers()(map[string]func(
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -283,8 +283,8 @@ func (m *BranchRestrictionPolicy_users) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *BranchRestrictionPolicy_users) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *BranchRestrictionPolicy_users) GetId()(*int64) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
@@ -382,7 +382,7 @@ func (m *BranchRestrictionPolicy_users) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -488,7 +488,7 @@ func (m *BranchRestrictionPolicy_users) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *BranchRestrictionPolicy_users) SetId(value *int32)() {
+func (m *BranchRestrictionPolicy_users) SetId(value *int64)() {
     m.id = value
 }
 // SetLogin sets the login property value. The login property
@@ -541,7 +541,7 @@ type BranchRestrictionPolicy_usersable interface {
     GetGistsUrl()(*string)
     GetGravatarId()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLogin()(*string)
     GetNodeId()(*string)
     GetOrganizationsUrl()(*string)
@@ -559,7 +559,7 @@ type BranchRestrictionPolicy_usersable interface {
     SetGistsUrl(value *string)()
     SetGravatarId(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLogin(value *string)()
     SetNodeId(value *string)()
     SetOrganizationsUrl(value *string)()
