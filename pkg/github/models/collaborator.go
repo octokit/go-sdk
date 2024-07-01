@@ -25,7 +25,7 @@ type Collaborator struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The login property
     login *string
     // The name property
@@ -170,7 +170,7 @@ func (m *Collaborator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -337,8 +337,8 @@ func (m *Collaborator) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *Collaborator) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *Collaborator) GetId()(*int64) {
     return m.id
 }
 // GetLogin gets the login property value. The login property
@@ -457,7 +457,7 @@ func (m *Collaborator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -585,7 +585,7 @@ func (m *Collaborator) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *Collaborator) SetId(value *int32)() {
+func (m *Collaborator) SetId(value *int64)() {
     m.id = value
 }
 // SetLogin sets the login property value. The login property
@@ -651,7 +651,7 @@ type Collaboratorable interface {
     GetGistsUrl()(*string)
     GetGravatarId()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLogin()(*string)
     GetName()(*string)
     GetNodeId()(*string)
@@ -673,7 +673,7 @@ type Collaboratorable interface {
     SetGistsUrl(value *string)()
     SetGravatarId(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLogin(value *string)()
     SetName(value *string)()
     SetNodeId(value *string)()
