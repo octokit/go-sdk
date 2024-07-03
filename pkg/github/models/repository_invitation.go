@@ -16,7 +16,7 @@ type RepositoryInvitation struct {
     // The html_url property
     html_url *string
     // Unique identifier of the repository invitation.
-    id *int32
+    id *int64
     // A GitHub user.
     invitee NullableSimpleUserable
     // A GitHub user.
@@ -92,7 +92,7 @@ func (m *RepositoryInvitation) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -169,8 +169,8 @@ func (m *RepositoryInvitation) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the repository invitation.
-// returns a *int32 when successful
-func (m *RepositoryInvitation) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *RepositoryInvitation) GetId()(*int64) {
     return m.id
 }
 // GetInvitee gets the invitee property value. A GitHub user.
@@ -224,7 +224,7 @@ func (m *RepositoryInvitation) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -291,7 +291,7 @@ func (m *RepositoryInvitation) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. Unique identifier of the repository invitation.
-func (m *RepositoryInvitation) SetId(value *int32)() {
+func (m *RepositoryInvitation) SetId(value *int64)() {
     m.id = value
 }
 // SetInvitee sets the invitee property value. A GitHub user.
@@ -324,7 +324,7 @@ type RepositoryInvitationable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpired()(*bool)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetInvitee()(NullableSimpleUserable)
     GetInviter()(NullableSimpleUserable)
     GetNodeId()(*string)
@@ -334,7 +334,7 @@ type RepositoryInvitationable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpired(value *bool)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetInvitee(value NullableSimpleUserable)()
     SetInviter(value NullableSimpleUserable)()
     SetNodeId(value *string)()

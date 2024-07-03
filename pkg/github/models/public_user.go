@@ -42,7 +42,7 @@ type PublicUser struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The location property
     location *string
     // The login property
@@ -319,7 +319,7 @@ func (m *PublicUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -591,8 +591,8 @@ func (m *PublicUser) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *PublicUser) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PublicUser) GetId()(*int64) {
     return m.id
 }
 // GetLocation gets the location property value. The location property
@@ -810,7 +810,7 @@ func (m *PublicUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -1018,7 +1018,7 @@ func (m *PublicUser) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *PublicUser) SetId(value *int32)() {
+func (m *PublicUser) SetId(value *int64)() {
     m.id = value
 }
 // SetLocation sets the location property value. The location property
@@ -1128,7 +1128,7 @@ type PublicUserable interface {
     GetGravatarId()(*string)
     GetHireable()(*bool)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLocation()(*string)
     GetLogin()(*string)
     GetName()(*string)
@@ -1168,7 +1168,7 @@ type PublicUserable interface {
     SetGravatarId(value *string)()
     SetHireable(value *bool)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLocation(value *string)()
     SetLogin(value *string)()
     SetName(value *string)()

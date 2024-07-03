@@ -40,7 +40,7 @@ type UserSearchResultItem struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The location property
     location *string
     // The login property
@@ -285,7 +285,7 @@ func (m *UserSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -523,8 +523,8 @@ func (m *UserSearchResultItem) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *UserSearchResultItem) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *UserSearchResultItem) GetId()(*int64) {
     return m.id
 }
 // GetLocation gets the location property value. The location property
@@ -710,7 +710,7 @@ func (m *UserSearchResultItem) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -902,7 +902,7 @@ func (m *UserSearchResultItem) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *UserSearchResultItem) SetId(value *int32)() {
+func (m *UserSearchResultItem) SetId(value *int64)() {
     m.id = value
 }
 // SetLocation sets the location property value. The location property
@@ -995,7 +995,7 @@ type UserSearchResultItemable interface {
     GetGravatarId()(*string)
     GetHireable()(*bool)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLocation()(*string)
     GetLogin()(*string)
     GetName()(*string)
@@ -1029,7 +1029,7 @@ type UserSearchResultItemable interface {
     SetGravatarId(value *string)()
     SetHireable(value *bool)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLocation(value *string)()
     SetLogin(value *string)()
     SetName(value *string)()

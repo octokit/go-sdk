@@ -53,7 +53,7 @@ type SimpleRepository struct {
     // The URL to view the repository on GitHub.com.
     html_url *string
     // A unique identifier of the repository.
-    id *int32
+    id *int64
     // A template for the API URL to get information about issue comments on the repository.
     issue_comment_url *string
     // A template for the API URL to get information about issue events on the repository.
@@ -413,7 +413,7 @@ func (m *SimpleRepository) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -695,8 +695,8 @@ func (m *SimpleRepository) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. A unique identifier of the repository.
-// returns a *int32 when successful
-func (m *SimpleRepository) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *SimpleRepository) GetId()(*int64) {
     return m.id
 }
 // GetIssueCommentUrl gets the issue_comment_url property value. A template for the API URL to get information about issue comments on the repository.
@@ -949,7 +949,7 @@ func (m *SimpleRepository) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -1193,7 +1193,7 @@ func (m *SimpleRepository) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. A unique identifier of the repository.
-func (m *SimpleRepository) SetId(value *int32)() {
+func (m *SimpleRepository) SetId(value *int64)() {
     m.id = value
 }
 // SetIssueCommentUrl sets the issue_comment_url property value. A template for the API URL to get information about issue comments on the repository.
@@ -1313,7 +1313,7 @@ type SimpleRepositoryable interface {
     GetGitTagsUrl()(*string)
     GetHooksUrl()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetIssueCommentUrl()(*string)
     GetIssueEventsUrl()(*string)
     GetIssuesUrl()(*string)
@@ -1359,7 +1359,7 @@ type SimpleRepositoryable interface {
     SetGitTagsUrl(value *string)()
     SetHooksUrl(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetIssueCommentUrl(value *string)()
     SetIssueEventsUrl(value *string)()
     SetIssuesUrl(value *string)()

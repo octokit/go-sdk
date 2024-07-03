@@ -16,7 +16,7 @@ type EnterpriseTeam struct {
     // The html_url property
     html_url *string
     // The id property
-    id *int32
+    id *int64
     // The members_url property
     members_url *string
     // The name property
@@ -87,7 +87,7 @@ func (m *EnterpriseTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -169,8 +169,8 @@ func (m *EnterpriseTeam) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *EnterpriseTeam) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *EnterpriseTeam) GetId()(*int64) {
     return m.id
 }
 // GetMembersUrl gets the members_url property value. The members_url property
@@ -224,7 +224,7 @@ func (m *EnterpriseTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -290,7 +290,7 @@ func (m *EnterpriseTeam) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id property
-func (m *EnterpriseTeam) SetId(value *int32)() {
+func (m *EnterpriseTeam) SetId(value *int64)() {
     m.id = value
 }
 // SetMembersUrl sets the members_url property value. The members_url property
@@ -323,7 +323,7 @@ type EnterpriseTeamable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupId()(*int32)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetMembersUrl()(*string)
     GetName()(*string)
     GetSlug()(*string)
@@ -333,7 +333,7 @@ type EnterpriseTeamable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupId(value *int32)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetMembersUrl(value *string)()
     SetName(value *string)()
     SetSlug(value *string)()

@@ -22,7 +22,7 @@ type ProjectCard struct {
     // A GitHub user.
     creator NullableSimpleUserable
     // The project card's ID
-    id *int32
+    id *int64
     // The node_id property
     node_id *string
     // The note property
@@ -148,7 +148,7 @@ func (m *ProjectCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -220,8 +220,8 @@ func (m *ProjectCard) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     return res
 }
 // GetId gets the id property value. The project card's ID
-// returns a *int32 when successful
-func (m *ProjectCard) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *ProjectCard) GetId()(*int64) {
     return m.id
 }
 // GetNodeId gets the node_id property value. The node_id property
@@ -293,7 +293,7 @@ func (m *ProjectCard) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -371,7 +371,7 @@ func (m *ProjectCard) SetCreator(value NullableSimpleUserable)() {
     m.creator = value
 }
 // SetId sets the id property value. The project card's ID
-func (m *ProjectCard) SetId(value *int32)() {
+func (m *ProjectCard) SetId(value *int64)() {
     m.id = value
 }
 // SetNodeId sets the node_id property value. The node_id property
@@ -407,7 +407,7 @@ type ProjectCardable interface {
     GetContentUrl()(*string)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreator()(NullableSimpleUserable)
-    GetId()(*int32)
+    GetId()(*int64)
     GetNodeId()(*string)
     GetNote()(*string)
     GetProjectId()(*string)
@@ -420,7 +420,7 @@ type ProjectCardable interface {
     SetContentUrl(value *string)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreator(value NullableSimpleUserable)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetNodeId(value *string)()
     SetNote(value *string)()
     SetProjectId(value *string)()

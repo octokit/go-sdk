@@ -15,8 +15,6 @@ func NewItemTeamsItemReposItemItemWithRepoPutRequestBody()(*ItemTeamsItemReposIt
     m := &ItemTeamsItemReposItemItemWithRepoPutRequestBody{
     }
     m.SetAdditionalData(make(map[string]any))
-    permissionValue := "push"
-    m.SetPermission(&permissionValue)
     return m
 }
 // CreateItemTeamsItemReposItemItemWithRepoPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
