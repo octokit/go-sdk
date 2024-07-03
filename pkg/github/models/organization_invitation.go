@@ -17,7 +17,7 @@ type OrganizationInvitation struct {
     // The failed_reason property
     failed_reason *string
     // The id property
-    id *int32
+    id *int64
     // The invitation_source property
     invitation_source *string
     // The invitation_teams_url property
@@ -115,7 +115,7 @@ func (m *OrganizationInvitation) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -197,8 +197,8 @@ func (m *OrganizationInvitation) GetFieldDeserializers()(map[string]func(i878a80
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *OrganizationInvitation) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *OrganizationInvitation) GetId()(*int64) {
     return m.id
 }
 // GetInvitationSource gets the invitation_source property value. The invitation_source property
@@ -263,7 +263,7 @@ func (m *OrganizationInvitation) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -339,7 +339,7 @@ func (m *OrganizationInvitation) SetFailedReason(value *string)() {
     m.failed_reason = value
 }
 // SetId sets the id property value. The id property
-func (m *OrganizationInvitation) SetId(value *int32)() {
+func (m *OrganizationInvitation) SetId(value *int64)() {
     m.id = value
 }
 // SetInvitationSource sets the invitation_source property value. The invitation_source property
@@ -377,7 +377,7 @@ type OrganizationInvitationable interface {
     GetEmail()(*string)
     GetFailedAt()(*string)
     GetFailedReason()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetInvitationSource()(*string)
     GetInvitationTeamsUrl()(*string)
     GetInviter()(SimpleUserable)
@@ -389,7 +389,7 @@ type OrganizationInvitationable interface {
     SetEmail(value *string)()
     SetFailedAt(value *string)()
     SetFailedReason(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetInvitationSource(value *string)()
     SetInvitationTeamsUrl(value *string)()
     SetInviter(value SimpleUserable)()

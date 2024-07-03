@@ -12,7 +12,7 @@ type Key struct {
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The id property
-    id *int32
+    id *int64
     // The key property
     key *string
     // The read_only property
@@ -61,7 +61,7 @@ func (m *Key) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -123,8 +123,8 @@ func (m *Key) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *Key) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *Key) GetId()(*int64) {
     return m.id
 }
 // GetKey gets the key property value. The key property
@@ -161,7 +161,7 @@ func (m *Key) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -213,7 +213,7 @@ func (m *Key) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391
     m.created_at = value
 }
 // SetId sets the id property value. The id property
-func (m *Key) SetId(value *int32)() {
+func (m *Key) SetId(value *int64)() {
     m.id = value
 }
 // SetKey sets the key property value. The key property
@@ -240,14 +240,14 @@ type Keyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetId()(*int32)
+    GetId()(*int64)
     GetKey()(*string)
     GetReadOnly()(*bool)
     GetTitle()(*string)
     GetUrl()(*string)
     GetVerified()(*bool)
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetKey(value *string)()
     SetReadOnly(value *bool)()
     SetTitle(value *string)()

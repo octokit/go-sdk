@@ -22,7 +22,7 @@ type CodespaceWithFullRepository struct {
     // Details about the codespace's git repository.
     git_status CodespaceWithFullRepository_git_statusable
     // The id property
-    id *int32
+    id *int64
     // The number of minutes of inactivity after which this codespace will be automatically stopped.
     idle_timeout_minutes *int32
     // Text to show user when codespace idle timeout minutes has been overriden by an organization policy
@@ -179,7 +179,7 @@ func (m *CodespaceWithFullRepository) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -442,8 +442,8 @@ func (m *CodespaceWithFullRepository) GetGitStatus()(CodespaceWithFullRepository
     return m.git_status
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *CodespaceWithFullRepository) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *CodespaceWithFullRepository) GetId()(*int64) {
     return m.id
 }
 // GetIdleTimeoutMinutes gets the idle_timeout_minutes property value. The number of minutes of inactivity after which this codespace will be automatically stopped.
@@ -605,7 +605,7 @@ func (m *CodespaceWithFullRepository) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -793,7 +793,7 @@ func (m *CodespaceWithFullRepository) SetGitStatus(value CodespaceWithFullReposi
     m.git_status = value
 }
 // SetId sets the id property value. The id property
-func (m *CodespaceWithFullRepository) SetId(value *int32)() {
+func (m *CodespaceWithFullRepository) SetId(value *int64)() {
     m.id = value
 }
 // SetIdleTimeoutMinutes sets the idle_timeout_minutes property value. The number of minutes of inactivity after which this codespace will be automatically stopped.
@@ -901,7 +901,7 @@ type CodespaceWithFullRepositoryable interface {
     GetDisplayName()(*string)
     GetEnvironmentId()(*string)
     GetGitStatus()(CodespaceWithFullRepository_git_statusable)
-    GetId()(*int32)
+    GetId()(*int64)
     GetIdleTimeoutMinutes()(*int32)
     GetIdleTimeoutNotice()(*string)
     GetLastUsedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -932,7 +932,7 @@ type CodespaceWithFullRepositoryable interface {
     SetDisplayName(value *string)()
     SetEnvironmentId(value *string)()
     SetGitStatus(value CodespaceWithFullRepository_git_statusable)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetIdleTimeoutMinutes(value *int32)()
     SetIdleTimeoutNotice(value *string)()
     SetLastUsedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

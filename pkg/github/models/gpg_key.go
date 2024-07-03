@@ -24,7 +24,7 @@ type GpgKey struct {
     // The expires_at property
     expires_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The id property
-    id *int32
+    id *int64
     // The key_id property
     key_id *string
     // The name property
@@ -173,7 +173,7 @@ func (m *GpgKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -261,8 +261,8 @@ func (m *GpgKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *GpgKey) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *GpgKey) GetId()(*int64) {
     return m.id
 }
 // GetKeyId gets the key_id property value. The key_id property
@@ -351,7 +351,7 @@ func (m *GpgKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -445,7 +445,7 @@ func (m *GpgKey) SetExpiresAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     m.expires_at = value
 }
 // SetId sets the id property value. The id property
-func (m *GpgKey) SetId(value *int32)() {
+func (m *GpgKey) SetId(value *int64)() {
     m.id = value
 }
 // SetKeyId sets the key_id property value. The key_id property
@@ -486,7 +486,7 @@ type GpgKeyable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmails()([]GpgKey_emailsable)
     GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetId()(*int32)
+    GetId()(*int64)
     GetKeyId()(*string)
     GetName()(*string)
     GetPrimaryKeyId()(*int32)
@@ -501,7 +501,7 @@ type GpgKeyable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmails(value []GpgKey_emailsable)()
     SetExpiresAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetKeyId(value *string)()
     SetName(value *string)()
     SetPrimaryKeyId(value *int32)()

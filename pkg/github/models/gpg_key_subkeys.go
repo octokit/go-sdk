@@ -22,7 +22,7 @@ type GpgKey_subkeys struct {
     // The expires_at property
     expires_at *string
     // The id property
-    id *int32
+    id *int64
     // The key_id property
     key_id *string
     // The primary_key_id property
@@ -169,7 +169,7 @@ func (m *GpgKey_subkeys) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -241,8 +241,8 @@ func (m *GpgKey_subkeys) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *GpgKey_subkeys) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *GpgKey_subkeys) GetId()(*int64) {
     return m.id
 }
 // GetKeyId gets the key_id property value. The key_id property
@@ -326,7 +326,7 @@ func (m *GpgKey_subkeys) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -408,7 +408,7 @@ func (m *GpgKey_subkeys) SetExpiresAt(value *string)() {
     m.expires_at = value
 }
 // SetId sets the id property value. The id property
-func (m *GpgKey_subkeys) SetId(value *int32)() {
+func (m *GpgKey_subkeys) SetId(value *int64)() {
     m.id = value
 }
 // SetKeyId sets the key_id property value. The key_id property
@@ -445,7 +445,7 @@ type GpgKey_subkeysable interface {
     GetCreatedAt()(*string)
     GetEmails()([]GpgKey_subkeys_emailsable)
     GetExpiresAt()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetKeyId()(*string)
     GetPrimaryKeyId()(*int32)
     GetPublicKey()(*string)
@@ -459,7 +459,7 @@ type GpgKey_subkeysable interface {
     SetCreatedAt(value *string)()
     SetEmails(value []GpgKey_subkeys_emailsable)()
     SetExpiresAt(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetKeyId(value *string)()
     SetPrimaryKeyId(value *int32)()
     SetPublicKey(value *string)()
