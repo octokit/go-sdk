@@ -12,6 +12,8 @@ type ItemItemRepoPatchRequestBody_security_and_analysis struct {
     advanced_security ItemItemRepoPatchRequestBody_security_and_analysis_advanced_securityable
     // Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
     secret_scanning ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable
+    // Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+    secret_scanning_non_provider_patterns ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable
     // Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
     secret_scanning_push_protection ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable
 }
@@ -61,6 +63,16 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetFieldDeserialize
         }
         return nil
     }
+    res["secret_scanning_non_provider_patterns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningNonProviderPatterns(val.(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable))
+        }
+        return nil
+    }
     res["secret_scanning_push_protection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionFromDiscriminatorValue)
         if err != nil {
@@ -78,6 +90,11 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetFieldDeserialize
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetSecretScanning()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable) {
     return m.secret_scanning
 }
+// GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+// returns a ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable when successful
+func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetSecretScanningNonProviderPatterns()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable) {
+    return m.secret_scanning_non_provider_patterns
+}
 // GetSecretScanningPushProtection gets the secret_scanning_push_protection property value. Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
 // returns a ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable when successful
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetSecretScanningPushProtection()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable) {
@@ -93,6 +110,12 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) Serialize(writer i8
     }
     {
         err := writer.WriteObjectValue("secret_scanning", m.GetSecretScanning())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("secret_scanning_non_provider_patterns", m.GetSecretScanningNonProviderPatterns())
         if err != nil {
             return err
         }
@@ -123,6 +146,10 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetAdvancedSecurity
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetSecretScanning(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable)() {
     m.secret_scanning = value
 }
+// SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetSecretScanningNonProviderPatterns(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable)() {
+    m.secret_scanning_non_provider_patterns = value
+}
 // SetSecretScanningPushProtection sets the secret_scanning_push_protection property value. Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetSecretScanningPushProtection(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable)() {
     m.secret_scanning_push_protection = value
@@ -132,8 +159,10 @@ type ItemItemRepoPatchRequestBody_security_and_analysisable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdvancedSecurity()(ItemItemRepoPatchRequestBody_security_and_analysis_advanced_securityable)
     GetSecretScanning()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable)
+    GetSecretScanningNonProviderPatterns()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable)
     GetSecretScanningPushProtection()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable)
     SetAdvancedSecurity(value ItemItemRepoPatchRequestBody_security_and_analysis_advanced_securityable)()
     SetSecretScanning(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable)()
+    SetSecretScanningNonProviderPatterns(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable)()
     SetSecretScanningPushProtection(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable)()
 }

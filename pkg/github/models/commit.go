@@ -8,14 +8,14 @@ import (
 type Commit struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // A GitHub user.
-    author NullableSimpleUserable
+    // The author property
+    author Commit_Commit_authorable
     // The comments_url property
     comments_url *string
     // The commit property
     commit Commit_commitable
-    // A GitHub user.
-    committer NullableSimpleUserable
+    // The committer property
+    committer Commit_Commit_committerable
     // The files property
     files []DiffEntryable
     // The html_url property
@@ -30,6 +30,172 @@ type Commit struct {
     stats Commit_statsable
     // The url property
     url *string
+}
+// Commit_Commit_author composed type wrapper for classes EmptyObjectable, SimpleUserable
+type Commit_Commit_author struct {
+    // Composed type representation for type EmptyObjectable
+    emptyObject EmptyObjectable
+    // Composed type representation for type SimpleUserable
+    simpleUser SimpleUserable
+}
+// NewCommit_Commit_author instantiates a new Commit_Commit_author and sets the default values.
+func NewCommit_Commit_author()(*Commit_Commit_author) {
+    m := &Commit_Commit_author{
+    }
+    return m
+}
+// CreateCommit_Commit_authorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateCommit_Commit_authorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewCommit_Commit_author()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    return result, nil
+}
+// GetEmptyObject gets the emptyObject property value. Composed type representation for type EmptyObjectable
+// returns a EmptyObjectable when successful
+func (m *Commit_Commit_author) GetEmptyObject()(EmptyObjectable) {
+    return m.emptyObject
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *Commit_Commit_author) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *Commit_Commit_author) GetIsComposedType()(bool) {
+    return true
+}
+// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
+// returns a SimpleUserable when successful
+func (m *Commit_Commit_author) GetSimpleUser()(SimpleUserable) {
+    return m.simpleUser
+}
+// Serialize serializes information the current object
+func (m *Commit_Commit_author) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetEmptyObject() != nil {
+        err := writer.WriteObjectValue("", m.GetEmptyObject())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSimpleUser() != nil {
+        err := writer.WriteObjectValue("", m.GetSimpleUser())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetEmptyObject sets the emptyObject property value. Composed type representation for type EmptyObjectable
+func (m *Commit_Commit_author) SetEmptyObject(value EmptyObjectable)() {
+    m.emptyObject = value
+}
+// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
+func (m *Commit_Commit_author) SetSimpleUser(value SimpleUserable)() {
+    m.simpleUser = value
+}
+// Commit_Commit_committer composed type wrapper for classes EmptyObjectable, SimpleUserable
+type Commit_Commit_committer struct {
+    // Composed type representation for type EmptyObjectable
+    emptyObject EmptyObjectable
+    // Composed type representation for type SimpleUserable
+    simpleUser SimpleUserable
+}
+// NewCommit_Commit_committer instantiates a new Commit_Commit_committer and sets the default values.
+func NewCommit_Commit_committer()(*Commit_Commit_committer) {
+    m := &Commit_Commit_committer{
+    }
+    return m
+}
+// CreateCommit_Commit_committerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateCommit_Commit_committerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewCommit_Commit_committer()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    return result, nil
+}
+// GetEmptyObject gets the emptyObject property value. Composed type representation for type EmptyObjectable
+// returns a EmptyObjectable when successful
+func (m *Commit_Commit_committer) GetEmptyObject()(EmptyObjectable) {
+    return m.emptyObject
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *Commit_Commit_committer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *Commit_Commit_committer) GetIsComposedType()(bool) {
+    return true
+}
+// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
+// returns a SimpleUserable when successful
+func (m *Commit_Commit_committer) GetSimpleUser()(SimpleUserable) {
+    return m.simpleUser
+}
+// Serialize serializes information the current object
+func (m *Commit_Commit_committer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetEmptyObject() != nil {
+        err := writer.WriteObjectValue("", m.GetEmptyObject())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSimpleUser() != nil {
+        err := writer.WriteObjectValue("", m.GetSimpleUser())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetEmptyObject sets the emptyObject property value. Composed type representation for type EmptyObjectable
+func (m *Commit_Commit_committer) SetEmptyObject(value EmptyObjectable)() {
+    m.emptyObject = value
+}
+// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
+func (m *Commit_Commit_committer) SetSimpleUser(value SimpleUserable)() {
+    m.simpleUser = value
+}
+type Commit_Commit_authorable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEmptyObject()(EmptyObjectable)
+    GetSimpleUser()(SimpleUserable)
+    SetEmptyObject(value EmptyObjectable)()
+    SetSimpleUser(value SimpleUserable)()
+}
+type Commit_Commit_committerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEmptyObject()(EmptyObjectable)
+    GetSimpleUser()(SimpleUserable)
+    SetEmptyObject(value EmptyObjectable)()
+    SetSimpleUser(value SimpleUserable)()
 }
 // NewCommit instantiates a new Commit and sets the default values.
 func NewCommit()(*Commit) {
@@ -48,9 +214,9 @@ func CreateCommitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 func (m *Commit) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAuthor gets the author property value. A GitHub user.
-// returns a NullableSimpleUserable when successful
-func (m *Commit) GetAuthor()(NullableSimpleUserable) {
+// GetAuthor gets the author property value. The author property
+// returns a Commit_Commit_authorable when successful
+func (m *Commit) GetAuthor()(Commit_Commit_authorable) {
     return m.author
 }
 // GetCommentsUrl gets the comments_url property value. The comments_url property
@@ -63,9 +229,9 @@ func (m *Commit) GetCommentsUrl()(*string) {
 func (m *Commit) GetCommit()(Commit_commitable) {
     return m.commit
 }
-// GetCommitter gets the committer property value. A GitHub user.
-// returns a NullableSimpleUserable when successful
-func (m *Commit) GetCommitter()(NullableSimpleUserable) {
+// GetCommitter gets the committer property value. The committer property
+// returns a Commit_Commit_committerable when successful
+func (m *Commit) GetCommitter()(Commit_Commit_committerable) {
     return m.committer
 }
 // GetFieldDeserializers the deserialization information for the current model
@@ -73,12 +239,12 @@ func (m *Commit) GetCommitter()(NullableSimpleUserable) {
 func (m *Commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["author"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCommit_Commit_authorFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthor(val.(NullableSimpleUserable))
+            m.SetAuthor(val.(Commit_Commit_authorable))
         }
         return nil
     }
@@ -103,12 +269,12 @@ func (m *Commit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["committer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCommit_Commit_committerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCommitter(val.(NullableSimpleUserable))
+            m.SetCommitter(val.(Commit_Commit_committerable))
         }
         return nil
     }
@@ -323,8 +489,8 @@ func (m *Commit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 func (m *Commit) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAuthor sets the author property value. A GitHub user.
-func (m *Commit) SetAuthor(value NullableSimpleUserable)() {
+// SetAuthor sets the author property value. The author property
+func (m *Commit) SetAuthor(value Commit_Commit_authorable)() {
     m.author = value
 }
 // SetCommentsUrl sets the comments_url property value. The comments_url property
@@ -335,8 +501,8 @@ func (m *Commit) SetCommentsUrl(value *string)() {
 func (m *Commit) SetCommit(value Commit_commitable)() {
     m.commit = value
 }
-// SetCommitter sets the committer property value. A GitHub user.
-func (m *Commit) SetCommitter(value NullableSimpleUserable)() {
+// SetCommitter sets the committer property value. The committer property
+func (m *Commit) SetCommitter(value Commit_Commit_committerable)() {
     m.committer = value
 }
 // SetFiles sets the files property value. The files property
@@ -370,10 +536,10 @@ func (m *Commit) SetUrl(value *string)() {
 type Commitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthor()(NullableSimpleUserable)
+    GetAuthor()(Commit_Commit_authorable)
     GetCommentsUrl()(*string)
     GetCommit()(Commit_commitable)
-    GetCommitter()(NullableSimpleUserable)
+    GetCommitter()(Commit_Commit_committerable)
     GetFiles()([]DiffEntryable)
     GetHtmlUrl()(*string)
     GetNodeId()(*string)
@@ -381,10 +547,10 @@ type Commitable interface {
     GetSha()(*string)
     GetStats()(Commit_statsable)
     GetUrl()(*string)
-    SetAuthor(value NullableSimpleUserable)()
+    SetAuthor(value Commit_Commit_authorable)()
     SetCommentsUrl(value *string)()
     SetCommit(value Commit_commitable)()
-    SetCommitter(value NullableSimpleUserable)()
+    SetCommitter(value Commit_Commit_committerable)()
     SetFiles(value []DiffEntryable)()
     SetHtmlUrl(value *string)()
     SetNodeId(value *string)()
