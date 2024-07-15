@@ -35,6 +35,8 @@ type CodeSecurityConfiguration struct {
     secret_scanning *CodeSecurityConfiguration_secret_scanning
     // The enablement status of secret scanning push protection
     secret_scanning_push_protection *CodeSecurityConfiguration_secret_scanning_push_protection
+    // The enablement status of secret scanning validity checks
+    secret_scanning_validity_checks *CodeSecurityConfiguration_secret_scanning_validity_checks
     // The type of the code security configuration.
     target_type *CodeSecurityConfiguration_target_type
     // The updated_at property
@@ -228,6 +230,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["secret_scanning_validity_checks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_validity_checks)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningValidityChecks(val.(*CodeSecurityConfiguration_secret_scanning_validity_checks))
+        }
+        return nil
+    }
     res["target_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_target_type)
         if err != nil {
@@ -289,6 +301,11 @@ func (m *CodeSecurityConfiguration) GetSecretScanning()(*CodeSecurityConfigurati
 // returns a *CodeSecurityConfiguration_secret_scanning_push_protection when successful
 func (m *CodeSecurityConfiguration) GetSecretScanningPushProtection()(*CodeSecurityConfiguration_secret_scanning_push_protection) {
     return m.secret_scanning_push_protection
+}
+// GetSecretScanningValidityChecks gets the secret_scanning_validity_checks property value. The enablement status of secret scanning validity checks
+// returns a *CodeSecurityConfiguration_secret_scanning_validity_checks when successful
+func (m *CodeSecurityConfiguration) GetSecretScanningValidityChecks()(*CodeSecurityConfiguration_secret_scanning_validity_checks) {
+    return m.secret_scanning_validity_checks
 }
 // GetTargetType gets the target_type property value. The type of the code security configuration.
 // returns a *CodeSecurityConfiguration_target_type when successful
@@ -393,6 +410,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetSecretScanningValidityChecks() != nil {
+        cast := (*m.GetSecretScanningValidityChecks()).String()
+        err := writer.WriteStringValue("secret_scanning_validity_checks", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTargetType() != nil {
         cast := (*m.GetTargetType()).String()
         err := writer.WriteStringValue("target_type", &cast)
@@ -476,6 +500,10 @@ func (m *CodeSecurityConfiguration) SetSecretScanning(value *CodeSecurityConfigu
 func (m *CodeSecurityConfiguration) SetSecretScanningPushProtection(value *CodeSecurityConfiguration_secret_scanning_push_protection)() {
     m.secret_scanning_push_protection = value
 }
+// SetSecretScanningValidityChecks sets the secret_scanning_validity_checks property value. The enablement status of secret scanning validity checks
+func (m *CodeSecurityConfiguration) SetSecretScanningValidityChecks(value *CodeSecurityConfiguration_secret_scanning_validity_checks)() {
+    m.secret_scanning_validity_checks = value
+}
 // SetTargetType sets the target_type property value. The type of the code security configuration.
 func (m *CodeSecurityConfiguration) SetTargetType(value *CodeSecurityConfiguration_target_type)() {
     m.target_type = value
@@ -504,6 +532,7 @@ type CodeSecurityConfigurationable interface {
     GetPrivateVulnerabilityReporting()(*CodeSecurityConfiguration_private_vulnerability_reporting)
     GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning)
     GetSecretScanningPushProtection()(*CodeSecurityConfiguration_secret_scanning_push_protection)
+    GetSecretScanningValidityChecks()(*CodeSecurityConfiguration_secret_scanning_validity_checks)
     GetTargetType()(*CodeSecurityConfiguration_target_type)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
@@ -520,6 +549,7 @@ type CodeSecurityConfigurationable interface {
     SetPrivateVulnerabilityReporting(value *CodeSecurityConfiguration_private_vulnerability_reporting)()
     SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)()
     SetSecretScanningPushProtection(value *CodeSecurityConfiguration_secret_scanning_push_protection)()
+    SetSecretScanningValidityChecks(value *CodeSecurityConfiguration_secret_scanning_validity_checks)()
     SetTargetType(value *CodeSecurityConfiguration_target_type)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUrl(value *string)()
