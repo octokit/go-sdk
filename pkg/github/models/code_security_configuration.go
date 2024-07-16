@@ -23,6 +23,8 @@ type CodeSecurityConfiguration struct {
     dependency_graph *CodeSecurityConfiguration_dependency_graph
     // A description of the code security configuration
     description *string
+    // The enforcement status for a security configuration
+    enforcement *CodeSecurityConfiguration_enforcement
     // The URL of the configuration
     html_url *string
     // The ID of the code security configuration
@@ -96,6 +98,11 @@ func (m *CodeSecurityConfiguration) GetDependencyGraph()(*CodeSecurityConfigurat
 func (m *CodeSecurityConfiguration) GetDescription()(*string) {
     return m.description
 }
+// GetEnforcement gets the enforcement property value. The enforcement status for a security configuration
+// returns a *CodeSecurityConfiguration_enforcement when successful
+func (m *CodeSecurityConfiguration) GetEnforcement()(*CodeSecurityConfiguration_enforcement) {
+    return m.enforcement
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -167,6 +174,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["enforcement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_enforcement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnforcement(val.(*CodeSecurityConfiguration_enforcement))
         }
         return nil
     }
@@ -371,6 +388,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetEnforcement() != nil {
+        cast := (*m.GetEnforcement()).String()
+        err := writer.WriteStringValue("enforcement", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("html_url", m.GetHtmlUrl())
         if err != nil {
@@ -476,6 +500,10 @@ func (m *CodeSecurityConfiguration) SetDependencyGraph(value *CodeSecurityConfig
 func (m *CodeSecurityConfiguration) SetDescription(value *string)() {
     m.description = value
 }
+// SetEnforcement sets the enforcement property value. The enforcement status for a security configuration
+func (m *CodeSecurityConfiguration) SetEnforcement(value *CodeSecurityConfiguration_enforcement)() {
+    m.enforcement = value
+}
 // SetHtmlUrl sets the html_url property value. The URL of the configuration
 func (m *CodeSecurityConfiguration) SetHtmlUrl(value *string)() {
     m.html_url = value
@@ -526,6 +554,7 @@ type CodeSecurityConfigurationable interface {
     GetDependabotSecurityUpdates()(*CodeSecurityConfiguration_dependabot_security_updates)
     GetDependencyGraph()(*CodeSecurityConfiguration_dependency_graph)
     GetDescription()(*string)
+    GetEnforcement()(*CodeSecurityConfiguration_enforcement)
     GetHtmlUrl()(*string)
     GetId()(*int32)
     GetName()(*string)
@@ -543,6 +572,7 @@ type CodeSecurityConfigurationable interface {
     SetDependabotSecurityUpdates(value *CodeSecurityConfiguration_dependabot_security_updates)()
     SetDependencyGraph(value *CodeSecurityConfiguration_dependency_graph)()
     SetDescription(value *string)()
+    SetEnforcement(value *CodeSecurityConfiguration_enforcement)()
     SetHtmlUrl(value *string)()
     SetId(value *int32)()
     SetName(value *string)()
