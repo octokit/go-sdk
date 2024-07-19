@@ -16,7 +16,7 @@ type Environment struct {
     // The html_url property
     html_url *string
     // The id of the environment.
-    id *int32
+    id *int64
     // The name of the environment.
     name *string
     // The node_id property
@@ -201,7 +201,7 @@ func (m *Environment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -274,8 +274,8 @@ func (m *Environment) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id of the environment.
-// returns a *int32 when successful
-func (m *Environment) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *Environment) GetId()(*int64) {
     return m.id
 }
 // GetName gets the name property value. The name of the environment.
@@ -324,7 +324,7 @@ func (m *Environment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -390,7 +390,7 @@ func (m *Environment) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id of the environment.
-func (m *Environment) SetId(value *int32)() {
+func (m *Environment) SetId(value *int64)() {
     m.id = value
 }
 // SetName sets the name property value. The name of the environment.
@@ -419,7 +419,7 @@ type Environmentable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeploymentBranchPolicy()(DeploymentBranchPolicySettingsable)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetName()(*string)
     GetNodeId()(*string)
     GetProtectionRules()([]Environment_Environment_protection_rulesable)
@@ -428,7 +428,7 @@ type Environmentable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeploymentBranchPolicy(value DeploymentBranchPolicySettingsable)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetName(value *string)()
     SetNodeId(value *string)()
     SetProtectionRules(value []Environment_Environment_protection_rulesable)()

@@ -20,7 +20,7 @@ type ItemItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
-    // The name of the ref. Cannot contain wildcard characters. When specified, only rule evaluations triggered for this ref will be returned.
+    // The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
     Ref *string `uriparametername:"ref"`
     // The rule results to filter on. When specified, only suites with this result will be returned.
     Rule_suite_result *i49541909782daeed2b70c270599a2d0c588ee37e976ebe46c3c799c2e46d3043.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
