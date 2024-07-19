@@ -183,11 +183,6 @@ func (m *WithOrgItemRequestBuilder) Memberships()(*ItemMembershipsRequestBuilder
 func (m *WithOrgItemRequestBuilder) Migrations()(*ItemMigrationsRequestBuilder) {
     return NewItemMigrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// OrganizationFineGrainedPermissions the organizationFineGrainedPermissions property
-// returns a *ItemOrganizationFineGrainedPermissionsRequestBuilder when successful
-func (m *WithOrgItemRequestBuilder) OrganizationFineGrainedPermissions()(*ItemOrganizationFineGrainedPermissionsRequestBuilder) {
-    return NewItemOrganizationFineGrainedPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // OrganizationRoles the organizationRoles property
 // returns a *ItemOrganizationRolesRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) OrganizationRoles()(*ItemOrganizationRolesRequestBuilder) {
