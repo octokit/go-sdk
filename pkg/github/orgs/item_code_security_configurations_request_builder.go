@@ -51,6 +51,11 @@ func NewItemCodeSecurityConfigurationsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemCodeSecurityConfigurationsRequestBuilder) Defaults()(*ItemCodeSecurityConfigurationsDefaultsRequestBuilder) {
     return NewItemCodeSecurityConfigurationsDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Detach the detach property
+// returns a *ItemCodeSecurityConfigurationsDetachRequestBuilder when successful
+func (m *ItemCodeSecurityConfigurationsRequestBuilder) Detach()(*ItemCodeSecurityConfigurationsDetachRequestBuilder) {
+    return NewItemCodeSecurityConfigurationsDetachRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get lists all code security configurations available in an organization.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
 // returns a []CodeSecurityConfigurationable when successful
 // returns a BasicError error when the service returns a 403 status code
