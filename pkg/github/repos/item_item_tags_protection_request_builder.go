@@ -35,7 +35,7 @@ func NewItemItemTagsProtectionRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemTagsProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get **Note**: This operation is deprecated and will be removed after August 30th 2024Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)" endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
+// Get > [!WARNING]> **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)" endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
 // Deprecated: 
 // returns a []TagProtectionable when successful
 // returns a BasicError error when the service returns a 403 status code
@@ -64,7 +64,7 @@ func (m *ItemItemTagsProtectionRequestBuilder) Get(ctx context.Context, requestC
     }
     return val, nil
 }
-// Post **Note**: This operation is deprecated and will be removed after August 30th 2024Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+// Post > [!WARNING]> **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
 // Deprecated: 
 // returns a TagProtectionable when successful
 // returns a BasicError error when the service returns a 403 status code
@@ -90,7 +90,7 @@ func (m *ItemItemTagsProtectionRequestBuilder) Post(ctx context.Context, body It
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.TagProtectionable), nil
 }
-// ToGetRequestInformation **Note**: This operation is deprecated and will be removed after August 30th 2024Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)" endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
+// ToGetRequestInformation > [!WARNING]> **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)" endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemItemTagsProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -99,7 +99,7 @@ func (m *ItemItemTagsProtectionRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation **Note**: This operation is deprecated and will be removed after August 30th 2024Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+// ToPostRequestInformation > [!WARNING]> **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemItemTagsProtectionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemTagsProtectionPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -43,7 +43,7 @@ func (m *ItemItemReleasesWithRelease_ItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see"[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
+// Get gets a public release with the specified release ID.> [!NOTE]> This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 // returns a Releaseable when successful
 // [API method documentation]
 // 
@@ -97,7 +97,7 @@ func (m *ItemItemReleasesWithRelease_ItemRequestBuilder) ToDeleteRequestInformat
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
-// ToGetRequestInformation gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see"[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
+// ToGetRequestInformation gets a public release with the specified release ID.> [!NOTE]> This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
 // returns a *RequestInformation when successful
 func (m *ItemItemReleasesWithRelease_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

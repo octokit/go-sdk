@@ -23,7 +23,7 @@ func NewItemItemImportLarge_filesRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemImportLarge_filesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list files larger than 100MB found during the import**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+// Get list files larger than 100MB found during the import> [!WARNING]> **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
 // returns a []PorterLargeFileable when successful
 // returns a BasicError error when the service returns a 503 status code
@@ -50,7 +50,7 @@ func (m *ItemItemImportLarge_filesRequestBuilder) Get(ctx context.Context, reque
     }
     return val, nil
 }
-// ToGetRequestInformation list files larger than 100MB found during the import**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+// ToGetRequestInformation list files larger than 100MB found during the import> [!WARNING]> **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemItemImportLarge_filesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

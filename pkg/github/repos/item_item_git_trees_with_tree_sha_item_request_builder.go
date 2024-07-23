@@ -10,7 +10,7 @@ import (
 type ItemItemGitTreesWithTree_shaItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemGitTreesWithTree_shaItemRequestBuilderGetQueryParameters returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
+// ItemItemGitTreesWithTree_shaItemRequestBuilderGetQueryParameters returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.> [!NOTE]> The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 type ItemItemGitTreesWithTree_shaItemRequestBuilderGetQueryParameters struct {
     // Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `"true"`, and `"false"`. Omit this parameter to prevent recursively returning objects or subtrees.
     Recursive *string `uriparametername:"recursive"`
@@ -28,7 +28,7 @@ func NewItemItemGitTreesWithTree_shaItemRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemGitTreesWithTree_shaItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
+// Get returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.> [!NOTE]> The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 // returns a GitTreeable when successful
 // returns a BasicError error when the service returns a 404 status code
 // returns a BasicError error when the service returns a 409 status code
@@ -55,7 +55,7 @@ func (m *ItemItemGitTreesWithTree_shaItemRequestBuilder) Get(ctx context.Context
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.GitTreeable), nil
 }
-// ToGetRequestInformation returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
+// ToGetRequestInformation returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.> [!NOTE]> The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
 // returns a *RequestInformation when successful
 func (m *ItemItemGitTreesWithTree_shaItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemGitTreesWithTree_shaItemRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

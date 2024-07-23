@@ -17,7 +17,7 @@ type ItemItemDeploymentsItemStatusesPostRequestBody struct {
     environment_url *string
     // The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`
     log_url *string
-    // The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+    // The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.> [!NOTE]> It's recommended to use the `log_url` parameter, which replaces `target_url`.
     target_url *string
 }
 // NewItemItemDeploymentsItemStatusesPostRequestBody instantiates a new ItemItemDeploymentsItemStatusesPostRequestBody and sets the default values.
@@ -128,7 +128,7 @@ func (m *ItemItemDeploymentsItemStatusesPostRequestBody) GetFieldDeserializers()
 func (m *ItemItemDeploymentsItemStatusesPostRequestBody) GetLogUrl()(*string) {
     return m.log_url
 }
-// GetTargetUrl gets the target_url property value. The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+// GetTargetUrl gets the target_url property value. The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.> [!NOTE]> It's recommended to use the `log_url` parameter, which replaces `target_url`.
 // returns a *string when successful
 func (m *ItemItemDeploymentsItemStatusesPostRequestBody) GetTargetUrl()(*string) {
     return m.target_url
@@ -203,7 +203,7 @@ func (m *ItemItemDeploymentsItemStatusesPostRequestBody) SetEnvironmentUrl(value
 func (m *ItemItemDeploymentsItemStatusesPostRequestBody) SetLogUrl(value *string)() {
     m.log_url = value
 }
-// SetTargetUrl sets the target_url property value. The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+// SetTargetUrl sets the target_url property value. The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.> [!NOTE]> It's recommended to use the `log_url` parameter, which replaces `target_url`.
 func (m *ItemItemDeploymentsItemStatusesPostRequestBody) SetTargetUrl(value *string)() {
     m.target_url = value
 }

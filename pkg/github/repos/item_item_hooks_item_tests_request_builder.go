@@ -23,7 +23,7 @@ func NewItemItemHooksItemTestsRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemHooksItemTestsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post this will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.**Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+// Post this will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.> [!NOTE]> Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
@@ -42,7 +42,7 @@ func (m *ItemItemHooksItemTestsRequestBuilder) Post(ctx context.Context, request
     }
     return nil
 }
-// ToPostRequestInformation this will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.**Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+// ToPostRequestInformation this will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.> [!NOTE]> Previously `/repos/:owner/:repo/hooks/:hook_id/test`
 // returns a *RequestInformation when successful
 func (m *ItemItemHooksItemTestsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

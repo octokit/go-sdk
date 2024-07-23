@@ -28,7 +28,7 @@ func NewItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a discussion from a team's page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+// Delete delete a discussion from a team's page.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/teams/discussions#delete-a-discussion
@@ -43,7 +43,7 @@ func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get a specific discussion on a team's page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+// Get get a specific discussion on a team's page.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
 // returns a TeamDiscussionable when successful
 // [API method documentation]
 // 
@@ -62,7 +62,7 @@ func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) Get(ct
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.TeamDiscussionable), nil
 }
-// Patch edits the title and body text of a discussion post. Only the parameters you provide are updated.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+// Patch edits the title and body text of a discussion post. Only the parameters you provide are updated.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
 // returns a TeamDiscussionable when successful
 // [API method documentation]
 // 
@@ -86,14 +86,14 @@ func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) Patch(
 func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) Reactions()(*ItemTeamsItemDiscussionsItemReactionsRequestBuilder) {
     return NewItemTeamsItemDiscussionsItemReactionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a discussion from a team's page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+// ToDeleteRequestInformation delete a discussion from a team's page.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
-// ToGetRequestInformation get a specific discussion on a team's page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+// ToGetRequestInformation get a specific discussion on a team's page.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -101,7 +101,7 @@ func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) ToGetR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation edits the title and body text of a discussion post. Only the parameters you provide are updated.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+// ToPatchRequestInformation edits the title and body text of a discussion post. Only the parameters you provide are updated.> [!NOTE]> You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemTeamsItemDiscussionsWithDiscussion_numberItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemTeamsItemDiscussionsItemWithDiscussion_numberPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -2,7 +2,7 @@ package rulesets
 import (
     "errors"
 )
-// The target of the ruleset**Note**: The `push` target is in beta and is subject to change.
+// The target of the ruleset> [!NOTE]> The `push` target is in beta and is subject to change.
 type RulesetsPostRequestBody_target int
 
 const (
