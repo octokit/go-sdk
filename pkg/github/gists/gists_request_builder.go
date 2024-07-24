@@ -71,7 +71,7 @@ func (m *GistsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2a
     }
     return val, nil
 }
-// Post allows you to add a new gist with one or more files.**Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+// Post allows you to add a new gist with one or more files.> [!NOTE]> Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
 // returns a GistSimpleable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
@@ -116,7 +116,7 @@ func (m *GistsRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation allows you to add a new gist with one or more files.**Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+// ToPostRequestInformation allows you to add a new gist with one or more files.> [!NOTE]> Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
 // returns a *RequestInformation when successful
 func (m *GistsRequestBuilder) ToPostRequestInformation(ctx context.Context, body GistsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

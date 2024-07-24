@@ -22,7 +22,7 @@ func NewItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
+// Delete > [!NOTE]> You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/reactions/reactions#delete-an-issue-comment-reaction
@@ -37,7 +37,7 @@ func (m *ItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilder) Del
     }
     return nil
 }
-// ToDeleteRequestInformation **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
+// ToDeleteRequestInformation > [!NOTE]> You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
 // returns a *RequestInformation when successful
 func (m *ItemItemIssuesCommentsItemReactionsWithReaction_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -9,7 +9,7 @@ import (
 type ItemItemCommitsItemCheckSuitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemCommitsItemCheckSuitesRequestBuilderGetQueryParameters lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// ItemItemCommitsItemCheckSuitesRequestBuilderGetQueryParameters lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 type ItemItemCommitsItemCheckSuitesRequestBuilderGetQueryParameters struct {
     // Filters check suites by GitHub App `id`.
     App_id *int32 `uriparametername:"app_id"`
@@ -33,7 +33,7 @@ func NewItemItemCommitsItemCheckSuitesRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCommitsItemCheckSuitesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// Get lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a ItemItemCommitsItemCheckSuitesGetResponseable when successful
 // [API method documentation]
 // 
@@ -52,7 +52,7 @@ func (m *ItemItemCommitsItemCheckSuitesRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ItemItemCommitsItemCheckSuitesGetResponseable), nil
 }
-// ToGetRequestInformation lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// ToGetRequestInformation lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemCommitsItemCheckSuitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCommitsItemCheckSuitesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

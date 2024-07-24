@@ -10,7 +10,7 @@ import (
 type ItemItemCheckSuitesItemCheckRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters lists check runs for a check suite using its `id`.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters lists check runs for a check suite using its `id`.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 type ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters struct {
     // Returns check runs with the specified `name`.
     Check_name *string `uriparametername:"check_name"`
@@ -36,7 +36,7 @@ func NewItemItemCheckSuitesItemCheckRunsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCheckSuitesItemCheckRunsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists check runs for a check suite using its `id`.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// Get lists check runs for a check suite using its `id`.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a ItemItemCheckSuitesItemCheckRunsGetResponseable when successful
 // [API method documentation]
 // 
@@ -55,7 +55,7 @@ func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) Get(ctx context.Context
     }
     return res.(ItemItemCheckSuitesItemCheckRunsGetResponseable), nil
 }
-// ToGetRequestInformation lists check runs for a check suite using its `id`.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// ToGetRequestInformation lists check runs for a check suite using its `id`.> [!NOTE]> The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemCheckSuitesItemCheckRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemItemCheckSuitesItemCheckRunsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

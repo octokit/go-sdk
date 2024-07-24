@@ -28,7 +28,7 @@ func NewItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemCheckSuitesWithCheck_suite_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get gets a single check suite using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// Get gets a single check suite using its `id`.> [!NOTE]> The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a CheckSuiteable when successful
 // [API method documentation]
 // 
@@ -52,7 +52,7 @@ func (m *ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) Get(ctx context.
 func (m *ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) Rerequest()(*ItemItemCheckSuitesItemRerequestRequestBuilder) {
     return NewItemItemCheckSuitesItemRerequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation gets a single check suite using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
+// ToGetRequestInformation gets a single check suite using its `id`.> [!NOTE]> The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemCheckSuitesWithCheck_suite_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -9,7 +9,7 @@ type SelectedActions struct {
     additionalData map[string]any
     // Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.
     github_owned_allowed *bool
-    // Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.**Note**: The `patterns_allowed` setting only applies to public repositories.
+    // Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.> [!NOTE]> The `patterns_allowed` setting only applies to public repositories.
     patterns_allowed []string
     // Whether actions from GitHub Marketplace verified creators are allowed. Set to `true` to allow all actions by GitHub Marketplace verified creators.
     verified_allowed *bool
@@ -78,7 +78,7 @@ func (m *SelectedActions) GetFieldDeserializers()(map[string]func(i878a80d2330e8
 func (m *SelectedActions) GetGithubOwnedAllowed()(*bool) {
     return m.github_owned_allowed
 }
-// GetPatternsAllowed gets the patterns_allowed property value. Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.**Note**: The `patterns_allowed` setting only applies to public repositories.
+// GetPatternsAllowed gets the patterns_allowed property value. Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.> [!NOTE]> The `patterns_allowed` setting only applies to public repositories.
 // returns a []string when successful
 func (m *SelectedActions) GetPatternsAllowed()([]string) {
     return m.patterns_allowed
@@ -124,7 +124,7 @@ func (m *SelectedActions) SetAdditionalData(value map[string]any)() {
 func (m *SelectedActions) SetGithubOwnedAllowed(value *bool)() {
     m.github_owned_allowed = value
 }
-// SetPatternsAllowed sets the patterns_allowed property value. Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.**Note**: The `patterns_allowed` setting only applies to public repositories.
+// SetPatternsAllowed sets the patterns_allowed property value. Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.> [!NOTE]> The `patterns_allowed` setting only applies to public repositories.
 func (m *SelectedActions) SetPatternsAllowed(value []string)() {
     m.patterns_allowed = value
 }

@@ -23,7 +23,7 @@ func NewItemItemSecurityAdvisoriesItemForksRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemSecurityAdvisoriesItemForksRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create a temporary private fork to collaborate on fixing a security vulnerability in your repository.**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+// Post create a temporary private fork to collaborate on fixing a security vulnerability in your repository.> [!NOTE]> Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 // returns a FullRepositoryable when successful
 // returns a BasicError error when the service returns a 400 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -52,7 +52,7 @@ func (m *ItemItemSecurityAdvisoriesItemForksRequestBuilder) Post(ctx context.Con
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.FullRepositoryable), nil
 }
-// ToPostRequestInformation create a temporary private fork to collaborate on fixing a security vulnerability in your repository.**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+// ToPostRequestInformation create a temporary private fork to collaborate on fixing a security vulnerability in your repository.> [!NOTE]> Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
 // returns a *RequestInformation when successful
 func (m *ItemItemSecurityAdvisoriesItemForksRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
