@@ -22,6 +22,9 @@ You may also want:
 		- [dotnet-sdk-enterprise-cloud repository](https://github.com/octokit/dotnet-sdk-enterprise-cloud)
 	- For GitHub Enterprise Server
 		- [dotnet-sdk-enterprise-server repository](https://github.com/octokit/dotnet-sdk-enterprise-server)
+	- For our classic non-generated, hand-maintained Octokit.net project
+		- [Octokit.net repository](https://github.com/octokit/octokit.net)
+		- For why we're building generative SDKs, see [Why a generated SDK?](#why-a-generated-sdk) below
 - [source-generator](https://github.com/octokit/source-generator) (the repository that creates these generated SDKs)
 	- Contributions to this repository should take place in source-generator instead, as they'll be distributed here through mechanisms there.
 
