@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// Max_file_size note: max_file_size is in beta and subject to change.Prevent commits that exceed a specified file size limit from being pushed to the commit.
+// Max_file_size > [!NOTE]> `max_file_size` is in beta and subject to change.Prevent commits that exceed a specified file size limit from being pushed to the commit.
 type Max_file_size struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any

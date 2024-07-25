@@ -18,7 +18,7 @@ type ItemCodeSecurityConfigurationsItemRepositoriesRequestBuilderGetQueryParamet
     Before *string `uriparametername:"before"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
-    // A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned.Can be: `all`, `attached`, `attaching`, `detached`, `enforced`, `failed`, `updating`
+    // A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned.Can be: `all`, `attached`, `attaching`, `detached`, `removed`, `enforced`, `failed`, `updating`, `removed_by_enterprise`
     Status *string `uriparametername:"status"`
 }
 // NewItemCodeSecurityConfigurationsItemRepositoriesRequestBuilderInternal instantiates a new ItemCodeSecurityConfigurationsItemRepositoriesRequestBuilder and sets the default values.

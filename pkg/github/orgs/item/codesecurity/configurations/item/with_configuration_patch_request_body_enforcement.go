@@ -2,7 +2,7 @@ package item
 import (
     "errors"
 )
-// The status of enforcement
+// The enforcement status for a security configuration
 type WithConfiguration_PatchRequestBody_enforcement int
 
 const (
