@@ -16,7 +16,10 @@ import (
 // Client (wrapper of *github.ApiClient) with the provided option functions.
 // By default, it includes a rate limiting middleware.
 func NewApiClient(optionFuncs ...ClientOptionFunc) (*Client, error) {
-	options := GetDefaultClientOptions()
+	options, err := GetDefaultClientOptions()
+	if err != nil {
+		return nil, fmt.Errorf("failed to get default client options: %v", err)
+	}
 	for _, optionFunc := range optionFuncs {
 		optionFunc(options)
 	}
@@ -118,12 +121,17 @@ type ClientOptions struct {
 
 // GetDefaultClientOptions returns a new instance of ClientOptions with default values.
 // This is used in the NewApiClient constructor before applying user-defined custom options.
-func GetDefaultClientOptions() *ClientOptions {
+func GetDefaultClientOptions() (*ClientOptions, error) {
+	turnOffCompression := kiotaHttp.NewCompressionOptions(false)
+	middlewares, err := kiotaHttp.GetDefaultMiddlewaresWithOptions(&turnOffCompression)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get middleware with compression turned off: %v", err)
+	}
 	return &ClientOptions{
 		UserAgent:  "octokit/go-sdk",
 		APIVersion: "2022-11-28",
-		Middleware: kiotaHttp.GetDefaultMiddlewares(),
-	}
+		Middleware: middlewares,
+	}, nil
 }
 
 // ClientOptionFunc provides a functional pattern for client configuration
