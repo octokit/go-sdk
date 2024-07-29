@@ -10,11 +10,11 @@ type Label struct {
     additionalData map[string]any
     // 6-character hex code, without the leading #, identifying the color
     color *string
-    // The default property
+    // Whether this label comes by default in a new repository.
     defaultEscaped *bool
-    // The description property
+    // Optional description of the label, such as its purpose.
     description *string
-    // The id property
+    // Unique identifier for the label.
     id *int64
     // The name of the label.
     name *string
@@ -45,12 +45,12 @@ func (m *Label) GetAdditionalData()(map[string]any) {
 func (m *Label) GetColor()(*string) {
     return m.color
 }
-// GetDefaultEscaped gets the default property value. The default property
+// GetDefaultEscaped gets the default property value. Whether this label comes by default in a new repository.
 // returns a *bool when successful
 func (m *Label) GetDefaultEscaped()(*bool) {
     return m.defaultEscaped
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Optional description of the label, such as its purpose.
 // returns a *string when successful
 func (m *Label) GetDescription()(*string) {
     return m.description
@@ -131,7 +131,7 @@ func (m *Label) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Unique identifier for the label.
 // returns a *int64 when successful
 func (m *Label) GetId()(*int64) {
     return m.id
@@ -211,15 +211,15 @@ func (m *Label) SetAdditionalData(value map[string]any)() {
 func (m *Label) SetColor(value *string)() {
     m.color = value
 }
-// SetDefaultEscaped sets the default property value. The default property
+// SetDefaultEscaped sets the default property value. Whether this label comes by default in a new repository.
 func (m *Label) SetDefaultEscaped(value *bool)() {
     m.defaultEscaped = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Optional description of the label, such as its purpose.
 func (m *Label) SetDescription(value *string)() {
     m.description = value
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Unique identifier for the label.
 func (m *Label) SetId(value *int64)() {
     m.id = value
 }

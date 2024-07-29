@@ -2,7 +2,7 @@ package configurations
 import (
     "errors"
 )
-// The status of enforcement
+// The enforcement status for a security configuration
 type ConfigurationsPostRequestBody_enforcement int
 
 const (

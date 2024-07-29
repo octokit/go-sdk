@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRule composed type wrapper for classes File_extension_restrictionable, File_path_restrictionable, Max_file_path_lengthable, Max_file_sizeable, RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
+// RepositoryRule composed type wrapper for classes File_extension_restrictionable, File_path_restrictionable, Max_file_path_lengthable, Max_file_sizeable, RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleMergeQueueable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
 type RepositoryRule struct {
     // Composed type representation for type File_extension_restrictionable
     file_extension_restriction File_extension_restrictionable
@@ -60,6 +60,8 @@ type RepositoryRule struct {
     repositoryRuleMax_file_size1 Max_file_sizeable
     // Composed type representation for type Max_file_sizeable
     repositoryRuleMax_file_size2 Max_file_sizeable
+    // Composed type representation for type RepositoryRuleMergeQueueable
+    repositoryRuleMergeQueue RepositoryRuleMergeQueueable
     // Composed type representation for type RepositoryRuleNonFastForwardable
     repositoryRuleNonFastForward RepositoryRuleNonFastForwardable
     // Composed type representation for type RepositoryRulePullRequestable
@@ -120,6 +122,14 @@ type RepositoryRule struct {
     repositoryRuleRepositoryRuleDeletion1 RepositoryRuleDeletionable
     // Composed type representation for type RepositoryRuleDeletionable
     repositoryRuleRepositoryRuleDeletion2 RepositoryRuleDeletionable
+    // Composed type representation for type RepositoryRuleMergeQueueable
+    repositoryRuleRepositoryRuleMergeQueue RepositoryRuleMergeQueueable
+    // Composed type representation for type RepositoryRuleMergeQueueable
+    repositoryRuleRepositoryRuleMergeQueue0 RepositoryRuleMergeQueueable
+    // Composed type representation for type RepositoryRuleMergeQueueable
+    repositoryRuleRepositoryRuleMergeQueue1 RepositoryRuleMergeQueueable
+    // Composed type representation for type RepositoryRuleMergeQueueable
+    repositoryRuleRepositoryRuleMergeQueue2 RepositoryRuleMergeQueueable
     // Composed type representation for type RepositoryRuleNonFastForwardable
     repositoryRuleRepositoryRuleNonFastForward RepositoryRuleNonFastForwardable
     // Composed type representation for type RepositoryRuleNonFastForwardable
@@ -378,6 +388,11 @@ func (m *RepositoryRule) GetRepositoryRuleMaxFileSize1()(Max_file_sizeable) {
 func (m *RepositoryRule) GetRepositoryRuleMaxFileSize2()(Max_file_sizeable) {
     return m.repositoryRuleMax_file_size2
 }
+// GetRepositoryRuleMergeQueue gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+// returns a RepositoryRuleMergeQueueable when successful
+func (m *RepositoryRule) GetRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable) {
+    return m.repositoryRuleMergeQueue
+}
 // GetRepositoryRuleNonFastForward gets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 // returns a RepositoryRuleNonFastForwardable when successful
 func (m *RepositoryRule) GetRepositoryRuleNonFastForward()(RepositoryRuleNonFastForwardable) {
@@ -527,6 +542,26 @@ func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleDeletion1()(RepositoryRu
 // returns a RepositoryRuleDeletionable when successful
 func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleDeletion2()(RepositoryRuleDeletionable) {
     return m.repositoryRuleRepositoryRuleDeletion2
+}
+// GetRepositoryRuleRepositoryRuleMergeQueue gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+// returns a RepositoryRuleMergeQueueable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable) {
+    return m.repositoryRuleRepositoryRuleMergeQueue
+}
+// GetRepositoryRuleRepositoryRuleMergeQueue0 gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+// returns a RepositoryRuleMergeQueueable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMergeQueue0()(RepositoryRuleMergeQueueable) {
+    return m.repositoryRuleRepositoryRuleMergeQueue0
+}
+// GetRepositoryRuleRepositoryRuleMergeQueue1 gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+// returns a RepositoryRuleMergeQueueable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMergeQueue1()(RepositoryRuleMergeQueueable) {
+    return m.repositoryRuleRepositoryRuleMergeQueue1
+}
+// GetRepositoryRuleRepositoryRuleMergeQueue2 gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+// returns a RepositoryRuleMergeQueueable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMergeQueue2()(RepositoryRuleMergeQueueable) {
+    return m.repositoryRuleRepositoryRuleMergeQueue2
 }
 // GetRepositoryRuleRepositoryRuleNonFastForward gets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 // returns a RepositoryRuleNonFastForwardable when successful
@@ -880,6 +915,11 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         if err != nil {
             return err
         }
+    } else if m.GetRepositoryRuleMergeQueue() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMergeQueue())
+        if err != nil {
+            return err
+        }
     } else if m.GetRepositoryRuleNonFastForward() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleNonFastForward())
         if err != nil {
@@ -1027,6 +1067,26 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     } else if m.GetRepositoryRuleRepositoryRuleDeletion2() != nil {
         err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleDeletion2())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleMergeQueue() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMergeQueue())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleMergeQueue0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMergeQueue0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleMergeQueue1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMergeQueue1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetRepositoryRuleRepositoryRuleMergeQueue2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMergeQueue2())
         if err != nil {
             return err
         }
@@ -1356,6 +1416,10 @@ func (m *RepositoryRule) SetRepositoryRuleMaxFileSize1(value Max_file_sizeable)(
 func (m *RepositoryRule) SetRepositoryRuleMaxFileSize2(value Max_file_sizeable)() {
     m.repositoryRuleMax_file_size2 = value
 }
+// SetRepositoryRuleMergeQueue sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+func (m *RepositoryRule) SetRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)() {
+    m.repositoryRuleMergeQueue = value
+}
 // SetRepositoryRuleNonFastForward sets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 func (m *RepositoryRule) SetRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)() {
     m.repositoryRuleNonFastForward = value
@@ -1475,6 +1539,22 @@ func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleDeletion1(value Reposito
 // SetRepositoryRuleRepositoryRuleDeletion2 sets the repositoryRuleDeletion property value. Composed type representation for type RepositoryRuleDeletionable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleDeletion2(value RepositoryRuleDeletionable)() {
     m.repositoryRuleRepositoryRuleDeletion2 = value
+}
+// SetRepositoryRuleRepositoryRuleMergeQueue sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)() {
+    m.repositoryRuleRepositoryRuleMergeQueue = value
+}
+// SetRepositoryRuleRepositoryRuleMergeQueue0 sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMergeQueue0(value RepositoryRuleMergeQueueable)() {
+    m.repositoryRuleRepositoryRuleMergeQueue0 = value
+}
+// SetRepositoryRuleRepositoryRuleMergeQueue1 sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMergeQueue1(value RepositoryRuleMergeQueueable)() {
+    m.repositoryRuleRepositoryRuleMergeQueue1 = value
+}
+// SetRepositoryRuleRepositoryRuleMergeQueue2 sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMergeQueue2(value RepositoryRuleMergeQueueable)() {
+    m.repositoryRuleRepositoryRuleMergeQueue2 = value
 }
 // SetRepositoryRuleRepositoryRuleNonFastForward sets the repositoryRuleNonFastForward property value. Composed type representation for type RepositoryRuleNonFastForwardable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)() {
@@ -1677,6 +1757,7 @@ type RepositoryRuleable interface {
     GetRepositoryRuleMaxFileSize0()(Max_file_sizeable)
     GetRepositoryRuleMaxFileSize1()(Max_file_sizeable)
     GetRepositoryRuleMaxFileSize2()(Max_file_sizeable)
+    GetRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable)
     GetRepositoryRuleNonFastForward()(RepositoryRuleNonFastForwardable)
     GetRepositoryRulePullRequest()(RepositoryRulePullRequestable)
     GetRepositoryRuleRepositoryRuleBranchNamePattern()(RepositoryRuleBranchNamePatternable)
@@ -1707,6 +1788,10 @@ type RepositoryRuleable interface {
     GetRepositoryRuleRepositoryRuleDeletion0()(RepositoryRuleDeletionable)
     GetRepositoryRuleRepositoryRuleDeletion1()(RepositoryRuleDeletionable)
     GetRepositoryRuleRepositoryRuleDeletion2()(RepositoryRuleDeletionable)
+    GetRepositoryRuleRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable)
+    GetRepositoryRuleRepositoryRuleMergeQueue0()(RepositoryRuleMergeQueueable)
+    GetRepositoryRuleRepositoryRuleMergeQueue1()(RepositoryRuleMergeQueueable)
+    GetRepositoryRuleRepositoryRuleMergeQueue2()(RepositoryRuleMergeQueueable)
     GetRepositoryRuleRepositoryRuleNonFastForward()(RepositoryRuleNonFastForwardable)
     GetRepositoryRuleRepositoryRuleNonFastForward0()(RepositoryRuleNonFastForwardable)
     GetRepositoryRuleRepositoryRuleNonFastForward1()(RepositoryRuleNonFastForwardable)
@@ -1777,6 +1862,7 @@ type RepositoryRuleable interface {
     SetRepositoryRuleMaxFileSize0(value Max_file_sizeable)()
     SetRepositoryRuleMaxFileSize1(value Max_file_sizeable)()
     SetRepositoryRuleMaxFileSize2(value Max_file_sizeable)()
+    SetRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)()
     SetRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)()
     SetRepositoryRulePullRequest(value RepositoryRulePullRequestable)()
     SetRepositoryRuleRepositoryRuleBranchNamePattern(value RepositoryRuleBranchNamePatternable)()
@@ -1807,6 +1893,10 @@ type RepositoryRuleable interface {
     SetRepositoryRuleRepositoryRuleDeletion0(value RepositoryRuleDeletionable)()
     SetRepositoryRuleRepositoryRuleDeletion1(value RepositoryRuleDeletionable)()
     SetRepositoryRuleRepositoryRuleDeletion2(value RepositoryRuleDeletionable)()
+    SetRepositoryRuleRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)()
+    SetRepositoryRuleRepositoryRuleMergeQueue0(value RepositoryRuleMergeQueueable)()
+    SetRepositoryRuleRepositoryRuleMergeQueue1(value RepositoryRuleMergeQueueable)()
+    SetRepositoryRuleRepositoryRuleMergeQueue2(value RepositoryRuleMergeQueueable)()
     SetRepositoryRuleRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)()
     SetRepositoryRuleRepositoryRuleNonFastForward0(value RepositoryRuleNonFastForwardable)()
     SetRepositoryRuleRepositoryRuleNonFastForward1(value RepositoryRuleNonFastForwardable)()
