@@ -10,7 +10,7 @@ import (
 type EventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EventsRequestBuilderGetQueryParameters we delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+// EventsRequestBuilderGetQueryParameters > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 type EventsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,7 +30,7 @@ func NewEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get we delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+// Get > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a []Eventable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a Events503Error error when the service returns a 503 status code
@@ -58,7 +58,7 @@ func (m *EventsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2
     }
     return val, nil
 }
-// ToGetRequestInformation we delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+// ToGetRequestInformation > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a *RequestInformation when successful
 func (m *EventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[EventsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
