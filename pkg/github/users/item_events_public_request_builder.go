@@ -10,7 +10,7 @@ import (
 type ItemEventsPublicRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEventsPublicRequestBuilderGetQueryParameters list public events for a user
+// ItemEventsPublicRequestBuilderGetQueryParameters > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 type ItemEventsPublicRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,7 +30,7 @@ func NewItemEventsPublicRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsPublicRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get list public events for a user
+// Get > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a []Eventable when successful
 // [API method documentation]
 // 
@@ -52,6 +52,7 @@ func (m *ItemEventsPublicRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return val, nil
 }
+// ToGetRequestInformation > [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a *RequestInformation when successful
 func (m *ItemEventsPublicRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEventsPublicRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

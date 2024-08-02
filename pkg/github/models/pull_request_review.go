@@ -24,7 +24,7 @@ type PullRequestReview struct {
     // The html_url property
     html_url *string
     // Unique identifier of the review
-    id *int32
+    id *int64
     // The node_id property
     node_id *string
     // The pull_request_url property
@@ -153,7 +153,7 @@ func (m *PullRequestReview) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -220,8 +220,8 @@ func (m *PullRequestReview) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. Unique identifier of the review
-// returns a *int32 when successful
-func (m *PullRequestReview) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *PullRequestReview) GetId()(*int64) {
     return m.id
 }
 // GetLinks gets the _links property value. The _links property
@@ -294,7 +294,7 @@ func (m *PullRequestReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -372,7 +372,7 @@ func (m *PullRequestReview) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. Unique identifier of the review
-func (m *PullRequestReview) SetId(value *int32)() {
+func (m *PullRequestReview) SetId(value *int64)() {
     m.id = value
 }
 // SetLinks sets the _links property value. The _links property
@@ -408,7 +408,7 @@ type PullRequestReviewable interface {
     GetBodyText()(*string)
     GetCommitId()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLinks()(PullRequestReview__linksable)
     GetNodeId()(*string)
     GetPullRequestUrl()(*string)
@@ -421,7 +421,7 @@ type PullRequestReviewable interface {
     SetBodyText(value *string)()
     SetCommitId(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLinks(value PullRequestReview__linksable)()
     SetNodeId(value *string)()
     SetPullRequestUrl(value *string)()
