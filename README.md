@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This SDK is not yet stable. Breaking changes may occur at any time.
+
 # github.com/octokit/go-sdk
 
 An "alpha" version of a generated Go SDK for the standard GitHub.com product, generated from [GitHub's OpenAPI spec](https://github.com/github/rest-api-description), built on [Kiota](https://github.com/microsoft/kiota).
@@ -20,19 +23,20 @@ You may also want:
 		- [NuGet link](https://www.nuget.org/packages/GitHub.Octokit.SDK)
 	- For GitHub Enterprise Cloud
 		- [dotnet-sdk-enterprise-cloud repository](https://github.com/octokit/dotnet-sdk-enterprise-cloud)
+		- [NuGet link](https://www.nuget.org/packages/GitHub.Octokit.GHEC.SDK/)
 	- For GitHub Enterprise Server
 		- [dotnet-sdk-enterprise-server repository](https://github.com/octokit/dotnet-sdk-enterprise-server)
+		- [NuGet link](https://www.nuget.org/packages?q=GitHub.Octokit.GHES.SDK)
 	- For our classic non-generated, hand-maintained Octokit.net project
 		- [Octokit.net repository](https://github.com/octokit/octokit.net)
-		- For why we're building generative SDKs, see [Why a generated SDK?](#why-a-generated-sdk) below
+		- [NuGet link](https://www.nuget.org/packages/Octokit/)
 - [source-generator](https://github.com/octokit/source-generator) (the repository that creates these generated SDKs)
 	- Contributions to this repository should take place in source-generator instead, as they'll be distributed here through mechanisms there.
+- For why we're building generative SDKs, see [Why a generated SDK?](#why-a-generated-sdk) below
 
 ## How do I use it?
 
 See example client instantiations and requests in [example_test.go](pkg/example_test.go) or in the [cmd/ directory](cmd/).
-
-⚠️ **Note**: This SDK is not yet stable. Breaking changes may occur at any time.
 
 ### Building and testing
 

@@ -8,7 +8,7 @@ import (
 // CopilotSeatDetails information about a Copilot Business seat assignment for a user, team, or organization.
 type CopilotSeatDetails struct {
     // The assignee that has been granted access to GitHub Copilot.
-    assignee CopilotSeatDetails_CopilotSeatDetails_assigneeable
+    assignee CopilotSeatDetails_assigneeable
     // The team through which the assignee is granted access to GitHub Copilot, if applicable.
     assigning_team CopilotSeatDetails_CopilotSeatDetails_assigning_teamable
     // Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
@@ -23,98 +23,6 @@ type CopilotSeatDetails struct {
     pending_cancellation_date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-}
-// CopilotSeatDetails_CopilotSeatDetails_assignee composed type wrapper for classes Organizationable, SimpleUserable, Teamable
-type CopilotSeatDetails_CopilotSeatDetails_assignee struct {
-    // Composed type representation for type Organizationable
-    organization Organizationable
-    // Composed type representation for type SimpleUserable
-    simpleUser SimpleUserable
-    // Composed type representation for type Teamable
-    team Teamable
-}
-// NewCopilotSeatDetails_CopilotSeatDetails_assignee instantiates a new CopilotSeatDetails_CopilotSeatDetails_assignee and sets the default values.
-func NewCopilotSeatDetails_CopilotSeatDetails_assignee()(*CopilotSeatDetails_CopilotSeatDetails_assignee) {
-    m := &CopilotSeatDetails_CopilotSeatDetails_assignee{
-    }
-    return m
-}
-// CreateCopilotSeatDetails_CopilotSeatDetails_assigneeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
-// returns a Parsable when successful
-func CreateCopilotSeatDetails_CopilotSeatDetails_assigneeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    result := NewCopilotSeatDetails_CopilotSeatDetails_assignee()
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-            }
-        }
-    }
-    return result, nil
-}
-// GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-}
-// GetIsComposedType determines if the current object is a wrapper around a composed type
-// returns a bool when successful
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) GetIsComposedType()(bool) {
-    return true
-}
-// GetOrganization gets the organization property value. Composed type representation for type Organizationable
-// returns a Organizationable when successful
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) GetOrganization()(Organizationable) {
-    return m.organization
-}
-// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
-// returns a SimpleUserable when successful
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) GetSimpleUser()(SimpleUserable) {
-    return m.simpleUser
-}
-// GetTeam gets the team property value. Composed type representation for type Teamable
-// returns a Teamable when successful
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) GetTeam()(Teamable) {
-    return m.team
-}
-// Serialize serializes information the current object
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetOrganization() != nil {
-        err := writer.WriteObjectValue("", m.GetOrganization())
-        if err != nil {
-            return err
-        }
-    } else if m.GetSimpleUser() != nil {
-        err := writer.WriteObjectValue("", m.GetSimpleUser())
-        if err != nil {
-            return err
-        }
-    } else if m.GetTeam() != nil {
-        err := writer.WriteObjectValue("", m.GetTeam())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
-}
-// SetOrganization sets the organization property value. Composed type representation for type Organizationable
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) SetOrganization(value Organizationable)() {
-    m.organization = value
-}
-// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) SetSimpleUser(value SimpleUserable)() {
-    m.simpleUser = value
-}
-// SetTeam sets the team property value. Composed type representation for type Teamable
-func (m *CopilotSeatDetails_CopilotSeatDetails_assignee) SetTeam(value Teamable)() {
-    m.team = value
 }
 // CopilotSeatDetails_CopilotSeatDetails_assigning_team composed type wrapper for classes EnterpriseTeamable, Teamable
 type CopilotSeatDetails_CopilotSeatDetails_assigning_team struct {
@@ -192,15 +100,6 @@ func (m *CopilotSeatDetails_CopilotSeatDetails_assigning_team) SetEnterpriseTeam
 func (m *CopilotSeatDetails_CopilotSeatDetails_assigning_team) SetTeam(value Teamable)() {
     m.team = value
 }
-type CopilotSeatDetails_CopilotSeatDetails_assigneeable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOrganization()(Organizationable)
-    GetSimpleUser()(SimpleUserable)
-    GetTeam()(Teamable)
-    SetOrganization(value Organizationable)()
-    SetSimpleUser(value SimpleUserable)()
-    SetTeam(value Teamable)()
-}
 type CopilotSeatDetails_CopilotSeatDetails_assigning_teamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnterpriseTeam()(EnterpriseTeamable)
@@ -220,8 +119,8 @@ func CreateCopilotSeatDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewCopilotSeatDetails(), nil
 }
 // GetAssignee gets the assignee property value. The assignee that has been granted access to GitHub Copilot.
-// returns a CopilotSeatDetails_CopilotSeatDetails_assigneeable when successful
-func (m *CopilotSeatDetails) GetAssignee()(CopilotSeatDetails_CopilotSeatDetails_assigneeable) {
+// returns a CopilotSeatDetails_assigneeable when successful
+func (m *CopilotSeatDetails) GetAssignee()(CopilotSeatDetails_assigneeable) {
     return m.assignee
 }
 // GetAssigningTeam gets the assigning_team property value. The team through which the assignee is granted access to GitHub Copilot, if applicable.
@@ -239,12 +138,12 @@ func (m *CopilotSeatDetails) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6
 func (m *CopilotSeatDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCopilotSeatDetails_CopilotSeatDetails_assigneeFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCopilotSeatDetails_assigneeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignee(val.(CopilotSeatDetails_CopilotSeatDetails_assigneeable))
+            m.SetAssignee(val.(CopilotSeatDetails_assigneeable))
         }
         return nil
     }
@@ -398,7 +297,7 @@ func (m *CopilotSeatDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAssignee sets the assignee property value. The assignee that has been granted access to GitHub Copilot.
-func (m *CopilotSeatDetails) SetAssignee(value CopilotSeatDetails_CopilotSeatDetails_assigneeable)() {
+func (m *CopilotSeatDetails) SetAssignee(value CopilotSeatDetails_assigneeable)() {
     m.assignee = value
 }
 // SetAssigningTeam sets the assigning_team property value. The team through which the assignee is granted access to GitHub Copilot, if applicable.
@@ -431,7 +330,7 @@ func (m *CopilotSeatDetails) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97
 }
 type CopilotSeatDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAssignee()(CopilotSeatDetails_CopilotSeatDetails_assigneeable)
+    GetAssignee()(CopilotSeatDetails_assigneeable)
     GetAssigningTeam()(CopilotSeatDetails_CopilotSeatDetails_assigning_teamable)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastActivityAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -439,7 +338,7 @@ type CopilotSeatDetailsable interface {
     GetOrganization()(CopilotSeatDetails_organizationable)
     GetPendingCancellationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    SetAssignee(value CopilotSeatDetails_CopilotSeatDetails_assigneeable)()
+    SetAssignee(value CopilotSeatDetails_assigneeable)()
     SetAssigningTeam(value CopilotSeatDetails_CopilotSeatDetails_assigning_teamable)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastActivityAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
