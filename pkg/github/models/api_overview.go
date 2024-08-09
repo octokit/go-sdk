@@ -14,6 +14,8 @@ type ApiOverview struct {
     additionalData map[string]any
     // The api property
     api []string
+    // The copilot property
+    copilot []string
     // The dependabot property
     dependabot []string
     // The domains property
@@ -70,6 +72,11 @@ func (m *ApiOverview) GetAdditionalData()(map[string]any) {
 // returns a []string when successful
 func (m *ApiOverview) GetApi()([]string) {
     return m.api
+}
+// GetCopilot gets the copilot property value. The copilot property
+// returns a []string when successful
+func (m *ApiOverview) GetCopilot()([]string) {
+    return m.copilot
 }
 // GetDependabot gets the dependabot property value. The dependabot property
 // returns a []string when successful
@@ -130,6 +137,22 @@ func (m *ApiOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetApi(res)
+        }
+        return nil
+    }
+    res["copilot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCopilot(res)
         }
         return nil
     }
@@ -379,6 +402,12 @@ func (m *ApiOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetCopilot() != nil {
+        err := writer.WriteCollectionOfStringValues("copilot", m.GetCopilot())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDependabot() != nil {
         err := writer.WriteCollectionOfStringValues("dependabot", m.GetDependabot())
         if err != nil {
@@ -475,6 +504,10 @@ func (m *ApiOverview) SetAdditionalData(value map[string]any)() {
 func (m *ApiOverview) SetApi(value []string)() {
     m.api = value
 }
+// SetCopilot sets the copilot property value. The copilot property
+func (m *ApiOverview) SetCopilot(value []string)() {
+    m.copilot = value
+}
 // SetDependabot sets the dependabot property value. The dependabot property
 func (m *ApiOverview) SetDependabot(value []string)() {
     m.dependabot = value
@@ -529,6 +562,7 @@ type ApiOverviewable interface {
     GetActions()([]string)
     GetActionsMacos()([]string)
     GetApi()([]string)
+    GetCopilot()([]string)
     GetDependabot()([]string)
     GetDomains()(ApiOverview_domainsable)
     GetGit()([]string)
@@ -544,6 +578,7 @@ type ApiOverviewable interface {
     SetActions(value []string)()
     SetActionsMacos(value []string)()
     SetApi(value []string)()
+    SetCopilot(value []string)()
     SetDependabot(value []string)()
     SetDomains(value ApiOverview_domainsable)()
     SetGit(value []string)()
