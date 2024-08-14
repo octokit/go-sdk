@@ -5,6 +5,8 @@ import (
 )
 
 type ItemCodeSecurityConfigurationsPostRequestBody struct {
+    // Feature options for Automatic dependency submission
+    dependency_graph_autosubmit_action_options ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable
     // A description of the code security configuration
     description *string
     // The name of the code security configuration. Must be unique within the organization.
@@ -21,6 +23,11 @@ func NewItemCodeSecurityConfigurationsPostRequestBody()(*ItemCodeSecurityConfigu
 func CreateItemCodeSecurityConfigurationsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemCodeSecurityConfigurationsPostRequestBody(), nil
 }
+// GetDependencyGraphAutosubmitActionOptions gets the dependency_graph_autosubmit_action_options property value. Feature options for Automatic dependency submission
+// returns a ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable when successful
+func (m *ItemCodeSecurityConfigurationsPostRequestBody) GetDependencyGraphAutosubmitActionOptions()(ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable) {
+    return m.dependency_graph_autosubmit_action_options
+}
 // GetDescription gets the description property value. A description of the code security configuration
 // returns a *string when successful
 func (m *ItemCodeSecurityConfigurationsPostRequestBody) GetDescription()(*string) {
@@ -30,6 +37,16 @@ func (m *ItemCodeSecurityConfigurationsPostRequestBody) GetDescription()(*string
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemCodeSecurityConfigurationsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["dependency_graph_autosubmit_action_options"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDependencyGraphAutosubmitActionOptions(val.(ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable))
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -60,6 +77,12 @@ func (m *ItemCodeSecurityConfigurationsPostRequestBody) GetName()(*string) {
 // Serialize serializes information the current object
 func (m *ItemCodeSecurityConfigurationsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("dependency_graph_autosubmit_action_options", m.GetDependencyGraphAutosubmitActionOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -73,6 +96,10 @@ func (m *ItemCodeSecurityConfigurationsPostRequestBody) Serialize(writer i878a80
     }
     return nil
 }
+// SetDependencyGraphAutosubmitActionOptions sets the dependency_graph_autosubmit_action_options property value. Feature options for Automatic dependency submission
+func (m *ItemCodeSecurityConfigurationsPostRequestBody) SetDependencyGraphAutosubmitActionOptions(value ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable)() {
+    m.dependency_graph_autosubmit_action_options = value
+}
 // SetDescription sets the description property value. A description of the code security configuration
 func (m *ItemCodeSecurityConfigurationsPostRequestBody) SetDescription(value *string)() {
     m.description = value
@@ -83,8 +110,10 @@ func (m *ItemCodeSecurityConfigurationsPostRequestBody) SetName(value *string)()
 }
 type ItemCodeSecurityConfigurationsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDependencyGraphAutosubmitActionOptions()(ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable)
     GetDescription()(*string)
     GetName()(*string)
+    SetDependencyGraphAutosubmitActionOptions(value ItemCodeSecurityConfigurationsPostRequestBody_dependency_graph_autosubmit_action_optionsable)()
     SetDescription(value *string)()
     SetName(value *string)()
 }

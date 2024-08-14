@@ -36,13 +36,13 @@ func NewItemPropertiesSchemaRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemPropertiesSchemaRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get gets all custom properties defined for an organization.Organization members can read these properties.
-// returns a []OrgCustomPropertyable when successful
+// returns a []CustomPropertyable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
-func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -51,26 +51,26 @@ func (m *ItemPropertiesSchemaRequestBuilder) Get(ctx context.Context, requestCon
         "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateOrgCustomPropertyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateCustomPropertyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, len(res))
+    val := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)
+            val[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)
         }
     }
     return val, nil
 }
 // Patch creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
-// returns a []OrgCustomPropertyable when successful
+// returns a []CustomPropertyable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
 // [API method documentation]: https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
-func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, error) {
+func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body ItemPropertiesSchemaPatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -79,14 +79,14 @@ func (m *ItemPropertiesSchemaRequestBuilder) Patch(ctx context.Context, body Ite
         "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateOrgCustomPropertyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateCustomPropertyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
-    val := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, len(res))
+    val := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)
+            val[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)
         }
     }
     return val, nil
