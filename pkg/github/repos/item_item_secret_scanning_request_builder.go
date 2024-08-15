@@ -26,3 +26,8 @@ func NewItemItemSecretScanningRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemSecretScanningRequestBuilderInternal(urlParams, requestAdapter)
 }
+// PushProtectionBypasses the pushProtectionBypasses property
+// returns a *ItemItemSecretScanningPushProtectionBypassesRequestBuilder when successful
+func (m *ItemItemSecretScanningRequestBuilder) PushProtectionBypasses()(*ItemItemSecretScanningPushProtectionBypassesRequestBuilder) {
+    return NewItemItemSecretScanningPushProtectionBypassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

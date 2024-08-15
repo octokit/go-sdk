@@ -44,7 +44,7 @@ func (m *ItemRulesetsWithRuleset_ItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get a repository ruleset for an organization.
+// Get get a repository ruleset for an organization.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
 // returns a RepositoryRulesetable when successful
 // returns a BasicError error when the service returns a 404 status code
 // returns a BasicError error when the service returns a 500 status code
@@ -102,7 +102,7 @@ func (m *ItemRulesetsWithRuleset_ItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a repository ruleset for an organization.
+// ToGetRequestInformation get a repository ruleset for an organization.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
 // returns a *RequestInformation when successful
 func (m *ItemRulesetsWithRuleset_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

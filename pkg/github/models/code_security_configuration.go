@@ -21,6 +21,10 @@ type CodeSecurityConfiguration struct {
     dependabot_security_updates *CodeSecurityConfiguration_dependabot_security_updates
     // The enablement status of Dependency Graph
     dependency_graph *CodeSecurityConfiguration_dependency_graph
+    // The enablement status of Automatic dependency submission
+    dependency_graph_autosubmit_action *CodeSecurityConfiguration_dependency_graph_autosubmit_action
+    // Feature options for Automatic dependency submission
+    dependency_graph_autosubmit_action_options CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable
     // A description of the code security configuration
     description *string
     // The enforcement status for a security configuration
@@ -93,6 +97,16 @@ func (m *CodeSecurityConfiguration) GetDependabotSecurityUpdates()(*CodeSecurity
 func (m *CodeSecurityConfiguration) GetDependencyGraph()(*CodeSecurityConfiguration_dependency_graph) {
     return m.dependency_graph
 }
+// GetDependencyGraphAutosubmitAction gets the dependency_graph_autosubmit_action property value. The enablement status of Automatic dependency submission
+// returns a *CodeSecurityConfiguration_dependency_graph_autosubmit_action when successful
+func (m *CodeSecurityConfiguration) GetDependencyGraphAutosubmitAction()(*CodeSecurityConfiguration_dependency_graph_autosubmit_action) {
+    return m.dependency_graph_autosubmit_action
+}
+// GetDependencyGraphAutosubmitActionOptions gets the dependency_graph_autosubmit_action_options property value. Feature options for Automatic dependency submission
+// returns a CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable when successful
+func (m *CodeSecurityConfiguration) GetDependencyGraphAutosubmitActionOptions()(CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable) {
+    return m.dependency_graph_autosubmit_action_options
+}
 // GetDescription gets the description property value. A description of the code security configuration
 // returns a *string when successful
 func (m *CodeSecurityConfiguration) GetDescription()(*string) {
@@ -164,6 +178,26 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetDependencyGraph(val.(*CodeSecurityConfiguration_dependency_graph))
+        }
+        return nil
+    }
+    res["dependency_graph_autosubmit_action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_dependency_graph_autosubmit_action)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDependencyGraphAutosubmitAction(val.(*CodeSecurityConfiguration_dependency_graph_autosubmit_action))
+        }
+        return nil
+    }
+    res["dependency_graph_autosubmit_action_options"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDependencyGraphAutosubmitActionOptions(val.(CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable))
         }
         return nil
     }
@@ -382,6 +416,19 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetDependencyGraphAutosubmitAction() != nil {
+        cast := (*m.GetDependencyGraphAutosubmitAction()).String()
+        err := writer.WriteStringValue("dependency_graph_autosubmit_action", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("dependency_graph_autosubmit_action_options", m.GetDependencyGraphAutosubmitActionOptions())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -496,6 +543,14 @@ func (m *CodeSecurityConfiguration) SetDependabotSecurityUpdates(value *CodeSecu
 func (m *CodeSecurityConfiguration) SetDependencyGraph(value *CodeSecurityConfiguration_dependency_graph)() {
     m.dependency_graph = value
 }
+// SetDependencyGraphAutosubmitAction sets the dependency_graph_autosubmit_action property value. The enablement status of Automatic dependency submission
+func (m *CodeSecurityConfiguration) SetDependencyGraphAutosubmitAction(value *CodeSecurityConfiguration_dependency_graph_autosubmit_action)() {
+    m.dependency_graph_autosubmit_action = value
+}
+// SetDependencyGraphAutosubmitActionOptions sets the dependency_graph_autosubmit_action_options property value. Feature options for Automatic dependency submission
+func (m *CodeSecurityConfiguration) SetDependencyGraphAutosubmitActionOptions(value CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable)() {
+    m.dependency_graph_autosubmit_action_options = value
+}
 // SetDescription sets the description property value. A description of the code security configuration
 func (m *CodeSecurityConfiguration) SetDescription(value *string)() {
     m.description = value
@@ -553,6 +608,8 @@ type CodeSecurityConfigurationable interface {
     GetDependabotAlerts()(*CodeSecurityConfiguration_dependabot_alerts)
     GetDependabotSecurityUpdates()(*CodeSecurityConfiguration_dependabot_security_updates)
     GetDependencyGraph()(*CodeSecurityConfiguration_dependency_graph)
+    GetDependencyGraphAutosubmitAction()(*CodeSecurityConfiguration_dependency_graph_autosubmit_action)
+    GetDependencyGraphAutosubmitActionOptions()(CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable)
     GetDescription()(*string)
     GetEnforcement()(*CodeSecurityConfiguration_enforcement)
     GetHtmlUrl()(*string)
@@ -571,6 +628,8 @@ type CodeSecurityConfigurationable interface {
     SetDependabotAlerts(value *CodeSecurityConfiguration_dependabot_alerts)()
     SetDependabotSecurityUpdates(value *CodeSecurityConfiguration_dependabot_security_updates)()
     SetDependencyGraph(value *CodeSecurityConfiguration_dependency_graph)()
+    SetDependencyGraphAutosubmitAction(value *CodeSecurityConfiguration_dependency_graph_autosubmit_action)()
+    SetDependencyGraphAutosubmitActionOptions(value CodeSecurityConfiguration_dependency_graph_autosubmit_action_optionsable)()
     SetDescription(value *string)()
     SetEnforcement(value *CodeSecurityConfiguration_enforcement)()
     SetHtmlUrl(value *string)()

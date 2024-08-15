@@ -9,7 +9,7 @@ type ItemPropertiesSchemaPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The array of custom properties to create or update.
-    properties []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable
+    properties []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable
 }
 // NewItemPropertiesSchemaPatchRequestBody instantiates a new ItemPropertiesSchemaPatchRequestBody and sets the default values.
 func NewItemPropertiesSchemaPatchRequestBody()(*ItemPropertiesSchemaPatchRequestBody) {
@@ -33,15 +33,15 @@ func (m *ItemPropertiesSchemaPatchRequestBody) GetAdditionalData()(map[string]an
 func (m *ItemPropertiesSchemaPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateOrgCustomPropertyFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateCustomPropertyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable, len(val))
+            res := make([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)
+                    res[i] = v.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)
                 }
             }
             m.SetProperties(res)
@@ -51,8 +51,8 @@ func (m *ItemPropertiesSchemaPatchRequestBody) GetFieldDeserializers()(map[strin
     return res
 }
 // GetProperties gets the properties property value. The array of custom properties to create or update.
-// returns a []OrgCustomPropertyable when successful
-func (m *ItemPropertiesSchemaPatchRequestBody) GetProperties()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable) {
+// returns a []CustomPropertyable when successful
+func (m *ItemPropertiesSchemaPatchRequestBody) GetProperties()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable) {
     return m.properties
 }
 // Serialize serializes information the current object
@@ -82,12 +82,12 @@ func (m *ItemPropertiesSchemaPatchRequestBody) SetAdditionalData(value map[strin
     m.additionalData = value
 }
 // SetProperties sets the properties property value. The array of custom properties to create or update.
-func (m *ItemPropertiesSchemaPatchRequestBody) SetProperties(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)() {
+func (m *ItemPropertiesSchemaPatchRequestBody) SetProperties(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)() {
     m.properties = value
 }
 type ItemPropertiesSchemaPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetProperties()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)
-    SetProperties(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrgCustomPropertyable)()
+    GetProperties()([]i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)
+    SetProperties(value []i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CustomPropertyable)()
 }

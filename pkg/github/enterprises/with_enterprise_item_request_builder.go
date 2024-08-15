@@ -36,3 +36,8 @@ func (m *WithEnterpriseItemRequestBuilder) Dependabot()(*ItemDependabotRequestBu
 func (m *WithEnterpriseItemRequestBuilder) SecretScanning()(*ItemSecretScanningRequestBuilder) {
     return NewItemSecretScanningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Team the team property
+// returns a *ItemTeamRequestBuilder when successful
+func (m *WithEnterpriseItemRequestBuilder) Team()(*ItemTeamRequestBuilder) {
+    return NewItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
