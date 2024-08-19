@@ -65,6 +65,11 @@ func (m *ItemRepoItemRequestBuilder) Codeowners()(*ItemItemCodeownersRequestBuil
 func (m *ItemRepoItemRequestBuilder) CodeScanning()(*ItemItemCodeScanningRequestBuilder) {
     return NewItemItemCodeScanningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CodeSecurityConfiguration the codeSecurityConfiguration property
+// returns a *ItemItemCodeSecurityConfigurationRequestBuilder when successful
+func (m *ItemRepoItemRequestBuilder) CodeSecurityConfiguration()(*ItemItemCodeSecurityConfigurationRequestBuilder) {
+    return NewItemItemCodeSecurityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Codespaces the codespaces property
 // returns a *ItemItemCodespacesRequestBuilder when successful
 func (m *ItemRepoItemRequestBuilder) Codespaces()(*ItemItemCodespacesRequestBuilder) {
