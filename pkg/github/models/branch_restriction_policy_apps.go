@@ -7,6 +7,8 @@ import (
 type BranchRestrictionPolicy_apps struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // The client_id property
+    client_id *string
     // The created_at property
     created_at *string
     // The description property
@@ -49,6 +51,11 @@ func CreateBranchRestrictionPolicy_appsFromDiscriminatorValue(parseNode i878a80d
 func (m *BranchRestrictionPolicy_apps) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetClientId gets the client_id property value. The client_id property
+// returns a *string when successful
+func (m *BranchRestrictionPolicy_apps) GetClientId()(*string) {
+    return m.client_id
+}
 // GetCreatedAt gets the created_at property value. The created_at property
 // returns a *string when successful
 func (m *BranchRestrictionPolicy_apps) GetCreatedAt()(*string) {
@@ -73,6 +80,16 @@ func (m *BranchRestrictionPolicy_apps) GetExternalUrl()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BranchRestrictionPolicy_apps) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["client_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientId(val)
+        }
+        return nil
+    }
     res["created_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -244,6 +261,12 @@ func (m *BranchRestrictionPolicy_apps) GetUpdatedAt()(*string) {
 // Serialize serializes information the current object
 func (m *BranchRestrictionPolicy_apps) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("client_id", m.GetClientId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("created_at", m.GetCreatedAt())
         if err != nil {
             return err
@@ -327,6 +350,10 @@ func (m *BranchRestrictionPolicy_apps) Serialize(writer i878a80d2330e89d26896388
 func (m *BranchRestrictionPolicy_apps) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetClientId sets the client_id property value. The client_id property
+func (m *BranchRestrictionPolicy_apps) SetClientId(value *string)() {
+    m.client_id = value
+}
 // SetCreatedAt sets the created_at property value. The created_at property
 func (m *BranchRestrictionPolicy_apps) SetCreatedAt(value *string)() {
     m.created_at = value
@@ -378,6 +405,7 @@ func (m *BranchRestrictionPolicy_apps) SetUpdatedAt(value *string)() {
 type BranchRestrictionPolicy_appsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetClientId()(*string)
     GetCreatedAt()(*string)
     GetDescription()(*string)
     GetEvents()([]string)
@@ -390,6 +418,7 @@ type BranchRestrictionPolicy_appsable interface {
     GetPermissions()(BranchRestrictionPolicy_apps_permissionsable)
     GetSlug()(*string)
     GetUpdatedAt()(*string)
+    SetClientId(value *string)()
     SetCreatedAt(value *string)()
     SetDescription(value *string)()
     SetEvents(value []string)()

@@ -36,7 +36,7 @@ type OrganizationSecretScanningAlert struct {
     secret *string
     // The type of secret that secret scanning detected.
     secret_type *string
-    // User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+    // User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
     secret_type_display_name *string
     // Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.
     state *SecretScanningAlertState
@@ -330,7 +330,7 @@ func (m *OrganizationSecretScanningAlert) GetSecret()(*string) {
 func (m *OrganizationSecretScanningAlert) GetSecretType()(*string) {
     return m.secret_type
 }
-// GetSecretTypeDisplayName gets the secret_type_display_name property value. User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+// GetSecretTypeDisplayName gets the secret_type_display_name property value. User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
 // returns a *string when successful
 func (m *OrganizationSecretScanningAlert) GetSecretTypeDisplayName()(*string) {
     return m.secret_type_display_name
@@ -512,7 +512,7 @@ func (m *OrganizationSecretScanningAlert) SetSecret(value *string)() {
 func (m *OrganizationSecretScanningAlert) SetSecretType(value *string)() {
     m.secret_type = value
 }
-// SetSecretTypeDisplayName sets the secret_type_display_name property value. User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+// SetSecretTypeDisplayName sets the secret_type_display_name property value. User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
 func (m *OrganizationSecretScanningAlert) SetSecretTypeDisplayName(value *string)() {
     m.secret_type_display_name = value
 }
