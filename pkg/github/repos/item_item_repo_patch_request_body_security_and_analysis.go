@@ -12,7 +12,7 @@ type ItemItemRepoPatchRequestBody_security_and_analysis struct {
     advanced_security ItemItemRepoPatchRequestBody_security_and_analysis_advanced_securityable
     // Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
     secret_scanning ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable
-    // Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+    // Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
     secret_scanning_non_provider_patterns ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable
     // Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
     secret_scanning_push_protection ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_push_protectionable
@@ -90,7 +90,7 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetFieldDeserialize
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetSecretScanning()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable) {
     return m.secret_scanning
 }
-// GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+// GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
 // returns a ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable when successful
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) GetSecretScanningNonProviderPatterns()(ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable) {
     return m.secret_scanning_non_provider_patterns
@@ -146,7 +146,7 @@ func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetAdvancedSecurity
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetSecretScanning(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanningable)() {
     m.secret_scanning = value
 }
-// SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+// SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
 func (m *ItemItemRepoPatchRequestBody_security_and_analysis) SetSecretScanningNonProviderPatterns(value ItemItemRepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patternsable)() {
     m.secret_scanning_non_provider_patterns = value
 }
