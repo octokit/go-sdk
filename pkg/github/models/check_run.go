@@ -28,7 +28,7 @@ type CheckRun struct {
     // The html_url property
     html_url *string
     // The id of the check.
-    id *int32
+    id *int64
     // The name of the check.
     name *string
     // The node_id property
@@ -191,7 +191,7 @@ func (m *CheckRun) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -289,8 +289,8 @@ func (m *CheckRun) GetHtmlUrl()(*string) {
     return m.html_url
 }
 // GetId gets the id property value. The id of the check.
-// returns a *int32 when successful
-func (m *CheckRun) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *CheckRun) GetId()(*int64) {
     return m.id
 }
 // GetName gets the name property value. The name of the check.
@@ -386,7 +386,7 @@ func (m *CheckRun) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -489,7 +489,7 @@ func (m *CheckRun) SetHtmlUrl(value *string)() {
     m.html_url = value
 }
 // SetId sets the id property value. The id of the check.
-func (m *CheckRun) SetId(value *int32)() {
+func (m *CheckRun) SetId(value *int64)() {
     m.id = value
 }
 // SetName sets the name property value. The name of the check.
@@ -532,7 +532,7 @@ type CheckRunable interface {
     GetExternalId()(*string)
     GetHeadSha()(*string)
     GetHtmlUrl()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetName()(*string)
     GetNodeId()(*string)
     GetOutput()(CheckRun_outputable)
@@ -549,7 +549,7 @@ type CheckRunable interface {
     SetExternalId(value *string)()
     SetHeadSha(value *string)()
     SetHtmlUrl(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetName(value *string)()
     SetNodeId(value *string)()
     SetOutput(value CheckRun_outputable)()

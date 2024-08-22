@@ -223,7 +223,6 @@ func (m *ItemItemContentsWithPathItemRequestBuilder) Get(ctx context.Context, re
 // Put creates a new file or replaces an existing file in a repository.> [!NOTE]> If you use this endpoint and the "[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)" endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
 // returns a FileCommitable when successful
 // returns a BasicError error when the service returns a 404 status code
-// returns a BasicError error when the service returns a 409 status code
 // returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
 // 
@@ -235,7 +234,6 @@ func (m *ItemItemContentsWithPathItemRequestBuilder) Put(ctx context.Context, bo
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
-        "409": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "422": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateValidationErrorFromDiscriminatorValue,
     }
     res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateFileCommitFromDiscriminatorValue, errorMapping)
