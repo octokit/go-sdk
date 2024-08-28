@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleMergeQueue_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleMergeQueue_type(v string) (any, error) {
         case "merge_queue":
             result = MERGE_QUEUE_REPOSITORYRULEMERGEQUEUE_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleMergeQueue_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

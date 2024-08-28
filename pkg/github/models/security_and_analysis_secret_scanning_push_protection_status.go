@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SecurityAndAnalysis_secret_scanning_push_protection_status int
 
 const (
@@ -20,7 +17,7 @@ func ParseSecurityAndAnalysis_secret_scanning_push_protection_status(v string) (
         case "disabled":
             result = DISABLED_SECURITYANDANALYSIS_SECRET_SCANNING_PUSH_PROTECTION_STATUS
         default:
-            return 0, errors.New("Unknown SecurityAndAnalysis_secret_scanning_push_protection_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

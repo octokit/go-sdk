@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ContentFile_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseContentFile_type(v string) (any, error) {
         case "file":
             result = FILE_CONTENTFILE_TYPE
         default:
-            return 0, errors.New("Unknown ContentFile_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.
 type OrgMembership_state int
 
@@ -21,7 +18,7 @@ func ParseOrgMembership_state(v string) (any, error) {
         case "pending":
             result = PENDING_ORGMEMBERSHIP_STATE
         default:
-            return 0, errors.New("Unknown OrgMembership_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

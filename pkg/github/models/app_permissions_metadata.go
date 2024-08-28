@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata.
 type AppPermissions_metadata int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_metadata(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_METADATA
         default:
-            return 0, errors.New("Unknown AppPermissions_metadata value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

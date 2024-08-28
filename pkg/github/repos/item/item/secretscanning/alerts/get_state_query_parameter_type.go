@@ -1,7 +1,4 @@
 package alerts
-import (
-    "errors"
-)
 type GetStateQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetStateQueryParameterType(v string) (any, error) {
         case "resolved":
             result = RESOLVED_GETSTATEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetStateQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

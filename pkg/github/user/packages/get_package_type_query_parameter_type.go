@@ -1,7 +1,4 @@
 package packages
-import (
-    "errors"
-)
 type GetPackage_typeQueryParameterType int
 
 const (
@@ -32,7 +29,7 @@ func ParseGetPackage_typeQueryParameterType(v string) (any, error) {
         case "container":
             result = CONTAINER_GETPACKAGE_TYPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetPackage_typeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

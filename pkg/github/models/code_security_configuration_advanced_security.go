@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of GitHub Advanced Security
 type CodeSecurityConfiguration_advanced_security int
 
@@ -21,7 +18,7 @@ func ParseCodeSecurityConfiguration_advanced_security(v string) (any, error) {
         case "disabled":
             result = DISABLED_CODESECURITYCONFIGURATION_ADVANCED_SECURITY
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_advanced_security value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

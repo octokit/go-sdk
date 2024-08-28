@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The open or closed state of the issue.
 type WithIssue_numberPatchRequestBody_state int
 
@@ -21,7 +18,7 @@ func ParseWithIssue_numberPatchRequestBody_state(v string) (any, error) {
         case "closed":
             result = CLOSED_WITHISSUE_NUMBERPATCHREQUESTBODY_STATE
         default:
-            return 0, errors.New("Unknown WithIssue_numberPatchRequestBody_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

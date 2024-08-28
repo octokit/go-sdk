@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Whether it's a Group Assignment or Individual Assignment.
 type SimpleClassroomAssignment_type int
 
@@ -21,7 +18,7 @@ func ParseSimpleClassroomAssignment_type(v string) (any, error) {
         case "group":
             result = GROUP_SIMPLECLASSROOMASSIGNMENT_TYPE
         default:
-            return 0, errors.New("Unknown SimpleClassroomAssignment_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

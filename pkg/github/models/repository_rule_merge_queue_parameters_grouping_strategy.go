@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
 type RepositoryRuleMergeQueue_parameters_grouping_strategy int
 
@@ -21,7 +18,7 @@ func ParseRepositoryRuleMergeQueue_parameters_grouping_strategy(v string) (any, 
         case "HEADGREEN":
             result = HEADGREEN_REPOSITORYRULEMERGEQUEUE_PARAMETERS_GROUPING_STRATEGY
         default:
-            return 0, errors.New("Unknown RepositoryRuleMergeQueue_parameters_grouping_strategy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

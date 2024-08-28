@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The attachment status of the code security configuration on the repository.
 type CodeSecurityConfigurationForRepository_status int
 
@@ -39,7 +36,7 @@ func ParseCodeSecurityConfigurationForRepository_status(v string) (any, error) {
         case "removed_by_enterprise":
             result = REMOVED_BY_ENTERPRISE_CODESECURITYCONFIGURATIONFORREPOSITORY_STATUS
         default:
-            return 0, errors.New("Unknown CodeSecurityConfigurationForRepository_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

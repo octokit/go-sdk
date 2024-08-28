@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of Dependabot security updates
 type ConfigurationsPostRequestBody_dependabot_security_updates int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_dependabot_security_updates(v string) (a
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_DEPENDABOT_SECURITY_UPDATES
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_dependabot_security_updates value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

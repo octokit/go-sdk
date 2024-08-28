@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The language targeted by the CodeQL query
 type CodeScanningVariantAnalysisLanguage int
 
@@ -39,7 +36,7 @@ func ParseCodeScanningVariantAnalysisLanguage(v string) (any, error) {
         case "swift":
             result = SWIFT_CODESCANNINGVARIANTANALYSISLANGUAGE
         default:
-            return 0, errors.New("Unknown CodeScanningVariantAnalysisLanguage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

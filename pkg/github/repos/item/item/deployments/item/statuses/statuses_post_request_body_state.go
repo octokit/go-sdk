@@ -1,7 +1,4 @@
 package statuses
-import (
-    "errors"
-)
 // The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
 type StatusesPostRequestBody_state int
 
@@ -36,7 +33,7 @@ func ParseStatusesPostRequestBody_state(v string) (any, error) {
         case "success":
             result = SUCCESS_STATUSESPOSTREQUESTBODY_STATE
         default:
-            return 0, errors.New("Unknown StatusesPostRequestBody_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

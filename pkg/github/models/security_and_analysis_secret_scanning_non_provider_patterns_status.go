@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SecurityAndAnalysis_secret_scanning_non_provider_patterns_status int
 
 const (
@@ -20,7 +17,7 @@ func ParseSecurityAndAnalysis_secret_scanning_non_provider_patterns_status(v str
         case "disabled":
             result = DISABLED_SECURITYANDANALYSIS_SECRET_SCANNING_NON_PROVIDER_PATTERNS_STATUS
         default:
-            return 0, errors.New("Unknown SecurityAndAnalysis_secret_scanning_non_provider_patterns_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
 type RepositoryRulesetBypassActor_bypass_mode int
 
@@ -21,7 +18,7 @@ func ParseRepositoryRulesetBypassActor_bypass_mode(v string) (any, error) {
         case "pull_request":
             result = PULL_REQUEST_REPOSITORYRULESETBYPASSACTOR_BYPASS_MODE
         default:
-            return 0, errors.New("Unknown RepositoryRulesetBypassActor_bypass_mode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

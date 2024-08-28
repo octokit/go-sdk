@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of Automatic dependency submission
 type WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action int
 
@@ -24,7 +21,7 @@ func ParseWithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action(
         case "not_set":
             result = NOT_SET_WITHCONFIGURATION_PATCHREQUESTBODY_DEPENDENCY_GRAPH_AUTOSUBMIT_ACTION
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.
 type RepositoryRuleset_current_user_can_bypass int
 
@@ -24,7 +21,7 @@ func ParseRepositoryRuleset_current_user_can_bypass(v string) (any, error) {
         case "never":
             result = NEVER_REPOSITORYRULESET_CURRENT_USER_CAN_BYPASS
         default:
-            return 0, errors.New("Unknown RepositoryRuleset_current_user_can_bypass value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

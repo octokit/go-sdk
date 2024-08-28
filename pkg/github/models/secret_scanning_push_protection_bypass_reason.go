@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The reason for bypassing push protection.
 type SecretScanningPushProtectionBypassReason int
 
@@ -24,7 +21,7 @@ func ParseSecretScanningPushProtectionBypassReason(v string) (any, error) {
         case "will_fix_later":
             result = WILL_FIX_LATER_SECRETSCANNINGPUSHPROTECTIONBYPASSREASON
         default:
-            return 0, errors.New("Unknown SecretScanningPushProtectionBypassReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

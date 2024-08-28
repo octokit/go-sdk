@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The security severity of the alert.
 type CodeScanningAlertRule_security_severity_level int
 
@@ -27,7 +24,7 @@ func ParseCodeScanningAlertRule_security_severity_level(v string) (any, error) {
         case "critical":
             result = CRITICAL_CODESCANNINGALERTRULE_SECURITY_SEVERITY_LEVEL
         default:
-            return 0, errors.New("Unknown CodeScanningAlertRule_security_severity_level value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

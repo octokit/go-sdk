@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describe whether all repositories have been selected or there's a selection involved
 type Installation_repository_selection int
 
@@ -21,7 +18,7 @@ func ParseInstallation_repository_selection(v string) (any, error) {
         case "selected":
             result = SELECTED_INSTALLATION_REPOSITORY_SELECTION
         default:
-            return 0, errors.New("Unknown Installation_repository_selection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

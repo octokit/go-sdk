@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleCodeScanning_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleCodeScanning_type(v string) (any, error) {
         case "code_scanning":
             result = CODE_SCANNING_REPOSITORYRULECODESCANNING_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleCodeScanning_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of Dependabot alerts
 type ConfigurationsPostRequestBody_dependabot_alerts int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_dependabot_alerts(v string) (any, error)
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_DEPENDABOT_ALERTS
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_dependabot_alerts value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

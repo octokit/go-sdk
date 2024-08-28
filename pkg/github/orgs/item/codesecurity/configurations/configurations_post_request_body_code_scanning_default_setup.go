@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of code scanning default setup
 type ConfigurationsPostRequestBody_code_scanning_default_setup int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_code_scanning_default_setup(v string) (a
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_CODE_SCANNING_DEFAULT_SETUP
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_code_scanning_default_setup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

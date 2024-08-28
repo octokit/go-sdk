@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of GitHub Advanced Security
 type WithConfiguration_PatchRequestBody_advanced_security int
 
@@ -21,7 +18,7 @@ func ParseWithConfiguration_PatchRequestBody_advanced_security(v string) (any, e
         case "disabled":
             result = DISABLED_WITHCONFIGURATION_PATCHREQUESTBODY_ADVANCED_SECURITY
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_advanced_security value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

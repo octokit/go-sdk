@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of secret scanning
 type CodeSecurityConfiguration_secret_scanning int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_secret_scanning(v string) (any, error) {
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_SECRET_SCANNING
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_secret_scanning value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

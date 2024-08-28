@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  **For a non-nested team:**   * `secret` - only visible to organization owners and members of this team.   * `closed` - visible to all members of this organization.  **For a parent or child team:**   * `closed` - visible to all members of this organization.
 type WithTeam_slugPatchRequestBody_privacy int
 
@@ -21,7 +18,7 @@ func ParseWithTeam_slugPatchRequestBody_privacy(v string) (any, error) {
         case "closed":
             result = CLOSED_WITHTEAM_SLUGPATCHREQUESTBODY_PRIVACY
         default:
-            return 0, errors.New("Unknown WithTeam_slugPatchRequestBody_privacy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

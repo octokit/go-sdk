@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of Dependabot security updates
 type CodeSecurityConfiguration_dependabot_security_updates int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_dependabot_security_updates(v string) (any, 
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_DEPENDABOT_SECURITY_UPDATES
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_dependabot_security_updates value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

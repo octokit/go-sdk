@@ -1,7 +1,4 @@
 package collaborators
-import (
-    "errors"
-)
 type GetAffiliationQueryParameterType int
 
 const (
@@ -23,7 +20,7 @@ func ParseGetAffiliationQueryParameterType(v string) (any, error) {
         case "all":
             result = ALL_GETAFFILIATIONQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetAffiliationQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

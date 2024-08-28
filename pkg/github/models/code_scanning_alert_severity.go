@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Severity of a code scanning alert.
 type CodeScanningAlertSeverity int
 
@@ -36,7 +33,7 @@ func ParseCodeScanningAlertSeverity(v string) (any, error) {
         case "error":
             result = ERROR_CODESCANNINGALERTSEVERITY
         default:
-            return 0, errors.New("Unknown CodeScanningAlertSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

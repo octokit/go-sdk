@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to manage the email addresses belonging to a user.
 type AppPermissions_email_addresses int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_email_addresses(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_EMAIL_ADDRESSES
         default:
-            return 0, errors.New("Unknown AppPermissions_email_addresses value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

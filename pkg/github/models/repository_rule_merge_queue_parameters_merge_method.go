@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Method to use when merging changes from queued pull requests.
 type RepositoryRuleMergeQueue_parameters_merge_method int
 
@@ -24,7 +21,7 @@ func ParseRepositoryRuleMergeQueue_parameters_merge_method(v string) (any, error
         case "REBASE":
             result = REBASE_REPOSITORYRULEMERGEQUEUE_PARAMETERS_MERGE_METHOD
         default:
-            return 0, errors.New("Unknown RepositoryRuleMergeQueue_parameters_merge_method value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

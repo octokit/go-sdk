@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enforcement status for a security configuration
 type CodeSecurityConfiguration_enforcement int
 
@@ -21,7 +18,7 @@ func ParseCodeSecurityConfiguration_enforcement(v string) (any, error) {
         case "unenforced":
             result = UNENFORCED_CODESECURITYCONFIGURATION_ENFORCEMENT
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_enforcement value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

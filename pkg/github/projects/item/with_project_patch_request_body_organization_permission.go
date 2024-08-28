@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The baseline permission that all organization members have on this project
 type WithProject_PatchRequestBody_organization_permission int
 
@@ -27,7 +24,7 @@ func ParseWithProject_PatchRequestBody_organization_permission(v string) (any, e
         case "none":
             result = NONE_WITHPROJECT_PATCHREQUESTBODY_ORGANIZATION_PERMISSION
         default:
-            return 0, errors.New("Unknown WithProject_PatchRequestBody_organization_permission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

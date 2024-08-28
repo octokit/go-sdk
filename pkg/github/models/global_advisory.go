@@ -17,6 +17,8 @@ type GlobalAdvisory struct {
     cwes []GlobalAdvisory_cwesable
     // A detailed description of what the advisory entails.
     description *string
+    // The epss property
+    epss GlobalAdvisory_epssable
     // The GitHub Security Advisory ID.
     ghsa_id *string
     // The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.
@@ -86,6 +88,11 @@ func (m *GlobalAdvisory) GetCwes()([]GlobalAdvisory_cwesable) {
 func (m *GlobalAdvisory) GetDescription()(*string) {
     return m.description
 }
+// GetEpss gets the epss property value. The epss property
+// returns a GlobalAdvisory_epssable when successful
+func (m *GlobalAdvisory) GetEpss()(GlobalAdvisory_epssable) {
+    return m.epss
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -149,6 +156,16 @@ func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["epss"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateGlobalAdvisory_epssFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEpss(val.(GlobalAdvisory_epssable))
         }
         return nil
     }
@@ -438,6 +455,12 @@ func (m *GlobalAdvisory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("epss", m.GetEpss())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReferences() != nil {
         err := writer.WriteCollectionOfStringValues("references", m.GetReferences())
         if err != nil {
@@ -496,6 +519,10 @@ func (m *GlobalAdvisory) SetCwes(value []GlobalAdvisory_cwesable)() {
 // SetDescription sets the description property value. A detailed description of what the advisory entails.
 func (m *GlobalAdvisory) SetDescription(value *string)() {
     m.description = value
+}
+// SetEpss sets the epss property value. The epss property
+func (m *GlobalAdvisory) SetEpss(value GlobalAdvisory_epssable)() {
+    m.epss = value
 }
 // SetGhsaId sets the ghsa_id property value. The GitHub Security Advisory ID.
 func (m *GlobalAdvisory) SetGhsaId(value *string)() {
@@ -568,6 +595,7 @@ type GlobalAdvisoryable interface {
     GetCvss()(GlobalAdvisory_cvssable)
     GetCwes()([]GlobalAdvisory_cwesable)
     GetDescription()(*string)
+    GetEpss()(GlobalAdvisory_epssable)
     GetGhsaId()(*string)
     GetGithubReviewedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHtmlUrl()(*string)
@@ -589,6 +617,7 @@ type GlobalAdvisoryable interface {
     SetCvss(value GlobalAdvisory_cvssable)()
     SetCwes(value []GlobalAdvisory_cwesable)()
     SetDescription(value *string)()
+    SetEpss(value GlobalAdvisory_epssable)()
     SetGhsaId(value *string)()
     SetGithubReviewedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHtmlUrl(value *string)()

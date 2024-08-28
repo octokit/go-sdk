@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
 type ActionsDefaultWorkflowPermissions int
 
@@ -21,7 +18,7 @@ func ParseActionsDefaultWorkflowPermissions(v string) (any, error) {
         case "write":
             result = WRITE_ACTIONSDEFAULTWORKFLOWPERMISSIONS
         default:
-            return 0, errors.New("Unknown ActionsDefaultWorkflowPermissions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

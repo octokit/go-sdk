@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enforcement status for a security configuration
 type ConfigurationsPostRequestBody_enforcement int
 
@@ -21,7 +18,7 @@ func ParseConfigurationsPostRequestBody_enforcement(v string) (any, error) {
         case "unenforced":
             result = UNENFORCED_CONFIGURATIONSPOSTREQUESTBODY_ENFORCEMENT
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_enforcement value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

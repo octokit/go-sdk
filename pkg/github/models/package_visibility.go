@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Package_visibility int
 
 const (
@@ -20,7 +17,7 @@ func ParsePackage_visibility(v string) (any, error) {
         case "public":
             result = PUBLIC_PACKAGE_VISIBILITY
         default:
-            return 0, errors.New("Unknown Package_visibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

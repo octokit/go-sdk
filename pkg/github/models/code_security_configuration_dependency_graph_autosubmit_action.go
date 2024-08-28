@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of Automatic dependency submission
 type CodeSecurityConfiguration_dependency_graph_autosubmit_action int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_dependency_graph_autosubmit_action(v string)
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_DEPENDENCY_GRAPH_AUTOSUBMIT_ACTION
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_dependency_graph_autosubmit_action value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

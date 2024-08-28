@@ -1,7 +1,4 @@
 package trees
-import (
-    "errors"
-)
 // Either `blob`, `tree`, or `commit`.
 type TreesPostRequestBody_tree_type int
 
@@ -24,7 +21,7 @@ func ParseTreesPostRequestBody_tree_type(v string) (any, error) {
         case "commit":
             result = COMMIT_TREESPOSTREQUESTBODY_TREE_TYPE
         default:
-            return 0, errors.New("Unknown TreesPostRequestBody_tree_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

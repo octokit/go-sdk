@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DependencyGraphDiff_change_type int
 
 const (
@@ -20,7 +17,7 @@ func ParseDependencyGraphDiff_change_type(v string) (any, error) {
         case "removed":
             result = REMOVED_DEPENDENCYGRAPHDIFF_CHANGE_TYPE
         default:
-            return 0, errors.New("Unknown DependencyGraphDiff_change_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

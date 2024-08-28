@@ -1,7 +1,4 @@
 package checkruns
-import (
-    "errors"
-)
 type CheckRunsPostRequestBodyMember2_status int
 
 const (
@@ -20,7 +17,7 @@ func ParseCheckRunsPostRequestBodyMember2_status(v string) (any, error) {
         case "in_progress":
             result = IN_PROGRESS_CHECKRUNSPOSTREQUESTBODYMEMBER2_STATUS
         default:
-            return 0, errors.New("Unknown CheckRunsPostRequestBodyMember2_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

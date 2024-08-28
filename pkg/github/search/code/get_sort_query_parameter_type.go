@@ -1,7 +1,4 @@
 package code
-import (
-    "errors"
-)
 type GetSortQueryParameterType int
 
 const (
@@ -17,7 +14,7 @@ func ParseGetSortQueryParameterType(v string) (any, error) {
         case "indexed":
             result = INDEXED_GETSORTQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetSortQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

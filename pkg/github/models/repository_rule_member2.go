@@ -4,70 +4,70 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// File_path_restriction > [!NOTE]> `file_path_restriction` is in beta and subject to change.Prevent commits that include changes in specified file paths from being pushed to the commit graph.
-type File_path_restriction struct {
+// RepositoryRuleMember2 > [!NOTE]> `max_file_path_length` is in beta and subject to change.Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
+type RepositoryRuleMember2 struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The parameters property
-    parameters File_path_restriction_parametersable
+    parameters RepositoryRuleMember2_parametersable
     // The type property
-    typeEscaped *File_path_restriction_type
+    typeEscaped *RepositoryRuleMember2_type
 }
-// NewFile_path_restriction instantiates a new File_path_restriction and sets the default values.
-func NewFile_path_restriction()(*File_path_restriction) {
-    m := &File_path_restriction{
+// NewRepositoryRuleMember2 instantiates a new RepositoryRuleMember2 and sets the default values.
+func NewRepositoryRuleMember2()(*RepositoryRuleMember2) {
+    m := &RepositoryRuleMember2{
     }
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateFile_path_restrictionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateRepositoryRuleMember2FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateFile_path_restrictionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewFile_path_restriction(), nil
+func CreateRepositoryRuleMember2FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewRepositoryRuleMember2(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *File_path_restriction) GetAdditionalData()(map[string]any) {
+func (m *RepositoryRuleMember2) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *File_path_restriction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RepositoryRuleMember2) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateFile_path_restriction_parametersFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateRepositoryRuleMember2_parametersFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParameters(val.(File_path_restriction_parametersable))
+            m.SetParameters(val.(RepositoryRuleMember2_parametersable))
         }
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseFile_path_restriction_type)
+        val, err := n.GetEnumValue(ParseRepositoryRuleMember2_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*File_path_restriction_type))
+            m.SetTypeEscaped(val.(*RepositoryRuleMember2_type))
         }
         return nil
     }
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
-// returns a File_path_restriction_parametersable when successful
-func (m *File_path_restriction) GetParameters()(File_path_restriction_parametersable) {
+// returns a RepositoryRuleMember2_parametersable when successful
+func (m *RepositoryRuleMember2) GetParameters()(RepositoryRuleMember2_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
-// returns a *File_path_restriction_type when successful
-func (m *File_path_restriction) GetTypeEscaped()(*File_path_restriction_type) {
+// returns a *RepositoryRuleMember2_type when successful
+func (m *RepositoryRuleMember2) GetTypeEscaped()(*RepositoryRuleMember2_type) {
     return m.typeEscaped
 }
 // Serialize serializes information the current object
-func (m *File_path_restriction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *RepositoryRuleMember2) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("parameters", m.GetParameters())
         if err != nil {
@@ -90,22 +90,22 @@ func (m *File_path_restriction) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *File_path_restriction) SetAdditionalData(value map[string]any)() {
+func (m *RepositoryRuleMember2) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetParameters sets the parameters property value. The parameters property
-func (m *File_path_restriction) SetParameters(value File_path_restriction_parametersable)() {
+func (m *RepositoryRuleMember2) SetParameters(value RepositoryRuleMember2_parametersable)() {
     m.parameters = value
 }
 // SetTypeEscaped sets the type property value. The type property
-func (m *File_path_restriction) SetTypeEscaped(value *File_path_restriction_type)() {
+func (m *RepositoryRuleMember2) SetTypeEscaped(value *RepositoryRuleMember2_type)() {
     m.typeEscaped = value
 }
-type File_path_restrictionable interface {
+type RepositoryRuleMember2able interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetParameters()(File_path_restriction_parametersable)
-    GetTypeEscaped()(*File_path_restriction_type)
-    SetParameters(value File_path_restriction_parametersable)()
-    SetTypeEscaped(value *File_path_restriction_type)()
+    GetParameters()(RepositoryRuleMember2_parametersable)
+    GetTypeEscaped()(*RepositoryRuleMember2_type)
+    SetParameters(value RepositoryRuleMember2_parametersable)()
+    SetTypeEscaped(value *RepositoryRuleMember2_type)()
 }

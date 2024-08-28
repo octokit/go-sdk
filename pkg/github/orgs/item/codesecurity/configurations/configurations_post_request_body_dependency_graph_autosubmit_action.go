@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of Automatic dependency submission
 type ConfigurationsPostRequestBody_dependency_graph_autosubmit_action int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_dependency_graph_autosubmit_action(v str
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_DEPENDENCY_GRAPH_AUTOSUBMIT_ACTION
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_dependency_graph_autosubmit_action value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

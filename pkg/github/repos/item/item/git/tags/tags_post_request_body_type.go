@@ -1,7 +1,4 @@
 package tags
-import (
-    "errors"
-)
 // The type of the object we're tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.
 type TagsPostRequestBody_type int
 
@@ -24,7 +21,7 @@ func ParseTagsPostRequestBody_type(v string) (any, error) {
         case "blob":
             result = BLOB_TAGSPOSTREQUESTBODY_TYPE
         default:
-            return 0, errors.New("Unknown TagsPostRequestBody_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

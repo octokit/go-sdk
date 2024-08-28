@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of Dependabot alerts
 type WithConfiguration_PatchRequestBody_dependabot_alerts int
 
@@ -24,7 +21,7 @@ func ParseWithConfiguration_PatchRequestBody_dependabot_alerts(v string) (any, e
         case "not_set":
             result = NOT_SET_WITHCONFIGURATION_PATCHREQUESTBODY_DEPENDABOT_ALERTS
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_dependabot_alerts value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

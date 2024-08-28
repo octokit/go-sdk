@@ -1,7 +1,4 @@
 package rulesuites
-import (
-    "errors"
-)
 type GetRule_suite_resultQueryParameterType int
 
 const (
@@ -26,7 +23,7 @@ func ParseGetRule_suite_resultQueryParameterType(v string) (any, error) {
         case "all":
             result = ALL_GETRULE_SUITE_RESULTQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetRule_suite_resultQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The new status of the CodeQL variant analysis repository task.
 type CodeScanningVariantAnalysisStatus int
 
@@ -33,7 +30,7 @@ func ParseCodeScanningVariantAnalysisStatus(v string) (any, error) {
         case "timed_out":
             result = TIMED_OUT_CODESCANNINGVARIANTANALYSISSTATUS
         default:
-            return 0, errors.New("Unknown CodeScanningVariantAnalysisStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The type of the value for the property
 type WithCustom_property_namePutRequestBody_value_type int
 
@@ -27,7 +24,7 @@ func ParseWithCustom_property_namePutRequestBody_value_type(v string) (any, erro
         case "true_false":
             result = TRUE_FALSE_WITHCUSTOM_PROPERTY_NAMEPUTREQUESTBODY_VALUE_TYPE
         default:
-            return 0, errors.New("Unknown WithCustom_property_namePutRequestBody_value_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
