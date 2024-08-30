@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The state if the domain is verified
 type Page_protected_domain_state int
 
@@ -24,7 +21,7 @@ func ParsePage_protected_domain_state(v string) (any, error) {
         case "unverified":
             result = UNVERIFIED_PAGE_PROTECTED_DOMAIN_STATE
         default:
-            return 0, errors.New("Unknown Page_protected_domain_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

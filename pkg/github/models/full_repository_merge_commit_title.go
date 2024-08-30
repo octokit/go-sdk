@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The default value for a merge commit title.  - `PR_TITLE` - default to the pull request's title.  - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).
 type FullRepository_merge_commit_title int
 
@@ -21,7 +18,7 @@ func ParseFullRepository_merge_commit_title(v string) (any, error) {
         case "MERGE_MESSAGE":
             result = MERGE_MESSAGE_FULLREPOSITORY_MERGE_COMMIT_TITLE
         default:
-            return 0, errors.New("Unknown FullRepository_merge_commit_title value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package markdown
-import (
-    "errors"
-)
 // The rendering mode.
 type MarkdownPostRequestBody_mode int
 
@@ -21,7 +18,7 @@ func ParseMarkdownPostRequestBody_mode(v string) (any, error) {
         case "gfm":
             result = GFM_MARKDOWNPOSTREQUESTBODY_MODE
         default:
-            return 0, errors.New("Unknown MarkdownPostRequestBody_mode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

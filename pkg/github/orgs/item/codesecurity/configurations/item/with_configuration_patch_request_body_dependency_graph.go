@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of Dependency Graph
 type WithConfiguration_PatchRequestBody_dependency_graph int
 
@@ -24,7 +21,7 @@ func ParseWithConfiguration_PatchRequestBody_dependency_graph(v string) (any, er
         case "not_set":
             result = NOT_SET_WITHCONFIGURATION_PATCHREQUESTBODY_DEPENDENCY_GRAPH
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_dependency_graph value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

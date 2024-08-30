@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of secret scanning validity checks
 type ConfigurationsPostRequestBody_secret_scanning_validity_checks int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_secret_scanning_validity_checks(v string
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_SECRET_SCANNING_VALIDITY_CHECKS
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_secret_scanning_validity_checks value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleCommitterEmailPattern_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleCommitterEmailPattern_type(v string) (any, error) {
         case "committer_email_pattern":
             result = COMMITTER_EMAIL_PATTERN_REPOSITORYRULECOMMITTEREMAILPATTERN_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleCommitterEmailPattern_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

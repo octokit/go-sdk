@@ -1,7 +1,4 @@
 package lfs
-import (
-    "errors"
-)
 // Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
 type LfsPatchRequestBody_use_lfs int
 
@@ -21,7 +18,7 @@ func ParseLfsPatchRequestBody_use_lfs(v string) (any, error) {
         case "opt_out":
             result = OPT_OUT_LFSPATCHREQUESTBODY_USE_LFS
         default:
-            return 0, errors.New("Unknown LfsPatchRequestBody_use_lfs value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

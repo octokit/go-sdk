@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The state of the status.
 type DeploymentStatus_state int
 
@@ -36,7 +33,7 @@ func ParseDeploymentStatus_state(v string) (any, error) {
         case "in_progress":
             result = IN_PROGRESS_DEPLOYMENTSTATUS_STATE
         default:
-            return 0, errors.New("Unknown DeploymentStatus_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

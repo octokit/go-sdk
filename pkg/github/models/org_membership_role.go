@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The user's membership type in the organization.
 type OrgMembership_role int
 
@@ -24,7 +21,7 @@ func ParseOrgMembership_role(v string) (any, error) {
         case "billing_manager":
             result = BILLING_MANAGER_ORGMEMBERSHIP_ROLE
         default:
-            return 0, errors.New("Unknown OrgMembership_role value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

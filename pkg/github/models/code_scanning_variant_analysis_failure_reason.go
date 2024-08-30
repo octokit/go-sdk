@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 type CodeScanningVariantAnalysis_failure_reason int
 
@@ -24,7 +21,7 @@ func ParseCodeScanningVariantAnalysis_failure_reason(v string) (any, error) {
         case "internal_error":
             result = INTERNAL_ERROR_CODESCANNINGVARIANTANALYSIS_FAILURE_REASON
         default:
-            return 0, errors.New("Unknown CodeScanningVariantAnalysis_failure_reason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

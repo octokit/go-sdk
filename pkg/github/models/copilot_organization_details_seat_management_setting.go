@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The mode of assigning new seats.
 type CopilotOrganizationDetails_seat_management_setting int
 
@@ -27,7 +24,7 @@ func ParseCopilotOrganizationDetails_seat_management_setting(v string) (any, err
         case "unconfigured":
             result = UNCONFIGURED_COPILOTORGANIZATIONDETAILS_SEAT_MANAGEMENT_SETTING
         default:
-            return 0, errors.New("Unknown CopilotOrganizationDetails_seat_management_setting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

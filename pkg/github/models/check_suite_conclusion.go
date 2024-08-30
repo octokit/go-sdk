@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CheckSuite_conclusion int
 
 const (
@@ -41,7 +38,7 @@ func ParseCheckSuite_conclusion(v string) (any, error) {
         case "stale":
             result = STALE_CHECKSUITE_CONCLUSION
         default:
-            return 0, errors.New("Unknown CheckSuite_conclusion value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

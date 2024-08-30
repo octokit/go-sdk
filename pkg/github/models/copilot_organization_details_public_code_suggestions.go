@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
 type CopilotOrganizationDetails_public_code_suggestions int
 
@@ -27,7 +24,7 @@ func ParseCopilotOrganizationDetails_public_code_suggestions(v string) (any, err
         case "unknown":
             result = UNKNOWN_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
         default:
-            return 0, errors.New("Unknown CopilotOrganizationDetails_public_code_suggestions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

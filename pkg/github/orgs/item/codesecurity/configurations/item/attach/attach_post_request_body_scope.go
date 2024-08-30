@@ -1,7 +1,4 @@
 package attach
-import (
-    "errors"
-)
 // The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
 type AttachPostRequestBody_scope int
 
@@ -27,7 +24,7 @@ func ParseAttachPostRequestBody_scope(v string) (any, error) {
         case "selected":
             result = SELECTED_ATTACHPOSTREQUESTBODY_SCOPE
         default:
-            return 0, errors.New("Unknown AttachPostRequestBody_scope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

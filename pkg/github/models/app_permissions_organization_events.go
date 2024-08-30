@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to view events triggered by an activity in an organization.
 type AppPermissions_organization_events int
 
@@ -18,7 +15,7 @@ func ParseAppPermissions_organization_events(v string) (any, error) {
         case "read":
             result = READ_APPPERMISSIONS_ORGANIZATION_EVENTS
         default:
-            return 0, errors.New("Unknown AppPermissions_organization_events value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

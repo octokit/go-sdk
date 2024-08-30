@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RepositoryRuleRequiredStatusChecks_type int
 
 const (
@@ -17,7 +14,7 @@ func ParseRepositoryRuleRequiredStatusChecks_type(v string) (any, error) {
         case "required_status_checks":
             result = REQUIRED_STATUS_CHECKS_REPOSITORYRULEREQUIREDSTATUSCHECKS_TYPE
         default:
-            return 0, errors.New("Unknown RepositoryRuleRequiredStatusChecks_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

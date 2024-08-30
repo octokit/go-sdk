@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The severity of the advisory.
 type RepositoryAdvisory_severity int
 
@@ -27,7 +24,7 @@ func ParseRepositoryAdvisory_severity(v string) (any, error) {
         case "low":
             result = LOW_REPOSITORYADVISORY_SEVERITY
         default:
-            return 0, errors.New("Unknown RepositoryAdvisory_severity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

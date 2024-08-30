@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Whether to approve or reject deployment to the specified environments.
 type ReviewCustomGatesStateRequired_state int
 
@@ -21,7 +18,7 @@ func ParseReviewCustomGatesStateRequired_state(v string) (any, error) {
         case "rejected":
             result = REJECTED_REVIEWCUSTOMGATESSTATEREQUIRED_STATE
         default:
-            return 0, errors.New("Unknown ReviewCustomGatesStateRequired_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

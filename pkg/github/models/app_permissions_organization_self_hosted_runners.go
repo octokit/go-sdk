@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
 type AppPermissions_organization_self_hosted_runners int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_organization_self_hosted_runners(v string) (any, error)
         case "write":
             result = WRITE_APPPERMISSIONS_ORGANIZATION_SELF_HOSTED_RUNNERS
         default:
-            return 0, errors.New("Unknown AppPermissions_organization_self_hosted_runners value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

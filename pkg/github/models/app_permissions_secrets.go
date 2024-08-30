@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to manage repository secrets.
 type AppPermissions_secrets int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_secrets(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_SECRETS
         default:
-            return 0, errors.New("Unknown AppPermissions_secrets value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The state of the status.
 type WithShaPostRequestBody_state int
 
@@ -27,7 +24,7 @@ func ParseWithShaPostRequestBody_state(v string) (any, error) {
         case "success":
             result = SUCCESS_WITHSHAPOSTREQUESTBODY_STATE
         default:
-            return 0, errors.New("Unknown WithShaPostRequestBody_state value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

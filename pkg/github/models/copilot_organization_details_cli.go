@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
 type CopilotOrganizationDetails_cli int
 
@@ -24,7 +21,7 @@ func ParseCopilotOrganizationDetails_cli(v string) (any, error) {
         case "unconfigured":
             result = UNCONFIGURED_COPILOTORGANIZATIONDETAILS_CLI
         default:
-            return 0, errors.New("Unknown CopilotOrganizationDetails_cli value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

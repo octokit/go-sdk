@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of GitHub Advanced Security
 type ConfigurationsPostRequestBody_advanced_security int
 
@@ -21,7 +18,7 @@ func ParseConfigurationsPostRequestBody_advanced_security(v string) (any, error)
         case "disabled":
             result = DISABLED_CONFIGURATIONSPOSTREQUESTBODY_ADVANCED_SECURITY
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_advanced_security value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

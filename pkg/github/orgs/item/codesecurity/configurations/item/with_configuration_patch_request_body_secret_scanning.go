@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of secret scanning
 type WithConfiguration_PatchRequestBody_secret_scanning int
 
@@ -24,7 +21,7 @@ func ParseWithConfiguration_PatchRequestBody_secret_scanning(v string) (any, err
         case "not_set":
             result = NOT_SET_WITHCONFIGURATION_PATCHREQUESTBODY_SECRET_SCANNING
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_secret_scanning value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

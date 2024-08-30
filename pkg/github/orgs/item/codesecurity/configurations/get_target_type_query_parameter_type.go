@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 type GetTarget_typeQueryParameterType int
 
 const (
@@ -20,7 +17,7 @@ func ParseGetTarget_typeQueryParameterType(v string) (any, error) {
         case "all":
             result = ALL_GETTARGET_TYPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetTarget_typeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of code scanning default setup
 type CodeSecurityConfiguration_code_scanning_default_setup int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_code_scanning_default_setup(v string) (any, 
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_CODE_SCANNING_DEFAULT_SETUP
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_code_scanning_default_setup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

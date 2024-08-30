@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of the value for the property
 type CustomProperty_value_type int
 
@@ -27,7 +24,7 @@ func ParseCustomProperty_value_type(v string) (any, error) {
         case "true_false":
             result = TRUE_FALSE_CUSTOMPROPERTY_VALUE_TYPE
         default:
-            return 0, errors.New("Unknown CustomProperty_value_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

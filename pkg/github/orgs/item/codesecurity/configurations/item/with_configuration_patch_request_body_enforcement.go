@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enforcement status for a security configuration
 type WithConfiguration_PatchRequestBody_enforcement int
 
@@ -21,7 +18,7 @@ func ParseWithConfiguration_PatchRequestBody_enforcement(v string) (any, error) 
         case "unenforced":
             result = UNENFORCED_WITHCONFIGURATION_PATCHREQUESTBODY_ENFORCEMENT
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_enforcement value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

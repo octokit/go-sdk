@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of secret scanning push protection
 type CodeSecurityConfiguration_secret_scanning_push_protection int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_secret_scanning_push_protection(v string) (a
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_SECRET_SCANNING_PUSH_PROTECTION
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_secret_scanning_push_protection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

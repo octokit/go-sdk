@@ -1,7 +1,4 @@
 package rulesuites
-import (
-    "errors"
-)
 type GetTime_periodQueryParameterType int
 
 const (
@@ -26,7 +23,7 @@ func ParseGetTime_periodQueryParameterType(v string) (any, error) {
         case "month":
             result = MONTH_GETTIME_PERIODQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetTime_periodQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

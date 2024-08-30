@@ -1,7 +1,4 @@
 package personalaccesstokenrequests
-import (
-    "errors"
-)
 // Action to apply to the requests.
 type PersonalAccessTokenRequestsPostRequestBody_action int
 
@@ -21,7 +18,7 @@ func ParsePersonalAccessTokenRequestsPostRequestBody_action(v string) (any, erro
         case "deny":
             result = DENY_PERSONALACCESSTOKENREQUESTSPOSTREQUESTBODY_ACTION
         default:
-            return 0, errors.New("Unknown PersonalAccessTokenRequestsPostRequestBody_action value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package defaults
-import (
-    "errors"
-)
 // Specify which types of repository this security configuration should be applied to by default.
 type DefaultsPutRequestBody_default_for_new_repos int
 
@@ -27,7 +24,7 @@ func ParseDefaultsPutRequestBody_default_for_new_repos(v string) (any, error) {
         case "public":
             result = PUBLIC_DEFAULTSPUTREQUESTBODY_DEFAULT_FOR_NEW_REPOS
         default:
-            return 0, errors.New("Unknown DefaultsPutRequestBody_default_for_new_repos value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

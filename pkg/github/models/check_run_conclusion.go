@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CheckRun_conclusion int
 
 const (
@@ -35,7 +32,7 @@ func ParseCheckRun_conclusion(v string) (any, error) {
         case "action_required":
             result = ACTION_REQUIRED_CHECKRUN_CONCLUSION
         default:
-            return 0, errors.New("Unknown CheckRun_conclusion value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

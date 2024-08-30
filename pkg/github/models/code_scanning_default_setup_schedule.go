@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The frequency of the periodic analysis.
 type CodeScanningDefaultSetup_schedule int
 
@@ -18,7 +15,7 @@ func ParseCodeScanningDefaultSetup_schedule(v string) (any, error) {
         case "weekly":
             result = WEEKLY_CODESCANNINGDEFAULTSETUP_SCHEDULE
         default:
-            return 0, errors.New("Unknown CodeScanningDefaultSetup_schedule value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

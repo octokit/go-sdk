@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of the code security configuration.
 type CodeSecurityConfiguration_target_type int
 
@@ -21,7 +18,7 @@ func ParseCodeSecurityConfiguration_target_type(v string) (any, error) {
         case "organization":
             result = ORGANIZATION_CODESECURITYCONFIGURATION_TARGET_TYPE
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_target_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

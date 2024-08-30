@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
 type CheckRun_status int
 
@@ -33,7 +30,7 @@ func ParseCheckRun_status(v string) (any, error) {
         case "pending":
             result = PENDING_CHECKRUN_STATUS
         default:
-            return 0, errors.New("Unknown CheckRun_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

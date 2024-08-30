@@ -1,7 +1,4 @@
 package activity
-import (
-    "errors"
-)
 type GetActivity_typeQueryParameterType int
 
 const (
@@ -32,7 +29,7 @@ func ParseGetActivity_typeQueryParameterType(v string) (any, error) {
         case "merge_queue_merge":
             result = MERGE_QUEUE_MERGE_GETACTIVITY_TYPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetActivity_typeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

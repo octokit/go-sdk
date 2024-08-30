@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of Dependabot security updates for the repository.
 type SecurityAndAnalysis_dependabot_security_updates_status int
 
@@ -21,7 +18,7 @@ func ParseSecurityAndAnalysis_dependabot_security_updates_status(v string) (any,
         case "disabled":
             result = DISABLED_SECURITYANDANALYSIS_DEPENDABOT_SECURITY_UPDATES_STATUS
         default:
-            return 0, errors.New("Unknown SecurityAndAnalysis_dependabot_security_updates_status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

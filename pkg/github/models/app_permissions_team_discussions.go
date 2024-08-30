@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The level of permission to grant the access token to manage team discussions and related comments.
 type AppPermissions_team_discussions int
 
@@ -21,7 +18,7 @@ func ParseAppPermissions_team_discussions(v string) (any, error) {
         case "write":
             result = WRITE_APPPERMISSIONS_TEAM_DISCUSSIONS
         default:
-            return 0, errors.New("Unknown AppPermissions_team_discussions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

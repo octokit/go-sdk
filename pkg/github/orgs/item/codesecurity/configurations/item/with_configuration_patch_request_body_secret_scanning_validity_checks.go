@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The enablement status of secret scanning validity checks
 type WithConfiguration_PatchRequestBody_secret_scanning_validity_checks int
 
@@ -24,7 +21,7 @@ func ParseWithConfiguration_PatchRequestBody_secret_scanning_validity_checks(v s
         case "not_set":
             result = NOT_SET_WITHCONFIGURATION_PATCHREQUESTBODY_SECRET_SCANNING_VALIDITY_CHECKS
         default:
-            return 0, errors.New("Unknown WithConfiguration_PatchRequestBody_secret_scanning_validity_checks value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

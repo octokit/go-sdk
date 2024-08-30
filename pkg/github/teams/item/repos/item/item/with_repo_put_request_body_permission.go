@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
 type WithRepoPutRequestBody_permission int
 
@@ -24,7 +21,7 @@ func ParseWithRepoPutRequestBody_permission(v string) (any, error) {
         case "admin":
             result = ADMIN_WITHREPOPUTREQUESTBODY_PERMISSION
         default:
-            return 0, errors.New("Unknown WithRepoPutRequestBody_permission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

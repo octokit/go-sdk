@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of advisory.
 type GlobalAdvisory_type int
 
@@ -24,7 +21,7 @@ func ParseGlobalAdvisory_type(v string) (any, error) {
         case "malware":
             result = MALWARE_GLOBALADVISORY_TYPE
         default:
-            return 0, errors.New("Unknown GlobalAdvisory_type value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

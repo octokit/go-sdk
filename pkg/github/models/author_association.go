@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // How the author is associated with the repository.
 type AuthorAssociation int
 
@@ -39,7 +36,7 @@ func ParseAuthorAssociation(v string) (any, error) {
         case "OWNER":
             result = OWNER_AUTHORASSOCIATION
         default:
-            return 0, errors.New("Unknown AuthorAssociation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

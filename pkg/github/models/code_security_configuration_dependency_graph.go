@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enablement status of Dependency Graph
 type CodeSecurityConfiguration_dependency_graph int
 
@@ -24,7 +21,7 @@ func ParseCodeSecurityConfiguration_dependency_graph(v string) (any, error) {
         case "not_set":
             result = NOT_SET_CODESECURITYCONFIGURATION_DEPENDENCY_GRAPH
         default:
-            return 0, errors.New("Unknown CodeSecurityConfiguration_dependency_graph value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

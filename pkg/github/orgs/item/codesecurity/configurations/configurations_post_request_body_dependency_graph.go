@@ -1,7 +1,4 @@
 package configurations
-import (
-    "errors"
-)
 // The enablement status of Dependency Graph
 type ConfigurationsPostRequestBody_dependency_graph int
 
@@ -24,7 +21,7 @@ func ParseConfigurationsPostRequestBody_dependency_graph(v string) (any, error) 
         case "not_set":
             result = NOT_SET_CONFIGURATIONSPOSTREQUESTBODY_DEPENDENCY_GRAPH
         default:
-            return 0, errors.New("Unknown ConfigurationsPostRequestBody_dependency_graph value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

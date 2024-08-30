@@ -1,7 +1,4 @@
 package item
-import (
-    "errors"
-)
 // The permission to grant the collaborator.
 type WithUsernamePutRequestBody_permission int
 
@@ -24,7 +21,7 @@ func ParseWithUsernamePutRequestBody_permission(v string) (any, error) {
         case "admin":
             result = ADMIN_WITHUSERNAMEPUTREQUESTBODY_PERMISSION
         default:
-            return 0, errors.New("Unknown WithUsernamePutRequestBody_permission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

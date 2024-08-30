@@ -1,7 +1,4 @@
 package repos
-import (
-    "errors"
-)
 type GetTypeQueryParameterType int
 
 const (
@@ -32,7 +29,7 @@ func ParseGetTypeQueryParameterType(v string) (any, error) {
         case "member":
             result = MEMBER_GETTYPEQUERYPARAMETERTYPE
         default:
-            return 0, errors.New("Unknown GetTypeQueryParameterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

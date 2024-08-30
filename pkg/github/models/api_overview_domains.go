@@ -9,6 +9,8 @@ type ApiOverview_domains struct {
     actions []string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // The artifact_attestations property
+    artifact_attestations ApiOverview_domains_artifact_attestationsable
     // The codespaces property
     codespaces []string
     // The copilot property
@@ -40,6 +42,11 @@ func (m *ApiOverview_domains) GetActions()([]string) {
 func (m *ApiOverview_domains) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetArtifactAttestations gets the artifact_attestations property value. The artifact_attestations property
+// returns a ApiOverview_domains_artifact_attestationsable when successful
+func (m *ApiOverview_domains) GetArtifactAttestations()(ApiOverview_domains_artifact_attestationsable) {
+    return m.artifact_attestations
+}
 // GetCodespaces gets the codespaces property value. The codespaces property
 // returns a []string when successful
 func (m *ApiOverview_domains) GetCodespaces()([]string) {
@@ -67,6 +74,16 @@ func (m *ApiOverview_domains) GetFieldDeserializers()(map[string]func(i878a80d23
                 }
             }
             m.SetActions(res)
+        }
+        return nil
+    }
+    res["artifact_attestations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApiOverview_domains_artifact_attestationsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArtifactAttestations(val.(ApiOverview_domains_artifact_attestationsable))
         }
         return nil
     }
@@ -154,6 +171,12 @@ func (m *ApiOverview_domains) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("artifact_attestations", m.GetArtifactAttestations())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCodespaces() != nil {
         err := writer.WriteCollectionOfStringValues("codespaces", m.GetCodespaces())
         if err != nil {
@@ -194,6 +217,10 @@ func (m *ApiOverview_domains) SetActions(value []string)() {
 func (m *ApiOverview_domains) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetArtifactAttestations sets the artifact_attestations property value. The artifact_attestations property
+func (m *ApiOverview_domains) SetArtifactAttestations(value ApiOverview_domains_artifact_attestationsable)() {
+    m.artifact_attestations = value
+}
 // SetCodespaces sets the codespaces property value. The codespaces property
 func (m *ApiOverview_domains) SetCodespaces(value []string)() {
     m.codespaces = value
@@ -214,11 +241,13 @@ type ApiOverview_domainsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActions()([]string)
+    GetArtifactAttestations()(ApiOverview_domains_artifact_attestationsable)
     GetCodespaces()([]string)
     GetCopilot()([]string)
     GetPackages()([]string)
     GetWebsite()([]string)
     SetActions(value []string)()
+    SetArtifactAttestations(value ApiOverview_domains_artifact_attestationsable)()
     SetCodespaces(value []string)()
     SetCopilot(value []string)()
     SetPackages(value []string)()
