@@ -9,6 +9,12 @@ type CodeScanningAlertRuleSummary struct {
     additionalData map[string]any
     // A short description of the rule used to detect the alert.
     description *string
+    // A description of the rule used to detect the alert.
+    full_description *string
+    // Detailed documentation for the rule as GitHub Flavored Markdown.
+    help *string
+    // A link to the documentation for the rule used to detect the alert.
+    help_uri *string
     // A unique identifier for the rule used to detect the alert.
     id *string
     // The name of the rule used to detect the alert.
@@ -53,6 +59,36 @@ func (m *CodeScanningAlertRuleSummary) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["full_description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFullDescription(val)
+        }
+        return nil
+    }
+    res["help"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHelp(val)
+        }
+        return nil
+    }
+    res["help_uri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHelpUri(val)
         }
         return nil
     }
@@ -114,6 +150,21 @@ func (m *CodeScanningAlertRuleSummary) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetFullDescription gets the full_description property value. A description of the rule used to detect the alert.
+// returns a *string when successful
+func (m *CodeScanningAlertRuleSummary) GetFullDescription()(*string) {
+    return m.full_description
+}
+// GetHelp gets the help property value. Detailed documentation for the rule as GitHub Flavored Markdown.
+// returns a *string when successful
+func (m *CodeScanningAlertRuleSummary) GetHelp()(*string) {
+    return m.help
+}
+// GetHelpUri gets the help_uri property value. A link to the documentation for the rule used to detect the alert.
+// returns a *string when successful
+func (m *CodeScanningAlertRuleSummary) GetHelpUri()(*string) {
+    return m.help_uri
+}
 // GetId gets the id property value. A unique identifier for the rule used to detect the alert.
 // returns a *string when successful
 func (m *CodeScanningAlertRuleSummary) GetId()(*string) {
@@ -143,6 +194,24 @@ func (m *CodeScanningAlertRuleSummary) GetTags()([]string) {
 func (m *CodeScanningAlertRuleSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("full_description", m.GetFullDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("help", m.GetHelp())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("help_uri", m.GetHelpUri())
         if err != nil {
             return err
         }
@@ -195,6 +264,18 @@ func (m *CodeScanningAlertRuleSummary) SetAdditionalData(value map[string]any)()
 func (m *CodeScanningAlertRuleSummary) SetDescription(value *string)() {
     m.description = value
 }
+// SetFullDescription sets the full_description property value. A description of the rule used to detect the alert.
+func (m *CodeScanningAlertRuleSummary) SetFullDescription(value *string)() {
+    m.full_description = value
+}
+// SetHelp sets the help property value. Detailed documentation for the rule as GitHub Flavored Markdown.
+func (m *CodeScanningAlertRuleSummary) SetHelp(value *string)() {
+    m.help = value
+}
+// SetHelpUri sets the help_uri property value. A link to the documentation for the rule used to detect the alert.
+func (m *CodeScanningAlertRuleSummary) SetHelpUri(value *string)() {
+    m.help_uri = value
+}
 // SetId sets the id property value. A unique identifier for the rule used to detect the alert.
 func (m *CodeScanningAlertRuleSummary) SetId(value *string)() {
     m.id = value
@@ -219,12 +300,18 @@ type CodeScanningAlertRuleSummaryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
+    GetFullDescription()(*string)
+    GetHelp()(*string)
+    GetHelpUri()(*string)
     GetId()(*string)
     GetName()(*string)
     GetSecuritySeverityLevel()(*CodeScanningAlertRuleSummary_security_severity_level)
     GetSeverity()(*CodeScanningAlertRuleSummary_severity)
     GetTags()([]string)
     SetDescription(value *string)()
+    SetFullDescription(value *string)()
+    SetHelp(value *string)()
+    SetHelpUri(value *string)()
     SetId(value *string)()
     SetName(value *string)()
     SetSecuritySeverityLevel(value *CodeScanningAlertRuleSummary_security_severity_level)()

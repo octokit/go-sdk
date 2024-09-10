@@ -39,6 +39,8 @@ type CodeSecurityConfiguration struct {
     private_vulnerability_reporting *CodeSecurityConfiguration_private_vulnerability_reporting
     // The enablement status of secret scanning
     secret_scanning *CodeSecurityConfiguration_secret_scanning
+    // The enablement status of secret scanning non-provider patterns
+    secret_scanning_non_provider_patterns *CodeSecurityConfiguration_secret_scanning_non_provider_patterns
     // The enablement status of secret scanning push protection
     secret_scanning_push_protection *CodeSecurityConfiguration_secret_scanning_push_protection
     // The enablement status of secret scanning validity checks
@@ -271,6 +273,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["secret_scanning_non_provider_patterns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_non_provider_patterns)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningNonProviderPatterns(val.(*CodeSecurityConfiguration_secret_scanning_non_provider_patterns))
+        }
+        return nil
+    }
     res["secret_scanning_push_protection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_push_protection)
         if err != nil {
@@ -347,6 +359,11 @@ func (m *CodeSecurityConfiguration) GetPrivateVulnerabilityReporting()(*CodeSecu
 // returns a *CodeSecurityConfiguration_secret_scanning when successful
 func (m *CodeSecurityConfiguration) GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning) {
     return m.secret_scanning
+}
+// GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. The enablement status of secret scanning non-provider patterns
+// returns a *CodeSecurityConfiguration_secret_scanning_non_provider_patterns when successful
+func (m *CodeSecurityConfiguration) GetSecretScanningNonProviderPatterns()(*CodeSecurityConfiguration_secret_scanning_non_provider_patterns) {
+    return m.secret_scanning_non_provider_patterns
 }
 // GetSecretScanningPushProtection gets the secret_scanning_push_protection property value. The enablement status of secret scanning push protection
 // returns a *CodeSecurityConfiguration_secret_scanning_push_protection when successful
@@ -474,6 +491,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetSecretScanningNonProviderPatterns() != nil {
+        cast := (*m.GetSecretScanningNonProviderPatterns()).String()
+        err := writer.WriteStringValue("secret_scanning_non_provider_patterns", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSecretScanningPushProtection() != nil {
         cast := (*m.GetSecretScanningPushProtection()).String()
         err := writer.WriteStringValue("secret_scanning_push_protection", &cast)
@@ -579,6 +603,10 @@ func (m *CodeSecurityConfiguration) SetPrivateVulnerabilityReporting(value *Code
 func (m *CodeSecurityConfiguration) SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)() {
     m.secret_scanning = value
 }
+// SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. The enablement status of secret scanning non-provider patterns
+func (m *CodeSecurityConfiguration) SetSecretScanningNonProviderPatterns(value *CodeSecurityConfiguration_secret_scanning_non_provider_patterns)() {
+    m.secret_scanning_non_provider_patterns = value
+}
 // SetSecretScanningPushProtection sets the secret_scanning_push_protection property value. The enablement status of secret scanning push protection
 func (m *CodeSecurityConfiguration) SetSecretScanningPushProtection(value *CodeSecurityConfiguration_secret_scanning_push_protection)() {
     m.secret_scanning_push_protection = value
@@ -617,6 +645,7 @@ type CodeSecurityConfigurationable interface {
     GetName()(*string)
     GetPrivateVulnerabilityReporting()(*CodeSecurityConfiguration_private_vulnerability_reporting)
     GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning)
+    GetSecretScanningNonProviderPatterns()(*CodeSecurityConfiguration_secret_scanning_non_provider_patterns)
     GetSecretScanningPushProtection()(*CodeSecurityConfiguration_secret_scanning_push_protection)
     GetSecretScanningValidityChecks()(*CodeSecurityConfiguration_secret_scanning_validity_checks)
     GetTargetType()(*CodeSecurityConfiguration_target_type)
@@ -637,6 +666,7 @@ type CodeSecurityConfigurationable interface {
     SetName(value *string)()
     SetPrivateVulnerabilityReporting(value *CodeSecurityConfiguration_private_vulnerability_reporting)()
     SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)()
+    SetSecretScanningNonProviderPatterns(value *CodeSecurityConfiguration_secret_scanning_non_provider_patterns)()
     SetSecretScanningPushProtection(value *CodeSecurityConfiguration_secret_scanning_push_protection)()
     SetSecretScanningValidityChecks(value *CodeSecurityConfiguration_secret_scanning_validity_checks)()
     SetTargetType(value *CodeSecurityConfiguration_target_type)()
