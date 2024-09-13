@@ -8,11 +8,10 @@ const (
     REPOSITORYROLE_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
     TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
     DEPLOYKEY_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
-    ENTERPRISETEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
 )
 
 func (i RepositoryRulesetBypassActor_actor_type) String() string {
-    return []string{"Integration", "OrganizationAdmin", "RepositoryRole", "Team", "DeployKey", "EnterpriseTeam"}[i]
+    return []string{"Integration", "OrganizationAdmin", "RepositoryRole", "Team", "DeployKey"}[i]
 }
 func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
     result := INTEGRATION_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
@@ -27,8 +26,6 @@ func ParseRepositoryRulesetBypassActor_actor_type(v string) (any, error) {
             result = TEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         case "DeployKey":
             result = DEPLOYKEY_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
-        case "EnterpriseTeam":
-            result = ENTERPRISETEAM_REPOSITORYRULESETBYPASSACTOR_ACTOR_TYPE
         default:
             return nil, nil
     }

@@ -9,7 +9,7 @@ type CodeScanningAlertRule struct {
     additionalData map[string]any
     // A short description of the rule used to detect the alert.
     description *string
-    // description of the rule used to detect the alert.
+    // A description of the rule used to detect the alert.
     full_description *string
     // Detailed documentation for the rule as GitHub Flavored Markdown.
     help *string
@@ -150,7 +150,7 @@ func (m *CodeScanningAlertRule) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetFullDescription gets the full_description property value. description of the rule used to detect the alert.
+// GetFullDescription gets the full_description property value. A description of the rule used to detect the alert.
 // returns a *string when successful
 func (m *CodeScanningAlertRule) GetFullDescription()(*string) {
     return m.full_description
@@ -264,7 +264,7 @@ func (m *CodeScanningAlertRule) SetAdditionalData(value map[string]any)() {
 func (m *CodeScanningAlertRule) SetDescription(value *string)() {
     m.description = value
 }
-// SetFullDescription sets the full_description property value. description of the rule used to detect the alert.
+// SetFullDescription sets the full_description property value. A description of the rule used to detect the alert.
 func (m *CodeScanningAlertRule) SetFullDescription(value *string)() {
     m.full_description = value
 }

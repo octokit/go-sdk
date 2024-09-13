@@ -32,7 +32,7 @@ type CodeScanningVariantAnalysis struct {
     // Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
     skipped_repositories CodeScanningVariantAnalysis_skipped_repositoriesable
     // The status property
-    status *CodeScanningVariantAnalysisStatus
+    status *CodeScanningVariantAnalysis_status
     // The date and time at which the variant analysis was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -204,12 +204,12 @@ func (m *CodeScanningVariantAnalysis) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCodeScanningVariantAnalysisStatus)
+        val, err := n.GetEnumValue(ParseCodeScanningVariantAnalysis_status)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetStatus(val.(*CodeScanningVariantAnalysisStatus))
+            m.SetStatus(val.(*CodeScanningVariantAnalysis_status))
         }
         return nil
     }
@@ -251,8 +251,8 @@ func (m *CodeScanningVariantAnalysis) GetSkippedRepositories()(CodeScanningVaria
     return m.skipped_repositories
 }
 // GetStatus gets the status property value. The status property
-// returns a *CodeScanningVariantAnalysisStatus when successful
-func (m *CodeScanningVariantAnalysis) GetStatus()(*CodeScanningVariantAnalysisStatus) {
+// returns a *CodeScanningVariantAnalysis_status when successful
+func (m *CodeScanningVariantAnalysis) GetStatus()(*CodeScanningVariantAnalysis_status) {
     return m.status
 }
 // GetUpdatedAt gets the updated_at property value. The date and time at which the variant analysis was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
@@ -406,7 +406,7 @@ func (m *CodeScanningVariantAnalysis) SetSkippedRepositories(value CodeScanningV
     m.skipped_repositories = value
 }
 // SetStatus sets the status property value. The status property
-func (m *CodeScanningVariantAnalysis) SetStatus(value *CodeScanningVariantAnalysisStatus)() {
+func (m *CodeScanningVariantAnalysis) SetStatus(value *CodeScanningVariantAnalysis_status)() {
     m.status = value
 }
 // SetUpdatedAt sets the updated_at property value. The date and time at which the variant analysis was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
@@ -427,7 +427,7 @@ type CodeScanningVariantAnalysisable interface {
     GetQueryPackUrl()(*string)
     GetScannedRepositories()([]CodeScanningVariantAnalysis_scanned_repositoriesable)
     GetSkippedRepositories()(CodeScanningVariantAnalysis_skipped_repositoriesable)
-    GetStatus()(*CodeScanningVariantAnalysisStatus)
+    GetStatus()(*CodeScanningVariantAnalysis_status)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetActionsWorkflowRunId(value *int32)()
     SetActor(value SimpleUserable)()
@@ -440,6 +440,6 @@ type CodeScanningVariantAnalysisable interface {
     SetQueryPackUrl(value *string)()
     SetScannedRepositories(value []CodeScanningVariantAnalysis_scanned_repositoriesable)()
     SetSkippedRepositories(value CodeScanningVariantAnalysis_skipped_repositoriesable)()
-    SetStatus(value *CodeScanningVariantAnalysisStatus)()
+    SetStatus(value *CodeScanningVariantAnalysis_status)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }
