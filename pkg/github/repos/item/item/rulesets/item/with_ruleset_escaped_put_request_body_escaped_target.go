@@ -1,5 +1,5 @@
 package item
-// The target of the ruleset> [!NOTE]> The `push` target is in beta and is subject to change.
+// The target of the ruleset
 type WithRuleset_PutRequestBody_target int
 
 const (

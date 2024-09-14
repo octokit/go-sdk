@@ -27,12 +27,12 @@ type ItemItemPullsCommentsRequestBuilderGetQueryParameters struct {
 }
 // ByComment_id gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.pulls.comments.item collection
 // returns a *ItemItemPullsCommentsWithComment_ItemRequestBuilder when successful
-func (m *ItemItemPullsCommentsRequestBuilder) ByComment_id(comment_id int32)(*ItemItemPullsCommentsWithComment_ItemRequestBuilder) {
+func (m *ItemItemPullsCommentsRequestBuilder) ByComment_id(comment_id int64)(*ItemItemPullsCommentsWithComment_ItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    urlTplParams["comment_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(int64(comment_id), 10)
+    urlTplParams["comment_id"] = i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274.FormatInt(comment_id, 10)
     return NewItemItemPullsCommentsWithComment_ItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemItemPullsCommentsRequestBuilderInternal instantiates a new ItemItemPullsCommentsRequestBuilder and sets the default values.

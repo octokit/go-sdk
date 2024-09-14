@@ -1,5 +1,5 @@
 package models
-// The target of the ruleset> [!NOTE]> The `push` target is in beta and is subject to change.
+// The target of the ruleset
 type RepositoryRuleset_target int
 
 const (
