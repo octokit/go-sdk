@@ -13,6 +13,8 @@ type GlobalAdvisory struct {
     cve_id *string
     // The cvss property
     cvss GlobalAdvisory_cvssable
+    // The cvss_severities property
+    cvss_severities CvssSeveritiesable
     // The cwes property
     cwes []GlobalAdvisory_cwesable
     // A detailed description of what the advisory entails.
@@ -78,6 +80,11 @@ func (m *GlobalAdvisory) GetCveId()(*string) {
 func (m *GlobalAdvisory) GetCvss()(GlobalAdvisory_cvssable) {
     return m.cvss
 }
+// GetCvssSeverities gets the cvss_severities property value. The cvss_severities property
+// returns a CvssSeveritiesable when successful
+func (m *GlobalAdvisory) GetCvssSeverities()(CvssSeveritiesable) {
+    return m.cvss_severities
+}
 // GetCwes gets the cwes property value. The cwes property
 // returns a []GlobalAdvisory_cwesable when successful
 func (m *GlobalAdvisory) GetCwes()([]GlobalAdvisory_cwesable) {
@@ -130,6 +137,16 @@ func (m *GlobalAdvisory) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetCvss(val.(GlobalAdvisory_cvssable))
+        }
+        return nil
+    }
+    res["cvss_severities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCvssSeveritiesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCvssSeverities(val.(CvssSeveritiesable))
         }
         return nil
     }
@@ -437,6 +454,12 @@ func (m *GlobalAdvisory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("cvss_severities", m.GetCvssSeverities())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCwes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCwes()))
         for i, v := range m.GetCwes() {
@@ -511,6 +534,10 @@ func (m *GlobalAdvisory) SetCveId(value *string)() {
 // SetCvss sets the cvss property value. The cvss property
 func (m *GlobalAdvisory) SetCvss(value GlobalAdvisory_cvssable)() {
     m.cvss = value
+}
+// SetCvssSeverities sets the cvss_severities property value. The cvss_severities property
+func (m *GlobalAdvisory) SetCvssSeverities(value CvssSeveritiesable)() {
+    m.cvss_severities = value
 }
 // SetCwes sets the cwes property value. The cwes property
 func (m *GlobalAdvisory) SetCwes(value []GlobalAdvisory_cwesable)() {
@@ -593,6 +620,7 @@ type GlobalAdvisoryable interface {
     GetCredits()([]GlobalAdvisory_creditsable)
     GetCveId()(*string)
     GetCvss()(GlobalAdvisory_cvssable)
+    GetCvssSeverities()(CvssSeveritiesable)
     GetCwes()([]GlobalAdvisory_cwesable)
     GetDescription()(*string)
     GetEpss()(GlobalAdvisory_epssable)
@@ -615,6 +643,7 @@ type GlobalAdvisoryable interface {
     SetCredits(value []GlobalAdvisory_creditsable)()
     SetCveId(value *string)()
     SetCvss(value GlobalAdvisory_cvssable)()
+    SetCvssSeverities(value CvssSeveritiesable)()
     SetCwes(value []GlobalAdvisory_cwesable)()
     SetDescription(value *string)()
     SetEpss(value GlobalAdvisory_epssable)()

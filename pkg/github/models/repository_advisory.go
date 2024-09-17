@@ -25,6 +25,8 @@ type RepositoryAdvisory struct {
     cve_id *string
     // The cvss property
     cvss RepositoryAdvisory_cvssable
+    // The cvss_severities property
+    cvss_severities CvssSeveritiesable
     // A list of only the CWE IDs.
     cwe_ids []string
     // The cwes property
@@ -115,6 +117,11 @@ func (m *RepositoryAdvisory) GetCveId()(*string) {
 // returns a RepositoryAdvisory_cvssable when successful
 func (m *RepositoryAdvisory) GetCvss()(RepositoryAdvisory_cvssable) {
     return m.cvss
+}
+// GetCvssSeverities gets the cvss_severities property value. The cvss_severities property
+// returns a CvssSeveritiesable when successful
+func (m *RepositoryAdvisory) GetCvssSeverities()(CvssSeveritiesable) {
+    return m.cvss_severities
 }
 // GetCweIds gets the cwe_ids property value. A list of only the CWE IDs.
 // returns a []string when successful
@@ -246,6 +253,16 @@ func (m *RepositoryAdvisory) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetCvss(val.(RepositoryAdvisory_cvssable))
+        }
+        return nil
+    }
+    res["cvss_severities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCvssSeveritiesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCvssSeverities(val.(CvssSeveritiesable))
         }
         return nil
     }
@@ -565,6 +582,12 @@ func (m *RepositoryAdvisory) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("cvss_severities", m.GetCvssSeverities())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCweIds() != nil {
         err := writer.WriteCollectionOfStringValues("cwe_ids", m.GetCweIds())
         if err != nil {
@@ -647,6 +670,10 @@ func (m *RepositoryAdvisory) SetCveId(value *string)() {
 func (m *RepositoryAdvisory) SetCvss(value RepositoryAdvisory_cvssable)() {
     m.cvss = value
 }
+// SetCvssSeverities sets the cvss_severities property value. The cvss_severities property
+func (m *RepositoryAdvisory) SetCvssSeverities(value CvssSeveritiesable)() {
+    m.cvss_severities = value
+}
 // SetCweIds sets the cwe_ids property value. A list of only the CWE IDs.
 func (m *RepositoryAdvisory) SetCweIds(value []string)() {
     m.cwe_ids = value
@@ -726,6 +753,7 @@ type RepositoryAdvisoryable interface {
     GetCreditsDetailed()([]RepositoryAdvisoryCreditable)
     GetCveId()(*string)
     GetCvss()(RepositoryAdvisory_cvssable)
+    GetCvssSeverities()(CvssSeveritiesable)
     GetCweIds()([]string)
     GetCwes()([]RepositoryAdvisory_cwesable)
     GetDescription()(*string)
@@ -752,6 +780,7 @@ type RepositoryAdvisoryable interface {
     SetCreditsDetailed(value []RepositoryAdvisoryCreditable)()
     SetCveId(value *string)()
     SetCvss(value RepositoryAdvisory_cvssable)()
+    SetCvssSeverities(value CvssSeveritiesable)()
     SetCweIds(value []string)()
     SetCwes(value []RepositoryAdvisory_cwesable)()
     SetDescription(value *string)()

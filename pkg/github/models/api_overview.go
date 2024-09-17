@@ -14,6 +14,8 @@ type ApiOverview struct {
     additionalData map[string]any
     // The api property
     api []string
+    // The codespaces property
+    codespaces []string
     // The copilot property
     copilot []string
     // The dependabot property
@@ -72,6 +74,11 @@ func (m *ApiOverview) GetAdditionalData()(map[string]any) {
 // returns a []string when successful
 func (m *ApiOverview) GetApi()([]string) {
     return m.api
+}
+// GetCodespaces gets the codespaces property value. The codespaces property
+// returns a []string when successful
+func (m *ApiOverview) GetCodespaces()([]string) {
+    return m.codespaces
 }
 // GetCopilot gets the copilot property value. The copilot property
 // returns a []string when successful
@@ -137,6 +144,22 @@ func (m *ApiOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
                 }
             }
             m.SetApi(res)
+        }
+        return nil
+    }
+    res["codespaces"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCodespaces(res)
         }
         return nil
     }
@@ -402,6 +425,12 @@ func (m *ApiOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetCodespaces() != nil {
+        err := writer.WriteCollectionOfStringValues("codespaces", m.GetCodespaces())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCopilot() != nil {
         err := writer.WriteCollectionOfStringValues("copilot", m.GetCopilot())
         if err != nil {
@@ -504,6 +533,10 @@ func (m *ApiOverview) SetAdditionalData(value map[string]any)() {
 func (m *ApiOverview) SetApi(value []string)() {
     m.api = value
 }
+// SetCodespaces sets the codespaces property value. The codespaces property
+func (m *ApiOverview) SetCodespaces(value []string)() {
+    m.codespaces = value
+}
 // SetCopilot sets the copilot property value. The copilot property
 func (m *ApiOverview) SetCopilot(value []string)() {
     m.copilot = value
@@ -562,6 +595,7 @@ type ApiOverviewable interface {
     GetActions()([]string)
     GetActionsMacos()([]string)
     GetApi()([]string)
+    GetCodespaces()([]string)
     GetCopilot()([]string)
     GetDependabot()([]string)
     GetDomains()(ApiOverview_domainsable)
@@ -578,6 +612,7 @@ type ApiOverviewable interface {
     SetActions(value []string)()
     SetActionsMacos(value []string)()
     SetApi(value []string)()
+    SetCodespaces(value []string)()
     SetCopilot(value []string)()
     SetDependabot(value []string)()
     SetDomains(value ApiOverview_domainsable)()
