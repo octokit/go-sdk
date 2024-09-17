@@ -11,6 +11,8 @@ type DependabotAlertSecurityAdvisory struct {
     cve_id *string
     // Details for the advisory pertaining to the Common Vulnerability Scoring System.
     cvss DependabotAlertSecurityAdvisory_cvssable
+    // The cvss_severities property
+    cvss_severities CvssSeveritiesable
     // Details for the advisory pertaining to Common Weakness Enumeration.
     cwes []DependabotAlertSecurityAdvisory_cwesable
     // A long-form Markdown-supported description of the advisory.
@@ -55,6 +57,11 @@ func (m *DependabotAlertSecurityAdvisory) GetCveId()(*string) {
 func (m *DependabotAlertSecurityAdvisory) GetCvss()(DependabotAlertSecurityAdvisory_cvssable) {
     return m.cvss
 }
+// GetCvssSeverities gets the cvss_severities property value. The cvss_severities property
+// returns a CvssSeveritiesable when successful
+func (m *DependabotAlertSecurityAdvisory) GetCvssSeverities()(CvssSeveritiesable) {
+    return m.cvss_severities
+}
 // GetCwes gets the cwes property value. Details for the advisory pertaining to Common Weakness Enumeration.
 // returns a []DependabotAlertSecurityAdvisory_cwesable when successful
 func (m *DependabotAlertSecurityAdvisory) GetCwes()([]DependabotAlertSecurityAdvisory_cwesable) {
@@ -86,6 +93,16 @@ func (m *DependabotAlertSecurityAdvisory) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetCvss(val.(DependabotAlertSecurityAdvisory_cvssable))
+        }
+        return nil
+    }
+    res["cvss_severities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCvssSeveritiesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCvssSeverities(val.(CvssSeveritiesable))
         }
         return nil
     }
@@ -272,6 +289,12 @@ func (m *DependabotAlertSecurityAdvisory) GetWithdrawnAt()(*i336074805fc853987ab
 }
 // Serialize serializes information the current object
 func (m *DependabotAlertSecurityAdvisory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("cvss_severities", m.GetCvssSeverities())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCveId sets the cve_id property value. The unique CVE ID assigned to the advisory.
@@ -281,6 +304,10 @@ func (m *DependabotAlertSecurityAdvisory) SetCveId(value *string)() {
 // SetCvss sets the cvss property value. Details for the advisory pertaining to the Common Vulnerability Scoring System.
 func (m *DependabotAlertSecurityAdvisory) SetCvss(value DependabotAlertSecurityAdvisory_cvssable)() {
     m.cvss = value
+}
+// SetCvssSeverities sets the cvss_severities property value. The cvss_severities property
+func (m *DependabotAlertSecurityAdvisory) SetCvssSeverities(value CvssSeveritiesable)() {
+    m.cvss_severities = value
 }
 // SetCwes sets the cwes property value. Details for the advisory pertaining to Common Weakness Enumeration.
 func (m *DependabotAlertSecurityAdvisory) SetCwes(value []DependabotAlertSecurityAdvisory_cwesable)() {
@@ -330,6 +357,7 @@ type DependabotAlertSecurityAdvisoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCveId()(*string)
     GetCvss()(DependabotAlertSecurityAdvisory_cvssable)
+    GetCvssSeverities()(CvssSeveritiesable)
     GetCwes()([]DependabotAlertSecurityAdvisory_cwesable)
     GetDescription()(*string)
     GetGhsaId()(*string)
@@ -343,6 +371,7 @@ type DependabotAlertSecurityAdvisoryable interface {
     GetWithdrawnAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCveId(value *string)()
     SetCvss(value DependabotAlertSecurityAdvisory_cvssable)()
+    SetCvssSeverities(value CvssSeveritiesable)()
     SetCwes(value []DependabotAlertSecurityAdvisory_cwesable)()
     SetDescription(value *string)()
     SetGhsaId(value *string)()
