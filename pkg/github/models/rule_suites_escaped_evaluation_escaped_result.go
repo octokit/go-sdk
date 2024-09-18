@@ -5,10 +5,11 @@ type RuleSuites_evaluation_result int
 const (
     PASS_RULESUITES_EVALUATION_RESULT RuleSuites_evaluation_result = iota
     FAIL_RULESUITES_EVALUATION_RESULT
+    BYPASS_RULESUITES_EVALUATION_RESULT
 )
 
 func (i RuleSuites_evaluation_result) String() string {
-    return []string{"pass", "fail"}[i]
+    return []string{"pass", "fail", "bypass"}[i]
 }
 func ParseRuleSuites_evaluation_result(v string) (any, error) {
     result := PASS_RULESUITES_EVALUATION_RESULT
@@ -17,6 +18,8 @@ func ParseRuleSuites_evaluation_result(v string) (any, error) {
             result = PASS_RULESUITES_EVALUATION_RESULT
         case "fail":
             result = FAIL_RULESUITES_EVALUATION_RESULT
+        case "bypass":
+            result = BYPASS_RULESUITES_EVALUATION_RESULT
         default:
             return nil, nil
     }

@@ -17,7 +17,7 @@ type RuleSuite struct {
     after_sha *string
     // The first commit sha before the push evaluation.
     before_sha *string
-    // The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+    // The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
     evaluation_result *RuleSuite_evaluation_result
     // The unique identifier of the rule insight.
     id *int32
@@ -71,7 +71,7 @@ func (m *RuleSuite) GetAfterSha()(*string) {
 func (m *RuleSuite) GetBeforeSha()(*string) {
     return m.before_sha
 }
-// GetEvaluationResult gets the evaluation_result property value. The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+// GetEvaluationResult gets the evaluation_result property value. The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
 // returns a *RuleSuite_evaluation_result when successful
 func (m *RuleSuite) GetEvaluationResult()(*RuleSuite_evaluation_result) {
     return m.evaluation_result
@@ -353,7 +353,7 @@ func (m *RuleSuite) SetAfterSha(value *string)() {
 func (m *RuleSuite) SetBeforeSha(value *string)() {
     m.before_sha = value
 }
-// SetEvaluationResult sets the evaluation_result property value. The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+// SetEvaluationResult sets the evaluation_result property value. The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
 func (m *RuleSuite) SetEvaluationResult(value *RuleSuite_evaluation_result)() {
     m.evaluation_result = value
 }

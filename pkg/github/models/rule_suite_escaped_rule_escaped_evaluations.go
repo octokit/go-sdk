@@ -7,7 +7,7 @@ import (
 type RuleSuite_rule_evaluations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Any associated details with the rule evaluation.
+    // The detailed failure message for the rule. Null if the rule passed.
     details *string
     // The enforcement level of this rule source.
     enforcement *RuleSuite_rule_evaluations_enforcement
@@ -35,7 +35,7 @@ func CreateRuleSuite_rule_evaluationsFromDiscriminatorValue(parseNode i878a80d23
 func (m *RuleSuite_rule_evaluations) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetDetails gets the details property value. Any associated details with the rule evaluation.
+// GetDetails gets the details property value. The detailed failure message for the rule. Null if the rule passed.
 // returns a *string when successful
 func (m *RuleSuite_rule_evaluations) GetDetails()(*string) {
     return m.details
@@ -162,7 +162,7 @@ func (m *RuleSuite_rule_evaluations) Serialize(writer i878a80d2330e89d26896388a3
 func (m *RuleSuite_rule_evaluations) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetDetails sets the details property value. Any associated details with the rule evaluation.
+// SetDetails sets the details property value. The detailed failure message for the rule. Null if the rule passed.
 func (m *RuleSuite_rule_evaluations) SetDetails(value *string)() {
     m.details = value
 }
