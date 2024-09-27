@@ -23,7 +23,7 @@ func NewItemItemPullsItemUpdateBranchRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemPullsItemUpdateBranchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Put updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+// Put updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 // returns a ItemItemPullsItemUpdateBranchPutResponseable when successful
 // returns a BasicError error when the service returns a 403 status code
 // returns a ValidationError error when the service returns a 422 status code
@@ -48,7 +48,7 @@ func (m *ItemItemPullsItemUpdateBranchRequestBuilder) Put(ctx context.Context, b
     }
     return res.(ItemItemPullsItemUpdateBranchPutResponseable), nil
 }
-// ToPutRequestInformation updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+// ToPutRequestInformation updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
 // returns a *RequestInformation when successful
 func (m *ItemItemPullsItemUpdateBranchRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemItemPullsItemUpdateBranchPutRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
