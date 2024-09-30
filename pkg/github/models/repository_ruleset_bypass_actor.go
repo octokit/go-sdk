@@ -12,7 +12,7 @@ type RepositoryRulesetBypassActor struct {
     actor_type *RepositoryRulesetBypassActor_actor_type
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
+    // When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.
     bypass_mode *RepositoryRulesetBypassActor_bypass_mode
 }
 // NewRepositoryRulesetBypassActor instantiates a new RepositoryRulesetBypassActor and sets the default values.
@@ -20,6 +20,8 @@ func NewRepositoryRulesetBypassActor()(*RepositoryRulesetBypassActor) {
     m := &RepositoryRulesetBypassActor{
     }
     m.SetAdditionalData(make(map[string]any))
+    bypass_modeValue := ALWAYS_REPOSITORYRULESETBYPASSACTOR_BYPASS_MODE
+    m.SetBypassMode(&bypass_modeValue)
     return m
 }
 // CreateRepositoryRulesetBypassActorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +44,7 @@ func (m *RepositoryRulesetBypassActor) GetActorType()(*RepositoryRulesetBypassAc
 func (m *RepositoryRulesetBypassActor) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBypassMode gets the bypass_mode property value. When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
+// GetBypassMode gets the bypass_mode property value. When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.
 // returns a *RepositoryRulesetBypassActor_bypass_mode when successful
 func (m *RepositoryRulesetBypassActor) GetBypassMode()(*RepositoryRulesetBypassActor_bypass_mode) {
     return m.bypass_mode
@@ -125,7 +127,7 @@ func (m *RepositoryRulesetBypassActor) SetActorType(value *RepositoryRulesetBypa
 func (m *RepositoryRulesetBypassActor) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBypassMode sets the bypass_mode property value. When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
+// SetBypassMode sets the bypass_mode property value. When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.
 func (m *RepositoryRulesetBypassActor) SetBypassMode(value *RepositoryRulesetBypassActor_bypass_mode)() {
     m.bypass_mode = value
 }
