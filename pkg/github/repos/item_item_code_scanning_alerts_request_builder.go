@@ -20,6 +20,8 @@ type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
+    // The number of the pull request for the results you want to list.
+    Pr *int32 `uriparametername:"pr"`
     // The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`.
     Ref *string `uriparametername:"ref"`
     // If specified, only code scanning alerts with this severity will be returned.
@@ -46,7 +48,7 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number i
 // NewItemItemCodeScanningAlertsRequestBuilderInternal instantiates a new ItemItemCodeScanningAlertsRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAlertsRequestBuilder) {
     m := &ItemItemCodeScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/alerts{?direction*,page*,per_page*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/alerts{?direction*,page*,per_page*,pr*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
     }
     return m
 }
