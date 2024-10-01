@@ -7,8 +7,8 @@ import (
 
 // CopilotSeatDetails information about a Copilot Business seat assignment for a user, team, or organization.
 type CopilotSeatDetails struct {
-    // The assignee that has been granted access to GitHub Copilot.
-    assignee CopilotSeatDetails_assigneeable
+    // A GitHub user.
+    assignee SimpleUserable
     // The team through which the assignee is granted access to GitHub Copilot, if applicable.
     assigning_team CopilotSeatDetails_CopilotSeatDetails_assigning_teamable
     // Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
@@ -17,8 +17,8 @@ type CopilotSeatDetails struct {
     last_activity_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // Last editor that was used by the user for a GitHub Copilot completion.
     last_activity_editor *string
-    // The organization to which this seat belongs.
-    organization CopilotSeatDetails_organizationable
+    // A GitHub organization.
+    organization NullableOrganizationSimpleable
     // The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
     pending_cancellation_date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
@@ -118,9 +118,9 @@ func NewCopilotSeatDetails()(*CopilotSeatDetails) {
 func CreateCopilotSeatDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopilotSeatDetails(), nil
 }
-// GetAssignee gets the assignee property value. The assignee that has been granted access to GitHub Copilot.
-// returns a CopilotSeatDetails_assigneeable when successful
-func (m *CopilotSeatDetails) GetAssignee()(CopilotSeatDetails_assigneeable) {
+// GetAssignee gets the assignee property value. A GitHub user.
+// returns a SimpleUserable when successful
+func (m *CopilotSeatDetails) GetAssignee()(SimpleUserable) {
     return m.assignee
 }
 // GetAssigningTeam gets the assigning_team property value. The team through which the assignee is granted access to GitHub Copilot, if applicable.
@@ -138,12 +138,12 @@ func (m *CopilotSeatDetails) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6
 func (m *CopilotSeatDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["assignee"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCopilotSeatDetails_assigneeFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateSimpleUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAssignee(val.(CopilotSeatDetails_assigneeable))
+            m.SetAssignee(val.(SimpleUserable))
         }
         return nil
     }
@@ -188,12 +188,12 @@ func (m *CopilotSeatDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["organization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCopilotSeatDetails_organizationFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateNullableOrganizationSimpleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOrganization(val.(CopilotSeatDetails_organizationable))
+            m.SetOrganization(val.(NullableOrganizationSimpleable))
         }
         return nil
     }
@@ -229,9 +229,9 @@ func (m *CopilotSeatDetails) GetLastActivityAt()(*i336074805fc853987abe6f7fe3ad9
 func (m *CopilotSeatDetails) GetLastActivityEditor()(*string) {
     return m.last_activity_editor
 }
-// GetOrganization gets the organization property value. The organization to which this seat belongs.
-// returns a CopilotSeatDetails_organizationable when successful
-func (m *CopilotSeatDetails) GetOrganization()(CopilotSeatDetails_organizationable) {
+// GetOrganization gets the organization property value. A GitHub organization.
+// returns a NullableOrganizationSimpleable when successful
+func (m *CopilotSeatDetails) GetOrganization()(NullableOrganizationSimpleable) {
     return m.organization
 }
 // GetPendingCancellationDate gets the pending_cancellation_date property value. The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
@@ -296,8 +296,8 @@ func (m *CopilotSeatDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAssignee sets the assignee property value. The assignee that has been granted access to GitHub Copilot.
-func (m *CopilotSeatDetails) SetAssignee(value CopilotSeatDetails_assigneeable)() {
+// SetAssignee sets the assignee property value. A GitHub user.
+func (m *CopilotSeatDetails) SetAssignee(value SimpleUserable)() {
     m.assignee = value
 }
 // SetAssigningTeam sets the assigning_team property value. The team through which the assignee is granted access to GitHub Copilot, if applicable.
@@ -316,8 +316,8 @@ func (m *CopilotSeatDetails) SetLastActivityAt(value *i336074805fc853987abe6f7fe
 func (m *CopilotSeatDetails) SetLastActivityEditor(value *string)() {
     m.last_activity_editor = value
 }
-// SetOrganization sets the organization property value. The organization to which this seat belongs.
-func (m *CopilotSeatDetails) SetOrganization(value CopilotSeatDetails_organizationable)() {
+// SetOrganization sets the organization property value. A GitHub organization.
+func (m *CopilotSeatDetails) SetOrganization(value NullableOrganizationSimpleable)() {
     m.organization = value
 }
 // SetPendingCancellationDate sets the pending_cancellation_date property value. The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
@@ -330,20 +330,20 @@ func (m *CopilotSeatDetails) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97
 }
 type CopilotSeatDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAssignee()(CopilotSeatDetails_assigneeable)
+    GetAssignee()(SimpleUserable)
     GetAssigningTeam()(CopilotSeatDetails_CopilotSeatDetails_assigning_teamable)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastActivityAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastActivityEditor()(*string)
-    GetOrganization()(CopilotSeatDetails_organizationable)
+    GetOrganization()(NullableOrganizationSimpleable)
     GetPendingCancellationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    SetAssignee(value CopilotSeatDetails_assigneeable)()
+    SetAssignee(value SimpleUserable)()
     SetAssigningTeam(value CopilotSeatDetails_CopilotSeatDetails_assigning_teamable)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastActivityAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastActivityEditor(value *string)()
-    SetOrganization(value CopilotSeatDetails_organizationable)()
+    SetOrganization(value NullableOrganizationSimpleable)()
     SetPendingCancellationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }
