@@ -4,37 +4,37 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 struct {
+type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
     apps []string
 }
-// NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 instantiates a new ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1 and sets the default values.
-func NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1()(*ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) {
-    m := &ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1{
+// NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody instantiates a new ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody and sets the default values.
+func NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody()(*ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) {
+    m := &ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody{
     }
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1(), nil
+func CreateItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) GetAdditionalData()(map[string]any) {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetApps gets the apps property value. The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
 // returns a []string when successful
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) GetApps()([]string) {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) GetApps()([]string) {
     return m.apps
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["apps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
@@ -55,7 +55,7 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) Ge
     return res
 }
 // Serialize serializes information the current object
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetApps() != nil {
         err := writer.WriteCollectionOfStringValues("apps", m.GetApps())
         if err != nil {
@@ -71,14 +71,14 @@ func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) Se
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) SetAdditionalData(value map[string]any)() {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetApps sets the apps property value. The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
-func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1) SetApps(value []string)() {
+func (m *ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBody) SetApps(value []string)() {
     m.apps = value
 }
-type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyMember1able interface {
+type ItemItemBranchesItemProtectionRestrictionsAppsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApps()([]string)
