@@ -18,7 +18,7 @@ type ItemItemIssuesItemLabelsRequestBuilderGetQueryParameters struct {
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
 }
-// LabelsPostRequestBody composed type wrapper for classes ItemItemIssuesItemLabelsPostRequestBodyMember1able, ItemItemIssuesItemLabelsPostRequestBodyMember2able, string, []ItemItemIssuesItemLabelsPostRequestBodyMember3able
+// LabelsPostRequestBody composed type wrapper for classes ItemItemIssuesItemLabelsPostRequestBodyMember1able, ItemItemIssuesItemLabelsPostRequestBodyMember2able, string, []ItemItemIssuesItemLabelsPostRequestBodyMember3able, []string
 type LabelsPostRequestBody struct {
     // Composed type representation for type ItemItemIssuesItemLabelsPostRequestBodyMember1able
     itemItemIssuesItemLabelsPostRequestBodyMember1 ItemItemIssuesItemLabelsPostRequestBodyMember1able
@@ -34,8 +34,12 @@ type LabelsPostRequestBody struct {
     labelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3 []ItemItemIssuesItemLabelsPostRequestBodyMember3able
     // Composed type representation for type string
     labelsPostRequestBodyString *string
+    // Composed type representation for type []string
+    labelsPostRequestBodyString0 []string
     // Composed type representation for type string
-    string *string
+    labelsPostRequestBodyString1 *string
+    // Composed type representation for type []string
+    string []string
 }
 // NewLabelsPostRequestBody instantiates a new LabelsPostRequestBody and sets the default values.
 func NewLabelsPostRequestBody()(*LabelsPostRequestBody) {
@@ -70,7 +74,7 @@ func CreateLabelsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetLabelsPostRequestBodyString1(val)
     } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPostRequestBodyMember3FromDiscriminatorValue); val != nil {
         if err != nil {
             return nil, err
@@ -93,6 +97,28 @@ func CreateLabelsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
             }
         }
         result.SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetLabelsPostRequestBodyString0(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -141,9 +167,19 @@ func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyItemItemIssuesItemLabels
 func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyString()(*string) {
     return m.labelsPostRequestBodyString
 }
-// GetString gets the string property value. Composed type representation for type string
+// GetLabelsPostRequestBodyString0 gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyString0()([]string) {
+    return m.labelsPostRequestBodyString0
+}
+// GetLabelsPostRequestBodyString1 gets the string property value. Composed type representation for type string
 // returns a *string when successful
-func (m *LabelsPostRequestBody) GetString()(*string) {
+func (m *LabelsPostRequestBody) GetLabelsPostRequestBodyString1()(*string) {
+    return m.labelsPostRequestBodyString1
+}
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *LabelsPostRequestBody) GetString()([]string) {
     return m.string
 }
 // Serialize serializes information the current object
@@ -173,8 +209,8 @@ func (m *LabelsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
         if err != nil {
             return err
         }
-    } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+    } else if m.GetLabelsPostRequestBodyString1() != nil {
+        err := writer.WriteStringValue("", m.GetLabelsPostRequestBodyString1())
         if err != nil {
             return err
         }
@@ -197,6 +233,16 @@ func (m *LabelsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
             }
         }
         err := writer.WriteCollectionOfObjectValues("", cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetLabelsPostRequestBodyString0() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetLabelsPostRequestBodyString0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
@@ -231,11 +277,19 @@ func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyItemItemIssuesItemLabels
 func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyString(value *string)() {
     m.labelsPostRequestBodyString = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *LabelsPostRequestBody) SetString(value *string)() {
+// SetLabelsPostRequestBodyString0 sets the string property value. Composed type representation for type []string
+func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyString0(value []string)() {
+    m.labelsPostRequestBodyString0 = value
+}
+// SetLabelsPostRequestBodyString1 sets the string property value. Composed type representation for type string
+func (m *LabelsPostRequestBody) SetLabelsPostRequestBodyString1(value *string)() {
+    m.labelsPostRequestBodyString1 = value
+}
+// SetString sets the string property value. Composed type representation for type []string
+func (m *LabelsPostRequestBody) SetString(value []string)() {
     m.string = value
 }
-// LabelsPutRequestBody composed type wrapper for classes ItemItemIssuesItemLabelsPutRequestBodyMember1able, ItemItemIssuesItemLabelsPutRequestBodyMember2able, string, []ItemItemIssuesItemLabelsPutRequestBodyMember3able
+// LabelsPutRequestBody composed type wrapper for classes ItemItemIssuesItemLabelsPutRequestBodyMember1able, ItemItemIssuesItemLabelsPutRequestBodyMember2able, string, []ItemItemIssuesItemLabelsPutRequestBodyMember3able, []string
 type LabelsPutRequestBody struct {
     // Composed type representation for type ItemItemIssuesItemLabelsPutRequestBodyMember1able
     itemItemIssuesItemLabelsPutRequestBodyMember1 ItemItemIssuesItemLabelsPutRequestBodyMember1able
@@ -251,8 +305,12 @@ type LabelsPutRequestBody struct {
     labelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3 []ItemItemIssuesItemLabelsPutRequestBodyMember3able
     // Composed type representation for type string
     labelsPutRequestBodyString *string
+    // Composed type representation for type []string
+    labelsPutRequestBodyString0 []string
     // Composed type representation for type string
-    string *string
+    labelsPutRequestBodyString1 *string
+    // Composed type representation for type []string
+    string []string
 }
 // NewLabelsPutRequestBody instantiates a new LabelsPutRequestBody and sets the default values.
 func NewLabelsPutRequestBody()(*LabelsPutRequestBody) {
@@ -287,7 +345,7 @@ func CreateLabelsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetLabelsPutRequestBodyString1(val)
     } else if val, err := parseNode.GetCollectionOfObjectValues(CreateItemItemIssuesItemLabelsPutRequestBodyMember3FromDiscriminatorValue); val != nil {
         if err != nil {
             return nil, err
@@ -310,6 +368,28 @@ func CreateLabelsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
             }
         }
         result.SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetLabelsPutRequestBodyString0(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -358,9 +438,19 @@ func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyItemItemIssuesItemLabelsPu
 func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyString()(*string) {
     return m.labelsPutRequestBodyString
 }
-// GetString gets the string property value. Composed type representation for type string
+// GetLabelsPutRequestBodyString0 gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyString0()([]string) {
+    return m.labelsPutRequestBodyString0
+}
+// GetLabelsPutRequestBodyString1 gets the string property value. Composed type representation for type string
 // returns a *string when successful
-func (m *LabelsPutRequestBody) GetString()(*string) {
+func (m *LabelsPutRequestBody) GetLabelsPutRequestBodyString1()(*string) {
+    return m.labelsPutRequestBodyString1
+}
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *LabelsPutRequestBody) GetString()([]string) {
     return m.string
 }
 // Serialize serializes information the current object
@@ -390,8 +480,8 @@ func (m *LabelsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
         if err != nil {
             return err
         }
-    } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+    } else if m.GetLabelsPutRequestBodyString1() != nil {
+        err := writer.WriteStringValue("", m.GetLabelsPutRequestBodyString1())
         if err != nil {
             return err
         }
@@ -414,6 +504,16 @@ func (m *LabelsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
             }
         }
         err := writer.WriteCollectionOfObjectValues("", cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetLabelsPutRequestBodyString0() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetLabelsPutRequestBodyString0())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
@@ -448,8 +548,16 @@ func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyItemItemIssuesItemLabelsPu
 func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyString(value *string)() {
     m.labelsPutRequestBodyString = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *LabelsPutRequestBody) SetString(value *string)() {
+// SetLabelsPutRequestBodyString0 sets the string property value. Composed type representation for type []string
+func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyString0(value []string)() {
+    m.labelsPutRequestBodyString0 = value
+}
+// SetLabelsPutRequestBodyString1 sets the string property value. Composed type representation for type string
+func (m *LabelsPutRequestBody) SetLabelsPutRequestBodyString1(value *string)() {
+    m.labelsPutRequestBodyString1 = value
+}
+// SetString sets the string property value. Composed type representation for type []string
+func (m *LabelsPutRequestBody) SetString(value []string)() {
     m.string = value
 }
 type LabelsPostRequestBodyable interface {
@@ -461,7 +569,9 @@ type LabelsPostRequestBodyable interface {
     GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2()(ItemItemIssuesItemLabelsPostRequestBodyMember2able)
     GetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3()([]ItemItemIssuesItemLabelsPostRequestBodyMember3able)
     GetLabelsPostRequestBodyString()(*string)
-    GetString()(*string)
+    GetLabelsPostRequestBodyString0()([]string)
+    GetLabelsPostRequestBodyString1()(*string)
+    GetString()([]string)
     SetItemItemIssuesItemLabelsPostRequestBodyMember1(value ItemItemIssuesItemLabelsPostRequestBodyMember1able)()
     SetItemItemIssuesItemLabelsPostRequestBodyMember2(value ItemItemIssuesItemLabelsPostRequestBodyMember2able)()
     SetItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
@@ -469,7 +579,9 @@ type LabelsPostRequestBodyable interface {
     SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember2(value ItemItemIssuesItemLabelsPostRequestBodyMember2able)()
     SetLabelsPostRequestBodyItemItemIssuesItemLabelsPostRequestBodyMember3(value []ItemItemIssuesItemLabelsPostRequestBodyMember3able)()
     SetLabelsPostRequestBodyString(value *string)()
-    SetString(value *string)()
+    SetLabelsPostRequestBodyString0(value []string)()
+    SetLabelsPostRequestBodyString1(value *string)()
+    SetString(value []string)()
 }
 type LabelsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -480,7 +592,9 @@ type LabelsPutRequestBodyable interface {
     GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2()(ItemItemIssuesItemLabelsPutRequestBodyMember2able)
     GetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3()([]ItemItemIssuesItemLabelsPutRequestBodyMember3able)
     GetLabelsPutRequestBodyString()(*string)
-    GetString()(*string)
+    GetLabelsPutRequestBodyString0()([]string)
+    GetLabelsPutRequestBodyString1()(*string)
+    GetString()([]string)
     SetItemItemIssuesItemLabelsPutRequestBodyMember1(value ItemItemIssuesItemLabelsPutRequestBodyMember1able)()
     SetItemItemIssuesItemLabelsPutRequestBodyMember2(value ItemItemIssuesItemLabelsPutRequestBodyMember2able)()
     SetItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
@@ -488,7 +602,9 @@ type LabelsPutRequestBodyable interface {
     SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember2(value ItemItemIssuesItemLabelsPutRequestBodyMember2able)()
     SetLabelsPutRequestBodyItemItemIssuesItemLabelsPutRequestBodyMember3(value []ItemItemIssuesItemLabelsPutRequestBodyMember3able)()
     SetLabelsPutRequestBodyString(value *string)()
-    SetString(value *string)()
+    SetLabelsPutRequestBodyString0(value []string)()
+    SetLabelsPutRequestBodyString1(value *string)()
+    SetString(value []string)()
 }
 // ByName gets an item from the github.com/octokit/go-sdk/pkg/github.repos.item.item.issues.item.labels.item collection
 // returns a *ItemItemIssuesItemLabelsWithNameItemRequestBuilder when successful

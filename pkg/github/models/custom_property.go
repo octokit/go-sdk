@@ -25,10 +25,12 @@ type CustomProperty struct {
     // Who can edit the values of the property
     values_editable_by *CustomProperty_values_editable_by
 }
-// CustomProperty_CustomProperty_default_value composed type wrapper for classes string
+// CustomProperty_CustomProperty_default_value composed type wrapper for classes string, []string
 type CustomProperty_CustomProperty_default_value struct {
     // Composed type representation for type string
-    string *string
+    customProperty_default_valueString *string
+    // Composed type representation for type []string
+    string []string
 }
 // NewCustomProperty_CustomProperty_default_value instantiates a new CustomProperty_CustomProperty_default_value and sets the default values.
 func NewCustomProperty_CustomProperty_default_value()(*CustomProperty_CustomProperty_default_value) {
@@ -58,9 +60,25 @@ func CreateCustomProperty_CustomProperty_default_valueFromDiscriminatorValue(par
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetCustomPropertyDefaultValueString(val)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
+}
+// GetCustomPropertyDefaultValueString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *CustomProperty_CustomProperty_default_value) GetCustomPropertyDefaultValueString()(*string) {
+    return m.customProperty_default_valueString
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
@@ -72,29 +90,40 @@ func (m *CustomProperty_CustomProperty_default_value) GetFieldDeserializers()(ma
 func (m *CustomProperty_CustomProperty_default_value) GetIsComposedType()(bool) {
     return true
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *CustomProperty_CustomProperty_default_value) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *CustomProperty_CustomProperty_default_value) GetString()([]string) {
     return m.string
 }
 // Serialize serializes information the current object
 func (m *CustomProperty_CustomProperty_default_value) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+    if m.GetCustomPropertyDefaultValueString() != nil {
+        err := writer.WriteStringValue("", m.GetCustomPropertyDefaultValueString())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *CustomProperty_CustomProperty_default_value) SetString(value *string)() {
+// SetCustomPropertyDefaultValueString sets the string property value. Composed type representation for type string
+func (m *CustomProperty_CustomProperty_default_value) SetCustomPropertyDefaultValueString(value *string)() {
+    m.customProperty_default_valueString = value
+}
+// SetString sets the string property value. Composed type representation for type []string
+func (m *CustomProperty_CustomProperty_default_value) SetString(value []string)() {
     m.string = value
 }
 type CustomProperty_CustomProperty_default_valueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetString()(*string)
-    SetString(value *string)()
+    GetCustomPropertyDefaultValueString()(*string)
+    GetString()([]string)
+    SetCustomPropertyDefaultValueString(value *string)()
+    SetString(value []string)()
 }
 // NewCustomProperty instantiates a new CustomProperty and sets the default values.
 func NewCustomProperty()(*CustomProperty) {

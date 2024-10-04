@@ -16,10 +16,12 @@ type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody struct {
     // Whether the property is required.
     required *bool
 }
-// ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value composed type wrapper for classes string
+// ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value composed type wrapper for classes string, []string
 type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value struct {
+    // Composed type representation for type []string
+    string []string
     // Composed type representation for type string
-    string *string
+    withCustom_property_namePutRequestBody_default_valueString *string
 }
 // NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value instantiates a new ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value and sets the default values.
 func NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value()(*ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) {
@@ -49,7 +51,18 @@ func CreateItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCu
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetWithCustomPropertyNamePutRequestBodyDefaultValueString(val)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -63,29 +76,45 @@ func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCust
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetIsComposedType()(bool) {
     return true
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetString()([]string) {
     return m.string
+}
+// GetWithCustomPropertyNamePutRequestBodyDefaultValueString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) GetWithCustomPropertyNamePutRequestBodyDefaultValueString()(*string) {
+    return m.withCustom_property_namePutRequestBody_default_valueString
 }
 // Serialize serializes information the current object
 func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+    if m.GetWithCustomPropertyNamePutRequestBodyDefaultValueString() != nil {
+        err := writer.WriteStringValue("", m.GetWithCustomPropertyNamePutRequestBodyDefaultValueString())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) SetString(value *string)() {
+// SetString sets the string property value. Composed type representation for type []string
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) SetString(value []string)() {
     m.string = value
+}
+// SetWithCustomPropertyNamePutRequestBodyDefaultValueString sets the string property value. Composed type representation for type string
+func (m *ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_value) SetWithCustomPropertyNamePutRequestBodyDefaultValueString(value *string)() {
+    m.withCustom_property_namePutRequestBody_default_valueString = value
 }
 type ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody_WithCustom_property_namePutRequestBody_default_valueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetString()(*string)
-    SetString(value *string)()
+    GetString()([]string)
+    GetWithCustomPropertyNamePutRequestBodyDefaultValueString()(*string)
+    SetString(value []string)()
+    SetWithCustomPropertyNamePutRequestBodyDefaultValueString(value *string)()
 }
 // NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody instantiates a new ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody and sets the default values.
 func NewItemPropertiesSchemaItemWithCustom_property_namePutRequestBody()(*ItemPropertiesSchemaItemWithCustom_property_namePutRequestBody) {

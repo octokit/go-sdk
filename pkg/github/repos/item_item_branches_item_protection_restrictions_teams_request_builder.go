@@ -11,16 +11,16 @@ import (
 type ItemItemBranchesItemProtectionRestrictionsTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamsDeleteRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able, string
+// TeamsDeleteRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able, []string
 type TeamsDeleteRequestBody struct {
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
-    // Composed type representation for type string
-    string *string
+    // Composed type representation for type []string
+    string []string
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
     teamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
-    // Composed type representation for type string
-    teamsDeleteRequestBodyString *string
+    // Composed type representation for type []string
+    teamsDeleteRequestBodyString []string
 }
 // NewTeamsDeleteRequestBody instantiates a new TeamsDeleteRequestBody and sets the default values.
 func NewTeamsDeleteRequestBody()(*TeamsDeleteRequestBody) {
@@ -46,16 +46,28 @@ func CreateTeamsDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e8
             }
         }
     }
-    if val, err := parseNode.GetStringValue(); val != nil {
+    if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
-    } else if val, err := parseNode.GetStringValue(); val != nil {
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetTeamsDeleteRequestBodyString(val)
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetTeamsDeleteRequestBodyString(cast)
     }
     return result, nil
 }
@@ -74,9 +86,9 @@ func (m *TeamsDeleteRequestBody) GetIsComposedType()(bool) {
 func (m *TeamsDeleteRequestBody) GetItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsDeleteRequestBody) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsDeleteRequestBody) GetString()([]string) {
     return m.string
 }
 // GetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
@@ -84,9 +96,9 @@ func (m *TeamsDeleteRequestBody) GetString()(*string) {
 func (m *TeamsDeleteRequestBody) GetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able) {
     return m.teamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1
 }
-// GetTeamsDeleteRequestBodyString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsDeleteRequestBody) GetTeamsDeleteRequestBodyString()(*string) {
+// GetTeamsDeleteRequestBodyString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsDeleteRequestBody) GetTeamsDeleteRequestBodyString()([]string) {
     return m.teamsDeleteRequestBodyString
 }
 // Serialize serializes information the current object
@@ -102,12 +114,12 @@ func (m *TeamsDeleteRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
     } else if m.GetTeamsDeleteRequestBodyString() != nil {
-        err := writer.WriteStringValue("", m.GetTeamsDeleteRequestBodyString())
+        err := writer.WriteCollectionOfStringValues("", m.GetTeamsDeleteRequestBodyString())
         if err != nil {
             return err
         }
@@ -118,28 +130,28 @@ func (m *TeamsDeleteRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *TeamsDeleteRequestBody) SetItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *TeamsDeleteRequestBody) SetString(value *string)() {
+// SetString sets the string property value. Composed type representation for type []string
+func (m *TeamsDeleteRequestBody) SetString(value []string)() {
     m.string = value
 }
 // SetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able
 func (m *TeamsDeleteRequestBody) SetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)() {
     m.teamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1 = value
 }
-// SetTeamsDeleteRequestBodyString sets the string property value. Composed type representation for type string
-func (m *TeamsDeleteRequestBody) SetTeamsDeleteRequestBodyString(value *string)() {
+// SetTeamsDeleteRequestBodyString sets the string property value. Composed type representation for type []string
+func (m *TeamsDeleteRequestBody) SetTeamsDeleteRequestBodyString(value []string)() {
     m.teamsDeleteRequestBodyString = value
 }
-// TeamsPostRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able, string
+// TeamsPostRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able, []string
 type TeamsPostRequestBody struct {
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
-    // Composed type representation for type string
-    string *string
+    // Composed type representation for type []string
+    string []string
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
     teamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
-    // Composed type representation for type string
-    teamsPostRequestBodyString *string
+    // Composed type representation for type []string
+    teamsPostRequestBodyString []string
 }
 // NewTeamsPostRequestBody instantiates a new TeamsPostRequestBody and sets the default values.
 func NewTeamsPostRequestBody()(*TeamsPostRequestBody) {
@@ -165,16 +177,28 @@ func CreateTeamsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d
             }
         }
     }
-    if val, err := parseNode.GetStringValue(); val != nil {
+    if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
-    } else if val, err := parseNode.GetStringValue(); val != nil {
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetTeamsPostRequestBodyString(val)
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetTeamsPostRequestBodyString(cast)
     }
     return result, nil
 }
@@ -193,9 +217,9 @@ func (m *TeamsPostRequestBody) GetIsComposedType()(bool) {
 func (m *TeamsPostRequestBody) GetItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsPostRequestBody) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsPostRequestBody) GetString()([]string) {
     return m.string
 }
 // GetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
@@ -203,9 +227,9 @@ func (m *TeamsPostRequestBody) GetString()(*string) {
 func (m *TeamsPostRequestBody) GetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able) {
     return m.teamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1
 }
-// GetTeamsPostRequestBodyString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsPostRequestBody) GetTeamsPostRequestBodyString()(*string) {
+// GetTeamsPostRequestBodyString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsPostRequestBody) GetTeamsPostRequestBodyString()([]string) {
     return m.teamsPostRequestBodyString
 }
 // Serialize serializes information the current object
@@ -221,12 +245,12 @@ func (m *TeamsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
     } else if m.GetTeamsPostRequestBodyString() != nil {
-        err := writer.WriteStringValue("", m.GetTeamsPostRequestBodyString())
+        err := writer.WriteCollectionOfStringValues("", m.GetTeamsPostRequestBodyString())
         if err != nil {
             return err
         }
@@ -237,28 +261,28 @@ func (m *TeamsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487ee
 func (m *TeamsPostRequestBody) SetItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *TeamsPostRequestBody) SetString(value *string)() {
+// SetString sets the string property value. Composed type representation for type []string
+func (m *TeamsPostRequestBody) SetString(value []string)() {
     m.string = value
 }
 // SetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able
 func (m *TeamsPostRequestBody) SetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)() {
     m.teamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1 = value
 }
-// SetTeamsPostRequestBodyString sets the string property value. Composed type representation for type string
-func (m *TeamsPostRequestBody) SetTeamsPostRequestBodyString(value *string)() {
+// SetTeamsPostRequestBodyString sets the string property value. Composed type representation for type []string
+func (m *TeamsPostRequestBody) SetTeamsPostRequestBodyString(value []string)() {
     m.teamsPostRequestBodyString = value
 }
-// TeamsPutRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able, string
+// TeamsPutRequestBody composed type wrapper for classes ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able, []string
 type TeamsPutRequestBody struct {
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
     itemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
-    // Composed type representation for type string
-    string *string
+    // Composed type representation for type []string
+    string []string
     // Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
     teamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
-    // Composed type representation for type string
-    teamsPutRequestBodyString *string
+    // Composed type representation for type []string
+    teamsPutRequestBodyString []string
 }
 // NewTeamsPutRequestBody instantiates a new TeamsPutRequestBody and sets the default values.
 func NewTeamsPutRequestBody()(*TeamsPutRequestBody) {
@@ -284,16 +308,28 @@ func CreateTeamsPutRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d2
             }
         }
     }
-    if val, err := parseNode.GetStringValue(); val != nil {
+    if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
-    } else if val, err := parseNode.GetStringValue(); val != nil {
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
         if err != nil {
             return nil, err
         }
-        result.SetTeamsPutRequestBodyString(val)
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetTeamsPutRequestBodyString(cast)
     }
     return result, nil
 }
@@ -312,9 +348,9 @@ func (m *TeamsPutRequestBody) GetIsComposedType()(bool) {
 func (m *TeamsPutRequestBody) GetItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able) {
     return m.itemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsPutRequestBody) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsPutRequestBody) GetString()([]string) {
     return m.string
 }
 // GetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 gets the ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
@@ -322,9 +358,9 @@ func (m *TeamsPutRequestBody) GetString()(*string) {
 func (m *TeamsPutRequestBody) GetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able) {
     return m.teamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1
 }
-// GetTeamsPutRequestBodyString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *TeamsPutRequestBody) GetTeamsPutRequestBodyString()(*string) {
+// GetTeamsPutRequestBodyString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *TeamsPutRequestBody) GetTeamsPutRequestBodyString()([]string) {
     return m.teamsPutRequestBodyString
 }
 // Serialize serializes information the current object
@@ -340,12 +376,12 @@ func (m *TeamsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
     } else if m.GetTeamsPutRequestBodyString() != nil {
-        err := writer.WriteStringValue("", m.GetTeamsPutRequestBodyString())
+        err := writer.WriteCollectionOfStringValues("", m.GetTeamsPutRequestBodyString())
         if err != nil {
             return err
         }
@@ -356,50 +392,50 @@ func (m *TeamsPutRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef
 func (m *TeamsPutRequestBody) SetItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)() {
     m.itemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *TeamsPutRequestBody) SetString(value *string)() {
+// SetString sets the string property value. Composed type representation for type []string
+func (m *TeamsPutRequestBody) SetString(value []string)() {
     m.string = value
 }
 // SetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 sets the ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 property value. Composed type representation for type ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able
 func (m *TeamsPutRequestBody) SetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)() {
     m.teamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1 = value
 }
-// SetTeamsPutRequestBodyString sets the string property value. Composed type representation for type string
-func (m *TeamsPutRequestBody) SetTeamsPutRequestBodyString(value *string)() {
+// SetTeamsPutRequestBodyString sets the string property value. Composed type representation for type []string
+func (m *TeamsPutRequestBody) SetTeamsPutRequestBodyString(value []string)() {
     m.teamsPutRequestBodyString = value
 }
 type TeamsDeleteRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)
-    GetString()(*string)
+    GetString()([]string)
     GetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)
-    GetTeamsDeleteRequestBodyString()(*string)
+    GetTeamsDeleteRequestBodyString()([]string)
     SetItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)()
-    SetString(value *string)()
+    SetString(value []string)()
     SetTeamsDeleteRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsDeleteRequestBodyMember1able)()
-    SetTeamsDeleteRequestBodyString(value *string)()
+    SetTeamsDeleteRequestBodyString(value []string)()
 }
 type TeamsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)
-    GetString()(*string)
+    GetString()([]string)
     GetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)
-    GetTeamsPostRequestBodyString()(*string)
+    GetTeamsPostRequestBodyString()([]string)
     SetItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)()
-    SetString(value *string)()
+    SetString(value []string)()
     SetTeamsPostRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPostRequestBodyMember1able)()
-    SetTeamsPostRequestBodyString(value *string)()
+    SetTeamsPostRequestBodyString(value []string)()
 }
 type TeamsPutRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)
-    GetString()(*string)
+    GetString()([]string)
     GetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1()(ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)
-    GetTeamsPutRequestBodyString()(*string)
+    GetTeamsPutRequestBodyString()([]string)
     SetItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)()
-    SetString(value *string)()
+    SetString(value []string)()
     SetTeamsPutRequestBodyItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1(value ItemItemBranchesItemProtectionRestrictionsTeamsPutRequestBodyMember1able)()
-    SetTeamsPutRequestBodyString(value *string)()
+    SetTeamsPutRequestBodyString(value []string)()
 }
 // NewItemItemBranchesItemProtectionRestrictionsTeamsRequestBuilderInternal instantiates a new ItemItemBranchesItemProtectionRestrictionsTeamsRequestBuilder and sets the default values.
 func NewItemItemBranchesItemProtectionRestrictionsTeamsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemBranchesItemProtectionRestrictionsTeamsRequestBuilder) {
