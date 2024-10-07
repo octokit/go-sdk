@@ -11,7 +11,7 @@ import (
 type EmailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EmailsDeleteRequestBody composed type wrapper for classes EmailsDeleteRequestBodyMember1able, string
+// EmailsDeleteRequestBody composed type wrapper for classes EmailsDeleteRequestBodyMember1able, string, []string
 type EmailsDeleteRequestBody struct {
     // Composed type representation for type EmailsDeleteRequestBodyMember1able
     emailsDeleteRequestBodyEmailsDeleteRequestBodyMember1 EmailsDeleteRequestBodyMember1able
@@ -19,8 +19,12 @@ type EmailsDeleteRequestBody struct {
     emailsDeleteRequestBodyMember1 EmailsDeleteRequestBodyMember1able
     // Composed type representation for type string
     emailsDeleteRequestBodyString *string
+    // Composed type representation for type []string
+    emailsDeleteRequestBodyString0 []string
     // Composed type representation for type string
-    string *string
+    emailsDeleteRequestBodyString1 *string
+    // Composed type representation for type []string
+    string []string
 }
 // NewEmailsDeleteRequestBody instantiates a new EmailsDeleteRequestBody and sets the default values.
 func NewEmailsDeleteRequestBody()(*EmailsDeleteRequestBody) {
@@ -55,7 +59,29 @@ func CreateEmailsDeleteRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetEmailsDeleteRequestBodyString1(val)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetEmailsDeleteRequestBodyString0(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -74,6 +100,16 @@ func (m *EmailsDeleteRequestBody) GetEmailsDeleteRequestBodyMember1()(EmailsDele
 func (m *EmailsDeleteRequestBody) GetEmailsDeleteRequestBodyString()(*string) {
     return m.emailsDeleteRequestBodyString
 }
+// GetEmailsDeleteRequestBodyString0 gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *EmailsDeleteRequestBody) GetEmailsDeleteRequestBodyString0()([]string) {
+    return m.emailsDeleteRequestBodyString0
+}
+// GetEmailsDeleteRequestBodyString1 gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *EmailsDeleteRequestBody) GetEmailsDeleteRequestBodyString1()(*string) {
+    return m.emailsDeleteRequestBodyString1
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailsDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -84,9 +120,9 @@ func (m *EmailsDeleteRequestBody) GetFieldDeserializers()(map[string]func(i878a8
 func (m *EmailsDeleteRequestBody) GetIsComposedType()(bool) {
     return true
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *EmailsDeleteRequestBody) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *EmailsDeleteRequestBody) GetString()([]string) {
     return m.string
 }
 // Serialize serializes information the current object
@@ -106,8 +142,18 @@ func (m *EmailsDeleteRequestBody) Serialize(writer i878a80d2330e89d26896388a3f48
         if err != nil {
             return err
         }
+    } else if m.GetEmailsDeleteRequestBodyString1() != nil {
+        err := writer.WriteStringValue("", m.GetEmailsDeleteRequestBodyString1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetEmailsDeleteRequestBodyString0() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetEmailsDeleteRequestBodyString0())
+        if err != nil {
+            return err
+        }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
@@ -126,11 +172,19 @@ func (m *EmailsDeleteRequestBody) SetEmailsDeleteRequestBodyMember1(value Emails
 func (m *EmailsDeleteRequestBody) SetEmailsDeleteRequestBodyString(value *string)() {
     m.emailsDeleteRequestBodyString = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *EmailsDeleteRequestBody) SetString(value *string)() {
+// SetEmailsDeleteRequestBodyString0 sets the string property value. Composed type representation for type []string
+func (m *EmailsDeleteRequestBody) SetEmailsDeleteRequestBodyString0(value []string)() {
+    m.emailsDeleteRequestBodyString0 = value
+}
+// SetEmailsDeleteRequestBodyString1 sets the string property value. Composed type representation for type string
+func (m *EmailsDeleteRequestBody) SetEmailsDeleteRequestBodyString1(value *string)() {
+    m.emailsDeleteRequestBodyString1 = value
+}
+// SetString sets the string property value. Composed type representation for type []string
+func (m *EmailsDeleteRequestBody) SetString(value []string)() {
     m.string = value
 }
-// EmailsPostRequestBody composed type wrapper for classes EmailsPostRequestBodyMember1able, string
+// EmailsPostRequestBody composed type wrapper for classes EmailsPostRequestBodyMember1able, string, []string
 type EmailsPostRequestBody struct {
     // Composed type representation for type EmailsPostRequestBodyMember1able
     emailsPostRequestBodyEmailsPostRequestBodyMember1 EmailsPostRequestBodyMember1able
@@ -138,8 +192,12 @@ type EmailsPostRequestBody struct {
     emailsPostRequestBodyMember1 EmailsPostRequestBodyMember1able
     // Composed type representation for type string
     emailsPostRequestBodyString *string
+    // Composed type representation for type []string
+    emailsPostRequestBodyString0 []string
     // Composed type representation for type string
-    string *string
+    emailsPostRequestBodyString1 *string
+    // Composed type representation for type []string
+    string []string
 }
 // NewEmailsPostRequestBody instantiates a new EmailsPostRequestBody and sets the default values.
 func NewEmailsPostRequestBody()(*EmailsPostRequestBody) {
@@ -174,7 +232,29 @@ func CreateEmailsPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetEmailsPostRequestBodyString1(val)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetEmailsPostRequestBodyString0(cast)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -193,6 +273,16 @@ func (m *EmailsPostRequestBody) GetEmailsPostRequestBodyMember1()(EmailsPostRequ
 func (m *EmailsPostRequestBody) GetEmailsPostRequestBodyString()(*string) {
     return m.emailsPostRequestBodyString
 }
+// GetEmailsPostRequestBodyString0 gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *EmailsPostRequestBody) GetEmailsPostRequestBodyString0()([]string) {
+    return m.emailsPostRequestBodyString0
+}
+// GetEmailsPostRequestBodyString1 gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *EmailsPostRequestBody) GetEmailsPostRequestBodyString1()(*string) {
+    return m.emailsPostRequestBodyString1
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EmailsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -203,9 +293,9 @@ func (m *EmailsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d
 func (m *EmailsPostRequestBody) GetIsComposedType()(bool) {
     return true
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *EmailsPostRequestBody) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *EmailsPostRequestBody) GetString()([]string) {
     return m.string
 }
 // Serialize serializes information the current object
@@ -225,8 +315,18 @@ func (m *EmailsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487e
         if err != nil {
             return err
         }
+    } else if m.GetEmailsPostRequestBodyString1() != nil {
+        err := writer.WriteStringValue("", m.GetEmailsPostRequestBodyString1())
+        if err != nil {
+            return err
+        }
+    } else if m.GetEmailsPostRequestBodyString0() != nil {
+        err := writer.WriteCollectionOfStringValues("", m.GetEmailsPostRequestBodyString0())
+        if err != nil {
+            return err
+        }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
@@ -245,8 +345,16 @@ func (m *EmailsPostRequestBody) SetEmailsPostRequestBodyMember1(value EmailsPost
 func (m *EmailsPostRequestBody) SetEmailsPostRequestBodyString(value *string)() {
     m.emailsPostRequestBodyString = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *EmailsPostRequestBody) SetString(value *string)() {
+// SetEmailsPostRequestBodyString0 sets the string property value. Composed type representation for type []string
+func (m *EmailsPostRequestBody) SetEmailsPostRequestBodyString0(value []string)() {
+    m.emailsPostRequestBodyString0 = value
+}
+// SetEmailsPostRequestBodyString1 sets the string property value. Composed type representation for type string
+func (m *EmailsPostRequestBody) SetEmailsPostRequestBodyString1(value *string)() {
+    m.emailsPostRequestBodyString1 = value
+}
+// SetString sets the string property value. Composed type representation for type []string
+func (m *EmailsPostRequestBody) SetString(value []string)() {
     m.string = value
 }
 // EmailsRequestBuilderGetQueryParameters lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
@@ -261,22 +369,30 @@ type EmailsDeleteRequestBodyable interface {
     GetEmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1()(EmailsDeleteRequestBodyMember1able)
     GetEmailsDeleteRequestBodyMember1()(EmailsDeleteRequestBodyMember1able)
     GetEmailsDeleteRequestBodyString()(*string)
-    GetString()(*string)
+    GetEmailsDeleteRequestBodyString0()([]string)
+    GetEmailsDeleteRequestBodyString1()(*string)
+    GetString()([]string)
     SetEmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1(value EmailsDeleteRequestBodyMember1able)()
     SetEmailsDeleteRequestBodyMember1(value EmailsDeleteRequestBodyMember1able)()
     SetEmailsDeleteRequestBodyString(value *string)()
-    SetString(value *string)()
+    SetEmailsDeleteRequestBodyString0(value []string)()
+    SetEmailsDeleteRequestBodyString1(value *string)()
+    SetString(value []string)()
 }
 type EmailsPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmailsPostRequestBodyEmailsPostRequestBodyMember1()(EmailsPostRequestBodyMember1able)
     GetEmailsPostRequestBodyMember1()(EmailsPostRequestBodyMember1able)
     GetEmailsPostRequestBodyString()(*string)
-    GetString()(*string)
+    GetEmailsPostRequestBodyString0()([]string)
+    GetEmailsPostRequestBodyString1()(*string)
+    GetString()([]string)
     SetEmailsPostRequestBodyEmailsPostRequestBodyMember1(value EmailsPostRequestBodyMember1able)()
     SetEmailsPostRequestBodyMember1(value EmailsPostRequestBodyMember1able)()
     SetEmailsPostRequestBodyString(value *string)()
-    SetString(value *string)()
+    SetEmailsPostRequestBodyString0(value []string)()
+    SetEmailsPostRequestBodyString1(value *string)()
+    SetString(value []string)()
 }
 // NewEmailsRequestBuilderInternal instantiates a new EmailsRequestBuilder and sets the default values.
 func NewEmailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EmailsRequestBuilder) {

@@ -20,12 +20,14 @@ type ValidationError_errors struct {
     // The value property
     value ValidationError_errors_ValidationError_errors_valueable
 }
-// ValidationError_errors_ValidationError_errors_value composed type wrapper for classes int32, string
+// ValidationError_errors_ValidationError_errors_value composed type wrapper for classes int32, string, []string
 type ValidationError_errors_ValidationError_errors_value struct {
     // Composed type representation for type int32
     integer *int32
+    // Composed type representation for type []string
+    string []string
     // Composed type representation for type string
-    string *string
+    validationError_errors_valueString *string
 }
 // NewValidationError_errors_ValidationError_errors_value instantiates a new ValidationError_errors_ValidationError_errors_value and sets the default values.
 func NewValidationError_errors_ValidationError_errors_value()(*ValidationError_errors_ValidationError_errors_value) {
@@ -60,7 +62,18 @@ func CreateValidationError_errors_ValidationError_errors_valueFromDiscriminatorV
         if err != nil {
             return nil, err
         }
-        result.SetString(val)
+        result.SetValidationErrorErrorsValueString(val)
+    } else if val, err := parseNode.GetCollectionOfPrimitiveValues("string"); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        cast := make([]string, len(val))
+        for i, v := range val {
+            if v != nil {
+                cast[i] = *(v.(*string))
+            }
+        }
+        result.SetString(cast)
     }
     return result, nil
 }
@@ -79,10 +92,15 @@ func (m *ValidationError_errors_ValidationError_errors_value) GetInteger()(*int3
 func (m *ValidationError_errors_ValidationError_errors_value) GetIsComposedType()(bool) {
     return true
 }
-// GetString gets the string property value. Composed type representation for type string
-// returns a *string when successful
-func (m *ValidationError_errors_ValidationError_errors_value) GetString()(*string) {
+// GetString gets the string property value. Composed type representation for type []string
+// returns a []string when successful
+func (m *ValidationError_errors_ValidationError_errors_value) GetString()([]string) {
     return m.string
+}
+// GetValidationErrorErrorsValueString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *ValidationError_errors_ValidationError_errors_value) GetValidationErrorErrorsValueString()(*string) {
+    return m.validationError_errors_valueString
 }
 // Serialize serializes information the current object
 func (m *ValidationError_errors_ValidationError_errors_value) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -91,8 +109,13 @@ func (m *ValidationError_errors_ValidationError_errors_value) Serialize(writer i
         if err != nil {
             return err
         }
+    } else if m.GetValidationErrorErrorsValueString() != nil {
+        err := writer.WriteStringValue("", m.GetValidationErrorErrorsValueString())
+        if err != nil {
+            return err
+        }
     } else if m.GetString() != nil {
-        err := writer.WriteStringValue("", m.GetString())
+        err := writer.WriteCollectionOfStringValues("", m.GetString())
         if err != nil {
             return err
         }
@@ -103,16 +126,22 @@ func (m *ValidationError_errors_ValidationError_errors_value) Serialize(writer i
 func (m *ValidationError_errors_ValidationError_errors_value) SetInteger(value *int32)() {
     m.integer = value
 }
-// SetString sets the string property value. Composed type representation for type string
-func (m *ValidationError_errors_ValidationError_errors_value) SetString(value *string)() {
+// SetString sets the string property value. Composed type representation for type []string
+func (m *ValidationError_errors_ValidationError_errors_value) SetString(value []string)() {
     m.string = value
+}
+// SetValidationErrorErrorsValueString sets the string property value. Composed type representation for type string
+func (m *ValidationError_errors_ValidationError_errors_value) SetValidationErrorErrorsValueString(value *string)() {
+    m.validationError_errors_valueString = value
 }
 type ValidationError_errors_ValidationError_errors_valueable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInteger()(*int32)
-    GetString()(*string)
+    GetString()([]string)
+    GetValidationErrorErrorsValueString()(*string)
     SetInteger(value *int32)()
-    SetString(value *string)()
+    SetString(value []string)()
+    SetValidationErrorErrorsValueString(value *string)()
 }
 // NewValidationError_errors instantiates a new ValidationError_errors and sets the default values.
 func NewValidationError_errors()(*ValidationError_errors) {
