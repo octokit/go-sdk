@@ -21,6 +21,8 @@ type CopilotSeatDetails struct {
     organization NullableOrganizationSimpleable
     // The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
     pending_cancellation_date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
+    // The Copilot plan of the organization, or the parent enterprise, when applicable.
+    plan_type *CopilotSeatDetails_plan_type
     // Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
@@ -207,6 +209,16 @@ func (m *CopilotSeatDetails) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["plan_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCopilotSeatDetails_plan_type)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlanType(val.(*CopilotSeatDetails_plan_type))
+        }
+        return nil
+    }
     res["updated_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -238,6 +250,11 @@ func (m *CopilotSeatDetails) GetOrganization()(NullableOrganizationSimpleable) {
 // returns a *DateOnly when successful
 func (m *CopilotSeatDetails) GetPendingCancellationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     return m.pending_cancellation_date
+}
+// GetPlanType gets the plan_type property value. The Copilot plan of the organization, or the parent enterprise, when applicable.
+// returns a *CopilotSeatDetails_plan_type when successful
+func (m *CopilotSeatDetails) GetPlanType()(*CopilotSeatDetails_plan_type) {
+    return m.plan_type
 }
 // GetUpdatedAt gets the updated_at property value. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
 // returns a *Time when successful
@@ -288,6 +305,13 @@ func (m *CopilotSeatDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetPlanType() != nil {
+        cast := (*m.GetPlanType()).String()
+        err := writer.WriteStringValue("plan_type", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteTimeValue("updated_at", m.GetUpdatedAt())
         if err != nil {
@@ -324,6 +348,10 @@ func (m *CopilotSeatDetails) SetOrganization(value NullableOrganizationSimpleabl
 func (m *CopilotSeatDetails) SetPendingCancellationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     m.pending_cancellation_date = value
 }
+// SetPlanType sets the plan_type property value. The Copilot plan of the organization, or the parent enterprise, when applicable.
+func (m *CopilotSeatDetails) SetPlanType(value *CopilotSeatDetails_plan_type)() {
+    m.plan_type = value
+}
 // SetUpdatedAt sets the updated_at property value. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
 func (m *CopilotSeatDetails) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
@@ -337,6 +365,7 @@ type CopilotSeatDetailsable interface {
     GetLastActivityEditor()(*string)
     GetOrganization()(NullableOrganizationSimpleable)
     GetPendingCancellationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetPlanType()(*CopilotSeatDetails_plan_type)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetAssignee(value SimpleUserable)()
     SetAssigningTeam(value CopilotSeatDetails_CopilotSeatDetails_assigning_teamable)()
@@ -345,5 +374,6 @@ type CopilotSeatDetailsable interface {
     SetLastActivityEditor(value *string)()
     SetOrganization(value NullableOrganizationSimpleable)()
     SetPendingCancellationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetPlanType(value *CopilotSeatDetails_plan_type)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }

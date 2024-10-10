@@ -1,9 +1,15 @@
 package pkg
 
 import (
+	"context"
+	"net/http"
+	"net/http/httptest"
 	"os"
+	"strings"
 	"testing"
 
+	abs "github.com/microsoft/kiota-abstractions-go"
+	"github.com/octokit/go-sdk/pkg/github/installation"
 	"github.com/octokit/go-sdk/pkg/headers"
 )
 
@@ -88,6 +94,49 @@ func TestNewApiClientAppAuthHappyPath(t *testing.T) {
 	}
 	if client == nil {
 		t.Fatalf("client is nil")
+	}
+}
+
+func TestNewApiClientAppAuthBaseUrl(t *testing.T) {
+	tmpfile, err := os.CreateTemp("", pemFileName)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer os.Remove(tmpfile.Name())
+
+	if _, err := tmpfile.Write(key); err != nil {
+		t.Fatal(err)
+	}
+	if err := tmpfile.Close(); err != nil {
+		t.Fatal(err)
+	}
+
+	expectedCall := false
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if strings.Contains(r.URL.Path, "/app/installations") {
+			expectedCall = true
+		}
+	}))
+
+	client, err := NewApiClient(
+		WithGitHubAppAuthentication(tmpfile.Name(), clientID, installationID),
+		WithBaseUrl(server.URL),
+	)
+	if err != nil {
+		t.Fatalf("error creating client: %v", err)
+	}
+	if client == nil {
+		t.Fatalf("client is nil")
+	}
+	queryParams := &installation.RepositoriesRequestBuilderGetQueryParameters{}
+	requestConfig := &abs.RequestConfiguration[installation.RepositoriesRequestBuilderGetQueryParameters]{
+		QueryParameters: queryParams,
+	}
+
+	// trigger a refresh of the installation token to the expected url
+	_, _ = client.Installation().Repositories().Get(context.Background(), requestConfig)
+	if !expectedCall {
+		t.Errorf("installation token endpoint not called")
 	}
 }
 
