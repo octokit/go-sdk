@@ -17,6 +17,8 @@ type ItemRulesetsRequestBuilderGetQueryParameters struct {
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
+    // A comma-separated list of rule targets to filter by.If provided, only rulesets that apply to the specified targets will be returned.For example, `branch,tag,push`.
+    Targets *string `uriparametername:"targets"`
 }
 // ByRuleset_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.rulesets.item collection
 // returns a *ItemRulesetsWithRuleset_ItemRequestBuilder when successful
@@ -31,7 +33,7 @@ func (m *ItemRulesetsRequestBuilder) ByRuleset_id(ruleset_id int32)(*ItemRuleset
 // NewItemRulesetsRequestBuilderInternal instantiates a new ItemRulesetsRequestBuilder and sets the default values.
 func NewItemRulesetsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRulesetsRequestBuilder) {
     m := &ItemRulesetsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/rulesets{?page*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/rulesets{?page*,per_page*,targets*}", pathParameters),
     }
     return m
 }
