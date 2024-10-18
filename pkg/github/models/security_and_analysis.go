@@ -13,6 +13,8 @@ type SecurityAndAnalysis struct {
     dependabot_security_updates SecurityAndAnalysis_dependabot_security_updatesable
     // The secret_scanning property
     secret_scanning SecurityAndAnalysis_secret_scanningable
+    // The secret_scanning_ai_detection property
+    secret_scanning_ai_detection SecurityAndAnalysis_secret_scanning_ai_detectionable
     // The secret_scanning_non_provider_patterns property
     secret_scanning_non_provider_patterns SecurityAndAnalysis_secret_scanning_non_provider_patternsable
     // The secret_scanning_push_protection property
@@ -79,6 +81,16 @@ func (m *SecurityAndAnalysis) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["secret_scanning_ai_detection"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityAndAnalysis_secret_scanning_ai_detectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningAiDetection(val.(SecurityAndAnalysis_secret_scanning_ai_detectionable))
+        }
+        return nil
+    }
     res["secret_scanning_non_provider_patterns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSecurityAndAnalysis_secret_scanning_non_provider_patternsFromDiscriminatorValue)
         if err != nil {
@@ -106,6 +118,11 @@ func (m *SecurityAndAnalysis) GetFieldDeserializers()(map[string]func(i878a80d23
 func (m *SecurityAndAnalysis) GetSecretScanning()(SecurityAndAnalysis_secret_scanningable) {
     return m.secret_scanning
 }
+// GetSecretScanningAiDetection gets the secret_scanning_ai_detection property value. The secret_scanning_ai_detection property
+// returns a SecurityAndAnalysis_secret_scanning_ai_detectionable when successful
+func (m *SecurityAndAnalysis) GetSecretScanningAiDetection()(SecurityAndAnalysis_secret_scanning_ai_detectionable) {
+    return m.secret_scanning_ai_detection
+}
 // GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. The secret_scanning_non_provider_patterns property
 // returns a SecurityAndAnalysis_secret_scanning_non_provider_patternsable when successful
 func (m *SecurityAndAnalysis) GetSecretScanningNonProviderPatterns()(SecurityAndAnalysis_secret_scanning_non_provider_patternsable) {
@@ -132,6 +149,12 @@ func (m *SecurityAndAnalysis) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteObjectValue("secret_scanning", m.GetSecretScanning())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("secret_scanning_ai_detection", m.GetSecretScanningAiDetection())
         if err != nil {
             return err
         }
@@ -172,6 +195,10 @@ func (m *SecurityAndAnalysis) SetDependabotSecurityUpdates(value SecurityAndAnal
 func (m *SecurityAndAnalysis) SetSecretScanning(value SecurityAndAnalysis_secret_scanningable)() {
     m.secret_scanning = value
 }
+// SetSecretScanningAiDetection sets the secret_scanning_ai_detection property value. The secret_scanning_ai_detection property
+func (m *SecurityAndAnalysis) SetSecretScanningAiDetection(value SecurityAndAnalysis_secret_scanning_ai_detectionable)() {
+    m.secret_scanning_ai_detection = value
+}
 // SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. The secret_scanning_non_provider_patterns property
 func (m *SecurityAndAnalysis) SetSecretScanningNonProviderPatterns(value SecurityAndAnalysis_secret_scanning_non_provider_patternsable)() {
     m.secret_scanning_non_provider_patterns = value
@@ -186,11 +213,13 @@ type SecurityAndAnalysisable interface {
     GetAdvancedSecurity()(SecurityAndAnalysis_advanced_securityable)
     GetDependabotSecurityUpdates()(SecurityAndAnalysis_dependabot_security_updatesable)
     GetSecretScanning()(SecurityAndAnalysis_secret_scanningable)
+    GetSecretScanningAiDetection()(SecurityAndAnalysis_secret_scanning_ai_detectionable)
     GetSecretScanningNonProviderPatterns()(SecurityAndAnalysis_secret_scanning_non_provider_patternsable)
     GetSecretScanningPushProtection()(SecurityAndAnalysis_secret_scanning_push_protectionable)
     SetAdvancedSecurity(value SecurityAndAnalysis_advanced_securityable)()
     SetDependabotSecurityUpdates(value SecurityAndAnalysis_dependabot_security_updatesable)()
     SetSecretScanning(value SecurityAndAnalysis_secret_scanningable)()
+    SetSecretScanningAiDetection(value SecurityAndAnalysis_secret_scanning_ai_detectionable)()
     SetSecretScanningNonProviderPatterns(value SecurityAndAnalysis_secret_scanning_non_provider_patternsable)()
     SetSecretScanningPushProtection(value SecurityAndAnalysis_secret_scanning_push_protectionable)()
 }
