@@ -36,6 +36,11 @@ func (m *ItemActionsRequestBuilder) Oidc()(*ItemActionsOidcRequestBuilder) {
 func (m *ItemActionsRequestBuilder) Permissions()(*ItemActionsPermissionsRequestBuilder) {
     return NewItemActionsPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RunnerGroups the runnerGroups property
+// returns a *ItemActionsRunnerGroupsRequestBuilder when successful
+func (m *ItemActionsRequestBuilder) RunnerGroups()(*ItemActionsRunnerGroupsRequestBuilder) {
+    return NewItemActionsRunnerGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Runners the runners property
 // returns a *ItemActionsRunnersRequestBuilder when successful
 func (m *ItemActionsRequestBuilder) Runners()(*ItemActionsRunnersRequestBuilder) {

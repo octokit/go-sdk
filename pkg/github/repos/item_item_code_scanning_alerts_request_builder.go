@@ -14,6 +14,10 @@ type ItemItemCodeScanningAlertsRequestBuilder struct {
 }
 // ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters lists code scanning alerts.The response includes a `most_recent_instance` object.This provides details of the most recent instance of this alertfor the default branch (or for the specified Git reference if you used `ref` in the request).OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 type ItemItemCodeScanningAlertsRequestBuilderGetQueryParameters struct {
+    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
+    After *string `uriparametername:"after"`
+    // A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
+    Before *string `uriparametername:"before"`
     // The direction to sort the results by.
     Direction *id6219ca61a285d774ef018a9a4ff7bdb0938800fad8b8d12f8b2e59ee8d18fcd.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
@@ -48,7 +52,7 @@ func (m *ItemItemCodeScanningAlertsRequestBuilder) ByAlert_number(alert_number i
 // NewItemItemCodeScanningAlertsRequestBuilderInternal instantiates a new ItemItemCodeScanningAlertsRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAlertsRequestBuilder) {
     m := &ItemItemCodeScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/alerts{?direction*,page*,per_page*,pr*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/alerts{?after*,before*,direction*,page*,per_page*,pr*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters),
     }
     return m
 }
