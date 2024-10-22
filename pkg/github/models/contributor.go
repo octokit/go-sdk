@@ -50,6 +50,8 @@ type Contributor struct {
     typeEscaped *string
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewContributor instantiates a new Contributor and sets the default values.
 func NewContributor()(*Contributor) {
@@ -302,6 +304,16 @@ func (m *Contributor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
@@ -388,6 +400,11 @@ func (m *Contributor) GetTypeEscaped()(*string) {
 // returns a *string when successful
 func (m *Contributor) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *Contributor) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *Contributor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -518,6 +535,12 @@ func (m *Contributor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -613,6 +636,10 @@ func (m *Contributor) SetTypeEscaped(value *string)() {
 func (m *Contributor) SetUrl(value *string)() {
     m.url = value
 }
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *Contributor) SetUserViewType(value *string)() {
+    m.user_view_type = value
+}
 type Contributorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -637,6 +664,7 @@ type Contributorable interface {
     GetSubscriptionsUrl()(*string)
     GetTypeEscaped()(*string)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetContributions(value *int32)()
     SetEmail(value *string)()
@@ -658,4 +686,5 @@ type Contributorable interface {
     SetSubscriptionsUrl(value *string)()
     SetTypeEscaped(value *string)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }

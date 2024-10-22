@@ -1,5 +1,5 @@
 package models
-// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 type AppPermissions_organization_copilot_seat_management int
 
 const (

@@ -43,7 +43,7 @@ type ItemItemRepoPatchRequestBody struct {
     private *bool
     // Specify which security and analysis features to enable or disable for the repository.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:`{ "security_and_analysis": {"advanced_security": { "status": "enabled" } } }`.You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
     security_and_analysis ItemItemRepoPatchRequestBody_security_and_analysisable
-    // Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+    // Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
     // Deprecated: 
     use_squash_pr_title_as_default *bool
     // Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.
@@ -362,7 +362,7 @@ func (m *ItemItemRepoPatchRequestBody) GetPrivate()(*bool) {
 func (m *ItemItemRepoPatchRequestBody) GetSecurityAndAnalysis()(ItemItemRepoPatchRequestBody_security_and_analysisable) {
     return m.security_and_analysis
 }
-// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 // returns a *bool when successful
 func (m *ItemItemRepoPatchRequestBody) GetUseSquashPrTitleAsDefault()(*bool) {
@@ -579,7 +579,7 @@ func (m *ItemItemRepoPatchRequestBody) SetPrivate(value *bool)() {
 func (m *ItemItemRepoPatchRequestBody) SetSecurityAndAnalysis(value ItemItemRepoPatchRequestBody_security_and_analysisable)() {
     m.security_and_analysis = value
 }
-// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 func (m *ItemItemRepoPatchRequestBody) SetUseSquashPrTitleAsDefault(value *bool)() {
     m.use_squash_pr_title_as_default = value

@@ -39,13 +39,13 @@ type PullRequestReviewComment struct {
     original_commit_id *string
     // The line of the blob to which the comment applies. The last line of the range for a multi-line comment
     original_line *int32
-    // The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
+    // The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.
     original_position *int32
     // The first line of the range for a multi-line comment.
     original_start_line *int32
     // The relative path of the file to which the comment applies.
     path *string
-    // The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
+    // The line index in the diff to which the comment applies. This field is closing down; use `line` instead.
     position *int32
     // The ID of the pull request review to which the comment belongs.
     pull_request_review_id *int64
@@ -460,7 +460,7 @@ func (m *PullRequestReviewComment) GetOriginalCommitId()(*string) {
 func (m *PullRequestReviewComment) GetOriginalLine()(*int32) {
     return m.original_line
 }
-// GetOriginalPosition gets the original_position property value. The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
+// GetOriginalPosition gets the original_position property value. The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.
 // returns a *int32 when successful
 func (m *PullRequestReviewComment) GetOriginalPosition()(*int32) {
     return m.original_position
@@ -475,7 +475,7 @@ func (m *PullRequestReviewComment) GetOriginalStartLine()(*int32) {
 func (m *PullRequestReviewComment) GetPath()(*string) {
     return m.path
 }
-// GetPosition gets the position property value. The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
+// GetPosition gets the position property value. The line index in the diff to which the comment applies. This field is closing down; use `line` instead.
 // returns a *int32 when successful
 func (m *PullRequestReviewComment) GetPosition()(*int32) {
     return m.position
@@ -782,7 +782,7 @@ func (m *PullRequestReviewComment) SetOriginalCommitId(value *string)() {
 func (m *PullRequestReviewComment) SetOriginalLine(value *int32)() {
     m.original_line = value
 }
-// SetOriginalPosition sets the original_position property value. The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.
+// SetOriginalPosition sets the original_position property value. The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.
 func (m *PullRequestReviewComment) SetOriginalPosition(value *int32)() {
     m.original_position = value
 }
@@ -794,7 +794,7 @@ func (m *PullRequestReviewComment) SetOriginalStartLine(value *int32)() {
 func (m *PullRequestReviewComment) SetPath(value *string)() {
     m.path = value
 }
-// SetPosition sets the position property value. The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.
+// SetPosition sets the position property value. The line index in the diff to which the comment applies. This field is closing down; use `line` instead.
 func (m *PullRequestReviewComment) SetPosition(value *int32)() {
     m.position = value
 }

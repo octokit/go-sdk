@@ -190,7 +190,7 @@ type Repository struct {
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The url property
     url *string
-    // Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+    // Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.
     // Deprecated: 
     use_squash_pr_title_as_default *bool
     // The repository visibility: public, private, or internal.
@@ -1634,7 +1634,7 @@ func (m *Repository) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
 func (m *Repository) GetUrl()(*string) {
     return m.url
 }
-// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 // returns a *bool when successful
 func (m *Repository) GetUseSquashPrTitleAsDefault()(*bool) {
@@ -2609,7 +2609,7 @@ func (m *Repository) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 func (m *Repository) SetUrl(value *string)() {
     m.url = value
 }
-// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 func (m *Repository) SetUseSquashPrTitleAsDefault(value *bool)() {
     m.use_squash_pr_title_as_default = value

@@ -23,7 +23,7 @@ func NewWithTeam_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewWithTeam_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint.To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.
+// Delete > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint.To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 // Deprecated: 
 // returns a BasicError error when the service returns a 404 status code
 // returns a ValidationError error when the service returns a 422 status code
@@ -50,7 +50,7 @@ func (m *WithTeam_ItemRequestBuilder) Delete(ctx context.Context, requestConfigu
 func (m *WithTeam_ItemRequestBuilder) Discussions()(*ItemDiscussionsRequestBuilder) {
     return NewItemDiscussionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/teams/teams#get-a-team-by-name) endpoint.
+// Get > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/teams/teams#get-a-team-by-name) endpoint.
 // Deprecated: 
 // returns a TeamFullable when successful
 // returns a BasicError error when the service returns a 404 status code
@@ -89,7 +89,7 @@ func (m *WithTeam_ItemRequestBuilder) Members()(*ItemMembersRequestBuilder) {
 func (m *WithTeam_ItemRequestBuilder) Memberships()(*ItemMembershipsRequestBuilder) {
     return NewItemMembershipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.To edit a team, the authenticated user must either be an organization owner or a team maintainer.> [!NOTE]> With nested teams, the `privacy` for parent teams cannot be `secret`.
+// Patch > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.To edit a team, the authenticated user must either be an organization owner or a team maintainer.> [!NOTE]> With nested teams, the `privacy` for parent teams cannot be `secret`.
 // Deprecated: 
 // returns a TeamFullable when successful
 // returns a BasicError error when the service returns a 403 status code
@@ -132,7 +132,7 @@ func (m *WithTeam_ItemRequestBuilder) Repos()(*ItemReposRequestBuilder) {
 func (m *WithTeam_ItemRequestBuilder) Teams()(*ItemTeamsRequestBuilder) {
     return NewItemTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint.To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.
+// ToDeleteRequestInformation > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint.To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *WithTeam_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -141,7 +141,7 @@ func (m *WithTeam_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/teams/teams#get-a-team-by-name) endpoint.
+// ToGetRequestInformation > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the [Get a team by name](https://docs.github.com/rest/teams/teams#get-a-team-by-name) endpoint.
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *WithTeam_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -150,7 +150,7 @@ func (m *WithTeam_ItemRequestBuilder) ToGetRequestInformation(ctx context.Contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation > [!WARNING]> **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.To edit a team, the authenticated user must either be an organization owner or a team maintainer.> [!NOTE]> With nested teams, the `privacy` for parent teams cannot be `secret`.
+// ToPatchRequestInformation > [!WARNING]> **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.To edit a team, the authenticated user must either be an organization owner or a team maintainer.> [!NOTE]> With nested teams, the `privacy` for parent teams cannot be `secret`.
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *WithTeam_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ItemWithTeam_PatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

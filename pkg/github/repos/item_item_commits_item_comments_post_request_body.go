@@ -9,7 +9,7 @@ type ItemItemCommitsItemCommentsPostRequestBody struct {
     additionalData map[string]any
     // The contents of the comment.
     body *string
-    // **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+    // **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
     line *int32
     // Relative path of the file to comment on.
     path *string
@@ -84,7 +84,7 @@ func (m *ItemItemCommitsItemCommentsPostRequestBody) GetFieldDeserializers()(map
     }
     return res
 }
-// GetLine gets the line property value. **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+// GetLine gets the line property value. **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
 // returns a *int32 when successful
 func (m *ItemItemCommitsItemCommentsPostRequestBody) GetLine()(*int32) {
     return m.line
@@ -141,7 +141,7 @@ func (m *ItemItemCommitsItemCommentsPostRequestBody) SetAdditionalData(value map
 func (m *ItemItemCommitsItemCommentsPostRequestBody) SetBody(value *string)() {
     m.body = value
 }
-// SetLine sets the line property value. **Deprecated**. Use **position** parameter instead. Line number in the file to comment on.
+// SetLine sets the line property value. **Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.
 func (m *ItemItemCommitsItemCommentsPostRequestBody) SetLine(value *int32)() {
     m.line = value
 }

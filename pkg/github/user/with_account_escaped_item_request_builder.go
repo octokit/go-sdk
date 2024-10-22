@@ -2,6 +2,7 @@ package user
 
 import (
     "context"
+    ie967d16dae74a49b5e0e051225c5dac0d76e5e38f13dd1628028cbce108c25b6 "strings"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
@@ -29,7 +30,7 @@ func NewWithAccount_GetResponse()(*WithAccount_GetResponse) {
 func CreateWithAccount_GetResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     result := NewWithAccount_GetResponse()
     if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("")
+        mappingValueNode, err := parseNode.GetChildNode("user_view_type")
         if err != nil {
             return nil, err
         }
@@ -39,6 +40,11 @@ func CreateWithAccount_GetResponseFromDiscriminatorValue(parseNode i878a80d2330e
                 return nil, err
             }
             if mappingValue != nil {
+                if ie967d16dae74a49b5e0e051225c5dac0d76e5e38f13dd1628028cbce108c25b6.EqualFold(*mappingValue, "private") {
+                    result.SetPrivateUser(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.NewPrivateUser())
+                } else if ie967d16dae74a49b5e0e051225c5dac0d76e5e38f13dd1628028cbce108c25b6.EqualFold(*mappingValue, "public") {
+                    result.SetPublicUser(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.NewPublicUser())
+                }
             }
         }
     }

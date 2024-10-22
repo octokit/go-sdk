@@ -10,7 +10,7 @@ import (
 type ItemCopilotBillingSeatsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCopilotBillingSeatsRequestBuilderGetQueryParameters > [!NOTE]> This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+// ItemCopilotBillingSeatsRequestBuilderGetQueryParameters > [!NOTE]> This endpoint is in public preview and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 type ItemCopilotBillingSeatsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,7 +30,7 @@ func NewItemCopilotBillingSeatsRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewItemCopilotBillingSeatsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get > [!NOTE]> This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+// Get > [!NOTE]> This endpoint is in public preview and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 // returns a ItemCopilotBillingSeatsGetResponseable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -59,7 +59,7 @@ func (m *ItemCopilotBillingSeatsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ItemCopilotBillingSeatsGetResponseable), nil
 }
-// ToGetRequestInformation > [!NOTE]> This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+// ToGetRequestInformation > [!NOTE]> This endpoint is in public preview and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemCopilotBillingSeatsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCopilotBillingSeatsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

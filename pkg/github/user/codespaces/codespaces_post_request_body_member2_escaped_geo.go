@@ -1,5 +1,5 @@
 package codespaces
-// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
 type CodespacesPostRequestBodyMember2_geo int
 
 const (

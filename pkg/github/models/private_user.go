@@ -81,8 +81,6 @@ type PrivateUser struct {
     starred_url *string
     // The subscriptions_url property
     subscriptions_url *string
-    // The suspended_at property
-    suspended_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The total_private_repos property
     total_private_repos *int32
     // The twitter_username property
@@ -95,6 +93,8 @@ type PrivateUser struct {
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewPrivateUser instantiates a new PrivateUser and sets the default values.
 func NewPrivateUser()(*PrivateUser) {
@@ -527,16 +527,6 @@ func (m *PrivateUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
-    res["suspended_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSuspendedAt(val)
-        }
-        return nil
-    }
     res["total_private_repos"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -594,6 +584,16 @@ func (m *PrivateUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetUrl(val)
+        }
+        return nil
+    }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
         }
         return nil
     }
@@ -729,11 +729,6 @@ func (m *PrivateUser) GetStarredUrl()(*string) {
 func (m *PrivateUser) GetSubscriptionsUrl()(*string) {
     return m.subscriptions_url
 }
-// GetSuspendedAt gets the suspended_at property value. The suspended_at property
-// returns a *Time when successful
-func (m *PrivateUser) GetSuspendedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    return m.suspended_at
-}
 // GetTotalPrivateRepos gets the total_private_repos property value. The total_private_repos property
 // returns a *int32 when successful
 func (m *PrivateUser) GetTotalPrivateRepos()(*int32) {
@@ -763,6 +758,11 @@ func (m *PrivateUser) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
 // returns a *string when successful
 func (m *PrivateUser) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *PrivateUser) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *PrivateUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -983,12 +983,6 @@ func (m *PrivateUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteTimeValue("suspended_at", m.GetSuspendedAt())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteInt32Value("total_private_repos", m.GetTotalPrivateRepos())
         if err != nil {
             return err
@@ -1020,6 +1014,12 @@ func (m *PrivateUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("url", m.GetUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
         if err != nil {
             return err
         }
@@ -1180,10 +1180,6 @@ func (m *PrivateUser) SetStarredUrl(value *string)() {
 func (m *PrivateUser) SetSubscriptionsUrl(value *string)() {
     m.subscriptions_url = value
 }
-// SetSuspendedAt sets the suspended_at property value. The suspended_at property
-func (m *PrivateUser) SetSuspendedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    m.suspended_at = value
-}
 // SetTotalPrivateRepos sets the total_private_repos property value. The total_private_repos property
 func (m *PrivateUser) SetTotalPrivateRepos(value *int32)() {
     m.total_private_repos = value
@@ -1207,6 +1203,10 @@ func (m *PrivateUser) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f30
 // SetUrl sets the url property value. The url property
 func (m *PrivateUser) SetUrl(value *string)() {
     m.url = value
+}
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *PrivateUser) SetUserViewType(value *string)() {
+    m.user_view_type = value
 }
 type PrivateUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
@@ -1247,13 +1247,13 @@ type PrivateUserable interface {
     GetSiteAdmin()(*bool)
     GetStarredUrl()(*string)
     GetSubscriptionsUrl()(*string)
-    GetSuspendedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTotalPrivateRepos()(*int32)
     GetTwitterUsername()(*string)
     GetTwoFactorAuthentication()(*bool)
     GetTypeEscaped()(*string)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetBio(value *string)()
     SetBlog(value *string)()
@@ -1290,11 +1290,11 @@ type PrivateUserable interface {
     SetSiteAdmin(value *bool)()
     SetStarredUrl(value *string)()
     SetSubscriptionsUrl(value *string)()
-    SetSuspendedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetTotalPrivateRepos(value *int32)()
     SetTwitterUsername(value *string)()
     SetTwoFactorAuthentication(value *bool)()
     SetTypeEscaped(value *string)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }

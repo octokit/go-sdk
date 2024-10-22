@@ -5,10 +5,11 @@ type CodeSecurityConfiguration_target_type int
 const (
     GLOBAL_CODESECURITYCONFIGURATION_TARGET_TYPE CodeSecurityConfiguration_target_type = iota
     ORGANIZATION_CODESECURITYCONFIGURATION_TARGET_TYPE
+    ENTERPRISE_CODESECURITYCONFIGURATION_TARGET_TYPE
 )
 
 func (i CodeSecurityConfiguration_target_type) String() string {
-    return []string{"global", "organization"}[i]
+    return []string{"global", "organization", "enterprise"}[i]
 }
 func ParseCodeSecurityConfiguration_target_type(v string) (any, error) {
     result := GLOBAL_CODESECURITYCONFIGURATION_TARGET_TYPE
@@ -17,6 +18,8 @@ func ParseCodeSecurityConfiguration_target_type(v string) (any, error) {
             result = GLOBAL_CODESECURITYCONFIGURATION_TARGET_TYPE
         case "organization":
             result = ORGANIZATION_CODESECURITYCONFIGURATION_TARGET_TYPE
+        case "enterprise":
+            result = ENTERPRISE_CODESECURITYCONFIGURATION_TARGET_TYPE
         default:
             return nil, nil
     }

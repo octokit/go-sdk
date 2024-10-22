@@ -50,6 +50,8 @@ type UserRoleAssignment struct {
     typeEscaped *string
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewUserRoleAssignment instantiates a new UserRoleAssignment and sets the default values.
 func NewUserRoleAssignment()(*UserRoleAssignment) {
@@ -297,6 +299,16 @@ func (m *UserRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
@@ -388,6 +400,11 @@ func (m *UserRoleAssignment) GetTypeEscaped()(*string) {
 // returns a *string when successful
 func (m *UserRoleAssignment) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *UserRoleAssignment) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *UserRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -518,6 +535,12 @@ func (m *UserRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -613,6 +636,10 @@ func (m *UserRoleAssignment) SetTypeEscaped(value *string)() {
 func (m *UserRoleAssignment) SetUrl(value *string)() {
     m.url = value
 }
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *UserRoleAssignment) SetUserViewType(value *string)() {
+    m.user_view_type = value
+}
 type UserRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -637,6 +664,7 @@ type UserRoleAssignmentable interface {
     GetSubscriptionsUrl()(*string)
     GetTypeEscaped()(*string)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetEmail(value *string)()
     SetEventsUrl(value *string)()
@@ -658,4 +686,5 @@ type UserRoleAssignmentable interface {
     SetSubscriptionsUrl(value *string)()
     SetTypeEscaped(value *string)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }
