@@ -20,6 +20,8 @@ type OrganizationFull struct {
     billing_email *string
     // The blog property
     blog *string
+    // The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+    collaborators *int32
     // The company property
     company *string
     // The created_at property
@@ -171,6 +173,11 @@ func (m *OrganizationFull) GetBillingEmail()(*string) {
 func (m *OrganizationFull) GetBlog()(*string) {
     return m.blog
 }
+// GetCollaborators gets the collaborators property value. The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+// returns a *int32 when successful
+func (m *OrganizationFull) GetCollaborators()(*int32) {
+    return m.collaborators
+}
 // GetCompany gets the company property value. The company property
 // returns a *string when successful
 func (m *OrganizationFull) GetCompany()(*string) {
@@ -275,6 +282,16 @@ func (m *OrganizationFull) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetBlog(val)
+        }
+        return nil
+    }
+    res["collaborators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCollaborators(val)
         }
         return nil
     }
@@ -1030,6 +1047,12 @@ func (m *OrganizationFull) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err := writer.WriteInt32Value("collaborators", m.GetCollaborators())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("company", m.GetCompany())
         if err != nil {
             return err
@@ -1368,6 +1391,10 @@ func (m *OrganizationFull) SetBillingEmail(value *string)() {
 func (m *OrganizationFull) SetBlog(value *string)() {
     m.blog = value
 }
+// SetCollaborators sets the collaborators property value. The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+func (m *OrganizationFull) SetCollaborators(value *int32)() {
+    m.collaborators = value
+}
 // SetCompany sets the company property value. The company property
 func (m *OrganizationFull) SetCompany(value *string)() {
     m.company = value
@@ -1585,6 +1612,7 @@ type OrganizationFullable interface {
     GetAvatarUrl()(*string)
     GetBillingEmail()(*string)
     GetBlog()(*string)
+    GetCollaborators()(*int32)
     GetCompany()(*string)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDefaultRepositoryPermission()(*string)
@@ -1641,6 +1669,7 @@ type OrganizationFullable interface {
     SetAvatarUrl(value *string)()
     SetBillingEmail(value *string)()
     SetBlog(value *string)()
+    SetCollaborators(value *int32)()
     SetCompany(value *string)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDefaultRepositoryPermission(value *string)()

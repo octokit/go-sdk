@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ItemItemDispatchesPostRequestBody_client_payload jSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+// ItemItemDispatchesPostRequestBody_client_payload jSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
 type ItemItemDispatchesPostRequestBody_client_payload struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any

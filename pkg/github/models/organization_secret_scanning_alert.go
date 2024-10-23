@@ -14,8 +14,12 @@ type OrganizationSecretScanningAlert struct {
     html_url *string
     // The REST API URL of the code locations for this alert.
     locations_url *string
+    // Whether the detected secret was found in multiple repositories in the same organization or enterprise.
+    multi_repo *bool
     // The security alert number.
     number *int32
+    // Whether the secret was publicly leaked.
+    publicly_leaked *bool
     // Whether push protection was bypassed for the detected secret.
     push_protection_bypassed *bool
     // The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -103,6 +107,16 @@ func (m *OrganizationSecretScanningAlert) GetFieldDeserializers()(map[string]fun
         }
         return nil
     }
+    res["multi_repo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMultiRepo(val)
+        }
+        return nil
+    }
     res["number"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -110,6 +124,16 @@ func (m *OrganizationSecretScanningAlert) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetNumber(val)
+        }
+        return nil
+    }
+    res["publicly_leaked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPubliclyLeaked(val)
         }
         return nil
     }
@@ -275,10 +299,20 @@ func (m *OrganizationSecretScanningAlert) GetHtmlUrl()(*string) {
 func (m *OrganizationSecretScanningAlert) GetLocationsUrl()(*string) {
     return m.locations_url
 }
+// GetMultiRepo gets the multi_repo property value. Whether the detected secret was found in multiple repositories in the same organization or enterprise.
+// returns a *bool when successful
+func (m *OrganizationSecretScanningAlert) GetMultiRepo()(*bool) {
+    return m.multi_repo
+}
 // GetNumber gets the number property value. The security alert number.
 // returns a *int32 when successful
 func (m *OrganizationSecretScanningAlert) GetNumber()(*int32) {
     return m.number
+}
+// GetPubliclyLeaked gets the publicly_leaked property value. Whether the secret was publicly leaked.
+// returns a *bool when successful
+func (m *OrganizationSecretScanningAlert) GetPubliclyLeaked()(*bool) {
+    return m.publicly_leaked
 }
 // GetPushProtectionBypassed gets the push_protection_bypassed property value. Whether push protection was bypassed for the detected secret.
 // returns a *bool when successful
@@ -359,6 +393,18 @@ func (m *OrganizationSecretScanningAlert) GetValidity()(*OrganizationSecretScann
 func (m *OrganizationSecretScanningAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("locations_url", m.GetLocationsUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("multi_repo", m.GetMultiRepo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("publicly_leaked", m.GetPubliclyLeaked())
         if err != nil {
             return err
         }
@@ -468,9 +514,17 @@ func (m *OrganizationSecretScanningAlert) SetHtmlUrl(value *string)() {
 func (m *OrganizationSecretScanningAlert) SetLocationsUrl(value *string)() {
     m.locations_url = value
 }
+// SetMultiRepo sets the multi_repo property value. Whether the detected secret was found in multiple repositories in the same organization or enterprise.
+func (m *OrganizationSecretScanningAlert) SetMultiRepo(value *bool)() {
+    m.multi_repo = value
+}
 // SetNumber sets the number property value. The security alert number.
 func (m *OrganizationSecretScanningAlert) SetNumber(value *int32)() {
     m.number = value
+}
+// SetPubliclyLeaked sets the publicly_leaked property value. Whether the secret was publicly leaked.
+func (m *OrganizationSecretScanningAlert) SetPubliclyLeaked(value *bool)() {
+    m.publicly_leaked = value
 }
 // SetPushProtectionBypassed sets the push_protection_bypassed property value. Whether push protection was bypassed for the detected secret.
 func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassed(value *bool)() {
@@ -538,7 +592,9 @@ type OrganizationSecretScanningAlertable interface {
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetHtmlUrl()(*string)
     GetLocationsUrl()(*string)
+    GetMultiRepo()(*bool)
     GetNumber()(*int32)
+    GetPubliclyLeaked()(*bool)
     GetPushProtectionBypassed()(*bool)
     GetPushProtectionBypassedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPushProtectionBypassedBy()(NullableSimpleUserable)
@@ -557,7 +613,9 @@ type OrganizationSecretScanningAlertable interface {
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetHtmlUrl(value *string)()
     SetLocationsUrl(value *string)()
+    SetMultiRepo(value *bool)()
     SetNumber(value *int32)()
+    SetPubliclyLeaked(value *bool)()
     SetPushProtectionBypassed(value *bool)()
     SetPushProtectionBypassedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPushProtectionBypassedBy(value NullableSimpleUserable)()

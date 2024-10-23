@@ -7,7 +7,7 @@ import (
 type ItemItemDispatchesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+    // JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
     client_payload ItemItemDispatchesPostRequestBody_client_payloadable
     // A custom webhook event name. Must be 100 characters or fewer.
     event_type *string
@@ -29,7 +29,7 @@ func CreateItemItemDispatchesPostRequestBodyFromDiscriminatorValue(parseNode i87
 func (m *ItemItemDispatchesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetClientPayload gets the client_payload property value. JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+// GetClientPayload gets the client_payload property value. JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
 // returns a ItemItemDispatchesPostRequestBody_client_payloadable when successful
 func (m *ItemItemDispatchesPostRequestBody) GetClientPayload()(ItemItemDispatchesPostRequestBody_client_payloadable) {
     return m.client_payload
@@ -91,7 +91,7 @@ func (m *ItemItemDispatchesPostRequestBody) Serialize(writer i878a80d2330e89d268
 func (m *ItemItemDispatchesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetClientPayload sets the client_payload property value. JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+// SetClientPayload sets the client_payload property value. JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
 func (m *ItemItemDispatchesPostRequestBody) SetClientPayload(value ItemItemDispatchesPostRequestBody_client_payloadable)() {
     m.client_payload = value
 }
