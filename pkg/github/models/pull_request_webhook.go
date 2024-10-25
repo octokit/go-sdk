@@ -20,7 +20,7 @@ type PullRequestWebhook struct {
     squash_merge_commit_message *PullRequestWebhook_squash_merge_commit_message
     // The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request's title.- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
     squash_merge_commit_title *PullRequestWebhook_squash_merge_commit_title
-    // Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**
+    // Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**
     use_squash_pr_title_as_default *bool
 }
 // NewPullRequestWebhook instantiates a new PullRequestWebhook and sets the default values.
@@ -156,7 +156,7 @@ func (m *PullRequestWebhook) GetSquashMergeCommitMessage()(*PullRequestWebhook_s
 func (m *PullRequestWebhook) GetSquashMergeCommitTitle()(*PullRequestWebhook_squash_merge_commit_title) {
     return m.squash_merge_commit_title
 }
-// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**
+// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**
 // returns a *bool when successful
 func (m *PullRequestWebhook) GetUseSquashPrTitleAsDefault()(*bool) {
     return m.use_squash_pr_title_as_default
@@ -249,7 +249,7 @@ func (m *PullRequestWebhook) SetSquashMergeCommitMessage(value *PullRequestWebho
 func (m *PullRequestWebhook) SetSquashMergeCommitTitle(value *PullRequestWebhook_squash_merge_commit_title)() {
     m.squash_merge_commit_title = value
 }
-// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**
+// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**
 func (m *PullRequestWebhook) SetUseSquashPrTitleAsDefault(value *bool)() {
     m.use_squash_pr_title_as_default = value
 }

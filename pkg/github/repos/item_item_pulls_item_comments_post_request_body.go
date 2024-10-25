@@ -17,7 +17,7 @@ type ItemItemPullsItemCommentsPostRequestBody struct {
     line *int32
     // The relative path to the file that necessitates a comment.
     path *string
-    // **This parameter is deprecated. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+    // **This parameter is closing down. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
     // Deprecated: 
     position *int32
     // **Required when using multi-line comments unless using `in_reply_to`**. The `start_line` is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation.
@@ -141,7 +141,7 @@ func (m *ItemItemPullsItemCommentsPostRequestBody) GetLine()(*int32) {
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetPath()(*string) {
     return m.path
 }
-// GetPosition gets the position property value. **This parameter is deprecated. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+// GetPosition gets the position property value. **This parameter is closing down. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 // Deprecated: 
 // returns a *int32 when successful
 func (m *ItemItemPullsItemCommentsPostRequestBody) GetPosition()(*int32) {
@@ -228,7 +228,7 @@ func (m *ItemItemPullsItemCommentsPostRequestBody) SetLine(value *int32)() {
 func (m *ItemItemPullsItemCommentsPostRequestBody) SetPath(value *string)() {
     m.path = value
 }
-// SetPosition sets the position property value. **This parameter is deprecated. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
+// SetPosition sets the position property value. **This parameter is closing down. Use `line` instead**. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The position value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
 // Deprecated: 
 func (m *ItemItemPullsItemCommentsPostRequestBody) SetPosition(value *int32)() {
     m.position = value

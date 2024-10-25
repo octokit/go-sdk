@@ -52,6 +52,8 @@ type Collaborator struct {
     typeEscaped *string
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewCollaborator instantiates a new Collaborator and sets the default values.
 func NewCollaborator()(*Collaborator) {
@@ -309,6 +311,16 @@ func (m *Collaborator) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
@@ -405,6 +417,11 @@ func (m *Collaborator) GetTypeEscaped()(*string) {
 // returns a *string when successful
 func (m *Collaborator) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *Collaborator) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *Collaborator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -541,6 +558,12 @@ func (m *Collaborator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -640,6 +663,10 @@ func (m *Collaborator) SetTypeEscaped(value *string)() {
 func (m *Collaborator) SetUrl(value *string)() {
     m.url = value
 }
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *Collaborator) SetUserViewType(value *string)() {
+    m.user_view_type = value
+}
 type Collaboratorable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -665,6 +692,7 @@ type Collaboratorable interface {
     GetSubscriptionsUrl()(*string)
     GetTypeEscaped()(*string)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetEmail(value *string)()
     SetEventsUrl(value *string)()
@@ -687,4 +715,5 @@ type Collaboratorable interface {
     SetSubscriptionsUrl(value *string)()
     SetTypeEscaped(value *string)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }

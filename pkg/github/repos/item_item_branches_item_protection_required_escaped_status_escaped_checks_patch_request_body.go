@@ -9,7 +9,7 @@ type ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody struct
     additionalData map[string]any
     // The list of status checks to require in order to merge into this branch.
     checks []ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody_checksable
-    // **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+    // **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
     // Deprecated: 
     contexts []string
     // Require branches to be up to date before merging.
@@ -37,7 +37,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) G
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetChecks()([]ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody_checksable) {
     return m.checks
 }
-// GetContexts gets the contexts property value. **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+// GetContexts gets the contexts property value. **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
 // Deprecated: 
 // returns a []string when successful
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) GetContexts()([]string) {
@@ -138,7 +138,7 @@ func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) S
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) SetChecks(value []ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody_checksable)() {
     m.checks = value
 }
-// SetContexts sets the contexts property value. **Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
+// SetContexts sets the contexts property value. **Closing down notice**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.
 // Deprecated: 
 func (m *ItemItemBranchesItemProtectionRequired_status_checksPatchRequestBody) SetContexts(value []string)() {
     m.contexts = value

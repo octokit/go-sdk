@@ -7,7 +7,7 @@ import (
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Username to assign to this issue. **This field is deprecated.**
+    // Username to assign to this issue. **This field is closing down.**
     assignee *string
     // Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
     assignees []string
@@ -225,7 +225,7 @@ func CreateItemItemIssuesItemWithIssue_numberPatchRequestBodyFromDiscriminatorVa
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAssignee gets the assignee property value. Username to assign to this issue. **This field is deprecated.**
+// GetAssignee gets the assignee property value. Username to assign to this issue. **This field is closing down.**
 // returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetAssignee()(*string) {
     return m.assignee
@@ -383,7 +383,7 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) Serialize(writer i8
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAssignee sets the assignee property value. Username to assign to this issue. **This field is deprecated.**
+// SetAssignee sets the assignee property value. Username to assign to this issue. **This field is closing down.**
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetAssignee(value *string)() {
     m.assignee = value
 }

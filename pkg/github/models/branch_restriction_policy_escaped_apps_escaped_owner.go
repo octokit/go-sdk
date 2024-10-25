@@ -53,6 +53,8 @@ type BranchRestrictionPolicy_apps_owner struct {
     typeEscaped *string
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewBranchRestrictionPolicy_apps_owner instantiates a new BranchRestrictionPolicy_apps_owner and sets the default values.
 func NewBranchRestrictionPolicy_apps_owner()(*BranchRestrictionPolicy_apps_owner) {
@@ -320,6 +322,16 @@ func (m *BranchRestrictionPolicy_apps_owner) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
@@ -421,6 +433,11 @@ func (m *BranchRestrictionPolicy_apps_owner) GetTypeEscaped()(*string) {
 // returns a *string when successful
 func (m *BranchRestrictionPolicy_apps_owner) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *BranchRestrictionPolicy_apps_owner) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *BranchRestrictionPolicy_apps_owner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -563,6 +580,12 @@ func (m *BranchRestrictionPolicy_apps_owner) Serialize(writer i878a80d2330e89d26
         }
     }
     {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -666,6 +689,10 @@ func (m *BranchRestrictionPolicy_apps_owner) SetTypeEscaped(value *string)() {
 func (m *BranchRestrictionPolicy_apps_owner) SetUrl(value *string)() {
     m.url = value
 }
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *BranchRestrictionPolicy_apps_owner) SetUserViewType(value *string)() {
+    m.user_view_type = value
+}
 type BranchRestrictionPolicy_apps_ownerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -692,6 +719,7 @@ type BranchRestrictionPolicy_apps_ownerable interface {
     GetSubscriptionsUrl()(*string)
     GetTypeEscaped()(*string)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetDescription(value *string)()
     SetEventsUrl(value *string)()
@@ -715,4 +743,5 @@ type BranchRestrictionPolicy_apps_ownerable interface {
     SetSubscriptionsUrl(value *string)()
     SetTypeEscaped(value *string)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }

@@ -7,7 +7,7 @@ import (
 type ItemItemIssuesPostRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
+    // Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
     assignee *string
     // Logins for Users to assign to this issue. _NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise._
     assignees []string
@@ -225,7 +225,7 @@ func CreateItemItemIssuesPostRequestBodyFromDiscriminatorValue(parseNode i878a80
 func (m *ItemItemIssuesPostRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAssignee gets the assignee property value. Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
+// GetAssignee gets the assignee property value. Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
 // returns a *string when successful
 func (m *ItemItemIssuesPostRequestBody) GetAssignee()(*string) {
     return m.assignee
@@ -383,7 +383,7 @@ func (m *ItemItemIssuesPostRequestBody) Serialize(writer i878a80d2330e89d2689638
 func (m *ItemItemIssuesPostRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAssignee sets the assignee property value. Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is deprecated.**_
+// SetAssignee sets the assignee property value. Login for the user that this issue should be assigned to. _NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. **This field is closing down.**_
 func (m *ItemItemIssuesPostRequestBody) SetAssignee(value *string)() {
     m.assignee = value
 }

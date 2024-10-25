@@ -33,7 +33,7 @@ type DeploymentStatus struct {
     repository_url *string
     // The state of the status.
     state *DeploymentStatus_state
-    // Deprecated: the URL to associate with this status.
+    // Closing down notice: the URL to associate with this status.
     target_url *string
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
@@ -273,7 +273,7 @@ func (m *DeploymentStatus) GetRepositoryUrl()(*string) {
 func (m *DeploymentStatus) GetState()(*DeploymentStatus_state) {
     return m.state
 }
-// GetTargetUrl gets the target_url property value. Deprecated: the URL to associate with this status.
+// GetTargetUrl gets the target_url property value. Closing down notice: the URL to associate with this status.
 // returns a *string when successful
 func (m *DeploymentStatus) GetTargetUrl()(*string) {
     return m.target_url
@@ -441,7 +441,7 @@ func (m *DeploymentStatus) SetRepositoryUrl(value *string)() {
 func (m *DeploymentStatus) SetState(value *DeploymentStatus_state)() {
     m.state = value
 }
-// SetTargetUrl sets the target_url property value. Deprecated: the URL to associate with this status.
+// SetTargetUrl sets the target_url property value. Closing down notice: the URL to associate with this status.
 func (m *DeploymentStatus) SetTargetUrl(value *string)() {
     m.target_url = value
 }

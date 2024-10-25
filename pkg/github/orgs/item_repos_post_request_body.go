@@ -45,7 +45,7 @@ type ItemReposPostRequestBody struct {
     private *bool
     // The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
     team_id *int32
-    // Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+    // Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
     // Deprecated: 
     use_squash_pr_title_as_default *bool
 }
@@ -367,7 +367,7 @@ func (m *ItemReposPostRequestBody) GetPrivate()(*bool) {
 func (m *ItemReposPostRequestBody) GetTeamId()(*int32) {
     return m.team_id
 }
-// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// GetUseSquashPrTitleAsDefault gets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 // returns a *bool when successful
 func (m *ItemReposPostRequestBody) GetUseSquashPrTitleAsDefault()(*bool) {
@@ -583,7 +583,7 @@ func (m *ItemReposPostRequestBody) SetPrivate(value *bool)() {
 func (m *ItemReposPostRequestBody) SetTeamId(value *int32)() {
     m.team_id = value
 }
-// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+// SetUseSquashPrTitleAsDefault sets the use_squash_pr_title_as_default property value. Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
 // Deprecated: 
 func (m *ItemReposPostRequestBody) SetUseSquashPrTitleAsDefault(value *bool)() {
     m.use_squash_pr_title_as_default = value

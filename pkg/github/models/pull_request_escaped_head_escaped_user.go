@@ -43,6 +43,8 @@ type PullRequest_head_user struct {
     typeEscaped *string
     // The url property
     url *string
+    // The user_view_type property
+    user_view_type *string
 }
 // NewPullRequest_head_user instantiates a new PullRequest_head_user and sets the default values.
 func NewPullRequest_head_user()(*PullRequest_head_user) {
@@ -255,6 +257,16 @@ func (m *PullRequest_head_user) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["user_view_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserViewType(val)
+        }
+        return nil
+    }
     return res
 }
 // GetFollowersUrl gets the followers_url property value. The followers_url property
@@ -336,6 +348,11 @@ func (m *PullRequest_head_user) GetTypeEscaped()(*string) {
 // returns a *string when successful
 func (m *PullRequest_head_user) GetUrl()(*string) {
     return m.url
+}
+// GetUserViewType gets the user_view_type property value. The user_view_type property
+// returns a *string when successful
+func (m *PullRequest_head_user) GetUserViewType()(*string) {
+    return m.user_view_type
 }
 // Serialize serializes information the current object
 func (m *PullRequest_head_user) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -448,6 +465,12 @@ func (m *PullRequest_head_user) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err := writer.WriteStringValue("user_view_type", m.GetUserViewType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -531,6 +554,10 @@ func (m *PullRequest_head_user) SetTypeEscaped(value *string)() {
 func (m *PullRequest_head_user) SetUrl(value *string)() {
     m.url = value
 }
+// SetUserViewType sets the user_view_type property value. The user_view_type property
+func (m *PullRequest_head_user) SetUserViewType(value *string)() {
+    m.user_view_type = value
+}
 type PullRequest_head_userable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -552,6 +579,7 @@ type PullRequest_head_userable interface {
     GetSubscriptionsUrl()(*string)
     GetTypeEscaped()(*string)
     GetUrl()(*string)
+    GetUserViewType()(*string)
     SetAvatarUrl(value *string)()
     SetEventsUrl(value *string)()
     SetFollowersUrl(value *string)()
@@ -570,4 +598,5 @@ type PullRequest_head_userable interface {
     SetSubscriptionsUrl(value *string)()
     SetTypeEscaped(value *string)()
     SetUrl(value *string)()
+    SetUserViewType(value *string)()
 }

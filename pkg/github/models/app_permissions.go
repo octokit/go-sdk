@@ -44,7 +44,7 @@ type AppPermissions struct {
     organization_administration *AppPermissions_organization_administration
     // The level of permission to grant the access token to view and manage announcement banners for an organization.
     organization_announcement_banners *AppPermissions_organization_announcement_banners
-    // The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+    // The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
     organization_copilot_seat_management *AppPermissions_organization_copilot_seat_management
     // The level of permission to grant the access token for custom organization roles management.
     organization_custom_org_roles *AppPermissions_organization_custom_org_roles
@@ -64,7 +64,7 @@ type AppPermissions struct {
     organization_personal_access_tokens *AppPermissions_organization_personal_access_tokens
     // The level of permission to grant the access token for viewing an organization's plan.
     organization_plan *AppPermissions_organization_plan
-    // The level of permission to grant the access token to manage organization projects and projects beta (where available).
+    // The level of permission to grant the access token to manage organization projects and projects public preview (where available).
     organization_projects *AppPermissions_organization_projects
     // The level of permission to grant the access token to manage organization secrets.
     organization_secrets *AppPermissions_organization_secrets
@@ -698,7 +698,7 @@ func (m *AppPermissions) GetOrganizationAdministration()(*AppPermissions_organiz
 func (m *AppPermissions) GetOrganizationAnnouncementBanners()(*AppPermissions_organization_announcement_banners) {
     return m.organization_announcement_banners
 }
-// GetOrganizationCopilotSeatManagement gets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+// GetOrganizationCopilotSeatManagement gets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 // returns a *AppPermissions_organization_copilot_seat_management when successful
 func (m *AppPermissions) GetOrganizationCopilotSeatManagement()(*AppPermissions_organization_copilot_seat_management) {
     return m.organization_copilot_seat_management
@@ -748,7 +748,7 @@ func (m *AppPermissions) GetOrganizationPersonalAccessTokens()(*AppPermissions_o
 func (m *AppPermissions) GetOrganizationPlan()(*AppPermissions_organization_plan) {
     return m.organization_plan
 }
-// GetOrganizationProjects gets the organization_projects property value. The level of permission to grant the access token to manage organization projects and projects beta (where available).
+// GetOrganizationProjects gets the organization_projects property value. The level of permission to grant the access token to manage organization projects and projects public preview (where available).
 // returns a *AppPermissions_organization_projects when successful
 func (m *AppPermissions) GetOrganizationProjects()(*AppPermissions_organization_projects) {
     return m.organization_projects
@@ -1270,7 +1270,7 @@ func (m *AppPermissions) SetOrganizationAdministration(value *AppPermissions_org
 func (m *AppPermissions) SetOrganizationAnnouncementBanners(value *AppPermissions_organization_announcement_banners)() {
     m.organization_announcement_banners = value
 }
-// SetOrganizationCopilotSeatManagement sets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+// SetOrganizationCopilotSeatManagement sets the organization_copilot_seat_management property value. The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
 func (m *AppPermissions) SetOrganizationCopilotSeatManagement(value *AppPermissions_organization_copilot_seat_management)() {
     m.organization_copilot_seat_management = value
 }
@@ -1310,7 +1310,7 @@ func (m *AppPermissions) SetOrganizationPersonalAccessTokens(value *AppPermissio
 func (m *AppPermissions) SetOrganizationPlan(value *AppPermissions_organization_plan)() {
     m.organization_plan = value
 }
-// SetOrganizationProjects sets the organization_projects property value. The level of permission to grant the access token to manage organization projects and projects beta (where available).
+// SetOrganizationProjects sets the organization_projects property value. The level of permission to grant the access token to manage organization projects and projects public preview (where available).
 func (m *AppPermissions) SetOrganizationProjects(value *AppPermissions_organization_projects)() {
     m.organization_projects = value
 }

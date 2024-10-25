@@ -30,7 +30,7 @@ type ItemItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     Manifest *string `uriparametername:"manifest"`
     // A comma-separated list of package names. If specified, only alerts for these packages will be returned.
     Package *string `uriparametername:"package"`
-    // **Deprecated**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.
+    // **Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.
     // Deprecated: 
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."

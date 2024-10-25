@@ -19,6 +19,10 @@ type ItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
     Before *string `uriparametername:"before"`
     // The direction to sort the results by.
     Direction *i6bfc00bdb302bcd8be4fd093f881ba8f86d967800ec976c34a78d452c1f335d5.GetDirectionQueryParameterType `uriparametername:"direction"`
+    // A boolean value representing whether or not to filter alerts by the multi-repo tag being present.
+    Is_multi_repo *bool `uriparametername:"is_multi_repo"`
+    // A boolean value representing whether or not to filter alerts by the publicly-leaked tag being present.
+    Is_publicly_leaked *bool `uriparametername:"is_publicly_leaked"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
@@ -37,7 +41,7 @@ type ItemSecretScanningAlertsRequestBuilderGetQueryParameters struct {
 // NewItemSecretScanningAlertsRequestBuilderInternal instantiates a new ItemSecretScanningAlertsRequestBuilder and sets the default values.
 func NewItemSecretScanningAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSecretScanningAlertsRequestBuilder) {
     m := &ItemSecretScanningAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/secret-scanning/alerts{?after*,before*,direction*,page*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/secret-scanning/alerts{?after*,before*,direction*,is_multi_repo*,is_publicly_leaked*,page*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters),
     }
     return m
 }

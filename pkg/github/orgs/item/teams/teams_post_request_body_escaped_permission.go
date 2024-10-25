@@ -1,5 +1,5 @@
 package teams
-// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 type TeamsPostRequestBody_permission int
 
 const (

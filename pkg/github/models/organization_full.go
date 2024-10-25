@@ -9,7 +9,7 @@ import (
 type OrganizationFull struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     advanced_security_enabled_for_new_repositories *bool
     // The archived_at property
@@ -20,19 +20,21 @@ type OrganizationFull struct {
     billing_email *string
     // The blog property
     blog *string
+    // The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+    collaborators *int32
     // The company property
     company *string
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The default_repository_permission property
     default_repository_permission *string
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     dependabot_alerts_enabled_for_new_repositories *bool
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     dependabot_security_updates_enabled_for_new_repositories *bool
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     dependency_graph_enabled_for_new_repositories *bool
     // The description property
@@ -103,14 +105,14 @@ type OrganizationFull struct {
     public_repos *int32
     // The repos_url property
     repos_url *string
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     secret_scanning_enabled_for_new_repositories *bool
     // An optional URL string to display to contributors who are blocked from pushing a secret.
     secret_scanning_push_protection_custom_link *string
     // Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
     secret_scanning_push_protection_custom_link_enabled *bool
-    // **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+    // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     secret_scanning_push_protection_enabled_for_new_repositories *bool
     // The total_private_repos property
@@ -145,7 +147,7 @@ func CreateOrganizationFullFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 func (m *OrganizationFull) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAdvancedSecurityEnabledForNewRepositories gets the advanced_security_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetAdvancedSecurityEnabledForNewRepositories gets the advanced_security_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetAdvancedSecurityEnabledForNewRepositories()(*bool) {
@@ -171,6 +173,11 @@ func (m *OrganizationFull) GetBillingEmail()(*string) {
 func (m *OrganizationFull) GetBlog()(*string) {
     return m.blog
 }
+// GetCollaborators gets the collaborators property value. The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+// returns a *int32 when successful
+func (m *OrganizationFull) GetCollaborators()(*int32) {
+    return m.collaborators
+}
 // GetCompany gets the company property value. The company property
 // returns a *string when successful
 func (m *OrganizationFull) GetCompany()(*string) {
@@ -186,19 +193,19 @@ func (m *OrganizationFull) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3
 func (m *OrganizationFull) GetDefaultRepositoryPermission()(*string) {
     return m.default_repository_permission
 }
-// GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetDependabotAlertsEnabledForNewRepositories gets the dependabot_alerts_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetDependabotAlertsEnabledForNewRepositories()(*bool) {
     return m.dependabot_alerts_enabled_for_new_repositories
 }
-// GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetDependabotSecurityUpdatesEnabledForNewRepositories gets the dependabot_security_updates_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool) {
     return m.dependabot_security_updates_enabled_for_new_repositories
 }
-// GetDependencyGraphEnabledForNewRepositories gets the dependency_graph_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetDependencyGraphEnabledForNewRepositories gets the dependency_graph_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetDependencyGraphEnabledForNewRepositories()(*bool) {
@@ -275,6 +282,16 @@ func (m *OrganizationFull) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetBlog(val)
+        }
+        return nil
+    }
+    res["collaborators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCollaborators(val)
         }
         return nil
     }
@@ -940,7 +957,7 @@ func (m *OrganizationFull) GetPublicRepos()(*int32) {
 func (m *OrganizationFull) GetReposUrl()(*string) {
     return m.repos_url
 }
-// GetSecretScanningEnabledForNewRepositories gets the secret_scanning_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetSecretScanningEnabledForNewRepositories gets the secret_scanning_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetSecretScanningEnabledForNewRepositories()(*bool) {
@@ -956,7 +973,7 @@ func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLink()(*string) 
 func (m *OrganizationFull) GetSecretScanningPushProtectionCustomLinkEnabled()(*bool) {
     return m.secret_scanning_push_protection_custom_link_enabled
 }
-// GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// GetSecretScanningPushProtectionEnabledForNewRepositories gets the secret_scanning_push_protection_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 // returns a *bool when successful
 func (m *OrganizationFull) GetSecretScanningPushProtectionEnabledForNewRepositories()(*bool) {
@@ -1025,6 +1042,12 @@ func (m *OrganizationFull) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("blog", m.GetBlog())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("collaborators", m.GetCollaborators())
         if err != nil {
             return err
         }
@@ -1347,7 +1370,7 @@ func (m *OrganizationFull) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 func (m *OrganizationFull) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAdvancedSecurityEnabledForNewRepositories sets the advanced_security_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetAdvancedSecurityEnabledForNewRepositories sets the advanced_security_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetAdvancedSecurityEnabledForNewRepositories(value *bool)() {
     m.advanced_security_enabled_for_new_repositories = value
@@ -1368,6 +1391,10 @@ func (m *OrganizationFull) SetBillingEmail(value *string)() {
 func (m *OrganizationFull) SetBlog(value *string)() {
     m.blog = value
 }
+// SetCollaborators sets the collaborators property value. The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.
+func (m *OrganizationFull) SetCollaborators(value *int32)() {
+    m.collaborators = value
+}
 // SetCompany sets the company property value. The company property
 func (m *OrganizationFull) SetCompany(value *string)() {
     m.company = value
@@ -1380,17 +1407,17 @@ func (m *OrganizationFull) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6
 func (m *OrganizationFull) SetDefaultRepositoryPermission(value *string)() {
     m.default_repository_permission = value
 }
-// SetDependabotAlertsEnabledForNewRepositories sets the dependabot_alerts_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetDependabotAlertsEnabledForNewRepositories sets the dependabot_alerts_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetDependabotAlertsEnabledForNewRepositories(value *bool)() {
     m.dependabot_alerts_enabled_for_new_repositories = value
 }
-// SetDependabotSecurityUpdatesEnabledForNewRepositories sets the dependabot_security_updates_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetDependabotSecurityUpdatesEnabledForNewRepositories sets the dependabot_security_updates_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetDependabotSecurityUpdatesEnabledForNewRepositories(value *bool)() {
     m.dependabot_security_updates_enabled_for_new_repositories = value
 }
-// SetDependencyGraphEnabledForNewRepositories sets the dependency_graph_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetDependencyGraphEnabledForNewRepositories sets the dependency_graph_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetDependencyGraphEnabledForNewRepositories(value *bool)() {
     m.dependency_graph_enabled_for_new_repositories = value
@@ -1531,7 +1558,7 @@ func (m *OrganizationFull) SetPublicRepos(value *int32)() {
 func (m *OrganizationFull) SetReposUrl(value *string)() {
     m.repos_url = value
 }
-// SetSecretScanningEnabledForNewRepositories sets the secret_scanning_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetSecretScanningEnabledForNewRepositories sets the secret_scanning_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetSecretScanningEnabledForNewRepositories(value *bool)() {
     m.secret_scanning_enabled_for_new_repositories = value
@@ -1544,7 +1571,7 @@ func (m *OrganizationFull) SetSecretScanningPushProtectionCustomLink(value *stri
 func (m *OrganizationFull) SetSecretScanningPushProtectionCustomLinkEnabled(value *bool)() {
     m.secret_scanning_push_protection_custom_link_enabled = value
 }
-// SetSecretScanningPushProtectionEnabledForNewRepositories sets the secret_scanning_push_protection_enabled_for_new_repositories property value. **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
+// SetSecretScanningPushProtectionEnabledForNewRepositories sets the secret_scanning_push_protection_enabled_for_new_repositories property value. **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
 // Deprecated: 
 func (m *OrganizationFull) SetSecretScanningPushProtectionEnabledForNewRepositories(value *bool)() {
     m.secret_scanning_push_protection_enabled_for_new_repositories = value
@@ -1585,6 +1612,7 @@ type OrganizationFullable interface {
     GetAvatarUrl()(*string)
     GetBillingEmail()(*string)
     GetBlog()(*string)
+    GetCollaborators()(*int32)
     GetCompany()(*string)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDefaultRepositoryPermission()(*string)
@@ -1641,6 +1669,7 @@ type OrganizationFullable interface {
     SetAvatarUrl(value *string)()
     SetBillingEmail(value *string)()
     SetBlog(value *string)()
+    SetCollaborators(value *int32)()
     SetCompany(value *string)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDefaultRepositoryPermission(value *string)()

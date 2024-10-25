@@ -1,5 +1,5 @@
 package item
-// **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
 type WithTeam_slugPatchRequestBody_permission int
 
 const (
