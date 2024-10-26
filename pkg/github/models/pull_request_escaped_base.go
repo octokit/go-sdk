@@ -11,12 +11,12 @@ type PullRequest_base struct {
     label *string
     // The ref property
     ref *string
-    // The repo property
-    repo PullRequest_base_repoable
+    // A repository on GitHub.
+    repo Repositoryable
     // The sha property
     sha *string
-    // The user property
-    user PullRequest_base_userable
+    // A GitHub user.
+    user SimpleUserable
 }
 // NewPullRequest_base instantiates a new PullRequest_base and sets the default values.
 func NewPullRequest_base()(*PullRequest_base) {
@@ -60,12 +60,12 @@ func (m *PullRequest_base) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["repo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePullRequest_base_repoFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateRepositoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRepo(val.(PullRequest_base_repoable))
+            m.SetRepo(val.(Repositoryable))
         }
         return nil
     }
@@ -80,12 +80,12 @@ func (m *PullRequest_base) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePullRequest_base_userFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateSimpleUserFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUser(val.(PullRequest_base_userable))
+            m.SetUser(val.(SimpleUserable))
         }
         return nil
     }
@@ -101,9 +101,9 @@ func (m *PullRequest_base) GetLabel()(*string) {
 func (m *PullRequest_base) GetRef()(*string) {
     return m.ref
 }
-// GetRepo gets the repo property value. The repo property
-// returns a PullRequest_base_repoable when successful
-func (m *PullRequest_base) GetRepo()(PullRequest_base_repoable) {
+// GetRepo gets the repo property value. A repository on GitHub.
+// returns a Repositoryable when successful
+func (m *PullRequest_base) GetRepo()(Repositoryable) {
     return m.repo
 }
 // GetSha gets the sha property value. The sha property
@@ -111,9 +111,9 @@ func (m *PullRequest_base) GetRepo()(PullRequest_base_repoable) {
 func (m *PullRequest_base) GetSha()(*string) {
     return m.sha
 }
-// GetUser gets the user property value. The user property
-// returns a PullRequest_base_userable when successful
-func (m *PullRequest_base) GetUser()(PullRequest_base_userable) {
+// GetUser gets the user property value. A GitHub user.
+// returns a SimpleUserable when successful
+func (m *PullRequest_base) GetUser()(SimpleUserable) {
     return m.user
 }
 // Serialize serializes information the current object
@@ -168,16 +168,16 @@ func (m *PullRequest_base) SetLabel(value *string)() {
 func (m *PullRequest_base) SetRef(value *string)() {
     m.ref = value
 }
-// SetRepo sets the repo property value. The repo property
-func (m *PullRequest_base) SetRepo(value PullRequest_base_repoable)() {
+// SetRepo sets the repo property value. A repository on GitHub.
+func (m *PullRequest_base) SetRepo(value Repositoryable)() {
     m.repo = value
 }
 // SetSha sets the sha property value. The sha property
 func (m *PullRequest_base) SetSha(value *string)() {
     m.sha = value
 }
-// SetUser sets the user property value. The user property
-func (m *PullRequest_base) SetUser(value PullRequest_base_userable)() {
+// SetUser sets the user property value. A GitHub user.
+func (m *PullRequest_base) SetUser(value SimpleUserable)() {
     m.user = value
 }
 type PullRequest_baseable interface {
@@ -185,12 +185,12 @@ type PullRequest_baseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLabel()(*string)
     GetRef()(*string)
-    GetRepo()(PullRequest_base_repoable)
+    GetRepo()(Repositoryable)
     GetSha()(*string)
-    GetUser()(PullRequest_base_userable)
+    GetUser()(SimpleUserable)
     SetLabel(value *string)()
     SetRef(value *string)()
-    SetRepo(value PullRequest_base_repoable)()
+    SetRepo(value Repositoryable)()
     SetSha(value *string)()
-    SetUser(value PullRequest_base_userable)()
+    SetUser(value SimpleUserable)()
 }

@@ -10,7 +10,7 @@ import (
 type ItemEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEventsRequestBuilderGetQueryParameters if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+// ItemEventsRequestBuilderGetQueryParameters if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 type ItemEventsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -30,7 +30,7 @@ func NewItemEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     urlParams["request-raw-url"] = rawUrl
     return NewItemEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+// Get if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a []Eventable when successful
 // [API method documentation]
 // 
@@ -62,7 +62,7 @@ func (m *ItemEventsRequestBuilder) Orgs()(*ItemEventsOrgsRequestBuilder) {
 func (m *ItemEventsRequestBuilder) Public()(*ItemEventsPublicRequestBuilder) {
     return NewItemEventsPublicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+// ToGetRequestInformation if you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).> [!NOTE]> This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
 // returns a *RequestInformation when successful
 func (m *ItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemEventsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
