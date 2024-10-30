@@ -4,19 +4,22 @@ type AttachPostRequestBody_scope int
 
 const (
     ALL_ATTACHPOSTREQUESTBODY_SCOPE AttachPostRequestBody_scope = iota
+    ALL_WITHOUT_CONFIGURATIONS_ATTACHPOSTREQUESTBODY_SCOPE
     PUBLIC_ATTACHPOSTREQUESTBODY_SCOPE
     PRIVATE_OR_INTERNAL_ATTACHPOSTREQUESTBODY_SCOPE
     SELECTED_ATTACHPOSTREQUESTBODY_SCOPE
 )
 
 func (i AttachPostRequestBody_scope) String() string {
-    return []string{"all", "public", "private_or_internal", "selected"}[i]
+    return []string{"all", "all_without_configurations", "public", "private_or_internal", "selected"}[i]
 }
 func ParseAttachPostRequestBody_scope(v string) (any, error) {
     result := ALL_ATTACHPOSTREQUESTBODY_SCOPE
     switch v {
         case "all":
             result = ALL_ATTACHPOSTREQUESTBODY_SCOPE
+        case "all_without_configurations":
+            result = ALL_WITHOUT_CONFIGURATIONS_ATTACHPOSTREQUESTBODY_SCOPE
         case "public":
             result = PUBLIC_ATTACHPOSTREQUESTBODY_SCOPE
         case "private_or_internal":

@@ -26,6 +26,11 @@ func NewItemCopilotRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemCopilotRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Metrics the metrics property
+// returns a *ItemCopilotMetricsRequestBuilder when successful
+func (m *ItemCopilotRequestBuilder) Metrics()(*ItemCopilotMetricsRequestBuilder) {
+    return NewItemCopilotMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Usage the usage property
 // returns a *ItemCopilotUsageRequestBuilder when successful
 func (m *ItemCopilotRequestBuilder) Usage()(*ItemCopilotUsageRequestBuilder) {
