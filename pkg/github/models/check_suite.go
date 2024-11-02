@@ -28,7 +28,7 @@ type CheckSuite struct {
     // The SHA of the head commit that is being checked.
     head_sha *string
     // The id property
-    id *int32
+    id *int64
     // The latest_check_runs_count property
     latest_check_runs_count *int32
     // The node_id property
@@ -190,7 +190,7 @@ func (m *CheckSuite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -313,8 +313,8 @@ func (m *CheckSuite) GetHeadSha()(*string) {
     return m.head_sha
 }
 // GetId gets the id property value. The id property
-// returns a *int32 when successful
-func (m *CheckSuite) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *CheckSuite) GetId()(*int64) {
     return m.id
 }
 // GetLatestCheckRunsCount gets the latest_check_runs_count property value. The latest_check_runs_count property
@@ -420,7 +420,7 @@ func (m *CheckSuite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
@@ -535,7 +535,7 @@ func (m *CheckSuite) SetHeadSha(value *string)() {
     m.head_sha = value
 }
 // SetId sets the id property value. The id property
-func (m *CheckSuite) SetId(value *int32)() {
+func (m *CheckSuite) SetId(value *int64)() {
     m.id = value
 }
 // SetLatestCheckRunsCount sets the latest_check_runs_count property value. The latest_check_runs_count property
@@ -586,7 +586,7 @@ type CheckSuiteable interface {
     GetHeadBranch()(*string)
     GetHeadCommit()(SimpleCommitable)
     GetHeadSha()(*string)
-    GetId()(*int32)
+    GetId()(*int64)
     GetLatestCheckRunsCount()(*int32)
     GetNodeId()(*string)
     GetPullRequests()([]PullRequestMinimalable)
@@ -605,7 +605,7 @@ type CheckSuiteable interface {
     SetHeadBranch(value *string)()
     SetHeadCommit(value SimpleCommitable)()
     SetHeadSha(value *string)()
-    SetId(value *int32)()
+    SetId(value *int64)()
     SetLatestCheckRunsCount(value *int32)()
     SetNodeId(value *string)()
     SetPullRequests(value []PullRequestMinimalable)()
