@@ -143,6 +143,11 @@ func (m *WithOrgItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
 func (m *WithOrgItemRequestBuilder) Hooks()(*ItemHooksRequestBuilder) {
     return NewItemHooksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Insights the insights property
+// returns a *ItemInsightsRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) Insights()(*ItemInsightsRequestBuilder) {
+    return NewItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Installation the installation property
 // returns a *ItemInstallationRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Installation()(*ItemInstallationRequestBuilder) {

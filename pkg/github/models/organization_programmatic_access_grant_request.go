@@ -26,6 +26,8 @@ type OrganizationProgrammaticAccessGrantRequest struct {
     token_expired *bool
     // Date and time when the associated fine-grained personal access token expires.
     token_expires_at *string
+    // Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+    token_id *int32
     // Date and time when the associated fine-grained personal access token was last used for authentication.
     token_last_used_at *string
 }
@@ -145,6 +147,16 @@ func (m *OrganizationProgrammaticAccessGrantRequest) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["token_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenId(val)
+        }
+        return nil
+    }
     res["token_last_used_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -196,6 +208,11 @@ func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenExpired()(*bool) {
 // returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenExpiresAt()(*string) {
     return m.token_expires_at
+}
+// GetTokenId gets the token_id property value. Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+// returns a *int32 when successful
+func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenId()(*int32) {
+    return m.token_id
 }
 // GetTokenLastUsedAt gets the token_last_used_at property value. Date and time when the associated fine-grained personal access token was last used for authentication.
 // returns a *string when successful
@@ -260,6 +277,12 @@ func (m *OrganizationProgrammaticAccessGrantRequest) Serialize(writer i878a80d23
         }
     }
     {
+        err := writer.WriteInt32Value("token_id", m.GetTokenId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("token_last_used_at", m.GetTokenLastUsedAt())
         if err != nil {
             return err
@@ -313,6 +336,10 @@ func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenExpired(value *bool
 func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenExpiresAt(value *string)() {
     m.token_expires_at = value
 }
+// SetTokenId sets the token_id property value. Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenId(value *int32)() {
+    m.token_id = value
+}
 // SetTokenLastUsedAt sets the token_last_used_at property value. Date and time when the associated fine-grained personal access token was last used for authentication.
 func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenLastUsedAt(value *string)() {
     m.token_last_used_at = value
@@ -329,6 +356,7 @@ type OrganizationProgrammaticAccessGrantRequestable interface {
     GetRepositorySelection()(*OrganizationProgrammaticAccessGrantRequest_repository_selection)
     GetTokenExpired()(*bool)
     GetTokenExpiresAt()(*string)
+    GetTokenId()(*int32)
     GetTokenLastUsedAt()(*string)
     SetCreatedAt(value *string)()
     SetId(value *int32)()
@@ -339,5 +367,6 @@ type OrganizationProgrammaticAccessGrantRequestable interface {
     SetRepositorySelection(value *OrganizationProgrammaticAccessGrantRequest_repository_selection)()
     SetTokenExpired(value *bool)()
     SetTokenExpiresAt(value *string)()
+    SetTokenId(value *int32)()
     SetTokenLastUsedAt(value *string)()
 }

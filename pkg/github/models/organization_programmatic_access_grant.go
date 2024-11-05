@@ -10,7 +10,7 @@ type OrganizationProgrammaticAccessGrant struct {
     access_granted_at *string
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token.
+    // Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.
     id *int32
     // A GitHub user.
     owner SimpleUserable
@@ -24,6 +24,8 @@ type OrganizationProgrammaticAccessGrant struct {
     token_expired *bool
     // Date and time when the associated fine-grained personal access token expires.
     token_expires_at *string
+    // Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+    token_id *int32
     // Date and time when the associated fine-grained personal access token was last used for authentication.
     token_last_used_at *string
 }
@@ -133,6 +135,16 @@ func (m *OrganizationProgrammaticAccessGrant) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["token_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenId(val)
+        }
+        return nil
+    }
     res["token_last_used_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -145,7 +157,7 @@ func (m *OrganizationProgrammaticAccessGrant) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetId gets the id property value. Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token.
+// GetId gets the id property value. Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.
 // returns a *int32 when successful
 func (m *OrganizationProgrammaticAccessGrant) GetId()(*int32) {
     return m.id
@@ -179,6 +191,11 @@ func (m *OrganizationProgrammaticAccessGrant) GetTokenExpired()(*bool) {
 // returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrant) GetTokenExpiresAt()(*string) {
     return m.token_expires_at
+}
+// GetTokenId gets the token_id property value. Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+// returns a *int32 when successful
+func (m *OrganizationProgrammaticAccessGrant) GetTokenId()(*int32) {
+    return m.token_id
 }
 // GetTokenLastUsedAt gets the token_last_used_at property value. Date and time when the associated fine-grained personal access token was last used for authentication.
 // returns a *string when successful
@@ -237,6 +254,12 @@ func (m *OrganizationProgrammaticAccessGrant) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err := writer.WriteInt32Value("token_id", m.GetTokenId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("token_last_used_at", m.GetTokenLastUsedAt())
         if err != nil {
             return err
@@ -258,7 +281,7 @@ func (m *OrganizationProgrammaticAccessGrant) SetAccessGrantedAt(value *string)(
 func (m *OrganizationProgrammaticAccessGrant) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetId sets the id property value. Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token.
+// SetId sets the id property value. Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.
 func (m *OrganizationProgrammaticAccessGrant) SetId(value *int32)() {
     m.id = value
 }
@@ -286,6 +309,10 @@ func (m *OrganizationProgrammaticAccessGrant) SetTokenExpired(value *bool)() {
 func (m *OrganizationProgrammaticAccessGrant) SetTokenExpiresAt(value *string)() {
     m.token_expires_at = value
 }
+// SetTokenId sets the token_id property value. Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+func (m *OrganizationProgrammaticAccessGrant) SetTokenId(value *int32)() {
+    m.token_id = value
+}
 // SetTokenLastUsedAt sets the token_last_used_at property value. Date and time when the associated fine-grained personal access token was last used for authentication.
 func (m *OrganizationProgrammaticAccessGrant) SetTokenLastUsedAt(value *string)() {
     m.token_last_used_at = value
@@ -301,6 +328,7 @@ type OrganizationProgrammaticAccessGrantable interface {
     GetRepositorySelection()(*OrganizationProgrammaticAccessGrant_repository_selection)
     GetTokenExpired()(*bool)
     GetTokenExpiresAt()(*string)
+    GetTokenId()(*int32)
     GetTokenLastUsedAt()(*string)
     SetAccessGrantedAt(value *string)()
     SetId(value *int32)()
@@ -310,5 +338,6 @@ type OrganizationProgrammaticAccessGrantable interface {
     SetRepositorySelection(value *OrganizationProgrammaticAccessGrant_repository_selection)()
     SetTokenExpired(value *bool)()
     SetTokenExpiresAt(value *string)()
+    SetTokenId(value *int32)()
     SetTokenLastUsedAt(value *string)()
 }

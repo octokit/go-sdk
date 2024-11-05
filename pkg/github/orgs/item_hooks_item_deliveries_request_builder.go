@@ -17,7 +17,6 @@ type ItemHooksItemDeliveriesRequestBuilderGetQueryParameters struct {
     Cursor *string `uriparametername:"cursor"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
-    Redelivery *bool `uriparametername:"redelivery"`
 }
 // ByDelivery_id gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.hooks.item.deliveries.item collection
 // returns a *ItemHooksItemDeliveriesWithDelivery_ItemRequestBuilder when successful
@@ -32,7 +31,7 @@ func (m *ItemHooksItemDeliveriesRequestBuilder) ByDelivery_id(delivery_id int32)
 // NewItemHooksItemDeliveriesRequestBuilderInternal instantiates a new ItemHooksItemDeliveriesRequestBuilder and sets the default values.
 func NewItemHooksItemDeliveriesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHooksItemDeliveriesRequestBuilder) {
     m := &ItemHooksItemDeliveriesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?cursor*,per_page*,redelivery*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?cursor*,per_page*}", pathParameters),
     }
     return m
 }
