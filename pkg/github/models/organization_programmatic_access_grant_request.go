@@ -30,6 +30,8 @@ type OrganizationProgrammaticAccessGrantRequest struct {
     token_id *int32
     // Date and time when the associated fine-grained personal access token was last used for authentication.
     token_last_used_at *string
+    // The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
+    token_name *string
 }
 // NewOrganizationProgrammaticAccessGrantRequest instantiates a new OrganizationProgrammaticAccessGrantRequest and sets the default values.
 func NewOrganizationProgrammaticAccessGrantRequest()(*OrganizationProgrammaticAccessGrantRequest) {
@@ -167,6 +169,16 @@ func (m *OrganizationProgrammaticAccessGrantRequest) GetFieldDeserializers()(map
         }
         return nil
     }
+    res["token_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenName(val)
+        }
+        return nil
+    }
     return res
 }
 // GetId gets the id property value. Unique identifier of the request for access via fine-grained personal access token. The `pat_request_id` used to review PAT requests.
@@ -218,6 +230,11 @@ func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenId()(*int32) {
 // returns a *string when successful
 func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenLastUsedAt()(*string) {
     return m.token_last_used_at
+}
+// GetTokenName gets the token_name property value. The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
+// returns a *string when successful
+func (m *OrganizationProgrammaticAccessGrantRequest) GetTokenName()(*string) {
+    return m.token_name
 }
 // Serialize serializes information the current object
 func (m *OrganizationProgrammaticAccessGrantRequest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -289,6 +306,12 @@ func (m *OrganizationProgrammaticAccessGrantRequest) Serialize(writer i878a80d23
         }
     }
     {
+        err := writer.WriteStringValue("token_name", m.GetTokenName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -344,6 +367,10 @@ func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenId(value *int32)() 
 func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenLastUsedAt(value *string)() {
     m.token_last_used_at = value
 }
+// SetTokenName sets the token_name property value. The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
+func (m *OrganizationProgrammaticAccessGrantRequest) SetTokenName(value *string)() {
+    m.token_name = value
+}
 type OrganizationProgrammaticAccessGrantRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -358,6 +385,7 @@ type OrganizationProgrammaticAccessGrantRequestable interface {
     GetTokenExpiresAt()(*string)
     GetTokenId()(*int32)
     GetTokenLastUsedAt()(*string)
+    GetTokenName()(*string)
     SetCreatedAt(value *string)()
     SetId(value *int32)()
     SetOwner(value SimpleUserable)()
@@ -369,4 +397,5 @@ type OrganizationProgrammaticAccessGrantRequestable interface {
     SetTokenExpiresAt(value *string)()
     SetTokenId(value *int32)()
     SetTokenLastUsedAt(value *string)()
+    SetTokenName(value *string)()
 }

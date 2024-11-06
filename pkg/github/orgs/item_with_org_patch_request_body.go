@@ -25,6 +25,8 @@ type ItemWithOrgPatchRequestBody struct {
     // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
     // Deprecated: 
     dependency_graph_enabled_for_new_repositories *bool
+    // Controls whether or not deploy keys may be added and used for repositories in the organization.
+    deploy_keys_enabled_for_repositories *bool
     // The description of the company. The maximum size is 160 characters.
     description *string
     // The publicly visible email address.
@@ -124,6 +126,11 @@ func (m *ItemWithOrgPatchRequestBody) GetDependabotSecurityUpdatesEnabledForNewR
 func (m *ItemWithOrgPatchRequestBody) GetDependencyGraphEnabledForNewRepositories()(*bool) {
     return m.dependency_graph_enabled_for_new_repositories
 }
+// GetDeployKeysEnabledForRepositories gets the deploy_keys_enabled_for_repositories property value. Controls whether or not deploy keys may be added and used for repositories in the organization.
+// returns a *bool when successful
+func (m *ItemWithOrgPatchRequestBody) GetDeployKeysEnabledForRepositories()(*bool) {
+    return m.deploy_keys_enabled_for_repositories
+}
 // GetDescription gets the description property value. The description of the company. The maximum size is 160 characters.
 // returns a *string when successful
 func (m *ItemWithOrgPatchRequestBody) GetDescription()(*string) {
@@ -205,6 +212,16 @@ func (m *ItemWithOrgPatchRequestBody) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetDependencyGraphEnabledForNewRepositories(val)
+        }
+        return nil
+    }
+    res["deploy_keys_enabled_for_repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeployKeysEnabledForRepositories(val)
         }
         return nil
     }
@@ -547,6 +564,12 @@ func (m *ItemWithOrgPatchRequestBody) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err := writer.WriteBoolValue("deploy_keys_enabled_for_repositories", m.GetDeployKeysEnabledForRepositories())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -710,6 +733,10 @@ func (m *ItemWithOrgPatchRequestBody) SetDependabotSecurityUpdatesEnabledForNewR
 func (m *ItemWithOrgPatchRequestBody) SetDependencyGraphEnabledForNewRepositories(value *bool)() {
     m.dependency_graph_enabled_for_new_repositories = value
 }
+// SetDeployKeysEnabledForRepositories sets the deploy_keys_enabled_for_repositories property value. Controls whether or not deploy keys may be added and used for repositories in the organization.
+func (m *ItemWithOrgPatchRequestBody) SetDeployKeysEnabledForRepositories(value *bool)() {
+    m.deploy_keys_enabled_for_repositories = value
+}
 // SetDescription sets the description property value. The description of the company. The maximum size is 160 characters.
 func (m *ItemWithOrgPatchRequestBody) SetDescription(value *string)() {
     m.description = value
@@ -802,6 +829,7 @@ type ItemWithOrgPatchRequestBodyable interface {
     GetDependabotAlertsEnabledForNewRepositories()(*bool)
     GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool)
     GetDependencyGraphEnabledForNewRepositories()(*bool)
+    GetDeployKeysEnabledForRepositories()(*bool)
     GetDescription()(*string)
     GetEmail()(*string)
     GetHasOrganizationProjects()(*bool)
@@ -829,6 +857,7 @@ type ItemWithOrgPatchRequestBodyable interface {
     SetDependabotAlertsEnabledForNewRepositories(value *bool)()
     SetDependabotSecurityUpdatesEnabledForNewRepositories(value *bool)()
     SetDependencyGraphEnabledForNewRepositories(value *bool)()
+    SetDeployKeysEnabledForRepositories(value *bool)()
     SetDescription(value *string)()
     SetEmail(value *string)()
     SetHasOrganizationProjects(value *bool)()
