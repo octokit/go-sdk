@@ -15,9 +15,9 @@ type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder struct {
 type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
     Direction *i668a5d59a0d5a0e25bc1604cf7a50b2d949f1e3f49a4c9ec4b197e7a9b3d7b0a.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -29,7 +29,7 @@ type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderGetQueryParameters
 // NewItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderInternal instantiates a new ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder and sets the default values.
 func NewItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder) {
     m := &ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}{&direction*,page*,per_page*,sort*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters),
     }
     return m
 }
