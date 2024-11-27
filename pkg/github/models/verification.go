@@ -15,6 +15,8 @@ type Verification struct {
     signature *string
     // The verified property
     verified *bool
+    // The verified_at property
+    verified_at *string
 }
 // NewVerification instantiates a new Verification and sets the default values.
 func NewVerification()(*Verification) {
@@ -77,6 +79,16 @@ func (m *Verification) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["verified_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiedAt(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPayload gets the payload property value. The payload property
@@ -98,6 +110,11 @@ func (m *Verification) GetSignature()(*string) {
 // returns a *bool when successful
 func (m *Verification) GetVerified()(*bool) {
     return m.verified
+}
+// GetVerifiedAt gets the verified_at property value. The verified_at property
+// returns a *string when successful
+func (m *Verification) GetVerifiedAt()(*string) {
+    return m.verified_at
 }
 // Serialize serializes information the current object
 func (m *Verification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -121,6 +138,12 @@ func (m *Verification) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err := writer.WriteBoolValue("verified", m.GetVerified())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("verified_at", m.GetVerifiedAt())
         if err != nil {
             return err
         }
@@ -153,6 +176,10 @@ func (m *Verification) SetSignature(value *string)() {
 func (m *Verification) SetVerified(value *bool)() {
     m.verified = value
 }
+// SetVerifiedAt sets the verified_at property value. The verified_at property
+func (m *Verification) SetVerifiedAt(value *string)() {
+    m.verified_at = value
+}
 type Verificationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -160,8 +187,10 @@ type Verificationable interface {
     GetReason()(*string)
     GetSignature()(*string)
     GetVerified()(*bool)
+    GetVerifiedAt()(*string)
     SetPayload(value *string)()
     SetReason(value *string)()
     SetSignature(value *string)()
     SetVerified(value *bool)()
+    SetVerifiedAt(value *string)()
 }
