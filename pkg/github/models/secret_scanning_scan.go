@@ -9,11 +9,11 @@ import (
 type SecretScanningScan struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The time that the scan was completed. Empty if the scan is active
+    // The time that the scan was completed. Empty if the scan is running
     completed_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The time that the scan was started
+    // The time that the scan was started. Empty if the scan is pending
     started_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
-    // The state of the scan. Either "completed" or "running"
+    // The state of the scan. Either "completed", "running", or "pending"
     status *string
     // The type of scan
     typeEscaped *string
@@ -35,7 +35,7 @@ func CreateSecretScanningScanFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *SecretScanningScan) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCompletedAt gets the completed_at property value. The time that the scan was completed. Empty if the scan is active
+// GetCompletedAt gets the completed_at property value. The time that the scan was completed. Empty if the scan is running
 // returns a *Time when successful
 func (m *SecretScanningScan) GetCompletedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.completed_at
@@ -86,12 +86,12 @@ func (m *SecretScanningScan) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetStartedAt gets the started_at property value. The time that the scan was started
+// GetStartedAt gets the started_at property value. The time that the scan was started. Empty if the scan is pending
 // returns a *Time when successful
 func (m *SecretScanningScan) GetStartedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.started_at
 }
-// GetStatus gets the status property value. The state of the scan. Either "completed" or "running"
+// GetStatus gets the status property value. The state of the scan. Either "completed", "running", or "pending"
 // returns a *string when successful
 func (m *SecretScanningScan) GetStatus()(*string) {
     return m.status
@@ -139,15 +139,15 @@ func (m *SecretScanningScan) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *SecretScanningScan) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCompletedAt sets the completed_at property value. The time that the scan was completed. Empty if the scan is active
+// SetCompletedAt sets the completed_at property value. The time that the scan was completed. Empty if the scan is running
 func (m *SecretScanningScan) SetCompletedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.completed_at = value
 }
-// SetStartedAt sets the started_at property value. The time that the scan was started
+// SetStartedAt sets the started_at property value. The time that the scan was started. Empty if the scan is pending
 func (m *SecretScanningScan) SetStartedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.started_at = value
 }
-// SetStatus sets the status property value. The state of the scan. Either "completed" or "running"
+// SetStatus sets the status property value. The state of the scan. Either "completed", "running", or "pending"
 func (m *SecretScanningScan) SetStatus(value *string)() {
     m.status = value
 }

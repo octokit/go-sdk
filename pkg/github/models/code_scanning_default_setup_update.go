@@ -10,6 +10,10 @@ type CodeScanningDefaultSetupUpdate struct {
     languages []CodeScanningDefaultSetupUpdate_languages
     // CodeQL query suite to be used.
     query_suite *CodeScanningDefaultSetupUpdate_query_suite
+    // Runner label to be used if the runner type is labeled.
+    runner_label *string
+    // Runner type to be used.
+    runner_type *CodeScanningDefaultSetupUpdate_runner_type
     // The desired state of code scanning default setup.
     state *CodeScanningDefaultSetupUpdate_state
 }
@@ -54,6 +58,26 @@ func (m *CodeScanningDefaultSetupUpdate) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["runner_label"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunnerLabel(val)
+        }
+        return nil
+    }
+    res["runner_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeScanningDefaultSetupUpdate_runner_type)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunnerType(val.(*CodeScanningDefaultSetupUpdate_runner_type))
+        }
+        return nil
+    }
     res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeScanningDefaultSetupUpdate_state)
         if err != nil {
@@ -76,6 +100,16 @@ func (m *CodeScanningDefaultSetupUpdate) GetLanguages()([]CodeScanningDefaultSet
 func (m *CodeScanningDefaultSetupUpdate) GetQuerySuite()(*CodeScanningDefaultSetupUpdate_query_suite) {
     return m.query_suite
 }
+// GetRunnerLabel gets the runner_label property value. Runner label to be used if the runner type is labeled.
+// returns a *string when successful
+func (m *CodeScanningDefaultSetupUpdate) GetRunnerLabel()(*string) {
+    return m.runner_label
+}
+// GetRunnerType gets the runner_type property value. Runner type to be used.
+// returns a *CodeScanningDefaultSetupUpdate_runner_type when successful
+func (m *CodeScanningDefaultSetupUpdate) GetRunnerType()(*CodeScanningDefaultSetupUpdate_runner_type) {
+    return m.runner_type
+}
 // GetState gets the state property value. The desired state of code scanning default setup.
 // returns a *CodeScanningDefaultSetupUpdate_state when successful
 func (m *CodeScanningDefaultSetupUpdate) GetState()(*CodeScanningDefaultSetupUpdate_state) {
@@ -92,6 +126,19 @@ func (m *CodeScanningDefaultSetupUpdate) Serialize(writer i878a80d2330e89d268963
     if m.GetQuerySuite() != nil {
         cast := (*m.GetQuerySuite()).String()
         err := writer.WriteStringValue("query_suite", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("runner_label", m.GetRunnerLabel())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRunnerType() != nil {
+        cast := (*m.GetRunnerType()).String()
+        err := writer.WriteStringValue("runner_type", &cast)
         if err != nil {
             return err
         }
@@ -113,6 +160,14 @@ func (m *CodeScanningDefaultSetupUpdate) SetLanguages(value []CodeScanningDefaul
 func (m *CodeScanningDefaultSetupUpdate) SetQuerySuite(value *CodeScanningDefaultSetupUpdate_query_suite)() {
     m.query_suite = value
 }
+// SetRunnerLabel sets the runner_label property value. Runner label to be used if the runner type is labeled.
+func (m *CodeScanningDefaultSetupUpdate) SetRunnerLabel(value *string)() {
+    m.runner_label = value
+}
+// SetRunnerType sets the runner_type property value. Runner type to be used.
+func (m *CodeScanningDefaultSetupUpdate) SetRunnerType(value *CodeScanningDefaultSetupUpdate_runner_type)() {
+    m.runner_type = value
+}
 // SetState sets the state property value. The desired state of code scanning default setup.
 func (m *CodeScanningDefaultSetupUpdate) SetState(value *CodeScanningDefaultSetupUpdate_state)() {
     m.state = value
@@ -121,8 +176,12 @@ type CodeScanningDefaultSetupUpdateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLanguages()([]CodeScanningDefaultSetupUpdate_languages)
     GetQuerySuite()(*CodeScanningDefaultSetupUpdate_query_suite)
+    GetRunnerLabel()(*string)
+    GetRunnerType()(*CodeScanningDefaultSetupUpdate_runner_type)
     GetState()(*CodeScanningDefaultSetupUpdate_state)
     SetLanguages(value []CodeScanningDefaultSetupUpdate_languages)()
     SetQuerySuite(value *CodeScanningDefaultSetupUpdate_query_suite)()
+    SetRunnerLabel(value *string)()
+    SetRunnerType(value *CodeScanningDefaultSetupUpdate_runner_type)()
     SetState(value *CodeScanningDefaultSetupUpdate_state)()
 }

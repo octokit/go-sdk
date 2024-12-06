@@ -13,6 +13,8 @@ type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder struct {
 }
 // ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderGetQueryParameters get API request count statistics for an actor broken down by route within a specified time frame.
 type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderGetQueryParameters struct {
+    // Providing a substring will filter results where the API route contains the substring. This is a case-insensitive search.
+    Api_route_substring *string `uriparametername:"api_route_substring"`
     // The direction to sort the results by.
     Direction *i668a5d59a0d5a0e25bc1604cf7a50b2d949f1e3f49a4c9ec4b197e7a9b3d7b0a.GetDirectionQueryParameterType `uriparametername:"direction"`
     // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -29,7 +31,7 @@ type ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderGetQueryParameters
 // NewItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderInternal instantiates a new ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder and sets the default values.
 func NewItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder) {
     m := &ItemInsightsApiRouteStatsItemWithActor_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&api_route_substring*,direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters),
     }
     return m
 }
