@@ -12,15 +12,15 @@ type ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilder struct {
 }
 // ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilderGetQueryParameters get overall statistics of API requests within the organization for a user.
 type ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilderGetQueryParameters struct {
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
 }
 // NewItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilderInternal instantiates a new ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilder and sets the default values.
 func NewItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilder) {
     m := &ItemInsightsApiSummaryStatsUsersWithUser_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?min_timestamp={min_timestamp}{&max_timestamp*}", pathParameters),
     }
     return m
 }

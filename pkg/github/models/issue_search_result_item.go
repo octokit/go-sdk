@@ -67,6 +67,8 @@ type IssueSearchResultItem struct {
     state *string
     // The state_reason property
     state_reason *string
+    // The sub_issues_summary property
+    sub_issues_summary IssueSearchResultItem_sub_issues_summaryable
     // The text_matches property
     text_matches []Issuesable
     // The timeline_url property
@@ -468,6 +470,16 @@ func (m *IssueSearchResultItem) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["sub_issues_summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIssueSearchResultItem_sub_issues_summaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubIssuesSummary(val.(IssueSearchResultItem_sub_issues_summaryable))
+        }
+        return nil
+    }
     res["text_matches"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIssuesFromDiscriminatorValue)
         if err != nil {
@@ -615,6 +627,11 @@ func (m *IssueSearchResultItem) GetState()(*string) {
 // returns a *string when successful
 func (m *IssueSearchResultItem) GetStateReason()(*string) {
     return m.state_reason
+}
+// GetSubIssuesSummary gets the sub_issues_summary property value. The sub_issues_summary property
+// returns a IssueSearchResultItem_sub_issues_summaryable when successful
+func (m *IssueSearchResultItem) GetSubIssuesSummary()(IssueSearchResultItem_sub_issues_summaryable) {
+    return m.sub_issues_summary
 }
 // GetTextMatches gets the text_matches property value. The text_matches property
 // returns a []Issuesable when successful
@@ -835,6 +852,12 @@ func (m *IssueSearchResultItem) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("sub_issues_summary", m.GetSubIssuesSummary())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTextMatches() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTextMatches()))
         for i, v := range m.GetTextMatches() {
@@ -1005,6 +1028,10 @@ func (m *IssueSearchResultItem) SetState(value *string)() {
 func (m *IssueSearchResultItem) SetStateReason(value *string)() {
     m.state_reason = value
 }
+// SetSubIssuesSummary sets the sub_issues_summary property value. The sub_issues_summary property
+func (m *IssueSearchResultItem) SetSubIssuesSummary(value IssueSearchResultItem_sub_issues_summaryable)() {
+    m.sub_issues_summary = value
+}
 // SetTextMatches sets the text_matches property value. The text_matches property
 func (m *IssueSearchResultItem) SetTextMatches(value []Issuesable)() {
     m.text_matches = value
@@ -1061,6 +1088,7 @@ type IssueSearchResultItemable interface {
     GetScore()(*float64)
     GetState()(*string)
     GetStateReason()(*string)
+    GetSubIssuesSummary()(IssueSearchResultItem_sub_issues_summaryable)
     GetTextMatches()([]Issuesable)
     GetTimelineUrl()(*string)
     GetTitle()(*string)
@@ -1096,6 +1124,7 @@ type IssueSearchResultItemable interface {
     SetScore(value *float64)()
     SetState(value *string)()
     SetStateReason(value *string)()
+    SetSubIssuesSummary(value IssueSearchResultItem_sub_issues_summaryable)()
     SetTextMatches(value []Issuesable)()
     SetTimelineUrl(value *string)()
     SetTitle(value *string)()

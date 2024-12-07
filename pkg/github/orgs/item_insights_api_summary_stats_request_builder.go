@@ -12,9 +12,9 @@ type ItemInsightsApiSummaryStatsRequestBuilder struct {
 }
 // ItemInsightsApiSummaryStatsRequestBuilderGetQueryParameters get overall statistics of API requests made within an organization by all users and apps within a specified time frame.
 type ItemInsightsApiSummaryStatsRequestBuilderGetQueryParameters struct {
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
 }
 // ByActor_type gets an item from the github.com/octokit/go-sdk/pkg/github.orgs.item.insights.api.summaryStats.item collection
@@ -32,7 +32,7 @@ func (m *ItemInsightsApiSummaryStatsRequestBuilder) ByActor_type(actor_type stri
 // NewItemInsightsApiSummaryStatsRequestBuilderInternal instantiates a new ItemInsightsApiSummaryStatsRequestBuilder and sets the default values.
 func NewItemInsightsApiSummaryStatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiSummaryStatsRequestBuilder) {
     m := &ItemInsightsApiSummaryStatsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats?min_timestamp={min_timestamp}{&max_timestamp*}", pathParameters),
     }
     return m
 }

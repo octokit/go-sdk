@@ -13,6 +13,8 @@ type CodeSecurityConfiguration struct {
     advanced_security *CodeSecurityConfiguration_advanced_security
     // The enablement status of code scanning default setup
     code_scanning_default_setup *CodeSecurityConfiguration_code_scanning_default_setup
+    // Feature options for code scanning default setup
+    code_scanning_default_setup_options CodeSecurityConfiguration_code_scanning_default_setup_optionsable
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The enablement status of Dependabot alerts
@@ -83,6 +85,11 @@ func (m *CodeSecurityConfiguration) GetAdvancedSecurity()(*CodeSecurityConfigura
 func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetup()(*CodeSecurityConfiguration_code_scanning_default_setup) {
     return m.code_scanning_default_setup
 }
+// GetCodeScanningDefaultSetupOptions gets the code_scanning_default_setup_options property value. Feature options for code scanning default setup
+// returns a CodeSecurityConfiguration_code_scanning_default_setup_optionsable when successful
+func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable) {
+    return m.code_scanning_default_setup_options
+}
 // GetCreatedAt gets the created_at property value. The created_at property
 // returns a *Time when successful
 func (m *CodeSecurityConfiguration) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -144,6 +151,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCodeScanningDefaultSetup(val.(*CodeSecurityConfiguration_code_scanning_default_setup))
+        }
+        return nil
+    }
+    res["code_scanning_default_setup_options"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCodeSecurityConfiguration_code_scanning_default_setup_optionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodeScanningDefaultSetupOptions(val.(CodeSecurityConfiguration_code_scanning_default_setup_optionsable))
         }
         return nil
     }
@@ -441,6 +458,12 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err := writer.WriteObjectValue("code_scanning_default_setup_options", m.GetCodeScanningDefaultSetupOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("created_at", m.GetCreatedAt())
         if err != nil {
             return err
@@ -598,6 +621,10 @@ func (m *CodeSecurityConfiguration) SetAdvancedSecurity(value *CodeSecurityConfi
 func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetup(value *CodeSecurityConfiguration_code_scanning_default_setup)() {
     m.code_scanning_default_setup = value
 }
+// SetCodeScanningDefaultSetupOptions sets the code_scanning_default_setup_options property value. Feature options for code scanning default setup
+func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)() {
+    m.code_scanning_default_setup_options = value
+}
 // SetCreatedAt sets the created_at property value. The created_at property
 func (m *CodeSecurityConfiguration) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
@@ -687,6 +714,7 @@ type CodeSecurityConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdvancedSecurity()(*CodeSecurityConfiguration_advanced_security)
     GetCodeScanningDefaultSetup()(*CodeSecurityConfiguration_code_scanning_default_setup)
+    GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDependabotAlerts()(*CodeSecurityConfiguration_dependabot_alerts)
     GetDependabotSecurityUpdates()(*CodeSecurityConfiguration_dependabot_security_updates)
@@ -710,6 +738,7 @@ type CodeSecurityConfigurationable interface {
     GetUrl()(*string)
     SetAdvancedSecurity(value *CodeSecurityConfiguration_advanced_security)()
     SetCodeScanningDefaultSetup(value *CodeSecurityConfiguration_code_scanning_default_setup)()
+    SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDependabotAlerts(value *CodeSecurityConfiguration_dependabot_alerts)()
     SetDependabotSecurityUpdates(value *CodeSecurityConfiguration_dependabot_security_updates)()

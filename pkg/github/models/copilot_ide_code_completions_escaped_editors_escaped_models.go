@@ -13,7 +13,7 @@ type CopilotIdeCodeCompletions_editors_models struct {
     is_custom_model *bool
     // Code completion metrics for active languages, for the given editor.
     languages []CopilotIdeCodeCompletions_editors_models_languagesable
-    // Name of the language used for Copilot code completion suggestions, for the given editor.
+    // Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
     name *string
     // Number of users who accepted at least one Copilot code completion suggestion for the given editor, for the given language and model. Includes both full and partial acceptances.
     total_engaged_users *int32
@@ -112,7 +112,7 @@ func (m *CopilotIdeCodeCompletions_editors_models) GetIsCustomModel()(*bool) {
 func (m *CopilotIdeCodeCompletions_editors_models) GetLanguages()([]CopilotIdeCodeCompletions_editors_models_languagesable) {
     return m.languages
 }
-// GetName gets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// GetName gets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 // returns a *string when successful
 func (m *CopilotIdeCodeCompletions_editors_models) GetName()(*string) {
     return m.name
@@ -184,7 +184,7 @@ func (m *CopilotIdeCodeCompletions_editors_models) SetIsCustomModel(value *bool)
 func (m *CopilotIdeCodeCompletions_editors_models) SetLanguages(value []CopilotIdeCodeCompletions_editors_models_languagesable)() {
     m.languages = value
 }
-// SetName sets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// SetName sets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 func (m *CopilotIdeCodeCompletions_editors_models) SetName(value *string)() {
     m.name = value
 }

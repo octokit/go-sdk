@@ -8,6 +8,8 @@ import (
 type TeamRoleAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // Determines if the team has a direct, indirect, or mixed relationship to a role
+    assignment *TeamRoleAssignment_assignment
     // The description property
     description *string
     // The html_url property
@@ -54,6 +56,11 @@ func CreateTeamRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *TeamRoleAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetAssignment gets the assignment property value. Determines if the team has a direct, indirect, or mixed relationship to a role
+// returns a *TeamRoleAssignment_assignment when successful
+func (m *TeamRoleAssignment) GetAssignment()(*TeamRoleAssignment_assignment) {
+    return m.assignment
+}
 // GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *TeamRoleAssignment) GetDescription()(*string) {
@@ -63,6 +70,16 @@ func (m *TeamRoleAssignment) GetDescription()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTeamRoleAssignment_assignment)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignment(val.(*TeamRoleAssignment_assignment))
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -272,6 +289,13 @@ func (m *TeamRoleAssignment) GetUrl()(*string) {
 }
 // Serialize serializes information the current object
 func (m *TeamRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAssignment() != nil {
+        cast := (*m.GetAssignment()).String()
+        err := writer.WriteStringValue("assignment", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -368,6 +392,10 @@ func (m *TeamRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *TeamRoleAssignment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetAssignment sets the assignment property value. Determines if the team has a direct, indirect, or mixed relationship to a role
+func (m *TeamRoleAssignment) SetAssignment(value *TeamRoleAssignment_assignment)() {
+    m.assignment = value
+}
 // SetDescription sets the description property value. The description property
 func (m *TeamRoleAssignment) SetDescription(value *string)() {
     m.description = value
@@ -427,6 +455,7 @@ func (m *TeamRoleAssignment) SetUrl(value *string)() {
 type TeamRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignment()(*TeamRoleAssignment_assignment)
     GetDescription()(*string)
     GetHtmlUrl()(*string)
     GetId()(*int32)
@@ -441,6 +470,7 @@ type TeamRoleAssignmentable interface {
     GetRepositoriesUrl()(*string)
     GetSlug()(*string)
     GetUrl()(*string)
+    SetAssignment(value *TeamRoleAssignment_assignment)()
     SetDescription(value *string)()
     SetHtmlUrl(value *string)()
     SetId(value *int32)()

@@ -109,6 +109,16 @@ func (m *ItemItemIssuesWithIssue_numberItemRequestBuilder) Patch(ctx context.Con
 func (m *ItemItemIssuesWithIssue_numberItemRequestBuilder) Reactions()(*ItemItemIssuesItemReactionsRequestBuilder) {
     return NewItemItemIssuesItemReactionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Sub_issue the sub_issue property
+// returns a *ItemItemIssuesItemSub_issueRequestBuilder when successful
+func (m *ItemItemIssuesWithIssue_numberItemRequestBuilder) Sub_issue()(*ItemItemIssuesItemSub_issueRequestBuilder) {
+    return NewItemItemIssuesItemSub_issueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sub_issues the sub_issues property
+// returns a *ItemItemIssuesItemSub_issuesRequestBuilder when successful
+func (m *ItemItemIssuesWithIssue_numberItemRequestBuilder) Sub_issues()(*ItemItemIssuesItemSub_issuesRequestBuilder) {
+    return NewItemItemIssuesItemSub_issuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Timeline the timeline property
 // returns a *ItemItemIssuesItemTimelineRequestBuilder when successful
 func (m *ItemItemIssuesWithIssue_numberItemRequestBuilder) Timeline()(*ItemItemIssuesItemTimelineRequestBuilder) {

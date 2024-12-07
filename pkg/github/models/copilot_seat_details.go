@@ -23,7 +23,8 @@ type CopilotSeatDetails struct {
     pending_cancellation_date *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly
     // The Copilot plan of the organization, or the parent enterprise, when applicable.
     plan_type *CopilotSeatDetails_plan_type
-    // Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+    // **Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+    // Deprecated: 
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 }
 // CopilotSeatDetails_CopilotSeatDetails_assigning_team composed type wrapper for classes EnterpriseTeamable, Teamable
@@ -256,7 +257,8 @@ func (m *CopilotSeatDetails) GetPendingCancellationDate()(*i878a80d2330e89d26896
 func (m *CopilotSeatDetails) GetPlanType()(*CopilotSeatDetails_plan_type) {
     return m.plan_type
 }
-// GetUpdatedAt gets the updated_at property value. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+// GetUpdatedAt gets the updated_at property value. **Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+// Deprecated: 
 // returns a *Time when successful
 func (m *CopilotSeatDetails) GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.updated_at
@@ -352,7 +354,8 @@ func (m *CopilotSeatDetails) SetPendingCancellationDate(value *i878a80d2330e89d2
 func (m *CopilotSeatDetails) SetPlanType(value *CopilotSeatDetails_plan_type)() {
     m.plan_type = value
 }
-// SetUpdatedAt sets the updated_at property value. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+// SetUpdatedAt sets the updated_at property value. **Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+// Deprecated: 
 func (m *CopilotSeatDetails) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
 }

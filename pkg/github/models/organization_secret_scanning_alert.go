@@ -20,6 +20,12 @@ type OrganizationSecretScanningAlert struct {
     number *int32
     // Whether the secret was publicly leaked.
     publicly_leaked *bool
+    // An optional comment when requesting a push protection bypass.
+    push_protection_bypass_request_comment *string
+    // The URL to a push protection bypass request.
+    push_protection_bypass_request_html_url *string
+    // A GitHub user.
+    push_protection_bypass_request_reviewer NullableSimpleUserable
     // Whether push protection was bypassed for the detected secret.
     push_protection_bypassed *bool
     // The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -134,6 +140,36 @@ func (m *OrganizationSecretScanningAlert) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetPubliclyLeaked(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestComment(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_html_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestHtmlUrl(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_reviewer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestReviewer(val.(NullableSimpleUserable))
         }
         return nil
     }
@@ -329,6 +365,21 @@ func (m *OrganizationSecretScanningAlert) GetPushProtectionBypassedAt()(*i336074
 func (m *OrganizationSecretScanningAlert) GetPushProtectionBypassedBy()(NullableSimpleUserable) {
     return m.push_protection_bypassed_by
 }
+// GetPushProtectionBypassRequestComment gets the push_protection_bypass_request_comment property value. An optional comment when requesting a push protection bypass.
+// returns a *string when successful
+func (m *OrganizationSecretScanningAlert) GetPushProtectionBypassRequestComment()(*string) {
+    return m.push_protection_bypass_request_comment
+}
+// GetPushProtectionBypassRequestHtmlUrl gets the push_protection_bypass_request_html_url property value. The URL to a push protection bypass request.
+// returns a *string when successful
+func (m *OrganizationSecretScanningAlert) GetPushProtectionBypassRequestHtmlUrl()(*string) {
+    return m.push_protection_bypass_request_html_url
+}
+// GetPushProtectionBypassRequestReviewer gets the push_protection_bypass_request_reviewer property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
+func (m *OrganizationSecretScanningAlert) GetPushProtectionBypassRequestReviewer()(NullableSimpleUserable) {
+    return m.push_protection_bypass_request_reviewer
+}
 // GetRepository gets the repository property value. A GitHub repository.
 // returns a SimpleRepositoryable when successful
 func (m *OrganizationSecretScanningAlert) GetRepository()(SimpleRepositoryable) {
@@ -423,6 +474,24 @@ func (m *OrganizationSecretScanningAlert) Serialize(writer i878a80d2330e89d26896
     }
     {
         err := writer.WriteObjectValue("push_protection_bypassed_by", m.GetPushProtectionBypassedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("push_protection_bypass_request_comment", m.GetPushProtectionBypassRequestComment())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("push_protection_bypass_request_html_url", m.GetPushProtectionBypassRequestHtmlUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("push_protection_bypass_request_reviewer", m.GetPushProtectionBypassRequestReviewer())
         if err != nil {
             return err
         }
@@ -538,6 +607,18 @@ func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassedAt(value *i33
 func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassedBy(value NullableSimpleUserable)() {
     m.push_protection_bypassed_by = value
 }
+// SetPushProtectionBypassRequestComment sets the push_protection_bypass_request_comment property value. An optional comment when requesting a push protection bypass.
+func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassRequestComment(value *string)() {
+    m.push_protection_bypass_request_comment = value
+}
+// SetPushProtectionBypassRequestHtmlUrl sets the push_protection_bypass_request_html_url property value. The URL to a push protection bypass request.
+func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassRequestHtmlUrl(value *string)() {
+    m.push_protection_bypass_request_html_url = value
+}
+// SetPushProtectionBypassRequestReviewer sets the push_protection_bypass_request_reviewer property value. A GitHub user.
+func (m *OrganizationSecretScanningAlert) SetPushProtectionBypassRequestReviewer(value NullableSimpleUserable)() {
+    m.push_protection_bypass_request_reviewer = value
+}
 // SetRepository sets the repository property value. A GitHub repository.
 func (m *OrganizationSecretScanningAlert) SetRepository(value SimpleRepositoryable)() {
     m.repository = value
@@ -598,6 +679,9 @@ type OrganizationSecretScanningAlertable interface {
     GetPushProtectionBypassed()(*bool)
     GetPushProtectionBypassedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPushProtectionBypassedBy()(NullableSimpleUserable)
+    GetPushProtectionBypassRequestComment()(*string)
+    GetPushProtectionBypassRequestHtmlUrl()(*string)
+    GetPushProtectionBypassRequestReviewer()(NullableSimpleUserable)
     GetRepository()(SimpleRepositoryable)
     GetResolution()(*SecretScanningAlertResolution)
     GetResolutionComment()(*string)
@@ -619,6 +703,9 @@ type OrganizationSecretScanningAlertable interface {
     SetPushProtectionBypassed(value *bool)()
     SetPushProtectionBypassedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPushProtectionBypassedBy(value NullableSimpleUserable)()
+    SetPushProtectionBypassRequestComment(value *string)()
+    SetPushProtectionBypassRequestHtmlUrl(value *string)()
+    SetPushProtectionBypassRequestReviewer(value NullableSimpleUserable)()
     SetRepository(value SimpleRepositoryable)()
     SetResolution(value *SecretScanningAlertResolution)()
     SetResolutionComment(value *string)()

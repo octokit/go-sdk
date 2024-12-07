@@ -28,7 +28,7 @@ func NewItemItemHooksWithHook_ItemRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemHooksWithHook_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a repository webhook
+// Delete delete a webhook for an organization.The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
 // 
@@ -110,6 +110,7 @@ func (m *ItemItemHooksWithHook_ItemRequestBuilder) Pings()(*ItemItemHooksItemPin
 func (m *ItemItemHooksWithHook_ItemRequestBuilder) Tests()(*ItemItemHooksItemTestsRequestBuilder) {
     return NewItemItemHooksItemTestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ToDeleteRequestInformation delete a webhook for an organization.The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
 // returns a *RequestInformation when successful
 func (m *ItemItemHooksWithHook_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

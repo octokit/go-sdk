@@ -38,7 +38,7 @@ func (m *ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get to download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+// Get to download the asset's binary content:- If within a browser, fetch the location specified in the `browser_download_url` key provided in the response.- Alternatively, set the `Accept` header of the request to   [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).   The API will either redirect the client to the location, or stream it directly if possible.  API clients should handle both a `200` or `302` response.
 // returns a ReleaseAssetable when successful
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
@@ -86,7 +86,7 @@ func (m *ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) ToDeleteRequestInfo
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ConfigureRequestInformation(requestInfo, requestConfiguration)
     return requestInfo, nil
 }
-// ToGetRequestInformation to download the asset's binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+// ToGetRequestInformation to download the asset's binary content:- If within a browser, fetch the location specified in the `browser_download_url` key provided in the response.- Alternatively, set the `Accept` header of the request to   [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).   The API will either redirect the client to the location, or stream it directly if possible.  API clients should handle both a `200` or `302` response.
 // returns a *RequestInformation when successful
 func (m *ItemItemReleasesAssetsWithAsset_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

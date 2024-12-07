@@ -12,7 +12,7 @@ type EnterpriseTeam struct {
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The group_id property
-    group_id *int32
+    group_id *string
     // The html_url property
     html_url *string
     // The id property
@@ -67,7 +67,7 @@ func (m *EnterpriseTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         return nil
     }
     res["group_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
@@ -159,8 +159,8 @@ func (m *EnterpriseTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     return res
 }
 // GetGroupId gets the group_id property value. The group_id property
-// returns a *int32 when successful
-func (m *EnterpriseTeam) GetGroupId()(*int32) {
+// returns a *string when successful
+func (m *EnterpriseTeam) GetGroupId()(*string) {
     return m.group_id
 }
 // GetHtmlUrl gets the html_url property value. The html_url property
@@ -212,7 +212,7 @@ func (m *EnterpriseTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err := writer.WriteInt32Value("group_id", m.GetGroupId())
+        err := writer.WriteStringValue("group_id", m.GetGroupId())
         if err != nil {
             return err
         }
@@ -282,7 +282,7 @@ func (m *EnterpriseTeam) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6
     m.created_at = value
 }
 // SetGroupId sets the group_id property value. The group_id property
-func (m *EnterpriseTeam) SetGroupId(value *int32)() {
+func (m *EnterpriseTeam) SetGroupId(value *string)() {
     m.group_id = value
 }
 // SetHtmlUrl sets the html_url property value. The html_url property
@@ -321,7 +321,7 @@ type EnterpriseTeamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetGroupId()(*int32)
+    GetGroupId()(*string)
     GetHtmlUrl()(*string)
     GetId()(*int64)
     GetMembersUrl()(*string)
@@ -331,7 +331,7 @@ type EnterpriseTeamable interface {
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetGroupId(value *int32)()
+    SetGroupId(value *string)()
     SetHtmlUrl(value *string)()
     SetId(value *int64)()
     SetMembersUrl(value *string)()

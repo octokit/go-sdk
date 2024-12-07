@@ -8,6 +8,8 @@ import (
 type UserRoleAssignment struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // Determines if the user has a direct, indirect, or mixed relationship to a role
+    assignment *UserRoleAssignment_assignment
     // The avatar_url property
     avatar_url *string
     // The email property
@@ -26,6 +28,8 @@ type UserRoleAssignment struct {
     html_url *string
     // The id property
     id *int32
+    // Team the user has gotten the role through
+    inherited_from []TeamSimpleable
     // The login property
     login *string
     // The name property
@@ -70,6 +74,11 @@ func CreateUserRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26
 func (m *UserRoleAssignment) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetAssignment gets the assignment property value. Determines if the user has a direct, indirect, or mixed relationship to a role
+// returns a *UserRoleAssignment_assignment when successful
+func (m *UserRoleAssignment) GetAssignment()(*UserRoleAssignment_assignment) {
+    return m.assignment
+}
 // GetAvatarUrl gets the avatar_url property value. The avatar_url property
 // returns a *string when successful
 func (m *UserRoleAssignment) GetAvatarUrl()(*string) {
@@ -89,6 +98,16 @@ func (m *UserRoleAssignment) GetEventsUrl()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserRoleAssignment_assignment)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignment(val.(*UserRoleAssignment_assignment))
+        }
+        return nil
+    }
     res["avatar_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -176,6 +195,22 @@ func (m *UserRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetId(val)
+        }
+        return nil
+    }
+    res["inherited_from"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamSimpleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamSimpleable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamSimpleable)
+                }
+            }
+            m.SetInheritedFrom(res)
         }
         return nil
     }
@@ -341,6 +376,11 @@ func (m *UserRoleAssignment) GetHtmlUrl()(*string) {
 func (m *UserRoleAssignment) GetId()(*int32) {
     return m.id
 }
+// GetInheritedFrom gets the inherited_from property value. Team the user has gotten the role through
+// returns a []TeamSimpleable when successful
+func (m *UserRoleAssignment) GetInheritedFrom()([]TeamSimpleable) {
+    return m.inherited_from
+}
 // GetLogin gets the login property value. The login property
 // returns a *string when successful
 func (m *UserRoleAssignment) GetLogin()(*string) {
@@ -408,6 +448,13 @@ func (m *UserRoleAssignment) GetUserViewType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *UserRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAssignment() != nil {
+        cast := (*m.GetAssignment()).String()
+        err := writer.WriteStringValue("assignment", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("avatar_url", m.GetAvatarUrl())
         if err != nil {
@@ -458,6 +505,18 @@ func (m *UserRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err := writer.WriteInt32Value("id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInheritedFrom() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritedFrom()))
+        for i, v := range m.GetInheritedFrom() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("inherited_from", cast)
         if err != nil {
             return err
         }
@@ -552,6 +611,10 @@ func (m *UserRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 func (m *UserRoleAssignment) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetAssignment sets the assignment property value. Determines if the user has a direct, indirect, or mixed relationship to a role
+func (m *UserRoleAssignment) SetAssignment(value *UserRoleAssignment_assignment)() {
+    m.assignment = value
+}
 // SetAvatarUrl sets the avatar_url property value. The avatar_url property
 func (m *UserRoleAssignment) SetAvatarUrl(value *string)() {
     m.avatar_url = value
@@ -587,6 +650,10 @@ func (m *UserRoleAssignment) SetHtmlUrl(value *string)() {
 // SetId sets the id property value. The id property
 func (m *UserRoleAssignment) SetId(value *int32)() {
     m.id = value
+}
+// SetInheritedFrom sets the inherited_from property value. Team the user has gotten the role through
+func (m *UserRoleAssignment) SetInheritedFrom(value []TeamSimpleable)() {
+    m.inherited_from = value
 }
 // SetLogin sets the login property value. The login property
 func (m *UserRoleAssignment) SetLogin(value *string)() {
@@ -643,6 +710,7 @@ func (m *UserRoleAssignment) SetUserViewType(value *string)() {
 type UserRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignment()(*UserRoleAssignment_assignment)
     GetAvatarUrl()(*string)
     GetEmail()(*string)
     GetEventsUrl()(*string)
@@ -652,6 +720,7 @@ type UserRoleAssignmentable interface {
     GetGravatarId()(*string)
     GetHtmlUrl()(*string)
     GetId()(*int32)
+    GetInheritedFrom()([]TeamSimpleable)
     GetLogin()(*string)
     GetName()(*string)
     GetNodeId()(*string)
@@ -665,6 +734,7 @@ type UserRoleAssignmentable interface {
     GetTypeEscaped()(*string)
     GetUrl()(*string)
     GetUserViewType()(*string)
+    SetAssignment(value *UserRoleAssignment_assignment)()
     SetAvatarUrl(value *string)()
     SetEmail(value *string)()
     SetEventsUrl(value *string)()
@@ -674,6 +744,7 @@ type UserRoleAssignmentable interface {
     SetGravatarId(value *string)()
     SetHtmlUrl(value *string)()
     SetId(value *int32)()
+    SetInheritedFrom(value []TeamSimpleable)()
     SetLogin(value *string)()
     SetName(value *string)()
     SetNodeId(value *string)()

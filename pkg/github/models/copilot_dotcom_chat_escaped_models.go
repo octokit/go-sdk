@@ -11,7 +11,7 @@ type CopilotDotcomChat_models struct {
     custom_model_training_date *string
     // Indicates whether a model is custom or default.
     is_custom_model *bool
-    // Name of the language used for Copilot code completion suggestions, for the given editor.
+    // Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
     name *string
     // Total number of chats initiated by users on github.com.
     total_chats *int32
@@ -101,7 +101,7 @@ func (m *CopilotDotcomChat_models) GetFieldDeserializers()(map[string]func(i878a
 func (m *CopilotDotcomChat_models) GetIsCustomModel()(*bool) {
     return m.is_custom_model
 }
-// GetName gets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// GetName gets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 // returns a *string when successful
 func (m *CopilotDotcomChat_models) GetName()(*string) {
     return m.name
@@ -168,7 +168,7 @@ func (m *CopilotDotcomChat_models) SetCustomModelTrainingDate(value *string)() {
 func (m *CopilotDotcomChat_models) SetIsCustomModel(value *bool)() {
     m.is_custom_model = value
 }
-// SetName sets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// SetName sets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 func (m *CopilotDotcomChat_models) SetName(value *string)() {
     m.name = value
 }

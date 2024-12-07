@@ -12,9 +12,9 @@ type ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilder struct {
 }
 // ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilderGetQueryParameters get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period.
 type ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilderGetQueryParameters struct {
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
     // The increment of time used to breakdown the query results (5m, 10m, 1h, etc.)
     Timestamp_increment *string `uriparametername:"timestamp_increment"`
@@ -22,7 +22,7 @@ type ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilderGetQueryParameters 
 // NewItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilderInternal instantiates a new ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilder and sets the default values.
 func NewItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilder) {
     m := &ItemInsightsApiTimeStatsItemWithActor_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}&timestamp_increment={timestamp_increment}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}&timestamp_increment={timestamp_increment}{&max_timestamp*}", pathParameters),
     }
     return m
 }

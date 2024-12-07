@@ -12,15 +12,15 @@ type ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilder struct {
 }
 // ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilderGetQueryParameters get overall statistics of API requests within the organization made by a specific actor. Actors can be GitHub App installations, OAuth apps or other tokens on behalf of a user.
 type ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilderGetQueryParameters struct {
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
 }
 // NewItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilderInternal instantiates a new ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilder and sets the default values.
 func NewItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilder) {
     m := &ItemInsightsApiSummaryStatsItemWithActor_ItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&max_timestamp*}", pathParameters),
     }
     return m
 }

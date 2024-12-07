@@ -11,7 +11,7 @@ type CopilotDotcomPullRequests_repositories_models struct {
     custom_model_training_date *string
     // Indicates whether a model is custom or default.
     is_custom_model *bool
-    // Name of the language used for Copilot code completion suggestions, for the given editor.
+    // Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
     name *string
     // The number of users who generated pull request summaries using Copilot for Pull Requests in the given repository and model.
     total_engaged_users *int32
@@ -101,7 +101,7 @@ func (m *CopilotDotcomPullRequests_repositories_models) GetFieldDeserializers()(
 func (m *CopilotDotcomPullRequests_repositories_models) GetIsCustomModel()(*bool) {
     return m.is_custom_model
 }
-// GetName gets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// GetName gets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 // returns a *string when successful
 func (m *CopilotDotcomPullRequests_repositories_models) GetName()(*string) {
     return m.name
@@ -168,7 +168,7 @@ func (m *CopilotDotcomPullRequests_repositories_models) SetCustomModelTrainingDa
 func (m *CopilotDotcomPullRequests_repositories_models) SetIsCustomModel(value *bool)() {
     m.is_custom_model = value
 }
-// SetName sets the name property value. Name of the language used for Copilot code completion suggestions, for the given editor.
+// SetName sets the name property value. Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
 func (m *CopilotDotcomPullRequests_repositories_models) SetName(value *string)() {
     m.name = value
 }
