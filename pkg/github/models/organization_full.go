@@ -37,6 +37,8 @@ type OrganizationFull struct {
     // **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.
     // Deprecated: 
     dependency_graph_enabled_for_new_repositories *bool
+    // Controls whether or not deploy keys may be added and used for repositories in the organization.
+    deploy_keys_enabled_for_repositories *bool
     // The description property
     description *string
     // The disk_usage property
@@ -211,6 +213,11 @@ func (m *OrganizationFull) GetDependabotSecurityUpdatesEnabledForNewRepositories
 func (m *OrganizationFull) GetDependencyGraphEnabledForNewRepositories()(*bool) {
     return m.dependency_graph_enabled_for_new_repositories
 }
+// GetDeployKeysEnabledForRepositories gets the deploy_keys_enabled_for_repositories property value. Controls whether or not deploy keys may be added and used for repositories in the organization.
+// returns a *bool when successful
+func (m *OrganizationFull) GetDeployKeysEnabledForRepositories()(*bool) {
+    return m.deploy_keys_enabled_for_repositories
+}
 // GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *OrganizationFull) GetDescription()(*string) {
@@ -352,6 +359,16 @@ func (m *OrganizationFull) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetDependencyGraphEnabledForNewRepositories(val)
+        }
+        return nil
+    }
+    res["deploy_keys_enabled_for_repositories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeployKeysEnabledForRepositories(val)
         }
         return nil
     }
@@ -1089,6 +1106,12 @@ func (m *OrganizationFull) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err := writer.WriteBoolValue("deploy_keys_enabled_for_repositories", m.GetDeployKeysEnabledForRepositories())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -1422,6 +1445,10 @@ func (m *OrganizationFull) SetDependabotSecurityUpdatesEnabledForNewRepositories
 func (m *OrganizationFull) SetDependencyGraphEnabledForNewRepositories(value *bool)() {
     m.dependency_graph_enabled_for_new_repositories = value
 }
+// SetDeployKeysEnabledForRepositories sets the deploy_keys_enabled_for_repositories property value. Controls whether or not deploy keys may be added and used for repositories in the organization.
+func (m *OrganizationFull) SetDeployKeysEnabledForRepositories(value *bool)() {
+    m.deploy_keys_enabled_for_repositories = value
+}
 // SetDescription sets the description property value. The description property
 func (m *OrganizationFull) SetDescription(value *string)() {
     m.description = value
@@ -1619,6 +1646,7 @@ type OrganizationFullable interface {
     GetDependabotAlertsEnabledForNewRepositories()(*bool)
     GetDependabotSecurityUpdatesEnabledForNewRepositories()(*bool)
     GetDependencyGraphEnabledForNewRepositories()(*bool)
+    GetDeployKeysEnabledForRepositories()(*bool)
     GetDescription()(*string)
     GetDiskUsage()(*int32)
     GetEmail()(*string)
@@ -1676,6 +1704,7 @@ type OrganizationFullable interface {
     SetDependabotAlertsEnabledForNewRepositories(value *bool)()
     SetDependabotSecurityUpdatesEnabledForNewRepositories(value *bool)()
     SetDependencyGraphEnabledForNewRepositories(value *bool)()
+    SetDeployKeysEnabledForRepositories(value *bool)()
     SetDescription(value *string)()
     SetDiskUsage(value *int32)()
     SetEmail(value *string)()

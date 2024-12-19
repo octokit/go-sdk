@@ -18,6 +18,8 @@ type CustomProperty struct {
     property_name *string
     // Whether the property is required.
     required *bool
+    // The source type of the property
+    source_type *CustomProperty_source_type
     // The URL that can be used to fetch, update, or delete info about this property via the API.
     url *string
     // The type of the value for the property
@@ -217,6 +219,16 @@ func (m *CustomProperty) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["source_type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCustomProperty_source_type)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceType(val.(*CustomProperty_source_type))
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -258,6 +270,11 @@ func (m *CustomProperty) GetPropertyName()(*string) {
 // returns a *bool when successful
 func (m *CustomProperty) GetRequired()(*bool) {
     return m.required
+}
+// GetSourceType gets the source_type property value. The source type of the property
+// returns a *CustomProperty_source_type when successful
+func (m *CustomProperty) GetSourceType()(*CustomProperty_source_type) {
+    return m.source_type
 }
 // GetUrl gets the url property value. The URL that can be used to fetch, update, or delete info about this property via the API.
 // returns a *string when successful
@@ -302,6 +319,13 @@ func (m *CustomProperty) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteBoolValue("required", m.GetRequired())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSourceType() != nil {
+        cast := (*m.GetSourceType()).String()
+        err := writer.WriteStringValue("source_type", &cast)
         if err != nil {
             return err
         }
@@ -358,6 +382,10 @@ func (m *CustomProperty) SetPropertyName(value *string)() {
 func (m *CustomProperty) SetRequired(value *bool)() {
     m.required = value
 }
+// SetSourceType sets the source_type property value. The source type of the property
+func (m *CustomProperty) SetSourceType(value *CustomProperty_source_type)() {
+    m.source_type = value
+}
 // SetUrl sets the url property value. The URL that can be used to fetch, update, or delete info about this property via the API.
 func (m *CustomProperty) SetUrl(value *string)() {
     m.url = value
@@ -378,6 +406,7 @@ type CustomPropertyable interface {
     GetDescription()(*string)
     GetPropertyName()(*string)
     GetRequired()(*bool)
+    GetSourceType()(*CustomProperty_source_type)
     GetUrl()(*string)
     GetValuesEditableBy()(*CustomProperty_values_editable_by)
     GetValueType()(*CustomProperty_value_type)
@@ -386,6 +415,7 @@ type CustomPropertyable interface {
     SetDescription(value *string)()
     SetPropertyName(value *string)()
     SetRequired(value *bool)()
+    SetSourceType(value *CustomProperty_source_type)()
     SetUrl(value *string)()
     SetValuesEditableBy(value *CustomProperty_values_editable_by)()
     SetValueType(value *CustomProperty_value_type)()

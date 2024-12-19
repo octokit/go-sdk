@@ -20,6 +20,12 @@ type SecretScanningAlert struct {
     number *int32
     // Whether the detected secret was publicly leaked.
     publicly_leaked *bool
+    // An optional comment when requesting a push protection bypass.
+    push_protection_bypass_request_comment *string
+    // The URL to a push protection bypass request.
+    push_protection_bypass_request_html_url *string
+    // A GitHub user.
+    push_protection_bypass_request_reviewer NullableSimpleUserable
     // Whether push protection was bypassed for the detected secret.
     push_protection_bypassed *bool
     // The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -132,6 +138,36 @@ func (m *SecretScanningAlert) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetPubliclyLeaked(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestComment(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_html_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestHtmlUrl(val)
+        }
+        return nil
+    }
+    res["push_protection_bypass_request_reviewer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPushProtectionBypassRequestReviewer(val.(NullableSimpleUserable))
         }
         return nil
     }
@@ -317,6 +353,21 @@ func (m *SecretScanningAlert) GetPushProtectionBypassedAt()(*i336074805fc853987a
 func (m *SecretScanningAlert) GetPushProtectionBypassedBy()(NullableSimpleUserable) {
     return m.push_protection_bypassed_by
 }
+// GetPushProtectionBypassRequestComment gets the push_protection_bypass_request_comment property value. An optional comment when requesting a push protection bypass.
+// returns a *string when successful
+func (m *SecretScanningAlert) GetPushProtectionBypassRequestComment()(*string) {
+    return m.push_protection_bypass_request_comment
+}
+// GetPushProtectionBypassRequestHtmlUrl gets the push_protection_bypass_request_html_url property value. The URL to a push protection bypass request.
+// returns a *string when successful
+func (m *SecretScanningAlert) GetPushProtectionBypassRequestHtmlUrl()(*string) {
+    return m.push_protection_bypass_request_html_url
+}
+// GetPushProtectionBypassRequestReviewer gets the push_protection_bypass_request_reviewer property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
+func (m *SecretScanningAlert) GetPushProtectionBypassRequestReviewer()(NullableSimpleUserable) {
+    return m.push_protection_bypass_request_reviewer
+}
 // GetResolution gets the resolution property value. **Required when the `state` is `resolved`.** The reason for resolving the alert.
 // returns a *SecretScanningAlertResolution when successful
 func (m *SecretScanningAlert) GetResolution()(*SecretScanningAlertResolution) {
@@ -406,6 +457,24 @@ func (m *SecretScanningAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteObjectValue("push_protection_bypassed_by", m.GetPushProtectionBypassedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("push_protection_bypass_request_comment", m.GetPushProtectionBypassRequestComment())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("push_protection_bypass_request_html_url", m.GetPushProtectionBypassRequestHtmlUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("push_protection_bypass_request_reviewer", m.GetPushProtectionBypassRequestReviewer())
         if err != nil {
             return err
         }
@@ -515,6 +584,18 @@ func (m *SecretScanningAlert) SetPushProtectionBypassedAt(value *i336074805fc853
 func (m *SecretScanningAlert) SetPushProtectionBypassedBy(value NullableSimpleUserable)() {
     m.push_protection_bypassed_by = value
 }
+// SetPushProtectionBypassRequestComment sets the push_protection_bypass_request_comment property value. An optional comment when requesting a push protection bypass.
+func (m *SecretScanningAlert) SetPushProtectionBypassRequestComment(value *string)() {
+    m.push_protection_bypass_request_comment = value
+}
+// SetPushProtectionBypassRequestHtmlUrl sets the push_protection_bypass_request_html_url property value. The URL to a push protection bypass request.
+func (m *SecretScanningAlert) SetPushProtectionBypassRequestHtmlUrl(value *string)() {
+    m.push_protection_bypass_request_html_url = value
+}
+// SetPushProtectionBypassRequestReviewer sets the push_protection_bypass_request_reviewer property value. A GitHub user.
+func (m *SecretScanningAlert) SetPushProtectionBypassRequestReviewer(value NullableSimpleUserable)() {
+    m.push_protection_bypass_request_reviewer = value
+}
 // SetResolution sets the resolution property value. **Required when the `state` is `resolved`.** The reason for resolving the alert.
 func (m *SecretScanningAlert) SetResolution(value *SecretScanningAlertResolution)() {
     m.resolution = value
@@ -571,6 +652,9 @@ type SecretScanningAlertable interface {
     GetPushProtectionBypassed()(*bool)
     GetPushProtectionBypassedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPushProtectionBypassedBy()(NullableSimpleUserable)
+    GetPushProtectionBypassRequestComment()(*string)
+    GetPushProtectionBypassRequestHtmlUrl()(*string)
+    GetPushProtectionBypassRequestReviewer()(NullableSimpleUserable)
     GetResolution()(*SecretScanningAlertResolution)
     GetResolutionComment()(*string)
     GetResolvedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -591,6 +675,9 @@ type SecretScanningAlertable interface {
     SetPushProtectionBypassed(value *bool)()
     SetPushProtectionBypassedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPushProtectionBypassedBy(value NullableSimpleUserable)()
+    SetPushProtectionBypassRequestComment(value *string)()
+    SetPushProtectionBypassRequestHtmlUrl(value *string)()
+    SetPushProtectionBypassRequestReviewer(value NullableSimpleUserable)()
     SetResolution(value *SecretScanningAlertResolution)()
     SetResolutionComment(value *string)()
     SetResolvedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

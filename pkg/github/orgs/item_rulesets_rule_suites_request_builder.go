@@ -22,8 +22,8 @@ type ItemRulesetsRuleSuitesRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
     // The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
     Ref *string `uriparametername:"ref"`
-    // The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned.
-    Repository_name *int32 `uriparametername:"repository_name"`
+    // The name of the repository to filter on.
+    Repository_name *string `uriparametername:"repository_name"`
     // The rule results to filter on. When specified, only suites with this result will be returned.
     Rule_suite_result *ice77a9476603b5b5bdcf7933e87c368075e96312df44ed011cd574d7f2e817b9.GetRule_suite_resultQueryParameterType `uriparametername:"rule_suite_result"`
     // The time period to filter by.For example, `day` will filter for rule suites that occurred in the past 24 hours, and `week` will filter for insights that occurred in the past 7 days (168 hours).

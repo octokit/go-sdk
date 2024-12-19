@@ -31,3 +31,8 @@ func NewItemItemSecretScanningRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemItemSecretScanningRequestBuilder) PushProtectionBypasses()(*ItemItemSecretScanningPushProtectionBypassesRequestBuilder) {
     return NewItemItemSecretScanningPushProtectionBypassesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ScanHistory the scanHistory property
+// returns a *ItemItemSecretScanningScanHistoryRequestBuilder when successful
+func (m *ItemItemSecretScanningRequestBuilder) ScanHistory()(*ItemItemSecretScanningScanHistoryRequestBuilder) {
+    return NewItemItemSecretScanningScanHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

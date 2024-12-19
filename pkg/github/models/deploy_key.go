@@ -12,6 +12,8 @@ type DeployKey struct {
     additionalData map[string]any
     // The created_at property
     created_at *string
+    // The enabled property
+    enabled *bool
     // The id property
     id *int32
     // The key property
@@ -54,6 +56,11 @@ func (m *DeployKey) GetAdditionalData()(map[string]any) {
 func (m *DeployKey) GetCreatedAt()(*string) {
     return m.created_at
 }
+// GetEnabled gets the enabled property value. The enabled property
+// returns a *bool when successful
+func (m *DeployKey) GetEnabled()(*bool) {
+    return m.enabled
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeployKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -75,6 +82,16 @@ func (m *DeployKey) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetCreatedAt(val)
+        }
+        return nil
+    }
+    res["enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnabled(val)
         }
         return nil
     }
@@ -200,6 +217,12 @@ func (m *DeployKey) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err := writer.WriteBoolValue("enabled", m.GetEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("id", m.GetId())
         if err != nil {
             return err
@@ -261,6 +284,10 @@ func (m *DeployKey) SetAdditionalData(value map[string]any)() {
 func (m *DeployKey) SetCreatedAt(value *string)() {
     m.created_at = value
 }
+// SetEnabled sets the enabled property value. The enabled property
+func (m *DeployKey) SetEnabled(value *bool)() {
+    m.enabled = value
+}
 // SetId sets the id property value. The id property
 func (m *DeployKey) SetId(value *int32)() {
     m.id = value
@@ -294,6 +321,7 @@ type DeployKeyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddedBy()(*string)
     GetCreatedAt()(*string)
+    GetEnabled()(*bool)
     GetId()(*int32)
     GetKey()(*string)
     GetLastUsed()(*string)
@@ -303,6 +331,7 @@ type DeployKeyable interface {
     GetVerified()(*bool)
     SetAddedBy(value *string)()
     SetCreatedAt(value *string)()
+    SetEnabled(value *bool)()
     SetId(value *int32)()
     SetKey(value *string)()
     SetLastUsed(value *string)()

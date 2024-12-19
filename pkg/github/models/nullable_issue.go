@@ -67,6 +67,8 @@ type NullableIssue struct {
     state *string
     // The reason for the current state
     state_reason *NullableIssue_state_reason
+    // The sub_issues_summary property
+    sub_issues_summary SubIssuesSummaryable
     // The timeline_url property
     timeline_url *string
     // Title of the issue
@@ -471,6 +473,16 @@ func (m *NullableIssue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["sub_issues_summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSubIssuesSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubIssuesSummary(val.(SubIssuesSummaryable))
+        }
+        return nil
+    }
     res["timeline_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -597,6 +609,11 @@ func (m *NullableIssue) GetState()(*string) {
 // returns a *NullableIssue_state_reason when successful
 func (m *NullableIssue) GetStateReason()(*NullableIssue_state_reason) {
     return m.state_reason
+}
+// GetSubIssuesSummary gets the sub_issues_summary property value. The sub_issues_summary property
+// returns a SubIssuesSummaryable when successful
+func (m *NullableIssue) GetSubIssuesSummary()(SubIssuesSummaryable) {
+    return m.sub_issues_summary
 }
 // GetTimelineUrl gets the timeline_url property value. The timeline_url property
 // returns a *string when successful
@@ -808,6 +825,12 @@ func (m *NullableIssue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteObjectValue("sub_issues_summary", m.GetSubIssuesSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("timeline_url", m.GetTimelineUrl())
         if err != nil {
             return err
@@ -965,6 +988,10 @@ func (m *NullableIssue) SetState(value *string)() {
 func (m *NullableIssue) SetStateReason(value *NullableIssue_state_reason)() {
     m.state_reason = value
 }
+// SetSubIssuesSummary sets the sub_issues_summary property value. The sub_issues_summary property
+func (m *NullableIssue) SetSubIssuesSummary(value SubIssuesSummaryable)() {
+    m.sub_issues_summary = value
+}
 // SetTimelineUrl sets the timeline_url property value. The timeline_url property
 func (m *NullableIssue) SetTimelineUrl(value *string)() {
     m.timeline_url = value
@@ -1017,6 +1044,7 @@ type NullableIssueable interface {
     GetRepositoryUrl()(*string)
     GetState()(*string)
     GetStateReason()(*NullableIssue_state_reason)
+    GetSubIssuesSummary()(SubIssuesSummaryable)
     GetTimelineUrl()(*string)
     GetTitle()(*string)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1051,6 +1079,7 @@ type NullableIssueable interface {
     SetRepositoryUrl(value *string)()
     SetState(value *string)()
     SetStateReason(value *NullableIssue_state_reason)()
+    SetSubIssuesSummary(value SubIssuesSummaryable)()
     SetTimelineUrl(value *string)()
     SetTitle(value *string)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

@@ -15,9 +15,9 @@ type ItemInsightsApiSubjectStatsRequestBuilder struct {
 type ItemInsightsApiSubjectStatsRequestBuilderGetQueryParameters struct {
     // The direction to sort the results by.
     Direction *i66b1523c4c4ef510ea098d616fe90f80d2679e0386fabfe6a2f1742954997624.GetDirectionQueryParameterType `uriparametername:"direction"`
-    // The maximum timestamp to query for stats
+    // The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Max_timestamp *string `uriparametername:"max_timestamp"`
-    // The minimum timestamp to query for stats
+    // The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
     Min_timestamp *string `uriparametername:"min_timestamp"`
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -25,11 +25,13 @@ type ItemInsightsApiSubjectStatsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
     // The property to sort the results by.
     Sort []i66b1523c4c4ef510ea098d616fe90f80d2679e0386fabfe6a2f1742954997624.GetSortQueryParameterType `uriparametername:"sort"`
+    // Providing a substring will filter results where the subject name contains the substring. This is a case-insensitive search.
+    Subject_name_substring *string `uriparametername:"subject_name_substring"`
 }
 // NewItemInsightsApiSubjectStatsRequestBuilderInternal instantiates a new ItemInsightsApiSubjectStatsRequestBuilder and sets the default values.
 func NewItemInsightsApiSubjectStatsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInsightsApiSubjectStatsRequestBuilder) {
     m := &ItemInsightsApiSubjectStatsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}{&direction*,page*,per_page*,sort*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*,subject_name_substring*}", pathParameters),
     }
     return m
 }
