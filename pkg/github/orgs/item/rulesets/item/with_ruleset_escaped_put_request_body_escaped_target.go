@@ -6,10 +6,11 @@ const (
     BRANCH_WITHRULESET_PUTREQUESTBODY_TARGET WithRuleset_PutRequestBody_target = iota
     TAG_WITHRULESET_PUTREQUESTBODY_TARGET
     PUSH_WITHRULESET_PUTREQUESTBODY_TARGET
+    REPOSITORY_WITHRULESET_PUTREQUESTBODY_TARGET
 )
 
 func (i WithRuleset_PutRequestBody_target) String() string {
-    return []string{"branch", "tag", "push"}[i]
+    return []string{"branch", "tag", "push", "repository"}[i]
 }
 func ParseWithRuleset_PutRequestBody_target(v string) (any, error) {
     result := BRANCH_WITHRULESET_PUTREQUESTBODY_TARGET
@@ -20,6 +21,8 @@ func ParseWithRuleset_PutRequestBody_target(v string) (any, error) {
             result = TAG_WITHRULESET_PUTREQUESTBODY_TARGET
         case "push":
             result = PUSH_WITHRULESET_PUTREQUESTBODY_TARGET
+        case "repository":
+            result = REPOSITORY_WITHRULESET_PUTREQUESTBODY_TARGET
         default:
             return nil, nil
     }

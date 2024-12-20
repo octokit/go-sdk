@@ -2,7 +2,8 @@ package models
 type CodeScanningDefaultSetup_languages int
 
 const (
-    CCPP_CODESCANNINGDEFAULTSETUP_LANGUAGES CodeScanningDefaultSetup_languages = iota
+    ACTIONS_CODESCANNINGDEFAULTSETUP_LANGUAGES CodeScanningDefaultSetup_languages = iota
+    CCPP_CODESCANNINGDEFAULTSETUP_LANGUAGES
     CSHARP_CODESCANNINGDEFAULTSETUP_LANGUAGES
     GO_CODESCANNINGDEFAULTSETUP_LANGUAGES
     JAVAKOTLIN_CODESCANNINGDEFAULTSETUP_LANGUAGES
@@ -15,11 +16,13 @@ const (
 )
 
 func (i CodeScanningDefaultSetup_languages) String() string {
-    return []string{"c-cpp", "csharp", "go", "java-kotlin", "javascript-typescript", "javascript", "python", "ruby", "typescript", "swift"}[i]
+    return []string{"actions", "c-cpp", "csharp", "go", "java-kotlin", "javascript-typescript", "javascript", "python", "ruby", "typescript", "swift"}[i]
 }
 func ParseCodeScanningDefaultSetup_languages(v string) (any, error) {
-    result := CCPP_CODESCANNINGDEFAULTSETUP_LANGUAGES
+    result := ACTIONS_CODESCANNINGDEFAULTSETUP_LANGUAGES
     switch v {
+        case "actions":
+            result = ACTIONS_CODESCANNINGDEFAULTSETUP_LANGUAGES
         case "c-cpp":
             result = CCPP_CODESCANNINGDEFAULTSETUP_LANGUAGES
         case "csharp":
