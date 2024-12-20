@@ -236,6 +236,11 @@ func (m *WithOrgItemRequestBuilder) PersonalAccessTokenRequests()(*ItemPersonalA
 func (m *WithOrgItemRequestBuilder) PersonalAccessTokens()(*ItemPersonalAccessTokensRequestBuilder) {
     return NewItemPersonalAccessTokensRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PrivateRegistries the privateRegistries property
+// returns a *ItemPrivateRegistriesRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) PrivateRegistries()(*ItemPrivateRegistriesRequestBuilder) {
+    return NewItemPrivateRegistriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Projects the projects property
 // returns a *ItemProjectsRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Projects()(*ItemProjectsRequestBuilder) {

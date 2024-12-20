@@ -10,6 +10,11 @@ import (
 type ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// Autofix the autofix property
+// returns a *ItemItemCodeScanningAlertsItemAutofixRequestBuilder when successful
+func (m *ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) Autofix()(*ItemItemCodeScanningAlertsItemAutofixRequestBuilder) {
+    return NewItemItemCodeScanningAlertsItemAutofixRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilderInternal instantiates a new ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder and sets the default values.
 func NewItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) {
     m := &ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder{
