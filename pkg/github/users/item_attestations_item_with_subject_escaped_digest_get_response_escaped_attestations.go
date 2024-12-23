@@ -10,6 +10,8 @@ type ItemAttestationsItemWithSubject_digestGetResponse_attestations struct {
     additionalData map[string]any
     // Sigstore Bundle v0.1
     bundle i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able
+    // The bundle_url property
+    bundle_url *string
     // The repository_id property
     repository_id *int32
 }
@@ -35,6 +37,11 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetAddi
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetBundle()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able) {
     return m.bundle
 }
+// GetBundleUrl gets the bundle_url property value. The bundle_url property
+// returns a *string when successful
+func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetBundleUrl()(*string) {
+    return m.bundle_url
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -46,6 +53,16 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetFiel
         }
         if val != nil {
             m.SetBundle(val.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able))
+        }
+        return nil
+    }
+    res["bundle_url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBundleUrl(val)
         }
         return nil
     }
@@ -75,6 +92,12 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) Seriali
         }
     }
     {
+        err := writer.WriteStringValue("bundle_url", m.GetBundleUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("repository_id", m.GetRepositoryId())
         if err != nil {
             return err
@@ -96,6 +119,10 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetAddi
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetBundle(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)() {
     m.bundle = value
 }
+// SetBundleUrl sets the bundle_url property value. The bundle_url property
+func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetBundleUrl(value *string)() {
+    m.bundle_url = value
+}
 // SetRepositoryId sets the repository_id property value. The repository_id property
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetRepositoryId(value *int32)() {
     m.repository_id = value
@@ -104,7 +131,9 @@ type ItemAttestationsItemWithSubject_digestGetResponse_attestationsable interfac
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBundle()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)
+    GetBundleUrl()(*string)
     GetRepositoryId()(*int32)
     SetBundle(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)()
+    SetBundleUrl(value *string)()
     SetRepositoryId(value *int32)()
 }

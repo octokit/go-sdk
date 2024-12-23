@@ -8,6 +8,11 @@ import (
 type WithEnterpriseItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// CodeSecurity the codeSecurity property
+// returns a *ItemCodeSecurityRequestBuilder when successful
+func (m *WithEnterpriseItemRequestBuilder) CodeSecurity()(*ItemCodeSecurityRequestBuilder) {
+    return NewItemCodeSecurityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWithEnterpriseItemRequestBuilderInternal instantiates a new WithEnterpriseItemRequestBuilder and sets the default values.
 func NewWithEnterpriseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WithEnterpriseItemRequestBuilder) {
     m := &WithEnterpriseItemRequestBuilder{
@@ -21,11 +26,6 @@ func NewWithEnterpriseItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     urlParams["request-raw-url"] = rawUrl
     return NewWithEnterpriseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Copilot the copilot property
-// returns a *ItemCopilotRequestBuilder when successful
-func (m *WithEnterpriseItemRequestBuilder) Copilot()(*ItemCopilotRequestBuilder) {
-    return NewItemCopilotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Dependabot the dependabot property
 // returns a *ItemDependabotRequestBuilder when successful
 func (m *WithEnterpriseItemRequestBuilder) Dependabot()(*ItemDependabotRequestBuilder) {
@@ -35,9 +35,4 @@ func (m *WithEnterpriseItemRequestBuilder) Dependabot()(*ItemDependabotRequestBu
 // returns a *ItemSecretScanningRequestBuilder when successful
 func (m *WithEnterpriseItemRequestBuilder) SecretScanning()(*ItemSecretScanningRequestBuilder) {
     return NewItemSecretScanningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Team the team property
-// returns a *ItemTeamRequestBuilder when successful
-func (m *WithEnterpriseItemRequestBuilder) Team()(*ItemTeamRequestBuilder) {
-    return NewItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

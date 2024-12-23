@@ -9,6 +9,8 @@ type RateLimitOverview_resources struct {
     actions_runner_registration RateLimitable
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // The code_scanning_autofix property
+    code_scanning_autofix RateLimitable
     // The code_scanning_upload property
     code_scanning_upload RateLimitable
     // The code_search property
@@ -50,6 +52,11 @@ func (m *RateLimitOverview_resources) GetActionsRunnerRegistration()(RateLimitab
 func (m *RateLimitOverview_resources) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetCodeScanningAutofix gets the code_scanning_autofix property value. The code_scanning_autofix property
+// returns a RateLimitable when successful
+func (m *RateLimitOverview_resources) GetCodeScanningAutofix()(RateLimitable) {
+    return m.code_scanning_autofix
+}
 // GetCodeScanningUpload gets the code_scanning_upload property value. The code_scanning_upload property
 // returns a RateLimitable when successful
 func (m *RateLimitOverview_resources) GetCodeScanningUpload()(RateLimitable) {
@@ -81,6 +88,16 @@ func (m *RateLimitOverview_resources) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetActionsRunnerRegistration(val.(RateLimitable))
+        }
+        return nil
+    }
+    res["code_scanning_autofix"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRateLimitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodeScanningAutofix(val.(RateLimitable))
         }
         return nil
     }
@@ -210,6 +227,12 @@ func (m *RateLimitOverview_resources) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err := writer.WriteObjectValue("code_scanning_autofix", m.GetCodeScanningAutofix())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("code_scanning_upload", m.GetCodeScanningUpload())
         if err != nil {
             return err
@@ -279,6 +302,10 @@ func (m *RateLimitOverview_resources) SetActionsRunnerRegistration(value RateLim
 func (m *RateLimitOverview_resources) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetCodeScanningAutofix sets the code_scanning_autofix property value. The code_scanning_autofix property
+func (m *RateLimitOverview_resources) SetCodeScanningAutofix(value RateLimitable)() {
+    m.code_scanning_autofix = value
+}
 // SetCodeScanningUpload sets the code_scanning_upload property value. The code_scanning_upload property
 func (m *RateLimitOverview_resources) SetCodeScanningUpload(value RateLimitable)() {
     m.code_scanning_upload = value
@@ -319,6 +346,7 @@ type RateLimitOverview_resourcesable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionsRunnerRegistration()(RateLimitable)
+    GetCodeScanningAutofix()(RateLimitable)
     GetCodeScanningUpload()(RateLimitable)
     GetCodeSearch()(RateLimitable)
     GetCore()(RateLimitable)
@@ -329,6 +357,7 @@ type RateLimitOverview_resourcesable interface {
     GetSearch()(RateLimitable)
     GetSourceImport()(RateLimitable)
     SetActionsRunnerRegistration(value RateLimitable)()
+    SetCodeScanningAutofix(value RateLimitable)()
     SetCodeScanningUpload(value RateLimitable)()
     SetCodeSearch(value RateLimitable)()
     SetCore(value RateLimitable)()

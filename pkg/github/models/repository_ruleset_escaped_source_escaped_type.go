@@ -5,10 +5,11 @@ type RepositoryRuleset_source_type int
 const (
     REPOSITORY_REPOSITORYRULESET_SOURCE_TYPE RepositoryRuleset_source_type = iota
     ORGANIZATION_REPOSITORYRULESET_SOURCE_TYPE
+    ENTERPRISE_REPOSITORYRULESET_SOURCE_TYPE
 )
 
 func (i RepositoryRuleset_source_type) String() string {
-    return []string{"Repository", "Organization"}[i]
+    return []string{"Repository", "Organization", "Enterprise"}[i]
 }
 func ParseRepositoryRuleset_source_type(v string) (any, error) {
     result := REPOSITORY_REPOSITORYRULESET_SOURCE_TYPE
@@ -17,6 +18,8 @@ func ParseRepositoryRuleset_source_type(v string) (any, error) {
             result = REPOSITORY_REPOSITORYRULESET_SOURCE_TYPE
         case "Organization":
             result = ORGANIZATION_REPOSITORYRULESET_SOURCE_TYPE
+        case "Enterprise":
+            result = ENTERPRISE_REPOSITORYRULESET_SOURCE_TYPE
         default:
             return nil, nil
     }

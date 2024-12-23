@@ -6,10 +6,11 @@ const (
     BRANCH_REPOSITORYRULESET_TARGET RepositoryRuleset_target = iota
     TAG_REPOSITORYRULESET_TARGET
     PUSH_REPOSITORYRULESET_TARGET
+    REPOSITORY_REPOSITORYRULESET_TARGET
 )
 
 func (i RepositoryRuleset_target) String() string {
-    return []string{"branch", "tag", "push"}[i]
+    return []string{"branch", "tag", "push", "repository"}[i]
 }
 func ParseRepositoryRuleset_target(v string) (any, error) {
     result := BRANCH_REPOSITORYRULESET_TARGET
@@ -20,6 +21,8 @@ func ParseRepositoryRuleset_target(v string) (any, error) {
             result = TAG_REPOSITORYRULESET_TARGET
         case "push":
             result = PUSH_REPOSITORYRULESET_TARGET
+        case "repository":
+            result = REPOSITORY_REPOSITORYRULESET_TARGET
         default:
             return nil, nil
     }
