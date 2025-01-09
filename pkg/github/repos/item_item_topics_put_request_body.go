@@ -7,7 +7,7 @@ import (
 type ItemItemTopicsPutRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
+    // An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
     names []string
 }
 // NewItemItemTopicsPutRequestBody instantiates a new ItemItemTopicsPutRequestBody and sets the default values.
@@ -49,7 +49,7 @@ func (m *ItemItemTopicsPutRequestBody) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetNames gets the names property value. An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
+// GetNames gets the names property value. An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
 // returns a []string when successful
 func (m *ItemItemTopicsPutRequestBody) GetNames()([]string) {
     return m.names
@@ -74,7 +74,7 @@ func (m *ItemItemTopicsPutRequestBody) Serialize(writer i878a80d2330e89d26896388
 func (m *ItemItemTopicsPutRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetNames sets the names property value. An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
+// SetNames sets the names property value. An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` will be saved as lowercase.
 func (m *ItemItemTopicsPutRequestBody) SetNames(value []string)() {
     m.names = value
 }
