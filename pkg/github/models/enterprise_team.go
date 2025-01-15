@@ -13,6 +13,8 @@ type EnterpriseTeam struct {
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The group_id property
     group_id *string
+    // The group_name property
+    group_name *string
     // The html_url property
     html_url *string
     // The id property
@@ -73,6 +75,16 @@ func (m *EnterpriseTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetGroupId(val)
+        }
+        return nil
+    }
+    res["group_name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupName(val)
         }
         return nil
     }
@@ -163,6 +175,11 @@ func (m *EnterpriseTeam) GetFieldDeserializers()(map[string]func(i878a80d2330e89
 func (m *EnterpriseTeam) GetGroupId()(*string) {
     return m.group_id
 }
+// GetGroupName gets the group_name property value. The group_name property
+// returns a *string when successful
+func (m *EnterpriseTeam) GetGroupName()(*string) {
+    return m.group_name
+}
 // GetHtmlUrl gets the html_url property value. The html_url property
 // returns a *string when successful
 func (m *EnterpriseTeam) GetHtmlUrl()(*string) {
@@ -213,6 +230,12 @@ func (m *EnterpriseTeam) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("group_id", m.GetGroupId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("group_name", m.GetGroupName())
         if err != nil {
             return err
         }
@@ -285,6 +308,10 @@ func (m *EnterpriseTeam) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6
 func (m *EnterpriseTeam) SetGroupId(value *string)() {
     m.group_id = value
 }
+// SetGroupName sets the group_name property value. The group_name property
+func (m *EnterpriseTeam) SetGroupName(value *string)() {
+    m.group_name = value
+}
 // SetHtmlUrl sets the html_url property value. The html_url property
 func (m *EnterpriseTeam) SetHtmlUrl(value *string)() {
     m.html_url = value
@@ -322,6 +349,7 @@ type EnterpriseTeamable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupId()(*string)
+    GetGroupName()(*string)
     GetHtmlUrl()(*string)
     GetId()(*int64)
     GetMembersUrl()(*string)
@@ -332,6 +360,7 @@ type EnterpriseTeamable interface {
     GetUrl()(*string)
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupId(value *string)()
+    SetGroupName(value *string)()
     SetHtmlUrl(value *string)()
     SetId(value *int64)()
     SetMembersUrl(value *string)()
