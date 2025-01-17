@@ -33,7 +33,7 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     Scope *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetScopeQueryParameterType `uriparametername:"scope"`
     // A comma-separated list of severities. If specified, only alerts with these severities will be returned.Can be: `low`, `medium`, `high`, `critical`
     Severity *string `uriparametername:"severity"`
-    // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.
+    // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.`epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.
     Sort *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetSortQueryParameterType `uriparametername:"sort"`
     // A comma-separated list of states. If specified, only alerts with these states will be returned.Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
     State *string `uriparametername:"state"`

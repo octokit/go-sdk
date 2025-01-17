@@ -4,10 +4,11 @@ type GetSortQueryParameterType int
 const (
     CREATED_GETSORTQUERYPARAMETERTYPE GetSortQueryParameterType = iota
     UPDATED_GETSORTQUERYPARAMETERTYPE
+    EPSS_PERCENTAGE_GETSORTQUERYPARAMETERTYPE
 )
 
 func (i GetSortQueryParameterType) String() string {
-    return []string{"created", "updated"}[i]
+    return []string{"created", "updated", "epss_percentage"}[i]
 }
 func ParseGetSortQueryParameterType(v string) (any, error) {
     result := CREATED_GETSORTQUERYPARAMETERTYPE
@@ -16,6 +17,8 @@ func ParseGetSortQueryParameterType(v string) (any, error) {
             result = CREATED_GETSORTQUERYPARAMETERTYPE
         case "updated":
             result = UPDATED_GETSORTQUERYPARAMETERTYPE
+        case "epss_percentage":
+            result = EPSS_PERCENTAGE_GETSORTQUERYPARAMETERTYPE
         default:
             return nil, nil
     }
