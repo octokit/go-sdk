@@ -26,6 +26,11 @@ func NewItemActionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewItemActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// HostedRunners the hostedRunners property
+// returns a *ItemActionsHostedRunnersRequestBuilder when successful
+func (m *ItemActionsRequestBuilder) HostedRunners()(*ItemActionsHostedRunnersRequestBuilder) {
+    return NewItemActionsHostedRunnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Oidc the oidc property
 // returns a *ItemActionsOidcRequestBuilder when successful
 func (m *ItemActionsRequestBuilder) Oidc()(*ItemActionsOidcRequestBuilder) {
