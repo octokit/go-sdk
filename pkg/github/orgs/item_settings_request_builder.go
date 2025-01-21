@@ -26,3 +26,13 @@ func NewItemSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewItemSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// NetworkConfigurations the networkConfigurations property
+// returns a *ItemSettingsNetworkConfigurationsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) NetworkConfigurations()(*ItemSettingsNetworkConfigurationsRequestBuilder) {
+    return NewItemSettingsNetworkConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NetworkSettings the networkSettings property
+// returns a *ItemSettingsNetworkSettingsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) NetworkSettings()(*ItemSettingsNetworkSettingsRequestBuilder) {
+    return NewItemSettingsNetworkSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
