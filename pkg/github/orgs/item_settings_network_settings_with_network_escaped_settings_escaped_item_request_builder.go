@@ -27,7 +27,7 @@ func NewItemSettingsNetworkSettingsWithNetwork_settings_ItemRequestBuilder(rawUr
 // returns a NetworkSettingsable when successful
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/settings/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization
+// [API method documentation]: https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization
 func (m *ItemSettingsNetworkSettingsWithNetwork_settings_ItemRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.NetworkSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

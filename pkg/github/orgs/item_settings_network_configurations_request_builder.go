@@ -46,7 +46,7 @@ func NewItemSettingsNetworkConfigurationsRequestBuilder(rawUrl string, requestAd
 // returns a ItemSettingsNetworkConfigurationsGetResponseable when successful
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/settings/network-configurations#list-hosted-compute-network-configurations-for-an-organization
+// [API method documentation]: https://docs.github.com/rest/orgs/network-configurations#list-hosted-compute-network-configurations-for-an-organization
 func (m *ItemSettingsNetworkConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemSettingsNetworkConfigurationsRequestBuilderGetQueryParameters])(ItemSettingsNetworkConfigurationsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -65,7 +65,7 @@ func (m *ItemSettingsNetworkConfigurationsRequestBuilder) Get(ctx context.Contex
 // returns a NetworkConfigurationable when successful
 // [API method documentation]
 // 
-// [API method documentation]: https://docs.github.com/rest/settings/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization
+// [API method documentation]: https://docs.github.com/rest/orgs/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization
 func (m *ItemSettingsNetworkConfigurationsRequestBuilder) Post(ctx context.Context, body ItemSettingsNetworkConfigurationsPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.NetworkConfigurationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
