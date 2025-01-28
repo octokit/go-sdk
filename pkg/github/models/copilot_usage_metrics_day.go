@@ -8,7 +8,7 @@ import (
 type CopilotUsageMetricsDay struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Usage metrics for Copilot Chat in github.com
+    // Usage metrics for Copilot Chat in GitHub.com
     copilot_dotcom_chat CopilotDotcomChatable
     // Usage metrics for Copilot for pull requests.
     copilot_dotcom_pull_requests CopilotDotcomPullRequestsable
@@ -40,7 +40,7 @@ func CreateCopilotUsageMetricsDayFromDiscriminatorValue(parseNode i878a80d2330e8
 func (m *CopilotUsageMetricsDay) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCopilotDotcomChat gets the copilot_dotcom_chat property value. Usage metrics for Copilot Chat in github.com
+// GetCopilotDotcomChat gets the copilot_dotcom_chat property value. Usage metrics for Copilot Chat in GitHub.com
 // returns a CopilotDotcomChatable when successful
 func (m *CopilotUsageMetricsDay) GetCopilotDotcomChat()(CopilotDotcomChatable) {
     return m.copilot_dotcom_chat
@@ -207,7 +207,7 @@ func (m *CopilotUsageMetricsDay) Serialize(writer i878a80d2330e89d26896388a3f487
 func (m *CopilotUsageMetricsDay) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCopilotDotcomChat sets the copilot_dotcom_chat property value. Usage metrics for Copilot Chat in github.com
+// SetCopilotDotcomChat sets the copilot_dotcom_chat property value. Usage metrics for Copilot Chat in GitHub.com
 func (m *CopilotUsageMetricsDay) SetCopilotDotcomChat(value CopilotDotcomChatable)() {
     m.copilot_dotcom_chat = value
 }
