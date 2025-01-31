@@ -23,7 +23,8 @@ func NewItemCollaboratorsItemPermissionRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemCollaboratorsItemPermissionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
+// Get > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a ProjectCollaboratorPermissionable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -52,7 +53,8 @@ func (m *ItemCollaboratorsItemPermissionRequestBuilder) Get(ctx context.Context,
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ProjectCollaboratorPermissionable), nil
 }
-// ToGetRequestInformation returns the collaborator's permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user's permission level.
+// ToGetRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemCollaboratorsItemPermissionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *ItemCollaboratorsItemPermissionRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: 
 // returns a *ItemCollaboratorsItemPermissionRequestBuilder when successful
 func (m *ItemCollaboratorsItemPermissionRequestBuilder) WithUrl(rawUrl string)(*ItemCollaboratorsItemPermissionRequestBuilder) {
     return NewItemCollaboratorsItemPermissionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
