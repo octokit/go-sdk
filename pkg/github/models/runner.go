@@ -10,6 +10,8 @@ type Runner struct {
     additionalData map[string]any
     // The busy property
     busy *bool
+    // The ephemeral property
+    ephemeral *bool
     // The id of the runner.
     id *int32
     // The labels property
@@ -45,6 +47,11 @@ func (m *Runner) GetAdditionalData()(map[string]any) {
 func (m *Runner) GetBusy()(*bool) {
     return m.busy
 }
+// GetEphemeral gets the ephemeral property value. The ephemeral property
+// returns a *bool when successful
+func (m *Runner) GetEphemeral()(*bool) {
+    return m.ephemeral
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Runner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -56,6 +63,16 @@ func (m *Runner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetBusy(val)
+        }
+        return nil
+    }
+    res["ephemeral"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEphemeral(val)
         }
         return nil
     }
@@ -166,6 +183,12 @@ func (m *Runner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err := writer.WriteBoolValue("ephemeral", m.GetEphemeral())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("id", m.GetId())
         if err != nil {
             return err
@@ -223,6 +246,10 @@ func (m *Runner) SetAdditionalData(value map[string]any)() {
 func (m *Runner) SetBusy(value *bool)() {
     m.busy = value
 }
+// SetEphemeral sets the ephemeral property value. The ephemeral property
+func (m *Runner) SetEphemeral(value *bool)() {
+    m.ephemeral = value
+}
 // SetId sets the id property value. The id of the runner.
 func (m *Runner) SetId(value *int32)() {
     m.id = value
@@ -251,6 +278,7 @@ type Runnerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBusy()(*bool)
+    GetEphemeral()(*bool)
     GetId()(*int32)
     GetLabels()([]RunnerLabelable)
     GetName()(*string)
@@ -258,6 +286,7 @@ type Runnerable interface {
     GetRunnerGroupId()(*int32)
     GetStatus()(*string)
     SetBusy(value *bool)()
+    SetEphemeral(value *bool)()
     SetId(value *int32)()
     SetLabels(value []RunnerLabelable)()
     SetName(value *string)()
