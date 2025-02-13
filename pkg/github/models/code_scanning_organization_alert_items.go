@@ -10,6 +10,8 @@ type CodeScanningOrganizationAlertItems struct {
     additionalData map[string]any
     // The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // A GitHub user.
+    dismissal_approved_by NullableSimpleUserable
     // The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
     dismissed_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // A GitHub user.
@@ -63,6 +65,11 @@ func (m *CodeScanningOrganizationAlertItems) GetAdditionalData()(map[string]any)
 func (m *CodeScanningOrganizationAlertItems) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
+// GetDismissalApprovedBy gets the dismissal_approved_by property value. A GitHub user.
+// returns a NullableSimpleUserable when successful
+func (m *CodeScanningOrganizationAlertItems) GetDismissalApprovedBy()(NullableSimpleUserable) {
+    return m.dismissal_approved_by
+}
 // GetDismissedAt gets the dismissed_at property value. The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 // returns a *Time when successful
 func (m *CodeScanningOrganizationAlertItems) GetDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -94,6 +101,16 @@ func (m *CodeScanningOrganizationAlertItems) GetFieldDeserializers()(map[string]
         }
         if val != nil {
             m.SetCreatedAt(val)
+        }
+        return nil
+    }
+    res["dismissal_approved_by"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDismissalApprovedBy(val.(NullableSimpleUserable))
         }
         return nil
     }
@@ -307,6 +324,12 @@ func (m *CodeScanningOrganizationAlertItems) GetUrl()(*string) {
 // Serialize serializes information the current object
 func (m *CodeScanningOrganizationAlertItems) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("dismissal_approved_by", m.GetDismissalApprovedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("dismissed_by", m.GetDismissedBy())
         if err != nil {
             return err
@@ -372,6 +395,10 @@ func (m *CodeScanningOrganizationAlertItems) SetAdditionalData(value map[string]
 func (m *CodeScanningOrganizationAlertItems) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
 }
+// SetDismissalApprovedBy sets the dismissal_approved_by property value. A GitHub user.
+func (m *CodeScanningOrganizationAlertItems) SetDismissalApprovedBy(value NullableSimpleUserable)() {
+    m.dismissal_approved_by = value
+}
 // SetDismissedAt sets the dismissed_at property value. The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
 func (m *CodeScanningOrganizationAlertItems) SetDismissedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.dismissed_at = value
@@ -436,6 +463,7 @@ type CodeScanningOrganizationAlertItemsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDismissalApprovedBy()(NullableSimpleUserable)
     GetDismissedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDismissedBy()(NullableSimpleUserable)
     GetDismissedComment()(*string)
@@ -452,6 +480,7 @@ type CodeScanningOrganizationAlertItemsable interface {
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDismissalApprovedBy(value NullableSimpleUserable)()
     SetDismissedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDismissedBy(value NullableSimpleUserable)()
     SetDismissedComment(value *string)()
