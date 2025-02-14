@@ -1,5 +1,5 @@
 package models
-// The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
+// The organization policy for allowing or disallowing Copilot in the CLI.
 type CopilotOrganizationDetails_cli int
 
 const (

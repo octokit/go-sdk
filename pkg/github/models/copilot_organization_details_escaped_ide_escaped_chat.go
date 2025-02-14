@@ -1,5 +1,5 @@
 package models
-// The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
+// The organization policy for allowing or disallowing Copilot Chat in the IDE.
 type CopilotOrganizationDetails_ide_chat int
 
 const (

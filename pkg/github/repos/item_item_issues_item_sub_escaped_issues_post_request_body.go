@@ -9,7 +9,7 @@ type ItemItemIssuesItemSub_issuesPostRequestBody struct {
     additionalData map[string]any
     // Option that, when true, instructs the operation to replace the sub-issues current parent issue
     replace_parent *bool
-    // The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue
+    // The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
     sub_issue_id *int32
 }
 // NewItemItemIssuesItemSub_issuesPostRequestBody instantiates a new ItemItemIssuesItemSub_issuesPostRequestBody and sets the default values.
@@ -60,7 +60,7 @@ func (m *ItemItemIssuesItemSub_issuesPostRequestBody) GetFieldDeserializers()(ma
 func (m *ItemItemIssuesItemSub_issuesPostRequestBody) GetReplaceParent()(*bool) {
     return m.replace_parent
 }
-// GetSubIssueId gets the sub_issue_id property value. The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue
+// GetSubIssueId gets the sub_issue_id property value. The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
 // returns a *int32 when successful
 func (m *ItemItemIssuesItemSub_issuesPostRequestBody) GetSubIssueId()(*int32) {
     return m.sub_issue_id
@@ -95,7 +95,7 @@ func (m *ItemItemIssuesItemSub_issuesPostRequestBody) SetAdditionalData(value ma
 func (m *ItemItemIssuesItemSub_issuesPostRequestBody) SetReplaceParent(value *bool)() {
     m.replace_parent = value
 }
-// SetSubIssueId sets the sub_issue_id property value. The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue
+// SetSubIssueId sets the sub_issue_id property value. The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
 func (m *ItemItemIssuesItemSub_issuesPostRequestBody) SetSubIssueId(value *int32)() {
     m.sub_issue_id = value
 }

@@ -8,18 +8,18 @@ import (
 type CopilotOrganizationDetails struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
+    // The organization policy for allowing or disallowing Copilot in the CLI.
     cli *CopilotOrganizationDetails_cli
-    // The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
+    // The organization policy for allowing or disallowing Copilot Chat in the IDE.
     ide_chat *CopilotOrganizationDetails_ide_chat
     // The Copilot plan of the organization, or the parent enterprise, when applicable.
     plan_type *CopilotOrganizationDetails_plan_type
-    // The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
+    // The organization policy for allowing or disallowing Copilot features on GitHub.com.
     platform_chat *CopilotOrganizationDetails_platform_chat
-    // The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
+    // The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
     public_code_suggestions *CopilotOrganizationDetails_public_code_suggestions
     // The breakdown of Copilot Business seats for the organization.
-    seat_breakdown CopilotSeatBreakdownable
+    seat_breakdown CopilotOrganizationSeatBreakdownable
     // The mode of assigning new seats.
     seat_management_setting *CopilotOrganizationDetails_seat_management_setting
 }
@@ -40,7 +40,7 @@ func CreateCopilotOrganizationDetailsFromDiscriminatorValue(parseNode i878a80d23
 func (m *CopilotOrganizationDetails) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetCli gets the cli property value. The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
+// GetCli gets the cli property value. The organization policy for allowing or disallowing Copilot in the CLI.
 // returns a *CopilotOrganizationDetails_cli when successful
 func (m *CopilotOrganizationDetails) GetCli()(*CopilotOrganizationDetails_cli) {
     return m.cli
@@ -100,12 +100,12 @@ func (m *CopilotOrganizationDetails) GetFieldDeserializers()(map[string]func(i87
         return nil
     }
     res["seat_breakdown"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCopilotSeatBreakdownFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateCopilotOrganizationSeatBreakdownFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeatBreakdown(val.(CopilotSeatBreakdownable))
+            m.SetSeatBreakdown(val.(CopilotOrganizationSeatBreakdownable))
         }
         return nil
     }
@@ -121,7 +121,7 @@ func (m *CopilotOrganizationDetails) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIdeChat gets the ide_chat property value. The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
+// GetIdeChat gets the ide_chat property value. The organization policy for allowing or disallowing Copilot Chat in the IDE.
 // returns a *CopilotOrganizationDetails_ide_chat when successful
 func (m *CopilotOrganizationDetails) GetIdeChat()(*CopilotOrganizationDetails_ide_chat) {
     return m.ide_chat
@@ -131,19 +131,19 @@ func (m *CopilotOrganizationDetails) GetIdeChat()(*CopilotOrganizationDetails_id
 func (m *CopilotOrganizationDetails) GetPlanType()(*CopilotOrganizationDetails_plan_type) {
     return m.plan_type
 }
-// GetPlatformChat gets the platform_chat property value. The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
+// GetPlatformChat gets the platform_chat property value. The organization policy for allowing or disallowing Copilot features on GitHub.com.
 // returns a *CopilotOrganizationDetails_platform_chat when successful
 func (m *CopilotOrganizationDetails) GetPlatformChat()(*CopilotOrganizationDetails_platform_chat) {
     return m.platform_chat
 }
-// GetPublicCodeSuggestions gets the public_code_suggestions property value. The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
+// GetPublicCodeSuggestions gets the public_code_suggestions property value. The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 // returns a *CopilotOrganizationDetails_public_code_suggestions when successful
 func (m *CopilotOrganizationDetails) GetPublicCodeSuggestions()(*CopilotOrganizationDetails_public_code_suggestions) {
     return m.public_code_suggestions
 }
 // GetSeatBreakdown gets the seat_breakdown property value. The breakdown of Copilot Business seats for the organization.
-// returns a CopilotSeatBreakdownable when successful
-func (m *CopilotOrganizationDetails) GetSeatBreakdown()(CopilotSeatBreakdownable) {
+// returns a CopilotOrganizationSeatBreakdownable when successful
+func (m *CopilotOrganizationDetails) GetSeatBreakdown()(CopilotOrganizationSeatBreakdownable) {
     return m.seat_breakdown
 }
 // GetSeatManagementSetting gets the seat_management_setting property value. The mode of assigning new seats.
@@ -213,11 +213,11 @@ func (m *CopilotOrganizationDetails) Serialize(writer i878a80d2330e89d26896388a3
 func (m *CopilotOrganizationDetails) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetCli sets the cli property value. The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
+// SetCli sets the cli property value. The organization policy for allowing or disallowing Copilot in the CLI.
 func (m *CopilotOrganizationDetails) SetCli(value *CopilotOrganizationDetails_cli)() {
     m.cli = value
 }
-// SetIdeChat sets the ide_chat property value. The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
+// SetIdeChat sets the ide_chat property value. The organization policy for allowing or disallowing Copilot Chat in the IDE.
 func (m *CopilotOrganizationDetails) SetIdeChat(value *CopilotOrganizationDetails_ide_chat)() {
     m.ide_chat = value
 }
@@ -225,16 +225,16 @@ func (m *CopilotOrganizationDetails) SetIdeChat(value *CopilotOrganizationDetail
 func (m *CopilotOrganizationDetails) SetPlanType(value *CopilotOrganizationDetails_plan_type)() {
     m.plan_type = value
 }
-// SetPlatformChat sets the platform_chat property value. The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
+// SetPlatformChat sets the platform_chat property value. The organization policy for allowing or disallowing Copilot features on GitHub.com.
 func (m *CopilotOrganizationDetails) SetPlatformChat(value *CopilotOrganizationDetails_platform_chat)() {
     m.platform_chat = value
 }
-// SetPublicCodeSuggestions sets the public_code_suggestions property value. The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
+// SetPublicCodeSuggestions sets the public_code_suggestions property value. The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 func (m *CopilotOrganizationDetails) SetPublicCodeSuggestions(value *CopilotOrganizationDetails_public_code_suggestions)() {
     m.public_code_suggestions = value
 }
 // SetSeatBreakdown sets the seat_breakdown property value. The breakdown of Copilot Business seats for the organization.
-func (m *CopilotOrganizationDetails) SetSeatBreakdown(value CopilotSeatBreakdownable)() {
+func (m *CopilotOrganizationDetails) SetSeatBreakdown(value CopilotOrganizationSeatBreakdownable)() {
     m.seat_breakdown = value
 }
 // SetSeatManagementSetting sets the seat_management_setting property value. The mode of assigning new seats.
@@ -249,13 +249,13 @@ type CopilotOrganizationDetailsable interface {
     GetPlanType()(*CopilotOrganizationDetails_plan_type)
     GetPlatformChat()(*CopilotOrganizationDetails_platform_chat)
     GetPublicCodeSuggestions()(*CopilotOrganizationDetails_public_code_suggestions)
-    GetSeatBreakdown()(CopilotSeatBreakdownable)
+    GetSeatBreakdown()(CopilotOrganizationSeatBreakdownable)
     GetSeatManagementSetting()(*CopilotOrganizationDetails_seat_management_setting)
     SetCli(value *CopilotOrganizationDetails_cli)()
     SetIdeChat(value *CopilotOrganizationDetails_ide_chat)()
     SetPlanType(value *CopilotOrganizationDetails_plan_type)()
     SetPlatformChat(value *CopilotOrganizationDetails_platform_chat)()
     SetPublicCodeSuggestions(value *CopilotOrganizationDetails_public_code_suggestions)()
-    SetSeatBreakdown(value CopilotSeatBreakdownable)()
+    SetSeatBreakdown(value CopilotOrganizationSeatBreakdownable)()
     SetSeatManagementSetting(value *CopilotOrganizationDetails_seat_management_setting)()
 }
