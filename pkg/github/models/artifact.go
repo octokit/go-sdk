@@ -13,6 +13,8 @@ type Artifact struct {
     archive_download_url *string
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+    // The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
+    digest *string
     // Whether or not the artifact has expired.
     expired *bool
     // The expires_at property
@@ -59,6 +61,11 @@ func (m *Artifact) GetArchiveDownloadUrl()(*string) {
 func (m *Artifact) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     return m.created_at
 }
+// GetDigest gets the digest property value. The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
+// returns a *string when successful
+func (m *Artifact) GetDigest()(*string) {
+    return m.digest
+}
 // GetExpired gets the expired property value. Whether or not the artifact has expired.
 // returns a *bool when successful
 func (m *Artifact) GetExpired()(*bool) {
@@ -90,6 +97,16 @@ func (m *Artifact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetCreatedAt(val)
+        }
+        return nil
+    }
+    res["digest"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDigest(val)
         }
         return nil
     }
@@ -235,6 +252,12 @@ func (m *Artifact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err := writer.WriteStringValue("digest", m.GetDigest())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("expired", m.GetExpired())
         if err != nil {
             return err
@@ -308,6 +331,10 @@ func (m *Artifact) SetArchiveDownloadUrl(value *string)() {
 func (m *Artifact) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
 }
+// SetDigest sets the digest property value. The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
+func (m *Artifact) SetDigest(value *string)() {
+    m.digest = value
+}
 // SetExpired sets the expired property value. Whether or not the artifact has expired.
 func (m *Artifact) SetExpired(value *bool)() {
     m.expired = value
@@ -349,6 +376,7 @@ type Artifactable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetArchiveDownloadUrl()(*string)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDigest()(*string)
     GetExpired()(*bool)
     GetExpiresAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetId()(*int32)
@@ -360,6 +388,7 @@ type Artifactable interface {
     GetWorkflowRun()(Artifact_workflow_runable)
     SetArchiveDownloadUrl(value *string)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDigest(value *string)()
     SetExpired(value *bool)()
     SetExpiresAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetId(value *int32)()
