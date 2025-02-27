@@ -41,6 +41,8 @@ type CodeSecurityConfiguration struct {
     private_vulnerability_reporting *CodeSecurityConfiguration_private_vulnerability_reporting
     // The enablement status of secret scanning
     secret_scanning *CodeSecurityConfiguration_secret_scanning
+    // The enablement status of secret scanning delegated alert dismissal
+    secret_scanning_delegated_alert_dismissal *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal
     // The enablement status of secret scanning delegated bypass
     secret_scanning_delegated_bypass *CodeSecurityConfiguration_secret_scanning_delegated_bypass
     // Feature options for secret scanning delegated bypass
@@ -294,6 +296,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["secret_scanning_delegated_alert_dismissal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningDelegatedAlertDismissal(val.(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal))
+        }
+        return nil
+    }
     res["secret_scanning_delegated_bypass"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_delegated_bypass)
         if err != nil {
@@ -400,6 +412,11 @@ func (m *CodeSecurityConfiguration) GetPrivateVulnerabilityReporting()(*CodeSecu
 // returns a *CodeSecurityConfiguration_secret_scanning when successful
 func (m *CodeSecurityConfiguration) GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning) {
     return m.secret_scanning
+}
+// GetSecretScanningDelegatedAlertDismissal gets the secret_scanning_delegated_alert_dismissal property value. The enablement status of secret scanning delegated alert dismissal
+// returns a *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal when successful
+func (m *CodeSecurityConfiguration) GetSecretScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal) {
+    return m.secret_scanning_delegated_alert_dismissal
 }
 // GetSecretScanningDelegatedBypass gets the secret_scanning_delegated_bypass property value. The enablement status of secret scanning delegated bypass
 // returns a *CodeSecurityConfiguration_secret_scanning_delegated_bypass when successful
@@ -548,6 +565,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetSecretScanningDelegatedAlertDismissal() != nil {
+        cast := (*m.GetSecretScanningDelegatedAlertDismissal()).String()
+        err := writer.WriteStringValue("secret_scanning_delegated_alert_dismissal", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSecretScanningDelegatedBypass() != nil {
         cast := (*m.GetSecretScanningDelegatedBypass()).String()
         err := writer.WriteStringValue("secret_scanning_delegated_bypass", &cast)
@@ -677,6 +701,10 @@ func (m *CodeSecurityConfiguration) SetPrivateVulnerabilityReporting(value *Code
 func (m *CodeSecurityConfiguration) SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)() {
     m.secret_scanning = value
 }
+// SetSecretScanningDelegatedAlertDismissal sets the secret_scanning_delegated_alert_dismissal property value. The enablement status of secret scanning delegated alert dismissal
+func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)() {
+    m.secret_scanning_delegated_alert_dismissal = value
+}
 // SetSecretScanningDelegatedBypass sets the secret_scanning_delegated_bypass property value. The enablement status of secret scanning delegated bypass
 func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedBypass(value *CodeSecurityConfiguration_secret_scanning_delegated_bypass)() {
     m.secret_scanning_delegated_bypass = value
@@ -728,6 +756,7 @@ type CodeSecurityConfigurationable interface {
     GetName()(*string)
     GetPrivateVulnerabilityReporting()(*CodeSecurityConfiguration_private_vulnerability_reporting)
     GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning)
+    GetSecretScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)
     GetSecretScanningDelegatedBypass()(*CodeSecurityConfiguration_secret_scanning_delegated_bypass)
     GetSecretScanningDelegatedBypassOptions()(CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable)
     GetSecretScanningNonProviderPatterns()(*CodeSecurityConfiguration_secret_scanning_non_provider_patterns)
@@ -752,6 +781,7 @@ type CodeSecurityConfigurationable interface {
     SetName(value *string)()
     SetPrivateVulnerabilityReporting(value *CodeSecurityConfiguration_private_vulnerability_reporting)()
     SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)()
+    SetSecretScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)()
     SetSecretScanningDelegatedBypass(value *CodeSecurityConfiguration_secret_scanning_delegated_bypass)()
     SetSecretScanningDelegatedBypassOptions(value CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable)()
     SetSecretScanningNonProviderPatterns(value *CodeSecurityConfiguration_secret_scanning_non_provider_patterns)()
