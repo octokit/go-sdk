@@ -7,7 +7,7 @@ import (
 type RepositoryRulePullRequest_parameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
+    // Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
     allowed_merge_methods []string
     // New, reviewable commits pushed will dismiss previous pull request review approvals.
     dismiss_stale_reviews_on_push *bool
@@ -37,7 +37,7 @@ func CreateRepositoryRulePullRequest_parametersFromDiscriminatorValue(parseNode 
 func (m *RepositoryRulePullRequest_parameters) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetAllowedMergeMethods gets the allowed_merge_methods property value. When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
+// GetAllowedMergeMethods gets the allowed_merge_methods property value. Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 // returns a []string when successful
 func (m *RepositoryRulePullRequest_parameters) GetAllowedMergeMethods()([]string) {
     return m.allowed_merge_methods
@@ -189,7 +189,7 @@ func (m *RepositoryRulePullRequest_parameters) Serialize(writer i878a80d2330e89d
 func (m *RepositoryRulePullRequest_parameters) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetAllowedMergeMethods sets the allowed_merge_methods property value. When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
+// SetAllowedMergeMethods sets the allowed_merge_methods property value. Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
 func (m *RepositoryRulePullRequest_parameters) SetAllowedMergeMethods(value []string)() {
     m.allowed_merge_methods = value
 }
