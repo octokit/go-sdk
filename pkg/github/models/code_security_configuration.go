@@ -15,6 +15,8 @@ type CodeSecurityConfiguration struct {
     code_scanning_default_setup *CodeSecurityConfiguration_code_scanning_default_setup
     // Feature options for code scanning default setup
     code_scanning_default_setup_options CodeSecurityConfiguration_code_scanning_default_setup_optionsable
+    // The enablement status of code scanning delegated alert dismissal
+    code_scanning_delegated_alert_dismissal *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The enablement status of Dependabot alerts
@@ -94,6 +96,11 @@ func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetup()(*CodeSecurityC
 func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable) {
     return m.code_scanning_default_setup_options
 }
+// GetCodeScanningDelegatedAlertDismissal gets the code_scanning_delegated_alert_dismissal property value. The enablement status of code scanning delegated alert dismissal
+// returns a *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal when successful
+func (m *CodeSecurityConfiguration) GetCodeScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal) {
+    return m.code_scanning_delegated_alert_dismissal
+}
 // GetCreatedAt gets the created_at property value. The created_at property
 // returns a *Time when successful
 func (m *CodeSecurityConfiguration) GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -165,6 +172,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCodeScanningDefaultSetupOptions(val.(CodeSecurityConfiguration_code_scanning_default_setup_optionsable))
+        }
+        return nil
+    }
+    res["code_scanning_delegated_alert_dismissal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodeScanningDelegatedAlertDismissal(val.(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal))
         }
         return nil
     }
@@ -497,6 +514,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetCodeScanningDelegatedAlertDismissal() != nil {
+        cast := (*m.GetCodeScanningDelegatedAlertDismissal()).String()
+        err := writer.WriteStringValue("code_scanning_delegated_alert_dismissal", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteTimeValue("created_at", m.GetCreatedAt())
         if err != nil {
@@ -673,6 +697,10 @@ func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetup(value *CodeSecur
 func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)() {
     m.code_scanning_default_setup_options = value
 }
+// SetCodeScanningDelegatedAlertDismissal sets the code_scanning_delegated_alert_dismissal property value. The enablement status of code scanning delegated alert dismissal
+func (m *CodeSecurityConfiguration) SetCodeScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)() {
+    m.code_scanning_delegated_alert_dismissal = value
+}
 // SetCreatedAt sets the created_at property value. The created_at property
 func (m *CodeSecurityConfiguration) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
@@ -771,6 +799,7 @@ type CodeSecurityConfigurationable interface {
     GetAdvancedSecurity()(*CodeSecurityConfiguration_advanced_security)
     GetCodeScanningDefaultSetup()(*CodeSecurityConfiguration_code_scanning_default_setup)
     GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable)
+    GetCodeScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDependabotAlerts()(*CodeSecurityConfiguration_dependabot_alerts)
     GetDependabotSecurityUpdates()(*CodeSecurityConfiguration_dependabot_security_updates)
@@ -797,6 +826,7 @@ type CodeSecurityConfigurationable interface {
     SetAdvancedSecurity(value *CodeSecurityConfiguration_advanced_security)()
     SetCodeScanningDefaultSetup(value *CodeSecurityConfiguration_code_scanning_default_setup)()
     SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)()
+    SetCodeScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDependabotAlerts(value *CodeSecurityConfiguration_dependabot_alerts)()
     SetDependabotSecurityUpdates(value *CodeSecurityConfiguration_dependabot_security_updates)()
