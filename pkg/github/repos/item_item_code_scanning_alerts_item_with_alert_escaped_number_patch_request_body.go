@@ -8,6 +8,8 @@ import (
 type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
+    // If `true`, attempt to create an alert dismissal request.
+    create_request *bool
     // The dismissal comment associated with the dismissal of the alert.
     dismissed_comment *string
     // **Required when the state is dismissed.** The reason for dismissing or closing the alert.
@@ -32,6 +34,11 @@ func CreateItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyFromDis
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
+// GetCreateRequest gets the create_request property value. If `true`, attempt to create an alert dismissal request.
+// returns a *bool when successful
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetCreateRequest()(*bool) {
+    return m.create_request
+}
 // GetDismissedComment gets the dismissed_comment property value. The dismissal comment associated with the dismissal of the alert.
 // returns a *string when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDismissedComment()(*string) {
@@ -46,6 +53,16 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetDism
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["create_request"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreateRequest(val)
+        }
+        return nil
+    }
     res["dismissed_comment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -86,6 +103,12 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) GetStat
 // Serialize serializes information the current object
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteBoolValue("create_request", m.GetCreateRequest())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("dismissed_comment", m.GetDismissedComment())
         if err != nil {
             return err
@@ -117,6 +140,10 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) Seriali
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
+// SetCreateRequest sets the create_request property value. If `true`, attempt to create an alert dismissal request.
+func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetCreateRequest(value *bool)() {
+    m.create_request = value
+}
 // SetDismissedComment sets the dismissed_comment property value. The dismissal comment associated with the dismissal of the alert.
 func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetDismissedComment(value *string)() {
     m.dismissed_comment = value
@@ -132,9 +159,11 @@ func (m *ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBody) SetStat
 type ItemItemCodeScanningAlertsItemWithAlert_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCreateRequest()(*bool)
     GetDismissedComment()(*string)
     GetDismissedReason()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertDismissedReason)
     GetState()(*i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSetState)
+    SetCreateRequest(value *bool)()
     SetDismissedComment(value *string)()
     SetDismissedReason(value *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertDismissedReason)()
     SetState(value *i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CodeScanningAlertSetState)()

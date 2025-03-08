@@ -16,8 +16,6 @@ type NullableActionsHostedRunnerPoolImage struct {
     size_gb *int32
     // The image provider.
     source *NullableActionsHostedRunnerPoolImage_source
-    // The image version of the hosted runner pool.
-    version *string
 }
 // NewNullableActionsHostedRunnerPoolImage instantiates a new NullableActionsHostedRunnerPoolImage and sets the default values.
 func NewNullableActionsHostedRunnerPoolImage()(*NullableActionsHostedRunnerPoolImage) {
@@ -85,16 +83,6 @@ func (m *NullableActionsHostedRunnerPoolImage) GetFieldDeserializers()(map[strin
         }
         return nil
     }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
-        }
-        return nil
-    }
     return res
 }
 // GetId gets the id property value. The ID of the image. Use this ID for the `image` parameter when creating a new larger runner.
@@ -111,11 +99,6 @@ func (m *NullableActionsHostedRunnerPoolImage) GetSizeGb()(*int32) {
 // returns a *NullableActionsHostedRunnerPoolImage_source when successful
 func (m *NullableActionsHostedRunnerPoolImage) GetSource()(*NullableActionsHostedRunnerPoolImage_source) {
     return m.source
-}
-// GetVersion gets the version property value. The image version of the hosted runner pool.
-// returns a *string when successful
-func (m *NullableActionsHostedRunnerPoolImage) GetVersion()(*string) {
-    return m.version
 }
 // Serialize serializes information the current object
 func (m *NullableActionsHostedRunnerPoolImage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -140,12 +123,6 @@ func (m *NullableActionsHostedRunnerPoolImage) Serialize(writer i878a80d2330e89d
     if m.GetSource() != nil {
         cast := (*m.GetSource()).String()
         err := writer.WriteStringValue("source", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -178,10 +155,6 @@ func (m *NullableActionsHostedRunnerPoolImage) SetSizeGb(value *int32)() {
 func (m *NullableActionsHostedRunnerPoolImage) SetSource(value *NullableActionsHostedRunnerPoolImage_source)() {
     m.source = value
 }
-// SetVersion sets the version property value. The image version of the hosted runner pool.
-func (m *NullableActionsHostedRunnerPoolImage) SetVersion(value *string)() {
-    m.version = value
-}
 type NullableActionsHostedRunnerPoolImageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -189,10 +162,8 @@ type NullableActionsHostedRunnerPoolImageable interface {
     GetId()(*string)
     GetSizeGb()(*int32)
     GetSource()(*NullableActionsHostedRunnerPoolImage_source)
-    GetVersion()(*string)
     SetDisplayName(value *string)()
     SetId(value *string)()
     SetSizeGb(value *int32)()
     SetSource(value *NullableActionsHostedRunnerPoolImage_source)()
-    SetVersion(value *string)()
 }

@@ -9,8 +9,6 @@ type ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody struct {
     additionalData map[string]any
     // Whether this runner should be updated with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`
     enable_static_ip *bool
-    // The version of the runner image to deploy. This is relevant only for runners using custom images.
-    image_version *string
     // The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
     maximum_runners *int32
     // Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, '.', '-', and '_'.
@@ -54,16 +52,6 @@ func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) GetFiel
         }
         return nil
     }
-    res["image_version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetImageVersion(val)
-        }
-        return nil
-    }
     res["maximum_runners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -96,11 +84,6 @@ func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) GetFiel
     }
     return res
 }
-// GetImageVersion gets the image_version property value. The version of the runner image to deploy. This is relevant only for runners using custom images.
-// returns a *string when successful
-func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) GetImageVersion()(*string) {
-    return m.image_version
-}
 // GetMaximumRunners gets the maximum_runners property value. The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
 // returns a *int32 when successful
 func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) GetMaximumRunners()(*int32) {
@@ -120,12 +103,6 @@ func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) GetRunn
 func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("enable_static_ip", m.GetEnableStaticIp())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("image_version", m.GetImageVersion())
         if err != nil {
             return err
         }
@@ -164,10 +141,6 @@ func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) SetAddi
 func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) SetEnableStaticIp(value *bool)() {
     m.enable_static_ip = value
 }
-// SetImageVersion sets the image_version property value. The version of the runner image to deploy. This is relevant only for runners using custom images.
-func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) SetImageVersion(value *string)() {
-    m.image_version = value
-}
 // SetMaximumRunners sets the maximum_runners property value. The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.
 func (m *ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBody) SetMaximumRunners(value *int32)() {
     m.maximum_runners = value
@@ -184,12 +157,10 @@ type ItemActionsHostedRunnersItemWithHosted_runner_PatchRequestBodyable interfac
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEnableStaticIp()(*bool)
-    GetImageVersion()(*string)
     GetMaximumRunners()(*int32)
     GetName()(*string)
     GetRunnerGroupId()(*int32)
     SetEnableStaticIp(value *bool)()
-    SetImageVersion(value *string)()
     SetMaximumRunners(value *int32)()
     SetName(value *string)()
     SetRunnerGroupId(value *int32)()

@@ -10,8 +10,6 @@ type ItemActionsHostedRunnersPostRequestBody_image struct {
     additionalData map[string]any
     // The unique identifier of the runner image.
     id *string
-    // The version of the runner image to deploy. This is relevant only for runners using custom images.
-    version *string
 }
 // NewItemActionsHostedRunnersPostRequestBody_image instantiates a new ItemActionsHostedRunnersPostRequestBody_image and sets the default values.
 func NewItemActionsHostedRunnersPostRequestBody_image()(*ItemActionsHostedRunnersPostRequestBody_image) {
@@ -44,16 +42,6 @@ func (m *ItemActionsHostedRunnersPostRequestBody_image) GetFieldDeserializers()(
         }
         return nil
     }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
-        }
-        return nil
-    }
     return res
 }
 // GetId gets the id property value. The unique identifier of the runner image.
@@ -61,21 +49,10 @@ func (m *ItemActionsHostedRunnersPostRequestBody_image) GetFieldDeserializers()(
 func (m *ItemActionsHostedRunnersPostRequestBody_image) GetId()(*string) {
     return m.id
 }
-// GetVersion gets the version property value. The version of the runner image to deploy. This is relevant only for runners using custom images.
-// returns a *string when successful
-func (m *ItemActionsHostedRunnersPostRequestBody_image) GetVersion()(*string) {
-    return m.version
-}
 // Serialize serializes information the current object
 func (m *ItemActionsHostedRunnersPostRequestBody_image) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("id", m.GetId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -96,15 +73,9 @@ func (m *ItemActionsHostedRunnersPostRequestBody_image) SetAdditionalData(value 
 func (m *ItemActionsHostedRunnersPostRequestBody_image) SetId(value *string)() {
     m.id = value
 }
-// SetVersion sets the version property value. The version of the runner image to deploy. This is relevant only for runners using custom images.
-func (m *ItemActionsHostedRunnersPostRequestBody_image) SetVersion(value *string)() {
-    m.version = value
-}
 type ItemActionsHostedRunnersPostRequestBody_imageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetId()(*string)
-    GetVersion()(*string)
     SetId(value *string)()
-    SetVersion(value *string)()
 }
