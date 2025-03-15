@@ -12,7 +12,7 @@ type Runner struct {
     busy *bool
     // The ephemeral property
     ephemeral *bool
-    // The id of the runner.
+    // The ID of the runner.
     id *int32
     // The labels property
     labels []RunnerLabelable
@@ -20,7 +20,7 @@ type Runner struct {
     name *string
     // The Operating System of the runner.
     os *string
-    // The id of the runner group.
+    // The ID of the runner group.
     runner_group_id *int32
     // The status of the runner.
     status *string
@@ -144,7 +144,7 @@ func (m *Runner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetId gets the id property value. The id of the runner.
+// GetId gets the id property value. The ID of the runner.
 // returns a *int32 when successful
 func (m *Runner) GetId()(*int32) {
     return m.id
@@ -164,7 +164,7 @@ func (m *Runner) GetName()(*string) {
 func (m *Runner) GetOs()(*string) {
     return m.os
 }
-// GetRunnerGroupId gets the runner_group_id property value. The id of the runner group.
+// GetRunnerGroupId gets the runner_group_id property value. The ID of the runner group.
 // returns a *int32 when successful
 func (m *Runner) GetRunnerGroupId()(*int32) {
     return m.runner_group_id
@@ -250,7 +250,7 @@ func (m *Runner) SetBusy(value *bool)() {
 func (m *Runner) SetEphemeral(value *bool)() {
     m.ephemeral = value
 }
-// SetId sets the id property value. The id of the runner.
+// SetId sets the id property value. The ID of the runner.
 func (m *Runner) SetId(value *int32)() {
     m.id = value
 }
@@ -266,7 +266,7 @@ func (m *Runner) SetName(value *string)() {
 func (m *Runner) SetOs(value *string)() {
     m.os = value
 }
-// SetRunnerGroupId sets the runner_group_id property value. The id of the runner group.
+// SetRunnerGroupId sets the runner_group_id property value. The ID of the runner group.
 func (m *Runner) SetRunnerGroupId(value *int32)() {
     m.runner_group_id = value
 }

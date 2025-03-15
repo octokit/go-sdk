@@ -11,7 +11,7 @@ import (
 type IssuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IssuesRequestBuilderGetQueryParameters > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+// IssuesRequestBuilderGetQueryParameters > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.> You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
 type IssuesRequestBuilderGetQueryParameters struct {
     // Set to `true` to use advanced search.Example: `http://api.github.com/search/issues?q={query}&advanced_search=true`
     Advanced_search *string `uriparametername:"advanced_search"`
@@ -39,7 +39,7 @@ func NewIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewIssuesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+// Get > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.> You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
 // Deprecated: 
 // returns a IssuesGetResponseable when successful
 // returns a BasicError error when the service returns a 403 status code
@@ -67,7 +67,7 @@ func (m *IssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *i2
     }
     return res.(IssuesGetResponseable), nil
 }
-// ToGetRequestInformation > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+// ToGetRequestInformation > [!WARNING]> **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.> You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
 // Deprecated: 
 // returns a *RequestInformation when successful
 func (m *IssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[IssuesRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
