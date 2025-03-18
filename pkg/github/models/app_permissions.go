@@ -18,7 +18,7 @@ type AppPermissions struct {
     codespaces *AppPermissions_codespaces
     // The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
     contents *AppPermissions_contents
-    // The leve of permission to grant the access token to manage Dependabot secrets.
+    // The level of permission to grant the access token to manage Dependabot secrets.
     dependabot_secrets *AppPermissions_dependabot_secrets
     // The level of permission to grant the access token for deployments and deployment statuses.
     deployments *AppPermissions_deployments
@@ -147,7 +147,7 @@ func (m *AppPermissions) GetCodespaces()(*AppPermissions_codespaces) {
 func (m *AppPermissions) GetContents()(*AppPermissions_contents) {
     return m.contents
 }
-// GetDependabotSecrets gets the dependabot_secrets property value. The leve of permission to grant the access token to manage Dependabot secrets.
+// GetDependabotSecrets gets the dependabot_secrets property value. The level of permission to grant the access token to manage Dependabot secrets.
 // returns a *AppPermissions_dependabot_secrets when successful
 func (m *AppPermissions) GetDependabotSecrets()(*AppPermissions_dependabot_secrets) {
     return m.dependabot_secrets
@@ -1218,7 +1218,7 @@ func (m *AppPermissions) SetCodespaces(value *AppPermissions_codespaces)() {
 func (m *AppPermissions) SetContents(value *AppPermissions_contents)() {
     m.contents = value
 }
-// SetDependabotSecrets sets the dependabot_secrets property value. The leve of permission to grant the access token to manage Dependabot secrets.
+// SetDependabotSecrets sets the dependabot_secrets property value. The level of permission to grant the access token to manage Dependabot secrets.
 func (m *AppPermissions) SetDependabotSecrets(value *AppPermissions_dependabot_secrets)() {
     m.dependabot_secrets = value
 }

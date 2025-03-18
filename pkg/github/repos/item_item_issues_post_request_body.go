@@ -19,6 +19,8 @@ type ItemItemIssuesPostRequestBody struct {
     milestone ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestoneable
     // The title of the issue.
     title ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable
+    // The name of the issue type to associate with this issue.
+    typeEscaped *string
 }
 // ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestone composed type wrapper for classes int32, string
 type ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestone struct {
@@ -316,6 +318,16 @@ func (m *ItemItemIssuesPostRequestBody) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTypeEscaped(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLabels gets the labels property value. Labels to associate with this issue. _NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise._
@@ -332,6 +344,11 @@ func (m *ItemItemIssuesPostRequestBody) GetMilestone()(ItemItemIssuesPostRequest
 // returns a ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable when successful
 func (m *ItemItemIssuesPostRequestBody) GetTitle()(ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable) {
     return m.title
+}
+// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue.
+// returns a *string when successful
+func (m *ItemItemIssuesPostRequestBody) GetTypeEscaped()(*string) {
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ItemItemIssuesPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -372,6 +389,12 @@ func (m *ItemItemIssuesPostRequestBody) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -407,6 +430,10 @@ func (m *ItemItemIssuesPostRequestBody) SetMilestone(value ItemItemIssuesPostReq
 func (m *ItemItemIssuesPostRequestBody) SetTitle(value ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable)() {
     m.title = value
 }
+// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue.
+func (m *ItemItemIssuesPostRequestBody) SetTypeEscaped(value *string)() {
+    m.typeEscaped = value
+}
 type ItemItemIssuesPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -416,10 +443,12 @@ type ItemItemIssuesPostRequestBodyable interface {
     GetLabels()([]string)
     GetMilestone()(ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestoneable)
     GetTitle()(ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable)
+    GetTypeEscaped()(*string)
     SetAssignee(value *string)()
     SetAssignees(value []string)()
     SetBody(value *string)()
     SetLabels(value []string)()
     SetMilestone(value ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestoneable)()
     SetTitle(value ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable)()
+    SetTypeEscaped(value *string)()
 }

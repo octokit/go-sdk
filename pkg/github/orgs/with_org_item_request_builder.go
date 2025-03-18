@@ -173,6 +173,11 @@ func (m *WithOrgItemRequestBuilder) Invitations()(*ItemInvitationsRequestBuilder
 func (m *WithOrgItemRequestBuilder) Issues()(*ItemIssuesRequestBuilder) {
     return NewItemIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// IssueTypes the issueTypes property
+// returns a *ItemIssueTypesRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) IssueTypes()(*ItemIssueTypesRequestBuilder) {
+    return NewItemIssueTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Members the members property
 // returns a *ItemMembersRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Members()(*ItemMembersRequestBuilder) {

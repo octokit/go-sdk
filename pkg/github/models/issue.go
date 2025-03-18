@@ -73,6 +73,8 @@ type Issue struct {
     timeline_url *string
     // Title of the issue
     title *string
+    // The type of issue.
+    typeEscaped IssueTypeable
     // The updated_at property
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // URL for the issue
@@ -503,6 +505,16 @@ func (m *Issue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIssueTypeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTypeEscaped(val.(IssueTypeable))
+        }
+        return nil
+    }
     res["updated_at"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -624,6 +636,11 @@ func (m *Issue) GetTimelineUrl()(*string) {
 // returns a *string when successful
 func (m *Issue) GetTitle()(*string) {
     return m.title
+}
+// GetTypeEscaped gets the type property value. The type of issue.
+// returns a IssueTypeable when successful
+func (m *Issue) GetTypeEscaped()(IssueTypeable) {
+    return m.typeEscaped
 }
 // GetUpdatedAt gets the updated_at property value. The updated_at property
 // returns a *Time when successful
@@ -843,6 +860,12 @@ func (m *Issue) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err := writer.WriteObjectValue("type", m.GetTypeEscaped())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("updated_at", m.GetUpdatedAt())
         if err != nil {
             return err
@@ -1000,6 +1023,10 @@ func (m *Issue) SetTimelineUrl(value *string)() {
 func (m *Issue) SetTitle(value *string)() {
     m.title = value
 }
+// SetTypeEscaped sets the type property value. The type of issue.
+func (m *Issue) SetTypeEscaped(value IssueTypeable)() {
+    m.typeEscaped = value
+}
 // SetUpdatedAt sets the updated_at property value. The updated_at property
 func (m *Issue) SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.updated_at = value
@@ -1047,6 +1074,7 @@ type Issueable interface {
     GetSubIssuesSummary()(SubIssuesSummaryable)
     GetTimelineUrl()(*string)
     GetTitle()(*string)
+    GetTypeEscaped()(IssueTypeable)
     GetUpdatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetUrl()(*string)
     GetUser()(NullableSimpleUserable)
@@ -1082,6 +1110,7 @@ type Issueable interface {
     SetSubIssuesSummary(value SubIssuesSummaryable)()
     SetTimelineUrl(value *string)()
     SetTitle(value *string)()
+    SetTypeEscaped(value IssueTypeable)()
     SetUpdatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetUrl(value *string)()
     SetUser(value NullableSimpleUserable)()

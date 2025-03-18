@@ -19,6 +19,8 @@ type ItemItemIssuesItemWithIssue_numberPatchRequestBody struct {
     milestone ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable
     // The title of the issue.
     title ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable
+    // The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+    typeEscaped *string
 }
 // ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone composed type wrapper for classes int32, string
 type ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone struct {
@@ -316,6 +318,16 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetFieldDeserialize
         }
         return nil
     }
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTypeEscaped(val)
+        }
+        return nil
+    }
     return res
 }
 // GetLabels gets the labels property value. Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
@@ -332,6 +344,11 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetMilestone()(Item
 // returns a ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetTitle()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable) {
     return m.title
+}
+// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+// returns a *string when successful
+func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetTypeEscaped()(*string) {
+    return m.typeEscaped
 }
 // Serialize serializes information the current object
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -372,6 +389,12 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) Serialize(writer i8
         }
     }
     {
+        err := writer.WriteStringValue("type", m.GetTypeEscaped())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
@@ -407,6 +430,10 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetMilestone(value 
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetTitle(value ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable)() {
     m.title = value
 }
+// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetTypeEscaped(value *string)() {
+    m.typeEscaped = value
+}
 type ItemItemIssuesItemWithIssue_numberPatchRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -416,10 +443,12 @@ type ItemItemIssuesItemWithIssue_numberPatchRequestBodyable interface {
     GetLabels()([]string)
     GetMilestone()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable)
     GetTitle()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable)
+    GetTypeEscaped()(*string)
     SetAssignee(value *string)()
     SetAssignees(value []string)()
     SetBody(value *string)()
     SetLabels(value []string)()
     SetMilestone(value ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable)()
     SetTitle(value ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable)()
+    SetTypeEscaped(value *string)()
 }
