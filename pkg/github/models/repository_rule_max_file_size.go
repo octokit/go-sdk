@@ -4,70 +4,70 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRuleMember3 prevent commits that include files with specified file extensions from being pushed to the commit graph.
-type RepositoryRuleMember3 struct {
+// RepositoryRuleMaxFileSize prevent commits that exceed a specified file size limit from being pushed to the commit graph.
+type RepositoryRuleMaxFileSize struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The parameters property
-    parameters RepositoryRuleMember3_parametersable
+    parameters RepositoryRuleMaxFileSize_parametersable
     // The type property
-    typeEscaped *RepositoryRuleMember3_type
+    typeEscaped *RepositoryRuleMaxFileSize_type
 }
-// NewRepositoryRuleMember3 instantiates a new RepositoryRuleMember3 and sets the default values.
-func NewRepositoryRuleMember3()(*RepositoryRuleMember3) {
-    m := &RepositoryRuleMember3{
+// NewRepositoryRuleMaxFileSize instantiates a new RepositoryRuleMaxFileSize and sets the default values.
+func NewRepositoryRuleMaxFileSize()(*RepositoryRuleMaxFileSize) {
+    m := &RepositoryRuleMaxFileSize{
     }
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateRepositoryRuleMember3FromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateRepositoryRuleMaxFileSizeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRepositoryRuleMember3FromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRepositoryRuleMember3(), nil
+func CreateRepositoryRuleMaxFileSizeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewRepositoryRuleMaxFileSize(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *RepositoryRuleMember3) GetAdditionalData()(map[string]any) {
+func (m *RepositoryRuleMaxFileSize) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RepositoryRuleMember3) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RepositoryRuleMaxFileSize) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateRepositoryRuleMember3_parametersFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateRepositoryRuleMaxFileSize_parametersFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetParameters(val.(RepositoryRuleMember3_parametersable))
+            m.SetParameters(val.(RepositoryRuleMaxFileSize_parametersable))
         }
         return nil
     }
     res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRepositoryRuleMember3_type)
+        val, err := n.GetEnumValue(ParseRepositoryRuleMaxFileSize_type)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTypeEscaped(val.(*RepositoryRuleMember3_type))
+            m.SetTypeEscaped(val.(*RepositoryRuleMaxFileSize_type))
         }
         return nil
     }
     return res
 }
 // GetParameters gets the parameters property value. The parameters property
-// returns a RepositoryRuleMember3_parametersable when successful
-func (m *RepositoryRuleMember3) GetParameters()(RepositoryRuleMember3_parametersable) {
+// returns a RepositoryRuleMaxFileSize_parametersable when successful
+func (m *RepositoryRuleMaxFileSize) GetParameters()(RepositoryRuleMaxFileSize_parametersable) {
     return m.parameters
 }
 // GetTypeEscaped gets the type property value. The type property
-// returns a *RepositoryRuleMember3_type when successful
-func (m *RepositoryRuleMember3) GetTypeEscaped()(*RepositoryRuleMember3_type) {
+// returns a *RepositoryRuleMaxFileSize_type when successful
+func (m *RepositoryRuleMaxFileSize) GetTypeEscaped()(*RepositoryRuleMaxFileSize_type) {
     return m.typeEscaped
 }
 // Serialize serializes information the current object
-func (m *RepositoryRuleMember3) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *RepositoryRuleMaxFileSize) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("parameters", m.GetParameters())
         if err != nil {
@@ -90,22 +90,22 @@ func (m *RepositoryRuleMember3) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RepositoryRuleMember3) SetAdditionalData(value map[string]any)() {
+func (m *RepositoryRuleMaxFileSize) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetParameters sets the parameters property value. The parameters property
-func (m *RepositoryRuleMember3) SetParameters(value RepositoryRuleMember3_parametersable)() {
+func (m *RepositoryRuleMaxFileSize) SetParameters(value RepositoryRuleMaxFileSize_parametersable)() {
     m.parameters = value
 }
 // SetTypeEscaped sets the type property value. The type property
-func (m *RepositoryRuleMember3) SetTypeEscaped(value *RepositoryRuleMember3_type)() {
+func (m *RepositoryRuleMaxFileSize) SetTypeEscaped(value *RepositoryRuleMaxFileSize_type)() {
     m.typeEscaped = value
 }
-type RepositoryRuleMember3able interface {
+type RepositoryRuleMaxFileSizeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetParameters()(RepositoryRuleMember3_parametersable)
-    GetTypeEscaped()(*RepositoryRuleMember3_type)
-    SetParameters(value RepositoryRuleMember3_parametersable)()
-    SetTypeEscaped(value *RepositoryRuleMember3_type)()
+    GetParameters()(RepositoryRuleMaxFileSize_parametersable)
+    GetTypeEscaped()(*RepositoryRuleMaxFileSize_type)
+    SetParameters(value RepositoryRuleMaxFileSize_parametersable)()
+    SetTypeEscaped(value *RepositoryRuleMaxFileSize_type)()
 }

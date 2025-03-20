@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// RepositoryRule composed type wrapper for classes RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleMember1able, RepositoryRuleMember2able, RepositoryRuleMember3able, RepositoryRuleMember4able, RepositoryRuleMergeQueueable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
+// RepositoryRule composed type wrapper for classes RepositoryRuleBranchNamePatternable, RepositoryRuleCodeScanningable, RepositoryRuleCommitAuthorEmailPatternable, RepositoryRuleCommitMessagePatternable, RepositoryRuleCommitterEmailPatternable, RepositoryRuleCreationable, RepositoryRuleDeletionable, RepositoryRuleFileExtensionRestrictionable, RepositoryRuleFilePathRestrictionable, RepositoryRuleMaxFilePathLengthable, RepositoryRuleMaxFileSizeable, RepositoryRuleMergeQueueable, RepositoryRuleNonFastForwardable, RepositoryRulePullRequestable, RepositoryRuleRequiredDeploymentsable, RepositoryRuleRequiredLinearHistoryable, RepositoryRuleRequiredSignaturesable, RepositoryRuleRequiredStatusChecksable, RepositoryRuleTagNamePatternable, RepositoryRuleUpdateable, RepositoryRuleWorkflowsable
 type RepositoryRule struct {
     // Composed type representation for type RepositoryRuleBranchNamePatternable
     repositoryRuleBranchNamePattern RepositoryRuleBranchNamePatternable
@@ -20,14 +20,14 @@ type RepositoryRule struct {
     repositoryRuleCreation RepositoryRuleCreationable
     // Composed type representation for type RepositoryRuleDeletionable
     repositoryRuleDeletion RepositoryRuleDeletionable
-    // Composed type representation for type RepositoryRuleMember1able
-    repositoryRuleMember1 RepositoryRuleMember1able
-    // Composed type representation for type RepositoryRuleMember2able
-    repositoryRuleMember2 RepositoryRuleMember2able
-    // Composed type representation for type RepositoryRuleMember3able
-    repositoryRuleMember3 RepositoryRuleMember3able
-    // Composed type representation for type RepositoryRuleMember4able
-    repositoryRuleMember4 RepositoryRuleMember4able
+    // Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+    repositoryRuleFileExtensionRestriction RepositoryRuleFileExtensionRestrictionable
+    // Composed type representation for type RepositoryRuleFilePathRestrictionable
+    repositoryRuleFilePathRestriction RepositoryRuleFilePathRestrictionable
+    // Composed type representation for type RepositoryRuleMaxFilePathLengthable
+    repositoryRuleMaxFilePathLength RepositoryRuleMaxFilePathLengthable
+    // Composed type representation for type RepositoryRuleMaxFileSizeable
+    repositoryRuleMaxFileSize RepositoryRuleMaxFileSizeable
     // Composed type representation for type RepositoryRuleMergeQueueable
     repositoryRuleMergeQueue RepositoryRuleMergeQueueable
     // Composed type representation for type RepositoryRuleNonFastForwardable
@@ -90,38 +90,38 @@ type RepositoryRule struct {
     repositoryRuleRepositoryRuleDeletion1 RepositoryRuleDeletionable
     // Composed type representation for type RepositoryRuleDeletionable
     repositoryRuleRepositoryRuleDeletion2 RepositoryRuleDeletionable
-    // Composed type representation for type RepositoryRuleMember1able
-    repositoryRuleRepositoryRuleMember1 RepositoryRuleMember1able
-    // Composed type representation for type RepositoryRuleMember1able
-    repositoryRuleRepositoryRuleMember10 RepositoryRuleMember1able
-    // Composed type representation for type RepositoryRuleMember1able
-    repositoryRuleRepositoryRuleMember11 RepositoryRuleMember1able
-    // Composed type representation for type RepositoryRuleMember1able
-    repositoryRuleRepositoryRuleMember12 RepositoryRuleMember1able
-    // Composed type representation for type RepositoryRuleMember2able
-    repositoryRuleRepositoryRuleMember2 RepositoryRuleMember2able
-    // Composed type representation for type RepositoryRuleMember2able
-    repositoryRuleRepositoryRuleMember20 RepositoryRuleMember2able
-    // Composed type representation for type RepositoryRuleMember2able
-    repositoryRuleRepositoryRuleMember21 RepositoryRuleMember2able
-    // Composed type representation for type RepositoryRuleMember2able
-    repositoryRuleRepositoryRuleMember22 RepositoryRuleMember2able
-    // Composed type representation for type RepositoryRuleMember3able
-    repositoryRuleRepositoryRuleMember3 RepositoryRuleMember3able
-    // Composed type representation for type RepositoryRuleMember3able
-    repositoryRuleRepositoryRuleMember30 RepositoryRuleMember3able
-    // Composed type representation for type RepositoryRuleMember3able
-    repositoryRuleRepositoryRuleMember31 RepositoryRuleMember3able
-    // Composed type representation for type RepositoryRuleMember3able
-    repositoryRuleRepositoryRuleMember32 RepositoryRuleMember3able
-    // Composed type representation for type RepositoryRuleMember4able
-    repositoryRuleRepositoryRuleMember4 RepositoryRuleMember4able
-    // Composed type representation for type RepositoryRuleMember4able
-    repositoryRuleRepositoryRuleMember40 RepositoryRuleMember4able
-    // Composed type representation for type RepositoryRuleMember4able
-    repositoryRuleRepositoryRuleMember41 RepositoryRuleMember4able
-    // Composed type representation for type RepositoryRuleMember4able
-    repositoryRuleRepositoryRuleMember42 RepositoryRuleMember4able
+    // Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+    repositoryRuleRepositoryRuleFileExtensionRestriction RepositoryRuleFileExtensionRestrictionable
+    // Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+    repositoryRuleRepositoryRuleFileExtensionRestriction0 RepositoryRuleFileExtensionRestrictionable
+    // Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+    repositoryRuleRepositoryRuleFileExtensionRestriction1 RepositoryRuleFileExtensionRestrictionable
+    // Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+    repositoryRuleRepositoryRuleFileExtensionRestriction2 RepositoryRuleFileExtensionRestrictionable
+    // Composed type representation for type RepositoryRuleFilePathRestrictionable
+    repositoryRuleRepositoryRuleFilePathRestriction RepositoryRuleFilePathRestrictionable
+    // Composed type representation for type RepositoryRuleFilePathRestrictionable
+    repositoryRuleRepositoryRuleFilePathRestriction0 RepositoryRuleFilePathRestrictionable
+    // Composed type representation for type RepositoryRuleFilePathRestrictionable
+    repositoryRuleRepositoryRuleFilePathRestriction1 RepositoryRuleFilePathRestrictionable
+    // Composed type representation for type RepositoryRuleFilePathRestrictionable
+    repositoryRuleRepositoryRuleFilePathRestriction2 RepositoryRuleFilePathRestrictionable
+    // Composed type representation for type RepositoryRuleMaxFilePathLengthable
+    repositoryRuleRepositoryRuleMaxFilePathLength RepositoryRuleMaxFilePathLengthable
+    // Composed type representation for type RepositoryRuleMaxFilePathLengthable
+    repositoryRuleRepositoryRuleMaxFilePathLength0 RepositoryRuleMaxFilePathLengthable
+    // Composed type representation for type RepositoryRuleMaxFilePathLengthable
+    repositoryRuleRepositoryRuleMaxFilePathLength1 RepositoryRuleMaxFilePathLengthable
+    // Composed type representation for type RepositoryRuleMaxFilePathLengthable
+    repositoryRuleRepositoryRuleMaxFilePathLength2 RepositoryRuleMaxFilePathLengthable
+    // Composed type representation for type RepositoryRuleMaxFileSizeable
+    repositoryRuleRepositoryRuleMaxFileSize RepositoryRuleMaxFileSizeable
+    // Composed type representation for type RepositoryRuleMaxFileSizeable
+    repositoryRuleRepositoryRuleMaxFileSize0 RepositoryRuleMaxFileSizeable
+    // Composed type representation for type RepositoryRuleMaxFileSizeable
+    repositoryRuleRepositoryRuleMaxFileSize1 RepositoryRuleMaxFileSizeable
+    // Composed type representation for type RepositoryRuleMaxFileSizeable
+    repositoryRuleRepositoryRuleMaxFileSize2 RepositoryRuleMaxFileSizeable
     // Composed type representation for type RepositoryRuleMergeQueueable
     repositoryRuleRepositoryRuleMergeQueue RepositoryRuleMergeQueueable
     // Composed type representation for type RepositoryRuleMergeQueueable
@@ -288,25 +288,25 @@ func (m *RepositoryRule) GetRepositoryRuleCreation()(RepositoryRuleCreationable)
 func (m *RepositoryRule) GetRepositoryRuleDeletion()(RepositoryRuleDeletionable) {
     return m.repositoryRuleDeletion
 }
-// GetRepositoryRuleMember1 gets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-// returns a RepositoryRuleMember1able when successful
-func (m *RepositoryRule) GetRepositoryRuleMember1()(RepositoryRuleMember1able) {
-    return m.repositoryRuleMember1
+// GetRepositoryRuleFileExtensionRestriction gets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+// returns a RepositoryRuleFileExtensionRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFileExtensionRestriction()(RepositoryRuleFileExtensionRestrictionable) {
+    return m.repositoryRuleFileExtensionRestriction
 }
-// GetRepositoryRuleMember2 gets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-// returns a RepositoryRuleMember2able when successful
-func (m *RepositoryRule) GetRepositoryRuleMember2()(RepositoryRuleMember2able) {
-    return m.repositoryRuleMember2
+// GetRepositoryRuleFilePathRestriction gets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+// returns a RepositoryRuleFilePathRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleFilePathRestriction()(RepositoryRuleFilePathRestrictionable) {
+    return m.repositoryRuleFilePathRestriction
 }
-// GetRepositoryRuleMember3 gets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-// returns a RepositoryRuleMember3able when successful
-func (m *RepositoryRule) GetRepositoryRuleMember3()(RepositoryRuleMember3able) {
-    return m.repositoryRuleMember3
+// GetRepositoryRuleMaxFilePathLength gets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+// returns a RepositoryRuleMaxFilePathLengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFilePathLength()(RepositoryRuleMaxFilePathLengthable) {
+    return m.repositoryRuleMaxFilePathLength
 }
-// GetRepositoryRuleMember4 gets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-// returns a RepositoryRuleMember4able when successful
-func (m *RepositoryRule) GetRepositoryRuleMember4()(RepositoryRuleMember4able) {
-    return m.repositoryRuleMember4
+// GetRepositoryRuleMaxFileSize gets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+// returns a RepositoryRuleMaxFileSizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleMaxFileSize()(RepositoryRuleMaxFileSizeable) {
+    return m.repositoryRuleMaxFileSize
 }
 // GetRepositoryRuleMergeQueue gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
 // returns a RepositoryRuleMergeQueueable when successful
@@ -463,85 +463,85 @@ func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleDeletion1()(RepositoryRu
 func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleDeletion2()(RepositoryRuleDeletionable) {
     return m.repositoryRuleRepositoryRuleDeletion2
 }
-// GetRepositoryRuleRepositoryRuleMember1 gets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-// returns a RepositoryRuleMember1able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember1()(RepositoryRuleMember1able) {
-    return m.repositoryRuleRepositoryRuleMember1
+// GetRepositoryRuleRepositoryRuleFileExtensionRestriction gets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+// returns a RepositoryRuleFileExtensionRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFileExtensionRestriction()(RepositoryRuleFileExtensionRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFileExtensionRestriction
 }
-// GetRepositoryRuleRepositoryRuleMember10 gets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-// returns a RepositoryRuleMember1able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember10()(RepositoryRuleMember1able) {
-    return m.repositoryRuleRepositoryRuleMember10
+// GetRepositoryRuleRepositoryRuleFileExtensionRestriction0 gets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+// returns a RepositoryRuleFileExtensionRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFileExtensionRestriction0()(RepositoryRuleFileExtensionRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFileExtensionRestriction0
 }
-// GetRepositoryRuleRepositoryRuleMember11 gets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-// returns a RepositoryRuleMember1able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember11()(RepositoryRuleMember1able) {
-    return m.repositoryRuleRepositoryRuleMember11
+// GetRepositoryRuleRepositoryRuleFileExtensionRestriction1 gets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+// returns a RepositoryRuleFileExtensionRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFileExtensionRestriction1()(RepositoryRuleFileExtensionRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFileExtensionRestriction1
 }
-// GetRepositoryRuleRepositoryRuleMember12 gets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-// returns a RepositoryRuleMember1able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember12()(RepositoryRuleMember1able) {
-    return m.repositoryRuleRepositoryRuleMember12
+// GetRepositoryRuleRepositoryRuleFileExtensionRestriction2 gets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+// returns a RepositoryRuleFileExtensionRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFileExtensionRestriction2()(RepositoryRuleFileExtensionRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFileExtensionRestriction2
 }
-// GetRepositoryRuleRepositoryRuleMember2 gets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-// returns a RepositoryRuleMember2able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember2()(RepositoryRuleMember2able) {
-    return m.repositoryRuleRepositoryRuleMember2
+// GetRepositoryRuleRepositoryRuleFilePathRestriction gets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+// returns a RepositoryRuleFilePathRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFilePathRestriction()(RepositoryRuleFilePathRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFilePathRestriction
 }
-// GetRepositoryRuleRepositoryRuleMember20 gets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-// returns a RepositoryRuleMember2able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember20()(RepositoryRuleMember2able) {
-    return m.repositoryRuleRepositoryRuleMember20
+// GetRepositoryRuleRepositoryRuleFilePathRestriction0 gets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+// returns a RepositoryRuleFilePathRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFilePathRestriction0()(RepositoryRuleFilePathRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFilePathRestriction0
 }
-// GetRepositoryRuleRepositoryRuleMember21 gets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-// returns a RepositoryRuleMember2able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember21()(RepositoryRuleMember2able) {
-    return m.repositoryRuleRepositoryRuleMember21
+// GetRepositoryRuleRepositoryRuleFilePathRestriction1 gets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+// returns a RepositoryRuleFilePathRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFilePathRestriction1()(RepositoryRuleFilePathRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFilePathRestriction1
 }
-// GetRepositoryRuleRepositoryRuleMember22 gets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-// returns a RepositoryRuleMember2able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember22()(RepositoryRuleMember2able) {
-    return m.repositoryRuleRepositoryRuleMember22
+// GetRepositoryRuleRepositoryRuleFilePathRestriction2 gets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+// returns a RepositoryRuleFilePathRestrictionable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleFilePathRestriction2()(RepositoryRuleFilePathRestrictionable) {
+    return m.repositoryRuleRepositoryRuleFilePathRestriction2
 }
-// GetRepositoryRuleRepositoryRuleMember3 gets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-// returns a RepositoryRuleMember3able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember3()(RepositoryRuleMember3able) {
-    return m.repositoryRuleRepositoryRuleMember3
+// GetRepositoryRuleRepositoryRuleMaxFilePathLength gets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+// returns a RepositoryRuleMaxFilePathLengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFilePathLength()(RepositoryRuleMaxFilePathLengthable) {
+    return m.repositoryRuleRepositoryRuleMaxFilePathLength
 }
-// GetRepositoryRuleRepositoryRuleMember30 gets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-// returns a RepositoryRuleMember3able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember30()(RepositoryRuleMember3able) {
-    return m.repositoryRuleRepositoryRuleMember30
+// GetRepositoryRuleRepositoryRuleMaxFilePathLength0 gets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+// returns a RepositoryRuleMaxFilePathLengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFilePathLength0()(RepositoryRuleMaxFilePathLengthable) {
+    return m.repositoryRuleRepositoryRuleMaxFilePathLength0
 }
-// GetRepositoryRuleRepositoryRuleMember31 gets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-// returns a RepositoryRuleMember3able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember31()(RepositoryRuleMember3able) {
-    return m.repositoryRuleRepositoryRuleMember31
+// GetRepositoryRuleRepositoryRuleMaxFilePathLength1 gets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+// returns a RepositoryRuleMaxFilePathLengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFilePathLength1()(RepositoryRuleMaxFilePathLengthable) {
+    return m.repositoryRuleRepositoryRuleMaxFilePathLength1
 }
-// GetRepositoryRuleRepositoryRuleMember32 gets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-// returns a RepositoryRuleMember3able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember32()(RepositoryRuleMember3able) {
-    return m.repositoryRuleRepositoryRuleMember32
+// GetRepositoryRuleRepositoryRuleMaxFilePathLength2 gets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+// returns a RepositoryRuleMaxFilePathLengthable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFilePathLength2()(RepositoryRuleMaxFilePathLengthable) {
+    return m.repositoryRuleRepositoryRuleMaxFilePathLength2
 }
-// GetRepositoryRuleRepositoryRuleMember4 gets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-// returns a RepositoryRuleMember4able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember4()(RepositoryRuleMember4able) {
-    return m.repositoryRuleRepositoryRuleMember4
+// GetRepositoryRuleRepositoryRuleMaxFileSize gets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+// returns a RepositoryRuleMaxFileSizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFileSize()(RepositoryRuleMaxFileSizeable) {
+    return m.repositoryRuleRepositoryRuleMaxFileSize
 }
-// GetRepositoryRuleRepositoryRuleMember40 gets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-// returns a RepositoryRuleMember4able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember40()(RepositoryRuleMember4able) {
-    return m.repositoryRuleRepositoryRuleMember40
+// GetRepositoryRuleRepositoryRuleMaxFileSize0 gets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+// returns a RepositoryRuleMaxFileSizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFileSize0()(RepositoryRuleMaxFileSizeable) {
+    return m.repositoryRuleRepositoryRuleMaxFileSize0
 }
-// GetRepositoryRuleRepositoryRuleMember41 gets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-// returns a RepositoryRuleMember4able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember41()(RepositoryRuleMember4able) {
-    return m.repositoryRuleRepositoryRuleMember41
+// GetRepositoryRuleRepositoryRuleMaxFileSize1 gets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+// returns a RepositoryRuleMaxFileSizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFileSize1()(RepositoryRuleMaxFileSizeable) {
+    return m.repositoryRuleRepositoryRuleMaxFileSize1
 }
-// GetRepositoryRuleRepositoryRuleMember42 gets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-// returns a RepositoryRuleMember4able when successful
-func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMember42()(RepositoryRuleMember4able) {
-    return m.repositoryRuleRepositoryRuleMember42
+// GetRepositoryRuleRepositoryRuleMaxFileSize2 gets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+// returns a RepositoryRuleMaxFileSizeable when successful
+func (m *RepositoryRule) GetRepositoryRuleRepositoryRuleMaxFileSize2()(RepositoryRuleMaxFileSizeable) {
+    return m.repositoryRuleRepositoryRuleMaxFileSize2
 }
 // GetRepositoryRuleRepositoryRuleMergeQueue gets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
 // returns a RepositoryRuleMergeQueueable when successful
@@ -815,23 +815,23 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleMember1() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleMember1())
+    } else if m.GetRepositoryRuleFileExtensionRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFileExtensionRestriction())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleMember2() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleMember2())
+    } else if m.GetRepositoryRuleFilePathRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleFilePathRestriction())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleMember3())
+    } else if m.GetRepositoryRuleMaxFilePathLength() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFilePathLength())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleMember4() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleMember4())
+    } else if m.GetRepositoryRuleMaxFileSize() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleMaxFileSize())
         if err != nil {
             return err
         }
@@ -990,83 +990,83 @@ func (m *RepositoryRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember1() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember1())
+    } else if m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember10() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember10())
+    } else if m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction0())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember11() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember11())
+    } else if m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction1())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember12() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember12())
+    } else if m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFileExtensionRestriction2())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember2() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember2())
+    } else if m.GetRepositoryRuleRepositoryRuleFilePathRestriction() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFilePathRestriction())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember20() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember20())
+    } else if m.GetRepositoryRuleRepositoryRuleFilePathRestriction0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFilePathRestriction0())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember21() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember21())
+    } else if m.GetRepositoryRuleRepositoryRuleFilePathRestriction1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFilePathRestriction1())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember22() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember22())
+    } else if m.GetRepositoryRuleRepositoryRuleFilePathRestriction2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleFilePathRestriction2())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember3() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember3())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFilePathLength() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFilePathLength())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember30() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember30())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFilePathLength0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFilePathLength0())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember31() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember31())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFilePathLength1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFilePathLength1())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember32() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember32())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFilePathLength2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFilePathLength2())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember4() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember4())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFileSize() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFileSize())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember40() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember40())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFileSize0() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFileSize0())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember41() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember41())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFileSize1() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFileSize1())
         if err != nil {
             return err
         }
-    } else if m.GetRepositoryRuleRepositoryRuleMember42() != nil {
-        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMember42())
+    } else if m.GetRepositoryRuleRepositoryRuleMaxFileSize2() != nil {
+        err := writer.WriteObjectValue("", m.GetRepositoryRuleRepositoryRuleMaxFileSize2())
         if err != nil {
             return err
         }
@@ -1336,21 +1336,21 @@ func (m *RepositoryRule) SetRepositoryRuleCreation(value RepositoryRuleCreationa
 func (m *RepositoryRule) SetRepositoryRuleDeletion(value RepositoryRuleDeletionable)() {
     m.repositoryRuleDeletion = value
 }
-// SetRepositoryRuleMember1 sets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-func (m *RepositoryRule) SetRepositoryRuleMember1(value RepositoryRuleMember1able)() {
-    m.repositoryRuleMember1 = value
+// SetRepositoryRuleFileExtensionRestriction sets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleFileExtensionRestriction(value RepositoryRuleFileExtensionRestrictionable)() {
+    m.repositoryRuleFileExtensionRestriction = value
 }
-// SetRepositoryRuleMember2 sets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-func (m *RepositoryRule) SetRepositoryRuleMember2(value RepositoryRuleMember2able)() {
-    m.repositoryRuleMember2 = value
+// SetRepositoryRuleFilePathRestriction sets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleFilePathRestriction(value RepositoryRuleFilePathRestrictionable)() {
+    m.repositoryRuleFilePathRestriction = value
 }
-// SetRepositoryRuleMember3 sets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-func (m *RepositoryRule) SetRepositoryRuleMember3(value RepositoryRuleMember3able)() {
-    m.repositoryRuleMember3 = value
+// SetRepositoryRuleMaxFilePathLength sets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+func (m *RepositoryRule) SetRepositoryRuleMaxFilePathLength(value RepositoryRuleMaxFilePathLengthable)() {
+    m.repositoryRuleMaxFilePathLength = value
 }
-// SetRepositoryRuleMember4 sets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-func (m *RepositoryRule) SetRepositoryRuleMember4(value RepositoryRuleMember4able)() {
-    m.repositoryRuleMember4 = value
+// SetRepositoryRuleMaxFileSize sets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+func (m *RepositoryRule) SetRepositoryRuleMaxFileSize(value RepositoryRuleMaxFileSizeable)() {
+    m.repositoryRuleMaxFileSize = value
 }
 // SetRepositoryRuleMergeQueue sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
 func (m *RepositoryRule) SetRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)() {
@@ -1476,69 +1476,69 @@ func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleDeletion1(value Reposito
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleDeletion2(value RepositoryRuleDeletionable)() {
     m.repositoryRuleRepositoryRuleDeletion2 = value
 }
-// SetRepositoryRuleRepositoryRuleMember1 sets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember1(value RepositoryRuleMember1able)() {
-    m.repositoryRuleRepositoryRuleMember1 = value
+// SetRepositoryRuleRepositoryRuleFileExtensionRestriction sets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFileExtensionRestriction(value RepositoryRuleFileExtensionRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFileExtensionRestriction = value
 }
-// SetRepositoryRuleRepositoryRuleMember10 sets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember10(value RepositoryRuleMember1able)() {
-    m.repositoryRuleRepositoryRuleMember10 = value
+// SetRepositoryRuleRepositoryRuleFileExtensionRestriction0 sets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFileExtensionRestriction0(value RepositoryRuleFileExtensionRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFileExtensionRestriction0 = value
 }
-// SetRepositoryRuleRepositoryRuleMember11 sets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember11(value RepositoryRuleMember1able)() {
-    m.repositoryRuleRepositoryRuleMember11 = value
+// SetRepositoryRuleRepositoryRuleFileExtensionRestriction1 sets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFileExtensionRestriction1(value RepositoryRuleFileExtensionRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFileExtensionRestriction1 = value
 }
-// SetRepositoryRuleRepositoryRuleMember12 sets the repositoryRuleMember1 property value. Composed type representation for type RepositoryRuleMember1able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember12(value RepositoryRuleMember1able)() {
-    m.repositoryRuleRepositoryRuleMember12 = value
+// SetRepositoryRuleRepositoryRuleFileExtensionRestriction2 sets the repositoryRuleFileExtensionRestriction property value. Composed type representation for type RepositoryRuleFileExtensionRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFileExtensionRestriction2(value RepositoryRuleFileExtensionRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFileExtensionRestriction2 = value
 }
-// SetRepositoryRuleRepositoryRuleMember2 sets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember2(value RepositoryRuleMember2able)() {
-    m.repositoryRuleRepositoryRuleMember2 = value
+// SetRepositoryRuleRepositoryRuleFilePathRestriction sets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFilePathRestriction(value RepositoryRuleFilePathRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFilePathRestriction = value
 }
-// SetRepositoryRuleRepositoryRuleMember20 sets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember20(value RepositoryRuleMember2able)() {
-    m.repositoryRuleRepositoryRuleMember20 = value
+// SetRepositoryRuleRepositoryRuleFilePathRestriction0 sets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFilePathRestriction0(value RepositoryRuleFilePathRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFilePathRestriction0 = value
 }
-// SetRepositoryRuleRepositoryRuleMember21 sets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember21(value RepositoryRuleMember2able)() {
-    m.repositoryRuleRepositoryRuleMember21 = value
+// SetRepositoryRuleRepositoryRuleFilePathRestriction1 sets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFilePathRestriction1(value RepositoryRuleFilePathRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFilePathRestriction1 = value
 }
-// SetRepositoryRuleRepositoryRuleMember22 sets the repositoryRuleMember2 property value. Composed type representation for type RepositoryRuleMember2able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember22(value RepositoryRuleMember2able)() {
-    m.repositoryRuleRepositoryRuleMember22 = value
+// SetRepositoryRuleRepositoryRuleFilePathRestriction2 sets the repositoryRuleFilePathRestriction property value. Composed type representation for type RepositoryRuleFilePathRestrictionable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleFilePathRestriction2(value RepositoryRuleFilePathRestrictionable)() {
+    m.repositoryRuleRepositoryRuleFilePathRestriction2 = value
 }
-// SetRepositoryRuleRepositoryRuleMember3 sets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember3(value RepositoryRuleMember3able)() {
-    m.repositoryRuleRepositoryRuleMember3 = value
+// SetRepositoryRuleRepositoryRuleMaxFilePathLength sets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFilePathLength(value RepositoryRuleMaxFilePathLengthable)() {
+    m.repositoryRuleRepositoryRuleMaxFilePathLength = value
 }
-// SetRepositoryRuleRepositoryRuleMember30 sets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember30(value RepositoryRuleMember3able)() {
-    m.repositoryRuleRepositoryRuleMember30 = value
+// SetRepositoryRuleRepositoryRuleMaxFilePathLength0 sets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFilePathLength0(value RepositoryRuleMaxFilePathLengthable)() {
+    m.repositoryRuleRepositoryRuleMaxFilePathLength0 = value
 }
-// SetRepositoryRuleRepositoryRuleMember31 sets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember31(value RepositoryRuleMember3able)() {
-    m.repositoryRuleRepositoryRuleMember31 = value
+// SetRepositoryRuleRepositoryRuleMaxFilePathLength1 sets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFilePathLength1(value RepositoryRuleMaxFilePathLengthable)() {
+    m.repositoryRuleRepositoryRuleMaxFilePathLength1 = value
 }
-// SetRepositoryRuleRepositoryRuleMember32 sets the repositoryRuleMember3 property value. Composed type representation for type RepositoryRuleMember3able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember32(value RepositoryRuleMember3able)() {
-    m.repositoryRuleRepositoryRuleMember32 = value
+// SetRepositoryRuleRepositoryRuleMaxFilePathLength2 sets the repositoryRuleMaxFilePathLength property value. Composed type representation for type RepositoryRuleMaxFilePathLengthable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFilePathLength2(value RepositoryRuleMaxFilePathLengthable)() {
+    m.repositoryRuleRepositoryRuleMaxFilePathLength2 = value
 }
-// SetRepositoryRuleRepositoryRuleMember4 sets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember4(value RepositoryRuleMember4able)() {
-    m.repositoryRuleRepositoryRuleMember4 = value
+// SetRepositoryRuleRepositoryRuleMaxFileSize sets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFileSize(value RepositoryRuleMaxFileSizeable)() {
+    m.repositoryRuleRepositoryRuleMaxFileSize = value
 }
-// SetRepositoryRuleRepositoryRuleMember40 sets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember40(value RepositoryRuleMember4able)() {
-    m.repositoryRuleRepositoryRuleMember40 = value
+// SetRepositoryRuleRepositoryRuleMaxFileSize0 sets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFileSize0(value RepositoryRuleMaxFileSizeable)() {
+    m.repositoryRuleRepositoryRuleMaxFileSize0 = value
 }
-// SetRepositoryRuleRepositoryRuleMember41 sets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember41(value RepositoryRuleMember4able)() {
-    m.repositoryRuleRepositoryRuleMember41 = value
+// SetRepositoryRuleRepositoryRuleMaxFileSize1 sets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFileSize1(value RepositoryRuleMaxFileSizeable)() {
+    m.repositoryRuleRepositoryRuleMaxFileSize1 = value
 }
-// SetRepositoryRuleRepositoryRuleMember42 sets the repositoryRuleMember4 property value. Composed type representation for type RepositoryRuleMember4able
-func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMember42(value RepositoryRuleMember4able)() {
-    m.repositoryRuleRepositoryRuleMember42 = value
+// SetRepositoryRuleRepositoryRuleMaxFileSize2 sets the repositoryRuleMaxFileSize property value. Composed type representation for type RepositoryRuleMaxFileSizeable
+func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMaxFileSize2(value RepositoryRuleMaxFileSizeable)() {
+    m.repositoryRuleRepositoryRuleMaxFileSize2 = value
 }
 // SetRepositoryRuleRepositoryRuleMergeQueue sets the repositoryRuleMergeQueue property value. Composed type representation for type RepositoryRuleMergeQueueable
 func (m *RepositoryRule) SetRepositoryRuleRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)() {
@@ -1737,10 +1737,10 @@ type RepositoryRuleable interface {
     GetRepositoryRuleCommitterEmailPattern()(RepositoryRuleCommitterEmailPatternable)
     GetRepositoryRuleCreation()(RepositoryRuleCreationable)
     GetRepositoryRuleDeletion()(RepositoryRuleDeletionable)
-    GetRepositoryRuleMember1()(RepositoryRuleMember1able)
-    GetRepositoryRuleMember2()(RepositoryRuleMember2able)
-    GetRepositoryRuleMember3()(RepositoryRuleMember3able)
-    GetRepositoryRuleMember4()(RepositoryRuleMember4able)
+    GetRepositoryRuleFileExtensionRestriction()(RepositoryRuleFileExtensionRestrictionable)
+    GetRepositoryRuleFilePathRestriction()(RepositoryRuleFilePathRestrictionable)
+    GetRepositoryRuleMaxFilePathLength()(RepositoryRuleMaxFilePathLengthable)
+    GetRepositoryRuleMaxFileSize()(RepositoryRuleMaxFileSizeable)
     GetRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable)
     GetRepositoryRuleNonFastForward()(RepositoryRuleNonFastForwardable)
     GetRepositoryRulePullRequest()(RepositoryRulePullRequestable)
@@ -1772,22 +1772,22 @@ type RepositoryRuleable interface {
     GetRepositoryRuleRepositoryRuleDeletion0()(RepositoryRuleDeletionable)
     GetRepositoryRuleRepositoryRuleDeletion1()(RepositoryRuleDeletionable)
     GetRepositoryRuleRepositoryRuleDeletion2()(RepositoryRuleDeletionable)
-    GetRepositoryRuleRepositoryRuleMember1()(RepositoryRuleMember1able)
-    GetRepositoryRuleRepositoryRuleMember10()(RepositoryRuleMember1able)
-    GetRepositoryRuleRepositoryRuleMember11()(RepositoryRuleMember1able)
-    GetRepositoryRuleRepositoryRuleMember12()(RepositoryRuleMember1able)
-    GetRepositoryRuleRepositoryRuleMember2()(RepositoryRuleMember2able)
-    GetRepositoryRuleRepositoryRuleMember20()(RepositoryRuleMember2able)
-    GetRepositoryRuleRepositoryRuleMember21()(RepositoryRuleMember2able)
-    GetRepositoryRuleRepositoryRuleMember22()(RepositoryRuleMember2able)
-    GetRepositoryRuleRepositoryRuleMember3()(RepositoryRuleMember3able)
-    GetRepositoryRuleRepositoryRuleMember30()(RepositoryRuleMember3able)
-    GetRepositoryRuleRepositoryRuleMember31()(RepositoryRuleMember3able)
-    GetRepositoryRuleRepositoryRuleMember32()(RepositoryRuleMember3able)
-    GetRepositoryRuleRepositoryRuleMember4()(RepositoryRuleMember4able)
-    GetRepositoryRuleRepositoryRuleMember40()(RepositoryRuleMember4able)
-    GetRepositoryRuleRepositoryRuleMember41()(RepositoryRuleMember4able)
-    GetRepositoryRuleRepositoryRuleMember42()(RepositoryRuleMember4able)
+    GetRepositoryRuleRepositoryRuleFileExtensionRestriction()(RepositoryRuleFileExtensionRestrictionable)
+    GetRepositoryRuleRepositoryRuleFileExtensionRestriction0()(RepositoryRuleFileExtensionRestrictionable)
+    GetRepositoryRuleRepositoryRuleFileExtensionRestriction1()(RepositoryRuleFileExtensionRestrictionable)
+    GetRepositoryRuleRepositoryRuleFileExtensionRestriction2()(RepositoryRuleFileExtensionRestrictionable)
+    GetRepositoryRuleRepositoryRuleFilePathRestriction()(RepositoryRuleFilePathRestrictionable)
+    GetRepositoryRuleRepositoryRuleFilePathRestriction0()(RepositoryRuleFilePathRestrictionable)
+    GetRepositoryRuleRepositoryRuleFilePathRestriction1()(RepositoryRuleFilePathRestrictionable)
+    GetRepositoryRuleRepositoryRuleFilePathRestriction2()(RepositoryRuleFilePathRestrictionable)
+    GetRepositoryRuleRepositoryRuleMaxFilePathLength()(RepositoryRuleMaxFilePathLengthable)
+    GetRepositoryRuleRepositoryRuleMaxFilePathLength0()(RepositoryRuleMaxFilePathLengthable)
+    GetRepositoryRuleRepositoryRuleMaxFilePathLength1()(RepositoryRuleMaxFilePathLengthable)
+    GetRepositoryRuleRepositoryRuleMaxFilePathLength2()(RepositoryRuleMaxFilePathLengthable)
+    GetRepositoryRuleRepositoryRuleMaxFileSize()(RepositoryRuleMaxFileSizeable)
+    GetRepositoryRuleRepositoryRuleMaxFileSize0()(RepositoryRuleMaxFileSizeable)
+    GetRepositoryRuleRepositoryRuleMaxFileSize1()(RepositoryRuleMaxFileSizeable)
+    GetRepositoryRuleRepositoryRuleMaxFileSize2()(RepositoryRuleMaxFileSizeable)
     GetRepositoryRuleRepositoryRuleMergeQueue()(RepositoryRuleMergeQueueable)
     GetRepositoryRuleRepositoryRuleMergeQueue0()(RepositoryRuleMergeQueueable)
     GetRepositoryRuleRepositoryRuleMergeQueue1()(RepositoryRuleMergeQueueable)
@@ -1842,10 +1842,10 @@ type RepositoryRuleable interface {
     SetRepositoryRuleCommitterEmailPattern(value RepositoryRuleCommitterEmailPatternable)()
     SetRepositoryRuleCreation(value RepositoryRuleCreationable)()
     SetRepositoryRuleDeletion(value RepositoryRuleDeletionable)()
-    SetRepositoryRuleMember1(value RepositoryRuleMember1able)()
-    SetRepositoryRuleMember2(value RepositoryRuleMember2able)()
-    SetRepositoryRuleMember3(value RepositoryRuleMember3able)()
-    SetRepositoryRuleMember4(value RepositoryRuleMember4able)()
+    SetRepositoryRuleFileExtensionRestriction(value RepositoryRuleFileExtensionRestrictionable)()
+    SetRepositoryRuleFilePathRestriction(value RepositoryRuleFilePathRestrictionable)()
+    SetRepositoryRuleMaxFilePathLength(value RepositoryRuleMaxFilePathLengthable)()
+    SetRepositoryRuleMaxFileSize(value RepositoryRuleMaxFileSizeable)()
     SetRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)()
     SetRepositoryRuleNonFastForward(value RepositoryRuleNonFastForwardable)()
     SetRepositoryRulePullRequest(value RepositoryRulePullRequestable)()
@@ -1877,22 +1877,22 @@ type RepositoryRuleable interface {
     SetRepositoryRuleRepositoryRuleDeletion0(value RepositoryRuleDeletionable)()
     SetRepositoryRuleRepositoryRuleDeletion1(value RepositoryRuleDeletionable)()
     SetRepositoryRuleRepositoryRuleDeletion2(value RepositoryRuleDeletionable)()
-    SetRepositoryRuleRepositoryRuleMember1(value RepositoryRuleMember1able)()
-    SetRepositoryRuleRepositoryRuleMember10(value RepositoryRuleMember1able)()
-    SetRepositoryRuleRepositoryRuleMember11(value RepositoryRuleMember1able)()
-    SetRepositoryRuleRepositoryRuleMember12(value RepositoryRuleMember1able)()
-    SetRepositoryRuleRepositoryRuleMember2(value RepositoryRuleMember2able)()
-    SetRepositoryRuleRepositoryRuleMember20(value RepositoryRuleMember2able)()
-    SetRepositoryRuleRepositoryRuleMember21(value RepositoryRuleMember2able)()
-    SetRepositoryRuleRepositoryRuleMember22(value RepositoryRuleMember2able)()
-    SetRepositoryRuleRepositoryRuleMember3(value RepositoryRuleMember3able)()
-    SetRepositoryRuleRepositoryRuleMember30(value RepositoryRuleMember3able)()
-    SetRepositoryRuleRepositoryRuleMember31(value RepositoryRuleMember3able)()
-    SetRepositoryRuleRepositoryRuleMember32(value RepositoryRuleMember3able)()
-    SetRepositoryRuleRepositoryRuleMember4(value RepositoryRuleMember4able)()
-    SetRepositoryRuleRepositoryRuleMember40(value RepositoryRuleMember4able)()
-    SetRepositoryRuleRepositoryRuleMember41(value RepositoryRuleMember4able)()
-    SetRepositoryRuleRepositoryRuleMember42(value RepositoryRuleMember4able)()
+    SetRepositoryRuleRepositoryRuleFileExtensionRestriction(value RepositoryRuleFileExtensionRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFileExtensionRestriction0(value RepositoryRuleFileExtensionRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFileExtensionRestriction1(value RepositoryRuleFileExtensionRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFileExtensionRestriction2(value RepositoryRuleFileExtensionRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFilePathRestriction(value RepositoryRuleFilePathRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFilePathRestriction0(value RepositoryRuleFilePathRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFilePathRestriction1(value RepositoryRuleFilePathRestrictionable)()
+    SetRepositoryRuleRepositoryRuleFilePathRestriction2(value RepositoryRuleFilePathRestrictionable)()
+    SetRepositoryRuleRepositoryRuleMaxFilePathLength(value RepositoryRuleMaxFilePathLengthable)()
+    SetRepositoryRuleRepositoryRuleMaxFilePathLength0(value RepositoryRuleMaxFilePathLengthable)()
+    SetRepositoryRuleRepositoryRuleMaxFilePathLength1(value RepositoryRuleMaxFilePathLengthable)()
+    SetRepositoryRuleRepositoryRuleMaxFilePathLength2(value RepositoryRuleMaxFilePathLengthable)()
+    SetRepositoryRuleRepositoryRuleMaxFileSize(value RepositoryRuleMaxFileSizeable)()
+    SetRepositoryRuleRepositoryRuleMaxFileSize0(value RepositoryRuleMaxFileSizeable)()
+    SetRepositoryRuleRepositoryRuleMaxFileSize1(value RepositoryRuleMaxFileSizeable)()
+    SetRepositoryRuleRepositoryRuleMaxFileSize2(value RepositoryRuleMaxFileSizeable)()
     SetRepositoryRuleRepositoryRuleMergeQueue(value RepositoryRuleMergeQueueable)()
     SetRepositoryRuleRepositoryRuleMergeQueue0(value RepositoryRuleMergeQueueable)()
     SetRepositoryRuleRepositoryRuleMergeQueue1(value RepositoryRuleMergeQueueable)()

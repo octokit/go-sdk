@@ -4,32 +4,32 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type RepositoryRuleMember2_parameters struct {
+type RepositoryRuleMaxFilePathLength_parameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
     // The maximum amount of characters allowed in file paths
     max_file_path_length *int32
 }
-// NewRepositoryRuleMember2_parameters instantiates a new RepositoryRuleMember2_parameters and sets the default values.
-func NewRepositoryRuleMember2_parameters()(*RepositoryRuleMember2_parameters) {
-    m := &RepositoryRuleMember2_parameters{
+// NewRepositoryRuleMaxFilePathLength_parameters instantiates a new RepositoryRuleMaxFilePathLength_parameters and sets the default values.
+func NewRepositoryRuleMaxFilePathLength_parameters()(*RepositoryRuleMaxFilePathLength_parameters) {
+    m := &RepositoryRuleMaxFilePathLength_parameters{
     }
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateRepositoryRuleMember2_parametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateRepositoryRuleMaxFilePathLength_parametersFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRepositoryRuleMember2_parametersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRepositoryRuleMember2_parameters(), nil
+func CreateRepositoryRuleMaxFilePathLength_parametersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewRepositoryRuleMaxFilePathLength_parameters(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *RepositoryRuleMember2_parameters) GetAdditionalData()(map[string]any) {
+func (m *RepositoryRuleMaxFilePathLength_parameters) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RepositoryRuleMember2_parameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *RepositoryRuleMaxFilePathLength_parameters) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["max_file_path_length"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
@@ -45,11 +45,11 @@ func (m *RepositoryRuleMember2_parameters) GetFieldDeserializers()(map[string]fu
 }
 // GetMaxFilePathLength gets the max_file_path_length property value. The maximum amount of characters allowed in file paths
 // returns a *int32 when successful
-func (m *RepositoryRuleMember2_parameters) GetMaxFilePathLength()(*int32) {
+func (m *RepositoryRuleMaxFilePathLength_parameters) GetMaxFilePathLength()(*int32) {
     return m.max_file_path_length
 }
 // Serialize serializes information the current object
-func (m *RepositoryRuleMember2_parameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *RepositoryRuleMaxFilePathLength_parameters) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteInt32Value("max_file_path_length", m.GetMaxFilePathLength())
         if err != nil {
@@ -65,14 +65,14 @@ func (m *RepositoryRuleMember2_parameters) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *RepositoryRuleMember2_parameters) SetAdditionalData(value map[string]any)() {
+func (m *RepositoryRuleMaxFilePathLength_parameters) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
 // SetMaxFilePathLength sets the max_file_path_length property value. The maximum amount of characters allowed in file paths
-func (m *RepositoryRuleMember2_parameters) SetMaxFilePathLength(value *int32)() {
+func (m *RepositoryRuleMaxFilePathLength_parameters) SetMaxFilePathLength(value *int32)() {
     m.max_file_path_length = value
 }
-type RepositoryRuleMember2_parametersable interface {
+type RepositoryRuleMaxFilePathLength_parametersable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMaxFilePathLength()(*int32)
