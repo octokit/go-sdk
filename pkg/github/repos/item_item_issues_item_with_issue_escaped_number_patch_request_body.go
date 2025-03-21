@@ -19,7 +19,7 @@ type ItemItemIssuesItemWithIssue_numberPatchRequestBody struct {
     milestone ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestoneable
     // The title of the issue.
     title ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable
-    // The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+    // The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
     typeEscaped *string
 }
 // ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_milestone composed type wrapper for classes int32, string
@@ -345,7 +345,7 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetMilestone()(Item
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetTitle()(ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable) {
     return m.title
 }
-// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
 // returns a *string when successful
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) GetTypeEscaped()(*string) {
     return m.typeEscaped
@@ -430,7 +430,7 @@ func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetMilestone(value 
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetTitle(value ItemItemIssuesItemWithIssue_numberPatchRequestBody_WithIssue_numberPatchRequestBody_titleable)() {
     m.title = value
 }
-// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type.
+// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue or use `null` to remove the current issue type. Only users with push access can set the type for issues. Without push access to the repository, type changes are silently dropped.
 func (m *ItemItemIssuesItemWithIssue_numberPatchRequestBody) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }

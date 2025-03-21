@@ -19,7 +19,7 @@ type ItemItemIssuesPostRequestBody struct {
     milestone ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestoneable
     // The title of the issue.
     title ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable
-    // The name of the issue type to associate with this issue.
+    // The name of the issue type to associate with this issue. _NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise._
     typeEscaped *string
 }
 // ItemItemIssuesPostRequestBody_IssuesPostRequestBody_milestone composed type wrapper for classes int32, string
@@ -345,7 +345,7 @@ func (m *ItemItemIssuesPostRequestBody) GetMilestone()(ItemItemIssuesPostRequest
 func (m *ItemItemIssuesPostRequestBody) GetTitle()(ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable) {
     return m.title
 }
-// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue.
+// GetTypeEscaped gets the type property value. The name of the issue type to associate with this issue. _NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise._
 // returns a *string when successful
 func (m *ItemItemIssuesPostRequestBody) GetTypeEscaped()(*string) {
     return m.typeEscaped
@@ -430,7 +430,7 @@ func (m *ItemItemIssuesPostRequestBody) SetMilestone(value ItemItemIssuesPostReq
 func (m *ItemItemIssuesPostRequestBody) SetTitle(value ItemItemIssuesPostRequestBody_IssuesPostRequestBody_titleable)() {
     m.title = value
 }
-// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue.
+// SetTypeEscaped sets the type property value. The name of the issue type to associate with this issue. _NOTE: Only users with push access can set the type for new issues. The type is silently dropped otherwise._
 func (m *ItemItemIssuesPostRequestBody) SetTypeEscaped(value *string)() {
     m.typeEscaped = value
 }

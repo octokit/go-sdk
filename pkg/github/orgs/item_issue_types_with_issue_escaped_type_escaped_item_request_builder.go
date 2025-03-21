@@ -23,7 +23,7 @@ func NewItemIssueTypesWithIssue_type_ItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemIssueTypesWithIssue_type_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+// Delete deletes an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens andpersonal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // returns a BasicError error when the service returns a 404 status code
 // returns a ValidationErrorSimple error when the service returns a 422 status code
 // [API method documentation]
@@ -44,7 +44,7 @@ func (m *ItemIssueTypesWithIssue_type_ItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Put updates an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+// Put updates an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens andpersonal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // returns a IssueTypeable when successful
 // returns a BasicError error when the service returns a 404 status code
 // returns a ValidationErrorSimple error when the service returns a 422 status code
@@ -69,7 +69,7 @@ func (m *ItemIssueTypesWithIssue_type_ItemRequestBuilder) Put(ctx context.Contex
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.IssueTypeable), nil
 }
-// ToDeleteRequestInformation deletes an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+// ToDeleteRequestInformation deletes an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens andpersonal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemIssueTypesWithIssue_type_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +77,7 @@ func (m *ItemIssueTypesWithIssue_type_ItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation updates an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).
+// ToPutRequestInformation updates an issue type for an organization.You can find out more about issue types in [Managing issue types in an organization](https://docs.github.com/issues/tracking-your-work-with-issues/configuring-issues/managing-issue-types-in-an-organization).To use this endpoint, the authenticated user must be an administrator for the organization. OAuth app tokens andpersonal access tokens (classic) need the `admin:org` scope to use this endpoint.
 // returns a *RequestInformation when successful
 func (m *ItemIssueTypesWithIssue_type_ItemRequestBuilder) ToPutRequestInformation(ctx context.Context, body i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.OrganizationUpdateIssueTypeable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

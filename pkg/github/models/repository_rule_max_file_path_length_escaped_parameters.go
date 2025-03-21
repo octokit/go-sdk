@@ -7,7 +7,7 @@ import (
 type RepositoryRuleMaxFilePathLength_parameters struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The maximum amount of characters allowed in file paths
+    // The maximum amount of characters allowed in file paths.
     max_file_path_length *int32
 }
 // NewRepositoryRuleMaxFilePathLength_parameters instantiates a new RepositoryRuleMaxFilePathLength_parameters and sets the default values.
@@ -43,7 +43,7 @@ func (m *RepositoryRuleMaxFilePathLength_parameters) GetFieldDeserializers()(map
     }
     return res
 }
-// GetMaxFilePathLength gets the max_file_path_length property value. The maximum amount of characters allowed in file paths
+// GetMaxFilePathLength gets the max_file_path_length property value. The maximum amount of characters allowed in file paths.
 // returns a *int32 when successful
 func (m *RepositoryRuleMaxFilePathLength_parameters) GetMaxFilePathLength()(*int32) {
     return m.max_file_path_length
@@ -68,7 +68,7 @@ func (m *RepositoryRuleMaxFilePathLength_parameters) Serialize(writer i878a80d23
 func (m *RepositoryRuleMaxFilePathLength_parameters) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetMaxFilePathLength sets the max_file_path_length property value. The maximum amount of characters allowed in file paths
+// SetMaxFilePathLength sets the max_file_path_length property value. The maximum amount of characters allowed in file paths.
 func (m *RepositoryRuleMaxFilePathLength_parameters) SetMaxFilePathLength(value *int32)() {
     m.max_file_path_length = value
 }
