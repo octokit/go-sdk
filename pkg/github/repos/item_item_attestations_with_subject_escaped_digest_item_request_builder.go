@@ -17,11 +17,13 @@ type ItemItemAttestationsWithSubject_digestItemRequestBuilderGetQueryParameters 
     Before *string `uriparametername:"before"`
     // The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Per_page *int32 `uriparametername:"per_page"`
+    // Optional filter for fetching attestations with a given predicate type.This option accepts `provenance`, `sbom`, or freeform text for custom predicate types.
+    Predicate_type *string `uriparametername:"predicate_type"`
 }
 // NewItemItemAttestationsWithSubject_digestItemRequestBuilderInternal instantiates a new ItemItemAttestationsWithSubject_digestItemRequestBuilder and sets the default values.
 func NewItemItemAttestationsWithSubject_digestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemItemAttestationsWithSubject_digestItemRequestBuilder) {
     m := &ItemItemAttestationsWithSubject_digestItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/attestations/{subject_digest}{?after*,before*,per_page*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/attestations/{subject_digest}{?after*,before*,per_page*,predicate_type*}", pathParameters),
     }
     return m
 }

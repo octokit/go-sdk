@@ -28,7 +28,8 @@ func NewColumnsWithColumn_ItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewColumnsWithColumn_ItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a project column.
+// Delete > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
 // [API method documentation]
@@ -49,7 +50,8 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get gets information about a project column.
+// Get > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a ProjectColumnable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -81,7 +83,8 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) Get(ctx context.Context, requestC
 func (m *ColumnsWithColumn_ItemRequestBuilder) Moves()(*ColumnsItemMovesRequestBuilder) {
     return NewColumnsItemMovesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update an existing project column
+// Patch > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a ProjectColumnable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -106,7 +109,8 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) Patch(ctx context.Context, body C
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.ProjectColumnable), nil
 }
-// ToDeleteRequestInformation deletes a project column.
+// ToDeleteRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ColumnsWithColumn_ItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -114,7 +118,8 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation gets information about a project column.
+// ToGetRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ColumnsWithColumn_ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +127,8 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
+// ToPatchRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ColumnsWithColumn_ItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ColumnsItemWithColumn_PatchRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +141,7 @@ func (m *ColumnsWithColumn_ItemRequestBuilder) ToPatchRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: 
 // returns a *ColumnsWithColumn_ItemRequestBuilder when successful
 func (m *ColumnsWithColumn_ItemRequestBuilder) WithUrl(rawUrl string)(*ColumnsWithColumn_ItemRequestBuilder) {
     return NewColumnsWithColumn_ItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -7,7 +7,7 @@ import (
 type ItemItemIssuesItemSub_issueDeleteRequestBody struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // The sub-issue to remove
+    // The id of the sub-issue to remove
     sub_issue_id *int32
 }
 // NewItemItemIssuesItemSub_issueDeleteRequestBody instantiates a new ItemItemIssuesItemSub_issueDeleteRequestBody and sets the default values.
@@ -43,7 +43,7 @@ func (m *ItemItemIssuesItemSub_issueDeleteRequestBody) GetFieldDeserializers()(m
     }
     return res
 }
-// GetSubIssueId gets the sub_issue_id property value. The sub-issue to remove
+// GetSubIssueId gets the sub_issue_id property value. The id of the sub-issue to remove
 // returns a *int32 when successful
 func (m *ItemItemIssuesItemSub_issueDeleteRequestBody) GetSubIssueId()(*int32) {
     return m.sub_issue_id
@@ -68,7 +68,7 @@ func (m *ItemItemIssuesItemSub_issueDeleteRequestBody) Serialize(writer i878a80d
 func (m *ItemItemIssuesItemSub_issueDeleteRequestBody) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetSubIssueId sets the sub_issue_id property value. The sub-issue to remove
+// SetSubIssueId sets the sub_issue_id property value. The id of the sub-issue to remove
 func (m *ItemItemIssuesItemSub_issueDeleteRequestBody) SetSubIssueId(value *int32)() {
     m.sub_issue_id = value
 }

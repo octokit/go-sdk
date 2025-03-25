@@ -1,5 +1,5 @@
 package models
-// The leve of permission to grant the access token to manage Dependabot secrets.
+// The level of permission to grant the access token to manage Dependabot secrets.
 type AppPermissions_dependabot_secrets int
 
 const (

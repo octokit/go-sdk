@@ -31,8 +31,8 @@ type Integration struct {
     name *string
     // The node_id property
     node_id *string
-    // A GitHub user.
-    owner NullableSimpleUserable
+    // The owner property
+    owner Integration_Integration_ownerable
     // The pem property
     pem *string
     // The set of permissions for the GitHub app
@@ -43,6 +43,89 @@ type Integration struct {
     updated_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The webhook_secret property
     webhook_secret *string
+}
+// Integration_Integration_owner composed type wrapper for classes Enterpriseable, SimpleUserable
+type Integration_Integration_owner struct {
+    // Composed type representation for type Enterpriseable
+    enterprise Enterpriseable
+    // Composed type representation for type SimpleUserable
+    simpleUser SimpleUserable
+}
+// NewIntegration_Integration_owner instantiates a new Integration_Integration_owner and sets the default values.
+func NewIntegration_Integration_owner()(*Integration_Integration_owner) {
+    m := &Integration_Integration_owner{
+    }
+    return m
+}
+// CreateIntegration_Integration_ownerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateIntegration_Integration_ownerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewIntegration_Integration_owner()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    return result, nil
+}
+// GetEnterprise gets the enterprise property value. Composed type representation for type Enterpriseable
+// returns a Enterpriseable when successful
+func (m *Integration_Integration_owner) GetEnterprise()(Enterpriseable) {
+    return m.enterprise
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *Integration_Integration_owner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *Integration_Integration_owner) GetIsComposedType()(bool) {
+    return true
+}
+// GetSimpleUser gets the simpleUser property value. Composed type representation for type SimpleUserable
+// returns a SimpleUserable when successful
+func (m *Integration_Integration_owner) GetSimpleUser()(SimpleUserable) {
+    return m.simpleUser
+}
+// Serialize serializes information the current object
+func (m *Integration_Integration_owner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetEnterprise() != nil {
+        err := writer.WriteObjectValue("", m.GetEnterprise())
+        if err != nil {
+            return err
+        }
+    } else if m.GetSimpleUser() != nil {
+        err := writer.WriteObjectValue("", m.GetSimpleUser())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetEnterprise sets the enterprise property value. Composed type representation for type Enterpriseable
+func (m *Integration_Integration_owner) SetEnterprise(value Enterpriseable)() {
+    m.enterprise = value
+}
+// SetSimpleUser sets the simpleUser property value. Composed type representation for type SimpleUserable
+func (m *Integration_Integration_owner) SetSimpleUser(value SimpleUserable)() {
+    m.simpleUser = value
+}
+type Integration_Integration_ownerable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetEnterprise()(Enterpriseable)
+    GetSimpleUser()(SimpleUserable)
+    SetEnterprise(value Enterpriseable)()
+    SetSimpleUser(value SimpleUserable)()
 }
 // NewIntegration instantiates a new Integration and sets the default values.
 func NewIntegration()(*Integration) {
@@ -212,12 +295,12 @@ func (m *Integration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["owner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateNullableSimpleUserFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateIntegration_Integration_ownerFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetOwner(val.(NullableSimpleUserable))
+            m.SetOwner(val.(Integration_Integration_ownerable))
         }
         return nil
     }
@@ -298,9 +381,9 @@ func (m *Integration) GetName()(*string) {
 func (m *Integration) GetNodeId()(*string) {
     return m.node_id
 }
-// GetOwner gets the owner property value. A GitHub user.
-// returns a NullableSimpleUserable when successful
-func (m *Integration) GetOwner()(NullableSimpleUserable) {
+// GetOwner gets the owner property value. The owner property
+// returns a Integration_Integration_ownerable when successful
+func (m *Integration) GetOwner()(Integration_Integration_ownerable) {
     return m.owner
 }
 // GetPem gets the pem property value. The pem property
@@ -488,8 +571,8 @@ func (m *Integration) SetName(value *string)() {
 func (m *Integration) SetNodeId(value *string)() {
     m.node_id = value
 }
-// SetOwner sets the owner property value. A GitHub user.
-func (m *Integration) SetOwner(value NullableSimpleUserable)() {
+// SetOwner sets the owner property value. The owner property
+func (m *Integration) SetOwner(value Integration_Integration_ownerable)() {
     m.owner = value
 }
 // SetPem sets the pem property value. The pem property
@@ -526,7 +609,7 @@ type Integrationable interface {
     GetInstallationsCount()(*int32)
     GetName()(*string)
     GetNodeId()(*string)
-    GetOwner()(NullableSimpleUserable)
+    GetOwner()(Integration_Integration_ownerable)
     GetPem()(*string)
     GetPermissions()(Integration_permissionsable)
     GetSlug()(*string)
@@ -543,7 +626,7 @@ type Integrationable interface {
     SetInstallationsCount(value *int32)()
     SetName(value *string)()
     SetNodeId(value *string)()
-    SetOwner(value NullableSimpleUserable)()
+    SetOwner(value Integration_Integration_ownerable)()
     SetPem(value *string)()
     SetPermissions(value Integration_permissionsable)()
     SetSlug(value *string)()

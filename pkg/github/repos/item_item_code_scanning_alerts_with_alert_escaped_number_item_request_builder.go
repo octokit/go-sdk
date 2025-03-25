@@ -62,6 +62,7 @@ func (m *ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) Instances
 }
 // Patch updates the status of a single code scanning alert.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
 // returns a CodeScanningAlertable when successful
+// returns a BasicError error when the service returns a 400 status code
 // returns a BasicError error when the service returns a 403 status code
 // returns a BasicError error when the service returns a 404 status code
 // returns a CodeScanningAlert503Error error when the service returns a 503 status code
@@ -74,6 +75,7 @@ func (m *ItemItemCodeScanningAlertsWithAlert_numberItemRequestBuilder) Patch(ctx
         return nil, err
     }
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "400": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "403": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "404": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateBasicErrorFromDiscriminatorValue,
         "503": i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateCodeScanningAlert503ErrorFromDiscriminatorValue,

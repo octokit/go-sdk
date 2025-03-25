@@ -11,7 +11,7 @@ import (
 type ItemProjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProjectsRequestBuilderGetQueryParameters lists projects for a user.
+// ItemProjectsRequestBuilderGetQueryParameters > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 type ItemProjectsRequestBuilderGetQueryParameters struct {
     // The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."
     Page *int32 `uriparametername:"page"`
@@ -33,7 +33,8 @@ func NewItemProjectsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     urlParams["request-raw-url"] = rawUrl
     return NewItemProjectsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists projects for a user.
+// Get > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a []Projectable when successful
 // returns a ValidationError error when the service returns a 422 status code
 // [API method documentation]
@@ -59,7 +60,8 @@ func (m *ItemProjectsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return val, nil
 }
-// ToGetRequestInformation lists projects for a user.
+// ToGetRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemProjectsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *ItemProjectsRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: 
 // returns a *ItemProjectsRequestBuilder when successful
 func (m *ItemProjectsRequestBuilder) WithUrl(rawUrl string)(*ItemProjectsRequestBuilder) {
     return NewItemProjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

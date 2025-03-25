@@ -17,6 +17,8 @@ type DependabotAlertSecurityAdvisory struct {
     cwes []DependabotAlertSecurityAdvisory_cwesable
     // A long-form Markdown-supported description of the advisory.
     description *string
+    // The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
+    epss SecurityAdvisoryEpssable
     // The unique GitHub Security Advisory ID assigned to the advisory.
     ghsa_id *string
     // Values that identify this advisory among security information sources.
@@ -71,6 +73,11 @@ func (m *DependabotAlertSecurityAdvisory) GetCwes()([]DependabotAlertSecurityAdv
 // returns a *string when successful
 func (m *DependabotAlertSecurityAdvisory) GetDescription()(*string) {
     return m.description
+}
+// GetEpss gets the epss property value. The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
+// returns a SecurityAdvisoryEpssable when successful
+func (m *DependabotAlertSecurityAdvisory) GetEpss()(SecurityAdvisoryEpssable) {
+    return m.epss
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
@@ -129,6 +136,16 @@ func (m *DependabotAlertSecurityAdvisory) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["epss"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityAdvisoryEpssFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEpss(val.(SecurityAdvisoryEpssable))
         }
         return nil
     }
@@ -317,6 +334,10 @@ func (m *DependabotAlertSecurityAdvisory) SetCwes(value []DependabotAlertSecurit
 func (m *DependabotAlertSecurityAdvisory) SetDescription(value *string)() {
     m.description = value
 }
+// SetEpss sets the epss property value. The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
+func (m *DependabotAlertSecurityAdvisory) SetEpss(value SecurityAdvisoryEpssable)() {
+    m.epss = value
+}
 // SetGhsaId sets the ghsa_id property value. The unique GitHub Security Advisory ID assigned to the advisory.
 func (m *DependabotAlertSecurityAdvisory) SetGhsaId(value *string)() {
     m.ghsa_id = value
@@ -360,6 +381,7 @@ type DependabotAlertSecurityAdvisoryable interface {
     GetCvssSeverities()(CvssSeveritiesable)
     GetCwes()([]DependabotAlertSecurityAdvisory_cwesable)
     GetDescription()(*string)
+    GetEpss()(SecurityAdvisoryEpssable)
     GetGhsaId()(*string)
     GetIdentifiers()([]DependabotAlertSecurityAdvisory_identifiersable)
     GetPublishedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -374,6 +396,7 @@ type DependabotAlertSecurityAdvisoryable interface {
     SetCvssSeverities(value CvssSeveritiesable)()
     SetCwes(value []DependabotAlertSecurityAdvisory_cwesable)()
     SetDescription(value *string)()
+    SetEpss(value SecurityAdvisoryEpssable)()
     SetGhsaId(value *string)()
     SetIdentifiers(value []DependabotAlertSecurityAdvisory_identifiersable)()
     SetPublishedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

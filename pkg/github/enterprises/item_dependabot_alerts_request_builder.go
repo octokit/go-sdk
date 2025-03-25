@@ -21,6 +21,8 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     Direction *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetDirectionQueryParameterType `uriparametername:"direction"`
     // A comma-separated list of ecosystems. If specified, only alerts for these ecosystems will be returned.Can be: `composer`, `go`, `maven`, `npm`, `nuget`, `pip`, `pub`, `rubygems`, `rust`
     Ecosystem *string `uriparametername:"ecosystem"`
+    // CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:- An exact number (`n`)- Comparators such as `>n`, `<n`, `>=n`, `<=n`- A range like `n..n`, where `n` is a number from 0.0 to 1.0Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.
+    Epss_percentage *string `uriparametername:"epss_percentage"`
     // **Deprecated**. The number of results per page (max 100), starting from the first matching result.This parameter must not be used in combination with `last`.Instead, use `per_page` in combination with `after` to fetch the first page of results.
     First *int32 `uriparametername:"first"`
     // **Deprecated**. The number of results per page (max 100), starting from the last matching result.This parameter must not be used in combination with `first`.Instead, use `per_page` in combination with `before` to fetch the last page of results.
@@ -33,7 +35,7 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
     Scope *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetScopeQueryParameterType `uriparametername:"scope"`
     // A comma-separated list of severities. If specified, only alerts with these severities will be returned.Can be: `low`, `medium`, `high`, `critical`
     Severity *string `uriparametername:"severity"`
-    // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.
+    // The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert's state last changed.`epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.
     Sort *i77c38d6454f4c9dc55005405729b416470b652fa12f001a040f72bc1395cc732.GetSortQueryParameterType `uriparametername:"sort"`
     // A comma-separated list of states. If specified, only alerts with these states will be returned.Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`
     State *string `uriparametername:"state"`
@@ -41,7 +43,7 @@ type ItemDependabotAlertsRequestBuilderGetQueryParameters struct {
 // NewItemDependabotAlertsRequestBuilderInternal instantiates a new ItemDependabotAlertsRequestBuilder and sets the default values.
 func NewItemDependabotAlertsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemDependabotAlertsRequestBuilder) {
     m := &ItemDependabotAlertsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,epss_percentage*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters),
     }
     return m
 }

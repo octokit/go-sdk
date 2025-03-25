@@ -11,7 +11,7 @@ import (
 type ItemCollaboratorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCollaboratorsRequestBuilderGetQueryParameters lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+// ItemCollaboratorsRequestBuilderGetQueryParameters > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
 type ItemCollaboratorsRequestBuilderGetQueryParameters struct {
     // Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.
     Affiliation *i9278c50c134ed2203c081269c8e0d5b023412eaec35c331232e99d24d73fec75.GetAffiliationQueryParameterType `uriparametername:"affiliation"`
@@ -21,6 +21,7 @@ type ItemCollaboratorsRequestBuilderGetQueryParameters struct {
     Per_page *int32 `uriparametername:"per_page"`
 }
 // ByUsername gets an item from the github.com/octokit/go-sdk/pkg/github.projects.item.collaborators.item collection
+// Deprecated: 
 // returns a *ItemCollaboratorsWithUsernameItemRequestBuilder when successful
 func (m *ItemCollaboratorsRequestBuilder) ByUsername(username string)(*ItemCollaboratorsWithUsernameItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -45,7 +46,8 @@ func NewItemCollaboratorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemCollaboratorsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+// Get > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a []SimpleUserable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -77,7 +79,8 @@ func (m *ItemCollaboratorsRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return val, nil
 }
-// ToGetRequestInformation lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+// ToGetRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ItemCollaboratorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[ItemCollaboratorsRequestBuilderGetQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -86,6 +89,7 @@ func (m *ItemCollaboratorsRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: 
 // returns a *ItemCollaboratorsRequestBuilder when successful
 func (m *ItemCollaboratorsRequestBuilder) WithUrl(rawUrl string)(*ItemCollaboratorsRequestBuilder) {
     return NewItemCollaboratorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

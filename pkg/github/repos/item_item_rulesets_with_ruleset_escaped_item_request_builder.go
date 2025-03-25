@@ -74,6 +74,11 @@ func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) Get(ctx context.Context
     }
     return res.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.RepositoryRulesetable), nil
 }
+// History the history property
+// returns a *ItemItemRulesetsItemHistoryRequestBuilder when successful
+func (m *ItemItemRulesetsWithRuleset_ItemRequestBuilder) History()(*ItemItemRulesetsItemHistoryRequestBuilder) {
+    return NewItemItemRulesetsItemHistoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Put update a ruleset for a repository.
 // returns a RepositoryRulesetable when successful
 // returns a BasicError error when the service returns a 404 status code

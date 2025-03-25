@@ -1,16 +1,15 @@
 package models
-// The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
+// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
 type CopilotOrganizationDetails_public_code_suggestions int
 
 const (
     ALLOW_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS CopilotOrganizationDetails_public_code_suggestions = iota
     BLOCK_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
     UNCONFIGURED_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
-    UNKNOWN_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
 )
 
 func (i CopilotOrganizationDetails_public_code_suggestions) String() string {
-    return []string{"allow", "block", "unconfigured", "unknown"}[i]
+    return []string{"allow", "block", "unconfigured"}[i]
 }
 func ParseCopilotOrganizationDetails_public_code_suggestions(v string) (any, error) {
     result := ALLOW_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
@@ -21,8 +20,6 @@ func ParseCopilotOrganizationDetails_public_code_suggestions(v string) (any, err
             result = BLOCK_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
         case "unconfigured":
             result = UNCONFIGURED_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
-        case "unknown":
-            result = UNKNOWN_COPILOTORGANIZATIONDETAILS_PUBLIC_CODE_SUGGESTIONS
         default:
             return nil, nil
     }

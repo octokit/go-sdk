@@ -23,7 +23,8 @@ func NewColumnsItemMovesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewColumnsItemMovesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post move a project column
+// Post > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a ColumnsItemMovesPostResponseable when successful
 // returns a BasicError error when the service returns a 401 status code
 // returns a BasicError error when the service returns a 403 status code
@@ -50,6 +51,8 @@ func (m *ColumnsItemMovesRequestBuilder) Post(ctx context.Context, body ColumnsI
     }
     return res.(ColumnsItemMovesPostResponseable), nil
 }
+// ToPostRequestInformation > [!WARNING]> **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.> See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+// Deprecated: 
 // returns a *RequestInformation when successful
 func (m *ColumnsItemMovesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ColumnsItemMovesPostRequestBodyable, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -62,6 +65,7 @@ func (m *ColumnsItemMovesRequestBuilder) ToPostRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: 
 // returns a *ColumnsItemMovesRequestBuilder when successful
 func (m *ColumnsItemMovesRequestBuilder) WithUrl(rawUrl string)(*ColumnsItemMovesRequestBuilder) {
     return NewColumnsItemMovesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

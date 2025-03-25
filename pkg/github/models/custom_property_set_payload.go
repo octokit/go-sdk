@@ -18,6 +18,8 @@ type CustomPropertySetPayload struct {
     required *bool
     // The type of the value for the property
     value_type *CustomPropertySetPayload_value_type
+    // Who can edit the values of the property
+    values_editable_by *CustomPropertySetPayload_values_editable_by
 }
 // CustomPropertySetPayload_CustomPropertySetPayload_default_value composed type wrapper for classes string, []string
 type CustomPropertySetPayload_CustomPropertySetPayload_default_value struct {
@@ -211,12 +213,27 @@ func (m *CustomPropertySetPayload) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["values_editable_by"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCustomPropertySetPayload_values_editable_by)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetValuesEditableBy(val.(*CustomPropertySetPayload_values_editable_by))
+        }
+        return nil
+    }
     return res
 }
 // GetRequired gets the required property value. Whether the property is required.
 // returns a *bool when successful
 func (m *CustomPropertySetPayload) GetRequired()(*bool) {
     return m.required
+}
+// GetValuesEditableBy gets the values_editable_by property value. Who can edit the values of the property
+// returns a *CustomPropertySetPayload_values_editable_by when successful
+func (m *CustomPropertySetPayload) GetValuesEditableBy()(*CustomPropertySetPayload_values_editable_by) {
+    return m.values_editable_by
 }
 // GetValueType gets the value_type property value. The type of the value for the property
 // returns a *CustomPropertySetPayload_value_type when successful
@@ -245,6 +262,13 @@ func (m *CustomPropertySetPayload) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err := writer.WriteBoolValue("required", m.GetRequired())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetValuesEditableBy() != nil {
+        cast := (*m.GetValuesEditableBy()).String()
+        err := writer.WriteStringValue("values_editable_by", &cast)
         if err != nil {
             return err
         }
@@ -284,6 +308,10 @@ func (m *CustomPropertySetPayload) SetDescription(value *string)() {
 func (m *CustomPropertySetPayload) SetRequired(value *bool)() {
     m.required = value
 }
+// SetValuesEditableBy sets the values_editable_by property value. Who can edit the values of the property
+func (m *CustomPropertySetPayload) SetValuesEditableBy(value *CustomPropertySetPayload_values_editable_by)() {
+    m.values_editable_by = value
+}
 // SetValueType sets the value_type property value. The type of the value for the property
 func (m *CustomPropertySetPayload) SetValueType(value *CustomPropertySetPayload_value_type)() {
     m.value_type = value
@@ -295,10 +323,12 @@ type CustomPropertySetPayloadable interface {
     GetDefaultValue()(CustomPropertySetPayload_CustomPropertySetPayload_default_valueable)
     GetDescription()(*string)
     GetRequired()(*bool)
+    GetValuesEditableBy()(*CustomPropertySetPayload_values_editable_by)
     GetValueType()(*CustomPropertySetPayload_value_type)
     SetAllowedValues(value []string)()
     SetDefaultValue(value CustomPropertySetPayload_CustomPropertySetPayload_default_valueable)()
     SetDescription(value *string)()
     SetRequired(value *bool)()
+    SetValuesEditableBy(value *CustomPropertySetPayload_values_editable_by)()
     SetValueType(value *CustomPropertySetPayload_value_type)()
 }

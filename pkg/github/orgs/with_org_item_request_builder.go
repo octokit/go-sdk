@@ -115,7 +115,7 @@ func (m *WithOrgItemRequestBuilder) Events()(*ItemEventsRequestBuilder) {
 func (m *WithOrgItemRequestBuilder) Failed_invitations()(*ItemFailed_invitationsRequestBuilder) {
     return NewItemFailed_invitationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get gets information about an organization.When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).To see the full details about an organization, the authenticated user must be an organization owner.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to see the full details about an organization.To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
+// Get gets information about an organization.When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, outside collaborators, guest collaborators, repository collaborators, or everyone with access to any repository within the organization to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).To see the full details about an organization, the authenticated user must be an organization owner.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to see the full details about an organization.To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
 // returns a OrganizationFullable when successful
 // returns a BasicError error when the service returns a 404 status code
 // [API method documentation]
@@ -172,6 +172,11 @@ func (m *WithOrgItemRequestBuilder) Invitations()(*ItemInvitationsRequestBuilder
 // returns a *ItemIssuesRequestBuilder when successful
 func (m *WithOrgItemRequestBuilder) Issues()(*ItemIssuesRequestBuilder) {
     return NewItemIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IssueTypes the issueTypes property
+// returns a *ItemIssueTypesRequestBuilder when successful
+func (m *WithOrgItemRequestBuilder) IssueTypes()(*ItemIssueTypesRequestBuilder) {
+    return NewItemIssueTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members the members property
 // returns a *ItemMembersRequestBuilder when successful
@@ -304,7 +309,7 @@ func (m *WithOrgItemRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation gets information about an organization.When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, and outside collaborators to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).To see the full details about an organization, the authenticated user must be an organization owner.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to see the full details about an organization.To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
+// ToGetRequestInformation gets information about an organization.When the value of `two_factor_requirement_enabled` is `true`, the organization requires all members, billing managers, outside collaborators, guest collaborators, repository collaborators, or everyone with access to any repository within the organization to enable [two-factor authentication](https://docs.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/).To see the full details about an organization, the authenticated user must be an organization owner.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to see the full details about an organization.To see information about an organization's GitHub plan, GitHub Apps need the `Organization plan` permission.
 // returns a *RequestInformation when successful
 func (m *WithOrgItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestConfiguration[i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DefaultQueryParameters])(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

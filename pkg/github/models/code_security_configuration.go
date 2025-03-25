@@ -15,6 +15,8 @@ type CodeSecurityConfiguration struct {
     code_scanning_default_setup *CodeSecurityConfiguration_code_scanning_default_setup
     // Feature options for code scanning default setup
     code_scanning_default_setup_options CodeSecurityConfiguration_code_scanning_default_setup_optionsable
+    // The enablement status of code scanning delegated alert dismissal
+    code_scanning_delegated_alert_dismissal *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal
     // The created_at property
     created_at *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
     // The enablement status of Dependabot alerts
@@ -41,10 +43,14 @@ type CodeSecurityConfiguration struct {
     private_vulnerability_reporting *CodeSecurityConfiguration_private_vulnerability_reporting
     // The enablement status of secret scanning
     secret_scanning *CodeSecurityConfiguration_secret_scanning
+    // The enablement status of secret scanning delegated alert dismissal
+    secret_scanning_delegated_alert_dismissal *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal
     // The enablement status of secret scanning delegated bypass
     secret_scanning_delegated_bypass *CodeSecurityConfiguration_secret_scanning_delegated_bypass
     // Feature options for secret scanning delegated bypass
     secret_scanning_delegated_bypass_options CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable
+    // The enablement status of Copilot secret scanning
+    secret_scanning_generic_secrets *CodeSecurityConfiguration_secret_scanning_generic_secrets
     // The enablement status of secret scanning non-provider patterns
     secret_scanning_non_provider_patterns *CodeSecurityConfiguration_secret_scanning_non_provider_patterns
     // The enablement status of secret scanning push protection
@@ -89,6 +95,11 @@ func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetup()(*CodeSecurityC
 // returns a CodeSecurityConfiguration_code_scanning_default_setup_optionsable when successful
 func (m *CodeSecurityConfiguration) GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable) {
     return m.code_scanning_default_setup_options
+}
+// GetCodeScanningDelegatedAlertDismissal gets the code_scanning_delegated_alert_dismissal property value. The enablement status of code scanning delegated alert dismissal
+// returns a *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal when successful
+func (m *CodeSecurityConfiguration) GetCodeScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal) {
+    return m.code_scanning_delegated_alert_dismissal
 }
 // GetCreatedAt gets the created_at property value. The created_at property
 // returns a *Time when successful
@@ -161,6 +172,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetCodeScanningDefaultSetupOptions(val.(CodeSecurityConfiguration_code_scanning_default_setup_optionsable))
+        }
+        return nil
+    }
+    res["code_scanning_delegated_alert_dismissal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCodeScanningDelegatedAlertDismissal(val.(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal))
         }
         return nil
     }
@@ -294,6 +315,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["secret_scanning_delegated_alert_dismissal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningDelegatedAlertDismissal(val.(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal))
+        }
+        return nil
+    }
     res["secret_scanning_delegated_bypass"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_delegated_bypass)
         if err != nil {
@@ -311,6 +342,16 @@ func (m *CodeSecurityConfiguration) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetSecretScanningDelegatedBypassOptions(val.(CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable))
+        }
+        return nil
+    }
+    res["secret_scanning_generic_secrets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCodeSecurityConfiguration_secret_scanning_generic_secrets)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecretScanningGenericSecrets(val.(*CodeSecurityConfiguration_secret_scanning_generic_secrets))
         }
         return nil
     }
@@ -401,6 +442,11 @@ func (m *CodeSecurityConfiguration) GetPrivateVulnerabilityReporting()(*CodeSecu
 func (m *CodeSecurityConfiguration) GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning) {
     return m.secret_scanning
 }
+// GetSecretScanningDelegatedAlertDismissal gets the secret_scanning_delegated_alert_dismissal property value. The enablement status of secret scanning delegated alert dismissal
+// returns a *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal when successful
+func (m *CodeSecurityConfiguration) GetSecretScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal) {
+    return m.secret_scanning_delegated_alert_dismissal
+}
 // GetSecretScanningDelegatedBypass gets the secret_scanning_delegated_bypass property value. The enablement status of secret scanning delegated bypass
 // returns a *CodeSecurityConfiguration_secret_scanning_delegated_bypass when successful
 func (m *CodeSecurityConfiguration) GetSecretScanningDelegatedBypass()(*CodeSecurityConfiguration_secret_scanning_delegated_bypass) {
@@ -410,6 +456,11 @@ func (m *CodeSecurityConfiguration) GetSecretScanningDelegatedBypass()(*CodeSecu
 // returns a CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable when successful
 func (m *CodeSecurityConfiguration) GetSecretScanningDelegatedBypassOptions()(CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable) {
     return m.secret_scanning_delegated_bypass_options
+}
+// GetSecretScanningGenericSecrets gets the secret_scanning_generic_secrets property value. The enablement status of Copilot secret scanning
+// returns a *CodeSecurityConfiguration_secret_scanning_generic_secrets when successful
+func (m *CodeSecurityConfiguration) GetSecretScanningGenericSecrets()(*CodeSecurityConfiguration_secret_scanning_generic_secrets) {
+    return m.secret_scanning_generic_secrets
 }
 // GetSecretScanningNonProviderPatterns gets the secret_scanning_non_provider_patterns property value. The enablement status of secret scanning non-provider patterns
 // returns a *CodeSecurityConfiguration_secret_scanning_non_provider_patterns when successful
@@ -459,6 +510,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("code_scanning_default_setup_options", m.GetCodeScanningDefaultSetupOptions())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCodeScanningDelegatedAlertDismissal() != nil {
+        cast := (*m.GetCodeScanningDelegatedAlertDismissal()).String()
+        err := writer.WriteStringValue("code_scanning_delegated_alert_dismissal", &cast)
         if err != nil {
             return err
         }
@@ -548,6 +606,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetSecretScanningDelegatedAlertDismissal() != nil {
+        cast := (*m.GetSecretScanningDelegatedAlertDismissal()).String()
+        err := writer.WriteStringValue("secret_scanning_delegated_alert_dismissal", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSecretScanningDelegatedBypass() != nil {
         cast := (*m.GetSecretScanningDelegatedBypass()).String()
         err := writer.WriteStringValue("secret_scanning_delegated_bypass", &cast)
@@ -557,6 +622,13 @@ func (m *CodeSecurityConfiguration) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteObjectValue("secret_scanning_delegated_bypass_options", m.GetSecretScanningDelegatedBypassOptions())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSecretScanningGenericSecrets() != nil {
+        cast := (*m.GetSecretScanningGenericSecrets()).String()
+        err := writer.WriteStringValue("secret_scanning_generic_secrets", &cast)
         if err != nil {
             return err
         }
@@ -625,6 +697,10 @@ func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetup(value *CodeSecur
 func (m *CodeSecurityConfiguration) SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)() {
     m.code_scanning_default_setup_options = value
 }
+// SetCodeScanningDelegatedAlertDismissal sets the code_scanning_delegated_alert_dismissal property value. The enablement status of code scanning delegated alert dismissal
+func (m *CodeSecurityConfiguration) SetCodeScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)() {
+    m.code_scanning_delegated_alert_dismissal = value
+}
 // SetCreatedAt sets the created_at property value. The created_at property
 func (m *CodeSecurityConfiguration) SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     m.created_at = value
@@ -677,6 +753,10 @@ func (m *CodeSecurityConfiguration) SetPrivateVulnerabilityReporting(value *Code
 func (m *CodeSecurityConfiguration) SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)() {
     m.secret_scanning = value
 }
+// SetSecretScanningDelegatedAlertDismissal sets the secret_scanning_delegated_alert_dismissal property value. The enablement status of secret scanning delegated alert dismissal
+func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)() {
+    m.secret_scanning_delegated_alert_dismissal = value
+}
 // SetSecretScanningDelegatedBypass sets the secret_scanning_delegated_bypass property value. The enablement status of secret scanning delegated bypass
 func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedBypass(value *CodeSecurityConfiguration_secret_scanning_delegated_bypass)() {
     m.secret_scanning_delegated_bypass = value
@@ -684,6 +764,10 @@ func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedBypass(value *Code
 // SetSecretScanningDelegatedBypassOptions sets the secret_scanning_delegated_bypass_options property value. Feature options for secret scanning delegated bypass
 func (m *CodeSecurityConfiguration) SetSecretScanningDelegatedBypassOptions(value CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable)() {
     m.secret_scanning_delegated_bypass_options = value
+}
+// SetSecretScanningGenericSecrets sets the secret_scanning_generic_secrets property value. The enablement status of Copilot secret scanning
+func (m *CodeSecurityConfiguration) SetSecretScanningGenericSecrets(value *CodeSecurityConfiguration_secret_scanning_generic_secrets)() {
+    m.secret_scanning_generic_secrets = value
 }
 // SetSecretScanningNonProviderPatterns sets the secret_scanning_non_provider_patterns property value. The enablement status of secret scanning non-provider patterns
 func (m *CodeSecurityConfiguration) SetSecretScanningNonProviderPatterns(value *CodeSecurityConfiguration_secret_scanning_non_provider_patterns)() {
@@ -715,6 +799,7 @@ type CodeSecurityConfigurationable interface {
     GetAdvancedSecurity()(*CodeSecurityConfiguration_advanced_security)
     GetCodeScanningDefaultSetup()(*CodeSecurityConfiguration_code_scanning_default_setup)
     GetCodeScanningDefaultSetupOptions()(CodeSecurityConfiguration_code_scanning_default_setup_optionsable)
+    GetCodeScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDependabotAlerts()(*CodeSecurityConfiguration_dependabot_alerts)
     GetDependabotSecurityUpdates()(*CodeSecurityConfiguration_dependabot_security_updates)
@@ -728,8 +813,10 @@ type CodeSecurityConfigurationable interface {
     GetName()(*string)
     GetPrivateVulnerabilityReporting()(*CodeSecurityConfiguration_private_vulnerability_reporting)
     GetSecretScanning()(*CodeSecurityConfiguration_secret_scanning)
+    GetSecretScanningDelegatedAlertDismissal()(*CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)
     GetSecretScanningDelegatedBypass()(*CodeSecurityConfiguration_secret_scanning_delegated_bypass)
     GetSecretScanningDelegatedBypassOptions()(CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable)
+    GetSecretScanningGenericSecrets()(*CodeSecurityConfiguration_secret_scanning_generic_secrets)
     GetSecretScanningNonProviderPatterns()(*CodeSecurityConfiguration_secret_scanning_non_provider_patterns)
     GetSecretScanningPushProtection()(*CodeSecurityConfiguration_secret_scanning_push_protection)
     GetSecretScanningValidityChecks()(*CodeSecurityConfiguration_secret_scanning_validity_checks)
@@ -739,6 +826,7 @@ type CodeSecurityConfigurationable interface {
     SetAdvancedSecurity(value *CodeSecurityConfiguration_advanced_security)()
     SetCodeScanningDefaultSetup(value *CodeSecurityConfiguration_code_scanning_default_setup)()
     SetCodeScanningDefaultSetupOptions(value CodeSecurityConfiguration_code_scanning_default_setup_optionsable)()
+    SetCodeScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDependabotAlerts(value *CodeSecurityConfiguration_dependabot_alerts)()
     SetDependabotSecurityUpdates(value *CodeSecurityConfiguration_dependabot_security_updates)()
@@ -752,8 +840,10 @@ type CodeSecurityConfigurationable interface {
     SetName(value *string)()
     SetPrivateVulnerabilityReporting(value *CodeSecurityConfiguration_private_vulnerability_reporting)()
     SetSecretScanning(value *CodeSecurityConfiguration_secret_scanning)()
+    SetSecretScanningDelegatedAlertDismissal(value *CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal)()
     SetSecretScanningDelegatedBypass(value *CodeSecurityConfiguration_secret_scanning_delegated_bypass)()
     SetSecretScanningDelegatedBypassOptions(value CodeSecurityConfiguration_secret_scanning_delegated_bypass_optionsable)()
+    SetSecretScanningGenericSecrets(value *CodeSecurityConfiguration_secret_scanning_generic_secrets)()
     SetSecretScanningNonProviderPatterns(value *CodeSecurityConfiguration_secret_scanning_non_provider_patterns)()
     SetSecretScanningPushProtection(value *CodeSecurityConfiguration_secret_scanning_push_protection)()
     SetSecretScanningValidityChecks(value *CodeSecurityConfiguration_secret_scanning_validity_checks)()

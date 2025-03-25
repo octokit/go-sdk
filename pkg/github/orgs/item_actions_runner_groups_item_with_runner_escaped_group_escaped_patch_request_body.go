@@ -11,6 +11,8 @@ type ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody struct {
     allows_public_repositories *bool
     // Name of the runner group.
     name *string
+    // The identifier of a hosted compute network configuration.
+    network_configuration_id *string
     // If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
     restricted_to_workflows *bool
     // List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
@@ -62,6 +64,16 @@ func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) GetFieldD
         }
         return nil
     }
+    res["network_configuration_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNetworkConfigurationId(val)
+        }
+        return nil
+    }
     res["restricted_to_workflows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -95,6 +107,11 @@ func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) GetFieldD
 func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) GetName()(*string) {
     return m.name
 }
+// GetNetworkConfigurationId gets the network_configuration_id property value. The identifier of a hosted compute network configuration.
+// returns a *string when successful
+func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) GetNetworkConfigurationId()(*string) {
+    return m.network_configuration_id
+}
 // GetRestrictedToWorkflows gets the restricted_to_workflows property value. If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
 // returns a *bool when successful
 func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) GetRestrictedToWorkflows()(*bool) {
@@ -115,6 +132,12 @@ func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) Serialize
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("network_configuration_id", m.GetNetworkConfigurationId())
         if err != nil {
             return err
         }
@@ -151,6 +174,10 @@ func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) SetAllows
 func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) SetName(value *string)() {
     m.name = value
 }
+// SetNetworkConfigurationId sets the network_configuration_id property value. The identifier of a hosted compute network configuration.
+func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) SetNetworkConfigurationId(value *string)() {
+    m.network_configuration_id = value
+}
 // SetRestrictedToWorkflows sets the restricted_to_workflows property value. If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
 func (m *ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBody) SetRestrictedToWorkflows(value *bool)() {
     m.restricted_to_workflows = value
@@ -164,10 +191,12 @@ type ItemActionsRunnerGroupsItemWithRunner_group_PatchRequestBodyable interface 
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowsPublicRepositories()(*bool)
     GetName()(*string)
+    GetNetworkConfigurationId()(*string)
     GetRestrictedToWorkflows()(*bool)
     GetSelectedWorkflows()([]string)
     SetAllowsPublicRepositories(value *bool)()
     SetName(value *string)()
+    SetNetworkConfigurationId(value *string)()
     SetRestrictedToWorkflows(value *bool)()
     SetSelectedWorkflows(value []string)()
 }

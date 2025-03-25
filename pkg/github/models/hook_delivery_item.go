@@ -20,13 +20,13 @@ type HookDeliveryItem struct {
     // Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).
     guid *string
     // Unique identifier of the webhook delivery.
-    id *int32
+    id *int64
     // The id of the GitHub App installation associated with this event.
-    installation_id *int32
+    installation_id *int64
     // Whether the webhook delivery is a redelivery.
     redelivery *bool
     // The id of the repository associated with this event.
-    repository_id *int32
+    repository_id *int64
     // Describes the response returned after attempting the delivery.
     status *string
     // Status code received when delivery was made.
@@ -126,7 +126,7 @@ func (m *HookDeliveryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -136,7 +136,7 @@ func (m *HookDeliveryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["installation_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -156,7 +156,7 @@ func (m *HookDeliveryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["repository_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetInt64Value()
         if err != nil {
             return err
         }
@@ -203,13 +203,13 @@ func (m *HookDeliveryItem) GetGuid()(*string) {
     return m.guid
 }
 // GetId gets the id property value. Unique identifier of the webhook delivery.
-// returns a *int32 when successful
-func (m *HookDeliveryItem) GetId()(*int32) {
+// returns a *int64 when successful
+func (m *HookDeliveryItem) GetId()(*int64) {
     return m.id
 }
 // GetInstallationId gets the installation_id property value. The id of the GitHub App installation associated with this event.
-// returns a *int32 when successful
-func (m *HookDeliveryItem) GetInstallationId()(*int32) {
+// returns a *int64 when successful
+func (m *HookDeliveryItem) GetInstallationId()(*int64) {
     return m.installation_id
 }
 // GetRedelivery gets the redelivery property value. Whether the webhook delivery is a redelivery.
@@ -218,8 +218,8 @@ func (m *HookDeliveryItem) GetRedelivery()(*bool) {
     return m.redelivery
 }
 // GetRepositoryId gets the repository_id property value. The id of the repository associated with this event.
-// returns a *int32 when successful
-func (m *HookDeliveryItem) GetRepositoryId()(*int32) {
+// returns a *int64 when successful
+func (m *HookDeliveryItem) GetRepositoryId()(*int64) {
     return m.repository_id
 }
 // GetStatus gets the status property value. Describes the response returned after attempting the delivery.
@@ -270,13 +270,13 @@ func (m *HookDeliveryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("id", m.GetId())
+        err := writer.WriteInt64Value("id", m.GetId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteInt32Value("installation_id", m.GetInstallationId())
+        err := writer.WriteInt64Value("installation_id", m.GetInstallationId())
         if err != nil {
             return err
         }
@@ -288,7 +288,7 @@ func (m *HookDeliveryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
-        err := writer.WriteInt32Value("repository_id", m.GetRepositoryId())
+        err := writer.WriteInt64Value("repository_id", m.GetRepositoryId())
         if err != nil {
             return err
         }
@@ -344,11 +344,11 @@ func (m *HookDeliveryItem) SetGuid(value *string)() {
     m.guid = value
 }
 // SetId sets the id property value. Unique identifier of the webhook delivery.
-func (m *HookDeliveryItem) SetId(value *int32)() {
+func (m *HookDeliveryItem) SetId(value *int64)() {
     m.id = value
 }
 // SetInstallationId sets the installation_id property value. The id of the GitHub App installation associated with this event.
-func (m *HookDeliveryItem) SetInstallationId(value *int32)() {
+func (m *HookDeliveryItem) SetInstallationId(value *int64)() {
     m.installation_id = value
 }
 // SetRedelivery sets the redelivery property value. Whether the webhook delivery is a redelivery.
@@ -356,7 +356,7 @@ func (m *HookDeliveryItem) SetRedelivery(value *bool)() {
     m.redelivery = value
 }
 // SetRepositoryId sets the repository_id property value. The id of the repository associated with this event.
-func (m *HookDeliveryItem) SetRepositoryId(value *int32)() {
+func (m *HookDeliveryItem) SetRepositoryId(value *int64)() {
     m.repository_id = value
 }
 // SetStatus sets the status property value. Describes the response returned after attempting the delivery.
@@ -379,10 +379,10 @@ type HookDeliveryItemable interface {
     GetDuration()(*float64)
     GetEvent()(*string)
     GetGuid()(*string)
-    GetId()(*int32)
-    GetInstallationId()(*int32)
+    GetId()(*int64)
+    GetInstallationId()(*int64)
     GetRedelivery()(*bool)
-    GetRepositoryId()(*int32)
+    GetRepositoryId()(*int64)
     GetStatus()(*string)
     GetStatusCode()(*int32)
     GetThrottledAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -391,10 +391,10 @@ type HookDeliveryItemable interface {
     SetDuration(value *float64)()
     SetEvent(value *string)()
     SetGuid(value *string)()
-    SetId(value *int32)()
-    SetInstallationId(value *int32)()
+    SetId(value *int64)()
+    SetInstallationId(value *int64)()
     SetRedelivery(value *bool)()
-    SetRepositoryId(value *int32)()
+    SetRepositoryId(value *int64)()
     SetStatus(value *string)()
     SetStatusCode(value *int32)()
     SetThrottledAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

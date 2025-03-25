@@ -21,6 +21,8 @@ type RunnerGroupsOrg struct {
     inherited_allows_public_repositories *bool
     // The name property
     name *string
+    // The identifier of a hosted compute network configuration.
+    network_configuration_id *string
     // If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
     restricted_to_workflows *bool
     // The runners_url property
@@ -135,6 +137,16 @@ func (m *RunnerGroupsOrg) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["network_configuration_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNetworkConfigurationId(val)
+        }
+        return nil
+    }
     res["restricted_to_workflows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -228,6 +240,11 @@ func (m *RunnerGroupsOrg) GetInheritedAllowsPublicRepositories()(*bool) {
 func (m *RunnerGroupsOrg) GetName()(*string) {
     return m.name
 }
+// GetNetworkConfigurationId gets the network_configuration_id property value. The identifier of a hosted compute network configuration.
+// returns a *string when successful
+func (m *RunnerGroupsOrg) GetNetworkConfigurationId()(*string) {
+    return m.network_configuration_id
+}
 // GetRestrictedToWorkflows gets the restricted_to_workflows property value. If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
 // returns a *bool when successful
 func (m *RunnerGroupsOrg) GetRestrictedToWorkflows()(*bool) {
@@ -298,6 +315,12 @@ func (m *RunnerGroupsOrg) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err := writer.WriteStringValue("name", m.GetName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("network_configuration_id", m.GetNetworkConfigurationId())
         if err != nil {
             return err
         }
@@ -378,6 +401,10 @@ func (m *RunnerGroupsOrg) SetInheritedAllowsPublicRepositories(value *bool)() {
 func (m *RunnerGroupsOrg) SetName(value *string)() {
     m.name = value
 }
+// SetNetworkConfigurationId sets the network_configuration_id property value. The identifier of a hosted compute network configuration.
+func (m *RunnerGroupsOrg) SetNetworkConfigurationId(value *string)() {
+    m.network_configuration_id = value
+}
 // SetRestrictedToWorkflows sets the restricted_to_workflows property value. If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
 func (m *RunnerGroupsOrg) SetRestrictedToWorkflows(value *bool)() {
     m.restricted_to_workflows = value
@@ -412,6 +439,7 @@ type RunnerGroupsOrgable interface {
     GetInherited()(*bool)
     GetInheritedAllowsPublicRepositories()(*bool)
     GetName()(*string)
+    GetNetworkConfigurationId()(*string)
     GetRestrictedToWorkflows()(*bool)
     GetRunnersUrl()(*string)
     GetSelectedRepositoriesUrl()(*string)
@@ -425,6 +453,7 @@ type RunnerGroupsOrgable interface {
     SetInherited(value *bool)()
     SetInheritedAllowsPublicRepositories(value *bool)()
     SetName(value *string)()
+    SetNetworkConfigurationId(value *string)()
     SetRestrictedToWorkflows(value *bool)()
     SetRunnersUrl(value *string)()
     SetSelectedRepositoriesUrl(value *string)()

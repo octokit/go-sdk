@@ -1,5 +1,5 @@
 package models
-// The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
+// The organization policy for allowing or disallowing Copilot features on GitHub.com.
 type CopilotOrganizationDetails_platform_chat int
 
 const (

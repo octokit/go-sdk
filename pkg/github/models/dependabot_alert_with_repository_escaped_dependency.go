@@ -12,6 +12,8 @@ type DependabotAlertWithRepository_dependency struct {
     manifest_path *string
     // Details for the vulnerable package.
     packageEscaped DependabotAlertPackageable
+    // The vulnerable dependency's relationship to your project.> [!NOTE]> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
+    relationship *DependabotAlertWithRepository_dependency_relationship
     // The execution scope of the vulnerable dependency.
     scope *DependabotAlertWithRepository_dependency_scope
 }
@@ -56,6 +58,16 @@ func (m *DependabotAlertWithRepository_dependency) GetFieldDeserializers()(map[s
         }
         return nil
     }
+    res["relationship"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDependabotAlertWithRepository_dependency_relationship)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRelationship(val.(*DependabotAlertWithRepository_dependency_relationship))
+        }
+        return nil
+    }
     res["scope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDependabotAlertWithRepository_dependency_scope)
         if err != nil {
@@ -77,6 +89,11 @@ func (m *DependabotAlertWithRepository_dependency) GetManifestPath()(*string) {
 // returns a DependabotAlertPackageable when successful
 func (m *DependabotAlertWithRepository_dependency) GetPackageEscaped()(DependabotAlertPackageable) {
     return m.packageEscaped
+}
+// GetRelationship gets the relationship property value. The vulnerable dependency's relationship to your project.> [!NOTE]> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
+// returns a *DependabotAlertWithRepository_dependency_relationship when successful
+func (m *DependabotAlertWithRepository_dependency) GetRelationship()(*DependabotAlertWithRepository_dependency_relationship) {
+    return m.relationship
 }
 // GetScope gets the scope property value. The execution scope of the vulnerable dependency.
 // returns a *DependabotAlertWithRepository_dependency_scope when successful
@@ -105,6 +122,10 @@ func (m *DependabotAlertWithRepository_dependency) SetManifestPath(value *string
 func (m *DependabotAlertWithRepository_dependency) SetPackageEscaped(value DependabotAlertPackageable)() {
     m.packageEscaped = value
 }
+// SetRelationship sets the relationship property value. The vulnerable dependency's relationship to your project.> [!NOTE]> We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
+func (m *DependabotAlertWithRepository_dependency) SetRelationship(value *DependabotAlertWithRepository_dependency_relationship)() {
+    m.relationship = value
+}
 // SetScope sets the scope property value. The execution scope of the vulnerable dependency.
 func (m *DependabotAlertWithRepository_dependency) SetScope(value *DependabotAlertWithRepository_dependency_scope)() {
     m.scope = value
@@ -114,8 +135,10 @@ type DependabotAlertWithRepository_dependencyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetManifestPath()(*string)
     GetPackageEscaped()(DependabotAlertPackageable)
+    GetRelationship()(*DependabotAlertWithRepository_dependency_relationship)
     GetScope()(*DependabotAlertWithRepository_dependency_scope)
     SetManifestPath(value *string)()
     SetPackageEscaped(value DependabotAlertPackageable)()
+    SetRelationship(value *DependabotAlertWithRepository_dependency_relationship)()
     SetScope(value *DependabotAlertWithRepository_dependency_scope)()
 }

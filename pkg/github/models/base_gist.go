@@ -11,6 +11,8 @@ type BaseGist struct {
     additionalData map[string]any
     // The comments property
     comments *int32
+    // The comments_enabled property
+    comments_enabled *bool
     // The comments_url property
     comments_url *string
     // The commits_url property
@@ -72,6 +74,11 @@ func (m *BaseGist) GetAdditionalData()(map[string]any) {
 func (m *BaseGist) GetComments()(*int32) {
     return m.comments
 }
+// GetCommentsEnabled gets the comments_enabled property value. The comments_enabled property
+// returns a *bool when successful
+func (m *BaseGist) GetCommentsEnabled()(*bool) {
+    return m.comments_enabled
+}
 // GetCommentsUrl gets the comments_url property value. The comments_url property
 // returns a *string when successful
 func (m *BaseGist) GetCommentsUrl()(*string) {
@@ -103,6 +110,16 @@ func (m *BaseGist) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetComments(val)
+        }
+        return nil
+    }
+    res["comments_enabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommentsEnabled(val)
         }
         return nil
     }
@@ -382,6 +399,12 @@ func (m *BaseGist) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err := writer.WriteBoolValue("comments_enabled", m.GetCommentsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("comments_url", m.GetCommentsUrl())
         if err != nil {
             return err
@@ -511,6 +534,10 @@ func (m *BaseGist) SetAdditionalData(value map[string]any)() {
 func (m *BaseGist) SetComments(value *int32)() {
     m.comments = value
 }
+// SetCommentsEnabled sets the comments_enabled property value. The comments_enabled property
+func (m *BaseGist) SetCommentsEnabled(value *bool)() {
+    m.comments_enabled = value
+}
 // SetCommentsUrl sets the comments_url property value. The comments_url property
 func (m *BaseGist) SetCommentsUrl(value *string)() {
     m.comments_url = value
@@ -591,6 +618,7 @@ type BaseGistable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetComments()(*int32)
+    GetCommentsEnabled()(*bool)
     GetCommentsUrl()(*string)
     GetCommitsUrl()(*string)
     GetCreatedAt()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -611,6 +639,7 @@ type BaseGistable interface {
     GetUrl()(*string)
     GetUser()(NullableSimpleUserable)
     SetComments(value *int32)()
+    SetCommentsEnabled(value *bool)()
     SetCommentsUrl(value *string)()
     SetCommitsUrl(value *string)()
     SetCreatedAt(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

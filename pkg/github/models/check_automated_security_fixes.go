@@ -4,13 +4,13 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// CheckAutomatedSecurityFixes check Automated Security Fixes
+// CheckAutomatedSecurityFixes check Dependabot security updates
 type CheckAutomatedSecurityFixes struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Whether automated security fixes are enabled for the repository.
+    // Whether Dependabot security updates are enabled for the repository.
     enabled *bool
-    // Whether automated security fixes are paused for the repository.
+    // Whether Dependabot security updates are paused for the repository.
     paused *bool
 }
 // NewCheckAutomatedSecurityFixes instantiates a new CheckAutomatedSecurityFixes and sets the default values.
@@ -30,7 +30,7 @@ func CreateCheckAutomatedSecurityFixesFromDiscriminatorValue(parseNode i878a80d2
 func (m *CheckAutomatedSecurityFixes) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetEnabled gets the enabled property value. Whether automated security fixes are enabled for the repository.
+// GetEnabled gets the enabled property value. Whether Dependabot security updates are enabled for the repository.
 // returns a *bool when successful
 func (m *CheckAutomatedSecurityFixes) GetEnabled()(*bool) {
     return m.enabled
@@ -61,7 +61,7 @@ func (m *CheckAutomatedSecurityFixes) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetPaused gets the paused property value. Whether automated security fixes are paused for the repository.
+// GetPaused gets the paused property value. Whether Dependabot security updates are paused for the repository.
 // returns a *bool when successful
 func (m *CheckAutomatedSecurityFixes) GetPaused()(*bool) {
     return m.paused
@@ -92,11 +92,11 @@ func (m *CheckAutomatedSecurityFixes) Serialize(writer i878a80d2330e89d26896388a
 func (m *CheckAutomatedSecurityFixes) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetEnabled sets the enabled property value. Whether automated security fixes are enabled for the repository.
+// SetEnabled sets the enabled property value. Whether Dependabot security updates are enabled for the repository.
 func (m *CheckAutomatedSecurityFixes) SetEnabled(value *bool)() {
     m.enabled = value
 }
-// SetPaused sets the paused property value. Whether automated security fixes are paused for the repository.
+// SetPaused sets the paused property value. Whether Dependabot security updates are paused for the repository.
 func (m *CheckAutomatedSecurityFixes) SetPaused(value *bool)() {
     m.paused = value
 }

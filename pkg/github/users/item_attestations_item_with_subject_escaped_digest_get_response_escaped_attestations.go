@@ -2,14 +2,13 @@ package users
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6 "github.com/octokit/go-sdk/pkg/github/models"
 )
 
 type ItemAttestationsItemWithSubject_digestGetResponse_attestations struct {
     // Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additionalData map[string]any
-    // Sigstore Bundle v0.1
-    bundle i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able
+    // The attestation's Sigstore Bundle.Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+    bundle ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable
     // The bundle_url property
     bundle_url *string
     // The repository_id property
@@ -32,9 +31,9 @@ func CreateItemAttestationsItemWithSubject_digestGetResponse_attestationsFromDis
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetAdditionalData()(map[string]any) {
     return m.additionalData
 }
-// GetBundle gets the bundle property value. Sigstore Bundle v0.1
-// returns a SigstoreBundle0able when successful
-func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetBundle()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able) {
+// GetBundle gets the bundle property value. The attestation's Sigstore Bundle.Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+// returns a ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable when successful
+func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetBundle()(ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable) {
     return m.bundle
 }
 // GetBundleUrl gets the bundle_url property value. The bundle_url property
@@ -47,12 +46,12 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetBund
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["bundle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.CreateSigstoreBundle0FromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBundle(val.(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able))
+            m.SetBundle(val.(ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable))
         }
         return nil
     }
@@ -115,8 +114,8 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) Seriali
 func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetAdditionalData(value map[string]any)() {
     m.additionalData = value
 }
-// SetBundle sets the bundle property value. Sigstore Bundle v0.1
-func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetBundle(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)() {
+// SetBundle sets the bundle property value. The attestation's Sigstore Bundle.Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetBundle(value ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable)() {
     m.bundle = value
 }
 // SetBundleUrl sets the bundle_url property value. The bundle_url property
@@ -130,10 +129,10 @@ func (m *ItemAttestationsItemWithSubject_digestGetResponse_attestations) SetRepo
 type ItemAttestationsItemWithSubject_digestGetResponse_attestationsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBundle()(i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)
+    GetBundle()(ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable)
     GetBundleUrl()(*string)
     GetRepositoryId()(*int32)
-    SetBundle(value i59ea7d99994c6a4bb9ef742ed717844297d055c7fd3742131406eea67a6404b6.SigstoreBundle0able)()
+    SetBundle(value ItemAttestationsItemWithSubject_digestGetResponse_attestations_bundleable)()
     SetBundleUrl(value *string)()
     SetRepositoryId(value *int32)()
 }

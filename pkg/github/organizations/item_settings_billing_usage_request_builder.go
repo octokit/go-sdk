@@ -12,13 +12,13 @@ type ItemSettingsBillingUsageRequestBuilder struct {
 }
 // ItemSettingsBillingUsageRequestBuilderGetQueryParameters gets a report of the total usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.**Note:** This endpoint is only available to organizations with access to the enhanced billing platform. For more information, see "[About the enhanced billing platform](https://docs.github.com/billing/using-the-new-billing-platform)."
 type ItemSettingsBillingUsageRequestBuilderGetQueryParameters struct {
-    // If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`.
+    // If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.
     Day *int32 `uriparametername:"day"`
-    // If specified, only return results for a single hour. The value of `hour` is an integer between `0` and `23`.
+    // If specified, only return results for a single hour. The value of `hour` is an integer between `0` and `23`. If no `year`, `month`, or `day` is specified, the default `year`, `month`, and `day` are used.
     Hour *int32 `uriparametername:"hour"`
-    // If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`.
+    // If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. If no year is specified the default `year` is used.
     Month *int32 `uriparametername:"month"`
-    // If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2024`. Default value is the current year.
+    // If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.
     Year *int32 `uriparametername:"year"`
 }
 // NewItemSettingsBillingUsageRequestBuilderInternal instantiates a new ItemSettingsBillingUsageRequestBuilder and sets the default values.

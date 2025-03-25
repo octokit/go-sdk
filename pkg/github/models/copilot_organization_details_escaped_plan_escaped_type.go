@@ -5,11 +5,10 @@ type CopilotOrganizationDetails_plan_type int
 const (
     BUSINESS_COPILOTORGANIZATIONDETAILS_PLAN_TYPE CopilotOrganizationDetails_plan_type = iota
     ENTERPRISE_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
-    UNKNOWN_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
 )
 
 func (i CopilotOrganizationDetails_plan_type) String() string {
-    return []string{"business", "enterprise", "unknown"}[i]
+    return []string{"business", "enterprise"}[i]
 }
 func ParseCopilotOrganizationDetails_plan_type(v string) (any, error) {
     result := BUSINESS_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
@@ -18,8 +17,6 @@ func ParseCopilotOrganizationDetails_plan_type(v string) (any, error) {
             result = BUSINESS_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
         case "enterprise":
             result = ENTERPRISE_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
-        case "unknown":
-            result = UNKNOWN_COPILOTORGANIZATIONDETAILS_PLAN_TYPE
         default:
             return nil, nil
     }
